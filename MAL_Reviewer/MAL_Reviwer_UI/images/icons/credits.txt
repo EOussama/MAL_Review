@@ -1,0 +1,4 @@
+* Icons By Dave Gandy:
+	- https://fontawesome.com/?from=io
+* Pack Font Awesome:
+	- https://www.flaticon.com/packs/font-awesome
