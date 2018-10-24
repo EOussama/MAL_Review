@@ -43,6 +43,7 @@
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.pbSearch = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.pSide.SuspendLayout();
             this.pReviewLookUp.SuspendLayout();
             this.pButtons.SuspendLayout();
@@ -109,6 +110,7 @@
             this.ilSizeControl.Images.SetKeyName(0, "icon-add.png");
             this.ilSizeControl.Images.SetKeyName(1, "icon-open.png");
             this.ilSizeControl.Images.SetKeyName(2, "icon-delete.png");
+            this.ilSizeControl.Images.SetKeyName(3, "icon-settings.png");
             // 
             // bOpen
             // 
@@ -148,6 +150,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pMain.BackColor = System.Drawing.SystemColors.Control;
+            this.pMain.Controls.Add(this.button1);
             this.pMain.Controls.Add(this.pHeader);
             this.pMain.Location = new System.Drawing.Point(231, 0);
             this.pMain.Name = "pMain";
@@ -209,6 +212,23 @@
             this.pbSearch.TabIndex = 1;
             this.pbSearch.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ImageIndex = 3;
+            this.button1.ImageList = this.ilSizeControl;
+            this.button1.Location = new System.Drawing.Point(526, 491);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(74, 67);
+            this.button1.TabIndex = 6;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // fWelcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -248,5 +268,6 @@
         private System.Windows.Forms.ImageList ilSizeControl;
         private System.Windows.Forms.PictureBox pbSearch;
         private System.Windows.Forms.TextBox tbSearch;
+        private System.Windows.Forms.Button button1;
     }
 }
