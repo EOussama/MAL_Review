@@ -17,6 +17,12 @@ namespace MAL_Reviwer_UI.forms
             InitializeComponent();
 
             rbAnime.CheckedChanged += RbAnime_CheckedChanged;
+            rbScaleOther.CheckedChanged += RbScaleOther_CheckedChanged;
+        }
+
+        private void RbScaleOther_CheckedChanged(object sender, EventArgs e)
+        {
+            nupScaleOther.Enabled = rbScaleOther.Checked;
         }
 
         private void RbAnime_CheckedChanged(object sender, EventArgs e)
