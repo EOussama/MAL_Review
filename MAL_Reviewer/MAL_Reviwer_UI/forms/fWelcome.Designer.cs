@@ -32,23 +32,27 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fWelcome));
             this.pSide = new System.Windows.Forms.Panel();
             this.pReviewLookUp = new System.Windows.Forms.Panel();
+            this.tbSearch = new System.Windows.Forms.TextBox();
             this.pButtons = new System.Windows.Forms.Panel();
-            this.bClear = new System.Windows.Forms.Button();
             this.ilSizeControl = new System.Windows.Forms.ImageList(this.components);
-            this.bOpen = new System.Windows.Forms.Button();
-            this.bNew = new System.Windows.Forms.Button();
             this.pMain = new System.Windows.Forms.Panel();
             this.pHeader = new System.Windows.Forms.Panel();
             this.lTitle = new System.Windows.Forms.Label();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.tbSearch = new System.Windows.Forms.TextBox();
-            this.pbSearch = new System.Windows.Forms.PictureBox();
+            this.pUser = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.bUser = new System.Windows.Forms.Button();
+            this.pbSearch = new System.Windows.Forms.PictureBox();
+            this.bClear = new System.Windows.Forms.Button();
+            this.bOpen = new System.Windows.Forms.Button();
+            this.bNew = new System.Windows.Forms.Button();
+            this.pReviews = new System.Windows.Forms.Panel();
             this.pSide.SuspendLayout();
             this.pReviewLookUp.SuspendLayout();
             this.pButtons.SuspendLayout();
             this.pMain.SuspendLayout();
             this.pHeader.SuspendLayout();
+            this.pUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +60,8 @@
             // pSide
             // 
             this.pSide.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pSide.Controls.Add(this.pReviews);
+            this.pSide.Controls.Add(this.pUser);
             this.pSide.Controls.Add(this.pReviewLookUp);
             this.pSide.Controls.Add(this.pButtons);
             this.pSide.Dock = System.Windows.Forms.DockStyle.Left;
@@ -75,6 +81,16 @@
             this.pReviewLookUp.Size = new System.Drawing.Size(230, 35);
             this.pReviewLookUp.TabIndex = 2;
             // 
+            // tbSearch
+            // 
+            this.tbSearch.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.tbSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbSearch.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSearch.Location = new System.Drawing.Point(9, 7);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(188, 20);
+            this.tbSearch.TabIndex = 0;
+            // 
             // pButtons
             // 
             this.pButtons.BackColor = System.Drawing.Color.Transparent;
@@ -87,22 +103,6 @@
             this.pButtons.Size = new System.Drawing.Size(230, 73);
             this.pButtons.TabIndex = 2;
             // 
-            // bClear
-            // 
-            this.bClear.BackColor = System.Drawing.Color.Transparent;
-            this.bClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bClear.FlatAppearance.BorderSize = 0;
-            this.bClear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.bClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.bClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bClear.ImageIndex = 2;
-            this.bClear.ImageList = this.ilSizeControl;
-            this.bClear.Location = new System.Drawing.Point(152, 3);
-            this.bClear.Name = "bClear";
-            this.bClear.Size = new System.Drawing.Size(75, 67);
-            this.bClear.TabIndex = 5;
-            this.bClear.UseVisualStyleBackColor = false;
-            // 
             // ilSizeControl
             // 
             this.ilSizeControl.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilSizeControl.ImageStream")));
@@ -111,38 +111,7 @@
             this.ilSizeControl.Images.SetKeyName(1, "icon-open.png");
             this.ilSizeControl.Images.SetKeyName(2, "icon-delete.png");
             this.ilSizeControl.Images.SetKeyName(3, "icon-settings.png");
-            // 
-            // bOpen
-            // 
-            this.bOpen.BackColor = System.Drawing.Color.Transparent;
-            this.bOpen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bOpen.FlatAppearance.BorderSize = 0;
-            this.bOpen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.bOpen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.bOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bOpen.ImageIndex = 1;
-            this.bOpen.ImageList = this.ilSizeControl;
-            this.bOpen.Location = new System.Drawing.Point(77, 3);
-            this.bOpen.Name = "bOpen";
-            this.bOpen.Size = new System.Drawing.Size(75, 67);
-            this.bOpen.TabIndex = 4;
-            this.bOpen.UseVisualStyleBackColor = false;
-            // 
-            // bNew
-            // 
-            this.bNew.BackColor = System.Drawing.Color.Transparent;
-            this.bNew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bNew.FlatAppearance.BorderSize = 0;
-            this.bNew.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.bNew.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.bNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bNew.ImageIndex = 0;
-            this.bNew.ImageList = this.ilSizeControl;
-            this.bNew.Location = new System.Drawing.Point(3, 3);
-            this.bNew.Name = "bNew";
-            this.bNew.Size = new System.Drawing.Size(74, 67);
-            this.bNew.TabIndex = 3;
-            this.bNew.UseVisualStyleBackColor = false;
+            this.ilSizeControl.Images.SetKeyName(4, "icon-user.png");
             // 
             // pMain
             // 
@@ -179,38 +148,14 @@
             this.lTitle.Text = "MAL Reviewer";
             this.lTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pbLogo
+            // pUser
             // 
-            this.pbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbLogo.Image = global::MAL_Reviwer_UI.Properties.Resources.logo;
-            this.pbLogo.Location = new System.Drawing.Point(194, 12);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(207, 179);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLogo.TabIndex = 0;
-            this.pbLogo.TabStop = false;
-            // 
-            // tbSearch
-            // 
-            this.tbSearch.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.tbSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbSearch.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSearch.Location = new System.Drawing.Point(9, 7);
-            this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Size = new System.Drawing.Size(188, 20);
-            this.tbSearch.TabIndex = 0;
-            // 
-            // pbSearch
-            // 
-            this.pbSearch.Image = global::MAL_Reviwer_UI.Properties.Resources.icon_search;
-            this.pbSearch.Location = new System.Drawing.Point(204, 7);
-            this.pbSearch.Name = "pbSearch";
-            this.pbSearch.Size = new System.Drawing.Size(20, 20);
-            this.pbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSearch.TabIndex = 1;
-            this.pbSearch.TabStop = false;
+            this.pUser.Controls.Add(this.bUser);
+            this.pUser.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pUser.Location = new System.Drawing.Point(0, 488);
+            this.pUser.Name = "pUser";
+            this.pUser.Size = new System.Drawing.Size(230, 73);
+            this.pUser.TabIndex = 7;
             // 
             // button1
             // 
@@ -228,6 +173,109 @@
             this.button1.Size = new System.Drawing.Size(74, 67);
             this.button1.TabIndex = 6;
             this.button1.UseVisualStyleBackColor = false;
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbLogo.Image = global::MAL_Reviwer_UI.Properties.Resources.logo;
+            this.pbLogo.Location = new System.Drawing.Point(194, 12);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(207, 179);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLogo.TabIndex = 0;
+            this.pbLogo.TabStop = false;
+            // 
+            // bUser
+            // 
+            this.bUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bUser.BackColor = System.Drawing.Color.Transparent;
+            this.bUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bUser.FlatAppearance.BorderSize = 0;
+            this.bUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.bUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.bUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bUser.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bUser.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bUser.ImageIndex = 4;
+            this.bUser.ImageList = this.ilSizeControl;
+            this.bUser.Location = new System.Drawing.Point(3, 3);
+            this.bUser.Name = "bUser";
+            this.bUser.Size = new System.Drawing.Size(224, 67);
+            this.bUser.TabIndex = 7;
+            this.bUser.Text = "Username";
+            this.bUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bUser.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.bUser.UseVisualStyleBackColor = false;
+            // 
+            // pbSearch
+            // 
+            this.pbSearch.Image = global::MAL_Reviwer_UI.Properties.Resources.icon_search;
+            this.pbSearch.Location = new System.Drawing.Point(204, 7);
+            this.pbSearch.Name = "pbSearch";
+            this.pbSearch.Size = new System.Drawing.Size(20, 20);
+            this.pbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSearch.TabIndex = 1;
+            this.pbSearch.TabStop = false;
+            // 
+            // bClear
+            // 
+            this.bClear.BackColor = System.Drawing.Color.Transparent;
+            this.bClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bClear.FlatAppearance.BorderSize = 0;
+            this.bClear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.bClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.bClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bClear.ImageIndex = 2;
+            this.bClear.ImageList = this.ilSizeControl;
+            this.bClear.Location = new System.Drawing.Point(152, 3);
+            this.bClear.Name = "bClear";
+            this.bClear.Size = new System.Drawing.Size(75, 67);
+            this.bClear.TabIndex = 5;
+            this.bClear.UseVisualStyleBackColor = false;
+            // 
+            // bOpen
+            // 
+            this.bOpen.BackColor = System.Drawing.Color.Transparent;
+            this.bOpen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bOpen.FlatAppearance.BorderSize = 0;
+            this.bOpen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.bOpen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.bOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bOpen.ImageIndex = 1;
+            this.bOpen.ImageList = this.ilSizeControl;
+            this.bOpen.Location = new System.Drawing.Point(77, 3);
+            this.bOpen.Name = "bOpen";
+            this.bOpen.Size = new System.Drawing.Size(75, 67);
+            this.bOpen.TabIndex = 4;
+            this.bOpen.UseVisualStyleBackColor = false;
+            // 
+            // bNew
+            // 
+            this.bNew.BackColor = System.Drawing.Color.Transparent;
+            this.bNew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bNew.FlatAppearance.BorderSize = 0;
+            this.bNew.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.bNew.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.bNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bNew.ImageIndex = 0;
+            this.bNew.ImageList = this.ilSizeControl;
+            this.bNew.Location = new System.Drawing.Point(3, 3);
+            this.bNew.Name = "bNew";
+            this.bNew.Size = new System.Drawing.Size(74, 67);
+            this.bNew.TabIndex = 3;
+            this.bNew.UseVisualStyleBackColor = false;
+            // 
+            // pReviews
+            // 
+            this.pReviews.AutoScroll = true;
+            this.pReviews.BackColor = System.Drawing.Color.Transparent;
+            this.pReviews.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pReviews.Location = new System.Drawing.Point(0, 108);
+            this.pReviews.Name = "pReviews";
+            this.pReviews.Size = new System.Drawing.Size(230, 380);
+            this.pReviews.TabIndex = 2;
             // 
             // fWelcome
             // 
@@ -247,6 +295,7 @@
             this.pButtons.ResumeLayout(false);
             this.pMain.ResumeLayout(false);
             this.pHeader.ResumeLayout(false);
+            this.pUser.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).EndInit();
             this.ResumeLayout(false);
@@ -269,5 +318,8 @@
         private System.Windows.Forms.PictureBox pbSearch;
         private System.Windows.Forms.TextBox tbSearch;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel pUser;
+        private System.Windows.Forms.Button bUser;
+        private System.Windows.Forms.Panel pReviews;
     }
 }

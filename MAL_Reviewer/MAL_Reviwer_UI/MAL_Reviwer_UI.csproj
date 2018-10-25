@@ -88,13 +88,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\icons\credits.txt" />
+    <Content Include="images\icons\icon-close.png" />
     <Content Include="images\icons\icon-filter.png" />
+    <Content Include="images\icons\icon-menu.png" />
     <Content Include="images\icons\icon-search.png" />
     <Content Include="images\icons\icon-open.png" />
     <Content Include="images\icons\icon-add.png" />
     <Content Include="images\icons\icon-settings.png" />
     <Content Include="images\icons\icon-sort.png" />
     <Content Include="images\icons\icon-delete.png" />
+    <Content Include="images\icons\icon-user.png" />
     <Content Include="images\logo\credits.txt" />
     <Content Include="images\logo\logo.ico" />
     <Content Include="images\logo\logo.png" />
