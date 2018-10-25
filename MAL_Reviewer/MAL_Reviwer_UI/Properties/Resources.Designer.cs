@@ -73,6 +73,16 @@ namespace MAL_Reviwer_UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_close {
+            get {
+                object obj = ResourceManager.GetObject("icon-close", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_delete {
             get {
                 object obj = ResourceManager.GetObject("icon-delete", resourceCulture);
@@ -86,6 +96,16 @@ namespace MAL_Reviwer_UI.Properties {
         internal static System.Drawing.Bitmap icon_filter {
             get {
                 object obj = ResourceManager.GetObject("icon-filter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_link {
+            get {
+                object obj = ResourceManager.GetObject("icon-link", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

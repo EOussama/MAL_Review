@@ -39,14 +39,14 @@
             this.pHeader = new System.Windows.Forms.Panel();
             this.lTitle = new System.Windows.Forms.Label();
             this.pUser = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pReviews = new System.Windows.Forms.Panel();
+            this.bSettings = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.bUser = new System.Windows.Forms.Button();
             this.pbSearch = new System.Windows.Forms.PictureBox();
             this.bClear = new System.Windows.Forms.Button();
             this.bOpen = new System.Windows.Forms.Button();
             this.bNew = new System.Windows.Forms.Button();
-            this.pReviews = new System.Windows.Forms.Panel();
             this.pSide.SuspendLayout();
             this.pReviewLookUp.SuspendLayout();
             this.pButtons.SuspendLayout();
@@ -119,7 +119,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pMain.BackColor = System.Drawing.SystemColors.Control;
-            this.pMain.Controls.Add(this.button1);
+            this.pMain.Controls.Add(this.bSettings);
             this.pMain.Controls.Add(this.pHeader);
             this.pMain.Location = new System.Drawing.Point(231, 0);
             this.pMain.Name = "pMain";
@@ -157,22 +157,32 @@
             this.pUser.Size = new System.Drawing.Size(230, 73);
             this.pUser.TabIndex = 7;
             // 
-            // button1
+            // pReviews
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ImageIndex = 3;
-            this.button1.ImageList = this.ilSizeControl;
-            this.button1.Location = new System.Drawing.Point(526, 491);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(74, 67);
-            this.button1.TabIndex = 6;
-            this.button1.UseVisualStyleBackColor = false;
+            this.pReviews.AutoScroll = true;
+            this.pReviews.BackColor = System.Drawing.Color.Transparent;
+            this.pReviews.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pReviews.Location = new System.Drawing.Point(0, 108);
+            this.pReviews.Name = "pReviews";
+            this.pReviews.Size = new System.Drawing.Size(230, 380);
+            this.pReviews.TabIndex = 2;
+            // 
+            // bSettings
+            // 
+            this.bSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bSettings.BackColor = System.Drawing.Color.Transparent;
+            this.bSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bSettings.FlatAppearance.BorderSize = 0;
+            this.bSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.bSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.bSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bSettings.ImageIndex = 3;
+            this.bSettings.ImageList = this.ilSizeControl;
+            this.bSettings.Location = new System.Drawing.Point(526, 491);
+            this.bSettings.Name = "bSettings";
+            this.bSettings.Size = new System.Drawing.Size(74, 67);
+            this.bSettings.TabIndex = 6;
+            this.bSettings.UseVisualStyleBackColor = false;
             // 
             // pbLogo
             // 
@@ -267,16 +277,6 @@
             this.bNew.TabIndex = 3;
             this.bNew.UseVisualStyleBackColor = false;
             // 
-            // pReviews
-            // 
-            this.pReviews.AutoScroll = true;
-            this.pReviews.BackColor = System.Drawing.Color.Transparent;
-            this.pReviews.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pReviews.Location = new System.Drawing.Point(0, 108);
-            this.pReviews.Name = "pReviews";
-            this.pReviews.Size = new System.Drawing.Size(230, 380);
-            this.pReviews.TabIndex = 2;
-            // 
             // fWelcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,7 +317,7 @@
         private System.Windows.Forms.ImageList ilSizeControl;
         private System.Windows.Forms.PictureBox pbSearch;
         private System.Windows.Forms.TextBox tbSearch;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bSettings;
         private System.Windows.Forms.Panel pUser;
         private System.Windows.Forms.Button bUser;
         private System.Windows.Forms.Panel pReviews;
