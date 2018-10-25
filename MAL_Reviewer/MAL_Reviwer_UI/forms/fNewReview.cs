@@ -15,6 +15,14 @@ namespace MAL_Reviwer_UI.forms
         public fNewReview()
         {
             InitializeComponent();
+
+            rbAnime.CheckedChanged += RbAnime_CheckedChanged;
+        }
+
+        private void RbAnime_CheckedChanged(object sender, EventArgs e)
+        {
+            lTitle.Text = $"{ (rbAnime.Checked ? "Anime" : "Manga") } title";
+            pbShow.Image = (rbAnime.Checked ? Properties.Resources.icon_anime : Properties.Resources.icon_manga);
         }
     }
 }

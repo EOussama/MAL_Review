@@ -65,7 +65,17 @@ namespace MAL_Reviwer_UI.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icon_add {
             get {
-                object obj = ResourceManager.GetObject("icon-add", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_anime {
+            get {
+                object obj = ResourceManager.GetObject("icon_anime", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -75,7 +85,7 @@ namespace MAL_Reviwer_UI.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icon_close {
             get {
-                object obj = ResourceManager.GetObject("icon-close", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_close", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -85,7 +95,7 @@ namespace MAL_Reviwer_UI.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icon_delete {
             get {
-                object obj = ResourceManager.GetObject("icon-delete", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_delete", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -95,7 +105,7 @@ namespace MAL_Reviwer_UI.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icon_filter {
             get {
-                object obj = ResourceManager.GetObject("icon-filter", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_filter", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -105,7 +115,27 @@ namespace MAL_Reviwer_UI.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icon_link {
             get {
-                object obj = ResourceManager.GetObject("icon-link", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_link", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_manga {
+            get {
+                object obj = ResourceManager.GetObject("icon_manga", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_menu {
+            get {
+                object obj = ResourceManager.GetObject("icon_menu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -115,7 +145,7 @@ namespace MAL_Reviwer_UI.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icon_open {
             get {
-                object obj = ResourceManager.GetObject("icon-open", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_open", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -125,7 +155,7 @@ namespace MAL_Reviwer_UI.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icon_search {
             get {
-                object obj = ResourceManager.GetObject("icon-search", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_search", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -135,7 +165,7 @@ namespace MAL_Reviwer_UI.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icon_settings {
             get {
-                object obj = ResourceManager.GetObject("icon-settings", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_settings", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -145,7 +175,7 @@ namespace MAL_Reviwer_UI.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icon_sort {
             get {
-                object obj = ResourceManager.GetObject("icon-sort", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_sort", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -155,7 +185,7 @@ namespace MAL_Reviwer_UI.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icon_user {
             get {
-                object obj = ResourceManager.GetObject("icon-user", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_user", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

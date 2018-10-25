@@ -104,9 +104,11 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="images\icons\credits.txt" />
+    <Content Include="images\icons\icon-anime.png" />
     <Content Include="images\icons\icon-close.png" />
     <Content Include="images\icons\icon-filter.png" />
     <Content Include="images\icons\icon-link.png" />
+    <Content Include="images\icons\icon-manga.png" />
     <Content Include="images\icons\icon-menu.png" />
     <Content Include="images\icons\icon-search.png" />
     <Content Include="images\icons\icon-open.png" />
@@ -120,6 +122,8 @@
     <Content Include="images\logo\logo.png" />
     <Content Include="images\logo\logo.svg" />
     <Content Include="logo.ico" />
+    <None Include="Resources\icon-manga.png" />
+    <None Include="Resources\icon-anime.png" />
     <None Include="Resources\icon-link.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
