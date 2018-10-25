@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="forms\fNewReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\fNewReview.Designer.cs">
+      <DependentUpon>fNewReview.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\fWelcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,9 @@
     <Compile Include="user_controls\ucReviewCard.Designer.cs">
       <DependentUpon>ucReviewCard.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="forms\fNewReview.resx">
+      <DependentUpon>fNewReview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\fWelcome.resx">
       <DependentUpon>fWelcome.cs</DependentUpon>
     </EmbeddedResource>

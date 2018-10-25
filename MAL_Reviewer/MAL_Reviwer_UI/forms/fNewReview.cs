@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace MAL_Reviwer_UI.forms
 {
-    public partial class fWelcome : Form
+    public partial class fNewReview : Form
     {
-        public fWelcome()
+        public fNewReview()
         {
             InitializeComponent();
-        }
-
-        private void bNew_Click(object sender, EventArgs e)
-        {
-            (new fNewReview()).ShowDialog();
         }
     }
 }
