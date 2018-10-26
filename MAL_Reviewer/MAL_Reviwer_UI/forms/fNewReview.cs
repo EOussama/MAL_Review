@@ -134,7 +134,7 @@ namespace MAL_Reviwer_UI.forms
                 lTargetStatus.Text = animeModel.airing ? "Airing" : "Finished";
                 lTargetVolumesEpisodes.Text = animeModel.episodes != null ? animeModel.episodes.ToString() : "?";
                 lTargetTitle.Text = animeModel.title.Length > 55 ? animeModel.title.Substring(0, 55) + "..." : animeModel.title;
-                lTargetSynopsis.Text = animeModel.synopsis.Length > 215 ? animeModel.synopsis.Substring(0, 215) + "..." : animeModel.synopsis;
+                lTargetSynopsis.Text = animeModel.synopsis?.Length > 215 ? animeModel.synopsis?.Substring(0, 215) + "..." : animeModel.synopsis;
                 pbTargetImage.Load(animeModel.image_url);
                 bMAL.Tag = animeModel.url;
             }
