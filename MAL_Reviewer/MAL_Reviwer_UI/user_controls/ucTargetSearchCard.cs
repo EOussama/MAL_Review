@@ -14,14 +14,14 @@ namespace MAL_Reviwer_UI.user_controls
     {
         private int _targetId;
 
-        public ucTargetSearchCard(int targetId, string targetTitle, string targetType, Image targetImage)
+        public ucTargetSearchCard(int targetId, string targetTitle, string targetType, string targetImage)
         {
             InitializeComponent();
 
             this.targetId = targetId;
             lTargetTitle.Text = targetTitle;
             lTargetType.Text = targetType;
-            pbTargetImage.Image = targetImage;
+            pbTargetImage.Load(targetImage);
 
             this.MouseEnter += CardMouseEnter;
             this.pbTargetImage.MouseEnter += CardMouseEnter;

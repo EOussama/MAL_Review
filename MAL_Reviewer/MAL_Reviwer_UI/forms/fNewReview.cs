@@ -58,7 +58,7 @@ namespace MAL_Reviwer_UI.forms
 
                 foreach (SearchResultsModel resultsModel in searchModel.results)
                 {
-                    ucTargetSearchCard searchCard = new ucTargetSearchCard(resultsModel.mal_id, resultsModel.title, resultsModel.type, null);
+                    ucTargetSearchCard searchCard = new ucTargetSearchCard(resultsModel.mal_id, resultsModel.title, resultsModel.type, resultsModel.image_url);
                     int searchCardCount = pSearchCards.Controls.Count;
 
                     if (searchCardCount < 5)
