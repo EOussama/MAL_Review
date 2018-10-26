@@ -103,6 +103,9 @@ namespace MAL_Reviwer_UI.forms
 
         private void SearchCard_CardMouseClickEvent(object sender, int targetId)
         {
+            pPreview.Visible = false;
+            pbLoadingPreview.Visible = true;
+
             if (rbAnime.Checked)
                 PreviewAnime(targetId);
             else
@@ -146,6 +149,7 @@ namespace MAL_Reviwer_UI.forms
             finally
             {
                 pSearchCards.Visible = false;
+                pbLoadingPreview.Visible = false;
                 pPreview.Visible = true;
             }
         }
@@ -178,6 +182,7 @@ namespace MAL_Reviwer_UI.forms
             finally
             {
                 pSearchCards.Visible = false;
+                pbLoadingPreview.Visible = false;
                 pPreview.Visible = true;
             }
         }

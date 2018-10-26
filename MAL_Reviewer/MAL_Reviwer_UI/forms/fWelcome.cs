@@ -15,7 +15,7 @@ namespace MAL_Reviwer_UI.forms
         public fWelcome()
         {
             InitializeComponent();
-
+            
             MAL_Reviewer_API.MALHelper.Init();
         }
 

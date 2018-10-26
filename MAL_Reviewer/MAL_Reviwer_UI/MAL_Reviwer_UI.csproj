@@ -131,7 +131,9 @@
     <Content Include="images\icons\icon-sort.png" />
     <Content Include="images\icons\icon-delete.png" />
     <Content Include="images\icons\icon-user.png" />
-    <Content Include="images\loading.gif" />
+    <Content Include="images\loading-gifs\loading-gif-control-light.gif" />
+    <Content Include="images\loading-gifs\loading-gif-control.gif" />
+    <Content Include="images\loading-gifs\loading-gif-white.gif" />
     <Content Include="images\logo\credits.txt" />
     <Content Include="images\logo\logo.ico" />
     <Content Include="images\logo\logo.png" />

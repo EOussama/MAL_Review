@@ -193,9 +193,19 @@ namespace MAL_Reviwer_UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap loading {
+        internal static System.Drawing.Bitmap loading_gif_control {
             get {
-                object obj = ResourceManager.GetObject("loading", resourceCulture);
+                object obj = ResourceManager.GetObject("loading-gif-control", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loading_gif_control_light {
+            get {
+                object obj = ResourceManager.GetObject("loading_gif_control_light", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
