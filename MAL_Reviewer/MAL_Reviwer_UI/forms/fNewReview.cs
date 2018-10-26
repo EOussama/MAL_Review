@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MAL_Reviwer_UI.user_controls;
 using MAL_Reviewer_API;
 using MAL_Reviewer_API.models;
-using System.Threading;
 
 namespace MAL_Reviwer_UI.forms
 {
@@ -171,7 +163,7 @@ namespace MAL_Reviwer_UI.forms
                 lTargetVolumesEpisodes.Text = mangaModel.volumes != null ? mangaModel.volumes.ToString() : "?";
                 lTargetChapters.Text = mangaModel.chapters != null ? mangaModel.chapters.ToString() : "?";
                 lTargetTitle.Text = mangaModel.title.Length > 55 ? mangaModel.title.Substring(0, 55) + "..." : mangaModel.title;
-                lTargetSynopsis.Text = mangaModel.synopsis.Length > 215 ? mangaModel.synopsis.Substring(0, 215) + "..." : mangaModel.synopsis;
+                lTargetSynopsis.Text = mangaModel.synopsis?.Length > 215 ? mangaModel.synopsis?.Substring(0, 215) + "..." : mangaModel.synopsis;
                 pbTargetImage.Load(mangaModel.image_url);
                 bMAL.Tag = mangaModel.url;
             }

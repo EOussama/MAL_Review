@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using MAL_Reviewer_API.models;
-using System.Text;
 using System.Threading.Tasks;
-using System.Threading;
 
 namespace MAL_Reviewer_API
 {
