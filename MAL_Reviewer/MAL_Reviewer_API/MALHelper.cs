@@ -44,6 +44,11 @@ namespace MAL_Reviewer_API
             return null;
         }
 
+        /// <summary>
+        /// Retrieve the anime of the matching id.
+        /// </summary>
+        /// <param name="animeId"></param>
+        /// <returns></returns>
         public async static Task<AnimeModel> GetAnime(int animeId)
         {
             string url = $"{ client.BaseAddress.AbsoluteUri }anime/{ animeId }";
@@ -57,6 +62,11 @@ namespace MAL_Reviewer_API
             return null;
         }
 
+        /// <summary>
+        /// Retrieve the manga of the matching id.
+        /// </summary>
+        /// <param name="mangaId"></param>
+        /// <returns></returns>
         public async static Task<MangaModel> GetManga(int mangaId)
         {
             string url = $"{ client.BaseAddress.AbsoluteUri }manga/{ mangaId }";
