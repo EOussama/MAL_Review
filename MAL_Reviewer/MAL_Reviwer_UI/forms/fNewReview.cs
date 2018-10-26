@@ -37,6 +37,7 @@ namespace MAL_Reviwer_UI.forms
         private void RbAnime_CheckedChanged(object sender, EventArgs e)
         {
             lTitle.Text = $"{ (rbAnime.Checked ? rbAnime.Text : rbManga.Text) } title";
+            ttSearchCard.ToolTipTitle = lTitle.Text;
             pbShow.Image = (rbAnime.Checked ? Properties.Resources.icon_anime : Properties.Resources.icon_manga);
         }
 
@@ -64,6 +65,7 @@ namespace MAL_Reviwer_UI.forms
                         pSearchCards.Height = searchCard.Height * searchCardCount;
 
                     searchCard.Top = searchCard.Height * searchCardCount;
+                    ttSearchCard.SetToolTip(searchCard, resultsModel.title);
                     pSearchCards.Controls.Add(searchCard);
                 }
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fNewReview));
             this.pSectionSeparator = new System.Windows.Forms.Panel();
             this.pReviewLookUp = new System.Windows.Forms.Panel();
@@ -51,6 +52,7 @@
             this.rbAnime = new System.Windows.Forms.RadioButton();
             this.rbManga = new System.Windows.Forms.RadioButton();
             this.lTitle = new System.Windows.Forms.Label();
+            this.ttSearchCard = new System.Windows.Forms.ToolTip(this.components);
             this.pReviewLookUp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbShow)).BeginInit();
             this.pSetup.SuspendLayout();
@@ -307,6 +309,10 @@
             this.lTitle.TabIndex = 0;
             this.lTitle.Text = "Anime title";
             // 
+            // ttSearchCard
+            // 
+            this.ttSearchCard.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
             // fNewReview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,5 +365,6 @@
         private System.Windows.Forms.Label lRatingDecimal;
         private System.Windows.Forms.Panel pRatingSeparator;
         private System.Windows.Forms.Panel pSearchCards;
+        private System.Windows.Forms.ToolTip ttSearchCard;
     }
 }
