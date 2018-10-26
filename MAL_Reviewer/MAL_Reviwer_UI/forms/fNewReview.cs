@@ -8,18 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MAL_Reviwer_UI.user_controls;
+using MAL_Reviewer_API;
+using MAL_Reviewer_API.models;
 
 namespace MAL_Reviwer_UI.forms
 {
     public partial class fNewReview : Form
     {
+        // TODO - auto refresh search when radiobuttons update
         public fNewReview()
         {
             InitializeComponent();
 
+            pSearchCards.HorizontalScroll.Maximum = 0;
+            pSearchCards.AutoScroll = true;
+
             rbAnime.CheckedChanged += RbAnime_CheckedChanged;
             rbScaleOther.CheckedChanged += RbScaleOther_CheckedChanged;
         }
+
+        #region Manga/Anime labeling
 
         private void RbScaleOther_CheckedChanged(object sender, EventArgs e)
         {
@@ -28,13 +36,45 @@ namespace MAL_Reviwer_UI.forms
 
         private void RbAnime_CheckedChanged(object sender, EventArgs e)
         {
-            lTitle.Text = $"{ (rbAnime.Checked ? "Anime" : "Manga") } title";
+            lTitle.Text = $"{ (rbAnime.Checked ? rbAnime.Text : rbManga.Text) } title";
             pbShow.Image = (rbAnime.Checked ? Properties.Resources.icon_anime : Properties.Resources.icon_manga);
         }
 
-        private void tbSearch_TextChanged(object sender, EventArgs e)
+        #endregion
+
+        #region Target Search
+
+        private async void tbSearch_TextChanged(object sender, EventArgs e)
         {
-            pSearchCards.Visible = tbSearch.Text.Length > 0;
+            string
+                searchTitle = tbSearch.Text.Trim(),
+                searchType = rbAnime.Checked ? rbAnime.Text.ToLower() : rbManga.Text.ToLower();
+
+            if(searchTitle.Length > 2)
+            {
+                SearchModel searchModel = await MALHelper.Search(searchType, searchTitle);
+                pSearchCards.Controls.Clear();
+
+                foreach (SearchResultsModel resultsModel in searchModel.results)
+                {
+                    ucTargetSearchCard searchCard = new ucTargetSearchCard(resultsModel.mal_id, resultsModel.title, resultsModel.type, null);
+                    int searchCardCount = pSearchCards.Controls.Count;
+
+                    if (searchCardCount < 5)
+                        pSearchCards.Height = searchCard.Height * searchCardCount;
+
+                    searchCard.Top = searchCard.Height * searchCardCount;
+                    pSearchCards.Controls.Add(searchCard);
+                }
+
+                pSearchCards.Visible = true;
+            }
+            else
+            {
+                pSearchCards.Visible = false;
+            }
         }
+
+        #endregion
     }
 }

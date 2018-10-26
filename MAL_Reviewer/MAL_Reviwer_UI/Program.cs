@@ -13,7 +13,7 @@ namespace MAL_Reviwer_UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MAL_Reviwer_UI.forms.fNewReview());
+            Application.Run(new MAL_Reviwer_UI.forms.fWelcome());
         }
     }
 }

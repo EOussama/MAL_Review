@@ -219,8 +219,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pMain.BackColor = System.Drawing.SystemColors.Control;
-            this.pMain.Controls.Add(this.bSettings);
             this.pMain.Controls.Add(this.pHeader);
+            this.pMain.Controls.Add(this.bSettings);
             this.pMain.Location = new System.Drawing.Point(231, 0);
             this.pMain.Name = "pMain";
             this.pMain.Size = new System.Drawing.Size(603, 561);

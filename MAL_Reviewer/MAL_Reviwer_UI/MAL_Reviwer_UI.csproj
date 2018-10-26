@@ -110,7 +110,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\MAL_Reviewer_API\MAL_Reviewer_API.csproj">
+      <Project>{3daf19bb-e29b-4e5b-9c48-2e634933c03b}</Project>
+      <Name>MAL_Reviewer_API</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="images\icons\credits.txt" />
     <Content Include="images\icons\icon-anime.png" />
