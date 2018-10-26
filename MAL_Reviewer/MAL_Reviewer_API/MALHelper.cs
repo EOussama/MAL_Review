@@ -43,5 +43,31 @@ namespace MAL_Reviewer_API
 
             return null;
         }
+
+        public async static Task<AnimeModel> GetAnime(int animeId)
+        {
+            string url = $"{ client.BaseAddress.AbsoluteUri }anime/{ animeId }";
+            HttpResponseMessage response = await client.GetAsync(url);
+
+            if (response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadAsAsync<AnimeModel>();
+            }
+
+            return null;
+        }
+
+        public async static Task<MangaModel> GetManga(int mangaId)
+        {
+            string url = $"{ client.BaseAddress.AbsoluteUri }manga/{ mangaId }";
+            HttpResponseMessage response = await client.GetAsync(url);
+
+            if (response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadAsAsync<MangaModel>();
+            }
+
+            return null;
+        }
     }
 }

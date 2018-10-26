@@ -48,8 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MALHelper.cs" />
+    <Compile Include="models\AnimeModel.cs" />
+    <Compile Include="models\MangaModel.cs" />
     <Compile Include="models\SearchModel.cs" />
     <Compile Include="models\SearchResultsModel.cs" />
+    <Compile Include="models\TargetModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -47,7 +47,6 @@ namespace MAL_Reviwer_UI.forms
 
         #region Target Search
 
-        // TODO - Add usercontrols in another thread.
         private async void tbSearch_TextChanged(object sender, EventArgs e)
         {
             try
@@ -103,7 +102,53 @@ namespace MAL_Reviwer_UI.forms
 
         private void SearchCard_CardMouseClickEvent(object sender, int targetId)
         {
-            MessageBox.Show("ID: " + targetId);
+            if (rbAnime.Checked)
+                PreviewAnime(targetId);
+            else
+                PreviewManga(targetId);
+        }
+
+        #endregion
+
+        #region Preview section update
+
+        private async void PreviewAnime(int animeId)
+        {
+            try
+            {
+                AnimeModel animeModel = await MALHelper.GetAnime(animeId);
+
+                lTargetScore.Text = animeModel.score.ToString();
+                lTargetRank.Text = animeModel.rank.ToString();
+                lTargetType.Text = animeModel.type;
+                lTargetTitle.Text = animeModel.title.Length > 55 ? animeModel.title.Substring(0, 55) + "..." : animeModel.title;
+                lTargetSynopsis.Text = animeModel.synopsis;
+                pbTargetImage.Load(animeModel.image_url);
+                bMAL.Tag = animeModel.url;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private async void PreviewManga(int mangaId)
+        {
+            try
+            {
+                MangaModel mangaModel = await MALHelper.GetManga(mangaId);
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void bMAL_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(((Button)sender).Tag.ToString());
         }
 
         #endregion
