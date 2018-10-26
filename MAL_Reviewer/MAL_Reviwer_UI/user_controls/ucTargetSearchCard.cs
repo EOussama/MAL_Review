@@ -20,7 +20,7 @@ namespace MAL_Reviwer_UI.user_controls
             InitializeComponent();
 
             this.targetId = targetId;
-            lTargetTitle.Text = targetTitle;
+            lTargetTitle.Text = targetTitle.Length > 17 ? targetTitle.Substring(0, 17) + "..." : targetTitle;
             lTargetType.Text = targetType;
             pbTargetImage.Load(targetImage);
 

@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fNewReview));
             this.pSectionSeparator = new System.Windows.Forms.Panel();
             this.pReviewLookUp = new System.Windows.Forms.Panel();
+            this.pbLoading = new System.Windows.Forms.PictureBox();
             this.pbShow = new System.Windows.Forms.PictureBox();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.pPreview = new System.Windows.Forms.Panel();
@@ -53,14 +54,17 @@
             this.rbManga = new System.Windows.Forms.RadioButton();
             this.lTitle = new System.Windows.Forms.Label();
             this.ttSearchCard = new System.Windows.Forms.ToolTip(this.components);
-            this.pbLoading = new System.Windows.Forms.PictureBox();
+            this.pbTargetImage = new System.Windows.Forms.PictureBox();
+            this.lTargetTitle = new System.Windows.Forms.Label();
             this.pReviewLookUp.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbShow)).BeginInit();
+            this.pPreview.SuspendLayout();
             this.pSetup.SuspendLayout();
             this.gbRating.SuspendLayout();
             this.gbRatingScale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupScaleOther)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTargetImage)).BeginInit();
             this.SuspendLayout();
             // 
             // pSectionSeparator
@@ -81,6 +85,17 @@
             this.pReviewLookUp.Name = "pReviewLookUp";
             this.pReviewLookUp.Size = new System.Drawing.Size(230, 35);
             this.pReviewLookUp.TabIndex = 3;
+            // 
+            // pbLoading
+            // 
+            this.pbLoading.Image = global::MAL_Reviwer_UI.Properties.Resources.loading;
+            this.pbLoading.Location = new System.Drawing.Point(199, 5);
+            this.pbLoading.Name = "pbLoading";
+            this.pbLoading.Size = new System.Drawing.Size(25, 24);
+            this.pbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLoading.TabIndex = 0;
+            this.pbLoading.TabStop = false;
+            this.pbLoading.Visible = false;
             // 
             // pbShow
             // 
@@ -105,6 +120,8 @@
             // 
             // pPreview
             // 
+            this.pPreview.Controls.Add(this.lTargetTitle);
+            this.pPreview.Controls.Add(this.pbTargetImage);
             this.pPreview.Location = new System.Drawing.Point(343, 12);
             this.pPreview.Name = "pPreview";
             this.pPreview.Size = new System.Drawing.Size(255, 339);
@@ -318,16 +335,24 @@
             this.ttSearchCard.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.ttSearchCard.ToolTipTitle = "Anime title";
             // 
-            // pbLoading
+            // pbTargetImage
             // 
-            this.pbLoading.Image = global::MAL_Reviwer_UI.Properties.Resources.loading;
-            this.pbLoading.Location = new System.Drawing.Point(199, 5);
-            this.pbLoading.Name = "pbLoading";
-            this.pbLoading.Size = new System.Drawing.Size(25, 24);
-            this.pbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLoading.TabIndex = 0;
-            this.pbLoading.TabStop = false;
-            this.pbLoading.Visible = false;
+            this.pbTargetImage.Location = new System.Drawing.Point(14, 19);
+            this.pbTargetImage.Name = "pbTargetImage";
+            this.pbTargetImage.Size = new System.Drawing.Size(128, 156);
+            this.pbTargetImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbTargetImage.TabIndex = 0;
+            this.pbTargetImage.TabStop = false;
+            // 
+            // lTargetTitle
+            // 
+            this.lTargetTitle.AutoSize = true;
+            this.lTargetTitle.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTargetTitle.Location = new System.Drawing.Point(10, 185);
+            this.lTargetTitle.Name = "lTargetTitle";
+            this.lTargetTitle.Size = new System.Drawing.Size(86, 19);
+            this.lTargetTitle.TabIndex = 5;
+            this.lTargetTitle.Text = "Anime title";
             // 
             // fNewReview
             // 
@@ -345,7 +370,10 @@
             this.Text = "New Review";
             this.pReviewLookUp.ResumeLayout(false);
             this.pReviewLookUp.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbShow)).EndInit();
+            this.pPreview.ResumeLayout(false);
+            this.pPreview.PerformLayout();
             this.pSetup.ResumeLayout(false);
             this.pSetup.PerformLayout();
             this.gbRating.ResumeLayout(false);
@@ -353,7 +381,7 @@
             this.gbRatingScale.ResumeLayout(false);
             this.gbRatingScale.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupScaleOther)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTargetImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -384,5 +412,7 @@
         private System.Windows.Forms.Panel pSearchCards;
         private System.Windows.Forms.ToolTip ttSearchCard;
         private System.Windows.Forms.PictureBox pbLoading;
+        private System.Windows.Forms.Label lTargetTitle;
+        private System.Windows.Forms.PictureBox pbTargetImage;
     }
 }
