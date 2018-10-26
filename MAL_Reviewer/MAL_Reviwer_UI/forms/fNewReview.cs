@@ -15,7 +15,6 @@ namespace MAL_Reviwer_UI.forms
 {
     public partial class fNewReview : Form
     {
-        // TODO - auto refresh search when radiobuttons update
         public fNewReview()
         {
             InitializeComponent();
@@ -39,6 +38,7 @@ namespace MAL_Reviwer_UI.forms
             lTitle.Text = $"{ (rbAnime.Checked ? rbAnime.Text : rbManga.Text) } title";
             ttSearchCard.ToolTipTitle = lTitle.Text;
             pbShow.Image = (rbAnime.Checked ? Properties.Resources.icon_anime : Properties.Resources.icon_manga);
+            tbSearch_TextChanged(this, EventArgs.Empty);
         }
 
         #endregion

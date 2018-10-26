@@ -127,7 +127,7 @@
             this.pSearchCards.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pSearchCards.Location = new System.Drawing.Point(12, 75);
             this.pSearchCards.Name = "pSearchCards";
-            this.pSearchCards.Size = new System.Drawing.Size(230, 101);
+            this.pSearchCards.Size = new System.Drawing.Size(230, 10);
             this.pSearchCards.TabIndex = 0;
             this.pSearchCards.Visible = false;
             // 
@@ -312,6 +312,7 @@
             // ttSearchCard
             // 
             this.ttSearchCard.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.ttSearchCard.ToolTipTitle = "Anime title";
             // 
             // fNewReview
             // 
