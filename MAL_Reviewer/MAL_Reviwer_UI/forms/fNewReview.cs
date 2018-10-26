@@ -10,11 +10,13 @@ using System.Windows.Forms;
 using MAL_Reviwer_UI.user_controls;
 using MAL_Reviewer_API;
 using MAL_Reviewer_API.models;
+using System.Threading;
 
 namespace MAL_Reviwer_UI.forms
 {
     public partial class fNewReview : Form
     {
+        private bool ready = true;
         public fNewReview()
         {
             InitializeComponent();
@@ -48,12 +50,19 @@ namespace MAL_Reviwer_UI.forms
         // TODO - Add loading effect to the panel
         private async void tbSearch_TextChanged(object sender, EventArgs e)
         {
+            if (!this.ready)
+                return;
+
             string
                 searchTitle = tbSearch.Text.Trim(),
                 searchType = rbAnime.Checked ? rbAnime.Text.ToLower() : rbManga.Text.ToLower();
 
-            if(searchTitle.Length > 2)
+            if (searchTitle.Length > 2)
             {
+                pbLoading.Visible = true;
+                pSearchCards.Visible = false;
+                this.ready = false;
+                 
                 SearchModel searchModel = await MALHelper.Search(searchType, searchTitle);
                 pSearchCards.Controls.Clear();
 
@@ -70,7 +79,9 @@ namespace MAL_Reviwer_UI.forms
                     pSearchCards.Controls.Add(searchCard);
                 }
 
+                pbLoading.Visible = false;
                 pSearchCards.Visible = true;
+                this.ready = true;
             }
             else
             {

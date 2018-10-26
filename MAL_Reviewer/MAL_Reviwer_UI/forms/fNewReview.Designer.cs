@@ -53,12 +53,14 @@
             this.rbManga = new System.Windows.Forms.RadioButton();
             this.lTitle = new System.Windows.Forms.Label();
             this.ttSearchCard = new System.Windows.Forms.ToolTip(this.components);
+            this.pbLoading = new System.Windows.Forms.PictureBox();
             this.pReviewLookUp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbShow)).BeginInit();
             this.pSetup.SuspendLayout();
             this.gbRating.SuspendLayout();
             this.gbRatingScale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupScaleOther)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
             this.SuspendLayout();
             // 
             // pSectionSeparator
@@ -72,6 +74,7 @@
             // pReviewLookUp
             // 
             this.pReviewLookUp.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pReviewLookUp.Controls.Add(this.pbLoading);
             this.pReviewLookUp.Controls.Add(this.pbShow);
             this.pReviewLookUp.Controls.Add(this.tbSearch);
             this.pReviewLookUp.Location = new System.Drawing.Point(12, 40);
@@ -128,7 +131,7 @@
             this.pSearchCards.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pSearchCards.Location = new System.Drawing.Point(12, 75);
             this.pSearchCards.Name = "pSearchCards";
-            this.pSearchCards.Size = new System.Drawing.Size(230, 10);
+            this.pSearchCards.Size = new System.Drawing.Size(230, 106);
             this.pSearchCards.TabIndex = 0;
             this.pSearchCards.Visible = false;
             // 
@@ -315,6 +318,17 @@
             this.ttSearchCard.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.ttSearchCard.ToolTipTitle = "Anime title";
             // 
+            // pbLoading
+            // 
+            this.pbLoading.Image = global::MAL_Reviwer_UI.Properties.Resources.loading;
+            this.pbLoading.Location = new System.Drawing.Point(199, 5);
+            this.pbLoading.Name = "pbLoading";
+            this.pbLoading.Size = new System.Drawing.Size(25, 24);
+            this.pbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLoading.TabIndex = 0;
+            this.pbLoading.TabStop = false;
+            this.pbLoading.Visible = false;
+            // 
             // fNewReview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -339,6 +353,7 @@
             this.gbRatingScale.ResumeLayout(false);
             this.gbRatingScale.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupScaleOther)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -368,5 +383,6 @@
         private System.Windows.Forms.Panel pRatingSeparator;
         private System.Windows.Forms.Panel pSearchCards;
         private System.Windows.Forms.ToolTip ttSearchCard;
+        private System.Windows.Forms.PictureBox pbLoading;
     }
 }
