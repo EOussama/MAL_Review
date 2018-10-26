@@ -47,45 +47,52 @@ namespace MAL_Reviwer_UI.forms
 
         #region Target Search
 
-        // TODO - Add loading effect to the panel
+        // TODO - Add usercontrols in another thread.
         private async void tbSearch_TextChanged(object sender, EventArgs e)
         {
-            if (!this.ready)
-                return;
-
-            string
-                searchTitle = tbSearch.Text.Trim(),
-                searchType = rbAnime.Checked ? rbAnime.Text.ToLower() : rbManga.Text.ToLower();
-
-            if (searchTitle.Length > 2)
+            try
             {
-                pbLoading.Visible = true;
-                pSearchCards.Visible = false;
-                this.ready = false;
-                 
-                SearchModel searchModel = await MALHelper.Search(searchType, searchTitle);
-                pSearchCards.Controls.Clear();
+                if (!this.ready)
+                    return;
 
-                foreach (SearchResultsModel resultsModel in searchModel.results)
+                string
+                    searchTitle = tbSearch.Text.Trim(),
+                    searchType = rbAnime.Checked ? rbAnime.Text.ToLower() : rbManga.Text.ToLower();
+
+                if (searchTitle.Length > 2)
                 {
-                    ucTargetSearchCard searchCard = new ucTargetSearchCard(resultsModel.mal_id, resultsModel.title, resultsModel.type, resultsModel.image_url);
-                    int searchCardCount = pSearchCards.Controls.Count;
+                    pbLoading.Visible = true;
+                    pSearchCards.Visible = false;
+                    this.ready = false;
 
-                    if (searchCardCount < 5)
-                        pSearchCards.Height = searchCard.Height * searchCardCount;
+                    SearchModel searchModel = await MALHelper.Search(searchType, searchTitle);
+                    pSearchCards.Controls.Clear();
 
-                    searchCard.Top = searchCard.Height * searchCardCount;
-                    ttSearchCard.SetToolTip(searchCard, resultsModel.title);
-                    pSearchCards.Controls.Add(searchCard);
+                    foreach (SearchResultsModel resultsModel in searchModel.results)
+                    {
+                        ucTargetSearchCard searchCard = new ucTargetSearchCard(resultsModel.mal_id, resultsModel.title, resultsModel.type, resultsModel.image_url);
+                        int searchCardCount = pSearchCards.Controls.Count;
+
+                        if (searchCardCount < 5)
+                            pSearchCards.Height = searchCard.Height * searchCardCount;
+
+                        searchCard.Top = searchCard.Height * searchCardCount;
+                        ttSearchCard.SetToolTip(searchCard, resultsModel.title);
+                        pSearchCards.Controls.Add(searchCard);
+                    }
+
+                    pbLoading.Visible = false;
+                    pSearchCards.Visible = true;
+                    this.ready = true;
                 }
-
-                pbLoading.Visible = false;
-                pSearchCards.Visible = true;
-                this.ready = true;
+                else
+                {
+                    pSearchCards.Visible = false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                pSearchCards.Visible = false;
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
