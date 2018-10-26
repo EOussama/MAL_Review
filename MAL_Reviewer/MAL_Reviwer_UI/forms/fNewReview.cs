@@ -108,6 +108,12 @@ namespace MAL_Reviwer_UI.forms
                 PreviewManga(targetId);
         }
 
+        private void tbSearch_Enter(object sender, EventArgs e)
+        {
+            if (tbSearch.Text.Trim().Length > 2 && pSearchCards.Controls.Count > 0 && !pSearchCards.Visible)
+                pSearchCards.Visible = true;
+        }
+
         #endregion
 
         #region Preview section update
@@ -136,6 +142,10 @@ namespace MAL_Reviwer_UI.forms
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            finally
+            {
+                pSearchCards.Visible = false;
+            }
         }
 
         private async void PreviewManga(int mangaId)
@@ -162,6 +172,10 @@ namespace MAL_Reviwer_UI.forms
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            finally
+            {
+                pSearchCards.Visible = false;
             }
         }
 

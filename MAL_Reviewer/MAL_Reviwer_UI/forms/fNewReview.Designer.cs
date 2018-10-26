@@ -131,6 +131,7 @@
             this.tbSearch.Size = new System.Drawing.Size(188, 20);
             this.tbSearch.TabIndex = 0;
             this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
+            this.tbSearch.Enter += new System.EventHandler(this.tbSearch_Enter);
             // 
             // pPreview
             // 
