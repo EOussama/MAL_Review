@@ -38,6 +38,7 @@ namespace MAL_Reviwer_UI.forms
         private void RbAnime_CheckedChanged(object sender, EventArgs e)
         {
             lTitle.Text = $"{ (rbAnime.Checked ? rbAnime.Text : rbManga.Text) } title";
+            lPreview.Text = $"{ (rbAnime.Checked ? rbAnime.Text : rbManga.Text) } preview";
             ttSearchCard.ToolTipTitle = lTitle.Text;
             pbShow.Image = (rbAnime.Checked ? Properties.Resources.icon_anime : Properties.Resources.icon_manga);
             tbSearch_TextChanged(this, EventArgs.Empty);
@@ -145,6 +146,7 @@ namespace MAL_Reviwer_UI.forms
             finally
             {
                 pSearchCards.Visible = false;
+                pPreview.Visible = true;
             }
         }
 
@@ -176,6 +178,7 @@ namespace MAL_Reviwer_UI.forms
             finally
             {
                 pSearchCards.Visible = false;
+                pPreview.Visible = true;
             }
         }
 
