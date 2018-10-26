@@ -125,6 +125,7 @@
             // pSearchCards
             // 
             this.pSearchCards.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pSearchCards.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pSearchCards.Location = new System.Drawing.Point(12, 75);
             this.pSearchCards.Name = "pSearchCards";
             this.pSearchCards.Size = new System.Drawing.Size(230, 10);

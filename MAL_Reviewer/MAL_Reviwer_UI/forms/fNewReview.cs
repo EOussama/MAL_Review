@@ -45,6 +45,7 @@ namespace MAL_Reviwer_UI.forms
 
         #region Target Search
 
+        // TODO - Add loading effect to the panel
         private async void tbSearch_TextChanged(object sender, EventArgs e)
         {
             string

@@ -41,7 +41,7 @@
             this.pbTargetImage.Location = new System.Drawing.Point(3, 3);
             this.pbTargetImage.Name = "pbTargetImage";
             this.pbTargetImage.Size = new System.Drawing.Size(48, 48);
-            this.pbTargetImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbTargetImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbTargetImage.TabIndex = 0;
             this.pbTargetImage.TabStop = false;
             // 
