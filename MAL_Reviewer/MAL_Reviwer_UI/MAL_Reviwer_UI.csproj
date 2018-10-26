@@ -69,6 +69,12 @@
     <Compile Include="user_controls\ucReviewCard.Designer.cs">
       <DependentUpon>ucReviewCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="user_controls\ucTargetSearchCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="user_controls\ucTargetSearchCard.Designer.cs">
+      <DependentUpon>ucTargetSearchCard.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="forms\fNewReview.resx">
       <DependentUpon>fNewReview.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,6 +93,9 @@
     </Compile>
     <EmbeddedResource Include="user_controls\ucReviewCard.resx">
       <DependentUpon>ucReviewCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_controls\ucTargetSearchCard.resx">
+      <DependentUpon>ucTargetSearchCard.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

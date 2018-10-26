@@ -35,21 +35,22 @@
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.pPreview = new System.Windows.Forms.Panel();
             this.pSetup = new System.Windows.Forms.Panel();
+            this.pRatingSeparator = new System.Windows.Forms.Panel();
+            this.pTitleSeparator = new System.Windows.Forms.Panel();
+            this.gbRating = new System.Windows.Forms.GroupBox();
+            this.rbDecimalNo = new System.Windows.Forms.RadioButton();
+            this.rbDecimalYes = new System.Windows.Forms.RadioButton();
+            this.lRatingDecimal = new System.Windows.Forms.Label();
+            this.gbRatingScale = new System.Windows.Forms.GroupBox();
+            this.nupScaleOther = new System.Windows.Forms.NumericUpDown();
+            this.rbScaleOther = new System.Windows.Forms.RadioButton();
+            this.rbScale100 = new System.Windows.Forms.RadioButton();
+            this.rbScale10 = new System.Windows.Forms.RadioButton();
+            this.rbScale5 = new System.Windows.Forms.RadioButton();
             this.rbAnime = new System.Windows.Forms.RadioButton();
             this.rbManga = new System.Windows.Forms.RadioButton();
             this.lTitle = new System.Windows.Forms.Label();
-            this.gbRating = new System.Windows.Forms.GroupBox();
-            this.pTitleSeparator = new System.Windows.Forms.Panel();
-            this.gbRatingScale = new System.Windows.Forms.GroupBox();
-            this.rbScale5 = new System.Windows.Forms.RadioButton();
-            this.rbScale10 = new System.Windows.Forms.RadioButton();
-            this.rbScale100 = new System.Windows.Forms.RadioButton();
-            this.rbScaleOther = new System.Windows.Forms.RadioButton();
-            this.nupScaleOther = new System.Windows.Forms.NumericUpDown();
-            this.lRatingDecimal = new System.Windows.Forms.Label();
-            this.rbDecimalYes = new System.Windows.Forms.RadioButton();
-            this.rbDecimalNo = new System.Windows.Forms.RadioButton();
-            this.pRatingSeparator = new System.Windows.Forms.Panel();
+            this.pSearchCards = new System.Windows.Forms.Panel();
             this.pReviewLookUp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbShow)).BeginInit();
             this.pSetup.SuspendLayout();
@@ -95,6 +96,7 @@
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.Size = new System.Drawing.Size(188, 20);
             this.tbSearch.TabIndex = 0;
+            this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
             // 
             // pPreview
             // 
@@ -105,6 +107,7 @@
             // 
             // pSetup
             // 
+            this.pSetup.Controls.Add(this.pSearchCards);
             this.pSetup.Controls.Add(this.pRatingSeparator);
             this.pSetup.Controls.Add(this.pTitleSeparator);
             this.pSetup.Controls.Add(this.gbRating);
@@ -116,6 +119,152 @@
             this.pSetup.Name = "pSetup";
             this.pSetup.Size = new System.Drawing.Size(255, 339);
             this.pSetup.TabIndex = 5;
+            // 
+            // pRatingSeparator
+            // 
+            this.pRatingSeparator.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pRatingSeparator.Location = new System.Drawing.Point(12, 275);
+            this.pRatingSeparator.Name = "pRatingSeparator";
+            this.pRatingSeparator.Size = new System.Drawing.Size(231, 6);
+            this.pRatingSeparator.TabIndex = 2;
+            // 
+            // pTitleSeparator
+            // 
+            this.pTitleSeparator.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pTitleSeparator.Location = new System.Drawing.Point(12, 88);
+            this.pTitleSeparator.Name = "pTitleSeparator";
+            this.pTitleSeparator.Size = new System.Drawing.Size(231, 6);
+            this.pTitleSeparator.TabIndex = 1;
+            // 
+            // gbRating
+            // 
+            this.gbRating.Controls.Add(this.rbDecimalNo);
+            this.gbRating.Controls.Add(this.rbDecimalYes);
+            this.gbRating.Controls.Add(this.lRatingDecimal);
+            this.gbRating.Controls.Add(this.gbRatingScale);
+            this.gbRating.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbRating.Location = new System.Drawing.Point(12, 103);
+            this.gbRating.Name = "gbRating";
+            this.gbRating.Size = new System.Drawing.Size(231, 159);
+            this.gbRating.TabIndex = 0;
+            this.gbRating.TabStop = false;
+            this.gbRating.Text = "Rating settings";
+            // 
+            // rbDecimalNo
+            // 
+            this.rbDecimalNo.AutoSize = true;
+            this.rbDecimalNo.Checked = true;
+            this.rbDecimalNo.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbDecimalNo.Location = new System.Drawing.Point(179, 129);
+            this.rbDecimalNo.Name = "rbDecimalNo";
+            this.rbDecimalNo.Size = new System.Drawing.Size(42, 20);
+            this.rbDecimalNo.TabIndex = 7;
+            this.rbDecimalNo.TabStop = true;
+            this.rbDecimalNo.Text = "No";
+            this.rbDecimalNo.UseVisualStyleBackColor = true;
+            // 
+            // rbDecimalYes
+            // 
+            this.rbDecimalYes.AutoSize = true;
+            this.rbDecimalYes.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbDecimalYes.Location = new System.Drawing.Point(127, 129);
+            this.rbDecimalYes.Name = "rbDecimalYes";
+            this.rbDecimalYes.Size = new System.Drawing.Size(46, 20);
+            this.rbDecimalYes.TabIndex = 6;
+            this.rbDecimalYes.Text = "Yes";
+            this.rbDecimalYes.UseVisualStyleBackColor = true;
+            // 
+            // lRatingDecimal
+            // 
+            this.lRatingDecimal.AutoSize = true;
+            this.lRatingDecimal.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lRatingDecimal.Location = new System.Drawing.Point(6, 128);
+            this.lRatingDecimal.Name = "lRatingDecimal";
+            this.lRatingDecimal.Size = new System.Drawing.Size(115, 19);
+            this.lRatingDecimal.TabIndex = 5;
+            this.lRatingDecimal.Text = "Decimal rating";
+            // 
+            // gbRatingScale
+            // 
+            this.gbRatingScale.Controls.Add(this.nupScaleOther);
+            this.gbRatingScale.Controls.Add(this.rbScaleOther);
+            this.gbRatingScale.Controls.Add(this.rbScale100);
+            this.gbRatingScale.Controls.Add(this.rbScale10);
+            this.gbRatingScale.Controls.Add(this.rbScale5);
+            this.gbRatingScale.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbRatingScale.Location = new System.Drawing.Point(9, 26);
+            this.gbRatingScale.Name = "gbRatingScale";
+            this.gbRatingScale.Size = new System.Drawing.Size(212, 93);
+            this.gbRatingScale.TabIndex = 1;
+            this.gbRatingScale.TabStop = false;
+            this.gbRatingScale.Text = "Rating scale";
+            // 
+            // nupScaleOther
+            // 
+            this.nupScaleOther.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.nupScaleOther.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nupScaleOther.Enabled = false;
+            this.nupScaleOther.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nupScaleOther.Location = new System.Drawing.Point(83, 57);
+            this.nupScaleOther.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.nupScaleOther.Name = "nupScaleOther";
+            this.nupScaleOther.Size = new System.Drawing.Size(44, 23);
+            this.nupScaleOther.TabIndex = 0;
+            this.nupScaleOther.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            // 
+            // rbScaleOther
+            // 
+            this.rbScaleOther.AutoSize = true;
+            this.rbScaleOther.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbScaleOther.Location = new System.Drawing.Point(15, 58);
+            this.rbScaleOther.Name = "rbScaleOther";
+            this.rbScaleOther.Size = new System.Drawing.Size(58, 20);
+            this.rbScaleOther.TabIndex = 8;
+            this.rbScaleOther.Text = "Other";
+            this.rbScaleOther.UseVisualStyleBackColor = true;
+            // 
+            // rbScale100
+            // 
+            this.rbScale100.AutoSize = true;
+            this.rbScale100.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbScale100.Location = new System.Drawing.Point(155, 26);
+            this.rbScale100.Name = "rbScale100";
+            this.rbScale100.Size = new System.Drawing.Size(44, 20);
+            this.rbScale100.TabIndex = 7;
+            this.rbScale100.Text = "100";
+            this.rbScale100.UseVisualStyleBackColor = true;
+            // 
+            // rbScale10
+            // 
+            this.rbScale10.AutoSize = true;
+            this.rbScale10.Checked = true;
+            this.rbScale10.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbScale10.Location = new System.Drawing.Point(83, 26);
+            this.rbScale10.Name = "rbScale10";
+            this.rbScale10.Size = new System.Drawing.Size(37, 20);
+            this.rbScale10.TabIndex = 6;
+            this.rbScale10.TabStop = true;
+            this.rbScale10.Text = "10";
+            this.rbScale10.UseVisualStyleBackColor = true;
+            // 
+            // rbScale5
+            // 
+            this.rbScale5.AutoSize = true;
+            this.rbScale5.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbScale5.Location = new System.Drawing.Point(15, 26);
+            this.rbScale5.Name = "rbScale5";
+            this.rbScale5.Size = new System.Drawing.Size(33, 20);
+            this.rbScale5.TabIndex = 5;
+            this.rbScale5.Text = "5";
+            this.rbScale5.UseVisualStyleBackColor = true;
             // 
             // rbAnime
             // 
@@ -149,151 +298,16 @@
             this.lTitle.TabIndex = 0;
             this.lTitle.Text = "Anime title";
             // 
-            // gbRating
+            // pSearchCards
             // 
-            this.gbRating.Controls.Add(this.rbDecimalNo);
-            this.gbRating.Controls.Add(this.rbDecimalYes);
-            this.gbRating.Controls.Add(this.lRatingDecimal);
-            this.gbRating.Controls.Add(this.gbRatingScale);
-            this.gbRating.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbRating.Location = new System.Drawing.Point(12, 103);
-            this.gbRating.Name = "gbRating";
-            this.gbRating.Size = new System.Drawing.Size(231, 159);
-            this.gbRating.TabIndex = 0;
-            this.gbRating.TabStop = false;
-            this.gbRating.Text = "Rating settings";
-            // 
-            // pTitleSeparator
-            // 
-            this.pTitleSeparator.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pTitleSeparator.Location = new System.Drawing.Point(12, 88);
-            this.pTitleSeparator.Name = "pTitleSeparator";
-            this.pTitleSeparator.Size = new System.Drawing.Size(231, 6);
-            this.pTitleSeparator.TabIndex = 1;
-            // 
-            // gbRatingScale
-            // 
-            this.gbRatingScale.Controls.Add(this.nupScaleOther);
-            this.gbRatingScale.Controls.Add(this.rbScaleOther);
-            this.gbRatingScale.Controls.Add(this.rbScale100);
-            this.gbRatingScale.Controls.Add(this.rbScale10);
-            this.gbRatingScale.Controls.Add(this.rbScale5);
-            this.gbRatingScale.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbRatingScale.Location = new System.Drawing.Point(9, 26);
-            this.gbRatingScale.Name = "gbRatingScale";
-            this.gbRatingScale.Size = new System.Drawing.Size(212, 93);
-            this.gbRatingScale.TabIndex = 1;
-            this.gbRatingScale.TabStop = false;
-            this.gbRatingScale.Text = "Rating scale";
-            // 
-            // rbScale5
-            // 
-            this.rbScale5.AutoSize = true;
-            this.rbScale5.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbScale5.Location = new System.Drawing.Point(15, 26);
-            this.rbScale5.Name = "rbScale5";
-            this.rbScale5.Size = new System.Drawing.Size(33, 20);
-            this.rbScale5.TabIndex = 5;
-            this.rbScale5.Text = "5";
-            this.rbScale5.UseVisualStyleBackColor = true;
-            // 
-            // rbScale10
-            // 
-            this.rbScale10.AutoSize = true;
-            this.rbScale10.Checked = true;
-            this.rbScale10.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbScale10.Location = new System.Drawing.Point(83, 26);
-            this.rbScale10.Name = "rbScale10";
-            this.rbScale10.Size = new System.Drawing.Size(37, 20);
-            this.rbScale10.TabIndex = 6;
-            this.rbScale10.TabStop = true;
-            this.rbScale10.Text = "10";
-            this.rbScale10.UseVisualStyleBackColor = true;
-            // 
-            // rbScale100
-            // 
-            this.rbScale100.AutoSize = true;
-            this.rbScale100.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbScale100.Location = new System.Drawing.Point(155, 26);
-            this.rbScale100.Name = "rbScale100";
-            this.rbScale100.Size = new System.Drawing.Size(44, 20);
-            this.rbScale100.TabIndex = 7;
-            this.rbScale100.Text = "100";
-            this.rbScale100.UseVisualStyleBackColor = true;
-            // 
-            // rbScaleOther
-            // 
-            this.rbScaleOther.AutoSize = true;
-            this.rbScaleOther.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbScaleOther.Location = new System.Drawing.Point(15, 58);
-            this.rbScaleOther.Name = "rbScaleOther";
-            this.rbScaleOther.Size = new System.Drawing.Size(58, 20);
-            this.rbScaleOther.TabIndex = 8;
-            this.rbScaleOther.Text = "Other";
-            this.rbScaleOther.UseVisualStyleBackColor = true;
-            // 
-            // nupScaleOther
-            // 
-            this.nupScaleOther.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.nupScaleOther.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nupScaleOther.Enabled = false;
-            this.nupScaleOther.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nupScaleOther.Location = new System.Drawing.Point(83, 57);
-            this.nupScaleOther.Minimum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.nupScaleOther.Name = "nupScaleOther";
-            this.nupScaleOther.Size = new System.Drawing.Size(44, 23);
-            this.nupScaleOther.TabIndex = 0;
-            this.nupScaleOther.Value = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            // 
-            // lRatingDecimal
-            // 
-            this.lRatingDecimal.AutoSize = true;
-            this.lRatingDecimal.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lRatingDecimal.Location = new System.Drawing.Point(6, 128);
-            this.lRatingDecimal.Name = "lRatingDecimal";
-            this.lRatingDecimal.Size = new System.Drawing.Size(115, 19);
-            this.lRatingDecimal.TabIndex = 5;
-            this.lRatingDecimal.Text = "Decimal rating";
-            // 
-            // rbDecimalYes
-            // 
-            this.rbDecimalYes.AutoSize = true;
-            this.rbDecimalYes.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDecimalYes.Location = new System.Drawing.Point(127, 129);
-            this.rbDecimalYes.Name = "rbDecimalYes";
-            this.rbDecimalYes.Size = new System.Drawing.Size(46, 20);
-            this.rbDecimalYes.TabIndex = 6;
-            this.rbDecimalYes.Text = "Yes";
-            this.rbDecimalYes.UseVisualStyleBackColor = true;
-            // 
-            // rbDecimalNo
-            // 
-            this.rbDecimalNo.AutoSize = true;
-            this.rbDecimalNo.Checked = true;
-            this.rbDecimalNo.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDecimalNo.Location = new System.Drawing.Point(179, 129);
-            this.rbDecimalNo.Name = "rbDecimalNo";
-            this.rbDecimalNo.Size = new System.Drawing.Size(42, 20);
-            this.rbDecimalNo.TabIndex = 7;
-            this.rbDecimalNo.TabStop = true;
-            this.rbDecimalNo.Text = "No";
-            this.rbDecimalNo.UseVisualStyleBackColor = true;
-            // 
-            // pRatingSeparator
-            // 
-            this.pRatingSeparator.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pRatingSeparator.Location = new System.Drawing.Point(12, 275);
-            this.pRatingSeparator.Name = "pRatingSeparator";
-            this.pRatingSeparator.Size = new System.Drawing.Size(231, 6);
-            this.pRatingSeparator.TabIndex = 2;
+            this.pSearchCards.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pSearchCards.Location = new System.Drawing.Point(12, 75);
+            this.pSearchCards.Name = "pSearchCards";
+            this.pSearchCards.Size = new System.Drawing.Size(230, 101);
+            this.pSearchCards.TabIndex = 0;
+            this.pSearchCards.Visible = false;
+            this.pSearchCards.HorizontalScroll.Maximum = 0;
+            this.pSearchCards.AutoScroll = true;
             // 
             // fNewReview
             // 
@@ -346,5 +360,6 @@
         private System.Windows.Forms.RadioButton rbDecimalYes;
         private System.Windows.Forms.Label lRatingDecimal;
         private System.Windows.Forms.Panel pRatingSeparator;
+        private System.Windows.Forms.Panel pSearchCards;
     }
 }
