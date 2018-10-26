@@ -16,7 +16,7 @@ namespace MAL_Reviwer_UI.forms
 {
     public partial class fNewReview : Form
     {
-        private bool ready = true;
+        private bool _ready = true;
         public fNewReview()
         {
             InitializeComponent();
@@ -52,7 +52,7 @@ namespace MAL_Reviwer_UI.forms
         {
             try
             {
-                if (!this.ready)
+                if (!this._ready)
                     return;
 
                 string
@@ -63,27 +63,32 @@ namespace MAL_Reviwer_UI.forms
                 {
                     pbLoading.Visible = true;
                     pSearchCards.Visible = false;
-                    this.ready = false;
+                    this._ready = false;
 
                     SearchModel searchModel = await MALHelper.Search(searchType, searchTitle);
                     pSearchCards.Controls.Clear();
 
-                    foreach (SearchResultsModel resultsModel in searchModel.results)
+                    if (searchModel != null)
                     {
-                        ucTargetSearchCard searchCard = new ucTargetSearchCard(resultsModel.mal_id, resultsModel.title, resultsModel.type, resultsModel.image_url);
-                        int searchCardCount = pSearchCards.Controls.Count;
+                        foreach (SearchResultsModel resultsModel in searchModel.results)
+                        {
+                            ucTargetSearchCard searchCard = new ucTargetSearchCard(resultsModel.mal_id, resultsModel.title, resultsModel.type, resultsModel.image_url);
+                            int searchCardCount = pSearchCards.Controls.Count;
 
-                        if (searchCardCount < 5)
-                            pSearchCards.Height = searchCard.Height * searchCardCount;
+                            if (searchCardCount < 5)
+                                pSearchCards.Height = searchCard.Height * searchCardCount;
 
-                        searchCard.Top = searchCard.Height * searchCardCount;
-                        ttSearchCard.SetToolTip(searchCard, resultsModel.title);
-                        pSearchCards.Controls.Add(searchCard);
+                            searchCard.CardMouseClickEvent += SearchCard_CardMouseClickEvent;
+                            searchCard.Top = searchCard.Height * searchCardCount;
+                            ttSearchCard.SetToolTip(searchCard, resultsModel.title);
+                            pSearchCards.Controls.Add(searchCard);
+                        }
+
+                        pSearchCards.Visible = true;
                     }
 
                     pbLoading.Visible = false;
-                    pSearchCards.Visible = true;
-                    this.ready = true;
+                    this._ready = true;
                 }
                 else
                 {
@@ -94,6 +99,11 @@ namespace MAL_Reviwer_UI.forms
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void SearchCard_CardMouseClickEvent(object sender, int targetId)
+        {
+            MessageBox.Show("ID: " + targetId);
         }
 
         #endregion
