@@ -37,7 +37,7 @@
             // pbTargetImage
             // 
             this.pbTargetImage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbTargetImage.Image = global::MAL_Reviwer_UI.Properties.Resources.logo;
+            this.pbTargetImage.Image = global::MAL_Reviwer_UI.Properties.Resources.loading;
             this.pbTargetImage.Location = new System.Drawing.Point(3, 3);
             this.pbTargetImage.Name = "pbTargetImage";
             this.pbTargetImage.Size = new System.Drawing.Size(48, 48);
