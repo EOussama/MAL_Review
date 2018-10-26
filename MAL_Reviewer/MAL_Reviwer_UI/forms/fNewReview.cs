@@ -155,7 +155,7 @@ namespace MAL_Reviwer_UI.forms
                 lTargetVolumesEpisodes.Text = mangaModel.volumes != null ? mangaModel.volumes.ToString() : "?";
                 lTargetChapters.Text = mangaModel.chapters != null ? mangaModel.chapters.ToString() : "?";
                 lTargetTitle.Text = mangaModel.title.Length > 55 ? mangaModel.title.Substring(0, 55) + "..." : mangaModel.title;
-                lTargetSynopsis.Text = animeModel.synopsis.Length > 215 ? animeModel.synopsis.Substring(0, 215) + "..." : animeModel.synopsis;
+                lTargetSynopsis.Text = mangaModel.synopsis.Length > 215 ? mangaModel.synopsis.Substring(0, 215) + "..." : mangaModel.synopsis;
                 pbTargetImage.Load(mangaModel.image_url);
                 bMAL.Tag = mangaModel.url;
             }
