@@ -118,11 +118,17 @@ namespace MAL_Reviwer_UI.forms
             {
                 AnimeModel animeModel = await MALHelper.GetAnime(animeId);
 
+                lChapters.Visible = false;
+                lTargetChapters.Visible = false;
+                lVolumesEpisodes.Text = "Episodes";
+
                 lTargetScore.Text = animeModel.score.ToString();
                 lTargetRank.Text = animeModel.rank.ToString();
                 lTargetType.Text = animeModel.type;
+                lTargetStatus.Text = animeModel.airing ? "Airing" : "Finished";
+                lTargetVolumesEpisodes.Text = animeModel.episodes != null ? animeModel.episodes.ToString() : "?";
                 lTargetTitle.Text = animeModel.title.Length > 55 ? animeModel.title.Substring(0, 55) + "..." : animeModel.title;
-                lTargetSynopsis.Text = animeModel.synopsis;
+                lTargetSynopsis.Text = animeModel.synopsis.Length > 215 ? animeModel.synopsis.Substring(0, 215) + "..." : animeModel.synopsis;
                 pbTargetImage.Load(animeModel.image_url);
                 bMAL.Tag = animeModel.url;
             }
@@ -138,7 +144,20 @@ namespace MAL_Reviwer_UI.forms
             {
                 MangaModel mangaModel = await MALHelper.GetManga(mangaId);
 
+                lChapters.Visible = true;
+                lTargetChapters.Visible = true;
+                lVolumesEpisodes.Text = "Volumes";
 
+                lTargetScore.Text = mangaModel.score.ToString();
+                lTargetRank.Text = mangaModel.rank.ToString();
+                lTargetType.Text = mangaModel.type;
+                lTargetStatus.Text = mangaModel.publishing ? "Publishing" : "Finished";
+                lTargetVolumesEpisodes.Text = mangaModel.volumes != null ? mangaModel.volumes.ToString() : "?";
+                lTargetChapters.Text = mangaModel.chapters != null ? mangaModel.chapters.ToString() : "?";
+                lTargetTitle.Text = mangaModel.title.Length > 55 ? mangaModel.title.Substring(0, 55) + "..." : mangaModel.title;
+                lTargetSynopsis.Text = animeModel.synopsis.Length > 215 ? animeModel.synopsis.Substring(0, 215) + "..." : animeModel.synopsis;
+                pbTargetImage.Load(mangaModel.image_url);
+                bMAL.Tag = mangaModel.url;
             }
             catch (Exception ex)
             {

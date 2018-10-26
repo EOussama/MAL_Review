@@ -64,6 +64,12 @@
             this.lTitle = new System.Windows.Forms.Label();
             this.ttSearchCard = new System.Windows.Forms.ToolTip(this.components);
             this.bMAL = new System.Windows.Forms.Button();
+            this.lStatus = new System.Windows.Forms.Label();
+            this.lTargetStatus = new System.Windows.Forms.Label();
+            this.lVolumesEpisodes = new System.Windows.Forms.Label();
+            this.lTargetVolumesEpisodes = new System.Windows.Forms.Label();
+            this.lChapters = new System.Windows.Forms.Label();
+            this.lTargetChapters = new System.Windows.Forms.Label();
             this.pReviewLookUp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbShow)).BeginInit();
@@ -128,6 +134,12 @@
             // 
             // pPreview
             // 
+            this.pPreview.Controls.Add(this.lChapters);
+            this.pPreview.Controls.Add(this.lTargetChapters);
+            this.pPreview.Controls.Add(this.lVolumesEpisodes);
+            this.pPreview.Controls.Add(this.lTargetVolumesEpisodes);
+            this.pPreview.Controls.Add(this.lStatus);
+            this.pPreview.Controls.Add(this.lTargetStatus);
             this.pPreview.Controls.Add(this.bMAL);
             this.pPreview.Controls.Add(this.lType);
             this.pPreview.Controls.Add(this.lRank);
@@ -146,7 +158,7 @@
             // lType
             // 
             this.lType.AutoSize = true;
-            this.lType.Location = new System.Drawing.Point(144, 74);
+            this.lType.Location = new System.Drawing.Point(144, 59);
             this.lType.Name = "lType";
             this.lType.Size = new System.Drawing.Size(31, 13);
             this.lType.TabIndex = 12;
@@ -155,7 +167,7 @@
             // lRank
             // 
             this.lRank.AutoSize = true;
-            this.lRank.Location = new System.Drawing.Point(144, 49);
+            this.lRank.Location = new System.Drawing.Point(144, 41);
             this.lRank.Name = "lRank";
             this.lRank.Size = new System.Drawing.Size(33, 13);
             this.lRank.TabIndex = 11;
@@ -174,7 +186,7 @@
             // 
             this.lTargetType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lTargetType.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTargetType.Location = new System.Drawing.Point(188, 74);
+            this.lTargetType.Location = new System.Drawing.Point(190, 59);
             this.lTargetType.Name = "lTargetType";
             this.lTargetType.Size = new System.Drawing.Size(58, 13);
             this.lTargetType.TabIndex = 9;
@@ -185,7 +197,7 @@
             // 
             this.lTargetRank.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lTargetRank.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTargetRank.Location = new System.Drawing.Point(190, 47);
+            this.lTargetRank.Location = new System.Drawing.Point(192, 39);
             this.lTargetRank.Name = "lTargetRank";
             this.lTargetRank.Size = new System.Drawing.Size(56, 16);
             this.lTargetRank.TabIndex = 8;
@@ -196,7 +208,7 @@
             // 
             this.lTargetScore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lTargetScore.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTargetScore.Location = new System.Drawing.Point(195, 19);
+            this.lTargetScore.Location = new System.Drawing.Point(195, 21);
             this.lTargetScore.Name = "lTargetScore";
             this.lTargetScore.Size = new System.Drawing.Size(51, 17);
             this.lTargetScore.TabIndex = 7;
@@ -449,6 +461,68 @@
             this.bMAL.UseVisualStyleBackColor = true;
             this.bMAL.Click += new System.EventHandler(this.bMAL_Click);
             // 
+            // lStatus
+            // 
+            this.lStatus.AutoSize = true;
+            this.lStatus.Location = new System.Drawing.Point(144, 77);
+            this.lStatus.Name = "lStatus";
+            this.lStatus.Size = new System.Drawing.Size(37, 13);
+            this.lStatus.TabIndex = 17;
+            this.lStatus.Text = "Status";
+            // 
+            // lTargetStatus
+            // 
+            this.lTargetStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lTargetStatus.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTargetStatus.Location = new System.Drawing.Point(176, 77);
+            this.lTargetStatus.Name = "lTargetStatus";
+            this.lTargetStatus.Size = new System.Drawing.Size(72, 13);
+            this.lTargetStatus.TabIndex = 16;
+            this.lTargetStatus.Text = "airing";
+            this.lTargetStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lVolumesEpisodes
+            // 
+            this.lVolumesEpisodes.AutoSize = true;
+            this.lVolumesEpisodes.Location = new System.Drawing.Point(144, 95);
+            this.lVolumesEpisodes.Name = "lVolumesEpisodes";
+            this.lVolumesEpisodes.Size = new System.Drawing.Size(50, 13);
+            this.lVolumesEpisodes.TabIndex = 19;
+            this.lVolumesEpisodes.Text = "Episodes";
+            // 
+            // lTargetVolumesEpisodes
+            // 
+            this.lTargetVolumesEpisodes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lTargetVolumesEpisodes.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTargetVolumesEpisodes.Location = new System.Drawing.Point(190, 95);
+            this.lTargetVolumesEpisodes.Name = "lTargetVolumesEpisodes";
+            this.lTargetVolumesEpisodes.Size = new System.Drawing.Size(58, 13);
+            this.lTargetVolumesEpisodes.TabIndex = 18;
+            this.lTargetVolumesEpisodes.Text = "23";
+            this.lTargetVolumesEpisodes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lChapters
+            // 
+            this.lChapters.AutoSize = true;
+            this.lChapters.Location = new System.Drawing.Point(144, 113);
+            this.lChapters.Name = "lChapters";
+            this.lChapters.Size = new System.Drawing.Size(49, 13);
+            this.lChapters.TabIndex = 21;
+            this.lChapters.Text = "Chapters";
+            this.lChapters.Visible = false;
+            // 
+            // lTargetChapters
+            // 
+            this.lTargetChapters.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lTargetChapters.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTargetChapters.Location = new System.Drawing.Point(190, 113);
+            this.lTargetChapters.Name = "lTargetChapters";
+            this.lTargetChapters.Size = new System.Drawing.Size(58, 13);
+            this.lTargetChapters.TabIndex = 20;
+            this.lTargetChapters.Text = "23";
+            this.lTargetChapters.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lTargetChapters.Visible = false;
+            // 
             // fNewReview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -517,5 +591,11 @@
         private System.Windows.Forms.Label lTargetRank;
         private System.Windows.Forms.Label lTargetScore;
         private System.Windows.Forms.Button bMAL;
+        private System.Windows.Forms.Label lChapters;
+        private System.Windows.Forms.Label lTargetChapters;
+        private System.Windows.Forms.Label lVolumesEpisodes;
+        private System.Windows.Forms.Label lTargetVolumesEpisodes;
+        private System.Windows.Forms.Label lStatus;
+        private System.Windows.Forms.Label lTargetStatus;
     }
 }
