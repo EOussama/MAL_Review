@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fNewReview));
             this.pSectionSeparator = new System.Windows.Forms.Panel();
             this.pReviewLookUp = new System.Windows.Forms.Panel();
+            this.pbLoading = new System.Windows.Forms.PictureBox();
+            this.pbShow = new System.Windows.Forms.PictureBox();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.pPreview = new System.Windows.Forms.Panel();
             this.lChapters = new System.Windows.Forms.Label();
@@ -49,6 +51,7 @@
             this.lTargetScore = new System.Windows.Forms.Label();
             this.lTargetSynopsis = new System.Windows.Forms.Label();
             this.lTargetTitle = new System.Windows.Forms.Label();
+            this.pbTargetImage = new System.Windows.Forms.PictureBox();
             this.pSetup = new System.Windows.Forms.Panel();
             this.pSearchCards = new System.Windows.Forms.Panel();
             this.pRatingSeparator = new System.Windows.Forms.Panel();
@@ -69,19 +72,16 @@
             this.ttSearchCard = new System.Windows.Forms.ToolTip(this.components);
             this.lPreview = new System.Windows.Forms.Label();
             this.pbLoadingPreview = new System.Windows.Forms.PictureBox();
-            this.pbLoading = new System.Windows.Forms.PictureBox();
-            this.pbShow = new System.Windows.Forms.PictureBox();
-            this.pbTargetImage = new System.Windows.Forms.PictureBox();
             this.pReviewLookUp.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShow)).BeginInit();
             this.pPreview.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTargetImage)).BeginInit();
             this.pSetup.SuspendLayout();
             this.gbRating.SuspendLayout();
             this.gbRatingScale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupScaleOther)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoadingPreview)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbShow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTargetImage)).BeginInit();
             this.SuspendLayout();
             // 
             // pSectionSeparator
@@ -102,6 +102,28 @@
             this.pReviewLookUp.Name = "pReviewLookUp";
             this.pReviewLookUp.Size = new System.Drawing.Size(230, 35);
             this.pReviewLookUp.TabIndex = 3;
+            // 
+            // pbLoading
+            // 
+            this.pbLoading.Image = global::MAL_Reviwer_UI.Properties.Resources.loading_gif_control_light;
+            this.pbLoading.Location = new System.Drawing.Point(199, 5);
+            this.pbLoading.Name = "pbLoading";
+            this.pbLoading.Size = new System.Drawing.Size(25, 24);
+            this.pbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLoading.TabIndex = 0;
+            this.pbLoading.TabStop = false;
+            this.pbLoading.Visible = false;
+            // 
+            // pbShow
+            // 
+            this.pbShow.Image = ((System.Drawing.Image)(resources.GetObject("pbShow.Image")));
+            this.pbShow.Location = new System.Drawing.Point(204, 8);
+            this.pbShow.Name = "pbShow";
+            this.pbShow.Size = new System.Drawing.Size(20, 20);
+            this.pbShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbShow.TabIndex = 1;
+            this.pbShow.TabStop = false;
+            this.pbShow.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbShow_MouseClick);
             // 
             // tbSearch
             // 
@@ -289,6 +311,15 @@
             this.lTargetTitle.Size = new System.Drawing.Size(236, 45);
             this.lTargetTitle.TabIndex = 5;
             this.lTargetTitle.Text = "Title";
+            // 
+            // pbTargetImage
+            // 
+            this.pbTargetImage.Location = new System.Drawing.Point(14, 19);
+            this.pbTargetImage.Name = "pbTargetImage";
+            this.pbTargetImage.Size = new System.Drawing.Size(124, 163);
+            this.pbTargetImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbTargetImage.TabIndex = 0;
+            this.pbTargetImage.TabStop = false;
             // 
             // pSetup
             // 
@@ -520,36 +551,6 @@
             this.pbLoadingPreview.TabStop = false;
             this.pbLoadingPreview.Visible = false;
             // 
-            // pbLoading
-            // 
-            this.pbLoading.Image = global::MAL_Reviwer_UI.Properties.Resources.loading_gif_control_light;
-            this.pbLoading.Location = new System.Drawing.Point(199, 5);
-            this.pbLoading.Name = "pbLoading";
-            this.pbLoading.Size = new System.Drawing.Size(25, 24);
-            this.pbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLoading.TabIndex = 0;
-            this.pbLoading.TabStop = false;
-            this.pbLoading.Visible = false;
-            // 
-            // pbShow
-            // 
-            this.pbShow.Image = ((System.Drawing.Image)(resources.GetObject("pbShow.Image")));
-            this.pbShow.Location = new System.Drawing.Point(204, 8);
-            this.pbShow.Name = "pbShow";
-            this.pbShow.Size = new System.Drawing.Size(20, 20);
-            this.pbShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbShow.TabIndex = 1;
-            this.pbShow.TabStop = false;
-            // 
-            // pbTargetImage
-            // 
-            this.pbTargetImage.Location = new System.Drawing.Point(14, 19);
-            this.pbTargetImage.Name = "pbTargetImage";
-            this.pbTargetImage.Size = new System.Drawing.Size(124, 163);
-            this.pbTargetImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbTargetImage.TabIndex = 0;
-            this.pbTargetImage.TabStop = false;
-            // 
             // fNewReview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -568,8 +569,11 @@
             this.Text = "New Review";
             this.pReviewLookUp.ResumeLayout(false);
             this.pReviewLookUp.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShow)).EndInit();
             this.pPreview.ResumeLayout(false);
             this.pPreview.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTargetImage)).EndInit();
             this.pSetup.ResumeLayout(false);
             this.pSetup.PerformLayout();
             this.gbRating.ResumeLayout(false);
@@ -578,9 +582,6 @@
             this.gbRatingScale.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupScaleOther)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoadingPreview)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbShow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTargetImage)).EndInit();
             this.ResumeLayout(false);
 
         }

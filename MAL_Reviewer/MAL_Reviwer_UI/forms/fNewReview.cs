@@ -74,20 +74,33 @@ namespace MAL_Reviwer_UI.forms
 
                     SearchModel searchModel = await MALHelper.Search(searchType, searchTitle);
 
-                    if (searchModel != null)
+                    if (searchModel != null && searchModel.results != null)
                     {
                         await Task.Run(() =>
                         {
+                            int resultCount = searchModel.results.Length;
+
                             for (int i = 0; i < pSearchCards.Controls.Count; i++)
                             {
-                                SearchResultsModel resultsModel = searchModel.results[i];
                                 ucTargetSearchCard searchCard = (ucTargetSearchCard)pSearchCards.Controls[i];
 
-                                searchCard.Invoke((MethodInvoker)delegate
+                                if (i < resultCount)
                                 {
-                                    searchCard.UpdateUI(resultsModel.mal_id, resultsModel.title, resultsModel.type, resultsModel.image_url);
-                                    Console.WriteLine($"[{ i }] - { resultsModel.title }");
-                                });
+                                    SearchResultsModel resultsModel = searchModel.results[i];
+
+                                    searchCard.Invoke((MethodInvoker)delegate
+                                    {
+                                        searchCard.UpdateUI(resultsModel.mal_id, resultsModel.title, resultsModel.type, resultsModel.image_url);
+                                        searchCard.Visible = true;
+                                    });
+                                }
+                                else
+                                {
+                                    searchCard.Invoke((MethodInvoker)delegate
+                                    {
+                                        searchCard.Visible = false;
+                                    });
+                                }
                             }
                         });
                         
@@ -121,8 +134,13 @@ namespace MAL_Reviwer_UI.forms
 
         private void tbSearch_Enter(object sender, EventArgs e)
         {
-            if (tbSearch.Text.Trim().Length > 2 && pSearchCards.Controls.Count > 0 && !pSearchCards.Visible)
+            if (tbSearch.Text.Trim().Length > 2 && pSearchCards.Controls.Count > 0 && pSearchCards.Visible == false)
                 pSearchCards.Visible = true;
+        }
+
+        private void pbShow_MouseClick(object sender, MouseEventArgs e)
+        {
+            pSearchCards.Visible = false;
         }
 
         #endregion
