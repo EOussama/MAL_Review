@@ -48,7 +48,7 @@
             this.tpProfile = new System.Windows.Forms.TabPage();
             this.pCard = new System.Windows.Forms.Panel();
             this.pbProfileLink = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bMALProfile = new System.Windows.Forms.Button();
             this.pCardProfileInfo = new System.Windows.Forms.Panel();
             this.lUserLocation = new System.Windows.Forms.Label();
             this.lUserBirthday = new System.Windows.Forms.Label();
@@ -68,6 +68,7 @@
             this.bSettings = new System.Windows.Forms.Button();
             this.lTitle = new System.Windows.Forms.Label();
             this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.ttExtendedInfo = new System.Windows.Forms.ToolTip(this.components);
             this.pSide.SuspendLayout();
             this.pUser.SuspendLayout();
             this.pReviewLookUp.SuspendLayout();
@@ -138,6 +139,7 @@
             this.bUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bUser.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.bUser.UseVisualStyleBackColor = false;
+            this.bUser.Click += new System.EventHandler(this.bUser_Click);
             // 
             // ilSizeControl
             // 
@@ -301,7 +303,7 @@
             this.pCard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pCard.BackColor = System.Drawing.SystemColors.Control;
             this.pCard.Controls.Add(this.pbProfileLink);
-            this.pCard.Controls.Add(this.button1);
+            this.pCard.Controls.Add(this.bMALProfile);
             this.pCard.Location = new System.Drawing.Point(475, 29);
             this.pCard.Name = "pCard";
             this.pCard.Size = new System.Drawing.Size(171, 156);
@@ -317,22 +319,23 @@
             this.pbProfileLink.TabIndex = 7;
             this.pbProfileLink.TabStop = false;
             // 
-            // button1
+            // bMALProfile
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ImageList = this.ilSizeControl;
-            this.button1.Location = new System.Drawing.Point(23, 90);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 46);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "View profile on MAL";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = false;
+            this.bMALProfile.BackColor = System.Drawing.Color.Transparent;
+            this.bMALProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bMALProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.bMALProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.bMALProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bMALProfile.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bMALProfile.ImageList = this.ilSizeControl;
+            this.bMALProfile.Location = new System.Drawing.Point(23, 90);
+            this.bMALProfile.Name = "bMALProfile";
+            this.bMALProfile.Size = new System.Drawing.Size(126, 46);
+            this.bMALProfile.TabIndex = 6;
+            this.bMALProfile.Text = "View profile on MAL";
+            this.bMALProfile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.bMALProfile.UseVisualStyleBackColor = false;
+            this.bMALProfile.Click += new System.EventHandler(this.bMALProfile_Click);
             // 
             // pCardProfileInfo
             // 
@@ -413,7 +416,7 @@
             // pbUserImage
             // 
             this.pbUserImage.Image = global::MAL_Reviwer_UI.Properties.Resources.icon_user;
-            this.pbUserImage.Location = new System.Drawing.Point(25, 20);
+            this.pbUserImage.Location = new System.Drawing.Point(24, 20);
             this.pbUserImage.Name = "pbUserImage";
             this.pbUserImage.Size = new System.Drawing.Size(119, 116);
             this.pbUserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -554,6 +557,11 @@
             this.pbLogo.TabIndex = 0;
             this.pbLogo.TabStop = false;
             // 
+            // ttExtendedInfo
+            // 
+            this.ttExtendedInfo.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.ttExtendedInfo.ToolTipTitle = "Profile info";
+            // 
             // fWelcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -625,7 +633,8 @@
         private System.Windows.Forms.Label lUserGender;
         private System.Windows.Forms.Label lUserUsername;
         private System.Windows.Forms.Panel pCard;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bMALProfile;
         private System.Windows.Forms.PictureBox pbProfileLink;
+        private System.Windows.Forms.ToolTip ttExtendedInfo;
     }
 }

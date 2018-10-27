@@ -48,11 +48,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MALHelper.cs" />
-    <Compile Include="models\AnimeModel.cs" />
-    <Compile Include="models\MangaModel.cs" />
-    <Compile Include="models\SearchModel.cs" />
-    <Compile Include="models\SearchResultsModel.cs" />
-    <Compile Include="models\TargetModel.cs" />
+    <Compile Include="models\TargetModel\AnimeModel.cs" />
+    <Compile Include="models\UserModel\AnimeStatsModel.cs" />
+    <Compile Include="models\UserModel\FavoritesModel.cs" />
+    <Compile Include="models\TargetModel\MangaModel.cs" />
+    <Compile Include="models\UserModel\MangaStatsModel.cs" />
+    <Compile Include="models\SearchModel\SearchModel.cs" />
+    <Compile Include="models\SearchModel\SearchResultsModel.cs" />
+    <Compile Include="models\TargetModel\TargetModel.cs" />
+    <Compile Include="models\UserModel\TargetStatsModel.cs" />
+    <Compile Include="models\UserModel\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

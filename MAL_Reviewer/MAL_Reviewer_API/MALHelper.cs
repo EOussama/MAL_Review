@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using MAL_Reviewer_API.models;
 using System.Threading.Tasks;
+using MAL_Reviewer_API.models;
 
 namespace MAL_Reviewer_API
 {
@@ -71,6 +71,19 @@ namespace MAL_Reviewer_API
             if (response.IsSuccessStatusCode)
             {
                 return await response.Content.ReadAsAsync<MangaModel>();
+            }
+
+            return null;
+        }
+
+        public async static Task<MALUserModel> GetUser(string username)
+        {
+            string url = $"{ client.BaseAddress.AbsoluteUri }user/{ username }";
+            HttpResponseMessage response = await client.GetAsync(url);
+
+            if (response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadAsAsync<MALUserModel>();
             }
 
             return null;
