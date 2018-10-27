@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using MAL_Reviewer_API;
 
 namespace MAL_Reviwer_UI.forms
 {
@@ -8,8 +9,11 @@ namespace MAL_Reviwer_UI.forms
         public fWelcome()
         {
             InitializeComponent();
+
+            lTitle.Text = Properties.Settings.Default["title"].ToString();
+            lVersion.Text = Properties.Settings.Default["version"].ToString();
             
-            MAL_Reviewer_API.MALHelper.Init();
+            MALHelper.Init();
         }
 
         private void bNew_Click(object sender, EventArgs e)

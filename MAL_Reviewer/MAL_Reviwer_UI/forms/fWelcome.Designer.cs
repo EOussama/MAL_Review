@@ -43,10 +43,11 @@
             this.bOpen = new System.Windows.Forms.Button();
             this.bNew = new System.Windows.Forms.Button();
             this.pMain = new System.Windows.Forms.Panel();
-            this.bSettings = new System.Windows.Forms.Button();
             this.pHeader = new System.Windows.Forms.Panel();
             this.lTitle = new System.Windows.Forms.Label();
             this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.bSettings = new System.Windows.Forms.Button();
+            this.lVersion = new System.Windows.Forms.Label();
             this.pSide.SuspendLayout();
             this.pUser.SuspendLayout();
             this.pReviewLookUp.SuspendLayout();
@@ -67,7 +68,7 @@
             this.pSide.Dock = System.Windows.Forms.DockStyle.Left;
             this.pSide.Location = new System.Drawing.Point(0, 0);
             this.pSide.Name = "pSide";
-            this.pSide.Size = new System.Drawing.Size(230, 561);
+            this.pSide.Size = new System.Drawing.Size(230, 581);
             this.pSide.TabIndex = 0;
             // 
             // pReviews
@@ -77,14 +78,14 @@
             this.pReviews.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pReviews.Location = new System.Drawing.Point(0, 108);
             this.pReviews.Name = "pReviews";
-            this.pReviews.Size = new System.Drawing.Size(230, 380);
+            this.pReviews.Size = new System.Drawing.Size(230, 400);
             this.pReviews.TabIndex = 2;
             // 
             // pUser
             // 
             this.pUser.Controls.Add(this.bUser);
             this.pUser.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pUser.Location = new System.Drawing.Point(0, 488);
+            this.pUser.Location = new System.Drawing.Point(0, 508);
             this.pUser.Name = "pUser";
             this.pUser.Size = new System.Drawing.Size(230, 73);
             this.pUser.TabIndex = 7;
@@ -223,8 +224,45 @@
             this.pMain.Controls.Add(this.bSettings);
             this.pMain.Location = new System.Drawing.Point(231, 0);
             this.pMain.Name = "pMain";
-            this.pMain.Size = new System.Drawing.Size(603, 561);
+            this.pMain.Size = new System.Drawing.Size(753, 581);
             this.pMain.TabIndex = 1;
+            // 
+            // pHeader
+            // 
+            this.pHeader.BackColor = System.Drawing.SystemColors.Control;
+            this.pHeader.Controls.Add(this.lVersion);
+            this.pHeader.Controls.Add(this.lTitle);
+            this.pHeader.Controls.Add(this.pbLogo);
+            this.pHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pHeader.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pHeader.Location = new System.Drawing.Point(0, 0);
+            this.pHeader.Name = "pHeader";
+            this.pHeader.Size = new System.Drawing.Size(753, 232);
+            this.pHeader.TabIndex = 1;
+            // 
+            // lTitle
+            // 
+            this.lTitle.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lTitle.Font = new System.Drawing.Font("Bahnschrift Light", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTitle.Location = new System.Drawing.Point(0, 190);
+            this.lTitle.Name = "lTitle";
+            this.lTitle.Size = new System.Drawing.Size(753, 42);
+            this.lTitle.TabIndex = 2;
+            this.lTitle.Text = "MAL Reviewer";
+            this.lTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbLogo.Image = global::MAL_Reviwer_UI.Properties.Resources.logo;
+            this.pbLogo.Location = new System.Drawing.Point(9, 10);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(734, 152);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLogo.TabIndex = 0;
+            this.pbLogo.TabStop = false;
             // 
             // bSettings
             // 
@@ -237,52 +275,29 @@
             this.bSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bSettings.ImageIndex = 3;
             this.bSettings.ImageList = this.ilSizeControl;
-            this.bSettings.Location = new System.Drawing.Point(526, 491);
+            this.bSettings.Location = new System.Drawing.Point(676, 511);
             this.bSettings.Name = "bSettings";
             this.bSettings.Size = new System.Drawing.Size(74, 67);
             this.bSettings.TabIndex = 6;
             this.bSettings.UseVisualStyleBackColor = false;
             // 
-            // pHeader
+            // lVersion
             // 
-            this.pHeader.BackColor = System.Drawing.SystemColors.Control;
-            this.pHeader.Controls.Add(this.lTitle);
-            this.pHeader.Controls.Add(this.pbLogo);
-            this.pHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pHeader.Location = new System.Drawing.Point(0, 0);
-            this.pHeader.Name = "pHeader";
-            this.pHeader.Size = new System.Drawing.Size(603, 236);
-            this.pHeader.TabIndex = 1;
-            // 
-            // lTitle
-            // 
-            this.lTitle.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lTitle.Font = new System.Drawing.Font("Bahnschrift Light", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTitle.Location = new System.Drawing.Point(0, 194);
-            this.lTitle.Name = "lTitle";
-            this.lTitle.Size = new System.Drawing.Size(603, 42);
-            this.lTitle.TabIndex = 1;
-            this.lTitle.Text = "MAL Reviewer";
-            this.lTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbLogo.Image = global::MAL_Reviwer_UI.Properties.Resources.logo;
-            this.pbLogo.Location = new System.Drawing.Point(194, 12);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(207, 179);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLogo.TabIndex = 0;
-            this.pbLogo.TabStop = false;
+            this.lVersion.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lVersion.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lVersion.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.lVersion.Location = new System.Drawing.Point(0, 177);
+            this.lVersion.Name = "lVersion";
+            this.lVersion.Size = new System.Drawing.Size(753, 13);
+            this.lVersion.TabIndex = 1;
+            this.lVersion.Text = "0.1.0";
+            this.lVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // fWelcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 561);
+            this.ClientSize = new System.Drawing.Size(984, 581);
             this.Controls.Add(this.pMain);
             this.Controls.Add(this.pSide);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -322,5 +337,6 @@
         private System.Windows.Forms.Panel pUser;
         private System.Windows.Forms.Button bUser;
         private System.Windows.Forms.Panel pReviews;
+        private System.Windows.Forms.Label lVersion;
     }
 }

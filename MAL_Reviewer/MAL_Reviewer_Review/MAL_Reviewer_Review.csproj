@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="models\Review.cs" />
     <Compile Include="models\ReviewAspect.cs" />
     <Compile Include="models\ReviewMethod.cs" />
+    <Compile Include="models\ReviewTemplate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

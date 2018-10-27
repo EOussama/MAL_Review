@@ -40,5 +40,14 @@ namespace MAL_Reviwer_UI.Properties {
                 return ((string)(this["version"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("MAL Reviewer")]
+        public string title {
+            get {
+                return ((string)(this["title"]));
+            }
+        }
     }
 }

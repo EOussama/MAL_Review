@@ -8,5 +8,8 @@
     <Setting Name="version" Type="System.String" Scope="Application">
       <Value Profile="(Default)">0.1.0</Value>
     </Setting>
+    <Setting Name="title" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">MAL Reviewer</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
