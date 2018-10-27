@@ -48,6 +48,11 @@
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.bSettings = new System.Windows.Forms.Button();
             this.lVersion = new System.Windows.Forms.Label();
+            this.pDashboard = new System.Windows.Forms.Panel();
+            this.tpMangalist = new System.Windows.Forms.TabPage();
+            this.tpAnimelist = new System.Windows.Forms.TabPage();
+            this.tpStatistics = new System.Windows.Forms.TabPage();
+            this.tcDashboard = new System.Windows.Forms.TabControl();
             this.pSide.SuspendLayout();
             this.pUser.SuspendLayout();
             this.pReviewLookUp.SuspendLayout();
@@ -56,6 +61,8 @@
             this.pMain.SuspendLayout();
             this.pHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            this.pDashboard.SuspendLayout();
+            this.tcDashboard.SuspendLayout();
             this.SuspendLayout();
             // 
             // pSide
@@ -220,8 +227,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pMain.BackColor = System.Drawing.SystemColors.Control;
+            this.pMain.Controls.Add(this.pDashboard);
             this.pMain.Controls.Add(this.pHeader);
-            this.pMain.Controls.Add(this.bSettings);
             this.pMain.Location = new System.Drawing.Point(231, 0);
             this.pMain.Name = "pMain";
             this.pMain.Size = new System.Drawing.Size(753, 581);
@@ -231,6 +238,7 @@
             // 
             this.pHeader.BackColor = System.Drawing.SystemColors.Control;
             this.pHeader.Controls.Add(this.lVersion);
+            this.pHeader.Controls.Add(this.bSettings);
             this.pHeader.Controls.Add(this.lTitle);
             this.pHeader.Controls.Add(this.pbLogo);
             this.pHeader.Dock = System.Windows.Forms.DockStyle.Top;
@@ -275,7 +283,7 @@
             this.bSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bSettings.ImageIndex = 3;
             this.bSettings.ImageList = this.ilSizeControl;
-            this.bSettings.Location = new System.Drawing.Point(676, 511);
+            this.bSettings.Location = new System.Drawing.Point(676, 3);
             this.bSettings.Name = "bSettings";
             this.bSettings.Size = new System.Drawing.Size(74, 67);
             this.bSettings.TabIndex = 6;
@@ -292,6 +300,67 @@
             this.lVersion.TabIndex = 1;
             this.lVersion.Text = "0.1.0";
             this.lVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pDashboard
+            // 
+            this.pDashboard.AutoScroll = true;
+            this.pDashboard.Controls.Add(this.tcDashboard);
+            this.pDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pDashboard.Location = new System.Drawing.Point(0, 232);
+            this.pDashboard.Name = "pDashboard";
+            this.pDashboard.Size = new System.Drawing.Size(753, 349);
+            this.pDashboard.TabIndex = 7;
+            // 
+            // tpMangalist
+            // 
+            this.tpMangalist.AutoScroll = true;
+            this.tpMangalist.Location = new System.Drawing.Point(4, 34);
+            this.tpMangalist.Name = "tpMangalist";
+            this.tpMangalist.Padding = new System.Windows.Forms.Padding(3);
+            this.tpMangalist.Size = new System.Drawing.Size(681, 255);
+            this.tpMangalist.TabIndex = 2;
+            this.tpMangalist.Text = "Mangalist";
+            this.tpMangalist.UseVisualStyleBackColor = true;
+            // 
+            // tpAnimelist
+            // 
+            this.tpAnimelist.AutoScroll = true;
+            this.tpAnimelist.Location = new System.Drawing.Point(4, 34);
+            this.tpAnimelist.Name = "tpAnimelist";
+            this.tpAnimelist.Padding = new System.Windows.Forms.Padding(3);
+            this.tpAnimelist.Size = new System.Drawing.Size(681, 255);
+            this.tpAnimelist.TabIndex = 1;
+            this.tpAnimelist.Text = "Animelist";
+            this.tpAnimelist.UseVisualStyleBackColor = true;
+            // 
+            // tpStatistics
+            // 
+            this.tpStatistics.AutoScroll = true;
+            this.tpStatistics.Location = new System.Drawing.Point(4, 34);
+            this.tpStatistics.Name = "tpStatistics";
+            this.tpStatistics.Padding = new System.Windows.Forms.Padding(3);
+            this.tpStatistics.Size = new System.Drawing.Size(681, 255);
+            this.tpStatistics.TabIndex = 0;
+            this.tpStatistics.Text = "Statistics";
+            this.tpStatistics.UseVisualStyleBackColor = true;
+            // 
+            // tcDashboard
+            // 
+            this.tcDashboard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tcDashboard.Controls.Add(this.tpStatistics);
+            this.tcDashboard.Controls.Add(this.tpAnimelist);
+            this.tcDashboard.Controls.Add(this.tpMangalist);
+            this.tcDashboard.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tcDashboard.ItemSize = new System.Drawing.Size(100, 30);
+            this.tcDashboard.Location = new System.Drawing.Point(35, 33);
+            this.tcDashboard.Multiline = true;
+            this.tcDashboard.Name = "tcDashboard";
+            this.tcDashboard.SelectedIndex = 0;
+            this.tcDashboard.Size = new System.Drawing.Size(689, 293);
+            this.tcDashboard.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.tcDashboard.TabIndex = 7;
             // 
             // fWelcome
             // 
@@ -314,6 +383,8 @@
             this.pMain.ResumeLayout(false);
             this.pHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            this.pDashboard.ResumeLayout(false);
+            this.tcDashboard.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -338,5 +409,10 @@
         private System.Windows.Forms.Button bUser;
         private System.Windows.Forms.Panel pReviews;
         private System.Windows.Forms.Label lVersion;
+        private System.Windows.Forms.Panel pDashboard;
+        private System.Windows.Forms.TabControl tcDashboard;
+        private System.Windows.Forms.TabPage tpStatistics;
+        private System.Windows.Forms.TabPage tpAnimelist;
+        private System.Windows.Forms.TabPage tpMangalist;
     }
 }
