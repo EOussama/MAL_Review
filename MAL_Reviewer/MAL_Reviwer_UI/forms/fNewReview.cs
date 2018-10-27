@@ -147,6 +147,26 @@ namespace MAL_Reviwer_UI.forms
         private void pbShow_MouseClick(object sender, MouseEventArgs e)
         {
             pSearchCards.Visible = false;
+            pbShow.Cursor = Cursors.Default;
+            pbShow.Image = (rbAnime.Checked ? Properties.Resources.icon_anime : Properties.Resources.icon_manga);
+        }
+
+        private void pbShow_MouseEnter(object sender, EventArgs e)
+        {
+            if (tbSearch.Text.Trim().Length > 2 && pSearchCards.Controls.Count > 0 && pSearchCards.Visible == true)
+            {
+                pbShow.Cursor = Cursors.Hand;
+                pbShow.Image = Properties.Resources.icon_close;
+            }
+            else
+            {
+                pbShow.Cursor = Cursors.Default;
+            }
+        }
+
+        private void pbShow_MouseLeave(object sender, EventArgs e)
+        {
+            pbShow.Image = (rbAnime.Checked ? Properties.Resources.icon_anime : Properties.Resources.icon_manga);
         }
 
         #endregion

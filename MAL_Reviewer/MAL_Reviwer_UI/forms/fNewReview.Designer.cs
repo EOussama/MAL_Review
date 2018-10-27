@@ -116,6 +116,7 @@
             // 
             // pbShow
             // 
+            this.pbShow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbShow.Image = ((System.Drawing.Image)(resources.GetObject("pbShow.Image")));
             this.pbShow.Location = new System.Drawing.Point(204, 8);
             this.pbShow.Name = "pbShow";
@@ -124,6 +125,8 @@
             this.pbShow.TabIndex = 1;
             this.pbShow.TabStop = false;
             this.pbShow.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbShow_MouseClick);
+            this.pbShow.MouseEnter += new System.EventHandler(this.pbShow_MouseEnter);
+            this.pbShow.MouseLeave += new System.EventHandler(this.pbShow_MouseLeave);
             // 
             // tbSearch
             // 
