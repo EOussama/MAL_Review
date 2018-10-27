@@ -501,6 +501,7 @@
             this.rbAnime.Size = new System.Drawing.Size(54, 17);
             this.rbAnime.TabIndex = 4;
             this.rbAnime.TabStop = true;
+            this.rbAnime.Tag = "0";
             this.rbAnime.Text = "Anime";
             this.rbAnime.UseVisualStyleBackColor = true;
             // 
@@ -511,6 +512,7 @@
             this.rbManga.Name = "rbManga";
             this.rbManga.Size = new System.Drawing.Size(58, 17);
             this.rbManga.TabIndex = 0;
+            this.rbManga.Tag = "1";
             this.rbManga.Text = "Manga";
             this.rbManga.UseVisualStyleBackColor = true;
             // 

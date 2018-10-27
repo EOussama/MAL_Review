@@ -11,6 +11,9 @@ namespace MAL_Reviwer_UI.forms
     public partial class fNewReview : Form
     {
         private bool _ready = true;
+        private int _targetId = 0;
+        private byte _type = 0;
+
         public fNewReview()
         {
             InitializeComponent();
@@ -123,6 +126,9 @@ namespace MAL_Reviwer_UI.forms
 
         private void SearchCard_CardMouseClickEvent(object sender, int targetId)
         {
+            if (this._targetId == targetId && this._type  == (rbAnime.Checked ? int.Parse(rbAnime.Tag.ToString()) : int.Parse(rbManga.Tag.ToString())))
+                return;
+
             pPreview.Visible = false;
             pbLoadingPreview.Visible = true;
 
@@ -170,6 +176,9 @@ namespace MAL_Reviwer_UI.forms
                         lTargetSynopsis.Text = animeModel.synopsis?.Length > 215 ? animeModel.synopsis?.Substring(0, 215) + "..." : animeModel.synopsis;
                         pbTargetImage.Load(animeModel.image_url);
                         bMAL.Tag = animeModel.url;
+
+                        this._targetId = animeModel.mal_id;
+                        this._type = 0;
                     });
                 });
             }
@@ -209,6 +218,9 @@ namespace MAL_Reviwer_UI.forms
                         lTargetSynopsis.Text = mangaModel.synopsis?.Length > 215 ? mangaModel.synopsis?.Substring(0, 215) + "..." : mangaModel.synopsis;
                         pbTargetImage.Load(mangaModel.image_url);
                         bMAL.Tag = mangaModel.url;
+
+                        this._targetId = mangaModel.mal_id;
+                        this._type = 1;
                     });
                 });
             }
