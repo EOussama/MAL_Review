@@ -9,14 +9,9 @@ namespace MAL_Reviwer_UI.user_controls
         public event EventHandler<int> CardMouseClickEvent;
         private int _targetId;
 
-        public ucTargetSearchCard(int targetId, string targetTitle, string targetType, string targetImage)
+        public ucTargetSearchCard()
         {
             InitializeComponent();
-
-            this.targetId = targetId;
-            lTargetTitle.Text = targetTitle.Length > 17 ? targetTitle.Substring(0, 17) + "..." : targetTitle;
-            lTargetType.Text = targetType;
-            pbTargetImage.Load(targetImage);
 
             this.Click += CardMouseClickEventHandler;
             this.pbTargetImage.Click += CardMouseClickEventHandler;
@@ -35,6 +30,14 @@ namespace MAL_Reviwer_UI.user_controls
         }
 
         public int targetId { get => _targetId; set => _targetId = value; }
+
+        public void UpdateUI (int targetId, string targetTitle, string targetType, string targetImageUrl)
+        {
+            this.targetId = targetId;
+            lTargetTitle.Text = targetTitle.Length > 17 ? targetTitle.Substring(0, 17) + "..." : targetTitle;
+            lTargetType.Text = targetType;
+            pbTargetImage.Load(targetImageUrl);
+        }
 
         private void CardMouseClickEventHandler(object sender, EventArgs e)
         {

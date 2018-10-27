@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Linq;
+using System.Threading.Tasks;
 using MAL_Reviwer_UI.user_controls;
 using MAL_Reviewer_API;
 using MAL_Reviewer_API.models;
@@ -18,6 +20,19 @@ namespace MAL_Reviwer_UI.forms
 
             rbAnime.CheckedChanged += RbAnime_CheckedChanged;
             rbScaleOther.CheckedChanged += RbScaleOther_CheckedChanged;
+
+            foreach (int i in Enumerable.Range(1, 10))
+            {
+                ucTargetSearchCard searchCard = new ucTargetSearchCard();
+                int searchCardCount = pSearchCards.Controls.Count;
+
+                if (searchCardCount < 5)
+                    pSearchCards.Height = searchCard.Height * searchCardCount;
+
+                searchCard.CardMouseClickEvent += SearchCard_CardMouseClickEvent;
+                searchCard.Top = searchCard.Height * searchCardCount;
+                pSearchCards.Controls.Add(searchCard);
+            }
         }
 
         #region Manga/Anime labeling
@@ -58,24 +73,24 @@ namespace MAL_Reviwer_UI.forms
                     this._ready = false;
 
                     SearchModel searchModel = await MALHelper.Search(searchType, searchTitle);
-                    pSearchCards.Controls.Clear();
 
                     if (searchModel != null)
                     {
-                        foreach (SearchResultsModel resultsModel in searchModel.results)
+                        await Task.Run(() =>
                         {
-                            ucTargetSearchCard searchCard = new ucTargetSearchCard(resultsModel.mal_id, resultsModel.title, resultsModel.type, resultsModel.image_url);
-                            int searchCardCount = pSearchCards.Controls.Count;
+                            for (int i = 0; i < pSearchCards.Controls.Count; i++)
+                            {
+                                SearchResultsModel resultsModel = searchModel.results[i];
+                                ucTargetSearchCard searchCard = (ucTargetSearchCard)pSearchCards.Controls[i];
 
-                            if (searchCardCount < 5)
-                                pSearchCards.Height = searchCard.Height * searchCardCount;
-
-                            searchCard.CardMouseClickEvent += SearchCard_CardMouseClickEvent;
-                            searchCard.Top = searchCard.Height * searchCardCount;
-                            ttSearchCard.SetToolTip(searchCard, resultsModel.title);
-                            pSearchCards.Controls.Add(searchCard);
-                        }
-
+                                searchCard.Invoke((MethodInvoker)delegate
+                                {
+                                    searchCard.UpdateUI(resultsModel.mal_id, resultsModel.title, resultsModel.type, resultsModel.image_url);
+                                    Console.WriteLine($"[{ i }] - { resultsModel.title }");
+                                });
+                            }
+                        });
+                        
                         pSearchCards.Visible = true;
                     }
 
@@ -119,20 +134,26 @@ namespace MAL_Reviwer_UI.forms
             try
             {
                 AnimeModel animeModel = await MALHelper.GetAnime(animeId);
+                
+                await Task.Run(() =>
+                {
+                    pPreview.Invoke((MethodInvoker)delegate
+                    {
+                        lChapters.Visible = false;
+                        lTargetChapters.Visible = false;
+                        lVolumesEpisodes.Text = "Episodes";
 
-                lChapters.Visible = false;
-                lTargetChapters.Visible = false;
-                lVolumesEpisodes.Text = "Episodes";
-
-                lTargetScore.Text = animeModel.score.ToString();
-                lTargetRank.Text = animeModel.rank.ToString();
-                lTargetType.Text = animeModel.type;
-                lTargetStatus.Text = animeModel.airing ? "Airing" : "Finished";
-                lTargetVolumesEpisodes.Text = animeModel.episodes != null ? animeModel.episodes.ToString() : "?";
-                lTargetTitle.Text = animeModel.title.Length > 55 ? animeModel.title.Substring(0, 55) + "..." : animeModel.title;
-                lTargetSynopsis.Text = animeModel.synopsis?.Length > 215 ? animeModel.synopsis?.Substring(0, 215) + "..." : animeModel.synopsis;
-                pbTargetImage.Load(animeModel.image_url);
-                bMAL.Tag = animeModel.url;
+                        lTargetScore.Text = animeModel.score.ToString();
+                        lTargetRank.Text = animeModel.rank.ToString();
+                        lTargetType.Text = animeModel.type;
+                        lTargetStatus.Text = animeModel.airing ? "Airing" : "Finished";
+                        lTargetVolumesEpisodes.Text = animeModel.episodes != null ? animeModel.episodes.ToString() : "?";
+                        lTargetTitle.Text = animeModel.title.Length > 55 ? animeModel.title.Substring(0, 55) + "..." : animeModel.title;
+                        lTargetSynopsis.Text = animeModel.synopsis?.Length > 215 ? animeModel.synopsis?.Substring(0, 215) + "..." : animeModel.synopsis;
+                        pbTargetImage.Load(animeModel.image_url);
+                        bMAL.Tag = animeModel.url;
+                    });
+                });
             }
             catch (Exception ex)
             {
@@ -152,20 +173,26 @@ namespace MAL_Reviwer_UI.forms
             {
                 MangaModel mangaModel = await MALHelper.GetManga(mangaId);
 
-                lChapters.Visible = true;
-                lTargetChapters.Visible = true;
-                lVolumesEpisodes.Text = "Volumes";
+                await Task.Run(() =>
+                {
+                    pPreview.Invoke((MethodInvoker)delegate
+                    {
+                        lChapters.Visible = true;
+                        lTargetChapters.Visible = true;
+                        lVolumesEpisodes.Text = "Volumes";
 
-                lTargetScore.Text = mangaModel.score.ToString();
-                lTargetRank.Text = mangaModel.rank.ToString();
-                lTargetType.Text = mangaModel.type;
-                lTargetStatus.Text = mangaModel.publishing ? "Publishing" : "Finished";
-                lTargetVolumesEpisodes.Text = mangaModel.volumes != null ? mangaModel.volumes.ToString() : "?";
-                lTargetChapters.Text = mangaModel.chapters != null ? mangaModel.chapters.ToString() : "?";
-                lTargetTitle.Text = mangaModel.title.Length > 55 ? mangaModel.title.Substring(0, 55) + "..." : mangaModel.title;
-                lTargetSynopsis.Text = mangaModel.synopsis?.Length > 215 ? mangaModel.synopsis?.Substring(0, 215) + "..." : mangaModel.synopsis;
-                pbTargetImage.Load(mangaModel.image_url);
-                bMAL.Tag = mangaModel.url;
+                        lTargetScore.Text = mangaModel.score.ToString();
+                        lTargetRank.Text = mangaModel.rank.ToString();
+                        lTargetType.Text = mangaModel.type;
+                        lTargetStatus.Text = mangaModel.publishing ? "Publishing" : "Finished";
+                        lTargetVolumesEpisodes.Text = mangaModel.volumes != null ? mangaModel.volumes.ToString() : "?";
+                        lTargetChapters.Text = mangaModel.chapters != null ? mangaModel.chapters.ToString() : "?";
+                        lTargetTitle.Text = mangaModel.title.Length > 55 ? mangaModel.title.Substring(0, 55) + "..." : mangaModel.title;
+                        lTargetSynopsis.Text = mangaModel.synopsis?.Length > 215 ? mangaModel.synopsis?.Substring(0, 215) + "..." : mangaModel.synopsis;
+                        pbTargetImage.Load(mangaModel.image_url);
+                        bMAL.Tag = mangaModel.url;
+                    });
+                });
             }
             catch (Exception ex)
             {
