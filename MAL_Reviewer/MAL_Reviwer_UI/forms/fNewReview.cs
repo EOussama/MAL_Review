@@ -132,9 +132,9 @@ namespace MAL_Reviwer_UI.forms
                 PreviewManga(targetId);
         }
 
-        private void tbSearch_Enter(object sender, EventArgs e)
+        private void tbSearch_MouseClick(object sender, MouseEventArgs e)
         {
-            if (tbSearch.Text.Trim().Length > 2 && pSearchCards.Controls.Count > 0 && pSearchCards.Visible == false)
+            if (tbSearch.Focused && tbSearch.Text.Trim().Length > 2 && pSearchCards.Controls.Count > 0 && pSearchCards.Visible == false)
                 pSearchCards.Visible = true;
         }
 
