@@ -129,6 +129,7 @@
     <Content Include="images\icons\credits.txt" />
     <Content Include="images\icons\icon_anime.png" />
     <Content Include="images\icons\icon_close.png" />
+    <Content Include="images\icons\icon_favorite.png" />
     <Content Include="images\icons\icon_filter.png" />
     <Content Include="images\icons\icon_link.png" />
     <Content Include="images\icons\icon_manga.png" />
