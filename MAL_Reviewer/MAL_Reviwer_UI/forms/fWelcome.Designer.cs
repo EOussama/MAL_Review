@@ -75,6 +75,7 @@
             this.tlpAnimeMangaCards = new System.Windows.Forms.TableLayoutPanel();
             this.pDashAnimeCard = new System.Windows.Forms.Panel();
             this.pDashMangaCard = new System.Windows.Forms.Panel();
+            this.tlpUserInfo = new System.Windows.Forms.TableLayoutPanel();
             this.pSide.SuspendLayout();
             this.pUser.SuspendLayout();
             this.pReviewLookUp.SuspendLayout();
@@ -93,6 +94,7 @@
             this.pHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.tlpAnimeMangaCards.SuspendLayout();
+            this.tlpUserInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // pSide
@@ -311,9 +313,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pDashBoardMain.AutoScroll = true;
+            this.pDashBoardMain.Controls.Add(this.tlpUserInfo);
             this.pDashBoardMain.Controls.Add(this.tlpAnimeMangaCards);
-            this.pDashBoardMain.Controls.Add(this.pCard);
-            this.pDashBoardMain.Controls.Add(this.pCardProfileInfo);
             this.pDashBoardMain.Location = new System.Drawing.Point(35, 29);
             this.pDashBoardMain.Name = "pDashBoardMain";
             this.pDashBoardMain.Size = new System.Drawing.Size(611, 394);
@@ -322,27 +323,32 @@
             // 
             // pCard
             // 
-            this.pCard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pCard.BackColor = System.Drawing.SystemColors.Control;
             this.pCard.Controls.Add(this.pbProfileLink);
             this.pCard.Controls.Add(this.bMALProfile);
-            this.pCard.Location = new System.Drawing.Point(438, 2);
+            this.pCard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pCard.Location = new System.Drawing.Point(443, 3);
+            this.pCard.Margin = new System.Windows.Forms.Padding(19, 3, 3, 3);
             this.pCard.Name = "pCard";
-            this.pCard.Size = new System.Drawing.Size(171, 156);
+            this.pCard.Size = new System.Drawing.Size(161, 150);
             this.pCard.TabIndex = 11;
             // 
             // pbProfileLink
             // 
+            this.pbProfileLink.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pbProfileLink.Image = global::MAL_Reviwer_UI.Properties.Resources.icon_link;
-            this.pbProfileLink.Location = new System.Drawing.Point(69, 35);
+            this.pbProfileLink.Location = new System.Drawing.Point(64, 31);
             this.pbProfileLink.Name = "pbProfileLink";
-            this.pbProfileLink.Size = new System.Drawing.Size(32, 30);
+            this.pbProfileLink.Size = new System.Drawing.Size(34, 30);
             this.pbProfileLink.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbProfileLink.TabIndex = 7;
             this.pbProfileLink.TabStop = false;
             // 
             // bMALProfile
             // 
+            this.bMALProfile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.bMALProfile.BackColor = System.Drawing.Color.Transparent;
             this.bMALProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bMALProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
@@ -352,17 +358,14 @@
             this.bMALProfile.ImageList = this.ilSizeControl;
             this.bMALProfile.Location = new System.Drawing.Point(23, 90);
             this.bMALProfile.Name = "bMALProfile";
-            this.bMALProfile.Size = new System.Drawing.Size(126, 46);
+            this.bMALProfile.Size = new System.Drawing.Size(117, 46);
             this.bMALProfile.TabIndex = 6;
             this.bMALProfile.Text = "View profile on MAL";
-            this.bMALProfile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.bMALProfile.UseVisualStyleBackColor = false;
             this.bMALProfile.Click += new System.EventHandler(this.bMALProfile_Click);
             // 
             // pCardProfileInfo
             // 
-            this.pCardProfileInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pCardProfileInfo.BackColor = System.Drawing.SystemColors.Control;
             this.pCardProfileInfo.Controls.Add(this.lUserLocation);
             this.pCardProfileInfo.Controls.Add(this.lUserBirthday);
@@ -375,16 +378,18 @@
             this.pCardProfileInfo.Controls.Add(this.lJoined);
             this.pCardProfileInfo.Controls.Add(this.lGender);
             this.pCardProfileInfo.Controls.Add(this.lUsername);
-            this.pCardProfileInfo.Location = new System.Drawing.Point(2, 2);
+            this.pCardProfileInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pCardProfileInfo.Location = new System.Drawing.Point(3, 3);
+            this.pCardProfileInfo.Margin = new System.Windows.Forms.Padding(3, 3, 19, 3);
             this.pCardProfileInfo.Name = "pCardProfileInfo";
-            this.pCardProfileInfo.Size = new System.Drawing.Size(397, 156);
+            this.pCardProfileInfo.Size = new System.Drawing.Size(402, 150);
             this.pCardProfileInfo.TabIndex = 0;
             // 
             // lUserLocation
             // 
             this.lUserLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lUserLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lUserLocation.Location = new System.Drawing.Point(264, 120);
+            this.lUserLocation.Location = new System.Drawing.Point(269, 120);
             this.lUserLocation.Name = "lUserLocation";
             this.lUserLocation.Size = new System.Drawing.Size(114, 16);
             this.lUserLocation.TabIndex = 10;
@@ -395,7 +400,7 @@
             // 
             this.lUserBirthday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lUserBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lUserBirthday.Location = new System.Drawing.Point(264, 95);
+            this.lUserBirthday.Location = new System.Drawing.Point(269, 95);
             this.lUserBirthday.Name = "lUserBirthday";
             this.lUserBirthday.Size = new System.Drawing.Size(114, 16);
             this.lUserBirthday.TabIndex = 9;
@@ -406,7 +411,7 @@
             // 
             this.lUserJoinDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lUserJoinDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lUserJoinDate.Location = new System.Drawing.Point(261, 70);
+            this.lUserJoinDate.Location = new System.Drawing.Point(266, 70);
             this.lUserJoinDate.Name = "lUserJoinDate";
             this.lUserJoinDate.Size = new System.Drawing.Size(117, 16);
             this.lUserJoinDate.TabIndex = 8;
@@ -417,7 +422,7 @@
             // 
             this.lUserGender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lUserGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lUserGender.Location = new System.Drawing.Point(270, 45);
+            this.lUserGender.Location = new System.Drawing.Point(275, 45);
             this.lUserGender.Name = "lUserGender";
             this.lUserGender.Size = new System.Drawing.Size(108, 16);
             this.lUserGender.TabIndex = 7;
@@ -428,7 +433,7 @@
             // 
             this.lUserUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lUserUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lUserUsername.Location = new System.Drawing.Point(251, 20);
+            this.lUserUsername.Location = new System.Drawing.Point(256, 20);
             this.lUserUsername.Name = "lUserUsername";
             this.lUserUsername.Size = new System.Drawing.Size(127, 16);
             this.lUserUsername.TabIndex = 6;
@@ -492,10 +497,11 @@
             // 
             // pbDashBoardLoad
             // 
-            this.pbDashBoardLoad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pbDashBoardLoad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pbDashBoardLoad.Image = global::MAL_Reviwer_UI.Properties.Resources.loading_gif_white;
-            this.pbDashBoardLoad.Location = new System.Drawing.Point(322, 84);
+            this.pbDashBoardLoad.Location = new System.Drawing.Point(326, 178);
             this.pbDashBoardLoad.Name = "pbDashBoardLoad";
             this.pbDashBoardLoad.Size = new System.Drawing.Size(33, 31);
             this.pbDashBoardLoad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -618,7 +624,7 @@
             this.tlpAnimeMangaCards.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpAnimeMangaCards.Controls.Add(this.pDashMangaCard, 1, 0);
             this.tlpAnimeMangaCards.Controls.Add(this.pDashAnimeCard, 0, 0);
-            this.tlpAnimeMangaCards.Location = new System.Drawing.Point(2, 191);
+            this.tlpAnimeMangaCards.Location = new System.Drawing.Point(2, 193);
             this.tlpAnimeMangaCards.Name = "tlpAnimeMangaCards";
             this.tlpAnimeMangaCards.RowCount = 1;
             this.tlpAnimeMangaCards.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -646,6 +652,22 @@
             this.pDashMangaCard.Name = "pDashMangaCard";
             this.pDashMangaCard.Size = new System.Drawing.Size(282, 150);
             this.pDashMangaCard.TabIndex = 13;
+            // 
+            // tlpUserInfo
+            // 
+            this.tlpUserInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlpUserInfo.ColumnCount = 2;
+            this.tlpUserInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tlpUserInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tlpUserInfo.Controls.Add(this.pCardProfileInfo, 0, 0);
+            this.tlpUserInfo.Controls.Add(this.pCard, 1, 0);
+            this.tlpUserInfo.Location = new System.Drawing.Point(2, 2);
+            this.tlpUserInfo.Name = "tlpUserInfo";
+            this.tlpUserInfo.RowCount = 1;
+            this.tlpUserInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpUserInfo.Size = new System.Drawing.Size(607, 156);
+            this.tlpUserInfo.TabIndex = 14;
             // 
             // fWelcome
             // 
@@ -679,6 +701,7 @@
             this.pHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.tlpAnimeMangaCards.ResumeLayout(false);
+            this.tlpUserInfo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -730,5 +753,6 @@
         private System.Windows.Forms.TableLayoutPanel tlpAnimeMangaCards;
         private System.Windows.Forms.Panel pDashMangaCard;
         private System.Windows.Forms.Panel pDashAnimeCard;
+        private System.Windows.Forms.TableLayoutPanel tlpUserInfo;
     }
 }
