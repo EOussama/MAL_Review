@@ -13,6 +13,7 @@ namespace MAL_Reviwer_UI.forms
         {
             InitializeComponent();
 
+            // Fetching application info
             lTitle.Text = Properties.Settings.Default["title"].ToString();
             lVersion.Text = Properties.Settings.Default["version"].ToString();
             
@@ -34,9 +35,9 @@ namespace MAL_Reviwer_UI.forms
 
         private async void FLoadUser_UserLoadedEvent(object sender, MALUserModel user)
         {
-            pDashBoardMain.Visible = false;
-            pbDashBoardLoad.Visible = true;
+            LoadingUI();
 
+            // Updating the UI
             await Task.Run(() =>
             {
                 Thread.Sleep(500);
@@ -62,9 +63,32 @@ namespace MAL_Reviwer_UI.forms
                 });
             });
 
-            bUser.Text = "Unload this MAL account";
-            pbDashBoardLoad.Visible = false;
-            pDashBoardMain.Visible = true;
+            LoadingUI(false);
+        }
+
+        private void LoadingUI(bool mode = true)
+        {
+            if (mode)
+            {
+                // Dashboard
+                pDashBoardMain.Visible = false;
+                pbDashBoardLoad.Visible = true;
+
+                // Animelist
+
+                // Mangalist
+            }
+            else
+            {
+                // Dashboard
+                bUser.Text = "Unload this MAL account";
+                pbDashBoardLoad.Visible = false;
+                pDashBoardMain.Visible = true;
+
+                // Animelist
+
+                // Mangalist
+            }
         }
 
         private void bMALProfile_Click(object sender, EventArgs e)

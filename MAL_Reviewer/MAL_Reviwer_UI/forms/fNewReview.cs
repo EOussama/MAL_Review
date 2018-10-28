@@ -18,12 +18,15 @@ namespace MAL_Reviwer_UI.forms
         {
             InitializeComponent();
 
-            pSearchCards.HorizontalScroll.Maximum = 0;
-            pSearchCards.AutoScroll = true;
-
+            // Wiring up eventhandlers to the radio buttons
             rbAnime.CheckedChanged += RbAnime_CheckedChanged;
             rbScaleOther.CheckedChanged += RbScaleOther_CheckedChanged;
 
+            // Disabeling horizontal scroll on pSearchCards.
+            pSearchCards.HorizontalScroll.Maximum = 0;
+            pSearchCards.AutoScroll = true;
+
+            // Populating the pSearchCards panel with ucTargetSearchCard user controls.
             foreach (int i in Enumerable.Range(1, 10))
             {
                 ucTargetSearchCard searchCard = new ucTargetSearchCard();
@@ -62,6 +65,7 @@ namespace MAL_Reviwer_UI.forms
         {
             try
             {
+                // Check if the search request has already been sent or not.
                 if (!this._ready)
                     return;
 
@@ -79,6 +83,7 @@ namespace MAL_Reviwer_UI.forms
 
                     if (searchModel != null && searchModel.results != null)
                     {
+                        // Updating the ucTargetSearchCard usercontrolls in a separate thread.
                         await Task.Run(() =>
                         {
                             int resultCount = searchModel.results.Length;
@@ -126,6 +131,7 @@ namespace MAL_Reviwer_UI.forms
 
         private void SearchCard_CardMouseClickEvent(object sender, int targetId)
         {
+            // Checking if the targetId isn't equal to the current previewed Anime/Manga's mal_id.
             if (this._targetId == targetId && this._type  == (rbAnime.Checked ? int.Parse(rbAnime.Tag.ToString()) : int.Parse(rbManga.Tag.ToString())))
                 return;
 
@@ -179,6 +185,7 @@ namespace MAL_Reviwer_UI.forms
             {
                 AnimeModel animeModel = await MALHelper.GetAnime(animeId);
                 
+                // Updating the preview UI in a separate thread.
                 await Task.Run(() =>
                 {
                     pPreview.Invoke((MethodInvoker)delegate
@@ -220,6 +227,7 @@ namespace MAL_Reviwer_UI.forms
             {
                 MangaModel mangaModel = await MALHelper.GetManga(mangaId);
 
+                // Updating the preview UI in a separate thread.
                 await Task.Run(() =>
                 {
                     pPreview.Invoke((MethodInvoker)delegate
