@@ -2,10 +2,10 @@
 {
     public class TargetStatsModel
     {
-        public double mean_score;
-        public int completed;
-        public int on_hold;
-        public int dropped;
-        public int total_entries;
+        public double? mean_score;
+        public int? completed;
+        public int? on_hold;
+        public int? dropped;
+        public int? total_entries;
     }
 }

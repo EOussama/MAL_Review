@@ -10,7 +10,7 @@
 
     public class FavTargetModel
     {
-        public int mal_id;
+        public int? mal_id;
         public string url;
         public string image_url;
         public string name;

@@ -127,17 +127,14 @@
             this.bUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
             this.bUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.bUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bUser.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bUser.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bUser.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bUser.ImageIndex = 4;
-            this.bUser.ImageList = this.ilSizeControl;
             this.bUser.Location = new System.Drawing.Point(3, 3);
             this.bUser.Name = "bUser";
             this.bUser.Size = new System.Drawing.Size(224, 67);
             this.bUser.TabIndex = 7;
-            this.bUser.Text = "Username";
-            this.bUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bUser.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.bUser.Text = "Load a MAL account";
             this.bUser.UseVisualStyleBackColor = false;
             this.bUser.Click += new System.EventHandler(this.bUser_Click);
             // 

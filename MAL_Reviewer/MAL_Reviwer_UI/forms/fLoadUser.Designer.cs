@@ -31,19 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fLoadUser));
             this.lTitle = new System.Windows.Forms.Label();
             this.pMALUsername = new System.Windows.Forms.Panel();
+            this.pbLoading = new System.Windows.Forms.PictureBox();
             this.pbSearch = new System.Windows.Forms.PictureBox();
             this.tbMALUsername = new System.Windows.Forms.TextBox();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.pTopSeparator = new System.Windows.Forms.Panel();
-            this.pbLoading = new System.Windows.Forms.PictureBox();
             this.bLoad = new System.Windows.Forms.Button();
             this.llNoAcc = new System.Windows.Forms.LinkLabel();
             this.lDisclaimer = new System.Windows.Forms.Label();
             this.pBottomSeparator = new System.Windows.Forms.Panel();
             this.pMALUsername.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
             this.SuspendLayout();
             // 
             // lTitle
@@ -66,6 +66,17 @@
             this.pMALUsername.Name = "pMALUsername";
             this.pMALUsername.Size = new System.Drawing.Size(230, 35);
             this.pMALUsername.TabIndex = 3;
+            // 
+            // pbLoading
+            // 
+            this.pbLoading.Image = global::MAL_Reviwer_UI.Properties.Resources.loading_gif_control_light;
+            this.pbLoading.Location = new System.Drawing.Point(200, 5);
+            this.pbLoading.Name = "pbLoading";
+            this.pbLoading.Size = new System.Drawing.Size(25, 24);
+            this.pbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLoading.TabIndex = 6;
+            this.pbLoading.TabStop = false;
+            this.pbLoading.Visible = false;
             // 
             // pbSearch
             // 
@@ -105,17 +116,6 @@
             this.pTopSeparator.Size = new System.Drawing.Size(257, 6);
             this.pTopSeparator.TabIndex = 5;
             // 
-            // pbLoading
-            // 
-            this.pbLoading.Image = global::MAL_Reviwer_UI.Properties.Resources.loading_gif_control_light;
-            this.pbLoading.Location = new System.Drawing.Point(200, 5);
-            this.pbLoading.Name = "pbLoading";
-            this.pbLoading.Size = new System.Drawing.Size(25, 24);
-            this.pbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLoading.TabIndex = 6;
-            this.pbLoading.TabStop = false;
-            this.pbLoading.Visible = false;
-            // 
             // bLoad
             // 
             this.bLoad.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -123,7 +123,7 @@
             this.bLoad.Location = new System.Drawing.Point(182, 250);
             this.bLoad.Name = "bLoad";
             this.bLoad.Size = new System.Drawing.Size(99, 31);
-            this.bLoad.TabIndex = 14;
+            this.bLoad.TabIndex = 2;
             this.bLoad.Text = "Load";
             this.bLoad.UseVisualStyleBackColor = true;
             this.bLoad.Click += new System.EventHandler(this.bLoad_Click);
@@ -134,7 +134,7 @@
             this.llNoAcc.Location = new System.Drawing.Point(51, 224);
             this.llNoAcc.Name = "llNoAcc";
             this.llNoAcc.Size = new System.Drawing.Size(230, 23);
-            this.llNoAcc.TabIndex = 15;
+            this.llNoAcc.TabIndex = 1;
             this.llNoAcc.TabStop = true;
             this.llNoAcc.Text = "You don\'t have a MAL account? create one.";
             this.llNoAcc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -180,9 +180,9 @@
             this.Text = "Load your MAL info";
             this.pMALUsername.ResumeLayout(false);
             this.pMALUsername.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

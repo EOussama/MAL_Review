@@ -1,30 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using MAL_Reviewer_API;
+using MAL_Reviewer_API.models;
 
 namespace MAL_Reviwer_UI.forms
 {
     public partial class fLoadUser : Form
     {
+        public event EventHandler<MALUserModel> UserLoadedEvent;
+
         public fLoadUser()
         {
             InitializeComponent();
         }
 
-        private void bLoad_Click(object sender, EventArgs e)
+        private async void bLoad_Click(object sender, EventArgs e)
         {
+            string username = tbMALUsername.Text.Trim();
+
+            pbLoading.Visible = true;
+
             try
             {
-                if (!IsValidUsername()) throw new Exception("Please input a valid username!");
-                // if () throw new Exception();
+                if (username.Length < 3) throw new Exception("Please input a valid username!");
 
-                pbLoading.Visible = true;
+                MALUserModel userModel = await MALHelper.GetUser(username);
+
+                if (userModel == null) throw new Exception($"No user under the username “{ username }” was found!");
+                else
+                {
+                    this.Close();
+                    UserLoadedEvent?.Invoke(this, userModel);
+                }
             }
             catch (Exception ex)
             {
@@ -39,13 +46,6 @@ namespace MAL_Reviwer_UI.forms
         private void llNoAcc_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://myanimelist.net/register.php");
-        }
-
-        private bool IsValidUsername()
-        {
-            string username = tbMALUsername.Text.Trim();
-
-            return username.Length > 2;
         }
     }
 }
