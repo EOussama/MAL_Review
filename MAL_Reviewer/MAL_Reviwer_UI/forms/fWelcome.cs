@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Drawing;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using MAL_Reviewer_API;
 using MAL_Reviewer_API.models;
@@ -31,27 +32,39 @@ namespace MAL_Reviwer_UI.forms
             fLoadUser.ShowDialog();
         }
 
-        private void FLoadUser_UserLoadedEvent(object sender, MALUserModel user)
+        private async void FLoadUser_UserLoadedEvent(object sender, MALUserModel user)
         {
-            lUserUsername.Text = user.username;
-            lUserGender.Text = user.gender;
-            lUserJoinDate.Text = user.joined?.ToShortDateString();
-            lUserBirthday.Text = user.birthday?.ToShortDateString();
-            lUserLocation.Text = user.location;
-            bMALProfile.Tag = user.url;
+            pDashBoardMain.Visible = false;
+            pbDashBoardLoad.Visible = true;
 
-            if (user.image_url != null && user.image_url != "")
-                pbUserImage.Load(user.image_url);
-            else
-                pbUserImage.Image = Properties.Resources.icon_user;
+            await Task.Run(() =>
+            {
+                Thread.Sleep(500);
+                pDashBoardMain.Invoke((MethodInvoker)delegate
+                {
+                    lUserUsername.Text = user.username;
+                    lUserGender.Text = user.gender;
+                    lUserJoinDate.Text = user.joined?.ToShortDateString();
+                    lUserBirthday.Text = user.birthday?.ToShortDateString();
+                    lUserLocation.Text = user.location;
+                    bMALProfile.Tag = user.url;
 
-            ttExtendedInfo.SetToolTip(lUserUsername, user.username);
-            ttExtendedInfo.SetToolTip(lUserGender, user.gender);
-            ttExtendedInfo.SetToolTip(lUserJoinDate, user.joined?.ToShortDateString());
-            ttExtendedInfo.SetToolTip(lUserBirthday, user.birthday?.ToShortDateString());
-            ttExtendedInfo.SetToolTip(lUserLocation, user.location);
+                    if (user.image_url != null && user.image_url != "")
+                        pbUserImage.Load(user.image_url);
+                    else
+                        pbUserImage.Image = Properties.Resources.icon_user;
+
+                    ttExtendedInfo.SetToolTip(lUserUsername, user.username);
+                    ttExtendedInfo.SetToolTip(lUserGender, user.gender);
+                    ttExtendedInfo.SetToolTip(lUserJoinDate, user.joined?.ToShortDateString());
+                    ttExtendedInfo.SetToolTip(lUserBirthday, user.birthday?.ToShortDateString());
+                    ttExtendedInfo.SetToolTip(lUserLocation, user.location);
+                });
+            });
 
             bUser.Text = "Unload this MAL account";
+            pbDashBoardLoad.Visible = false;
+            pDashBoardMain.Visible = true;
         }
 
         private void bMALProfile_Click(object sender, EventArgs e)
