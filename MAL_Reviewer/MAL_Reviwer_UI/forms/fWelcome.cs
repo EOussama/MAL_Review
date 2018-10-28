@@ -86,8 +86,8 @@ namespace MAL_Reviwer_UI.forms
                     lvDashAnimeEpisodes.Text = user.anime_stats.episodes_watched.ToString();
                     lvDashAnimeRewatches.Text = user.anime_stats.rewatched.ToString();
 
-                    lvDashAnimeDaysWatched.Text = user.anime_stats.days_watched.ToString();
-                    lvDashAnimeMeanScore.Text = user.anime_stats.mean_score.ToString();
+                    lvDashAnimeDaysWatched.Text = user.anime_stats.days_watched?.ToString("0.00");
+                    lvDashAnimeMeanScore.Text = user.anime_stats.mean_score?.ToString("0.00");
 
                     // Manga stats
                     lvDashMangaReading.Text = user.manga_stats.reading.ToString();
@@ -99,8 +99,8 @@ namespace MAL_Reviwer_UI.forms
                     lvDashMangaChapters.Text = user.manga_stats.chapters_read.ToString();
                     lvDashMangaReread.Text = user.manga_stats.reread.ToString();
 
-                    lvDashMangaDaysRead.Text = user.manga_stats.days_read.ToString();
-                    lvDashMangaMeanScore.Text = user.manga_stats.mean_score.ToString();
+                    lvDashMangaDaysRead.Text = user.manga_stats.days_read?.ToString("0.00");
+                    lvDashMangaMeanScore.Text = user.manga_stats.mean_score?.ToString("0.00");
 
                     #region Favorites
 
