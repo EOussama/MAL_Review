@@ -76,6 +76,12 @@ namespace MAL_Reviewer_API
             return null;
         }
 
+
+        /// <summary>
+        /// Retrieve information of the given username.
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
         public async static Task<MALUserModel> GetUser(string username)
         {
             string url = $"{ client.BaseAddress.AbsoluteUri }user/{ username }";

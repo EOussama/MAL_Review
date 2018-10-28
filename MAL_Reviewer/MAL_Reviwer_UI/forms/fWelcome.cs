@@ -22,9 +22,10 @@ namespace MAL_Reviwer_UI.forms
             (new fNewReview()).ShowDialog();
         }
 
-        private async void bUser_Click(object sender, EventArgs e)
+        private void bUser_Click(object sender, EventArgs e)
         {
-            MALUserModel user = await MALHelper.GetUser("EOussama");
+            (new fLoadUser()).ShowDialog();
+            /*MALUserModel user = await MALHelper.GetUser("EOussama");
 
             lUserUsername.Text = user.username;
             lUserGender.Text = user.gender;
@@ -38,7 +39,7 @@ namespace MAL_Reviwer_UI.forms
             ttExtendedInfo.SetToolTip(lUserGender, user.gender);
             ttExtendedInfo.SetToolTip(lUserJoinDate, user.joined.ToShortDateString());
             ttExtendedInfo.SetToolTip(lUserBirthday, user.birthday.ToShortDateString());
-            ttExtendedInfo.SetToolTip(lUserLocation, user.location);
+            ttExtendedInfo.SetToolTip(lUserLocation, user.location);*/
         }
 
         private void bMALProfile_Click(object sender, EventArgs e)

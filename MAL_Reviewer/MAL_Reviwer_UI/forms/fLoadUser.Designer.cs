@@ -1,0 +1,205 @@
+﻿namespace MAL_Reviwer_UI.forms
+{
+    partial class fLoadUser
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fLoadUser));
+            this.lTitle = new System.Windows.Forms.Label();
+            this.pMALUsername = new System.Windows.Forms.Panel();
+            this.pbSearch = new System.Windows.Forms.PictureBox();
+            this.tbMALUsername = new System.Windows.Forms.TextBox();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.pTopSeparator = new System.Windows.Forms.Panel();
+            this.pbLoading = new System.Windows.Forms.PictureBox();
+            this.bLoad = new System.Windows.Forms.Button();
+            this.llNoAcc = new System.Windows.Forms.LinkLabel();
+            this.lDisclaimer = new System.Windows.Forms.Label();
+            this.pBottomSeparator = new System.Windows.Forms.Panel();
+            this.pMALUsername.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // lTitle
+            // 
+            this.lTitle.AutoSize = true;
+            this.lTitle.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTitle.Location = new System.Drawing.Point(47, 164);
+            this.lTitle.Name = "lTitle";
+            this.lTitle.Size = new System.Drawing.Size(192, 19);
+            this.lTitle.TabIndex = 0;
+            this.lTitle.Text = "Input your MAL username";
+            // 
+            // pMALUsername
+            // 
+            this.pMALUsername.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pMALUsername.Controls.Add(this.pbLoading);
+            this.pMALUsername.Controls.Add(this.pbSearch);
+            this.pMALUsername.Controls.Add(this.tbMALUsername);
+            this.pMALUsername.Location = new System.Drawing.Point(51, 186);
+            this.pMALUsername.Name = "pMALUsername";
+            this.pMALUsername.Size = new System.Drawing.Size(230, 35);
+            this.pMALUsername.TabIndex = 3;
+            // 
+            // pbSearch
+            // 
+            this.pbSearch.Image = global::MAL_Reviwer_UI.Properties.Resources.icon_user;
+            this.pbSearch.Location = new System.Drawing.Point(204, 7);
+            this.pbSearch.Name = "pbSearch";
+            this.pbSearch.Size = new System.Drawing.Size(20, 20);
+            this.pbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSearch.TabIndex = 1;
+            this.pbSearch.TabStop = false;
+            // 
+            // tbMALUsername
+            // 
+            this.tbMALUsername.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tbMALUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbMALUsername.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMALUsername.Location = new System.Drawing.Point(9, 7);
+            this.tbMALUsername.Name = "tbMALUsername";
+            this.tbMALUsername.Size = new System.Drawing.Size(188, 20);
+            this.tbMALUsername.TabIndex = 0;
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.Image = global::MAL_Reviwer_UI.Properties.Resources.logo;
+            this.pbLogo.Location = new System.Drawing.Point(12, 19);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(310, 96);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLogo.TabIndex = 4;
+            this.pbLogo.TabStop = false;
+            // 
+            // pTopSeparator
+            // 
+            this.pTopSeparator.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pTopSeparator.Location = new System.Drawing.Point(38, 138);
+            this.pTopSeparator.Name = "pTopSeparator";
+            this.pTopSeparator.Size = new System.Drawing.Size(257, 6);
+            this.pTopSeparator.TabIndex = 5;
+            // 
+            // pbLoading
+            // 
+            this.pbLoading.Image = global::MAL_Reviwer_UI.Properties.Resources.loading_gif_control_light;
+            this.pbLoading.Location = new System.Drawing.Point(200, 5);
+            this.pbLoading.Name = "pbLoading";
+            this.pbLoading.Size = new System.Drawing.Size(25, 24);
+            this.pbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLoading.TabIndex = 6;
+            this.pbLoading.TabStop = false;
+            this.pbLoading.Visible = false;
+            // 
+            // bLoad
+            // 
+            this.bLoad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bLoad.Location = new System.Drawing.Point(182, 250);
+            this.bLoad.Name = "bLoad";
+            this.bLoad.Size = new System.Drawing.Size(99, 31);
+            this.bLoad.TabIndex = 14;
+            this.bLoad.Text = "Load";
+            this.bLoad.UseVisualStyleBackColor = true;
+            this.bLoad.Click += new System.EventHandler(this.bLoad_Click);
+            // 
+            // llNoAcc
+            // 
+            this.llNoAcc.LinkVisited = true;
+            this.llNoAcc.Location = new System.Drawing.Point(51, 224);
+            this.llNoAcc.Name = "llNoAcc";
+            this.llNoAcc.Size = new System.Drawing.Size(230, 23);
+            this.llNoAcc.TabIndex = 15;
+            this.llNoAcc.TabStop = true;
+            this.llNoAcc.Text = "You don\'t have a MAL account? create one.";
+            this.llNoAcc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.llNoAcc.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llNoAcc_LinkClicked);
+            // 
+            // lDisclaimer
+            // 
+            this.lDisclaimer.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lDisclaimer.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lDisclaimer.Location = new System.Drawing.Point(38, 332);
+            this.lDisclaimer.Name = "lDisclaimer";
+            this.lDisclaimer.Size = new System.Drawing.Size(257, 109);
+            this.lDisclaimer.TabIndex = 16;
+            this.lDisclaimer.Text = resources.GetString("lDisclaimer.Text");
+            this.lDisclaimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pBottomSeparator
+            // 
+            this.pBottomSeparator.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pBottomSeparator.Location = new System.Drawing.Point(38, 305);
+            this.pBottomSeparator.Name = "pBottomSeparator";
+            this.pBottomSeparator.Size = new System.Drawing.Size(257, 6);
+            this.pBottomSeparator.TabIndex = 6;
+            // 
+            // fLoadUser
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(334, 472);
+            this.Controls.Add(this.pBottomSeparator);
+            this.Controls.Add(this.lDisclaimer);
+            this.Controls.Add(this.llNoAcc);
+            this.Controls.Add(this.bLoad);
+            this.Controls.Add(this.pTopSeparator);
+            this.Controls.Add(this.pbLogo);
+            this.Controls.Add(this.pMALUsername);
+            this.Controls.Add(this.lTitle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.Name = "fLoadUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Load your MAL info";
+            this.pMALUsername.ResumeLayout(false);
+            this.pMALUsername.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label lTitle;
+        private System.Windows.Forms.Panel pMALUsername;
+        private System.Windows.Forms.PictureBox pbSearch;
+        private System.Windows.Forms.TextBox tbMALUsername;
+        private System.Windows.Forms.PictureBox pbLogo;
+        private System.Windows.Forms.Panel pTopSeparator;
+        private System.Windows.Forms.PictureBox pbLoading;
+        private System.Windows.Forms.Button bLoad;
+        private System.Windows.Forms.LinkLabel llNoAcc;
+        private System.Windows.Forms.Label lDisclaimer;
+        private System.Windows.Forms.Panel pBottomSeparator;
+    }
+}

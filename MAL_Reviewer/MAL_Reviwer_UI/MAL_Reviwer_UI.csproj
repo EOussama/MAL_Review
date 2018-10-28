@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="forms\fLoadUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\fLoadUser.Designer.cs">
+      <DependentUpon>fLoadUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\fNewReview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     <Compile Include="user_controls\ucTargetSearchCard.Designer.cs">
       <DependentUpon>ucTargetSearchCard.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="forms\fLoadUser.resx">
+      <DependentUpon>fLoadUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\fNewReview.resx">
       <DependentUpon>fNewReview.cs</DependentUpon>
     </EmbeddedResource>
