@@ -74,6 +74,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="user_controls\ucFavoriteThumb.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="user_controls\ucFavoriteThumb.Designer.cs">
+      <DependentUpon>ucFavoriteThumb.cs</DependentUpon>
+    </Compile>
     <Compile Include="user_controls\ucReviewCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -99,6 +105,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_controls\ucFavoriteThumb.resx">
+      <DependentUpon>ucFavoriteThumb.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user_controls\ucReviewCard.resx">
       <DependentUpon>ucReviewCard.cs</DependentUpon>

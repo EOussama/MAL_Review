@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MAL_Reviwer_UI.user_controls;
 using MAL_Reviewer_API;
 using MAL_Reviewer_API.models;
 
@@ -20,6 +21,17 @@ namespace MAL_Reviwer_UI.forms
             // Temporarely removing Animelist and Mangalist tab pages.
             tcDashboard.TabPages.Remove(tpAnimelist);
             tcDashboard.TabPages.Remove(tpMangalist);
+
+            // Horizontal scroll disable
+            pChildAnime.HorizontalScroll.Maximum = 0;
+            pChildManga.HorizontalScroll.Maximum = 0;
+            pChildCharacters.HorizontalScroll.Maximum = 0;
+            pChildPeople.HorizontalScroll.Maximum = 0;
+
+            pChildAnime.AutoScroll = true;
+            pChildManga.AutoScroll = true;
+            pChildCharacters.AutoScroll = true;
+            pChildPeople.AutoScroll = true;
 
             MALHelper.Init();
         }
@@ -89,6 +101,59 @@ namespace MAL_Reviwer_UI.forms
 
                     lvDashMangaDaysRead.Text = user.manga_stats.days_read.ToString();
                     lvDashMangaMeanScore.Text = user.manga_stats.mean_score.ToString();
+
+                    #region Favorites
+
+                    // Anime
+                    foreach (FavAnimeModel favAnimeModel in user.favorites.anime)
+                    {
+                        ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favAnimeModel.name, favAnimeModel.image_url, "Anime");
+
+                        ucFavThumb.Width = pChildAnime.Width;
+                        ucFavThumb.Tag = favAnimeModel.url;
+                        ucFavThumb.Top = ucFavThumb.Height * pChildAnime.Controls.Count;
+                        pChildAnime.Controls.Add(ucFavThumb);
+                    }
+
+                    // Manga
+                    foreach (FavMangaModel favMangaModel in user.favorites.manga)
+                    {
+                        ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favMangaModel.name, favMangaModel.image_url, "Manga");
+
+                        ucFavThumb.Width = pChildManga.Width;
+                        ucFavThumb.Tag = favMangaModel.url;
+                        ucFavThumb.Top = ucFavThumb.Height * pChildManga.Controls.Count;
+                        pChildManga.Controls.Add(ucFavThumb);
+                    }
+
+                    // Characters
+                    foreach (FavCharactersModel favCharacterModel in user.favorites.characters)
+                    {
+                        ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favCharacterModel.name, favCharacterModel.image_url, "Character");
+
+                        ucFavThumb.Width = pChildCharacters.Width;
+                        ucFavThumb.Tag = favCharacterModel.url;
+                        ucFavThumb.Top = ucFavThumb.Height * pChildCharacters.Controls.Count;
+                        pChildCharacters.Controls.Add(ucFavThumb);
+                    }
+
+                    // People
+                    foreach (FavPeopleModel favPeopleModel in user.favorites.people)
+                    {
+                        ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favPeopleModel.name, favPeopleModel.image_url, "Person");
+
+                        ucFavThumb.Width = pChildPeople.Width;
+                        ucFavThumb.Tag = favPeopleModel.url;
+                        ucFavThumb.Top = ucFavThumb.Height * pChildPeople.Controls.Count;
+                        pChildPeople.Controls.Add(ucFavThumb);
+                    }
+
+                    lFavAnimeCount.Text = user.favorites.anime.Length.ToString();
+                    lFavMangaCount.Text = user.favorites.manga.Length.ToString();
+                    lFavCharactersCount.Text = user.favorites.characters.Length.ToString();
+                    lFavPeopleCount.Text = user.favorites.people.Length.ToString();
+
+                    #endregion
 
                     #endregion
 
