@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using MAL_Reviwer_UI.user_controls;
 using MAL_Reviewer_API;
 using MAL_Reviewer_API.models;
+using System.IO;
 
 namespace MAL_Reviwer_UI.forms
 {
@@ -101,6 +102,9 @@ namespace MAL_Reviwer_UI.forms
 
                     lvDashMangaDaysRead.Text = user.manga_stats.days_read?.ToString("0.00");
                     lvDashMangaMeanScore.Text = user.manga_stats.mean_score?.ToString("0.00");
+
+                    // About
+                    rtbAbout.Text = (user.about == "" || user.about == null) ? "Such empty!" : user.about;
 
                     #region Favorites
 

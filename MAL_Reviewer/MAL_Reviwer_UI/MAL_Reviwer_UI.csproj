@@ -140,6 +140,7 @@
     <Content Include="images\icons\icon_close.png" />
     <Content Include="images\icons\icon_favorite.png" />
     <Content Include="images\icons\icon_filter.png" />
+    <Content Include="images\icons\icon_info.png" />
     <Content Include="images\icons\icon_link.png" />
     <Content Include="images\icons\icon_manga.png" />
     <Content Include="images\icons\icon_menu.png" />
