@@ -69,6 +69,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="user_controls\ucReviewCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -92,14 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="user_controls\ucReviewCard.resx">
       <DependentUpon>ucReviewCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,22 +127,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\icons\credits.txt" />
-    <Content Include="images\icons\icon-anime.png" />
-    <Content Include="images\icons\icon-close.png" />
-    <Content Include="images\icons\icon-filter.png" />
-    <Content Include="images\icons\icon-link.png" />
-    <Content Include="images\icons\icon-manga.png" />
-    <Content Include="images\icons\icon-menu.png" />
-    <Content Include="images\icons\icon-search.png" />
-    <Content Include="images\icons\icon-open.png" />
-    <Content Include="images\icons\icon-add.png" />
-    <Content Include="images\icons\icon-settings.png" />
-    <Content Include="images\icons\icon-sort.png" />
-    <Content Include="images\icons\icon-delete.png" />
-    <Content Include="images\icons\icon-user.png" />
-    <Content Include="images\loading-gifs\loading-gif-control-light.gif" />
-    <Content Include="images\loading-gifs\loading-gif-control.gif" />
-    <Content Include="images\loading-gifs\loading-gif-white.gif" />
+    <Content Include="images\icons\icon_anime.png" />
+    <Content Include="images\icons\icon_close.png" />
+    <Content Include="images\icons\icon_filter.png" />
+    <Content Include="images\icons\icon_link.png" />
+    <Content Include="images\icons\icon_manga.png" />
+    <Content Include="images\icons\icon_menu.png" />
+    <Content Include="images\icons\icon_search.png" />
+    <Content Include="images\icons\icon_open.png" />
+    <Content Include="images\icons\icon_add.png" />
+    <Content Include="images\icons\icon_settings.png" />
+    <Content Include="images\icons\icon_sort.png" />
+    <Content Include="images\icons\icon_delete.png" />
+    <Content Include="images\icons\icon_user.png" />
+    <Content Include="images\loading-gifs\loading_gif_control-light.gif" />
+    <Content Include="images\loading-gifs\loading_gif_control.gif" />
+    <Content Include="images\loading-gifs\loading_gif_white.gif" />
     <Content Include="images\logo\credits.txt" />
     <Content Include="images\logo\logo.ico" />
     <Content Include="images\logo\logo.png" />

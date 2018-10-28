@@ -103,16 +103,6 @@ namespace MAL_Reviwer_UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_filter {
-            get {
-                object obj = ResourceManager.GetObject("icon_filter", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap icon_link {
             get {
                 object obj = ResourceManager.GetObject("icon_link", resourceCulture);
@@ -123,29 +113,9 @@ namespace MAL_Reviwer_UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_link1 {
-            get {
-                object obj = ResourceManager.GetObject("icon_link1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap icon_manga {
             get {
                 object obj = ResourceManager.GetObject("icon_manga", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_menu {
-            get {
-                object obj = ResourceManager.GetObject("icon_menu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,16 +146,6 @@ namespace MAL_Reviwer_UI.Properties {
         internal static System.Drawing.Bitmap icon_settings {
             get {
                 object obj = ResourceManager.GetObject("icon_settings", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_sort {
-            get {
-                object obj = ResourceManager.GetObject("icon_sort", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -225,7 +185,7 @@ namespace MAL_Reviwer_UI.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap loading_gif_white {
             get {
-                object obj = ResourceManager.GetObject("loading-gif-white", resourceCulture);
+                object obj = ResourceManager.GetObject("loading_gif_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
