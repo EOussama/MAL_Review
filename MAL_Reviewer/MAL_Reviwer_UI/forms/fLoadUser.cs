@@ -12,6 +12,8 @@ namespace MAL_Reviwer_UI.forms
         public fLoadUser()
         {
             InitializeComponent();
+
+            this.ActiveControl = tbMALUsername;
         }
 
         private async void bLoad_Click(object sender, EventArgs e)

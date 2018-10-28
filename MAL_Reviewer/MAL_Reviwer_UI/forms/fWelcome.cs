@@ -110,9 +110,8 @@ namespace MAL_Reviwer_UI.forms
                     {
                         ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favAnimeModel.name, favAnimeModel.image_url, "Anime");
 
-                        ucFavThumb.Width = pChildAnime.Width;
                         ucFavThumb.Tag = favAnimeModel.url;
-                        ucFavThumb.Top = ucFavThumb.Height * pChildAnime.Controls.Count;
+                        ucFavThumb.Dock = DockStyle.Top;
                         pChildAnime.Controls.Add(ucFavThumb);
                     }
 
@@ -122,9 +121,8 @@ namespace MAL_Reviwer_UI.forms
                     {
                         ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favMangaModel.name, favMangaModel.image_url, "Manga");
 
-                        ucFavThumb.Width = pChildManga.Width;
                         ucFavThumb.Tag = favMangaModel.url;
-                        ucFavThumb.Top = ucFavThumb.Height * pChildManga.Controls.Count;
+                        ucFavThumb.Dock = DockStyle.Top;
                         pChildManga.Controls.Add(ucFavThumb);
                     }
 
@@ -134,9 +132,8 @@ namespace MAL_Reviwer_UI.forms
                     {
                         ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favCharacterModel.name, favCharacterModel.image_url, "Character");
 
-                        ucFavThumb.Width = pChildCharacters.Width;
                         ucFavThumb.Tag = favCharacterModel.url;
-                        ucFavThumb.Top = ucFavThumb.Height * pChildCharacters.Controls.Count;
+                        ucFavThumb.Dock = DockStyle.Top;
                         pChildCharacters.Controls.Add(ucFavThumb);
                     }
 
@@ -146,9 +143,8 @@ namespace MAL_Reviwer_UI.forms
                     {
                         ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favPeopleModel.name, favPeopleModel.image_url, "Person");
 
-                        ucFavThumb.Width = pChildPeople.Width;
                         ucFavThumb.Tag = favPeopleModel.url;
-                        ucFavThumb.Top = ucFavThumb.Height * pChildPeople.Controls.Count;
+                        ucFavThumb.Dock = DockStyle.Top;
                         pChildPeople.Controls.Add(ucFavThumb);
                     }
 
