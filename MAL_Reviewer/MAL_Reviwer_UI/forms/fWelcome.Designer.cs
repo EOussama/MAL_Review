@@ -35,14 +35,30 @@
             this.pUser = new System.Windows.Forms.Panel();
             this.bUser = new System.Windows.Forms.Button();
             this.pReviewLookUp = new System.Windows.Forms.Panel();
+            this.pbSearch = new System.Windows.Forms.PictureBox();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.pButtons = new System.Windows.Forms.Panel();
+            this.bClear = new System.Windows.Forms.Button();
             this.ilSizeControl = new System.Windows.Forms.ImageList(this.components);
+            this.bOpen = new System.Windows.Forms.Button();
+            this.bNew = new System.Windows.Forms.Button();
             this.pMain = new System.Windows.Forms.Panel();
             this.pDashboard = new System.Windows.Forms.Panel();
             this.tcDashboard = new System.Windows.Forms.TabControl();
             this.tpProfile = new System.Windows.Forms.TabPage();
             this.pDashBoardMain = new System.Windows.Forms.Panel();
+            this.pDashFavorites = new System.Windows.Forms.Panel();
+            this.tlpFavorites = new System.Windows.Forms.TableLayoutPanel();
+            this.pDashFavoriteCharacters = new System.Windows.Forms.Panel();
+            this.lDashFavoriteCharacters = new System.Windows.Forms.Label();
+            this.pDashFavoritePeople = new System.Windows.Forms.Panel();
+            this.lDashFavoritePeople = new System.Windows.Forms.Label();
+            this.pDashFavoriteAnime = new System.Windows.Forms.Panel();
+            this.lDashFavoriteAnime = new System.Windows.Forms.Label();
+            this.pDashFavoriteManga = new System.Windows.Forms.Panel();
+            this.lDashFavoriteManga = new System.Windows.Forms.Label();
+            this.pbDashFavorites = new System.Windows.Forms.PictureBox();
+            this.lDashFavorites = new System.Windows.Forms.Label();
             this.tlpUserInfo = new System.Windows.Forms.TableLayoutPanel();
             this.pCardProfileInfo = new System.Windows.Forms.Panel();
             this.tlpUserInfoCore = new System.Windows.Forms.TableLayoutPanel();
@@ -56,12 +72,15 @@
             this.lBirthday = new System.Windows.Forms.Label();
             this.lUserUsername = new System.Windows.Forms.Label();
             this.lLocation = new System.Windows.Forms.Label();
+            this.pbUserImage = new System.Windows.Forms.PictureBox();
             this.pCard = new System.Windows.Forms.Panel();
+            this.pbProfileLink = new System.Windows.Forms.PictureBox();
             this.bMALProfile = new System.Windows.Forms.Button();
             this.tlpAnimeMangaCards = new System.Windows.Forms.TableLayoutPanel();
             this.pDashMangaCard = new System.Windows.Forms.Panel();
             this.lvDashMangaReread = new System.Windows.Forms.Label();
             this.lDashMangaReread = new System.Windows.Forms.Label();
+            this.pbDashManga = new System.Windows.Forms.PictureBox();
             this.lvDashMangaMeanScore = new System.Windows.Forms.Label();
             this.lDashMangaMeanScore = new System.Windows.Forms.Label();
             this.lvDashMangaDaysRead = new System.Windows.Forms.Label();
@@ -82,6 +101,7 @@
             this.lDashMangaReading = new System.Windows.Forms.Label();
             this.lDashMangaTitle = new System.Windows.Forms.Label();
             this.pDashAnimeCard = new System.Windows.Forms.Panel();
+            this.pbDashAnime = new System.Windows.Forms.PictureBox();
             this.lvDashAnimeMeanScore = new System.Windows.Forms.Label();
             this.lDashAnimeMeanScore = new System.Windows.Forms.Label();
             this.lvDashAnimeDaysWatched = new System.Windows.Forms.Label();
@@ -101,67 +121,47 @@
             this.lDashAnimeCompleted = new System.Windows.Forms.Label();
             this.lDashAnimeWatching = new System.Windows.Forms.Label();
             this.lDashAnimeTitle = new System.Windows.Forms.Label();
+            this.pbDashBoardLoad = new System.Windows.Forms.PictureBox();
             this.lMALAccPreview = new System.Windows.Forms.Label();
             this.tpAnimelist = new System.Windows.Forms.TabPage();
             this.tpMangalist = new System.Windows.Forms.TabPage();
             this.pHeader = new System.Windows.Forms.Panel();
             this.lVersion = new System.Windows.Forms.Label();
-            this.lTitle = new System.Windows.Forms.Label();
-            this.ttExtendedInfo = new System.Windows.Forms.ToolTip(this.components);
-            this.pDashFavorites = new System.Windows.Forms.Panel();
-            this.lDashFavorites = new System.Windows.Forms.Label();
-            this.tlpFavorites = new System.Windows.Forms.TableLayoutPanel();
-            this.pDashFavoriteManga = new System.Windows.Forms.Panel();
-            this.lDashFavoriteManga = new System.Windows.Forms.Label();
-            this.pDashFavoriteAnime = new System.Windows.Forms.Panel();
-            this.lDashFavoriteAnime = new System.Windows.Forms.Label();
-            this.pDashFavoritePeople = new System.Windows.Forms.Panel();
-            this.lDashFavoritePeople = new System.Windows.Forms.Label();
-            this.pDashFavoriteCharacters = new System.Windows.Forms.Panel();
-            this.lDashFavoriteCharacters = new System.Windows.Forms.Label();
-            this.pbDashFavorites = new System.Windows.Forms.PictureBox();
-            this.pbUserImage = new System.Windows.Forms.PictureBox();
-            this.pbProfileLink = new System.Windows.Forms.PictureBox();
-            this.pbDashManga = new System.Windows.Forms.PictureBox();
-            this.pbDashAnime = new System.Windows.Forms.PictureBox();
-            this.pbDashBoardLoad = new System.Windows.Forms.PictureBox();
             this.bSettings = new System.Windows.Forms.Button();
+            this.lTitle = new System.Windows.Forms.Label();
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.pbSearch = new System.Windows.Forms.PictureBox();
-            this.bClear = new System.Windows.Forms.Button();
-            this.bOpen = new System.Windows.Forms.Button();
-            this.bNew = new System.Windows.Forms.Button();
+            this.ttExtendedInfo = new System.Windows.Forms.ToolTip(this.components);
             this.pSide.SuspendLayout();
             this.pUser.SuspendLayout();
             this.pReviewLookUp.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).BeginInit();
             this.pButtons.SuspendLayout();
             this.pMain.SuspendLayout();
             this.pDashboard.SuspendLayout();
             this.tcDashboard.SuspendLayout();
             this.tpProfile.SuspendLayout();
             this.pDashBoardMain.SuspendLayout();
+            this.pDashFavorites.SuspendLayout();
+            this.tlpFavorites.SuspendLayout();
+            this.pDashFavoriteCharacters.SuspendLayout();
+            this.pDashFavoritePeople.SuspendLayout();
+            this.pDashFavoriteAnime.SuspendLayout();
+            this.pDashFavoriteManga.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDashFavorites)).BeginInit();
             this.tlpUserInfo.SuspendLayout();
             this.pCardProfileInfo.SuspendLayout();
             this.tlpUserInfoCore.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUserImage)).BeginInit();
             this.pCard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfileLink)).BeginInit();
             this.tlpAnimeMangaCards.SuspendLayout();
             this.pDashMangaCard.SuspendLayout();
-            this.pDashAnimeCard.SuspendLayout();
-            this.pHeader.SuspendLayout();
-            this.pDashFavorites.SuspendLayout();
-            this.tlpFavorites.SuspendLayout();
-            this.pDashFavoriteManga.SuspendLayout();
-            this.pDashFavoriteAnime.SuspendLayout();
-            this.pDashFavoritePeople.SuspendLayout();
-            this.pDashFavoriteCharacters.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDashFavorites)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUserImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProfileLink)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDashManga)).BeginInit();
+            this.pDashAnimeCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDashAnime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDashBoardLoad)).BeginInit();
+            this.pHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).BeginInit();
             this.SuspendLayout();
             // 
             // pSide
@@ -227,6 +227,16 @@
             this.pReviewLookUp.Size = new System.Drawing.Size(230, 35);
             this.pReviewLookUp.TabIndex = 2;
             // 
+            // pbSearch
+            // 
+            this.pbSearch.Image = ((System.Drawing.Image)(resources.GetObject("pbSearch.Image")));
+            this.pbSearch.Location = new System.Drawing.Point(204, 7);
+            this.pbSearch.Name = "pbSearch";
+            this.pbSearch.Size = new System.Drawing.Size(20, 20);
+            this.pbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSearch.TabIndex = 1;
+            this.pbSearch.TabStop = false;
+            // 
             // tbSearch
             // 
             this.tbSearch.BackColor = System.Drawing.SystemColors.ScrollBar;
@@ -249,6 +259,22 @@
             this.pButtons.Size = new System.Drawing.Size(230, 73);
             this.pButtons.TabIndex = 2;
             // 
+            // bClear
+            // 
+            this.bClear.BackColor = System.Drawing.Color.Transparent;
+            this.bClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bClear.FlatAppearance.BorderSize = 0;
+            this.bClear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.bClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.bClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bClear.ImageIndex = 2;
+            this.bClear.ImageList = this.ilSizeControl;
+            this.bClear.Location = new System.Drawing.Point(152, 3);
+            this.bClear.Name = "bClear";
+            this.bClear.Size = new System.Drawing.Size(75, 67);
+            this.bClear.TabIndex = 5;
+            this.bClear.UseVisualStyleBackColor = false;
+            // 
             // ilSizeControl
             // 
             this.ilSizeControl.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilSizeControl.ImageStream")));
@@ -259,6 +285,39 @@
             this.ilSizeControl.Images.SetKeyName(3, "icon-settings.png");
             this.ilSizeControl.Images.SetKeyName(4, "icon-user.png");
             this.ilSizeControl.Images.SetKeyName(5, "icon-link.png");
+            // 
+            // bOpen
+            // 
+            this.bOpen.BackColor = System.Drawing.Color.Transparent;
+            this.bOpen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bOpen.FlatAppearance.BorderSize = 0;
+            this.bOpen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.bOpen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.bOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bOpen.ImageIndex = 1;
+            this.bOpen.ImageList = this.ilSizeControl;
+            this.bOpen.Location = new System.Drawing.Point(77, 3);
+            this.bOpen.Name = "bOpen";
+            this.bOpen.Size = new System.Drawing.Size(75, 67);
+            this.bOpen.TabIndex = 4;
+            this.bOpen.UseVisualStyleBackColor = false;
+            // 
+            // bNew
+            // 
+            this.bNew.BackColor = System.Drawing.Color.Transparent;
+            this.bNew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bNew.FlatAppearance.BorderSize = 0;
+            this.bNew.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.bNew.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.bNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bNew.ImageIndex = 0;
+            this.bNew.ImageList = this.ilSizeControl;
+            this.bNew.Location = new System.Drawing.Point(3, 3);
+            this.bNew.Name = "bNew";
+            this.bNew.Size = new System.Drawing.Size(74, 67);
+            this.bNew.TabIndex = 3;
+            this.bNew.UseVisualStyleBackColor = false;
+            this.bNew.Click += new System.EventHandler(this.bNew_Click);
             // 
             // pMain
             // 
@@ -330,6 +389,152 @@
             this.pDashBoardMain.TabIndex = 0;
             this.pDashBoardMain.Visible = false;
             // 
+            // pDashFavorites
+            // 
+            this.pDashFavorites.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pDashFavorites.BackColor = System.Drawing.SystemColors.Control;
+            this.pDashFavorites.Controls.Add(this.tlpFavorites);
+            this.pDashFavorites.Controls.Add(this.pbDashFavorites);
+            this.pDashFavorites.Controls.Add(this.lDashFavorites);
+            this.pDashFavorites.Location = new System.Drawing.Point(2, 430);
+            this.pDashFavorites.Margin = new System.Windows.Forms.Padding(19, 3, 3, 3);
+            this.pDashFavorites.Name = "pDashFavorites";
+            this.pDashFavorites.Size = new System.Drawing.Size(590, 200);
+            this.pDashFavorites.TabIndex = 15;
+            // 
+            // tlpFavorites
+            // 
+            this.tlpFavorites.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlpFavorites.ColumnCount = 4;
+            this.tlpFavorites.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpFavorites.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpFavorites.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpFavorites.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpFavorites.Controls.Add(this.pDashFavoriteCharacters, 2, 0);
+            this.tlpFavorites.Controls.Add(this.pDashFavoritePeople, 3, 0);
+            this.tlpFavorites.Controls.Add(this.pDashFavoriteAnime, 0, 0);
+            this.tlpFavorites.Controls.Add(this.pDashFavoriteManga, 1, 0);
+            this.tlpFavorites.Location = new System.Drawing.Point(13, 39);
+            this.tlpFavorites.Name = "tlpFavorites";
+            this.tlpFavorites.RowCount = 1;
+            this.tlpFavorites.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpFavorites.Size = new System.Drawing.Size(566, 151);
+            this.tlpFavorites.TabIndex = 20;
+            // 
+            // pDashFavoriteCharacters
+            // 
+            this.pDashFavoriteCharacters.AutoScroll = true;
+            this.pDashFavoriteCharacters.AutoSize = true;
+            this.pDashFavoriteCharacters.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pDashFavoriteCharacters.Controls.Add(this.lDashFavoriteCharacters);
+            this.pDashFavoriteCharacters.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pDashFavoriteCharacters.Location = new System.Drawing.Point(292, 3);
+            this.pDashFavoriteCharacters.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.pDashFavoriteCharacters.Name = "pDashFavoriteCharacters";
+            this.pDashFavoriteCharacters.Size = new System.Drawing.Size(121, 145);
+            this.pDashFavoriteCharacters.TabIndex = 15;
+            // 
+            // lDashFavoriteCharacters
+            // 
+            this.lDashFavoriteCharacters.AutoSize = true;
+            this.lDashFavoriteCharacters.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lDashFavoriteCharacters.Location = new System.Drawing.Point(5, 5);
+            this.lDashFavoriteCharacters.Name = "lDashFavoriteCharacters";
+            this.lDashFavoriteCharacters.Size = new System.Drawing.Size(73, 16);
+            this.lDashFavoriteCharacters.TabIndex = 19;
+            this.lDashFavoriteCharacters.Text = "Characters";
+            // 
+            // pDashFavoritePeople
+            // 
+            this.pDashFavoritePeople.AutoScroll = true;
+            this.pDashFavoritePeople.AutoSize = true;
+            this.pDashFavoritePeople.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pDashFavoritePeople.Controls.Add(this.lDashFavoritePeople);
+            this.pDashFavoritePeople.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pDashFavoritePeople.Location = new System.Drawing.Point(433, 3);
+            this.pDashFavoritePeople.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.pDashFavoritePeople.Name = "pDashFavoritePeople";
+            this.pDashFavoritePeople.Size = new System.Drawing.Size(123, 145);
+            this.pDashFavoritePeople.TabIndex = 14;
+            // 
+            // lDashFavoritePeople
+            // 
+            this.lDashFavoritePeople.AutoSize = true;
+            this.lDashFavoritePeople.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lDashFavoritePeople.Location = new System.Drawing.Point(5, 5);
+            this.lDashFavoritePeople.Name = "lDashFavoritePeople";
+            this.lDashFavoritePeople.Size = new System.Drawing.Size(47, 16);
+            this.lDashFavoritePeople.TabIndex = 19;
+            this.lDashFavoritePeople.Text = "People";
+            // 
+            // pDashFavoriteAnime
+            // 
+            this.pDashFavoriteAnime.AutoScroll = true;
+            this.pDashFavoriteAnime.AutoSize = true;
+            this.pDashFavoriteAnime.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pDashFavoriteAnime.Controls.Add(this.lDashFavoriteAnime);
+            this.pDashFavoriteAnime.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pDashFavoriteAnime.Location = new System.Drawing.Point(10, 3);
+            this.pDashFavoriteAnime.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.pDashFavoriteAnime.Name = "pDashFavoriteAnime";
+            this.pDashFavoriteAnime.Size = new System.Drawing.Size(121, 145);
+            this.pDashFavoriteAnime.TabIndex = 13;
+            // 
+            // lDashFavoriteAnime
+            // 
+            this.lDashFavoriteAnime.AutoSize = true;
+            this.lDashFavoriteAnime.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lDashFavoriteAnime.Location = new System.Drawing.Point(5, 5);
+            this.lDashFavoriteAnime.Name = "lDashFavoriteAnime";
+            this.lDashFavoriteAnime.Size = new System.Drawing.Size(44, 16);
+            this.lDashFavoriteAnime.TabIndex = 19;
+            this.lDashFavoriteAnime.Text = "Anime";
+            // 
+            // pDashFavoriteManga
+            // 
+            this.pDashFavoriteManga.AutoScroll = true;
+            this.pDashFavoriteManga.AutoSize = true;
+            this.pDashFavoriteManga.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pDashFavoriteManga.Controls.Add(this.lDashFavoriteManga);
+            this.pDashFavoriteManga.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pDashFavoriteManga.Location = new System.Drawing.Point(151, 3);
+            this.pDashFavoriteManga.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.pDashFavoriteManga.Name = "pDashFavoriteManga";
+            this.pDashFavoriteManga.Size = new System.Drawing.Size(121, 145);
+            this.pDashFavoriteManga.TabIndex = 12;
+            // 
+            // lDashFavoriteManga
+            // 
+            this.lDashFavoriteManga.AutoSize = true;
+            this.lDashFavoriteManga.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lDashFavoriteManga.Location = new System.Drawing.Point(5, 5);
+            this.lDashFavoriteManga.Name = "lDashFavoriteManga";
+            this.lDashFavoriteManga.Size = new System.Drawing.Size(46, 16);
+            this.lDashFavoriteManga.TabIndex = 19;
+            this.lDashFavoriteManga.Text = "Manga";
+            // 
+            // pbDashFavorites
+            // 
+            this.pbDashFavorites.Image = global::MAL_Reviwer_UI.Properties.Resources.icon_favorite;
+            this.pbDashFavorites.Location = new System.Drawing.Point(13, 3);
+            this.pbDashFavorites.Name = "pbDashFavorites";
+            this.pbDashFavorites.Size = new System.Drawing.Size(20, 20);
+            this.pbDashFavorites.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbDashFavorites.TabIndex = 19;
+            this.pbDashFavorites.TabStop = false;
+            // 
+            // lDashFavorites
+            // 
+            this.lDashFavorites.AutoSize = true;
+            this.lDashFavorites.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lDashFavorites.Location = new System.Drawing.Point(39, 4);
+            this.lDashFavorites.Name = "lDashFavorites";
+            this.lDashFavorites.Size = new System.Drawing.Size(77, 19);
+            this.lDashFavorites.TabIndex = 19;
+            this.lDashFavorites.Text = "Favorites";
+            // 
             // tlpUserInfo
             // 
             this.tlpUserInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -339,11 +544,11 @@
             this.tlpUserInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tlpUserInfo.Controls.Add(this.pCardProfileInfo, 0, 0);
             this.tlpUserInfo.Controls.Add(this.pCard, 1, 0);
-            this.tlpUserInfo.Location = new System.Drawing.Point(2, 365);
+            this.tlpUserInfo.Location = new System.Drawing.Point(2, 35);
             this.tlpUserInfo.Name = "tlpUserInfo";
             this.tlpUserInfo.RowCount = 1;
             this.tlpUserInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpUserInfo.Size = new System.Drawing.Size(603, 156);
+            this.tlpUserInfo.Size = new System.Drawing.Size(590, 156);
             this.tlpUserInfo.TabIndex = 14;
             // 
             // pCardProfileInfo
@@ -355,7 +560,7 @@
             this.pCardProfileInfo.Location = new System.Drawing.Point(3, 3);
             this.pCardProfileInfo.Margin = new System.Windows.Forms.Padding(3, 3, 19, 3);
             this.pCardProfileInfo.Name = "pCardProfileInfo";
-            this.pCardProfileInfo.Size = new System.Drawing.Size(400, 150);
+            this.pCardProfileInfo.Size = new System.Drawing.Size(391, 150);
             this.pCardProfileInfo.TabIndex = 0;
             // 
             // tlpUserInfoCore
@@ -384,7 +589,7 @@
             this.tlpUserInfoCore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpUserInfoCore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpUserInfoCore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpUserInfoCore.Size = new System.Drawing.Size(212, 116);
+            this.tlpUserInfoCore.Size = new System.Drawing.Size(203, 116);
             this.tlpUserInfoCore.TabIndex = 6;
             // 
             // lUserLocation
@@ -394,7 +599,7 @@
             this.lUserLocation.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lUserLocation.Location = new System.Drawing.Point(78, 92);
             this.lUserLocation.Name = "lUserLocation";
-            this.lUserLocation.Size = new System.Drawing.Size(131, 24);
+            this.lUserLocation.Size = new System.Drawing.Size(122, 24);
             this.lUserLocation.TabIndex = 10;
             this.lUserLocation.Text = "[Location]";
             this.lUserLocation.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -416,7 +621,7 @@
             this.lUserBirthday.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lUserBirthday.Location = new System.Drawing.Point(78, 69);
             this.lUserBirthday.Name = "lUserBirthday";
-            this.lUserBirthday.Size = new System.Drawing.Size(131, 23);
+            this.lUserBirthday.Size = new System.Drawing.Size(122, 23);
             this.lUserBirthday.TabIndex = 9;
             this.lUserBirthday.Text = "[Birthday]";
             this.lUserBirthday.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -438,7 +643,7 @@
             this.lUserJoinDate.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lUserJoinDate.Location = new System.Drawing.Point(78, 46);
             this.lUserJoinDate.Name = "lUserJoinDate";
-            this.lUserJoinDate.Size = new System.Drawing.Size(131, 23);
+            this.lUserJoinDate.Size = new System.Drawing.Size(122, 23);
             this.lUserJoinDate.TabIndex = 8;
             this.lUserJoinDate.Text = "[Join date]";
             this.lUserJoinDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -460,7 +665,7 @@
             this.lUserGender.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lUserGender.Location = new System.Drawing.Point(78, 23);
             this.lUserGender.Name = "lUserGender";
-            this.lUserGender.Size = new System.Drawing.Size(131, 23);
+            this.lUserGender.Size = new System.Drawing.Size(122, 23);
             this.lUserGender.TabIndex = 7;
             this.lUserGender.Text = "[Gender]";
             this.lUserGender.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -482,7 +687,7 @@
             this.lUserUsername.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lUserUsername.Location = new System.Drawing.Point(78, 0);
             this.lUserUsername.Name = "lUserUsername";
-            this.lUserUsername.Size = new System.Drawing.Size(131, 23);
+            this.lUserUsername.Size = new System.Drawing.Size(122, 23);
             this.lUserUsername.TabIndex = 6;
             this.lUserUsername.Text = "[Username]";
             this.lUserUsername.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -497,17 +702,39 @@
             this.lLocation.TabIndex = 4;
             this.lLocation.Text = "Location";
             // 
+            // pbUserImage
+            // 
+            this.pbUserImage.Image = ((System.Drawing.Image)(resources.GetObject("pbUserImage.Image")));
+            this.pbUserImage.Location = new System.Drawing.Point(24, 20);
+            this.pbUserImage.Name = "pbUserImage";
+            this.pbUserImage.Size = new System.Drawing.Size(119, 116);
+            this.pbUserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbUserImage.TabIndex = 5;
+            this.pbUserImage.TabStop = false;
+            // 
             // pCard
             // 
             this.pCard.BackColor = System.Drawing.SystemColors.Control;
             this.pCard.Controls.Add(this.pbProfileLink);
             this.pCard.Controls.Add(this.bMALProfile);
             this.pCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pCard.Location = new System.Drawing.Point(441, 3);
+            this.pCard.Location = new System.Drawing.Point(432, 3);
             this.pCard.Margin = new System.Windows.Forms.Padding(19, 3, 3, 3);
             this.pCard.Name = "pCard";
-            this.pCard.Size = new System.Drawing.Size(159, 150);
+            this.pCard.Size = new System.Drawing.Size(155, 150);
             this.pCard.TabIndex = 11;
+            // 
+            // pbProfileLink
+            // 
+            this.pbProfileLink.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbProfileLink.Image = ((System.Drawing.Image)(resources.GetObject("pbProfileLink.Image")));
+            this.pbProfileLink.Location = new System.Drawing.Point(57, 31);
+            this.pbProfileLink.Name = "pbProfileLink";
+            this.pbProfileLink.Size = new System.Drawing.Size(42, 30);
+            this.pbProfileLink.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbProfileLink.TabIndex = 7;
+            this.pbProfileLink.TabStop = false;
             // 
             // bMALProfile
             // 
@@ -522,7 +749,7 @@
             this.bMALProfile.ImageList = this.ilSizeControl;
             this.bMALProfile.Location = new System.Drawing.Point(23, 90);
             this.bMALProfile.Name = "bMALProfile";
-            this.bMALProfile.Size = new System.Drawing.Size(115, 46);
+            this.bMALProfile.Size = new System.Drawing.Size(111, 46);
             this.bMALProfile.TabIndex = 6;
             this.bMALProfile.Text = "View profile on MAL";
             this.bMALProfile.UseVisualStyleBackColor = false;
@@ -537,12 +764,12 @@
             this.tlpAnimeMangaCards.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpAnimeMangaCards.Controls.Add(this.pDashMangaCard, 1, 0);
             this.tlpAnimeMangaCards.Controls.Add(this.pDashAnimeCard, 0, 0);
-            this.tlpAnimeMangaCards.Location = new System.Drawing.Point(2, 552);
+            this.tlpAnimeMangaCards.Location = new System.Drawing.Point(2, 225);
             this.tlpAnimeMangaCards.Name = "tlpAnimeMangaCards";
             this.tlpAnimeMangaCards.RowCount = 1;
             this.tlpAnimeMangaCards.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpAnimeMangaCards.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpAnimeMangaCards.Size = new System.Drawing.Size(603, 172);
+            this.tlpAnimeMangaCards.Size = new System.Drawing.Size(590, 172);
             this.tlpAnimeMangaCards.TabIndex = 12;
             // 
             // pDashMangaCard
@@ -571,10 +798,10 @@
             this.pDashMangaCard.Controls.Add(this.lDashMangaReading);
             this.pDashMangaCard.Controls.Add(this.lDashMangaTitle);
             this.pDashMangaCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pDashMangaCard.Location = new System.Drawing.Point(320, 3);
+            this.pDashMangaCard.Location = new System.Drawing.Point(314, 3);
             this.pDashMangaCard.Margin = new System.Windows.Forms.Padding(19, 3, 3, 3);
             this.pDashMangaCard.Name = "pDashMangaCard";
-            this.pDashMangaCard.Size = new System.Drawing.Size(280, 166);
+            this.pDashMangaCard.Size = new System.Drawing.Size(273, 166);
             this.pDashMangaCard.TabIndex = 13;
             // 
             // lvDashMangaReread
@@ -597,11 +824,21 @@
             this.lDashMangaReread.TabIndex = 39;
             this.lDashMangaReread.Text = "Rereads";
             // 
+            // pbDashManga
+            // 
+            this.pbDashManga.Image = global::MAL_Reviwer_UI.Properties.Resources.icon_manga;
+            this.pbDashManga.Location = new System.Drawing.Point(9, 4);
+            this.pbDashManga.Name = "pbDashManga";
+            this.pbDashManga.Size = new System.Drawing.Size(20, 20);
+            this.pbDashManga.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbDashManga.TabIndex = 38;
+            this.pbDashManga.TabStop = false;
+            // 
             // lvDashMangaMeanScore
             // 
             this.lvDashMangaMeanScore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lvDashMangaMeanScore.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvDashMangaMeanScore.Location = new System.Drawing.Point(187, 133);
+            this.lvDashMangaMeanScore.Location = new System.Drawing.Point(180, 133);
             this.lvDashMangaMeanScore.Name = "lvDashMangaMeanScore";
             this.lvDashMangaMeanScore.Size = new System.Drawing.Size(91, 25);
             this.lvDashMangaMeanScore.TabIndex = 37;
@@ -612,7 +849,7 @@
             // 
             this.lDashMangaMeanScore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lDashMangaMeanScore.AutoSize = true;
-            this.lDashMangaMeanScore.Location = new System.Drawing.Point(203, 117);
+            this.lDashMangaMeanScore.Location = new System.Drawing.Point(196, 117);
             this.lDashMangaMeanScore.Name = "lDashMangaMeanScore";
             this.lDashMangaMeanScore.Size = new System.Drawing.Size(75, 16);
             this.lDashMangaMeanScore.TabIndex = 36;
@@ -622,7 +859,7 @@
             // 
             this.lvDashMangaDaysRead.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lvDashMangaDaysRead.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvDashMangaDaysRead.Location = new System.Drawing.Point(193, 48);
+            this.lvDashMangaDaysRead.Location = new System.Drawing.Point(186, 48);
             this.lvDashMangaDaysRead.Name = "lvDashMangaDaysRead";
             this.lvDashMangaDaysRead.Size = new System.Drawing.Size(85, 28);
             this.lvDashMangaDaysRead.TabIndex = 35;
@@ -633,7 +870,7 @@
             // 
             this.lDashMangaDaysRead.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lDashMangaDaysRead.AutoSize = true;
-            this.lDashMangaDaysRead.Location = new System.Drawing.Point(210, 30);
+            this.lDashMangaDaysRead.Location = new System.Drawing.Point(203, 30);
             this.lDashMangaDaysRead.Name = "lDashMangaDaysRead";
             this.lDashMangaDaysRead.Size = new System.Drawing.Size(68, 16);
             this.lDashMangaDaysRead.TabIndex = 34;
@@ -817,14 +1054,24 @@
             this.pDashAnimeCard.Margin = new System.Windows.Forms.Padding(3, 3, 19, 3);
             this.pDashAnimeCard.Name = "pDashAnimeCard";
             this.pDashAnimeCard.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.pDashAnimeCard.Size = new System.Drawing.Size(279, 166);
+            this.pDashAnimeCard.Size = new System.Drawing.Size(273, 166);
             this.pDashAnimeCard.TabIndex = 12;
+            // 
+            // pbDashAnime
+            // 
+            this.pbDashAnime.Image = global::MAL_Reviwer_UI.Properties.Resources.icon_anime;
+            this.pbDashAnime.Location = new System.Drawing.Point(10, 4);
+            this.pbDashAnime.Name = "pbDashAnime";
+            this.pbDashAnime.Size = new System.Drawing.Size(20, 20);
+            this.pbDashAnime.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbDashAnime.TabIndex = 2;
+            this.pbDashAnime.TabStop = false;
             // 
             // lvDashAnimeMeanScore
             // 
             this.lvDashAnimeMeanScore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lvDashAnimeMeanScore.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvDashAnimeMeanScore.Location = new System.Drawing.Point(185, 126);
+            this.lvDashAnimeMeanScore.Location = new System.Drawing.Point(179, 126);
             this.lvDashAnimeMeanScore.Name = "lvDashAnimeMeanScore";
             this.lvDashAnimeMeanScore.Size = new System.Drawing.Size(91, 25);
             this.lvDashAnimeMeanScore.TabIndex = 18;
@@ -835,7 +1082,7 @@
             // 
             this.lDashAnimeMeanScore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lDashAnimeMeanScore.AutoSize = true;
-            this.lDashAnimeMeanScore.Location = new System.Drawing.Point(201, 110);
+            this.lDashAnimeMeanScore.Location = new System.Drawing.Point(195, 110);
             this.lDashAnimeMeanScore.Name = "lDashAnimeMeanScore";
             this.lDashAnimeMeanScore.Size = new System.Drawing.Size(75, 16);
             this.lDashAnimeMeanScore.TabIndex = 17;
@@ -845,7 +1092,7 @@
             // 
             this.lvDashAnimeDaysWatched.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lvDashAnimeDaysWatched.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvDashAnimeDaysWatched.Location = new System.Drawing.Point(191, 48);
+            this.lvDashAnimeDaysWatched.Location = new System.Drawing.Point(185, 48);
             this.lvDashAnimeDaysWatched.Name = "lvDashAnimeDaysWatched";
             this.lvDashAnimeDaysWatched.Size = new System.Drawing.Size(85, 28);
             this.lvDashAnimeDaysWatched.TabIndex = 16;
@@ -856,7 +1103,7 @@
             // 
             this.lDashAnimeDaysWatched.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lDashAnimeDaysWatched.AutoSize = true;
-            this.lDashAnimeDaysWatched.Location = new System.Drawing.Point(188, 30);
+            this.lDashAnimeDaysWatched.Location = new System.Drawing.Point(182, 30);
             this.lDashAnimeDaysWatched.Name = "lDashAnimeDaysWatched";
             this.lDashAnimeDaysWatched.Size = new System.Drawing.Size(88, 16);
             this.lDashAnimeDaysWatched.TabIndex = 15;
@@ -1012,6 +1259,19 @@
             this.lDashAnimeTitle.TabIndex = 0;
             this.lDashAnimeTitle.Text = "Anime stats";
             // 
+            // pbDashBoardLoad
+            // 
+            this.pbDashBoardLoad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbDashBoardLoad.Image = ((System.Drawing.Image)(resources.GetObject("pbDashBoardLoad.Image")));
+            this.pbDashBoardLoad.Location = new System.Drawing.Point(325, 113);
+            this.pbDashBoardLoad.Name = "pbDashBoardLoad";
+            this.pbDashBoardLoad.Size = new System.Drawing.Size(30, 30);
+            this.pbDashBoardLoad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbDashBoardLoad.TabIndex = 1;
+            this.pbDashBoardLoad.TabStop = false;
+            this.pbDashBoardLoad.Visible = false;
+            // 
             // lMALAccPreview
             // 
             this.lMALAccPreview.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1072,224 +1332,6 @@
             this.lVersion.Text = "0.1.0";
             this.lVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lTitle
-            // 
-            this.lTitle.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lTitle.Font = new System.Drawing.Font("Bahnschrift Light", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTitle.Location = new System.Drawing.Point(0, 190);
-            this.lTitle.Name = "lTitle";
-            this.lTitle.Size = new System.Drawing.Size(753, 42);
-            this.lTitle.TabIndex = 2;
-            this.lTitle.Text = "MAL Reviewer";
-            this.lTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ttExtendedInfo
-            // 
-            this.ttExtendedInfo.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.ttExtendedInfo.ToolTipTitle = "Profile info";
-            // 
-            // pDashFavorites
-            // 
-            this.pDashFavorites.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pDashFavorites.AutoSize = true;
-            this.pDashFavorites.BackColor = System.Drawing.SystemColors.Control;
-            this.pDashFavorites.Controls.Add(this.tlpFavorites);
-            this.pDashFavorites.Controls.Add(this.pbDashFavorites);
-            this.pDashFavorites.Controls.Add(this.lDashFavorites);
-            this.pDashFavorites.Location = new System.Drawing.Point(2, 757);
-            this.pDashFavorites.Margin = new System.Windows.Forms.Padding(19, 3, 3, 3);
-            this.pDashFavorites.Name = "pDashFavorites";
-            this.pDashFavorites.Size = new System.Drawing.Size(605, 156);
-            this.pDashFavorites.TabIndex = 15;
-            // 
-            // lDashFavorites
-            // 
-            this.lDashFavorites.AutoSize = true;
-            this.lDashFavorites.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lDashFavorites.Location = new System.Drawing.Point(39, 4);
-            this.lDashFavorites.Name = "lDashFavorites";
-            this.lDashFavorites.Size = new System.Drawing.Size(77, 19);
-            this.lDashFavorites.TabIndex = 19;
-            this.lDashFavorites.Text = "Favorites";
-            // 
-            // tlpFavorites
-            // 
-            this.tlpFavorites.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpFavorites.ColumnCount = 4;
-            this.tlpFavorites.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpFavorites.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpFavorites.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpFavorites.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpFavorites.Controls.Add(this.pDashFavoriteCharacters, 2, 0);
-            this.tlpFavorites.Controls.Add(this.pDashFavoritePeople, 3, 0);
-            this.tlpFavorites.Controls.Add(this.pDashFavoriteAnime, 0, 0);
-            this.tlpFavorites.Controls.Add(this.pDashFavoriteManga, 1, 0);
-            this.tlpFavorites.Location = new System.Drawing.Point(13, 39);
-            this.tlpFavorites.Name = "tlpFavorites";
-            this.tlpFavorites.RowCount = 1;
-            this.tlpFavorites.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpFavorites.Size = new System.Drawing.Size(581, 100);
-            this.tlpFavorites.TabIndex = 20;
-            // 
-            // pDashFavoriteManga
-            // 
-            this.pDashFavoriteManga.AutoScroll = true;
-            this.pDashFavoriteManga.AutoSize = true;
-            this.pDashFavoriteManga.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pDashFavoriteManga.Controls.Add(this.lDashFavoriteManga);
-            this.pDashFavoriteManga.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pDashFavoriteManga.Location = new System.Drawing.Point(155, 3);
-            this.pDashFavoriteManga.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.pDashFavoriteManga.Name = "pDashFavoriteManga";
-            this.pDashFavoriteManga.Size = new System.Drawing.Size(125, 94);
-            this.pDashFavoriteManga.TabIndex = 12;
-            // 
-            // lDashFavoriteManga
-            // 
-            this.lDashFavoriteManga.AutoSize = true;
-            this.lDashFavoriteManga.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lDashFavoriteManga.Location = new System.Drawing.Point(5, 5);
-            this.lDashFavoriteManga.Name = "lDashFavoriteManga";
-            this.lDashFavoriteManga.Size = new System.Drawing.Size(46, 16);
-            this.lDashFavoriteManga.TabIndex = 19;
-            this.lDashFavoriteManga.Text = "Manga";
-            // 
-            // pDashFavoriteAnime
-            // 
-            this.pDashFavoriteAnime.AutoScroll = true;
-            this.pDashFavoriteAnime.AutoSize = true;
-            this.pDashFavoriteAnime.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pDashFavoriteAnime.Controls.Add(this.lDashFavoriteAnime);
-            this.pDashFavoriteAnime.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pDashFavoriteAnime.Location = new System.Drawing.Point(10, 3);
-            this.pDashFavoriteAnime.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.pDashFavoriteAnime.Name = "pDashFavoriteAnime";
-            this.pDashFavoriteAnime.Size = new System.Drawing.Size(125, 94);
-            this.pDashFavoriteAnime.TabIndex = 13;
-            // 
-            // lDashFavoriteAnime
-            // 
-            this.lDashFavoriteAnime.AutoSize = true;
-            this.lDashFavoriteAnime.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lDashFavoriteAnime.Location = new System.Drawing.Point(5, 5);
-            this.lDashFavoriteAnime.Name = "lDashFavoriteAnime";
-            this.lDashFavoriteAnime.Size = new System.Drawing.Size(44, 16);
-            this.lDashFavoriteAnime.TabIndex = 19;
-            this.lDashFavoriteAnime.Text = "Anime";
-            // 
-            // pDashFavoritePeople
-            // 
-            this.pDashFavoritePeople.AutoScroll = true;
-            this.pDashFavoritePeople.AutoSize = true;
-            this.pDashFavoritePeople.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pDashFavoritePeople.Controls.Add(this.lDashFavoritePeople);
-            this.pDashFavoritePeople.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pDashFavoritePeople.Location = new System.Drawing.Point(445, 3);
-            this.pDashFavoritePeople.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.pDashFavoritePeople.Name = "pDashFavoritePeople";
-            this.pDashFavoritePeople.Size = new System.Drawing.Size(126, 94);
-            this.pDashFavoritePeople.TabIndex = 14;
-            // 
-            // lDashFavoritePeople
-            // 
-            this.lDashFavoritePeople.AutoSize = true;
-            this.lDashFavoritePeople.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lDashFavoritePeople.Location = new System.Drawing.Point(5, 5);
-            this.lDashFavoritePeople.Name = "lDashFavoritePeople";
-            this.lDashFavoritePeople.Size = new System.Drawing.Size(47, 16);
-            this.lDashFavoritePeople.TabIndex = 19;
-            this.lDashFavoritePeople.Text = "People";
-            // 
-            // pDashFavoriteCharacters
-            // 
-            this.pDashFavoriteCharacters.AutoScroll = true;
-            this.pDashFavoriteCharacters.AutoSize = true;
-            this.pDashFavoriteCharacters.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pDashFavoriteCharacters.Controls.Add(this.lDashFavoriteCharacters);
-            this.pDashFavoriteCharacters.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pDashFavoriteCharacters.Location = new System.Drawing.Point(300, 3);
-            this.pDashFavoriteCharacters.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.pDashFavoriteCharacters.Name = "pDashFavoriteCharacters";
-            this.pDashFavoriteCharacters.Size = new System.Drawing.Size(125, 94);
-            this.pDashFavoriteCharacters.TabIndex = 15;
-            // 
-            // lDashFavoriteCharacters
-            // 
-            this.lDashFavoriteCharacters.AutoSize = true;
-            this.lDashFavoriteCharacters.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lDashFavoriteCharacters.Location = new System.Drawing.Point(5, 5);
-            this.lDashFavoriteCharacters.Name = "lDashFavoriteCharacters";
-            this.lDashFavoriteCharacters.Size = new System.Drawing.Size(73, 16);
-            this.lDashFavoriteCharacters.TabIndex = 19;
-            this.lDashFavoriteCharacters.Text = "Characters";
-            // 
-            // pbDashFavorites
-            // 
-            this.pbDashFavorites.Image = global::MAL_Reviwer_UI.Properties.Resources.icon_favorite;
-            this.pbDashFavorites.Location = new System.Drawing.Point(13, 3);
-            this.pbDashFavorites.Name = "pbDashFavorites";
-            this.pbDashFavorites.Size = new System.Drawing.Size(20, 20);
-            this.pbDashFavorites.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbDashFavorites.TabIndex = 19;
-            this.pbDashFavorites.TabStop = false;
-            // 
-            // pbUserImage
-            // 
-            this.pbUserImage.Image = ((System.Drawing.Image)(resources.GetObject("pbUserImage.Image")));
-            this.pbUserImage.Location = new System.Drawing.Point(24, 20);
-            this.pbUserImage.Name = "pbUserImage";
-            this.pbUserImage.Size = new System.Drawing.Size(119, 116);
-            this.pbUserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbUserImage.TabIndex = 5;
-            this.pbUserImage.TabStop = false;
-            // 
-            // pbProfileLink
-            // 
-            this.pbProfileLink.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbProfileLink.Image = ((System.Drawing.Image)(resources.GetObject("pbProfileLink.Image")));
-            this.pbProfileLink.Location = new System.Drawing.Point(57, 31);
-            this.pbProfileLink.Name = "pbProfileLink";
-            this.pbProfileLink.Size = new System.Drawing.Size(46, 30);
-            this.pbProfileLink.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbProfileLink.TabIndex = 7;
-            this.pbProfileLink.TabStop = false;
-            // 
-            // pbDashManga
-            // 
-            this.pbDashManga.Image = global::MAL_Reviwer_UI.Properties.Resources.icon_manga;
-            this.pbDashManga.Location = new System.Drawing.Point(9, 4);
-            this.pbDashManga.Name = "pbDashManga";
-            this.pbDashManga.Size = new System.Drawing.Size(20, 20);
-            this.pbDashManga.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbDashManga.TabIndex = 38;
-            this.pbDashManga.TabStop = false;
-            // 
-            // pbDashAnime
-            // 
-            this.pbDashAnime.Image = global::MAL_Reviwer_UI.Properties.Resources.icon_anime;
-            this.pbDashAnime.Location = new System.Drawing.Point(10, 4);
-            this.pbDashAnime.Name = "pbDashAnime";
-            this.pbDashAnime.Size = new System.Drawing.Size(20, 20);
-            this.pbDashAnime.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbDashAnime.TabIndex = 2;
-            this.pbDashAnime.TabStop = false;
-            // 
-            // pbDashBoardLoad
-            // 
-            this.pbDashBoardLoad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbDashBoardLoad.Image = ((System.Drawing.Image)(resources.GetObject("pbDashBoardLoad.Image")));
-            this.pbDashBoardLoad.Location = new System.Drawing.Point(325, 113);
-            this.pbDashBoardLoad.Name = "pbDashBoardLoad";
-            this.pbDashBoardLoad.Size = new System.Drawing.Size(30, 30);
-            this.pbDashBoardLoad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbDashBoardLoad.TabIndex = 1;
-            this.pbDashBoardLoad.TabStop = false;
-            this.pbDashBoardLoad.Visible = false;
-            // 
             // bSettings
             // 
             this.bSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -1307,6 +1349,17 @@
             this.bSettings.TabIndex = 6;
             this.bSettings.UseVisualStyleBackColor = false;
             // 
+            // lTitle
+            // 
+            this.lTitle.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lTitle.Font = new System.Drawing.Font("Bahnschrift Light", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTitle.Location = new System.Drawing.Point(0, 190);
+            this.lTitle.Name = "lTitle";
+            this.lTitle.Size = new System.Drawing.Size(753, 42);
+            this.lTitle.TabIndex = 2;
+            this.lTitle.Text = "MAL Reviewer";
+            this.lTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pbLogo
             // 
             this.pbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1320,64 +1373,10 @@
             this.pbLogo.TabIndex = 0;
             this.pbLogo.TabStop = false;
             // 
-            // pbSearch
+            // ttExtendedInfo
             // 
-            this.pbSearch.Image = ((System.Drawing.Image)(resources.GetObject("pbSearch.Image")));
-            this.pbSearch.Location = new System.Drawing.Point(204, 7);
-            this.pbSearch.Name = "pbSearch";
-            this.pbSearch.Size = new System.Drawing.Size(20, 20);
-            this.pbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSearch.TabIndex = 1;
-            this.pbSearch.TabStop = false;
-            // 
-            // bClear
-            // 
-            this.bClear.BackColor = System.Drawing.Color.Transparent;
-            this.bClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bClear.FlatAppearance.BorderSize = 0;
-            this.bClear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.bClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.bClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bClear.ImageIndex = 2;
-            this.bClear.ImageList = this.ilSizeControl;
-            this.bClear.Location = new System.Drawing.Point(152, 3);
-            this.bClear.Name = "bClear";
-            this.bClear.Size = new System.Drawing.Size(75, 67);
-            this.bClear.TabIndex = 5;
-            this.bClear.UseVisualStyleBackColor = false;
-            // 
-            // bOpen
-            // 
-            this.bOpen.BackColor = System.Drawing.Color.Transparent;
-            this.bOpen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bOpen.FlatAppearance.BorderSize = 0;
-            this.bOpen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.bOpen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.bOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bOpen.ImageIndex = 1;
-            this.bOpen.ImageList = this.ilSizeControl;
-            this.bOpen.Location = new System.Drawing.Point(77, 3);
-            this.bOpen.Name = "bOpen";
-            this.bOpen.Size = new System.Drawing.Size(75, 67);
-            this.bOpen.TabIndex = 4;
-            this.bOpen.UseVisualStyleBackColor = false;
-            // 
-            // bNew
-            // 
-            this.bNew.BackColor = System.Drawing.Color.Transparent;
-            this.bNew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bNew.FlatAppearance.BorderSize = 0;
-            this.bNew.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.bNew.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.bNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bNew.ImageIndex = 0;
-            this.bNew.ImageList = this.ilSizeControl;
-            this.bNew.Location = new System.Drawing.Point(3, 3);
-            this.bNew.Name = "bNew";
-            this.bNew.Size = new System.Drawing.Size(74, 67);
-            this.bNew.TabIndex = 3;
-            this.bNew.UseVisualStyleBackColor = false;
-            this.bNew.Click += new System.EventHandler(this.bNew_Click);
+            this.ttExtendedInfo.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.ttExtendedInfo.ToolTipTitle = "Profile info";
             // 
             // fWelcome
             // 
@@ -1396,44 +1395,43 @@
             this.pUser.ResumeLayout(false);
             this.pReviewLookUp.ResumeLayout(false);
             this.pReviewLookUp.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).EndInit();
             this.pButtons.ResumeLayout(false);
             this.pMain.ResumeLayout(false);
             this.pDashboard.ResumeLayout(false);
             this.tcDashboard.ResumeLayout(false);
             this.tpProfile.ResumeLayout(false);
             this.pDashBoardMain.ResumeLayout(false);
-            this.pDashBoardMain.PerformLayout();
-            this.tlpUserInfo.ResumeLayout(false);
-            this.pCardProfileInfo.ResumeLayout(false);
-            this.tlpUserInfoCore.ResumeLayout(false);
-            this.tlpUserInfoCore.PerformLayout();
-            this.pCard.ResumeLayout(false);
-            this.tlpAnimeMangaCards.ResumeLayout(false);
-            this.pDashMangaCard.ResumeLayout(false);
-            this.pDashMangaCard.PerformLayout();
-            this.pDashAnimeCard.ResumeLayout(false);
-            this.pDashAnimeCard.PerformLayout();
-            this.pHeader.ResumeLayout(false);
             this.pDashFavorites.ResumeLayout(false);
             this.pDashFavorites.PerformLayout();
             this.tlpFavorites.ResumeLayout(false);
             this.tlpFavorites.PerformLayout();
-            this.pDashFavoriteManga.ResumeLayout(false);
-            this.pDashFavoriteManga.PerformLayout();
-            this.pDashFavoriteAnime.ResumeLayout(false);
-            this.pDashFavoriteAnime.PerformLayout();
-            this.pDashFavoritePeople.ResumeLayout(false);
-            this.pDashFavoritePeople.PerformLayout();
             this.pDashFavoriteCharacters.ResumeLayout(false);
             this.pDashFavoriteCharacters.PerformLayout();
+            this.pDashFavoritePeople.ResumeLayout(false);
+            this.pDashFavoritePeople.PerformLayout();
+            this.pDashFavoriteAnime.ResumeLayout(false);
+            this.pDashFavoriteAnime.PerformLayout();
+            this.pDashFavoriteManga.ResumeLayout(false);
+            this.pDashFavoriteManga.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDashFavorites)).EndInit();
+            this.tlpUserInfo.ResumeLayout(false);
+            this.pCardProfileInfo.ResumeLayout(false);
+            this.tlpUserInfoCore.ResumeLayout(false);
+            this.tlpUserInfoCore.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserImage)).EndInit();
+            this.pCard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbProfileLink)).EndInit();
+            this.tlpAnimeMangaCards.ResumeLayout(false);
+            this.pDashMangaCard.ResumeLayout(false);
+            this.pDashMangaCard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDashManga)).EndInit();
+            this.pDashAnimeCard.ResumeLayout(false);
+            this.pDashAnimeCard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDashAnime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDashBoardLoad)).EndInit();
+            this.pHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).EndInit();
             this.ResumeLayout(false);
 
         }
