@@ -13,11 +13,13 @@ namespace MAL_Reviwer_UI.user_controls
         {
             InitializeComponent();
 
-            this.Click += CardMouseClickEventHandler;
-            this.pbTargetImage.Click += CardMouseClickEventHandler;
-            this.lTargetTitle.Click += CardMouseClickEventHandler;
-            this.lTargetType.Click += CardMouseClickEventHandler;
+            // Wiring up the click event.
+            this.MouseClick += UcTargetSearchCard_MouseClick; ;
+            this.pbTargetImage.MouseClick += UcTargetSearchCard_MouseClick;
+            this.lTargetTitle.MouseClick += UcTargetSearchCard_MouseClick;
+            this.lTargetType.MouseClick += UcTargetSearchCard_MouseClick;
 
+            // Wiring up the hover event.
             this.MouseEnter += CardMouseEnter;
             this.pbTargetImage.MouseEnter += CardMouseEnter;
             this.lTargetTitle.MouseEnter += CardMouseEnter;
@@ -31,17 +33,24 @@ namespace MAL_Reviwer_UI.user_controls
 
         public int targetId { get => _targetId; set => _targetId = value; }
 
-        public void UpdateUI (int targetId, string targetTitle, string targetType, string targetImageUrl)
+        public void UpdateUI (int targetId, string targetTitle, string targetType, string targetImageUrl, string searchType)
         {
             this.targetId = targetId;
             lTargetTitle.Text = targetTitle.Length > 17 ? targetTitle.Substring(0, 17) + "..." : targetTitle;
             lTargetType.Text = targetType;
             pbTargetImage.Load(targetImageUrl);
+
+            ttTitle.ToolTipTitle = $"{ searchType } information";
+            ttTitle.SetToolTip(this, targetTitle);
+            ttTitle.SetToolTip(this.lTargetTitle, targetTitle);
+            ttTitle.SetToolTip(this.lTargetType, targetTitle);
+            ttTitle.SetToolTip(this.pbTargetImage, targetTitle);
         }
 
-        private void CardMouseClickEventHandler(object sender, EventArgs e)
+        private void UcTargetSearchCard_MouseClick(object sender, MouseEventArgs e)
         {
-            CardMouseClickEvent?.Invoke(sender, targetId);
+            if (e.Button == MouseButtons.Left)
+                CardMouseClickEvent?.Invoke(sender, targetId);
         }
 
         private void CardMouseEnter(object sender, EventArgs e)

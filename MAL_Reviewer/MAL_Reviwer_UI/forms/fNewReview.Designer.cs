@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fNewReview));
             this.pSectionSeparator = new System.Windows.Forms.Panel();
             this.pReviewLookUp = new System.Windows.Forms.Panel();
@@ -69,7 +68,6 @@
             this.rbAnime = new System.Windows.Forms.RadioButton();
             this.rbManga = new System.Windows.Forms.RadioButton();
             this.lTitle = new System.Windows.Forms.Label();
-            this.ttSearchCard = new System.Windows.Forms.ToolTip(this.components);
             this.lPreview = new System.Windows.Forms.Label();
             this.pbLoadingPreview = new System.Windows.Forms.PictureBox();
             this.pReviewLookUp.SuspendLayout();
@@ -529,11 +527,6 @@
             this.lTitle.TabIndex = 0;
             this.lTitle.Text = "Anime title";
             // 
-            // ttSearchCard
-            // 
-            this.ttSearchCard.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.ttSearchCard.ToolTipTitle = "Anime title";
-            // 
             // lPreview
             // 
             this.lPreview.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -615,7 +608,6 @@
         private System.Windows.Forms.Label lRatingDecimal;
         private System.Windows.Forms.Panel pRatingSeparator;
         private System.Windows.Forms.Panel pSearchCards;
-        private System.Windows.Forms.ToolTip ttSearchCard;
         private System.Windows.Forms.PictureBox pbLoading;
         private System.Windows.Forms.Label lTargetTitle;
         private System.Windows.Forms.PictureBox pbTargetImage;

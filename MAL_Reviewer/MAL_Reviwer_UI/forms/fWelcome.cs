@@ -61,8 +61,8 @@ namespace MAL_Reviwer_UI.forms
                     // Profile
                     lUserUsername.Text = user.username;
                     lUserGender.Text = user.gender;
-                    lUserJoinDate.Text = user.joined?.ToShortDateString();
-                    lUserBirthday.Text = user.birthday?.ToShortDateString();
+                    lUserJoinDate.Text = user.joined?.ToLongDateString();
+                    lUserBirthday.Text = user.birthday?.ToLongDateString();
                     lUserLocation.Text = user.location;
                     bMALProfile.Tag = user.url;
 
@@ -73,8 +73,8 @@ namespace MAL_Reviwer_UI.forms
 
                     ttExtendedInfo.SetToolTip(lUserUsername, user.username);
                     ttExtendedInfo.SetToolTip(lUserGender, user.gender);
-                    ttExtendedInfo.SetToolTip(lUserJoinDate, user.joined?.ToShortDateString());
-                    ttExtendedInfo.SetToolTip(lUserBirthday, user.birthday?.ToShortDateString());
+                    ttExtendedInfo.SetToolTip(lUserJoinDate, user.joined?.ToLongDateString());
+                    ttExtendedInfo.SetToolTip(lUserBirthday, user.birthday?.ToLongDateString());
                     ttExtendedInfo.SetToolTip(lUserLocation, user.location);
 
                     // Anime stats
@@ -105,6 +105,7 @@ namespace MAL_Reviwer_UI.forms
                     #region Favorites
 
                     // Anime
+                    pChildAnime.Controls.Clear();
                     foreach (FavAnimeModel favAnimeModel in user.favorites.anime)
                     {
                         ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favAnimeModel.name, favAnimeModel.image_url, "Anime");
@@ -116,6 +117,7 @@ namespace MAL_Reviwer_UI.forms
                     }
 
                     // Manga
+                    pChildManga.Controls.Clear();
                     foreach (FavMangaModel favMangaModel in user.favorites.manga)
                     {
                         ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favMangaModel.name, favMangaModel.image_url, "Manga");
@@ -127,6 +129,7 @@ namespace MAL_Reviwer_UI.forms
                     }
 
                     // Characters
+                    pChildCharacters.Controls.Clear();
                     foreach (FavCharactersModel favCharacterModel in user.favorites.characters)
                     {
                         ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favCharacterModel.name, favCharacterModel.image_url, "Character");
@@ -138,6 +141,7 @@ namespace MAL_Reviwer_UI.forms
                     }
 
                     // People
+                    pChildPeople.Controls.Clear();
                     foreach (FavPeopleModel favPeopleModel in user.favorites.people)
                     {
                         ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favPeopleModel.name, favPeopleModel.image_url, "Person");

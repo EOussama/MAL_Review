@@ -52,7 +52,6 @@ namespace MAL_Reviwer_UI.forms
         {
             lTitle.Text = $"{ (rbAnime.Checked ? rbAnime.Text : rbManga.Text) } title";
             lPreview.Text = $"{ (rbAnime.Checked ? rbAnime.Text : rbManga.Text) } preview";
-            ttSearchCard.ToolTipTitle = lTitle.Text;
             pbShow.Image = (rbAnime.Checked ? Properties.Resources.icon_anime : Properties.Resources.icon_manga);
             tbSearch_TextChanged(this, EventArgs.Empty);
         }
@@ -98,7 +97,7 @@ namespace MAL_Reviwer_UI.forms
 
                                     searchCard.Invoke((MethodInvoker)delegate
                                     {
-                                        searchCard.UpdateUI(resultsModel.mal_id, resultsModel.title, resultsModel.type, resultsModel.image_url);
+                                        searchCard.UpdateUI(resultsModel.mal_id, resultsModel.title, resultsModel.type, resultsModel.image_url, rbAnime.Checked ? rbAnime.Text : rbManga.Text);
                                         searchCard.Visible = true;
                                     });
                                 }
@@ -194,7 +193,7 @@ namespace MAL_Reviwer_UI.forms
                         lTargetChapters.Visible = false;
                         lVolumesEpisodes.Text = "Episodes";
 
-                        lTargetScore.Text = animeModel.score.ToString();
+                        lTargetScore.Text = animeModel.score?.ToString("0.00");
                         lTargetRank.Text = animeModel.rank.ToString();
                         lTargetType.Text = animeModel.type;
                         lTargetStatus.Text = animeModel.airing ? "Airing" : "Finished";
@@ -236,7 +235,7 @@ namespace MAL_Reviwer_UI.forms
                         lTargetChapters.Visible = true;
                         lVolumesEpisodes.Text = "Volumes";
 
-                        lTargetScore.Text = mangaModel.score.ToString();
+                        lTargetScore.Text = mangaModel.score?.ToString("0.00");
                         lTargetRank.Text = mangaModel.rank.ToString();
                         lTargetType.Text = mangaModel.type;
                         lTargetStatus.Text = mangaModel.publishing ? "Publishing" : "Finished";

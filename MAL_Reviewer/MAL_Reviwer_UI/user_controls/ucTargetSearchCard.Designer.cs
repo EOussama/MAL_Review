@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pbTargetImage = new System.Windows.Forms.PictureBox();
             this.lTargetTitle = new System.Windows.Forms.Label();
             this.lTargetType = new System.Windows.Forms.Label();
+            this.ttTitle = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbTargetImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,6 +69,10 @@
             this.lTargetType.TabIndex = 2;
             this.lTargetType.Text = "Paprika";
             // 
+            // ttTitle
+            // 
+            this.ttTitle.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
             // ucTargetSearchCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -89,5 +95,6 @@
         private System.Windows.Forms.PictureBox pbTargetImage;
         private System.Windows.Forms.Label lTargetTitle;
         private System.Windows.Forms.Label lTargetType;
+        private System.Windows.Forms.ToolTip ttTitle;
     }
 }
