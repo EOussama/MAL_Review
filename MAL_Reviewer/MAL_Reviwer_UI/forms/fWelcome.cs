@@ -24,10 +24,7 @@ namespace MAL_Reviwer_UI.forms
             MALHelper.Init();
         }
 
-        private void bNew_Click(object sender, EventArgs e)
-        {
-            (new fNewReview()).ShowDialog();
-        }
+        #region User Data Load
 
         private void bUser_Click(object sender, EventArgs e)
         {
@@ -47,6 +44,9 @@ namespace MAL_Reviwer_UI.forms
                 Thread.Sleep(500);
                 pDashBoardMain.Invoke((MethodInvoker)delegate
                 {
+                    #region Dashboard UI update
+
+                    // Profile
                     lUserUsername.Text = user.username;
                     lUserGender.Text = user.gender;
                     lUserJoinDate.Text = user.joined?.ToShortDateString();
@@ -64,12 +64,51 @@ namespace MAL_Reviwer_UI.forms
                     ttExtendedInfo.SetToolTip(lUserJoinDate, user.joined?.ToShortDateString());
                     ttExtendedInfo.SetToolTip(lUserBirthday, user.birthday?.ToShortDateString());
                     ttExtendedInfo.SetToolTip(lUserLocation, user.location);
+
+                    // Anime stats
+                    lvDashAnimeWatching.Text = user.anime_stats.watching.ToString();
+                    lvDashAnimeCompleted.Text = user.anime_stats.completed.ToString();
+                    lvDashAnimeOnHold.Text = user.anime_stats.on_hold.ToString();
+                    lvDashAnimeDropped.Text = user.anime_stats.dropped.ToString();
+                    lvDashAnimePTW.Text = user.anime_stats.plan_to_watch.ToString();
+                    lvDashAnimeEpisodes.Text = user.anime_stats.episodes_watched.ToString();
+                    lvDashAnimeRewatches.Text = user.anime_stats.rewatched.ToString();
+
+                    lvDashAnimeDaysWatched.Text = user.anime_stats.days_watched.ToString();
+                    lvDashAnimeMeanScore.Text = user.anime_stats.mean_score.ToString();
+
+                    // Manga stats
+                    lvDashMangaReading.Text = user.manga_stats.reading.ToString();
+                    lvDashMangaCompleted.Text = user.manga_stats.completed.ToString();
+                    lvDashMangaOnHold.Text = user.manga_stats.on_hold.ToString();
+                    lvDashMangaDropped.Text = user.manga_stats.dropped.ToString();
+                    lvDashMangaPTR.Text = user.manga_stats.plan_to_read.ToString();
+                    lvDashMangaVolumes.Text = user.manga_stats.volumes_read.ToString();
+                    lvDashMangaChapters.Text = user.manga_stats.chapters_read.ToString();
+                    lvDashMangaReread.Text = user.manga_stats.reread.ToString();
+
+                    lvDashMangaDaysRead.Text = user.manga_stats.days_read.ToString();
+                    lvDashMangaMeanScore.Text = user.manga_stats.mean_score.ToString();
+
+                    #endregion
+
+                    #region Animelist UI update
+
+                    #endregion
+
+                    #region Mangalist UI update
+
+                    #endregion
                 });
             });
 
             LoadingUI(false);
         }
 
+        /// <summary>
+        /// Toggles the loading UI.
+        /// </summary>
+        /// <param name="mode"></param>
         private void LoadingUI(bool mode = true)
         {
             if (mode)
@@ -94,9 +133,20 @@ namespace MAL_Reviwer_UI.forms
             }
         }
 
+        #endregion
+
+        #region Dashboard management
+
         private void bMALProfile_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(((Button)sender).Tag.ToString());
+        }
+
+        #endregion
+
+        private void bNew_Click(object sender, EventArgs e)
+        {
+            (new fNewReview()).ShowDialog();
         }
     }
 }
