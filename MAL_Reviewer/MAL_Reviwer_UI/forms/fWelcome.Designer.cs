@@ -119,6 +119,10 @@
             this.lTitle = new System.Windows.Forms.Label();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.ttExtendedInfo = new System.Windows.Forms.ToolTip(this.components);
+            this.pDashFavorites = new System.Windows.Forms.Panel();
+            this.lDashFavorites = new System.Windows.Forms.Label();
+            this.pbDashFavorites = new System.Windows.Forms.PictureBox();
+            this.tlpFavorites = new System.Windows.Forms.TableLayoutPanel();
             this.pSide.SuspendLayout();
             this.pUser.SuspendLayout();
             this.pReviewLookUp.SuspendLayout();
@@ -143,6 +147,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbDashBoardLoad)).BeginInit();
             this.pHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            this.pDashFavorites.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDashFavorites)).BeginInit();
             this.SuspendLayout();
             // 
             // pSide
@@ -155,7 +161,7 @@
             this.pSide.Dock = System.Windows.Forms.DockStyle.Left;
             this.pSide.Location = new System.Drawing.Point(0, 0);
             this.pSide.Name = "pSide";
-            this.pSide.Size = new System.Drawing.Size(230, 581);
+            this.pSide.Size = new System.Drawing.Size(230, 881);
             this.pSide.TabIndex = 0;
             // 
             // pReviews
@@ -165,14 +171,14 @@
             this.pReviews.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pReviews.Location = new System.Drawing.Point(0, 108);
             this.pReviews.Name = "pReviews";
-            this.pReviews.Size = new System.Drawing.Size(230, 400);
+            this.pReviews.Size = new System.Drawing.Size(230, 700);
             this.pReviews.TabIndex = 2;
             // 
             // pUser
             // 
             this.pUser.Controls.Add(this.bUser);
             this.pUser.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pUser.Location = new System.Drawing.Point(0, 508);
+            this.pUser.Location = new System.Drawing.Point(0, 808);
             this.pUser.Name = "pUser";
             this.pUser.Size = new System.Drawing.Size(230, 73);
             this.pUser.TabIndex = 7;
@@ -310,7 +316,7 @@
             this.pMain.Controls.Add(this.pHeader);
             this.pMain.Location = new System.Drawing.Point(231, 0);
             this.pMain.Name = "pMain";
-            this.pMain.Size = new System.Drawing.Size(753, 581);
+            this.pMain.Size = new System.Drawing.Size(753, 881);
             this.pMain.TabIndex = 1;
             // 
             // pDashboard
@@ -320,7 +326,7 @@
             this.pDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pDashboard.Location = new System.Drawing.Point(0, 232);
             this.pDashboard.Name = "pDashboard";
-            this.pDashboard.Size = new System.Drawing.Size(753, 349);
+            this.pDashboard.Size = new System.Drawing.Size(753, 649);
             this.pDashboard.TabIndex = 7;
             // 
             // tcDashboard
@@ -337,7 +343,7 @@
             this.tcDashboard.Multiline = true;
             this.tcDashboard.Name = "tcDashboard";
             this.tcDashboard.SelectedIndex = 0;
-            this.tcDashboard.Size = new System.Drawing.Size(689, 293);
+            this.tcDashboard.Size = new System.Drawing.Size(689, 593);
             this.tcDashboard.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tcDashboard.TabIndex = 7;
             // 
@@ -350,7 +356,7 @@
             this.tpProfile.Location = new System.Drawing.Point(4, 34);
             this.tpProfile.Name = "tpProfile";
             this.tpProfile.Padding = new System.Windows.Forms.Padding(3);
-            this.tpProfile.Size = new System.Drawing.Size(681, 255);
+            this.tpProfile.Size = new System.Drawing.Size(681, 555);
             this.tpProfile.TabIndex = 0;
             this.tpProfile.Text = "Dashboard";
             this.tpProfile.UseVisualStyleBackColor = true;
@@ -361,11 +367,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pDashBoardMain.AutoScroll = true;
+            this.pDashBoardMain.Controls.Add(this.pDashFavorites);
             this.pDashBoardMain.Controls.Add(this.tlpUserInfo);
             this.pDashBoardMain.Controls.Add(this.tlpAnimeMangaCards);
             this.pDashBoardMain.Location = new System.Drawing.Point(35, 33);
             this.pDashBoardMain.Name = "pDashBoardMain";
-            this.pDashBoardMain.Size = new System.Drawing.Size(624, 187);
+            this.pDashBoardMain.Size = new System.Drawing.Size(624, 487);
             this.pDashBoardMain.TabIndex = 0;
             this.pDashBoardMain.Visible = false;
             // 
@@ -1113,7 +1120,7 @@
             this.lMALAccPreview.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lMALAccPreview.Location = new System.Drawing.Point(3, 3);
             this.lMALAccPreview.Name = "lMALAccPreview";
-            this.lMALAccPreview.Size = new System.Drawing.Size(675, 249);
+            this.lMALAccPreview.Size = new System.Drawing.Size(675, 549);
             this.lMALAccPreview.TabIndex = 0;
             this.lMALAccPreview.Text = "MAL Account Preview";
             this.lMALAccPreview.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1212,11 +1219,62 @@
             this.ttExtendedInfo.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.ttExtendedInfo.ToolTipTitle = "Profile info";
             // 
+            // pDashFavorites
+            // 
+            this.pDashFavorites.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pDashFavorites.AutoSize = true;
+            this.pDashFavorites.BackColor = System.Drawing.SystemColors.Control;
+            this.pDashFavorites.Controls.Add(this.tlpFavorites);
+            this.pDashFavorites.Controls.Add(this.pbDashFavorites);
+            this.pDashFavorites.Controls.Add(this.lDashFavorites);
+            this.pDashFavorites.Location = new System.Drawing.Point(2, 394);
+            this.pDashFavorites.Margin = new System.Windows.Forms.Padding(19, 3, 3, 3);
+            this.pDashFavorites.Name = "pDashFavorites";
+            this.pDashFavorites.Size = new System.Drawing.Size(605, 156);
+            this.pDashFavorites.TabIndex = 15;
+            // 
+            // lDashFavorites
+            // 
+            this.lDashFavorites.AutoSize = true;
+            this.lDashFavorites.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lDashFavorites.Location = new System.Drawing.Point(39, 4);
+            this.lDashFavorites.Name = "lDashFavorites";
+            this.lDashFavorites.Size = new System.Drawing.Size(77, 19);
+            this.lDashFavorites.TabIndex = 19;
+            this.lDashFavorites.Text = "Favorites";
+            // 
+            // pbDashFavorites
+            // 
+            this.pbDashFavorites.Image = global::MAL_Reviwer_UI.Properties.Resources.icon_anime;
+            this.pbDashFavorites.Location = new System.Drawing.Point(13, 3);
+            this.pbDashFavorites.Name = "pbDashFavorites";
+            this.pbDashFavorites.Size = new System.Drawing.Size(20, 20);
+            this.pbDashFavorites.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbDashFavorites.TabIndex = 19;
+            this.pbDashFavorites.TabStop = false;
+            // 
+            // tlpFavorites
+            // 
+            this.tlpFavorites.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlpFavorites.ColumnCount = 4;
+            this.tlpFavorites.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpFavorites.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpFavorites.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpFavorites.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpFavorites.Location = new System.Drawing.Point(13, 39);
+            this.tlpFavorites.Name = "tlpFavorites";
+            this.tlpFavorites.RowCount = 1;
+            this.tlpFavorites.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpFavorites.Size = new System.Drawing.Size(581, 100);
+            this.tlpFavorites.TabIndex = 20;
+            // 
             // fWelcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 581);
+            this.ClientSize = new System.Drawing.Size(984, 881);
             this.Controls.Add(this.pMain);
             this.Controls.Add(this.pSide);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1235,6 +1293,7 @@
             this.tcDashboard.ResumeLayout(false);
             this.tpProfile.ResumeLayout(false);
             this.pDashBoardMain.ResumeLayout(false);
+            this.pDashBoardMain.PerformLayout();
             this.tlpUserInfo.ResumeLayout(false);
             this.pCardProfileInfo.ResumeLayout(false);
             this.tlpUserInfoCore.ResumeLayout(false);
@@ -1252,6 +1311,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbDashBoardLoad)).EndInit();
             this.pHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            this.pDashFavorites.ResumeLayout(false);
+            this.pDashFavorites.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDashFavorites)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1347,5 +1409,9 @@
         private System.Windows.Forms.PictureBox pbDashAnime;
         private System.Windows.Forms.Label lvDashMangaReread;
         private System.Windows.Forms.Label lDashMangaReread;
+        private System.Windows.Forms.Panel pDashFavorites;
+        private System.Windows.Forms.PictureBox pbDashFavorites;
+        private System.Windows.Forms.Label lDashFavorites;
+        private System.Windows.Forms.TableLayoutPanel tlpFavorites;
     }
 }
