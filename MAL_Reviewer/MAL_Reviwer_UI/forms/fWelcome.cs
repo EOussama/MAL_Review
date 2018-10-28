@@ -79,7 +79,7 @@ namespace MAL_Reviwer_UI.forms
                 tcDashboard.TabPages.Remove(tpMangalist);
 
                 pDashBoardMain.Visible = false;
-                lMALAccPreview.Visible = true;
+                lMALAccPreview.Visible = false;
                 pbDashBoardLoad.Visible = true;
             }
             else

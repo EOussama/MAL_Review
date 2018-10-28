@@ -109,7 +109,7 @@
             this.pSide.Dock = System.Windows.Forms.DockStyle.Left;
             this.pSide.Location = new System.Drawing.Point(0, 0);
             this.pSide.Name = "pSide";
-            this.pSide.Size = new System.Drawing.Size(230, 782);
+            this.pSide.Size = new System.Drawing.Size(230, 581);
             this.pSide.TabIndex = 0;
             // 
             // pReviews
@@ -119,14 +119,14 @@
             this.pReviews.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pReviews.Location = new System.Drawing.Point(0, 108);
             this.pReviews.Name = "pReviews";
-            this.pReviews.Size = new System.Drawing.Size(230, 601);
+            this.pReviews.Size = new System.Drawing.Size(230, 400);
             this.pReviews.TabIndex = 2;
             // 
             // pUser
             // 
             this.pUser.Controls.Add(this.bUser);
             this.pUser.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pUser.Location = new System.Drawing.Point(0, 709);
+            this.pUser.Location = new System.Drawing.Point(0, 508);
             this.pUser.Name = "pUser";
             this.pUser.Size = new System.Drawing.Size(230, 73);
             this.pUser.TabIndex = 7;
@@ -264,7 +264,7 @@
             this.pMain.Controls.Add(this.pHeader);
             this.pMain.Location = new System.Drawing.Point(231, 0);
             this.pMain.Name = "pMain";
-            this.pMain.Size = new System.Drawing.Size(753, 782);
+            this.pMain.Size = new System.Drawing.Size(753, 581);
             this.pMain.TabIndex = 1;
             // 
             // pDashboard
@@ -274,7 +274,7 @@
             this.pDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pDashboard.Location = new System.Drawing.Point(0, 232);
             this.pDashboard.Name = "pDashboard";
-            this.pDashboard.Size = new System.Drawing.Size(753, 550);
+            this.pDashboard.Size = new System.Drawing.Size(753, 349);
             this.pDashboard.TabIndex = 7;
             // 
             // tcDashboard
@@ -287,11 +287,11 @@
             this.tcDashboard.Controls.Add(this.tpMangalist);
             this.tcDashboard.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tcDashboard.ItemSize = new System.Drawing.Size(100, 30);
-            this.tcDashboard.Location = new System.Drawing.Point(35, 32);
+            this.tcDashboard.Location = new System.Drawing.Point(35, 29);
             this.tcDashboard.Multiline = true;
             this.tcDashboard.Name = "tcDashboard";
             this.tcDashboard.SelectedIndex = 0;
-            this.tcDashboard.Size = new System.Drawing.Size(689, 494);
+            this.tcDashboard.Size = new System.Drawing.Size(689, 293);
             this.tcDashboard.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tcDashboard.TabIndex = 7;
             // 
@@ -304,7 +304,7 @@
             this.tpProfile.Location = new System.Drawing.Point(4, 34);
             this.tpProfile.Name = "tpProfile";
             this.tpProfile.Padding = new System.Windows.Forms.Padding(3);
-            this.tpProfile.Size = new System.Drawing.Size(681, 456);
+            this.tpProfile.Size = new System.Drawing.Size(681, 255);
             this.tpProfile.TabIndex = 0;
             this.tpProfile.Text = "Dashboard";
             this.tpProfile.UseVisualStyleBackColor = true;
@@ -319,7 +319,7 @@
             this.pDashBoardMain.Controls.Add(this.tlpAnimeMangaCards);
             this.pDashBoardMain.Location = new System.Drawing.Point(35, 29);
             this.pDashBoardMain.Name = "pDashBoardMain";
-            this.pDashBoardMain.Size = new System.Drawing.Size(611, 394);
+            this.pDashBoardMain.Size = new System.Drawing.Size(611, 187);
             this.pDashBoardMain.TabIndex = 0;
             this.pDashBoardMain.Visible = false;
             // 
@@ -356,9 +356,9 @@
             this.lUserLocation.AutoSize = true;
             this.lUserLocation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lUserLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lUserLocation.Location = new System.Drawing.Point(110, 92);
+            this.lUserLocation.Location = new System.Drawing.Point(104, 92);
             this.lUserLocation.Name = "lUserLocation";
-            this.lUserLocation.Size = new System.Drawing.Size(101, 24);
+            this.lUserLocation.Size = new System.Drawing.Size(95, 24);
             this.lUserLocation.TabIndex = 10;
             this.lUserLocation.Text = "[Location]";
             this.lUserLocation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -368,9 +368,9 @@
             this.lUserBirthday.AutoSize = true;
             this.lUserBirthday.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lUserBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lUserBirthday.Location = new System.Drawing.Point(110, 69);
+            this.lUserBirthday.Location = new System.Drawing.Point(104, 69);
             this.lUserBirthday.Name = "lUserBirthday";
-            this.lUserBirthday.Size = new System.Drawing.Size(101, 23);
+            this.lUserBirthday.Size = new System.Drawing.Size(95, 23);
             this.lUserBirthday.TabIndex = 9;
             this.lUserBirthday.Text = "[Birthday]";
             this.lUserBirthday.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -380,9 +380,9 @@
             this.lUserJoinDate.AutoSize = true;
             this.lUserJoinDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lUserJoinDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lUserJoinDate.Location = new System.Drawing.Point(110, 46);
+            this.lUserJoinDate.Location = new System.Drawing.Point(104, 46);
             this.lUserJoinDate.Name = "lUserJoinDate";
-            this.lUserJoinDate.Size = new System.Drawing.Size(101, 23);
+            this.lUserJoinDate.Size = new System.Drawing.Size(95, 23);
             this.lUserJoinDate.TabIndex = 8;
             this.lUserJoinDate.Text = "[Join date]";
             this.lUserJoinDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -392,9 +392,9 @@
             this.lUserGender.AutoSize = true;
             this.lUserGender.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lUserGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lUserGender.Location = new System.Drawing.Point(110, 23);
+            this.lUserGender.Location = new System.Drawing.Point(104, 23);
             this.lUserGender.Name = "lUserGender";
-            this.lUserGender.Size = new System.Drawing.Size(101, 23);
+            this.lUserGender.Size = new System.Drawing.Size(95, 23);
             this.lUserGender.TabIndex = 7;
             this.lUserGender.Text = "[Gender]";
             this.lUserGender.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -404,9 +404,9 @@
             this.lUserUsername.AutoSize = true;
             this.lUserUsername.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lUserUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lUserUsername.Location = new System.Drawing.Point(110, 0);
+            this.lUserUsername.Location = new System.Drawing.Point(104, 0);
             this.lUserUsername.Name = "lUserUsername";
-            this.lUserUsername.Size = new System.Drawing.Size(101, 23);
+            this.lUserUsername.Size = new System.Drawing.Size(95, 23);
             this.lUserUsername.TabIndex = 6;
             this.lUserUsername.Text = "[Username]";
             this.lUserUsername.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -427,7 +427,7 @@
             this.lLocation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lLocation.Location = new System.Drawing.Point(3, 92);
             this.lLocation.Name = "lLocation";
-            this.lLocation.Size = new System.Drawing.Size(101, 24);
+            this.lLocation.Size = new System.Drawing.Size(95, 24);
             this.lLocation.TabIndex = 4;
             this.lLocation.Text = "Location";
             // 
@@ -437,7 +437,7 @@
             this.lBirthday.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lBirthday.Location = new System.Drawing.Point(3, 69);
             this.lBirthday.Name = "lBirthday";
-            this.lBirthday.Size = new System.Drawing.Size(101, 23);
+            this.lBirthday.Size = new System.Drawing.Size(95, 23);
             this.lBirthday.TabIndex = 3;
             this.lBirthday.Text = "Birthday";
             // 
@@ -447,7 +447,7 @@
             this.lJoined.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lJoined.Location = new System.Drawing.Point(3, 46);
             this.lJoined.Name = "lJoined";
-            this.lJoined.Size = new System.Drawing.Size(101, 23);
+            this.lJoined.Size = new System.Drawing.Size(95, 23);
             this.lJoined.TabIndex = 2;
             this.lJoined.Text = "Join date";
             // 
@@ -457,7 +457,7 @@
             this.lGender.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lGender.Location = new System.Drawing.Point(3, 23);
             this.lGender.Name = "lGender";
-            this.lGender.Size = new System.Drawing.Size(101, 23);
+            this.lGender.Size = new System.Drawing.Size(95, 23);
             this.lGender.TabIndex = 1;
             this.lGender.Text = "Gender";
             // 
@@ -467,7 +467,7 @@
             this.lUsername.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lUsername.Location = new System.Drawing.Point(3, 0);
             this.lUsername.Name = "lUsername";
-            this.lUsername.Size = new System.Drawing.Size(101, 23);
+            this.lUsername.Size = new System.Drawing.Size(95, 23);
             this.lUsername.TabIndex = 0;
             this.lUsername.Text = "Username";
             // 
@@ -490,7 +490,7 @@
             this.pbProfileLink.Image = global::MAL_Reviwer_UI.Properties.Resources.icon_link;
             this.pbProfileLink.Location = new System.Drawing.Point(64, 31);
             this.pbProfileLink.Name = "pbProfileLink";
-            this.pbProfileLink.Size = new System.Drawing.Size(34, 30);
+            this.pbProfileLink.Size = new System.Drawing.Size(29, 30);
             this.pbProfileLink.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbProfileLink.TabIndex = 7;
             this.pbProfileLink.TabStop = false;
@@ -508,7 +508,7 @@
             this.bMALProfile.ImageList = this.ilSizeControl;
             this.bMALProfile.Location = new System.Drawing.Point(23, 90);
             this.bMALProfile.Name = "bMALProfile";
-            this.bMALProfile.Size = new System.Drawing.Size(117, 46);
+            this.bMALProfile.Size = new System.Drawing.Size(112, 46);
             this.bMALProfile.TabIndex = 6;
             this.bMALProfile.Text = "View profile on MAL";
             this.bMALProfile.UseVisualStyleBackColor = false;
@@ -554,13 +554,12 @@
             // 
             // pbDashBoardLoad
             // 
-            this.pbDashBoardLoad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.pbDashBoardLoad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pbDashBoardLoad.Image = global::MAL_Reviwer_UI.Properties.Resources.loading_gif_white;
-            this.pbDashBoardLoad.Location = new System.Drawing.Point(326, 178);
+            this.pbDashBoardLoad.Location = new System.Drawing.Point(325, 113);
             this.pbDashBoardLoad.Name = "pbDashBoardLoad";
-            this.pbDashBoardLoad.Size = new System.Drawing.Size(33, 31);
+            this.pbDashBoardLoad.Size = new System.Drawing.Size(30, 30);
             this.pbDashBoardLoad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbDashBoardLoad.TabIndex = 1;
             this.pbDashBoardLoad.TabStop = false;
@@ -573,7 +572,7 @@
             this.lMALAccPreview.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lMALAccPreview.Location = new System.Drawing.Point(3, 3);
             this.lMALAccPreview.Name = "lMALAccPreview";
-            this.lMALAccPreview.Size = new System.Drawing.Size(675, 450);
+            this.lMALAccPreview.Size = new System.Drawing.Size(675, 249);
             this.lMALAccPreview.TabIndex = 0;
             this.lMALAccPreview.Text = "MAL Account Preview";
             this.lMALAccPreview.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -698,14 +697,14 @@
             this.tlpUserInfoCore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpUserInfoCore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpUserInfoCore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpUserInfoCore.Size = new System.Drawing.Size(214, 116);
+            this.tlpUserInfoCore.Size = new System.Drawing.Size(202, 116);
             this.tlpUserInfoCore.TabIndex = 6;
             // 
             // fWelcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 782);
+            this.ClientSize = new System.Drawing.Size(984, 581);
             this.Controls.Add(this.pMain);
             this.Controls.Add(this.pSide);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
