@@ -13,10 +13,14 @@ namespace MAL_Reviwer_UI.forms
         {
             InitializeComponent();
 
-            // Fetching application info
+            // Fetching application info.
             lTitle.Text = Properties.Settings.Default["title"].ToString();
             lVersion.Text = Properties.Settings.Default["version"].ToString();
-            
+
+            // Temporarely removing Animelist and Mangalist tab pages.
+            tcDashboard.TabPages.Remove(tpAnimelist);
+            tcDashboard.TabPages.Remove(tpMangalist);
+
             MALHelper.Init();
         }
 
@@ -37,7 +41,7 @@ namespace MAL_Reviwer_UI.forms
         {
             LoadingUI();
 
-            // Updating the UI
+            // Updating the UI.
             await Task.Run(() =>
             {
                 Thread.Sleep(500);
@@ -70,24 +74,23 @@ namespace MAL_Reviwer_UI.forms
         {
             if (mode)
             {
-                // Dashboard
+                tcDashboard.SelectedIndex = 0;
+                tcDashboard.TabPages.Remove(tpAnimelist);
+                tcDashboard.TabPages.Remove(tpMangalist);
+
                 pDashBoardMain.Visible = false;
+                lMALAccPreview.Visible = true;
                 pbDashBoardLoad.Visible = true;
-
-                // Animelist
-
-                // Mangalist
             }
             else
             {
-                // Dashboard
+                tcDashboard.TabPages.Add(tpAnimelist);
+                tcDashboard.TabPages.Add(tpMangalist);
+
                 bUser.Text = "Unload this MAL account";
                 pbDashBoardLoad.Visible = false;
+                lMALAccPreview.Visible = false;
                 pDashBoardMain.Visible = true;
-
-                // Animelist
-
-                // Mangalist
             }
         }
 
