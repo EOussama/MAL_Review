@@ -83,37 +83,38 @@ namespace MAL_Reviwer_UI.forms
                 dgvAnimelistDropped.Rows.Clear();
                 dgvAnimelistPlanToWatch.Rows.Clear();
 
+                int _watchingCount = 0, _completedCount = 0, _onHoldCount = 0, _droppedCount = 0, _ptwCount = 0;
+
                 if (animeList != null && animeList.Count > 0)
                 {
-                    for (int i = 0; i< animeList.Count; i++)
+                    foreach (AnimelistEntryModel anime in animeList)
                     {
-                        AnimelistEntryModel anime = animeList[i];
 
                         switch (anime.watching_status)
                         {
                             case 1:
                                 {
-                                    dgvAnimelistWatching.Rows.Add(anime.url, i, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
+                                    dgvAnimelistWatching.Rows.Add(anime.url, ++_watchingCount, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
                                     break;
                                 }
                             case 2:
                                 {
-                                    dgvAnimelistCompleted.Rows.Add(anime.url, i, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
+                                    dgvAnimelistCompleted.Rows.Add(anime.url, ++_completedCount, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
                                     break;
                                 }
                             case 3:
                                 {
-                                    dgvAnimelistOnHold.Rows.Add(anime.url, i, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
+                                    dgvAnimelistOnHold.Rows.Add(anime.url, ++_onHoldCount, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
                                     break;
                                 }
                             case 4:
                                 {
-                                    dgvAnimelistDropped.Rows.Add(anime.url, i, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
+                                    dgvAnimelistDropped.Rows.Add(anime.url, ++_droppedCount, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
                                     break;
                                 }
                             case 6:
                                 {
-                                    dgvAnimelistPlanToWatch.Rows.Add(anime.url, i, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
+                                    dgvAnimelistPlanToWatch.Rows.Add(anime.url, ++_ptwCount, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
                                     break;
                                 }
                         }
@@ -123,44 +124,43 @@ namespace MAL_Reviwer_UI.forms
                 // Resizing the data grid view to match their rows.
                 if (dgvAnimelistWatching.Rows.Count > 0)
                 {
-                    int _height = (dgvAnimelistWatching.Rows.Count + 2) * dgvAnimelistWatching.Rows[0].Height;
-                    
-                    pAnimelistWatching.Height = _height;
-                    dgvAnimelistWatching.Height = _height + 40;
+                    int _height = (dgvAnimelistWatching.Rows.Count + 1) * dgvAnimelistWatching.Rows[0].Height;
+
+                    dgvAnimelistWatching.Height = _height;
+                    pAnimelistWatching.Height = _height + 60;
                 }
 
                 if (dgvAnimelistCompleted.Rows.Count > 0)
                 {
-                    int _height = (dgvAnimelistCompleted.Rows.Count + 2) * dgvAnimelistCompleted.Rows[0].Height;
+                    int _height = (dgvAnimelistCompleted.Rows.Count + 1) * dgvAnimelistCompleted.Rows[0].Height;
 
                     dgvAnimelistCompleted.Height = _height;
-                    pAnimelistCompleted.Height = _height + 40;
+                    pAnimelistCompleted.Height = _height + 60;
                 }
 
                 if (dgvAnimelistOnHold.Rows.Count > 0)
                 {
-                    int _height = (dgvAnimelistOnHold.Rows.Count + 2) * dgvAnimelistOnHold.Rows[0].Height;
+                    int _height = (dgvAnimelistOnHold.Rows.Count + 1) * dgvAnimelistOnHold.Rows[0].Height;
 
                     dgvAnimelistOnHold.Height = _height;
-                    pAnimelistOnHold.Height = _height + 40;
+                    pAnimelistOnHold.Height = _height + 60;
                 }
 
                 if (dgvAnimelistDropped.Rows.Count > 0)
                 {
-                    int _height = (dgvAnimelistDropped.Rows.Count + 2) * dgvAnimelistDropped.Rows[0].Height;
+                    int _height = (dgvAnimelistDropped.Rows.Count + 1) * dgvAnimelistDropped.Rows[0].Height;
 
                     dgvAnimelistDropped.Height = _height;
-                    pAnimelistDropped.Height = _height + 40;
+                    pAnimelistDropped.Height = _height + 60;
                 }
 
                 if (dgvAnimelistPlanToWatch.Rows.Count > 0)
                 {
-                    int _height = (dgvAnimelistPlanToWatch.Rows.Count + 2) * dgvAnimelistPlanToWatch.Rows[0].Height;
+                    int _height = (dgvAnimelistPlanToWatch.Rows.Count + 1) * dgvAnimelistPlanToWatch.Rows[0].Height;
 
                     dgvAnimelistPlanToWatch.Height = _height;
-                    pAnimelistPlanToWatch.Height = _height + 40;
+                    pAnimelistPlanToWatch.Height = _height + 60;
                 }
-
 
                 lvAnimelistWatching.Text = user.anime_stats.watching.ToString();
                 lvAnimelistCompleted.Text = user.anime_stats.completed.ToString();

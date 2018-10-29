@@ -1566,8 +1566,7 @@
             // 
             this.dgvAnimelistPlanToWatch.AllowUserToAddRows = false;
             this.dgvAnimelistPlanToWatch.AllowUserToDeleteRows = false;
-            this.dgvAnimelistPlanToWatch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvAnimelistPlanToWatch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAnimelistPlanToWatch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAnimelistPlanToWatch.BackgroundColor = System.Drawing.SystemColors.ControlLight;
@@ -1603,7 +1602,7 @@
             this.dgvAnimelistPlanToWatch.MultiSelect = false;
             this.dgvAnimelistPlanToWatch.Name = "dgvAnimelistPlanToWatch";
             this.dgvAnimelistPlanToWatch.ReadOnly = true;
-            this.dgvAnimelistPlanToWatch.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvAnimelistPlanToWatch.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvAnimelistPlanToWatch.Size = new System.Drawing.Size(509, 142);
             this.dgvAnimelistPlanToWatch.TabIndex = 21;
             this.dgvAnimelistPlanToWatch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAnimelistPlanToWatch_CellContentClick);
@@ -1646,8 +1645,7 @@
             // 
             this.dgvAnimelistOnHold.AllowUserToAddRows = false;
             this.dgvAnimelistOnHold.AllowUserToDeleteRows = false;
-            this.dgvAnimelistOnHold.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvAnimelistOnHold.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAnimelistOnHold.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAnimelistOnHold.BackgroundColor = System.Drawing.SystemColors.ControlLight;
@@ -1683,7 +1681,7 @@
             this.dgvAnimelistOnHold.MultiSelect = false;
             this.dgvAnimelistOnHold.Name = "dgvAnimelistOnHold";
             this.dgvAnimelistOnHold.ReadOnly = true;
-            this.dgvAnimelistOnHold.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvAnimelistOnHold.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvAnimelistOnHold.Size = new System.Drawing.Size(509, 138);
             this.dgvAnimelistOnHold.TabIndex = 21;
             this.dgvAnimelistOnHold.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAnimelistOnHold_CellContentClick);
@@ -1726,8 +1724,7 @@
             // 
             this.dgvAnimelistCompleted.AllowUserToAddRows = false;
             this.dgvAnimelistCompleted.AllowUserToDeleteRows = false;
-            this.dgvAnimelistCompleted.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvAnimelistCompleted.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAnimelistCompleted.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAnimelistCompleted.BackgroundColor = System.Drawing.SystemColors.ControlLight;
@@ -1765,7 +1762,7 @@
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAnimelistCompleted.RowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvAnimelistCompleted.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvAnimelistCompleted.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvAnimelistCompleted.Size = new System.Drawing.Size(509, 138);
             this.dgvAnimelistCompleted.TabIndex = 21;
             this.dgvAnimelistCompleted.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAnimelistCompleted_CellContentClick);
@@ -1808,12 +1805,11 @@
             // 
             this.dgvAnimelistWatching.AllowUserToAddRows = false;
             this.dgvAnimelistWatching.AllowUserToDeleteRows = false;
-            this.dgvAnimelistWatching.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvAnimelistWatching.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAnimelistWatching.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAnimelistWatching.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvAnimelistWatching.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvAnimelistWatching.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1845,7 +1841,7 @@
             this.dgvAnimelistWatching.MultiSelect = false;
             this.dgvAnimelistWatching.Name = "dgvAnimelistWatching";
             this.dgvAnimelistWatching.ReadOnly = true;
-            this.dgvAnimelistWatching.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvAnimelistWatching.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvAnimelistWatching.Size = new System.Drawing.Size(509, 155);
             this.dgvAnimelistWatching.TabIndex = 21;
             // 
@@ -1887,8 +1883,7 @@
             // 
             this.dgvAnimelistDropped.AllowUserToAddRows = false;
             this.dgvAnimelistDropped.AllowUserToDeleteRows = false;
-            this.dgvAnimelistDropped.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvAnimelistDropped.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAnimelistDropped.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAnimelistDropped.BackgroundColor = System.Drawing.SystemColors.ControlLight;
@@ -1924,7 +1919,7 @@
             this.dgvAnimelistDropped.MultiSelect = false;
             this.dgvAnimelistDropped.Name = "dgvAnimelistDropped";
             this.dgvAnimelistDropped.ReadOnly = true;
-            this.dgvAnimelistDropped.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvAnimelistDropped.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvAnimelistDropped.Size = new System.Drawing.Size(509, 138);
             this.dgvAnimelistDropped.TabIndex = 21;
             this.dgvAnimelistDropped.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAnimelistDropped_CellContentClick);
