@@ -49,6 +49,7 @@ namespace MAL_Reviwer_UI.forms
 
         private async void FLoadUser_UserLoadedEvent(object sender, MALUserModel user)
         {
+            bUser.Enabled = false;
             LoadingUI();
 
             // Updating the UI.
@@ -156,7 +157,6 @@ namespace MAL_Reviwer_UI.forms
                     lFavMangaCount.Text = user.favorites.manga.Length.ToString();
                     lFavCharactersCount.Text = user.favorites.characters.Length.ToString();
                     lFavPeopleCount.Text = user.favorites.people.Length.ToString();
-
                     #endregion
 
                     #endregion
@@ -172,6 +172,7 @@ namespace MAL_Reviwer_UI.forms
             });
 
             LoadingUI(false);
+            bUser.Enabled = true;
         }
 
         /// <summary>
