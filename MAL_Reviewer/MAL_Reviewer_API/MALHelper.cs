@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using MAL_Reviewer_API.models;
+using MAL_Reviewer_API.models.ListEntryModel;
 
 namespace MAL_Reviewer_API
 {
@@ -33,15 +35,13 @@ namespace MAL_Reviewer_API
             HttpResponseMessage response = await client.GetAsync(url);
 
             if (response.IsSuccessStatusCode)
-            {
                 return await response.Content.ReadAsAsync<SearchModel>();
-            }
 
             return null;
         }
 
         /// <summary>
-        /// Retrieve the anime of the matching id.
+        /// Retrieves the anime of the matching id.
         /// </summary>
         /// <param name="animeId"></param>
         /// <returns></returns>
@@ -51,15 +51,13 @@ namespace MAL_Reviewer_API
             HttpResponseMessage response = await client.GetAsync(url);
 
             if (response.IsSuccessStatusCode)
-            {
                 return await response.Content.ReadAsAsync<AnimeModel>();
-            }
 
             return null;
         }
 
         /// <summary>
-        /// Retrieve the manga of the matching id.
+        /// Retrieves the manga of the matching id.
         /// </summary>
         /// <param name="mangaId"></param>
         /// <returns></returns>
@@ -69,16 +67,14 @@ namespace MAL_Reviewer_API
             HttpResponseMessage response = await client.GetAsync(url);
 
             if (response.IsSuccessStatusCode)
-            {
                 return await response.Content.ReadAsAsync<MangaModel>();
-            }
 
             return null;
         }
 
 
         /// <summary>
-        /// Retrieve information of the given username.
+        /// Retrieves information of the given username.
         /// </summary>
         /// <param name="username"></param>
         /// <returns></returns>
@@ -88,11 +84,38 @@ namespace MAL_Reviewer_API
             HttpResponseMessage response = await client.GetAsync(url);
 
             if (response.IsSuccessStatusCode)
-            {
                 return await response.Content.ReadAsAsync<MALUserModel>();
-            }
 
             return null;
+        }
+
+        /// <summary>
+        /// Retrieves the given user's animelist.
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="totalEntries"></param>
+        /// <returns></returns>
+        public async static Task<List<AnimelistEntryModel>> GetAnimeList(string username, int totalEntries)
+        {
+            int pages = (int)Math.Ceiling((decimal)totalEntries / 300);
+            List<AnimelistEntryModel> animeList = new List<AnimelistEntryModel>();
+
+            foreach (int i in System.Linq.Enumerable.Range(1, pages))
+            {
+                string url = $"{ client.BaseAddress.AbsoluteUri }user/{ username }/animelist/all/{ i }";
+
+                HttpResponseMessage response = await client.GetAsync(url);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    AnimelistEntryResultsModel results = await response.Content.ReadAsAsync<AnimelistEntryResultsModel>();
+
+                    foreach (AnimelistEntryModel anime in results.anime)
+                        animeList.Add(anime);
+                }
+            }
+
+            return animeList;
         }
     }
 }

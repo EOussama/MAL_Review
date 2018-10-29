@@ -5,6 +5,8 @@ using System.Windows.Forms;
 using MAL_Reviwer_UI.user_controls;
 using MAL_Reviewer_API;
 using MAL_Reviewer_API.models;
+using MAL_Reviewer_API.models.ListEntryModel;
+using System.Net;
 
 namespace MAL_Reviwer_UI.forms
 {
@@ -62,6 +64,51 @@ namespace MAL_Reviwer_UI.forms
             #endregion
 
             #region Animelist UI update
+
+            if (user.anime_stats.total_entries > 0)
+            {
+                // Getting the anime list.
+                List<AnimelistEntryModel> animeList = await MALHelper.GetAnimeList(user.username, (int)user.anime_stats.total_entries);
+
+                if (animeList != null && animeList.Count > 0)
+                {
+                    foreach (AnimelistEntryModel anime in animeList)
+                    {
+                        switch(anime.watching_status)
+                        {
+                            case 1:
+                                {
+                                    //HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create(anime.image_url);
+                                    //myRequest.Method = "GET";
+                                    //HttpWebResponse myResponse = (HttpWebResponse)myRequest.GetResponse();
+                                    //System.Drawing.Bitmap bmp = new System.Drawing.Bitmap(myResponse.GetResponseStream());
+                                    //myResponse.Close();
+
+                                    dgvAnimelistWatching.Rows.Add(null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
+                                    break;
+                                }
+                            case 2:
+                                {
+                                    break;
+                                }
+                            case 3:
+                                {
+                                    break;
+                                }
+                            case 4:
+                                {
+                                    break;
+                                }
+                            case 6:
+                                {
+                                    break;
+                                }
+                        }
+                    }
+                }
+
+                lAnimelistWatching.Text = user.anime_stats.watching.ToString();
+            }
 
             #endregion
 

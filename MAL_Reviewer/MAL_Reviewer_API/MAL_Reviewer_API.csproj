@@ -48,6 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MALHelper.cs" />
+    <Compile Include="models\ListEntryModel\AnimelistEntryModel.cs" />
+    <Compile Include="models\ListEntryModel\AnimelistEntryResultsModel.cs" />
+    <Compile Include="models\ListEntryModel\ListEntryModel.cs" />
+    <Compile Include="models\ListEntryModel\MangalistEntryModel.cs" />
     <Compile Include="models\TargetModel\AnimeModel.cs" />
     <Compile Include="models\UserModel\AnimeStatsModel.cs" />
     <Compile Include="models\UserModel\FavoritesModel.cs" />

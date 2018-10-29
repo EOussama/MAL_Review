@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fWelcome));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pSide = new System.Windows.Forms.Panel();
             this.pReviews = new System.Windows.Forms.Panel();
             this.pUser = new System.Windows.Forms.Panel();
@@ -143,6 +144,16 @@
             this.lTitle = new System.Windows.Forms.Label();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.ttExtendedInfo = new System.Windows.Forms.ToolTip(this.components);
+            this.pAnimelist = new System.Windows.Forms.Panel();
+            this.pAnimelistWatching = new System.Windows.Forms.Panel();
+            this.lAnimelistWatching = new System.Windows.Forms.Label();
+            this.lvAnimelistWatching = new System.Windows.Forms.Label();
+            this.dgvAnimelistWatching = new System.Windows.Forms.DataGridView();
+            this.calw = new System.Windows.Forms.DataGridViewImageColumn();
+            this.calwTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.calwProgress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.calwScore = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.calwType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pSide.SuspendLayout();
             this.pUser.SuspendLayout();
             this.pReviewLookUp.SuspendLayout();
@@ -174,8 +185,12 @@
             this.pDashAnimeCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDashAnime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDashBoardLoad)).BeginInit();
+            this.tpAnimelist.SuspendLayout();
             this.pHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            this.pAnimelist.SuspendLayout();
+            this.pAnimelistWatching.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAnimelistWatching)).BeginInit();
             this.SuspendLayout();
             // 
             // pSide
@@ -1437,6 +1452,7 @@
             // tpAnimelist
             // 
             this.tpAnimelist.AutoScroll = true;
+            this.tpAnimelist.Controls.Add(this.pAnimelist);
             this.tpAnimelist.Location = new System.Drawing.Point(4, 34);
             this.tpAnimelist.Name = "tpAnimelist";
             this.tpAnimelist.Padding = new System.Windows.Forms.Padding(3);
@@ -1528,6 +1544,115 @@
             this.ttExtendedInfo.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.ttExtendedInfo.ToolTipTitle = "Information";
             // 
+            // pAnimelist
+            // 
+            this.pAnimelist.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pAnimelist.AutoScroll = true;
+            this.pAnimelist.Controls.Add(this.pAnimelistWatching);
+            this.pAnimelist.Location = new System.Drawing.Point(35, 33);
+            this.pAnimelist.Name = "pAnimelist";
+            this.pAnimelist.Size = new System.Drawing.Size(643, 187);
+            this.pAnimelist.TabIndex = 1;
+            // 
+            // pAnimelistWatching
+            // 
+            this.pAnimelistWatching.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pAnimelistWatching.BackColor = System.Drawing.SystemColors.Control;
+            this.pAnimelistWatching.Controls.Add(this.dgvAnimelistWatching);
+            this.pAnimelistWatching.Controls.Add(this.lvAnimelistWatching);
+            this.pAnimelistWatching.Controls.Add(this.lAnimelistWatching);
+            this.pAnimelistWatching.Location = new System.Drawing.Point(2, 2);
+            this.pAnimelistWatching.Margin = new System.Windows.Forms.Padding(19, 3, 3, 3);
+            this.pAnimelistWatching.Name = "pAnimelistWatching";
+            this.pAnimelistWatching.Size = new System.Drawing.Size(603, 182);
+            this.pAnimelistWatching.TabIndex = 17;
+            // 
+            // lAnimelistWatching
+            // 
+            this.lAnimelistWatching.AutoSize = true;
+            this.lAnimelistWatching.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lAnimelistWatching.Location = new System.Drawing.Point(16, 4);
+            this.lAnimelistWatching.Name = "lAnimelistWatching";
+            this.lAnimelistWatching.Size = new System.Drawing.Size(76, 19);
+            this.lAnimelistWatching.TabIndex = 19;
+            this.lAnimelistWatching.Text = "Watching";
+            // 
+            // lvAnimelistWatching
+            // 
+            this.lvAnimelistWatching.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lvAnimelistWatching.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvAnimelistWatching.Location = new System.Drawing.Point(513, 4);
+            this.lvAnimelistWatching.Name = "lvAnimelistWatching";
+            this.lvAnimelistWatching.Size = new System.Drawing.Size(76, 19);
+            this.lvAnimelistWatching.TabIndex = 20;
+            this.lvAnimelistWatching.Text = "[xxxx]";
+            this.lvAnimelistWatching.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // dgvAnimelistWatching
+            // 
+            this.dgvAnimelistWatching.AllowUserToAddRows = false;
+            this.dgvAnimelistWatching.AllowUserToDeleteRows = false;
+            this.dgvAnimelistWatching.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAnimelistWatching.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvAnimelistWatching.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvAnimelistWatching.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAnimelistWatching.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.calw,
+            this.calwTitle,
+            this.calwProgress,
+            this.calwScore,
+            this.calwType});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAnimelistWatching.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvAnimelistWatching.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvAnimelistWatching.GridColor = System.Drawing.SystemColors.Control;
+            this.dgvAnimelistWatching.Location = new System.Drawing.Point(0, 37);
+            this.dgvAnimelistWatching.MultiSelect = false;
+            this.dgvAnimelistWatching.Name = "dgvAnimelistWatching";
+            this.dgvAnimelistWatching.ReadOnly = true;
+            this.dgvAnimelistWatching.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvAnimelistWatching.Size = new System.Drawing.Size(603, 145);
+            this.dgvAnimelistWatching.TabIndex = 21;
+            // 
+            // calw
+            // 
+            this.calw.HeaderText = "";
+            this.calw.Name = "calw";
+            this.calw.ReadOnly = true;
+            // 
+            // calwTitle
+            // 
+            this.calwTitle.HeaderText = "Title";
+            this.calwTitle.Name = "calwTitle";
+            this.calwTitle.ReadOnly = true;
+            // 
+            // calwProgress
+            // 
+            this.calwProgress.HeaderText = "Progress";
+            this.calwProgress.Name = "calwProgress";
+            this.calwProgress.ReadOnly = true;
+            // 
+            // calwScore
+            // 
+            this.calwScore.HeaderText = "Score";
+            this.calwScore.Name = "calwScore";
+            this.calwScore.ReadOnly = true;
+            // 
+            // calwType
+            // 
+            this.calwType.HeaderText = "Type";
+            this.calwType.Name = "calwType";
+            this.calwType.ReadOnly = true;
+            // 
             // fWelcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1583,8 +1708,13 @@
             this.pDashAnimeCard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDashAnime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDashBoardLoad)).EndInit();
+            this.tpAnimelist.ResumeLayout(false);
             this.pHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            this.pAnimelist.ResumeLayout(false);
+            this.pAnimelistWatching.ResumeLayout(false);
+            this.pAnimelistWatching.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAnimelistWatching)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1704,5 +1834,15 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lDashAbout;
         private System.Windows.Forms.RichTextBox rtbAbout;
+        private System.Windows.Forms.Panel pAnimelist;
+        private System.Windows.Forms.Panel pAnimelistWatching;
+        private System.Windows.Forms.Label lvAnimelistWatching;
+        private System.Windows.Forms.Label lAnimelistWatching;
+        private System.Windows.Forms.DataGridView dgvAnimelistWatching;
+        private System.Windows.Forms.DataGridViewImageColumn calw;
+        private System.Windows.Forms.DataGridViewTextBoxColumn calwTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn calwProgress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn calwScore;
+        private System.Windows.Forms.DataGridViewTextBoxColumn calwType;
     }
 }
