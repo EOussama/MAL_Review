@@ -128,7 +128,7 @@ namespace MAL_Reviwer_UI.forms
         {
             await Task.Run(() =>
             {
-                pDashboard.Invoke((MethodInvoker)delegate
+                pDashboard.Invoke((MethodInvoker) delegate
                 {
                     lvDashMangaReading.Text = user.manga_stats.reading.ToString();
                     lvDashMangaCompleted.Text = user.manga_stats.completed.ToString();

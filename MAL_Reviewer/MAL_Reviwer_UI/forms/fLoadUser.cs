@@ -20,6 +20,7 @@ namespace MAL_Reviwer_UI.forms
         {
             string username = tbMALUsername.Text.Trim();
 
+            bLoad.Enabled = false;
             pbLoading.Visible = true;
 
             try
@@ -42,6 +43,7 @@ namespace MAL_Reviwer_UI.forms
             finally
             {
                 pbLoading.Visible = false;
+                bLoad.Enabled = true;
                 this.ActiveControl = tbMALUsername;
             }
         }
