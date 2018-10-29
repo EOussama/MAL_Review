@@ -51,7 +51,7 @@ namespace MAL_Reviwer_UI.forms
         private async void FLoadUser_UserLoadedEvent(object sender, MALUserModel user)
         {
             this._loaded = 0;
-            await LoadingUIAsync();
+            LoadingUI();
 
             #region Dashboard UI update
 
@@ -68,15 +68,13 @@ namespace MAL_Reviwer_UI.forms
             #region Mangalist UI update
 
             #endregion
-
-            //LoadingUI(false);
         }
 
         private async Task ProfileUpdateUIAsync(MALUserModel user)
         {
             await Task.Run(() =>
             {
-                pDashboard.Invoke((MethodInvoker)async delegate
+                pDashboard.Invoke((MethodInvoker)delegate
                 {
                     lUserUsername.Text = user.username;
                     lUserGender.Text = user.gender;
@@ -98,7 +96,7 @@ namespace MAL_Reviwer_UI.forms
                     ttExtendedInfo.SetToolTip(lUserLocation, user.location);
 
                     this._loaded++;
-                    await LoadingUIAsync(false);
+                    LoadingUI(false);
                 });
             });
         }
@@ -107,7 +105,7 @@ namespace MAL_Reviwer_UI.forms
         {
             await Task.Run(() =>
             {
-                pDashboard.Invoke((MethodInvoker)async delegate
+                pDashboard.Invoke((MethodInvoker)delegate
                 {
                     lvDashAnimeWatching.Text = user.anime_stats.watching.ToString();
                     lvDashAnimeCompleted.Text = user.anime_stats.completed.ToString();
@@ -121,7 +119,7 @@ namespace MAL_Reviwer_UI.forms
                     lvDashAnimeMeanScore.Text = user.anime_stats.mean_score?.ToString("0.00");
 
                     this._loaded++;
-                    await LoadingUIAsync(false);
+                    LoadingUI(false);
                 });
             });
         }
@@ -130,7 +128,7 @@ namespace MAL_Reviwer_UI.forms
         {
             await Task.Run(() =>
             {
-                pDashboard.Invoke((MethodInvoker)async delegate
+                pDashboard.Invoke((MethodInvoker)delegate
                 {
                     lvDashMangaReading.Text = user.manga_stats.reading.ToString();
                     lvDashMangaCompleted.Text = user.manga_stats.completed.ToString();
@@ -145,7 +143,7 @@ namespace MAL_Reviwer_UI.forms
                     lvDashMangaMeanScore.Text = user.manga_stats.mean_score?.ToString("0.00");
 
                     this._loaded++;
-                    await LoadingUIAsync(false);
+                    LoadingUI(false);
                 });
             });
         }
@@ -233,7 +231,7 @@ namespace MAL_Reviwer_UI.forms
                     lFavPeopleCount.Text = user.favorites.people.Length.ToString();
 
                     this._loaded++;
-                    await LoadingUIAsync(false);
+                    LoadingUI(false);
                 });
             });
         }
@@ -242,38 +240,32 @@ namespace MAL_Reviwer_UI.forms
         /// Toggles the loading UI.
         /// </summary>
         /// <param name="mode"></param>
-        private async Task LoadingUIAsync(bool mode = true)
+        private void LoadingUI(bool mode = true)
         {
-            await Task.Run(() =>
+            pDashBoardMain.VerticalScroll.Value = 0;
+
+            if (mode)
             {
-                pDashBoardMain.Invoke((MethodInvoker)delegate
-                {
-                    pDashBoardMain.VerticalScroll.Value = 0;
+                tcDashboard.SelectedIndex = 0;
+                tcDashboard.TabPages.Remove(tpAnimelist);
+                tcDashboard.TabPages.Remove(tpMangalist);
 
-                    if (mode)
-                    {
-                        tcDashboard.SelectedIndex = 0;
-                        tcDashboard.TabPages.Remove(tpAnimelist);
-                        tcDashboard.TabPages.Remove(tpMangalist);
+                pDashBoardMain.Visible = false;
+                lMALAccPreview.Visible = false;
+                pbDashBoardLoad.Visible = true;
+                bUser.Enabled = false;
+            }
+            else if (mode == false && this._loaded == 4)
+            {
+                tcDashboard.TabPages.Add(tpAnimelist);
+                tcDashboard.TabPages.Add(tpMangalist);
 
-                        pDashBoardMain.Visible = false;
-                        lMALAccPreview.Visible = false;
-                        pbDashBoardLoad.Visible = true;
-                        bUser.Enabled = false;
-                    }
-                    else if (mode == false && this._loaded == 4)
-                    {
-                        tcDashboard.TabPages.Add(tpAnimelist);
-                        tcDashboard.TabPages.Add(tpMangalist);
-
-                        bUser.Text = "Unload this MAL account";
-                        pbDashBoardLoad.Visible = false;
-                        lMALAccPreview.Visible = false;
-                        pDashBoardMain.Visible = true;
-                        bUser.Enabled = true;
-                    }
-                });
-            });
+                bUser.Text = "Unload this MAL account";
+                pbDashBoardLoad.Visible = false;
+                lMALAccPreview.Visible = false;
+                pDashBoardMain.Visible = true;
+                bUser.Enabled = true;
+            }
         }
 
         #endregion

@@ -42,6 +42,7 @@ namespace MAL_Reviwer_UI.forms
             finally
             {
                 pbLoading.Visible = false;
+                this.ActiveControl = tbMALUsername;
             }
         }
 

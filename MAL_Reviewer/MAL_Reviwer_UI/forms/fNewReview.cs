@@ -10,7 +10,7 @@ namespace MAL_Reviwer_UI.forms
 {
     public partial class fNewReview : Form
     {
-        private bool _ready = true, _finishedTyping = true;
+        private bool _ready = true;
         private int _targetId = 0;
         private byte _type = 0;
         private Timer _inputDelay;
