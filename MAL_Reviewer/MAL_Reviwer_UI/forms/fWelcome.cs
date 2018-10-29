@@ -37,6 +37,13 @@ namespace MAL_Reviwer_UI.forms
             pChildCharacters.AutoScroll = true;
             pChildPeople.AutoScroll = true;
 
+            // Animelist click event.
+            dgvAnimelistWatching.CellClick += ListEntry_CellClick;
+            dgvAnimelistCompleted.CellClick += ListEntry_CellClick;
+            dgvAnimelistOnHold.CellClick += ListEntry_CellClick;
+            dgvAnimelistDropped.CellClick += ListEntry_CellClick;
+            dgvAnimelistPlanToWatch.CellClick += ListEntry_CellClick;
+
             MALHelper.Init();
         }
 
@@ -70,6 +77,12 @@ namespace MAL_Reviwer_UI.forms
                 // Getting the anime list.
                 List<AnimelistEntryModel> animeList = await MALHelper.GetAnimeList(user.username, (int)user.anime_stats.total_entries);
 
+                dgvAnimelistWatching.Rows.Clear();
+                dgvAnimelistCompleted.Rows.Clear();
+                dgvAnimelistOnHold.Rows.Clear();
+                dgvAnimelistDropped.Rows.Clear();
+                dgvAnimelistPlanToWatch.Rows.Clear();
+
                 if (animeList != null && animeList.Count > 0)
                 {
                     foreach (AnimelistEntryModel anime in animeList)
@@ -78,36 +91,38 @@ namespace MAL_Reviwer_UI.forms
                         {
                             case 1:
                                 {
-                                    //HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create(anime.image_url);
-                                    //myRequest.Method = "GET";
-                                    //HttpWebResponse myResponse = (HttpWebResponse)myRequest.GetResponse();
-                                    //System.Drawing.Bitmap bmp = new System.Drawing.Bitmap(myResponse.GetResponseStream());
-                                    //myResponse.Close();
-
-                                    dgvAnimelistWatching.Rows.Add(null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
+                                    dgvAnimelistWatching.Rows.Add(anime.url, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
                                     break;
                                 }
                             case 2:
                                 {
+                                    dgvAnimelistCompleted.Rows.Add(anime.url, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
                                     break;
                                 }
                             case 3:
                                 {
+                                    dgvAnimelistOnHold.Rows.Add(anime.url, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
                                     break;
                                 }
                             case 4:
                                 {
+                                    dgvAnimelistDropped.Rows.Add(anime.url, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
                                     break;
                                 }
                             case 6:
                                 {
+                                    dgvAnimelistPlanToWatch.Rows.Add(anime.url, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
                                     break;
                                 }
                         }
                     }
                 }
 
-                lAnimelistWatching.Text = user.anime_stats.watching.ToString();
+                lvAnimelistWatching.Text = user.anime_stats.watching.ToString();
+                lvAnimelistCompleted.Text = user.anime_stats.completed.ToString();
+                lvAnimelistOnHold.Text = user.anime_stats.on_hold.ToString();
+                lvAnimelistDropped.Text = user.anime_stats.dropped.ToString();
+                lvAnimelistPlanToWatch.Text = user.anime_stats.plan_to_watch.ToString();
             }
 
             #endregion
@@ -322,6 +337,14 @@ namespace MAL_Reviwer_UI.forms
         private void bMALProfile_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(((Button)sender).Tag.ToString());
+        }
+
+        private void ListEntry_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > 0)
+            {
+                System.Diagnostics.Process.Start(((DataGridView)sender).Rows[e.RowIndex].Cells[0].Value.ToString());
+            }
         }
 
         #endregion
