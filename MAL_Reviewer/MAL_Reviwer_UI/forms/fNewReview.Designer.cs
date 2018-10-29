@@ -565,6 +565,7 @@
             this.Name = "fNewReview";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Review";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fNewReview_FormClosing);
             this.pReviewLookUp.ResumeLayout(false);
             this.pReviewLookUp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();

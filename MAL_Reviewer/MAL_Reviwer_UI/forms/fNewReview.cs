@@ -296,5 +296,10 @@ namespace MAL_Reviwer_UI.forms
         }
 
         #endregion
+
+        private void fNewReview_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = !this._ready;
+        }
     }
 }
