@@ -55,7 +55,6 @@ namespace MAL_Reviwer_UI.forms
             // Updating the UI.
             await Task.Run(() =>
             {
-                Thread.Sleep(500);
                 pDashBoardMain.Invoke((MethodInvoker)delegate
                 {
                     #region Dashboard UI update
@@ -80,7 +79,7 @@ namespace MAL_Reviwer_UI.forms
                     ttExtendedInfo.SetToolTip(lUserLocation, user.location);
 
                     // Anime stats
-                    lvDashAnimeWatching.Text = user.anime_stats.watching.ToString();
+                    /*lvDashAnimeWatching.Text = user.anime_stats.watching.ToString();
                     lvDashAnimeCompleted.Text = user.anime_stats.completed.ToString();
                     lvDashAnimeOnHold.Text = user.anime_stats.on_hold.ToString();
                     lvDashAnimeDropped.Text = user.anime_stats.dropped.ToString();
@@ -89,10 +88,10 @@ namespace MAL_Reviwer_UI.forms
                     lvDashAnimeRewatches.Text = user.anime_stats.rewatched.ToString();
 
                     lvDashAnimeDaysWatched.Text = user.anime_stats.days_watched?.ToString("0.00");
-                    lvDashAnimeMeanScore.Text = user.anime_stats.mean_score?.ToString("0.00");
+                    lvDashAnimeMeanScore.Text = user.anime_stats.mean_score?.ToString("0.00");*/
 
                     // Manga stats
-                    lvDashMangaReading.Text = user.manga_stats.reading.ToString();
+                    /*lvDashMangaReading.Text = user.manga_stats.reading.ToString();
                     lvDashMangaCompleted.Text = user.manga_stats.completed.ToString();
                     lvDashMangaOnHold.Text = user.manga_stats.on_hold.ToString();
                     lvDashMangaDropped.Text = user.manga_stats.dropped.ToString();
@@ -102,15 +101,15 @@ namespace MAL_Reviwer_UI.forms
                     lvDashMangaReread.Text = user.manga_stats.reread.ToString();
 
                     lvDashMangaDaysRead.Text = user.manga_stats.days_read?.ToString("0.00");
-                    lvDashMangaMeanScore.Text = user.manga_stats.mean_score?.ToString("0.00");
+                    lvDashMangaMeanScore.Text = user.manga_stats.mean_score?.ToString("0.00");*/
 
                     // About
-                    rtbAbout.Text = (user.about == "" || user.about == null) ? "Such empty!" : user.about;
+                    //rtbAbout.Text = (user.about == "" || user.about == null) ? "Such empty!" : user.about;
 
                     #region Favorites
 
                     // Anime
-                    pChildAnime.Controls.Clear();
+                    /*pChildAnime.Controls.Clear();
                     foreach (FavAnimeModel favAnimeModel in user.favorites.anime)
                     {
                         ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favAnimeModel.name, favAnimeModel.image_url, "Anime");
@@ -156,7 +155,7 @@ namespace MAL_Reviwer_UI.forms
                     lFavAnimeCount.Text = user.favorites.anime.Length.ToString();
                     lFavMangaCount.Text = user.favorites.manga.Length.ToString();
                     lFavCharactersCount.Text = user.favorites.characters.Length.ToString();
-                    lFavPeopleCount.Text = user.favorites.people.Length.ToString();
+                    lFavPeopleCount.Text = user.favorites.people.Length.ToString();*/
                     #endregion
 
                     #endregion
@@ -181,6 +180,8 @@ namespace MAL_Reviwer_UI.forms
         /// <param name="mode"></param>
         private void LoadingUI(bool mode = true)
         {
+            pDashBoardMain.VerticalScroll.Value = 0;
+
             if (mode)
             {
                 tcDashboard.SelectedIndex = 0;
