@@ -86,7 +86,6 @@ namespace MAL_Reviwer_UI.forms
 
         private async void _inputDelay_Tick(object sender, EventArgs e)
         {
-            var x = System.Diagnostics.Stopwatch.StartNew();
             this._inputDelay.Stop();
             tbSearch.Enabled = false;
 
@@ -154,9 +153,6 @@ namespace MAL_Reviwer_UI.forms
             {
                 tbSearch.Enabled = true;
             }
-
-            x.Stop();
-            Console.WriteLine($"Time took: { x.ElapsedMilliseconds }");
         }
 
         private void SearchCard_CardMouseClickEvent(object sender, int targetId)
