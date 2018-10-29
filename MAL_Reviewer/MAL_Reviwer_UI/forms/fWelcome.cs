@@ -85,38 +85,82 @@ namespace MAL_Reviwer_UI.forms
 
                 if (animeList != null && animeList.Count > 0)
                 {
-                    foreach (AnimelistEntryModel anime in animeList)
+                    for (int i = 0; i< animeList.Count; i++)
                     {
-                        switch(anime.watching_status)
+                        AnimelistEntryModel anime = animeList[i];
+
+                        switch (anime.watching_status)
                         {
                             case 1:
                                 {
-                                    dgvAnimelistWatching.Rows.Add(anime.url, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
+                                    dgvAnimelistWatching.Rows.Add(anime.url, i, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
                                     break;
                                 }
                             case 2:
                                 {
-                                    dgvAnimelistCompleted.Rows.Add(anime.url, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
+                                    dgvAnimelistCompleted.Rows.Add(anime.url, i, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
                                     break;
                                 }
                             case 3:
                                 {
-                                    dgvAnimelistOnHold.Rows.Add(anime.url, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
+                                    dgvAnimelistOnHold.Rows.Add(anime.url, i, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
                                     break;
                                 }
                             case 4:
                                 {
-                                    dgvAnimelistDropped.Rows.Add(anime.url, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
+                                    dgvAnimelistDropped.Rows.Add(anime.url, i, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
                                     break;
                                 }
                             case 6:
                                 {
-                                    dgvAnimelistPlanToWatch.Rows.Add(anime.url, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
+                                    dgvAnimelistPlanToWatch.Rows.Add(anime.url, i, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
                                     break;
                                 }
                         }
                     }
                 }
+
+                // Resizing the data grid view to match their rows.
+                if (dgvAnimelistWatching.Rows.Count > 0)
+                {
+                    int _height = (dgvAnimelistWatching.Rows.Count + 2) * dgvAnimelistWatching.Rows[0].Height;
+                    
+                    pAnimelistWatching.Height = _height;
+                    dgvAnimelistWatching.Height = _height + 40;
+                }
+
+                if (dgvAnimelistCompleted.Rows.Count > 0)
+                {
+                    int _height = (dgvAnimelistCompleted.Rows.Count + 2) * dgvAnimelistCompleted.Rows[0].Height;
+
+                    dgvAnimelistCompleted.Height = _height;
+                    pAnimelistCompleted.Height = _height + 40;
+                }
+
+                if (dgvAnimelistOnHold.Rows.Count > 0)
+                {
+                    int _height = (dgvAnimelistOnHold.Rows.Count + 2) * dgvAnimelistOnHold.Rows[0].Height;
+
+                    dgvAnimelistOnHold.Height = _height;
+                    pAnimelistOnHold.Height = _height + 40;
+                }
+
+                if (dgvAnimelistDropped.Rows.Count > 0)
+                {
+                    int _height = (dgvAnimelistDropped.Rows.Count + 2) * dgvAnimelistDropped.Rows[0].Height;
+
+                    dgvAnimelistDropped.Height = _height;
+                    pAnimelistDropped.Height = _height + 40;
+                }
+
+                if (dgvAnimelistPlanToWatch.Rows.Count > 0)
+                {
+                    int _height = (dgvAnimelistPlanToWatch.Rows.Count + 2) * dgvAnimelistPlanToWatch.Rows[0].Height;
+
+                    dgvAnimelistPlanToWatch.Height = _height;
+                    pAnimelistPlanToWatch.Height = _height + 40;
+                }
+
 
                 lvAnimelistWatching.Text = user.anime_stats.watching.ToString();
                 lvAnimelistCompleted.Text = user.anime_stats.completed.ToString();
@@ -352,6 +396,26 @@ namespace MAL_Reviwer_UI.forms
         private void bNew_Click(object sender, EventArgs e)
         {
             (new fNewReview()).ShowDialog();
+        }
+
+        private void dgvAnimelistOnHold_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvAnimelistCompleted_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvAnimelistDropped_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvAnimelistPlanToWatch_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
