@@ -6,7 +6,6 @@ using MAL_Reviwer_UI.user_controls;
 using MAL_Reviewer_API;
 using MAL_Reviewer_API.models;
 
-
 namespace MAL_Reviwer_UI.forms
 {
     public partial class fWelcome : Form
