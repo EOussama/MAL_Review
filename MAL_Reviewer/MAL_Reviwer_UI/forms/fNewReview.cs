@@ -95,7 +95,7 @@ namespace MAL_Reviwer_UI.forms
                     searchTitle = tbSearch.Text.Trim().ToLower(),
                     searchType = rbAnime.Checked ? rbAnime.Text.ToLower() : rbManga.Text.ToLower();
 
-                if (this._lastSearch == searchTitle)
+                if (this._lastSearch == searchTitle && this._type == (rbAnime.Checked ? int.Parse(rbAnime.Tag.ToString()) : int.Parse(rbManga.Tag.ToString())))
                     return;
 
                 this._lastSearch = searchTitle;
