@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fWelcome));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pSide = new System.Windows.Forms.Panel();
             this.pReviews = new System.Windows.Forms.Panel();
             this.pUser = new System.Windows.Forms.Panel();
@@ -167,11 +167,6 @@
             this.lAnimelistDropped = new System.Windows.Forms.Label();
             this.pAnimelistPlanToWatch = new System.Windows.Forms.Panel();
             this.dgvAnimelistPlanToWatch = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lvAnimelistPlanToWatch = new System.Windows.Forms.Label();
             this.lAnimelistPlanToWatch = new System.Windows.Forms.Label();
             this.calwUrl = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -198,6 +193,12 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cptlUrl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pSide.SuspendLayout();
             this.pUser.SuspendLayout();
             this.pReviewLookUp.SuspendLayout();
@@ -1521,11 +1522,10 @@
             this.tlpAnimelistMain.AutoScroll = true;
             this.tlpAnimelistMain.ColumnCount = 1;
             this.tlpAnimelistMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAnimelistMain.Controls.Add(this.pAnimelistPlanToWatch, 0, 4);
-            this.tlpAnimelistMain.Controls.Add(this.pAnimelistDropped, 0, 3);
             this.tlpAnimelistMain.Controls.Add(this.pAnimelistOnHold, 0, 2);
             this.tlpAnimelistMain.Controls.Add(this.pAnimelistCompleted, 0, 1);
             this.tlpAnimelistMain.Controls.Add(this.pAnimelistWatching, 0, 0);
+            this.tlpAnimelistMain.Controls.Add(this.pAnimelistDropped, 0, 4);
             this.tlpAnimelistMain.Location = new System.Drawing.Point(29, 33);
             this.tlpAnimelistMain.Name = "tlpAnimelistMain";
             this.tlpAnimelistMain.RowCount = 5;
@@ -1533,6 +1533,7 @@
             this.tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpAnimelistMain.Size = new System.Drawing.Size(622, 187);
             this.tlpAnimelistMain.TabIndex = 8;
@@ -1551,6 +1552,7 @@
             // pHeader
             // 
             this.pHeader.BackColor = System.Drawing.SystemColors.Control;
+            this.pHeader.Controls.Add(this.pAnimelistPlanToWatch);
             this.pHeader.Controls.Add(this.lVersion);
             this.pHeader.Controls.Add(this.bSettings);
             this.pHeader.Controls.Add(this.lTitle);
@@ -1594,14 +1596,14 @@
             this.calwScore,
             this.calwType});
             this.dgvAnimelistWatching.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAnimelistWatching.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAnimelistWatching.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvAnimelistWatching.GridColor = System.Drawing.SystemColors.Control;
             this.dgvAnimelistWatching.Location = new System.Drawing.Point(20, 33);
             this.dgvAnimelistWatching.MultiSelect = false;
@@ -1722,14 +1724,14 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.dgvAnimelistCompleted.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAnimelistCompleted.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAnimelistCompleted.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvAnimelistCompleted.GridColor = System.Drawing.SystemColors.Control;
             this.dgvAnimelistCompleted.Location = new System.Drawing.Point(20, 33);
             this.dgvAnimelistCompleted.MultiSelect = false;
@@ -1792,14 +1794,14 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.dgvAnimelistOnHold.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAnimelistOnHold.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAnimelistOnHold.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvAnimelistOnHold.GridColor = System.Drawing.SystemColors.Control;
             this.dgvAnimelistOnHold.Location = new System.Drawing.Point(20, 33);
             this.dgvAnimelistOnHold.MultiSelect = false;
@@ -1840,7 +1842,7 @@
             this.pAnimelistDropped.Location = new System.Drawing.Point(19, 666);
             this.pAnimelistDropped.Margin = new System.Windows.Forms.Padding(19, 20, 3, 20);
             this.pAnimelistDropped.Name = "pAnimelistDropped";
-            this.pAnimelistDropped.Size = new System.Drawing.Size(600, 181);
+            this.pAnimelistDropped.Size = new System.Drawing.Size(600, 249);
             this.pAnimelistDropped.TabIndex = 20;
             // 
             // dgvAnimelistDropped
@@ -1862,21 +1864,21 @@
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12});
             this.dgvAnimelistDropped.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAnimelistDropped.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAnimelistDropped.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvAnimelistDropped.GridColor = System.Drawing.SystemColors.Control;
             this.dgvAnimelistDropped.Location = new System.Drawing.Point(20, 33);
             this.dgvAnimelistDropped.MultiSelect = false;
             this.dgvAnimelistDropped.Name = "dgvAnimelistDropped";
             this.dgvAnimelistDropped.ReadOnly = true;
             this.dgvAnimelistDropped.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvAnimelistDropped.Size = new System.Drawing.Size(560, 132);
+            this.dgvAnimelistDropped.Size = new System.Drawing.Size(560, 200);
             this.dgvAnimelistDropped.TabIndex = 21;
             // 
             // lvAnimelistDropped
@@ -1906,11 +1908,10 @@
             this.pAnimelistPlanToWatch.Controls.Add(this.dgvAnimelistPlanToWatch);
             this.pAnimelistPlanToWatch.Controls.Add(this.lvAnimelistPlanToWatch);
             this.pAnimelistPlanToWatch.Controls.Add(this.lAnimelistPlanToWatch);
-            this.pAnimelistPlanToWatch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pAnimelistPlanToWatch.Location = new System.Drawing.Point(19, 887);
+            this.pAnimelistPlanToWatch.Location = new System.Drawing.Point(56, 20);
             this.pAnimelistPlanToWatch.Margin = new System.Windows.Forms.Padding(19, 20, 3, 3);
             this.pAnimelistPlanToWatch.Name = "pAnimelistPlanToWatch";
-            this.pAnimelistPlanToWatch.Size = new System.Drawing.Size(600, 45);
+            this.pAnimelistPlanToWatch.Size = new System.Drawing.Size(600, 181);
             this.pAnimelistPlanToWatch.TabIndex = 21;
             // 
             // dgvAnimelistPlanToWatch
@@ -1925,57 +1926,29 @@
             this.dgvAnimelistPlanToWatch.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvAnimelistPlanToWatch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAnimelistPlanToWatch.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cptlUrl,
             this.dataGridViewImageColumn4,
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14,
             this.dataGridViewTextBoxColumn15,
             this.dataGridViewTextBoxColumn16});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAnimelistPlanToWatch.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvAnimelistPlanToWatch.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAnimelistPlanToWatch.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvAnimelistPlanToWatch.GridColor = System.Drawing.SystemColors.Control;
             this.dgvAnimelistPlanToWatch.Location = new System.Drawing.Point(20, 33);
             this.dgvAnimelistPlanToWatch.MultiSelect = false;
             this.dgvAnimelistPlanToWatch.Name = "dgvAnimelistPlanToWatch";
             this.dgvAnimelistPlanToWatch.ReadOnly = true;
             this.dgvAnimelistPlanToWatch.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvAnimelistPlanToWatch.Size = new System.Drawing.Size(544, 0);
+            this.dgvAnimelistPlanToWatch.Size = new System.Drawing.Size(544, 136);
             this.dgvAnimelistPlanToWatch.TabIndex = 21;
-            // 
-            // dataGridViewImageColumn4
-            // 
-            this.dataGridViewImageColumn4.HeaderText = "";
-            this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
-            this.dataGridViewImageColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.HeaderText = "Title";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.HeaderText = "Progress";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.HeaderText = "Score";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.HeaderText = "Type";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
             // 
             // lvAnimelistPlanToWatch
             // 
@@ -2149,6 +2122,44 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Type";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // cptlUrl
+            // 
+            this.cptlUrl.HeaderText = "url";
+            this.cptlUrl.Name = "cptlUrl";
+            this.cptlUrl.ReadOnly = true;
+            this.cptlUrl.Visible = false;
+            // 
+            // dataGridViewImageColumn4
+            // 
+            this.dataGridViewImageColumn4.HeaderText = "";
+            this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
+            this.dataGridViewImageColumn4.ReadOnly = true;
+            this.dataGridViewImageColumn4.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.HeaderText = "Title";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.HeaderText = "Progress";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.HeaderText = "Score";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.HeaderText = "Type";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
             // 
             // fWelcome
             // 
@@ -2362,11 +2373,6 @@
         private System.Windows.Forms.Label lAnimelistOnHold;
         private System.Windows.Forms.Panel pAnimelistPlanToWatch;
         private System.Windows.Forms.DataGridView dgvAnimelistPlanToWatch;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private System.Windows.Forms.Label lvAnimelistPlanToWatch;
         private System.Windows.Forms.Label lAnimelistPlanToWatch;
         private System.Windows.Forms.DataGridViewTextBoxColumn calwUrl;
@@ -2393,5 +2399,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cptlUrl;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
     }
 }
