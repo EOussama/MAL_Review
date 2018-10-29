@@ -1,16 +1,18 @@
 ﻿using System;
-using System.Threading;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MAL_Reviwer_UI.user_controls;
 using MAL_Reviewer_API;
 using MAL_Reviewer_API.models;
-using System.IO;
+
 
 namespace MAL_Reviwer_UI.forms
 {
     public partial class fWelcome : Form
     {
+        private short _loaded = 0;
+
         public fWelcome()
         {
             InitializeComponent();
@@ -49,23 +51,41 @@ namespace MAL_Reviwer_UI.forms
 
         private async void FLoadUser_UserLoadedEvent(object sender, MALUserModel user)
         {
-            bUser.Enabled = false;
-            LoadingUI();
+            this._loaded = 0;
+            await LoadingUIAsync();
 
-            // Updating the UI.
+            #region Dashboard UI update
+
+            await Task.Run(async () => { 
+                await Task.WhenAll(new Task[] { ProfileUpdateUIAsync(user), AnimeStatsUpdateUIAsync(user), MangaStatsUpdateUIAsync(user), FavoritesUpdateUIAsync(user) });
+            });
+
+            #endregion
+
+            #region Animelist UI update
+
+            #endregion
+
+            #region Mangalist UI update
+
+            #endregion
+
+            //LoadingUI(false);
+        }
+
+        private async Task ProfileUpdateUIAsync(MALUserModel user)
+        {
             await Task.Run(() =>
             {
-                pDashBoardMain.Invoke((MethodInvoker)delegate
+                pDashboard.Invoke((MethodInvoker)async delegate
                 {
-                    #region Dashboard UI update
-
-                    // Profile
                     lUserUsername.Text = user.username;
                     lUserGender.Text = user.gender;
                     lUserJoinDate.Text = user.joined?.ToLongDateString();
                     lUserBirthday.Text = user.birthday?.ToLongDateString();
                     lUserLocation.Text = user.location;
                     bMALProfile.Tag = user.url;
+                    rtbAbout.Text = (user.about == "" || user.about == null) ? "Such empty!" : user.about;
 
                     if (user.image_url != null && user.image_url != "")
                         pbUserImage.Load(user.image_url);
@@ -78,8 +98,19 @@ namespace MAL_Reviwer_UI.forms
                     ttExtendedInfo.SetToolTip(lUserBirthday, user.birthday?.ToLongDateString());
                     ttExtendedInfo.SetToolTip(lUserLocation, user.location);
 
-                    // Anime stats
-                    /*lvDashAnimeWatching.Text = user.anime_stats.watching.ToString();
+                    this._loaded++;
+                    await LoadingUIAsync(false);
+                });
+            });
+        }
+
+        private async Task AnimeStatsUpdateUIAsync(MALUserModel user)
+        {
+            await Task.Run(() =>
+            {
+                pDashboard.Invoke((MethodInvoker)async delegate
+                {
+                    lvDashAnimeWatching.Text = user.anime_stats.watching.ToString();
                     lvDashAnimeCompleted.Text = user.anime_stats.completed.ToString();
                     lvDashAnimeOnHold.Text = user.anime_stats.on_hold.ToString();
                     lvDashAnimeDropped.Text = user.anime_stats.dropped.ToString();
@@ -88,10 +119,21 @@ namespace MAL_Reviwer_UI.forms
                     lvDashAnimeRewatches.Text = user.anime_stats.rewatched.ToString();
 
                     lvDashAnimeDaysWatched.Text = user.anime_stats.days_watched?.ToString("0.00");
-                    lvDashAnimeMeanScore.Text = user.anime_stats.mean_score?.ToString("0.00");*/
+                    lvDashAnimeMeanScore.Text = user.anime_stats.mean_score?.ToString("0.00");
 
-                    // Manga stats
-                    /*lvDashMangaReading.Text = user.manga_stats.reading.ToString();
+                    this._loaded++;
+                    await LoadingUIAsync(false);
+                });
+            });
+        }
+
+        private async Task MangaStatsUpdateUIAsync(MALUserModel user)
+        {
+            await Task.Run(() =>
+            {
+                pDashboard.Invoke((MethodInvoker)async delegate
+                {
+                    lvDashMangaReading.Text = user.manga_stats.reading.ToString();
                     lvDashMangaCompleted.Text = user.manga_stats.completed.ToString();
                     lvDashMangaOnHold.Text = user.manga_stats.on_hold.ToString();
                     lvDashMangaDropped.Text = user.manga_stats.dropped.ToString();
@@ -101,107 +143,138 @@ namespace MAL_Reviwer_UI.forms
                     lvDashMangaReread.Text = user.manga_stats.reread.ToString();
 
                     lvDashMangaDaysRead.Text = user.manga_stats.days_read?.ToString("0.00");
-                    lvDashMangaMeanScore.Text = user.manga_stats.mean_score?.ToString("0.00");*/
+                    lvDashMangaMeanScore.Text = user.manga_stats.mean_score?.ToString("0.00");
 
-                    // About
-                    //rtbAbout.Text = (user.about == "" || user.about == null) ? "Such empty!" : user.about;
+                    this._loaded++;
+                    await LoadingUIAsync(false);
+                });
+            });
+        }
 
-                    #region Favorites
+        private async Task FavoritesUpdateUIAsync(MALUserModel user)
+        {
+            await Task.Run(() =>
+            {
+                pDashboard.Invoke((MethodInvoker)async delegate
+                {
+                    if (pChildAnime.Controls.Count > 0) pChildAnime.Controls.Clear();
+                    if (pChildManga.Controls.Count > 0) pChildManga.Controls.Clear();
+                    if (pChildCharacters.Controls.Count > 0) pChildCharacters.Controls.Clear();
+                    if (pChildPeople.Controls.Count > 0) pChildPeople.Controls.Clear();
+
+                    List<Task> tasks = new List<Task>();
 
                     // Anime
-                    /*pChildAnime.Controls.Clear();
                     foreach (FavAnimeModel favAnimeModel in user.favorites.anime)
                     {
-                        ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favAnimeModel.name, favAnimeModel.image_url, "Anime");
+                        await Task.Run(() =>
+                        {
+                            pDashboard.Invoke((MethodInvoker)delegate
+                            {
+                                ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favAnimeModel.name, favAnimeModel.image_url, "Anime");
 
-                        ucFavThumb.Tag = favAnimeModel.url;
-                        ucFavThumb.Dock = DockStyle.Top;
-                        pChildAnime.Controls.Add(ucFavThumb);
+                                ucFavThumb.Tag = favAnimeModel.url;
+                                ucFavThumb.Dock = DockStyle.Top;
+                                pChildAnime.Controls.Add(ucFavThumb);
+                            });
+                        });
                     }
-
+ 
                     // Manga
-                    pChildManga.Controls.Clear();
                     foreach (FavMangaModel favMangaModel in user.favorites.manga)
                     {
-                        ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favMangaModel.name, favMangaModel.image_url, "Manga");
+                        await Task.Run(() =>
+                        {
+                            pDashboard.Invoke((MethodInvoker)delegate
+                            {
+                                ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favMangaModel.name, favMangaModel.image_url, "Manga");
 
-                        ucFavThumb.Tag = favMangaModel.url;
-                        ucFavThumb.Dock = DockStyle.Top;
-                        pChildManga.Controls.Add(ucFavThumb);
+                                ucFavThumb.Tag = favMangaModel.url;
+                                ucFavThumb.Dock = DockStyle.Top;
+                                pChildManga.Controls.Add(ucFavThumb);
+                            });
+                        });
                     }
 
                     // Characters
-                    pChildCharacters.Controls.Clear();
                     foreach (FavCharactersModel favCharacterModel in user.favorites.characters)
                     {
-                        ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favCharacterModel.name, favCharacterModel.image_url, "Character");
+                        await Task.Run(() =>
+                        {
+                            pDashboard.Invoke((MethodInvoker)delegate
+                            {
+                                ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favCharacterModel.name, favCharacterModel.image_url, "Character");
 
-                        ucFavThumb.Tag = favCharacterModel.url;
-                        ucFavThumb.Dock = DockStyle.Top;
-                        pChildCharacters.Controls.Add(ucFavThumb);
+                                ucFavThumb.Tag = favCharacterModel.url;
+                                ucFavThumb.Dock = DockStyle.Top;
+                                pChildCharacters.Controls.Add(ucFavThumb);
+                            });
+                        });
                     }
 
                     // People
-                    pChildPeople.Controls.Clear();
                     foreach (FavPeopleModel favPeopleModel in user.favorites.people)
                     {
-                        ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favPeopleModel.name, favPeopleModel.image_url, "Person");
+                        await Task.Run(() =>
+                        {
+                            pDashboard.Invoke((MethodInvoker)delegate
+                            {
+                                ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favPeopleModel.name, favPeopleModel.image_url, "Person");
 
-                        ucFavThumb.Tag = favPeopleModel.url;
-                        ucFavThumb.Dock = DockStyle.Top;
-                        pChildPeople.Controls.Add(ucFavThumb);
+                                ucFavThumb.Tag = favPeopleModel.url;
+                                ucFavThumb.Dock = DockStyle.Top;
+                                pChildPeople.Controls.Add(ucFavThumb);
+                            });
+                        });
                     }
 
                     lFavAnimeCount.Text = user.favorites.anime.Length.ToString();
                     lFavMangaCount.Text = user.favorites.manga.Length.ToString();
                     lFavCharactersCount.Text = user.favorites.characters.Length.ToString();
-                    lFavPeopleCount.Text = user.favorites.people.Length.ToString();*/
-                    #endregion
+                    lFavPeopleCount.Text = user.favorites.people.Length.ToString();
 
-                    #endregion
-
-                    #region Animelist UI update
-
-                    #endregion
-
-                    #region Mangalist UI update
-
-                    #endregion
+                    this._loaded++;
+                    await LoadingUIAsync(false);
                 });
             });
-
-            LoadingUI(false);
-            bUser.Enabled = true;
         }
 
         /// <summary>
         /// Toggles the loading UI.
         /// </summary>
         /// <param name="mode"></param>
-        private void LoadingUI(bool mode = true)
+        private async Task LoadingUIAsync(bool mode = true)
         {
-            pDashBoardMain.VerticalScroll.Value = 0;
-
-            if (mode)
+            await Task.Run(() =>
             {
-                tcDashboard.SelectedIndex = 0;
-                tcDashboard.TabPages.Remove(tpAnimelist);
-                tcDashboard.TabPages.Remove(tpMangalist);
+                pDashBoardMain.Invoke((MethodInvoker)delegate
+                {
+                    pDashBoardMain.VerticalScroll.Value = 0;
 
-                pDashBoardMain.Visible = false;
-                lMALAccPreview.Visible = false;
-                pbDashBoardLoad.Visible = true;
-            }
-            else
-            {
-                tcDashboard.TabPages.Add(tpAnimelist);
-                tcDashboard.TabPages.Add(tpMangalist);
+                    if (mode)
+                    {
+                        tcDashboard.SelectedIndex = 0;
+                        tcDashboard.TabPages.Remove(tpAnimelist);
+                        tcDashboard.TabPages.Remove(tpMangalist);
 
-                bUser.Text = "Unload this MAL account";
-                pbDashBoardLoad.Visible = false;
-                lMALAccPreview.Visible = false;
-                pDashBoardMain.Visible = true;
-            }
+                        pDashBoardMain.Visible = false;
+                        lMALAccPreview.Visible = false;
+                        pbDashBoardLoad.Visible = true;
+                        bUser.Enabled = false;
+                    }
+                    else if (mode == false && this._loaded == 4)
+                    {
+                        tcDashboard.TabPages.Add(tpAnimelist);
+                        tcDashboard.TabPages.Add(tpMangalist);
+
+                        bUser.Text = "Unload this MAL account";
+                        pbDashBoardLoad.Visible = false;
+                        lMALAccPreview.Visible = false;
+                        pDashBoardMain.Visible = true;
+                        bUser.Enabled = true;
+                    }
+                });
+            });
         }
 
         #endregion
