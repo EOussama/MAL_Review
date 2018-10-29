@@ -10,9 +10,10 @@ namespace MAL_Reviwer_UI.forms
 {
     public partial class fNewReview : Form
     {
-        private bool _ready = true;
+        private bool _ready = true, _finishedTyping = true;
         private int _targetId = 0;
         private byte _type = 0;
+        private Timer _inputDelay;
 
         public fNewReview()
         {
@@ -39,6 +40,11 @@ namespace MAL_Reviwer_UI.forms
                 searchCard.Top = searchCard.Height * searchCardCount;
                 pSearchCards.Controls.Add(searchCard);
             }
+
+            // input delay timer setup.
+            this._inputDelay = new Timer();
+            this._inputDelay.Interval = 500;
+            this._inputDelay.Tick += _inputDelay_Tick;
         }
 
         #region Manga/Anime labeling
@@ -60,14 +66,23 @@ namespace MAL_Reviwer_UI.forms
 
         #region Target Search
 
-        private async void tbSearch_TextChanged(object sender, EventArgs e)
+        private void tbSearch_TextChanged(object sender, EventArgs e)
         {
+            // Check if the search request has already been sent or not.
+            if (!this._ready)
+                return;
+
+            // Reset the input timer.
+            this._inputDelay.Stop();
+            this._inputDelay.Start();
+        }
+
+        private async void _inputDelay_Tick(object sender, EventArgs e)
+        {
+            this._inputDelay.Stop();
+
             try
             {
-                // Check if the search request has already been sent or not.
-                if (!this._ready)
-                    return;
-
                 string
                     searchTitle = tbSearch.Text.Trim(),
                     searchType = rbAnime.Checked ? rbAnime.Text.ToLower() : rbManga.Text.ToLower();
