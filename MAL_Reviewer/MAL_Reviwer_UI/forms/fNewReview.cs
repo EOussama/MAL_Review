@@ -13,6 +13,7 @@ namespace MAL_Reviwer_UI.forms
         private bool _ready = true;
         private int _targetId = 0;
         private byte _type = 0;
+        private string _lastSearch = string.Empty;
         private Timer _inputDelay;
 
         public fNewReview()
@@ -68,9 +69,14 @@ namespace MAL_Reviwer_UI.forms
 
         private void tbSearch_TextChanged(object sender, EventArgs e)
         {
+            string _currentSearch = tbSearch.Text.Trim().ToLower();
+
             // Check if the search request has already been sent or not.
-            if (!this._ready)
+           if (!this._ready || _currentSearch.Length < 3)
+            {
+                pSearchCards.Visible = false;
                 return;
+            }
 
             // Reset the input timer.
             this._inputDelay.Stop();
@@ -80,66 +86,68 @@ namespace MAL_Reviwer_UI.forms
         private async void _inputDelay_Tick(object sender, EventArgs e)
         {
             this._inputDelay.Stop();
+            tbSearch.Enabled = false;
 
             try
             {
                 string
-                    searchTitle = tbSearch.Text.Trim(),
+                    searchTitle = tbSearch.Text.Trim().ToLower(),
                     searchType = rbAnime.Checked ? rbAnime.Text.ToLower() : rbManga.Text.ToLower();
 
-                if (searchTitle.Length > 2)
+                if (this._lastSearch == searchTitle)
+                    return;
+
+                this._lastSearch = searchTitle;
+                pbLoading.Visible = true;
+                pSearchCards.Visible = false;
+                this._ready = false;
+
+                SearchModel searchModel = await MALHelper.Search(searchType, searchTitle);
+
+                if (searchModel != null && searchModel.results != null)
                 {
-                    pbLoading.Visible = true;
-                    pSearchCards.Visible = false;
-                    this._ready = false;
-
-                    SearchModel searchModel = await MALHelper.Search(searchType, searchTitle);
-
-                    if (searchModel != null && searchModel.results != null)
+                    // Updating the ucTargetSearchCard usercontrolls in a separate thread.
+                    await Task.Run(() =>
                     {
-                        // Updating the ucTargetSearchCard usercontrolls in a separate thread.
-                        await Task.Run(() =>
+                        int resultCount = searchModel.results.Length;
+
+                        for (int i = 0; i < pSearchCards.Controls.Count; i++)
                         {
-                            int resultCount = searchModel.results.Length;
+                            ucTargetSearchCard searchCard = (ucTargetSearchCard)pSearchCards.Controls[i];
 
-                            for (int i = 0; i < pSearchCards.Controls.Count; i++)
+                            if (i < resultCount)
                             {
-                                ucTargetSearchCard searchCard = (ucTargetSearchCard)pSearchCards.Controls[i];
+                                SearchResultsModel resultsModel = searchModel.results[i];
 
-                                if (i < resultCount)
+                                searchCard.Invoke((MethodInvoker)delegate
                                 {
-                                    SearchResultsModel resultsModel = searchModel.results[i];
-
-                                    searchCard.Invoke((MethodInvoker)delegate
-                                    {
-                                        searchCard.UpdateUI(resultsModel.mal_id, resultsModel.title, resultsModel.type, resultsModel.image_url, rbAnime.Checked ? rbAnime.Text : rbManga.Text);
-                                        searchCard.Visible = true;
-                                    });
-                                }
-                                else
-                                {
-                                    searchCard.Invoke((MethodInvoker)delegate
-                                    {
-                                        searchCard.Visible = false;
-                                    });
-                                }
+                                    searchCard.UpdateUI(resultsModel.mal_id, resultsModel.title, resultsModel.type, resultsModel.image_url, rbAnime.Checked ? rbAnime.Text : rbManga.Text);
+                                    searchCard.Visible = true;
+                                });
                             }
-                        });
+                            else
+                            {
+                                searchCard.Invoke((MethodInvoker)delegate
+                                {
+                                    searchCard.Visible = false;
+                                });
+                            }
+                        }
+                    });
                         
-                        pSearchCards.Visible = true;
-                    }
+                    pSearchCards.Visible = true;
+                }
 
-                    pbLoading.Visible = false;
-                    this._ready = true;
-                }
-                else
-                {
-                    pSearchCards.Visible = false;
-                }
+                pbLoading.Visible = false;
+                this._ready = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            finally
+            {
+                tbSearch.Enabled = true;
             }
         }
 
