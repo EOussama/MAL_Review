@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
 
 namespace MAL_Reviwer_UI.user_controls
@@ -35,12 +36,14 @@ namespace MAL_Reviwer_UI.user_controls
 
         public void UpdateUI (int targetId, string targetTitle, string targetType, string targetImageUrl, string searchType)
         {
+            StringBuilder sb = new StringBuilder();
+
             this.targetId = targetId;
-            lTargetTitle.Text = targetTitle.Length > 17 ? targetTitle.Substring(0, 17) + "..." : targetTitle;
-            lTargetType.Text = targetType;
+            lTargetTitle.Text = targetTitle.Length > 17 ? sb.Append(targetTitle.Substring(0, 17) + "...").ToString() : sb.Append(targetTitle).ToString(); sb.Clear();
+            lTargetType.Text = sb.Append(targetType).ToString(); sb.Clear();
             pbTargetImage.Load(targetImageUrl);
 
-            ttTitle.ToolTipTitle = $"{ searchType } information";
+            ttTitle.ToolTipTitle = sb.Append($"{ searchType } information").ToString(); sb.Clear();
             ttTitle.SetToolTip(this, targetTitle);
             ttTitle.SetToolTip(this.lTargetTitle, targetTitle);
             ttTitle.SetToolTip(this.lTargetType, targetTitle);

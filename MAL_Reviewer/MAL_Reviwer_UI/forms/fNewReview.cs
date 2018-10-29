@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MAL_Reviwer_UI.user_controls;
@@ -85,6 +86,7 @@ namespace MAL_Reviwer_UI.forms
 
         private async void _inputDelay_Tick(object sender, EventArgs e)
         {
+            var x = System.Diagnostics.Stopwatch.StartNew();
             this._inputDelay.Stop();
             tbSearch.Enabled = false;
 
@@ -107,34 +109,37 @@ namespace MAL_Reviwer_UI.forms
                 if (searchModel != null && searchModel.results != null)
                 {
                     // Updating the ucTargetSearchCard usercontrolls in a separate thread.
-                    await Task.Run(() =>
+                    int resultCount = searchModel.results.Length;
+                    List<Task> tasks = new List<Task>();
+
+                    for (int i = 0; i < pSearchCards.Controls.Count; i++)
                     {
-                        int resultCount = searchModel.results.Length;
+                        ucTargetSearchCard searchCard = (ucTargetSearchCard)pSearchCards.Controls[i];
 
-                        for (int i = 0; i < pSearchCards.Controls.Count; i++)
+                        if (i < resultCount)
                         {
-                            ucTargetSearchCard searchCard = (ucTargetSearchCard)pSearchCards.Controls[i];
-
-                            if (i < resultCount)
-                            {
-                                SearchResultsModel resultsModel = searchModel.results[i];
-
-                                searchCard.Invoke((MethodInvoker)delegate
+                            SearchResultsModel resultsModel = searchModel.results[i];
+                            tasks.Add(
+                                Task.Run(() =>
                                 {
-                                    searchCard.UpdateUI(resultsModel.mal_id, resultsModel.title, resultsModel.type, resultsModel.image_url, rbAnime.Checked ? rbAnime.Text : rbManga.Text);
-                                    searchCard.Visible = true;
-                                });
-                            }
-                            else
-                            {
-                                searchCard.Invoke((MethodInvoker)delegate
-                                {
-                                    searchCard.Visible = false;
-                                });
-                            }
+                                    searchCard.Invoke((MethodInvoker)delegate
+                                    {
+                                        searchCard.UpdateUI(resultsModel.mal_id, resultsModel.title, resultsModel.type, resultsModel.image_url, rbAnime.Checked ? rbAnime.Text : rbManga.Text);
+                                        searchCard.Visible = true;
+                                    });
+                                })
+                            );
                         }
-                    });
-                        
+                        else
+                        {
+                            searchCard.Invoke((MethodInvoker)delegate
+                            {
+                                searchCard.Visible = false;
+                            });
+                        }
+                    }
+
+                    await Task.WhenAll(tasks);
                     pSearchCards.Visible = true;
                 }
 
@@ -149,6 +154,9 @@ namespace MAL_Reviwer_UI.forms
             {
                 tbSearch.Enabled = true;
             }
+
+            x.Stop();
+            Console.WriteLine($"Time took: { x.ElapsedMilliseconds }");
         }
 
         private void SearchCard_CardMouseClickEvent(object sender, int targetId)
