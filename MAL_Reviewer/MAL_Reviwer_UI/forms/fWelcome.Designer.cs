@@ -1546,7 +1546,7 @@
             this.tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpAnimelistMain.Size = new System.Drawing.Size(610, 187);
+            this.tlpAnimelistMain.Size = new System.Drawing.Size(649, 187);
             this.tlpAnimelistMain.TabIndex = 8;
             // 
             // pAnimelistPlanToWatch
@@ -1557,9 +1557,9 @@
             this.pAnimelistPlanToWatch.Controls.Add(this.lAnimelistPlantToWatch);
             this.pAnimelistPlanToWatch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pAnimelistPlanToWatch.Location = new System.Drawing.Point(19, 928);
-            this.pAnimelistPlanToWatch.Margin = new System.Windows.Forms.Padding(19, 20, 3, 20);
+            this.pAnimelistPlanToWatch.Margin = new System.Windows.Forms.Padding(19, 20, 30, 20);
             this.pAnimelistPlanToWatch.Name = "pAnimelistPlanToWatch";
-            this.pAnimelistPlanToWatch.Size = new System.Drawing.Size(588, 191);
+            this.pAnimelistPlanToWatch.Size = new System.Drawing.Size(583, 191);
             this.pAnimelistPlanToWatch.TabIndex = 21;
             // 
             // dgvAnimelistPlanToWatch
@@ -1570,7 +1570,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAnimelistPlanToWatch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAnimelistPlanToWatch.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvAnimelistPlanToWatch.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvAnimelistPlanToWatch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1603,7 +1603,7 @@
             this.dgvAnimelistPlanToWatch.Name = "dgvAnimelistPlanToWatch";
             this.dgvAnimelistPlanToWatch.ReadOnly = true;
             this.dgvAnimelistPlanToWatch.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvAnimelistPlanToWatch.Size = new System.Drawing.Size(509, 142);
+            this.dgvAnimelistPlanToWatch.Size = new System.Drawing.Size(530, 142);
             this.dgvAnimelistPlanToWatch.TabIndex = 21;
             this.dgvAnimelistPlanToWatch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAnimelistPlanToWatch_CellContentClick);
             // 
@@ -1611,7 +1611,7 @@
             // 
             this.lvAnimelistPlanToWatch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lvAnimelistPlanToWatch.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvAnimelistPlanToWatch.Location = new System.Drawing.Point(449, 4);
+            this.lvAnimelistPlanToWatch.Location = new System.Drawing.Point(474, 4);
             this.lvAnimelistPlanToWatch.Name = "lvAnimelistPlanToWatch";
             this.lvAnimelistPlanToWatch.Size = new System.Drawing.Size(76, 19);
             this.lvAnimelistPlanToWatch.TabIndex = 20;
@@ -1636,9 +1636,9 @@
             this.pAnimelistOnHold.Controls.Add(this.lAnimelistOnHold);
             this.pAnimelistOnHold.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pAnimelistOnHold.Location = new System.Drawing.Point(19, 474);
-            this.pAnimelistOnHold.Margin = new System.Windows.Forms.Padding(19, 20, 3, 20);
+            this.pAnimelistOnHold.Margin = new System.Windows.Forms.Padding(19, 20, 30, 20);
             this.pAnimelistOnHold.Name = "pAnimelistOnHold";
-            this.pAnimelistOnHold.Size = new System.Drawing.Size(588, 187);
+            this.pAnimelistOnHold.Size = new System.Drawing.Size(583, 187);
             this.pAnimelistOnHold.TabIndex = 19;
             // 
             // dgvAnimelistOnHold
@@ -1649,7 +1649,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAnimelistOnHold.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAnimelistOnHold.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvAnimelistOnHold.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvAnimelistOnHold.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1682,7 +1682,7 @@
             this.dgvAnimelistOnHold.Name = "dgvAnimelistOnHold";
             this.dgvAnimelistOnHold.ReadOnly = true;
             this.dgvAnimelistOnHold.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvAnimelistOnHold.Size = new System.Drawing.Size(509, 138);
+            this.dgvAnimelistOnHold.Size = new System.Drawing.Size(530, 138);
             this.dgvAnimelistOnHold.TabIndex = 21;
             this.dgvAnimelistOnHold.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAnimelistOnHold_CellContentClick);
             // 
@@ -1690,7 +1690,7 @@
             // 
             this.lvAnimelistOnHold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lvAnimelistOnHold.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvAnimelistOnHold.Location = new System.Drawing.Point(449, 4);
+            this.lvAnimelistOnHold.Location = new System.Drawing.Point(474, 4);
             this.lvAnimelistOnHold.Name = "lvAnimelistOnHold";
             this.lvAnimelistOnHold.Size = new System.Drawing.Size(76, 19);
             this.lvAnimelistOnHold.TabIndex = 20;
@@ -1715,9 +1715,9 @@
             this.pAnimelistCompleted.Controls.Add(this.lAnimelistCompleted);
             this.pAnimelistCompleted.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pAnimelistCompleted.Location = new System.Drawing.Point(19, 247);
-            this.pAnimelistCompleted.Margin = new System.Windows.Forms.Padding(19, 20, 3, 20);
+            this.pAnimelistCompleted.Margin = new System.Windows.Forms.Padding(19, 20, 30, 20);
             this.pAnimelistCompleted.Name = "pAnimelistCompleted";
-            this.pAnimelistCompleted.Size = new System.Drawing.Size(588, 187);
+            this.pAnimelistCompleted.Size = new System.Drawing.Size(583, 187);
             this.pAnimelistCompleted.TabIndex = 18;
             // 
             // dgvAnimelistCompleted
@@ -1728,7 +1728,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAnimelistCompleted.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAnimelistCompleted.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvAnimelistCompleted.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvAnimelistCompleted.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1763,7 +1763,7 @@
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAnimelistCompleted.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvAnimelistCompleted.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvAnimelistCompleted.Size = new System.Drawing.Size(509, 138);
+            this.dgvAnimelistCompleted.Size = new System.Drawing.Size(530, 138);
             this.dgvAnimelistCompleted.TabIndex = 21;
             this.dgvAnimelistCompleted.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAnimelistCompleted_CellContentClick);
             // 
@@ -1771,7 +1771,7 @@
             // 
             this.lvAnimelistCompleted.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lvAnimelistCompleted.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvAnimelistCompleted.Location = new System.Drawing.Point(449, 4);
+            this.lvAnimelistCompleted.Location = new System.Drawing.Point(474, 4);
             this.lvAnimelistCompleted.Name = "lvAnimelistCompleted";
             this.lvAnimelistCompleted.Size = new System.Drawing.Size(76, 19);
             this.lvAnimelistCompleted.TabIndex = 20;
@@ -1796,9 +1796,9 @@
             this.pAnimelistWatching.Controls.Add(this.lAnimelistWatching);
             this.pAnimelistWatching.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pAnimelistWatching.Location = new System.Drawing.Point(19, 3);
-            this.pAnimelistWatching.Margin = new System.Windows.Forms.Padding(19, 3, 3, 20);
+            this.pAnimelistWatching.Margin = new System.Windows.Forms.Padding(19, 3, 30, 20);
             this.pAnimelistWatching.Name = "pAnimelistWatching";
-            this.pAnimelistWatching.Size = new System.Drawing.Size(588, 204);
+            this.pAnimelistWatching.Size = new System.Drawing.Size(583, 204);
             this.pAnimelistWatching.TabIndex = 17;
             // 
             // dgvAnimelistWatching
@@ -1842,14 +1842,14 @@
             this.dgvAnimelistWatching.Name = "dgvAnimelistWatching";
             this.dgvAnimelistWatching.ReadOnly = true;
             this.dgvAnimelistWatching.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvAnimelistWatching.Size = new System.Drawing.Size(509, 155);
+            this.dgvAnimelistWatching.Size = new System.Drawing.Size(530, 155);
             this.dgvAnimelistWatching.TabIndex = 21;
             // 
             // lvAnimelistWatching
             // 
             this.lvAnimelistWatching.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lvAnimelistWatching.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvAnimelistWatching.Location = new System.Drawing.Point(449, 4);
+            this.lvAnimelistWatching.Location = new System.Drawing.Point(474, 4);
             this.lvAnimelistWatching.Name = "lvAnimelistWatching";
             this.lvAnimelistWatching.Size = new System.Drawing.Size(76, 19);
             this.lvAnimelistWatching.TabIndex = 20;
@@ -1874,9 +1874,9 @@
             this.pAnimelistDropped.Controls.Add(this.lAnimelistDropped);
             this.pAnimelistDropped.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pAnimelistDropped.Location = new System.Drawing.Point(19, 701);
-            this.pAnimelistDropped.Margin = new System.Windows.Forms.Padding(19, 20, 3, 20);
+            this.pAnimelistDropped.Margin = new System.Windows.Forms.Padding(19, 20, 30, 20);
             this.pAnimelistDropped.Name = "pAnimelistDropped";
-            this.pAnimelistDropped.Size = new System.Drawing.Size(588, 187);
+            this.pAnimelistDropped.Size = new System.Drawing.Size(583, 187);
             this.pAnimelistDropped.TabIndex = 20;
             // 
             // dgvAnimelistDropped
@@ -1887,7 +1887,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAnimelistDropped.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAnimelistDropped.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvAnimelistDropped.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvAnimelistDropped.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1920,7 +1920,7 @@
             this.dgvAnimelistDropped.Name = "dgvAnimelistDropped";
             this.dgvAnimelistDropped.ReadOnly = true;
             this.dgvAnimelistDropped.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvAnimelistDropped.Size = new System.Drawing.Size(509, 138);
+            this.dgvAnimelistDropped.Size = new System.Drawing.Size(530, 138);
             this.dgvAnimelistDropped.TabIndex = 21;
             this.dgvAnimelistDropped.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAnimelistDropped_CellContentClick);
             // 
@@ -1928,7 +1928,7 @@
             // 
             this.lvAnimelistDropped.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lvAnimelistDropped.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvAnimelistDropped.Location = new System.Drawing.Point(449, 4);
+            this.lvAnimelistDropped.Location = new System.Drawing.Point(474, 4);
             this.lvAnimelistDropped.Name = "lvAnimelistDropped";
             this.lvAnimelistDropped.Size = new System.Drawing.Size(76, 19);
             this.lvAnimelistDropped.TabIndex = 20;

@@ -349,6 +349,7 @@ namespace MAL_Reviwer_UI.forms
         private void LoadingUI(bool mode = true)
         {
             pDashBoardMain.VerticalScroll.Value = 0;
+            tlpAnimelistMain.VerticalScroll.Value = 0;
 
             if (mode)
             {
