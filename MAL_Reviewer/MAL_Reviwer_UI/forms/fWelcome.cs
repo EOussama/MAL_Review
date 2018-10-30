@@ -48,7 +48,7 @@ namespace MAL_Reviwer_UI.forms
 
         #region User Data Load
 
-        private void bUser_Click(object sender, EventArgs e)
+        private void BUser_Click(object sender, EventArgs e)
         {
             fLoadUser fLoadUser = new fLoadUser();
 
@@ -78,10 +78,7 @@ namespace MAL_Reviwer_UI.forms
 
         #region Dashboard management
 
-        private void bMALProfile_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start(((Button)sender).Tag.ToString());
-        }
+        private void BMALProfile_Click(object sender, EventArgs e) => System.Diagnostics.Process.Start(((Button)sender).Tag.ToString());
 
         #endregion
 
@@ -108,7 +105,7 @@ namespace MAL_Reviwer_UI.forms
         {
             await Task.Run(() =>
             {
-                pDashboard.Invoke((MethodInvoker)delegate
+                tcDashboard.Invoke((MethodInvoker)delegate
                 {
                     lUserUsername.Text = user.username;
                     lUserGender.Text = user.gender;
@@ -144,7 +141,7 @@ namespace MAL_Reviwer_UI.forms
         {
             await Task.Run(() =>
             {
-                pDashboard.Invoke((MethodInvoker)delegate
+                tcDashboard.Invoke((MethodInvoker)delegate
                 {
                     lvDashAnimeWatching.Text = user.anime_stats.watching.ToString();
                     lvDashAnimeCompleted.Text = user.anime_stats.completed.ToString();
@@ -172,7 +169,7 @@ namespace MAL_Reviwer_UI.forms
         {
             await Task.Run(() =>
             {
-                pDashboard.Invoke((MethodInvoker)delegate
+                tcDashboard.Invoke((MethodInvoker)delegate
                 {
                     lvDashMangaReading.Text = user.manga_stats.reading.ToString();
                     lvDashMangaCompleted.Text = user.manga_stats.completed.ToString();
@@ -201,7 +198,7 @@ namespace MAL_Reviwer_UI.forms
         {
             await Task.Run(() =>
             {
-                pDashboard.Invoke((MethodInvoker)async delegate
+                tcDashboard.Invoke((MethodInvoker)async delegate
                 {
                     if (pChildAnime.Controls.Count > 0) pChildAnime.Controls.Clear();
                     if (pChildManga.Controls.Count > 0) pChildManga.Controls.Clear();
@@ -217,10 +214,12 @@ namespace MAL_Reviwer_UI.forms
                         {
                             pDashboard.Invoke((MethodInvoker)delegate
                             {
-                                ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favAnimeModel.name, favAnimeModel.image_url, "Anime");
+                                ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favAnimeModel.name, favAnimeModel.image_url, "Anime")
+                                {
+                                    Tag = favAnimeModel.url,
+                                    Dock = DockStyle.Top
+                                };
 
-                                ucFavThumb.Tag = favAnimeModel.url;
-                                ucFavThumb.Dock = DockStyle.Top;
                                 pChildAnime.Controls.Add(ucFavThumb);
                             });
                         });
@@ -233,10 +232,12 @@ namespace MAL_Reviwer_UI.forms
                         {
                             pDashboard.Invoke((MethodInvoker)delegate
                             {
-                                ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favMangaModel.name, favMangaModel.image_url, "Manga");
+                                ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favMangaModel.name, favMangaModel.image_url, "Manga")
+                                {
+                                    Tag = favMangaModel.url,
+                                    Dock = DockStyle.Top
+                                };
 
-                                ucFavThumb.Tag = favMangaModel.url;
-                                ucFavThumb.Dock = DockStyle.Top;
                                 pChildManga.Controls.Add(ucFavThumb);
                             });
                         });
@@ -249,10 +250,12 @@ namespace MAL_Reviwer_UI.forms
                         {
                             pDashboard.Invoke((MethodInvoker)delegate
                             {
-                                ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favCharacterModel.name, favCharacterModel.image_url, "Character");
+                                ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favCharacterModel.name, favCharacterModel.image_url, "Character")
+                                {
+                                    Tag = favCharacterModel.url,
+                                    Dock = DockStyle.Top
+                                };
 
-                                ucFavThumb.Tag = favCharacterModel.url;
-                                ucFavThumb.Dock = DockStyle.Top;
                                 pChildCharacters.Controls.Add(ucFavThumb);
                             });
                         });
@@ -265,10 +268,12 @@ namespace MAL_Reviwer_UI.forms
                         {
                             pDashboard.Invoke((MethodInvoker)delegate
                             {
-                                ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favPeopleModel.name, favPeopleModel.image_url, "Person");
+                                ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favPeopleModel.name, favPeopleModel.image_url, "Person")
+                                {
+                                    Tag = favPeopleModel.url,
+                                    Dock = DockStyle.Top
+                                };
 
-                                ucFavThumb.Tag = favPeopleModel.url;
-                                ucFavThumb.Dock = DockStyle.Top;
                                 pChildPeople.Controls.Add(ucFavThumb);
                             });
                         });
@@ -506,6 +511,45 @@ namespace MAL_Reviwer_UI.forms
                     }
                 });
             }
+            else
+            {
+                if (tcDashboard.InvokeRequired)
+                {
+                    tcDashboard.Invoke((MethodInvoker)delegate
+                    {
+                        // Clearing the datagridviews' rows.
+                        dgvAnimelistWatching.Rows.Clear();
+                        dgvAnimelistCompleted.Rows.Clear();
+                        dgvAnimelistOnHold.Rows.Clear();
+                        dgvAnimelistDropped.Rows.Clear();
+                        dgvAnimelistPlanToWatch.Rows.Clear();
+
+                        lvAnimelistWatching.Text = "0";
+                        lvAnimelistCompleted.Text = "0";
+                        lvAnimelistOnHold.Text = "0";
+                        lvAnimelistDropped.Text = "0";
+                        lvAnimelistPlanToWatch.Text = "0";
+                    });
+                }
+                else
+                {
+                    // Clearing the datagridviews' rows.
+                    dgvAnimelistWatching.Rows.Clear();
+                    dgvAnimelistCompleted.Rows.Clear();
+                    dgvAnimelistOnHold.Rows.Clear();
+                    dgvAnimelistDropped.Rows.Clear();
+
+                    dgvAnimelistPlanToWatch.Rows.Clear();
+                    lvAnimelistWatching.Text = "0";
+                    lvAnimelistCompleted.Text = "0";
+                    lvAnimelistOnHold.Text = "0";
+                    lvAnimelistDropped.Text = "0";
+                    lvAnimelistPlanToWatch.Text = "0";
+                }
+
+                this._loaded++;
+                LoadingUI(false);
+            }
         }
 
         /// <summary>
@@ -543,9 +587,6 @@ namespace MAL_Reviwer_UI.forms
 
         #endregion
 
-        private void bNew_Click(object sender, EventArgs e)
-        {
-            (new fNewReview()).ShowDialog();
-        }
+        private void BNew_Click(object sender, EventArgs e) => (new fNewReview()).ShowDialog();
     }
 }

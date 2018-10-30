@@ -9,6 +9,7 @@ namespace MAL_Reviwer_UI.forms
 {
     public partial class fLoadUser : Form
     {
+        private bool _ready = true;
         public event EventHandler<MALUserModel> UserLoadedEvent;
 
         public fLoadUser()
@@ -18,12 +19,13 @@ namespace MAL_Reviwer_UI.forms
             this.ActiveControl = tbMALUsername;
         }
 
-        private async void bLoad_Click(object sender, EventArgs e)
+        private async void BLoad_Click(object sender, EventArgs e)
         {
             string username = tbMALUsername.Text.Trim();
 
             bLoad.Enabled = false;
             pbLoading.Visible = true;
+            this._ready = false;
 
             try
             {
@@ -36,6 +38,7 @@ namespace MAL_Reviwer_UI.forms
                 if (userModel == null) throw new Exception($"No user under the username “{ username }” was found!");
                 else
                 {
+                    this._ready = true;
                     this.Close();
                     userModel.animeList = animeList;
                     UserLoadedEvent?.Invoke(this, userModel);
@@ -49,13 +52,13 @@ namespace MAL_Reviwer_UI.forms
             {
                 pbLoading.Visible = false;
                 bLoad.Enabled = true;
+                this._ready = true;
                 this.ActiveControl = tbMALUsername;
             }
         }
 
-        private void llNoAcc_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://myanimelist.net/register.php");
-        }
+        private void LlNoAcc_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => System.Diagnostics.Process.Start("https://myanimelist.net/register.php");
+
+        private void FLoadUser_FormClosing(object sender, FormClosingEventArgs e) => e.Cancel = !this._ready;
     }
 }

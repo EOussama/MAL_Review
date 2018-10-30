@@ -307,7 +307,7 @@
             this.bUser.TabIndex = 7;
             this.bUser.Text = "Load a MAL account";
             this.bUser.UseVisualStyleBackColor = false;
-            this.bUser.Click += new System.EventHandler(this.bUser_Click);
+            this.bUser.Click += new System.EventHandler(this.BUser_Click);
             // 
             // pReviewLookUp
             // 
@@ -410,7 +410,7 @@
             this.bNew.Size = new System.Drawing.Size(74, 67);
             this.bNew.TabIndex = 3;
             this.bNew.UseVisualStyleBackColor = false;
-            this.bNew.Click += new System.EventHandler(this.bNew_Click);
+            this.bNew.Click += new System.EventHandler(this.BNew_Click);
             // 
             // pMain
             // 
@@ -982,7 +982,7 @@
             this.bMALProfile.TabIndex = 6;
             this.bMALProfile.Text = "View profile on MAL";
             this.bMALProfile.UseVisualStyleBackColor = false;
-            this.bMALProfile.Click += new System.EventHandler(this.bMALProfile_Click);
+            this.bMALProfile.Click += new System.EventHandler(this.BMALProfile_Click);
             // 
             // tlpAnimeMangaCards
             // 

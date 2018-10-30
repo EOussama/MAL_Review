@@ -22,30 +22,24 @@ namespace MAL_Reviwer_UI.user_controls
             this.ttTitle.SetToolTip(this, title);
 
             // Wiring up the mouse click event.
-            this.lTitle.MouseClick += ucFavoriteThumb_MouseClick;
-            this.pbImage.MouseClick += ucFavoriteThumb_MouseClick;
+            this.lTitle.MouseClick += UcFavoriteThumb_MouseClick;
+            this.pbImage.MouseClick += UcFavoriteThumb_MouseClick;
 
-            this.lTitle.MouseEnter += ucFavoriteThumb_MouseEnter;
-            this.pbImage.MouseEnter += ucFavoriteThumb_MouseEnter;
+            this.lTitle.MouseEnter += UcFavoriteThumb_MouseEnter;
+            this.pbImage.MouseEnter += UcFavoriteThumb_MouseEnter;
 
-            this.lTitle.MouseLeave += ucFavoriteThumb_MouseLeave;
-            this.pbImage.MouseLeave += ucFavoriteThumb_MouseLeave;
+            this.lTitle.MouseLeave += UcFavoriteThumb_MouseLeave;
+            this.pbImage.MouseLeave += UcFavoriteThumb_MouseLeave;
         }
 
-        private void ucFavoriteThumb_MouseClick(object sender, MouseEventArgs e)
+        private void UcFavoriteThumb_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
                 System.Diagnostics.Process.Start(this.Tag.ToString());
         }
 
-        private void ucFavoriteThumb_MouseEnter(object sender, System.EventArgs e)
-        {
-            this.BackColor = SystemColors.Control;
-        }
+        private void UcFavoriteThumb_MouseEnter(object sender, System.EventArgs e) => this.BackColor = SystemColors.Control;
 
-        private void ucFavoriteThumb_MouseLeave(object sender, System.EventArgs e)
-        {
-            this.BackColor = SystemColors.ControlLight;
-        }
+        private void UcFavoriteThumb_MouseLeave(object sender, System.EventArgs e) => this.BackColor = SystemColors.ControlLight;
     }
 }

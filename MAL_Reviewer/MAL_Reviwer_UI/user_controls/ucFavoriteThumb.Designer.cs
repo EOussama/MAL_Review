@@ -69,9 +69,9 @@
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "ucFavoriteThumb";
             this.Size = new System.Drawing.Size(191, 56);
-            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ucFavoriteThumb_MouseClick);
-            this.MouseEnter += new System.EventHandler(this.ucFavoriteThumb_MouseEnter);
-            this.MouseLeave += new System.EventHandler(this.ucFavoriteThumb_MouseLeave);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.UcFavoriteThumb_MouseClick);
+            this.MouseEnter += new System.EventHandler(this.UcFavoriteThumb_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.UcFavoriteThumb_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
             this.ResumeLayout(false);
 

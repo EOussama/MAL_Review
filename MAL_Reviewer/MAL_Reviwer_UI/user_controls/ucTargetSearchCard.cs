@@ -32,13 +32,13 @@ namespace MAL_Reviwer_UI.user_controls
             this.lTargetType.MouseLeave += CardMouseLeave;
         }
 
-        public int targetId { get => _targetId; set => _targetId = value; }
+        public int TargetId { get => _targetId; set => _targetId = value; }
 
         public void UpdateUI (int targetId, string targetTitle, string targetType, string targetImageUrl, string searchType)
         {
             StringBuilder sb = new StringBuilder();
 
-            this.targetId = targetId;
+            this.TargetId = targetId;
             lTargetTitle.Text = targetTitle.Length > 17 ? sb.Append(targetTitle.Substring(0, 17) + "...").ToString() : sb.Append(targetTitle).ToString(); sb.Clear();
             lTargetType.Text = sb.Append(targetType).ToString(); sb.Clear();
             pbTargetImage.Load(targetImageUrl);
@@ -53,17 +53,11 @@ namespace MAL_Reviwer_UI.user_controls
         private void UcTargetSearchCard_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
-                CardMouseClickEvent?.Invoke(sender, targetId);
+                CardMouseClickEvent?.Invoke(sender, TargetId);
         }
 
-        private void CardMouseEnter(object sender, EventArgs e)
-        {
-            this.BackColor = SystemColors.Control;
-        }
+        private void CardMouseEnter(object sender, EventArgs e) => this.BackColor = SystemColors.Control;
 
-        private void CardMouseLeave(object sender, EventArgs e)
-        {
-            this.BackColor = SystemColors.ControlLight;
-        }
+        private void CardMouseLeave(object sender, EventArgs e) => this.BackColor = SystemColors.ControlLight;
     }
 }

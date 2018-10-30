@@ -126,7 +126,7 @@
             this.bLoad.TabIndex = 2;
             this.bLoad.Text = "Load";
             this.bLoad.UseVisualStyleBackColor = true;
-            this.bLoad.Click += new System.EventHandler(this.bLoad_Click);
+            this.bLoad.Click += new System.EventHandler(this.BLoad_Click);
             // 
             // llNoAcc
             // 
@@ -138,7 +138,7 @@
             this.llNoAcc.TabStop = true;
             this.llNoAcc.Text = "You don\'t have a MAL account? create one.";
             this.llNoAcc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.llNoAcc.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llNoAcc_LinkClicked);
+            this.llNoAcc.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LlNoAcc_LinkClicked);
             // 
             // lDisclaimer
             // 
@@ -178,6 +178,7 @@
             this.Name = "fLoadUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Load your MAL info";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FLoadUser_FormClosing);
             this.pMALUsername.ResumeLayout(false);
             this.pMALUsername.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();

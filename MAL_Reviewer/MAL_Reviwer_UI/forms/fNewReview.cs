@@ -40,35 +40,35 @@ namespace MAL_Reviwer_UI.forms
 
                 searchCard.CardMouseClickEvent += SearchCard_CardMouseClickEvent;
                 searchCard.Top = searchCard.Height * searchCardCount;
+                searchCard.Visible = false;
                 pSearchCards.Controls.Add(searchCard);
             }
 
             // input delay timer setup.
-            this._inputDelay = new Timer();
-            this._inputDelay.Interval = 500;
+            this._inputDelay = new Timer
+            {
+                Interval = 500
+            };
             this._inputDelay.Tick += _inputDelay_Tick;
         }
 
         #region Manga/Anime labeling
 
-        private void RbScaleOther_CheckedChanged(object sender, EventArgs e)
-        {
-            nupScaleOther.Enabled = rbScaleOther.Checked;
-        }
+        private void RbScaleOther_CheckedChanged(object sender, EventArgs e) => nupScaleOther.Enabled = rbScaleOther.Checked;
 
         private void RbAnime_CheckedChanged(object sender, EventArgs e)
         {
             lTitle.Text = $"{ (rbAnime.Checked ? rbAnime.Text : rbManga.Text) } title";
             lPreview.Text = $"{ (rbAnime.Checked ? rbAnime.Text : rbManga.Text) } preview";
             pbShow.Image = (rbAnime.Checked ? Properties.Resources.icon_anime : Properties.Resources.icon_manga);
-            tbSearch_TextChanged(this, EventArgs.Empty);
+            TbSearch_TextChanged(this, EventArgs.Empty);
         }
 
         #endregion
 
         #region Target Search
 
-        private void tbSearch_TextChanged(object sender, EventArgs e)
+        private void TbSearch_TextChanged(object sender, EventArgs e)
         {
             string _currentSearch = tbSearch.Text.Trim().ToLower();
 
@@ -99,6 +99,7 @@ namespace MAL_Reviwer_UI.forms
                     return;
 
                 this._lastSearch = searchTitle;
+                this._type = (byte)(rbAnime.Checked ? int.Parse(rbAnime.Tag.ToString()) : int.Parse(rbManga.Tag.ToString()));
                 pbLoading.Visible = true;
                 pSearchCards.Visible = false;
                 this._ready = false;
@@ -141,17 +142,16 @@ namespace MAL_Reviwer_UI.forms
                     await Task.WhenAll(tasks);
                     pSearchCards.Visible = true;
                 }
-
-                pbLoading.Visible = false;
-                this._ready = true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             finally
             {
                 tbSearch.Enabled = true;
+                pbLoading.Visible = false;
+                this._ready = true;
             }
         }
 
@@ -170,22 +170,22 @@ namespace MAL_Reviwer_UI.forms
                 PreviewManga(targetId);
         }
 
-        private void tbSearch_MouseClick(object sender, MouseEventArgs e)
+        private void TbSearch_MouseClick(object sender, MouseEventArgs e)
         {
-            if (tbSearch.Focused && tbSearch.Text.Trim().Length > 2 && pSearchCards.Controls.Count > 0 && pSearchCards.Visible == false)
+            if (e.Button == MouseButtons.Left && tbSearch.Focused && tbSearch.Text.Trim().Length > 2 && pSearchCards.Controls.Count > 0 && pSearchCards.Visible == false)
                 pSearchCards.Visible = true;
         }
 
-        private void pbShow_MouseClick(object sender, MouseEventArgs e)
+        private void PbShow_MouseClick(object sender, MouseEventArgs e)
         {
             pSearchCards.Visible = false;
             pbShow.Cursor = Cursors.Default;
             pbShow.Image = (rbAnime.Checked ? Properties.Resources.icon_anime : Properties.Resources.icon_manga);
         }
 
-        private void pbShow_MouseEnter(object sender, EventArgs e)
+        private void PbShow_MouseEnter(object sender, EventArgs e)
         {
-            if (tbSearch.Text.Trim().Length > 2 && pSearchCards.Controls.Count > 0 && pSearchCards.Visible == true)
+            if (tbSearch.Text.Trim().Length > 2 && pSearchCards.Controls.Count > 0 && pSearchCards.Controls[0]?.Visible == true && pSearchCards.Visible == true)
             {
                 pbShow.Cursor = Cursors.Hand;
                 pbShow.Image = Properties.Resources.icon_close;
@@ -196,10 +196,7 @@ namespace MAL_Reviwer_UI.forms
             }
         }
 
-        private void pbShow_MouseLeave(object sender, EventArgs e)
-        {
-            pbShow.Image = (rbAnime.Checked ? Properties.Resources.icon_anime : Properties.Resources.icon_manga);
-        }
+        private void PbShow_MouseLeave(object sender, EventArgs e) => pbShow.Image = (rbAnime.Checked ? Properties.Resources.icon_anime : Properties.Resources.icon_manga);
 
         #endregion
 
@@ -290,16 +287,10 @@ namespace MAL_Reviwer_UI.forms
             }
         }
 
-        private void bMAL_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start(((Button)sender).Tag.ToString());
-        }
+        private void BMAL_Click(object sender, EventArgs e) => System.Diagnostics.Process.Start(((Button)sender).Tag.ToString());
 
         #endregion
 
-        private void fNewReview_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            e.Cancel = !this._ready;
-        }
+        private void FNewReview_FormClosing(object sender, FormClosingEventArgs e) => e.Cancel = !this._ready;
     }
 }

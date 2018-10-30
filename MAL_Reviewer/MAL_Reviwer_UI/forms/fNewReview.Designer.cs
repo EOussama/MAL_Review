@@ -122,9 +122,9 @@
             this.pbShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbShow.TabIndex = 1;
             this.pbShow.TabStop = false;
-            this.pbShow.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbShow_MouseClick);
-            this.pbShow.MouseEnter += new System.EventHandler(this.pbShow_MouseEnter);
-            this.pbShow.MouseLeave += new System.EventHandler(this.pbShow_MouseLeave);
+            this.pbShow.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PbShow_MouseClick);
+            this.pbShow.MouseEnter += new System.EventHandler(this.PbShow_MouseEnter);
+            this.pbShow.MouseLeave += new System.EventHandler(this.PbShow_MouseLeave);
             // 
             // tbSearch
             // 
@@ -135,8 +135,8 @@
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.Size = new System.Drawing.Size(188, 20);
             this.tbSearch.TabIndex = 0;
-            this.tbSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tbSearch_MouseClick);
-            this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
+            this.tbSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TbSearch_MouseClick);
+            this.tbSearch.TextChanged += new System.EventHandler(this.TbSearch_TextChanged);
             // 
             // pPreview
             // 
@@ -234,7 +234,7 @@
             this.bMAL.TabIndex = 13;
             this.bMAL.Text = "Visit MAL page";
             this.bMAL.UseVisualStyleBackColor = true;
-            this.bMAL.Click += new System.EventHandler(this.bMAL_Click);
+            this.bMAL.Click += new System.EventHandler(this.BMAL_Click);
             // 
             // lType
             // 
@@ -565,7 +565,7 @@
             this.Name = "fNewReview";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Review";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fNewReview_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FNewReview_FormClosing);
             this.pReviewLookUp.ResumeLayout(false);
             this.pReviewLookUp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();
