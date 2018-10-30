@@ -1605,7 +1605,6 @@
             this.dgvAnimelistPlanToWatch.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvAnimelistPlanToWatch.Size = new System.Drawing.Size(530, 142);
             this.dgvAnimelistPlanToWatch.TabIndex = 21;
-            this.dgvAnimelistPlanToWatch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAnimelistPlanToWatch_CellContentClick);
             // 
             // lvAnimelistPlanToWatch
             // 
@@ -1684,7 +1683,6 @@
             this.dgvAnimelistOnHold.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvAnimelistOnHold.Size = new System.Drawing.Size(530, 138);
             this.dgvAnimelistOnHold.TabIndex = 21;
-            this.dgvAnimelistOnHold.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAnimelistOnHold_CellContentClick);
             // 
             // lvAnimelistOnHold
             // 
@@ -1765,7 +1763,6 @@
             this.dgvAnimelistCompleted.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvAnimelistCompleted.Size = new System.Drawing.Size(530, 138);
             this.dgvAnimelistCompleted.TabIndex = 21;
-            this.dgvAnimelistCompleted.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAnimelistCompleted_CellContentClick);
             // 
             // lvAnimelistCompleted
             // 
@@ -1922,7 +1919,6 @@
             this.dgvAnimelistDropped.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvAnimelistDropped.Size = new System.Drawing.Size(530, 138);
             this.dgvAnimelistDropped.TabIndex = 21;
-            this.dgvAnimelistDropped.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAnimelistDropped_CellContentClick);
             // 
             // lvAnimelistDropped
             // 

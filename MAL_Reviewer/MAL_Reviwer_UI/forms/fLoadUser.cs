@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using MAL_Reviewer_API;
 using MAL_Reviewer_API.models;
+using MAL_Reviewer_API.models.ListEntryModel;
 
 namespace MAL_Reviwer_UI.forms
 {
@@ -27,12 +29,15 @@ namespace MAL_Reviwer_UI.forms
             {
                 if (username.Length < 3) throw new Exception("Please input a valid username!");
 
+                // Get the data of the user.
                 MALUserModel userModel = await MALHelper.GetUser(username);
+                List<AnimelistEntryModel> animeList = await MALHelper.GetAnimeList(username, (int)userModel.anime_stats.total_entries);
 
                 if (userModel == null) throw new Exception($"No user under the username “{ username }” was found!");
                 else
                 {
                     this.Close();
+                    userModel.animeList = animeList;
                     UserLoadedEvent?.Invoke(this, userModel);
                 }
             }

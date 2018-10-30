@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using MAL_Reviewer_API.models.ListEntryModel;
 
 namespace MAL_Reviewer_API.models
 {
@@ -15,5 +17,6 @@ namespace MAL_Reviewer_API.models
         public AnimeStatsModel anime_stats;
         public MangaStatsModel manga_stats;
         public FavoritesModel favorites;
+        public List<AnimelistEntryModel> animeList;
     }
 }
