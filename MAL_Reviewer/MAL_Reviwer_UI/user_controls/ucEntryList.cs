@@ -54,12 +54,6 @@ namespace MAL_Reviwer_UI.user_controls
                 Height = dgvList.Top + dgvList.Rows.GetRowsHeight(DataGridViewElementStates.Visible) + lType.Top;
             else
                 Height = dgvList.Top + 1500 + lType.Top;
-
-            System.Console.WriteLine($"{lType.Text}:");
-            System.Console.WriteLine($"dgv height: {dgvList.Height}");
-            System.Console.WriteLine($"Accumelated rows height: {dgvList.Rows.GetRowsHeight(DataGridViewElementStates.Visible)}");
-            System.Console.WriteLine($"List height: {Height}");
-            System.Console.WriteLine("--------------------------------\n");
         }
 
         private void DgvList_CellClick(object sender, DataGridViewCellEventArgs e)
