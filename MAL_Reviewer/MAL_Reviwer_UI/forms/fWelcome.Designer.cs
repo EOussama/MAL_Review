@@ -30,17 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fWelcome));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle63 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle65 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pSide = new System.Windows.Forms.Panel();
             this.pReviews = new System.Windows.Forms.Panel();
             this.pUser = new System.Windows.Forms.Panel();
@@ -147,62 +136,6 @@
             this.pbDashBoardLoad = new System.Windows.Forms.PictureBox();
             this.lMALAccPreview = new System.Windows.Forms.Label();
             this.tpAnimelist = new System.Windows.Forms.TabPage();
-            this.tlpAnimelistMain = new System.Windows.Forms.TableLayoutPanel();
-            this.pAnimelistPlanToWatch = new System.Windows.Forms.Panel();
-            this.dgvAnimelistPlanToWatch = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lvAnimelistPlanToWatch = new System.Windows.Forms.Label();
-            this.lAnimelistPlantToWatch = new System.Windows.Forms.Label();
-            this.pAnimelistOnHold = new System.Windows.Forms.Panel();
-            this.dgvAnimelistOnHold = new System.Windows.Forms.DataGridView();
-            this.cohUrl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lvAnimelistOnHold = new System.Windows.Forms.Label();
-            this.lAnimelistOnHold = new System.Windows.Forms.Label();
-            this.pAnimelistCompleted = new System.Windows.Forms.Panel();
-            this.dgvAnimelistCompleted = new System.Windows.Forms.DataGridView();
-            this.ccmpUrl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lvAnimelistCompleted = new System.Windows.Forms.Label();
-            this.lAnimelistCompleted = new System.Windows.Forms.Label();
-            this.pAnimelistWatching = new System.Windows.Forms.Panel();
-            this.dgvAnimelistWatching = new System.Windows.Forms.DataGridView();
-            this.calwUrl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.calw = new System.Windows.Forms.DataGridViewImageColumn();
-            this.calwTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.calwProgress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.calwScore = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.calwType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lvAnimelistWatching = new System.Windows.Forms.Label();
-            this.lAnimelistWatching = new System.Windows.Forms.Label();
-            this.pAnimelistDropped = new System.Windows.Forms.Panel();
-            this.dgvAnimelistDropped = new System.Windows.Forms.DataGridView();
-            this.cdrpUrl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lvAnimelistDropped = new System.Windows.Forms.Label();
-            this.lAnimelistDropped = new System.Windows.Forms.Label();
             this.tpMangalist = new System.Windows.Forms.TabPage();
             this.pHeader = new System.Windows.Forms.Panel();
             this.lVersion = new System.Windows.Forms.Label();
@@ -210,6 +143,7 @@
             this.lTitle = new System.Windows.Forms.Label();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.ttExtendedInfo = new System.Windows.Forms.ToolTip(this.components);
+            this.flpAnimelistMain = new System.Windows.Forms.FlowLayoutPanel();
             this.pSide.SuspendLayout();
             this.pUser.SuspendLayout();
             this.pReviewLookUp.SuspendLayout();
@@ -242,17 +176,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbDashAnime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDashBoardLoad)).BeginInit();
             this.tpAnimelist.SuspendLayout();
-            this.tlpAnimelistMain.SuspendLayout();
-            this.pAnimelistPlanToWatch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAnimelistPlanToWatch)).BeginInit();
-            this.pAnimelistOnHold.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAnimelistOnHold)).BeginInit();
-            this.pAnimelistCompleted.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAnimelistCompleted)).BeginInit();
-            this.pAnimelistWatching.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAnimelistWatching)).BeginInit();
-            this.pAnimelistDropped.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAnimelistDropped)).BeginInit();
             this.pHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
@@ -494,7 +417,7 @@
             this.pDashAbout.Location = new System.Drawing.Point(0, 727);
             this.pDashAbout.Margin = new System.Windows.Forms.Padding(19, 3, 3, 3);
             this.pDashAbout.Name = "pDashAbout";
-            this.pDashAbout.Size = new System.Drawing.Size(591, 185);
+            this.pDashAbout.Size = new System.Drawing.Size(557, 185);
             this.pDashAbout.TabIndex = 16;
             // 
             // rtbAbout
@@ -506,7 +429,7 @@
             this.rtbAbout.Name = "rtbAbout";
             this.rtbAbout.ReadOnly = true;
             this.rtbAbout.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbAbout.Size = new System.Drawing.Size(568, 142);
+            this.rtbAbout.Size = new System.Drawing.Size(534, 142);
             this.rtbAbout.TabIndex = 20;
             this.rtbAbout.Text = "Such empty";
             // 
@@ -541,7 +464,7 @@
             this.pDashFavorites.Location = new System.Drawing.Point(0, 398);
             this.pDashFavorites.Margin = new System.Windows.Forms.Padding(19, 3, 3, 3);
             this.pDashFavorites.Name = "pDashFavorites";
-            this.pDashFavorites.Size = new System.Drawing.Size(591, 293);
+            this.pDashFavorites.Size = new System.Drawing.Size(557, 293);
             this.pDashFavorites.TabIndex = 15;
             // 
             // tlpFavorites
@@ -561,7 +484,7 @@
             this.tlpFavorites.Name = "tlpFavorites";
             this.tlpFavorites.RowCount = 1;
             this.tlpFavorites.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpFavorites.Size = new System.Drawing.Size(567, 245);
+            this.tlpFavorites.Size = new System.Drawing.Size(533, 245);
             this.tlpFavorites.TabIndex = 20;
             // 
             // pDashFavoriteCharacters
@@ -573,17 +496,17 @@
             this.pDashFavoriteCharacters.Controls.Add(this.pChildCharacters);
             this.pDashFavoriteCharacters.Controls.Add(this.lDashFavoriteCharacters);
             this.pDashFavoriteCharacters.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pDashFavoriteCharacters.Location = new System.Drawing.Point(292, 3);
+            this.pDashFavoriteCharacters.Location = new System.Drawing.Point(276, 3);
             this.pDashFavoriteCharacters.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.pDashFavoriteCharacters.Name = "pDashFavoriteCharacters";
-            this.pDashFavoriteCharacters.Size = new System.Drawing.Size(121, 239);
+            this.pDashFavoriteCharacters.Size = new System.Drawing.Size(113, 239);
             this.pDashFavoriteCharacters.TabIndex = 15;
             // 
             // lFavCharactersCount
             // 
             this.lFavCharactersCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lFavCharactersCount.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lFavCharactersCount.Location = new System.Drawing.Point(76, 5);
+            this.lFavCharactersCount.Location = new System.Drawing.Point(68, 5);
             this.lFavCharactersCount.Name = "lFavCharactersCount";
             this.lFavCharactersCount.Size = new System.Drawing.Size(42, 18);
             this.lFavCharactersCount.TabIndex = 23;
@@ -596,7 +519,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pChildCharacters.Location = new System.Drawing.Point(3, 26);
             this.pChildCharacters.Name = "pChildCharacters";
-            this.pChildCharacters.Size = new System.Drawing.Size(115, 210);
+            this.pChildCharacters.Size = new System.Drawing.Size(107, 210);
             this.pChildCharacters.TabIndex = 21;
             // 
             // lDashFavoriteCharacters
@@ -618,17 +541,17 @@
             this.pDashFavoritePeople.Controls.Add(this.pChildPeople);
             this.pDashFavoritePeople.Controls.Add(this.lDashFavoritePeople);
             this.pDashFavoritePeople.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pDashFavoritePeople.Location = new System.Drawing.Point(433, 3);
+            this.pDashFavoritePeople.Location = new System.Drawing.Point(409, 3);
             this.pDashFavoritePeople.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.pDashFavoritePeople.Name = "pDashFavoritePeople";
-            this.pDashFavoritePeople.Size = new System.Drawing.Size(124, 239);
+            this.pDashFavoritePeople.Size = new System.Drawing.Size(114, 239);
             this.pDashFavoritePeople.TabIndex = 14;
             // 
             // lFavPeopleCount
             // 
             this.lFavPeopleCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lFavPeopleCount.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lFavPeopleCount.Location = new System.Drawing.Point(56, 5);
+            this.lFavPeopleCount.Location = new System.Drawing.Point(46, 5);
             this.lFavPeopleCount.Name = "lFavPeopleCount";
             this.lFavPeopleCount.Size = new System.Drawing.Size(63, 18);
             this.lFavPeopleCount.TabIndex = 24;
@@ -641,7 +564,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pChildPeople.Location = new System.Drawing.Point(3, 26);
             this.pChildPeople.Name = "pChildPeople";
-            this.pChildPeople.Size = new System.Drawing.Size(118, 210);
+            this.pChildPeople.Size = new System.Drawing.Size(108, 210);
             this.pChildPeople.TabIndex = 21;
             // 
             // lDashFavoritePeople
@@ -666,14 +589,14 @@
             this.pDashFavoriteAnime.Location = new System.Drawing.Point(10, 3);
             this.pDashFavoriteAnime.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.pDashFavoriteAnime.Name = "pDashFavoriteAnime";
-            this.pDashFavoriteAnime.Size = new System.Drawing.Size(121, 239);
+            this.pDashFavoriteAnime.Size = new System.Drawing.Size(113, 239);
             this.pDashFavoriteAnime.TabIndex = 13;
             // 
             // lFavAnimeCount
             // 
             this.lFavAnimeCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lFavAnimeCount.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lFavAnimeCount.Location = new System.Drawing.Point(55, 5);
+            this.lFavAnimeCount.Location = new System.Drawing.Point(47, 5);
             this.lFavAnimeCount.Name = "lFavAnimeCount";
             this.lFavAnimeCount.Size = new System.Drawing.Size(63, 18);
             this.lFavAnimeCount.TabIndex = 21;
@@ -686,7 +609,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pChildAnime.Location = new System.Drawing.Point(3, 26);
             this.pChildAnime.Name = "pChildAnime";
-            this.pChildAnime.Size = new System.Drawing.Size(115, 210);
+            this.pChildAnime.Size = new System.Drawing.Size(107, 210);
             this.pChildAnime.TabIndex = 20;
             // 
             // lDashFavoriteAnime
@@ -708,17 +631,17 @@
             this.pDashFavoriteManga.Controls.Add(this.pChildManga);
             this.pDashFavoriteManga.Controls.Add(this.lDashFavoriteManga);
             this.pDashFavoriteManga.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pDashFavoriteManga.Location = new System.Drawing.Point(151, 3);
+            this.pDashFavoriteManga.Location = new System.Drawing.Point(143, 3);
             this.pDashFavoriteManga.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.pDashFavoriteManga.Name = "pDashFavoriteManga";
-            this.pDashFavoriteManga.Size = new System.Drawing.Size(121, 239);
+            this.pDashFavoriteManga.Size = new System.Drawing.Size(113, 239);
             this.pDashFavoriteManga.TabIndex = 12;
             // 
             // lFavMangaCount
             // 
             this.lFavMangaCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lFavMangaCount.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lFavMangaCount.Location = new System.Drawing.Point(55, 5);
+            this.lFavMangaCount.Location = new System.Drawing.Point(47, 5);
             this.lFavMangaCount.Name = "lFavMangaCount";
             this.lFavMangaCount.Size = new System.Drawing.Size(63, 18);
             this.lFavMangaCount.TabIndex = 22;
@@ -731,7 +654,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pChildManga.Location = new System.Drawing.Point(3, 26);
             this.pChildManga.Name = "pChildManga";
-            this.pChildManga.Size = new System.Drawing.Size(115, 210);
+            this.pChildManga.Size = new System.Drawing.Size(107, 210);
             this.pChildManga.TabIndex = 21;
             // 
             // lDashFavoriteManga
@@ -777,7 +700,7 @@
             this.tlpUserInfo.Name = "tlpUserInfo";
             this.tlpUserInfo.RowCount = 1;
             this.tlpUserInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpUserInfo.Size = new System.Drawing.Size(591, 156);
+            this.tlpUserInfo.Size = new System.Drawing.Size(557, 156);
             this.tlpUserInfo.TabIndex = 14;
             // 
             // pCardProfileInfo
@@ -789,7 +712,7 @@
             this.pCardProfileInfo.Location = new System.Drawing.Point(3, 3);
             this.pCardProfileInfo.Margin = new System.Windows.Forms.Padding(3, 3, 19, 3);
             this.pCardProfileInfo.Name = "pCardProfileInfo";
-            this.pCardProfileInfo.Size = new System.Drawing.Size(391, 150);
+            this.pCardProfileInfo.Size = new System.Drawing.Size(367, 150);
             this.pCardProfileInfo.TabIndex = 0;
             // 
             // tlpUserInfoCore
@@ -818,7 +741,7 @@
             this.tlpUserInfoCore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpUserInfoCore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpUserInfoCore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpUserInfoCore.Size = new System.Drawing.Size(203, 116);
+            this.tlpUserInfoCore.Size = new System.Drawing.Size(179, 116);
             this.tlpUserInfoCore.TabIndex = 6;
             // 
             // lUserLocation
@@ -828,7 +751,7 @@
             this.lUserLocation.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lUserLocation.Location = new System.Drawing.Point(78, 92);
             this.lUserLocation.Name = "lUserLocation";
-            this.lUserLocation.Size = new System.Drawing.Size(122, 24);
+            this.lUserLocation.Size = new System.Drawing.Size(98, 24);
             this.lUserLocation.TabIndex = 10;
             this.lUserLocation.Text = "[Location]";
             this.lUserLocation.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -850,7 +773,7 @@
             this.lUserBirthday.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lUserBirthday.Location = new System.Drawing.Point(78, 69);
             this.lUserBirthday.Name = "lUserBirthday";
-            this.lUserBirthday.Size = new System.Drawing.Size(122, 23);
+            this.lUserBirthday.Size = new System.Drawing.Size(98, 23);
             this.lUserBirthday.TabIndex = 9;
             this.lUserBirthday.Text = "[Birthday]";
             this.lUserBirthday.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -872,7 +795,7 @@
             this.lUserJoinDate.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lUserJoinDate.Location = new System.Drawing.Point(78, 46);
             this.lUserJoinDate.Name = "lUserJoinDate";
-            this.lUserJoinDate.Size = new System.Drawing.Size(122, 23);
+            this.lUserJoinDate.Size = new System.Drawing.Size(98, 23);
             this.lUserJoinDate.TabIndex = 8;
             this.lUserJoinDate.Text = "[Join date]";
             this.lUserJoinDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -894,7 +817,7 @@
             this.lUserGender.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lUserGender.Location = new System.Drawing.Point(78, 23);
             this.lUserGender.Name = "lUserGender";
-            this.lUserGender.Size = new System.Drawing.Size(122, 23);
+            this.lUserGender.Size = new System.Drawing.Size(98, 23);
             this.lUserGender.TabIndex = 7;
             this.lUserGender.Text = "[Gender]";
             this.lUserGender.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -916,7 +839,7 @@
             this.lUserUsername.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lUserUsername.Location = new System.Drawing.Point(78, 0);
             this.lUserUsername.Name = "lUserUsername";
-            this.lUserUsername.Size = new System.Drawing.Size(122, 23);
+            this.lUserUsername.Size = new System.Drawing.Size(98, 23);
             this.lUserUsername.TabIndex = 6;
             this.lUserUsername.Text = "[Username]";
             this.lUserUsername.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -947,10 +870,10 @@
             this.pCard.Controls.Add(this.pbProfileLink);
             this.pCard.Controls.Add(this.bMALProfile);
             this.pCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pCard.Location = new System.Drawing.Point(432, 3);
+            this.pCard.Location = new System.Drawing.Point(408, 3);
             this.pCard.Margin = new System.Windows.Forms.Padding(19, 3, 3, 3);
             this.pCard.Name = "pCard";
-            this.pCard.Size = new System.Drawing.Size(156, 150);
+            this.pCard.Size = new System.Drawing.Size(146, 150);
             this.pCard.TabIndex = 11;
             // 
             // pbProfileLink
@@ -960,7 +883,7 @@
             this.pbProfileLink.Image = ((System.Drawing.Image)(resources.GetObject("pbProfileLink.Image")));
             this.pbProfileLink.Location = new System.Drawing.Point(57, 31);
             this.pbProfileLink.Name = "pbProfileLink";
-            this.pbProfileLink.Size = new System.Drawing.Size(43, 30);
+            this.pbProfileLink.Size = new System.Drawing.Size(33, 30);
             this.pbProfileLink.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbProfileLink.TabIndex = 7;
             this.pbProfileLink.TabStop = false;
@@ -978,7 +901,7 @@
             this.bMALProfile.ImageList = this.ilSizeControl;
             this.bMALProfile.Location = new System.Drawing.Point(23, 90);
             this.bMALProfile.Name = "bMALProfile";
-            this.bMALProfile.Size = new System.Drawing.Size(112, 46);
+            this.bMALProfile.Size = new System.Drawing.Size(102, 46);
             this.bMALProfile.TabIndex = 6;
             this.bMALProfile.Text = "View profile on MAL";
             this.bMALProfile.UseVisualStyleBackColor = false;
@@ -998,7 +921,7 @@
             this.tlpAnimeMangaCards.RowCount = 1;
             this.tlpAnimeMangaCards.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpAnimeMangaCards.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpAnimeMangaCards.Size = new System.Drawing.Size(591, 172);
+            this.tlpAnimeMangaCards.Size = new System.Drawing.Size(557, 172);
             this.tlpAnimeMangaCards.TabIndex = 12;
             // 
             // pDashMangaCard
@@ -1027,10 +950,10 @@
             this.pDashMangaCard.Controls.Add(this.lDashMangaReading);
             this.pDashMangaCard.Controls.Add(this.lDashMangaTitle);
             this.pDashMangaCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pDashMangaCard.Location = new System.Drawing.Point(314, 3);
+            this.pDashMangaCard.Location = new System.Drawing.Point(297, 3);
             this.pDashMangaCard.Margin = new System.Windows.Forms.Padding(19, 3, 3, 3);
             this.pDashMangaCard.Name = "pDashMangaCard";
-            this.pDashMangaCard.Size = new System.Drawing.Size(274, 166);
+            this.pDashMangaCard.Size = new System.Drawing.Size(257, 166);
             this.pDashMangaCard.TabIndex = 13;
             // 
             // lvDashMangaReread
@@ -1067,7 +990,7 @@
             // 
             this.lvDashMangaMeanScore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lvDashMangaMeanScore.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvDashMangaMeanScore.Location = new System.Drawing.Point(181, 133);
+            this.lvDashMangaMeanScore.Location = new System.Drawing.Point(164, 133);
             this.lvDashMangaMeanScore.Name = "lvDashMangaMeanScore";
             this.lvDashMangaMeanScore.Size = new System.Drawing.Size(91, 25);
             this.lvDashMangaMeanScore.TabIndex = 37;
@@ -1078,7 +1001,7 @@
             // 
             this.lDashMangaMeanScore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lDashMangaMeanScore.AutoSize = true;
-            this.lDashMangaMeanScore.Location = new System.Drawing.Point(197, 117);
+            this.lDashMangaMeanScore.Location = new System.Drawing.Point(180, 117);
             this.lDashMangaMeanScore.Name = "lDashMangaMeanScore";
             this.lDashMangaMeanScore.Size = new System.Drawing.Size(75, 16);
             this.lDashMangaMeanScore.TabIndex = 36;
@@ -1088,7 +1011,7 @@
             // 
             this.lvDashMangaDaysRead.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lvDashMangaDaysRead.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvDashMangaDaysRead.Location = new System.Drawing.Point(187, 48);
+            this.lvDashMangaDaysRead.Location = new System.Drawing.Point(170, 48);
             this.lvDashMangaDaysRead.Name = "lvDashMangaDaysRead";
             this.lvDashMangaDaysRead.Size = new System.Drawing.Size(85, 28);
             this.lvDashMangaDaysRead.TabIndex = 35;
@@ -1099,7 +1022,7 @@
             // 
             this.lDashMangaDaysRead.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lDashMangaDaysRead.AutoSize = true;
-            this.lDashMangaDaysRead.Location = new System.Drawing.Point(204, 30);
+            this.lDashMangaDaysRead.Location = new System.Drawing.Point(187, 30);
             this.lDashMangaDaysRead.Name = "lDashMangaDaysRead";
             this.lDashMangaDaysRead.Size = new System.Drawing.Size(68, 16);
             this.lDashMangaDaysRead.TabIndex = 34;
@@ -1283,7 +1206,7 @@
             this.pDashAnimeCard.Margin = new System.Windows.Forms.Padding(3, 3, 19, 3);
             this.pDashAnimeCard.Name = "pDashAnimeCard";
             this.pDashAnimeCard.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.pDashAnimeCard.Size = new System.Drawing.Size(273, 166);
+            this.pDashAnimeCard.Size = new System.Drawing.Size(256, 166);
             this.pDashAnimeCard.TabIndex = 12;
             // 
             // pbDashAnime
@@ -1300,7 +1223,7 @@
             // 
             this.lvDashAnimeMeanScore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lvDashAnimeMeanScore.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvDashAnimeMeanScore.Location = new System.Drawing.Point(179, 126);
+            this.lvDashAnimeMeanScore.Location = new System.Drawing.Point(162, 126);
             this.lvDashAnimeMeanScore.Name = "lvDashAnimeMeanScore";
             this.lvDashAnimeMeanScore.Size = new System.Drawing.Size(91, 25);
             this.lvDashAnimeMeanScore.TabIndex = 18;
@@ -1311,7 +1234,7 @@
             // 
             this.lDashAnimeMeanScore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lDashAnimeMeanScore.AutoSize = true;
-            this.lDashAnimeMeanScore.Location = new System.Drawing.Point(195, 110);
+            this.lDashAnimeMeanScore.Location = new System.Drawing.Point(178, 110);
             this.lDashAnimeMeanScore.Name = "lDashAnimeMeanScore";
             this.lDashAnimeMeanScore.Size = new System.Drawing.Size(75, 16);
             this.lDashAnimeMeanScore.TabIndex = 17;
@@ -1321,7 +1244,7 @@
             // 
             this.lvDashAnimeDaysWatched.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lvDashAnimeDaysWatched.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvDashAnimeDaysWatched.Location = new System.Drawing.Point(185, 48);
+            this.lvDashAnimeDaysWatched.Location = new System.Drawing.Point(168, 48);
             this.lvDashAnimeDaysWatched.Name = "lvDashAnimeDaysWatched";
             this.lvDashAnimeDaysWatched.Size = new System.Drawing.Size(85, 28);
             this.lvDashAnimeDaysWatched.TabIndex = 16;
@@ -1332,7 +1255,7 @@
             // 
             this.lDashAnimeDaysWatched.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lDashAnimeDaysWatched.AutoSize = true;
-            this.lDashAnimeDaysWatched.Location = new System.Drawing.Point(182, 30);
+            this.lDashAnimeDaysWatched.Location = new System.Drawing.Point(165, 30);
             this.lDashAnimeDaysWatched.Name = "lDashAnimeDaysWatched";
             this.lDashAnimeDaysWatched.Size = new System.Drawing.Size(88, 16);
             this.lDashAnimeDaysWatched.TabIndex = 15;
@@ -1516,7 +1439,7 @@
             // tpAnimelist
             // 
             this.tpAnimelist.AutoScroll = true;
-            this.tpAnimelist.Controls.Add(this.tlpAnimelistMain);
+            this.tpAnimelist.Controls.Add(this.flpAnimelistMain);
             this.tpAnimelist.Location = new System.Drawing.Point(4, 34);
             this.tpAnimelist.Name = "tpAnimelist";
             this.tpAnimelist.Padding = new System.Windows.Forms.Padding(3);
@@ -1524,643 +1447,6 @@
             this.tpAnimelist.TabIndex = 1;
             this.tpAnimelist.Text = "Animelist";
             this.tpAnimelist.UseVisualStyleBackColor = true;
-            // 
-            // tlpAnimelistMain
-            // 
-            this.tlpAnimelistMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpAnimelistMain.AutoScroll = true;
-            this.tlpAnimelistMain.BackColor = System.Drawing.Color.Transparent;
-            this.tlpAnimelistMain.ColumnCount = 1;
-            this.tlpAnimelistMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpAnimelistMain.Controls.Add(this.pAnimelistPlanToWatch, 0, 4);
-            this.tlpAnimelistMain.Controls.Add(this.pAnimelistOnHold, 0, 2);
-            this.tlpAnimelistMain.Controls.Add(this.pAnimelistCompleted, 0, 1);
-            this.tlpAnimelistMain.Controls.Add(this.pAnimelistWatching, 0, 0);
-            this.tlpAnimelistMain.Controls.Add(this.pAnimelistDropped, 0, 3);
-            this.tlpAnimelistMain.Location = new System.Drawing.Point(35, 33);
-            this.tlpAnimelistMain.Name = "tlpAnimelistMain";
-            this.tlpAnimelistMain.RowCount = 5;
-            this.tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpAnimelistMain.Size = new System.Drawing.Size(644, 187);
-            this.tlpAnimelistMain.TabIndex = 8;
-            // 
-            // pAnimelistPlanToWatch
-            // 
-            this.pAnimelistPlanToWatch.BackColor = System.Drawing.SystemColors.Control;
-            this.pAnimelistPlanToWatch.Controls.Add(this.dgvAnimelistPlanToWatch);
-            this.pAnimelistPlanToWatch.Controls.Add(this.lvAnimelistPlanToWatch);
-            this.pAnimelistPlanToWatch.Controls.Add(this.lAnimelistPlantToWatch);
-            this.pAnimelistPlanToWatch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pAnimelistPlanToWatch.Location = new System.Drawing.Point(0, 928);
-            this.pAnimelistPlanToWatch.Margin = new System.Windows.Forms.Padding(0, 20, 30, 20);
-            this.pAnimelistPlanToWatch.Name = "pAnimelistPlanToWatch";
-            this.pAnimelistPlanToWatch.Size = new System.Drawing.Size(619, 191);
-            this.pAnimelistPlanToWatch.TabIndex = 21;
-            // 
-            // dgvAnimelistPlanToWatch
-            // 
-            this.dgvAnimelistPlanToWatch.AllowUserToAddRows = false;
-            this.dgvAnimelistPlanToWatch.AllowUserToDeleteRows = false;
-            this.dgvAnimelistPlanToWatch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvAnimelistPlanToWatch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAnimelistPlanToWatch.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvAnimelistPlanToWatch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle56.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle56.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle56.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle56.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle56.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle56.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAnimelistPlanToWatch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle56;
-            this.dgvAnimelistPlanToWatch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAnimelistPlanToWatch.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn13,
-            this.Column5,
-            this.dataGridViewImageColumn4,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17});
-            this.dgvAnimelistPlanToWatch.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle57.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle57.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle57.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle57.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle57.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle57.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAnimelistPlanToWatch.DefaultCellStyle = dataGridViewCellStyle57;
-            this.dgvAnimelistPlanToWatch.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvAnimelistPlanToWatch.Location = new System.Drawing.Point(26, 33);
-            this.dgvAnimelistPlanToWatch.MultiSelect = false;
-            this.dgvAnimelistPlanToWatch.Name = "dgvAnimelistPlanToWatch";
-            this.dgvAnimelistPlanToWatch.ReadOnly = true;
-            this.dgvAnimelistPlanToWatch.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvAnimelistPlanToWatch.Size = new System.Drawing.Size(566, 142);
-            this.dgvAnimelistPlanToWatch.TabIndex = 21;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.HeaderText = "url";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            this.dataGridViewTextBoxColumn13.Visible = false;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "#";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // dataGridViewImageColumn4
-            // 
-            this.dataGridViewImageColumn4.HeaderText = "";
-            this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
-            this.dataGridViewImageColumn4.ReadOnly = true;
-            this.dataGridViewImageColumn4.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.HeaderText = "Title";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.HeaderText = "Progress";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.HeaderText = "Score";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.HeaderText = "Type";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.ReadOnly = true;
-            // 
-            // lvAnimelistPlanToWatch
-            // 
-            this.lvAnimelistPlanToWatch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lvAnimelistPlanToWatch.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvAnimelistPlanToWatch.Location = new System.Drawing.Point(523, 4);
-            this.lvAnimelistPlanToWatch.Name = "lvAnimelistPlanToWatch";
-            this.lvAnimelistPlanToWatch.Size = new System.Drawing.Size(76, 19);
-            this.lvAnimelistPlanToWatch.TabIndex = 20;
-            this.lvAnimelistPlanToWatch.Text = "[xxxx]";
-            this.lvAnimelistPlanToWatch.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lAnimelistPlantToWatch
-            // 
-            this.lAnimelistPlantToWatch.AutoSize = true;
-            this.lAnimelistPlantToWatch.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lAnimelistPlantToWatch.Location = new System.Drawing.Point(22, 4);
-            this.lAnimelistPlantToWatch.Name = "lAnimelistPlantToWatch";
-            this.lAnimelistPlantToWatch.Size = new System.Drawing.Size(107, 19);
-            this.lAnimelistPlantToWatch.TabIndex = 19;
-            this.lAnimelistPlantToWatch.Text = "Plan to Watch";
-            // 
-            // pAnimelistOnHold
-            // 
-            this.pAnimelistOnHold.BackColor = System.Drawing.SystemColors.Control;
-            this.pAnimelistOnHold.Controls.Add(this.dgvAnimelistOnHold);
-            this.pAnimelistOnHold.Controls.Add(this.lvAnimelistOnHold);
-            this.pAnimelistOnHold.Controls.Add(this.lAnimelistOnHold);
-            this.pAnimelistOnHold.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pAnimelistOnHold.Location = new System.Drawing.Point(0, 474);
-            this.pAnimelistOnHold.Margin = new System.Windows.Forms.Padding(0, 20, 30, 20);
-            this.pAnimelistOnHold.Name = "pAnimelistOnHold";
-            this.pAnimelistOnHold.Size = new System.Drawing.Size(619, 187);
-            this.pAnimelistOnHold.TabIndex = 19;
-            // 
-            // dgvAnimelistOnHold
-            // 
-            this.dgvAnimelistOnHold.AllowUserToAddRows = false;
-            this.dgvAnimelistOnHold.AllowUserToDeleteRows = false;
-            this.dgvAnimelistOnHold.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvAnimelistOnHold.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAnimelistOnHold.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvAnimelistOnHold.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle58.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle58.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle58.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle58.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle58.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle58.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAnimelistOnHold.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle58;
-            this.dgvAnimelistOnHold.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAnimelistOnHold.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cohUrl,
-            this.Column3,
-            this.dataGridViewImageColumn2,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
-            this.dgvAnimelistOnHold.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle59.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle59.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle59.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle59.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle59.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle59.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAnimelistOnHold.DefaultCellStyle = dataGridViewCellStyle59;
-            this.dgvAnimelistOnHold.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvAnimelistOnHold.Location = new System.Drawing.Point(27, 33);
-            this.dgvAnimelistOnHold.MultiSelect = false;
-            this.dgvAnimelistOnHold.Name = "dgvAnimelistOnHold";
-            this.dgvAnimelistOnHold.ReadOnly = true;
-            this.dgvAnimelistOnHold.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvAnimelistOnHold.Size = new System.Drawing.Size(566, 138);
-            this.dgvAnimelistOnHold.TabIndex = 21;
-            // 
-            // cohUrl
-            // 
-            this.cohUrl.HeaderText = "url";
-            this.cohUrl.Name = "cohUrl";
-            this.cohUrl.ReadOnly = true;
-            this.cohUrl.Visible = false;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "#";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.ReadOnly = true;
-            this.dataGridViewImageColumn2.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Title";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Progress";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "Score";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "Type";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // lvAnimelistOnHold
-            // 
-            this.lvAnimelistOnHold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lvAnimelistOnHold.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvAnimelistOnHold.Location = new System.Drawing.Point(523, 4);
-            this.lvAnimelistOnHold.Name = "lvAnimelistOnHold";
-            this.lvAnimelistOnHold.Size = new System.Drawing.Size(76, 19);
-            this.lvAnimelistOnHold.TabIndex = 20;
-            this.lvAnimelistOnHold.Text = "[xxxx]";
-            this.lvAnimelistOnHold.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lAnimelistOnHold
-            // 
-            this.lAnimelistOnHold.AutoSize = true;
-            this.lAnimelistOnHold.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lAnimelistOnHold.Location = new System.Drawing.Point(23, 4);
-            this.lAnimelistOnHold.Name = "lAnimelistOnHold";
-            this.lAnimelistOnHold.Size = new System.Drawing.Size(65, 19);
-            this.lAnimelistOnHold.TabIndex = 19;
-            this.lAnimelistOnHold.Text = "On Hold";
-            // 
-            // pAnimelistCompleted
-            // 
-            this.pAnimelistCompleted.BackColor = System.Drawing.SystemColors.Control;
-            this.pAnimelistCompleted.Controls.Add(this.dgvAnimelistCompleted);
-            this.pAnimelistCompleted.Controls.Add(this.lvAnimelistCompleted);
-            this.pAnimelistCompleted.Controls.Add(this.lAnimelistCompleted);
-            this.pAnimelistCompleted.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pAnimelistCompleted.Location = new System.Drawing.Point(0, 247);
-            this.pAnimelistCompleted.Margin = new System.Windows.Forms.Padding(0, 20, 30, 20);
-            this.pAnimelistCompleted.Name = "pAnimelistCompleted";
-            this.pAnimelistCompleted.Size = new System.Drawing.Size(619, 187);
-            this.pAnimelistCompleted.TabIndex = 18;
-            // 
-            // dgvAnimelistCompleted
-            // 
-            this.dgvAnimelistCompleted.AllowUserToAddRows = false;
-            this.dgvAnimelistCompleted.AllowUserToDeleteRows = false;
-            this.dgvAnimelistCompleted.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvAnimelistCompleted.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAnimelistCompleted.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvAnimelistCompleted.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle60.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle60.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle60.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle60.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle60.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dgvAnimelistCompleted.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle60;
-            this.dgvAnimelistCompleted.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAnimelistCompleted.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ccmpUrl,
-            this.Column2,
-            this.dataGridViewImageColumn1,
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.dgvAnimelistCompleted.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle61.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle61.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle61.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle61.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle61.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle61.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle61.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAnimelistCompleted.DefaultCellStyle = dataGridViewCellStyle61;
-            this.dgvAnimelistCompleted.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvAnimelistCompleted.Location = new System.Drawing.Point(27, 33);
-            this.dgvAnimelistCompleted.MultiSelect = false;
-            this.dgvAnimelistCompleted.Name = "dgvAnimelistCompleted";
-            this.dgvAnimelistCompleted.ReadOnly = true;
-            dataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle62.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAnimelistCompleted.RowsDefaultCellStyle = dataGridViewCellStyle62;
-            this.dgvAnimelistCompleted.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvAnimelistCompleted.Size = new System.Drawing.Size(566, 137);
-            this.dgvAnimelistCompleted.TabIndex = 21;
-            // 
-            // ccmpUrl
-            // 
-            this.ccmpUrl.HeaderText = "url";
-            this.ccmpUrl.Name = "ccmpUrl";
-            this.ccmpUrl.ReadOnly = true;
-            this.ccmpUrl.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "#";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Title";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Progress";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Score";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Type";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // lvAnimelistCompleted
-            // 
-            this.lvAnimelistCompleted.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lvAnimelistCompleted.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvAnimelistCompleted.Location = new System.Drawing.Point(522, 4);
-            this.lvAnimelistCompleted.Name = "lvAnimelistCompleted";
-            this.lvAnimelistCompleted.Size = new System.Drawing.Size(76, 19);
-            this.lvAnimelistCompleted.TabIndex = 20;
-            this.lvAnimelistCompleted.Text = "[xxxx]";
-            this.lvAnimelistCompleted.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lAnimelistCompleted
-            // 
-            this.lAnimelistCompleted.AutoSize = true;
-            this.lAnimelistCompleted.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lAnimelistCompleted.Location = new System.Drawing.Point(23, 4);
-            this.lAnimelistCompleted.Name = "lAnimelistCompleted";
-            this.lAnimelistCompleted.Size = new System.Drawing.Size(88, 19);
-            this.lAnimelistCompleted.TabIndex = 19;
-            this.lAnimelistCompleted.Text = "Completed";
-            // 
-            // pAnimelistWatching
-            // 
-            this.pAnimelistWatching.BackColor = System.Drawing.SystemColors.Control;
-            this.pAnimelistWatching.Controls.Add(this.dgvAnimelistWatching);
-            this.pAnimelistWatching.Controls.Add(this.lvAnimelistWatching);
-            this.pAnimelistWatching.Controls.Add(this.lAnimelistWatching);
-            this.pAnimelistWatching.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pAnimelistWatching.Location = new System.Drawing.Point(0, 3);
-            this.pAnimelistWatching.Margin = new System.Windows.Forms.Padding(0, 3, 30, 20);
-            this.pAnimelistWatching.Name = "pAnimelistWatching";
-            this.pAnimelistWatching.Size = new System.Drawing.Size(619, 204);
-            this.pAnimelistWatching.TabIndex = 17;
-            // 
-            // dgvAnimelistWatching
-            // 
-            this.dgvAnimelistWatching.AllowUserToAddRows = false;
-            this.dgvAnimelistWatching.AllowUserToDeleteRows = false;
-            this.dgvAnimelistWatching.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvAnimelistWatching.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAnimelistWatching.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvAnimelistWatching.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle63.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle63.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle63.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle63.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle63.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle63.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle63.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAnimelistWatching.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle63;
-            this.dgvAnimelistWatching.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAnimelistWatching.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.calwUrl,
-            this.Column1,
-            this.calw,
-            this.calwTitle,
-            this.calwProgress,
-            this.calwScore,
-            this.calwType});
-            this.dgvAnimelistWatching.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle64.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle64.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle64.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle64.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle64.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle64.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle64.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAnimelistWatching.DefaultCellStyle = dataGridViewCellStyle64;
-            this.dgvAnimelistWatching.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvAnimelistWatching.Location = new System.Drawing.Point(27, 33);
-            this.dgvAnimelistWatching.MultiSelect = false;
-            this.dgvAnimelistWatching.Name = "dgvAnimelistWatching";
-            this.dgvAnimelistWatching.ReadOnly = true;
-            this.dgvAnimelistWatching.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvAnimelistWatching.Size = new System.Drawing.Size(566, 152);
-            this.dgvAnimelistWatching.TabIndex = 21;
-            // 
-            // calwUrl
-            // 
-            this.calwUrl.HeaderText = "url";
-            this.calwUrl.Name = "calwUrl";
-            this.calwUrl.ReadOnly = true;
-            this.calwUrl.Visible = false;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "#";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // calw
-            // 
-            this.calw.HeaderText = "";
-            this.calw.Name = "calw";
-            this.calw.ReadOnly = true;
-            this.calw.Visible = false;
-            // 
-            // calwTitle
-            // 
-            this.calwTitle.HeaderText = "Title";
-            this.calwTitle.Name = "calwTitle";
-            this.calwTitle.ReadOnly = true;
-            // 
-            // calwProgress
-            // 
-            this.calwProgress.HeaderText = "Progress";
-            this.calwProgress.Name = "calwProgress";
-            this.calwProgress.ReadOnly = true;
-            // 
-            // calwScore
-            // 
-            this.calwScore.HeaderText = "Score";
-            this.calwScore.Name = "calwScore";
-            this.calwScore.ReadOnly = true;
-            // 
-            // calwType
-            // 
-            this.calwType.HeaderText = "Type";
-            this.calwType.Name = "calwType";
-            this.calwType.ReadOnly = true;
-            // 
-            // lvAnimelistWatching
-            // 
-            this.lvAnimelistWatching.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lvAnimelistWatching.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvAnimelistWatching.Location = new System.Drawing.Point(524, 4);
-            this.lvAnimelistWatching.Name = "lvAnimelistWatching";
-            this.lvAnimelistWatching.Size = new System.Drawing.Size(76, 19);
-            this.lvAnimelistWatching.TabIndex = 20;
-            this.lvAnimelistWatching.Text = "[xxxx]";
-            this.lvAnimelistWatching.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lAnimelistWatching
-            // 
-            this.lAnimelistWatching.AutoSize = true;
-            this.lAnimelistWatching.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lAnimelistWatching.Location = new System.Drawing.Point(23, 4);
-            this.lAnimelistWatching.Name = "lAnimelistWatching";
-            this.lAnimelistWatching.Size = new System.Drawing.Size(76, 19);
-            this.lAnimelistWatching.TabIndex = 19;
-            this.lAnimelistWatching.Text = "Watching";
-            // 
-            // pAnimelistDropped
-            // 
-            this.pAnimelistDropped.BackColor = System.Drawing.SystemColors.Control;
-            this.pAnimelistDropped.Controls.Add(this.dgvAnimelistDropped);
-            this.pAnimelistDropped.Controls.Add(this.lvAnimelistDropped);
-            this.pAnimelistDropped.Controls.Add(this.lAnimelistDropped);
-            this.pAnimelistDropped.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pAnimelistDropped.Location = new System.Drawing.Point(0, 701);
-            this.pAnimelistDropped.Margin = new System.Windows.Forms.Padding(0, 20, 30, 20);
-            this.pAnimelistDropped.Name = "pAnimelistDropped";
-            this.pAnimelistDropped.Size = new System.Drawing.Size(619, 187);
-            this.pAnimelistDropped.TabIndex = 20;
-            // 
-            // dgvAnimelistDropped
-            // 
-            this.dgvAnimelistDropped.AllowUserToAddRows = false;
-            this.dgvAnimelistDropped.AllowUserToDeleteRows = false;
-            this.dgvAnimelistDropped.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvAnimelistDropped.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAnimelistDropped.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvAnimelistDropped.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle65.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle65.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle65.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle65.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle65.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle65.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAnimelistDropped.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle65;
-            this.dgvAnimelistDropped.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAnimelistDropped.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cdrpUrl,
-            this.Column4,
-            this.dataGridViewImageColumn3,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12});
-            this.dgvAnimelistDropped.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle66.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle66.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle66.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle66.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle66.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle66.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAnimelistDropped.DefaultCellStyle = dataGridViewCellStyle66;
-            this.dgvAnimelistDropped.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvAnimelistDropped.Location = new System.Drawing.Point(27, 33);
-            this.dgvAnimelistDropped.MultiSelect = false;
-            this.dgvAnimelistDropped.Name = "dgvAnimelistDropped";
-            this.dgvAnimelistDropped.ReadOnly = true;
-            this.dgvAnimelistDropped.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvAnimelistDropped.Size = new System.Drawing.Size(566, 138);
-            this.dgvAnimelistDropped.TabIndex = 21;
-            // 
-            // cdrpUrl
-            // 
-            this.cdrpUrl.HeaderText = "url";
-            this.cdrpUrl.Name = "cdrpUrl";
-            this.cdrpUrl.ReadOnly = true;
-            this.cdrpUrl.Visible = false;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "#";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // dataGridViewImageColumn3
-            // 
-            this.dataGridViewImageColumn3.HeaderText = "";
-            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
-            this.dataGridViewImageColumn3.ReadOnly = true;
-            this.dataGridViewImageColumn3.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.HeaderText = "Title";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.HeaderText = "Progress";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.HeaderText = "Score";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.HeaderText = "Type";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            // 
-            // lvAnimelistDropped
-            // 
-            this.lvAnimelistDropped.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lvAnimelistDropped.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvAnimelistDropped.Location = new System.Drawing.Point(523, 4);
-            this.lvAnimelistDropped.Name = "lvAnimelistDropped";
-            this.lvAnimelistDropped.Size = new System.Drawing.Size(76, 19);
-            this.lvAnimelistDropped.TabIndex = 20;
-            this.lvAnimelistDropped.Text = "[xxxx]";
-            this.lvAnimelistDropped.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lAnimelistDropped
-            // 
-            this.lAnimelistDropped.AutoSize = true;
-            this.lAnimelistDropped.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lAnimelistDropped.Location = new System.Drawing.Point(23, 4);
-            this.lAnimelistDropped.Name = "lAnimelistDropped";
-            this.lAnimelistDropped.Size = new System.Drawing.Size(72, 19);
-            this.lAnimelistDropped.TabIndex = 19;
-            this.lAnimelistDropped.Text = "Dropped";
             // 
             // tpMangalist
             // 
@@ -2245,6 +1531,19 @@
             this.ttExtendedInfo.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.ttExtendedInfo.ToolTipTitle = "Information";
             // 
+            // flpAnimelistMain
+            // 
+            this.flpAnimelistMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flpAnimelistMain.AutoScroll = true;
+            this.flpAnimelistMain.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
+            this.flpAnimelistMain.Location = new System.Drawing.Point(35, 33);
+            this.flpAnimelistMain.Name = "flpAnimelistMain";
+            this.flpAnimelistMain.Size = new System.Drawing.Size(643, 187);
+            this.flpAnimelistMain.TabIndex = 1;
+            this.flpAnimelistMain.WrapContents = false;
+            // 
             // fWelcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2301,22 +1600,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbDashAnime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDashBoardLoad)).EndInit();
             this.tpAnimelist.ResumeLayout(false);
-            this.tlpAnimelistMain.ResumeLayout(false);
-            this.pAnimelistPlanToWatch.ResumeLayout(false);
-            this.pAnimelistPlanToWatch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAnimelistPlanToWatch)).EndInit();
-            this.pAnimelistOnHold.ResumeLayout(false);
-            this.pAnimelistOnHold.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAnimelistOnHold)).EndInit();
-            this.pAnimelistCompleted.ResumeLayout(false);
-            this.pAnimelistCompleted.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAnimelistCompleted)).EndInit();
-            this.pAnimelistWatching.ResumeLayout(false);
-            this.pAnimelistWatching.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAnimelistWatching)).EndInit();
-            this.pAnimelistDropped.ResumeLayout(false);
-            this.pAnimelistDropped.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAnimelistDropped)).EndInit();
             this.pHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
@@ -2438,61 +1721,6 @@
         private System.Windows.Forms.PictureBox pbAbout;
         private System.Windows.Forms.Label lDashAbout;
         private System.Windows.Forms.RichTextBox rtbAbout;
-        private System.Windows.Forms.Panel pAnimelistWatching;
-        private System.Windows.Forms.Label lvAnimelistWatching;
-        private System.Windows.Forms.Label lAnimelistWatching;
-        private System.Windows.Forms.DataGridView dgvAnimelistWatching;
-        private System.Windows.Forms.TableLayoutPanel tlpAnimelistMain;
-        private System.Windows.Forms.Panel pAnimelistCompleted;
-        private System.Windows.Forms.DataGridView dgvAnimelistCompleted;
-        private System.Windows.Forms.Label lvAnimelistCompleted;
-        private System.Windows.Forms.Label lAnimelistCompleted;
-        private System.Windows.Forms.Panel pAnimelistDropped;
-        private System.Windows.Forms.DataGridView dgvAnimelistDropped;
-        private System.Windows.Forms.Label lvAnimelistDropped;
-        private System.Windows.Forms.Label lAnimelistDropped;
-        private System.Windows.Forms.Panel pAnimelistOnHold;
-        private System.Windows.Forms.DataGridView dgvAnimelistOnHold;
-        private System.Windows.Forms.Label lvAnimelistOnHold;
-        private System.Windows.Forms.Label lAnimelistOnHold;
-        private System.Windows.Forms.Panel pAnimelistPlanToWatch;
-        private System.Windows.Forms.DataGridView dgvAnimelistPlanToWatch;
-        private System.Windows.Forms.Label lvAnimelistPlanToWatch;
-        private System.Windows.Forms.Label lAnimelistPlantToWatch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cohUrl;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccmpUrl;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn calwUrl;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewImageColumn calw;
-        private System.Windows.Forms.DataGridViewTextBoxColumn calwTitle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn calwProgress;
-        private System.Windows.Forms.DataGridViewTextBoxColumn calwScore;
-        private System.Windows.Forms.DataGridViewTextBoxColumn calwType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cdrpUrl;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.FlowLayoutPanel flpAnimelistMain;
     }
 }

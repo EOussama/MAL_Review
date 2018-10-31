@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -36,13 +37,7 @@ namespace MAL_Reviwer_UI.forms
             pChildCharacters.AutoScroll = true;
             pChildPeople.AutoScroll = true;
 
-            // Animelist click event.
-            dgvAnimelistWatching.CellClick += ListEntry_CellClick;
-            dgvAnimelistCompleted.CellClick += ListEntry_CellClick;
-            dgvAnimelistOnHold.CellClick += ListEntry_CellClick;
-            dgvAnimelistDropped.CellClick += ListEntry_CellClick;
-            dgvAnimelistPlanToWatch.CellClick += ListEntry_CellClick;
-
+            CreateLists();
             MALHelper.Init();
         }
 
@@ -302,212 +297,24 @@ namespace MAL_Reviwer_UI.forms
             {
                 await Task.Run(() =>
                 {
-                    if (tlpAnimelistMain.InvokeRequired)
+                    if (tcDashboard.InvokeRequired)
                     {
-                        tlpAnimelistMain.Invoke((MethodInvoker)delegate
+                        tcDashboard.Invoke((MethodInvoker)delegate
                         {
-                            int
-                                _watchingCount = 0,
-                                _completedCount = 0,
-                                _onHoldCount = 0,
-                                _droppedCount = 0,
-                                _ptwCount = 0;
-
-                            // Clearing the datagridviews' rows.
-                            dgvAnimelistWatching.Rows.Clear();
-                            dgvAnimelistCompleted.Rows.Clear();
-                            dgvAnimelistOnHold.Rows.Clear();
-                            dgvAnimelistDropped.Rows.Clear();
-                            dgvAnimelistPlanToWatch.Rows.Clear();
-
-                            if (animeList != null && animeList.Count > 0)
-                            {
-                                foreach (AnimelistEntryModel anime in animeList)
-                                {
-                                    switch (anime.watching_status)
-                                    {
-                                        case 1:
-                                            {
-                                                dgvAnimelistWatching.Rows.Add(anime.url, ++_watchingCount, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
-                                                break;
-                                            }
-                                        case 2:
-                                            {
-                                                dgvAnimelistCompleted.Rows.Add(anime.url, ++_completedCount, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
-                                                break;
-                                            }
-                                        case 3:
-                                            {
-                                                dgvAnimelistOnHold.Rows.Add(anime.url, ++_onHoldCount, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
-                                                break;
-                                            }
-                                        case 4:
-                                            {
-                                                dgvAnimelistDropped.Rows.Add(anime.url, ++_droppedCount, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
-                                                break;
-                                            }
-                                        case 6:
-                                            {
-                                                dgvAnimelistPlanToWatch.Rows.Add(anime.url, ++_ptwCount, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
-                                                break;
-                                            }
-                                    }
-                                }
-                            }
-
-                            // Resizing the data grid view to match their rows.
-                            if (dgvAnimelistWatching.Rows.Count > 0)
-                            {
-                                int _height = (dgvAnimelistWatching.Rows.Count + 1) * dgvAnimelistWatching.Rows[0].Height;
-
-                                dgvAnimelistWatching.Height = _height;
-                                pAnimelistWatching.Height = _height + 60;
-                            }
-
-                            if (dgvAnimelistCompleted.Rows.Count > 0)
-                            {
-                                int _height = (dgvAnimelistCompleted.Rows.Count + 1) * dgvAnimelistCompleted.Rows[0].Height;
-
-                                dgvAnimelistCompleted.Height = _height;
-                                pAnimelistCompleted.Height = _height + 60;
-                            }
-
-                            if (dgvAnimelistOnHold.Rows.Count > 0)
-                            {
-                                int _height = (dgvAnimelistOnHold.Rows.Count + 1) * dgvAnimelistOnHold.Rows[0].Height;
-
-                                dgvAnimelistOnHold.Height = _height;
-                                pAnimelistOnHold.Height = _height + 60;
-                            }
-
-                            if (dgvAnimelistDropped.Rows.Count > 0)
-                            {
-                                int _height = (dgvAnimelistDropped.Rows.Count + 1) * dgvAnimelistDropped.Rows[0].Height;
-
-                                dgvAnimelistDropped.Height = _height;
-                                pAnimelistDropped.Height = _height + 60;
-                            }
-
-                            if (dgvAnimelistPlanToWatch.Rows.Count > 0)
-                            {
-                                int _height = (dgvAnimelistPlanToWatch.Rows.Count + 1) * dgvAnimelistPlanToWatch.Rows[0].Height;
-
-                                dgvAnimelistPlanToWatch.Height = _height;
-                                pAnimelistPlanToWatch.Height = _height + 60;
-                            }
-
-                            // Affecting the lists' count.
-                            lvAnimelistWatching.Text = user.anime_stats.watching.ToString();
-                            lvAnimelistCompleted.Text = user.anime_stats.completed.ToString();
-                            lvAnimelistOnHold.Text = user.anime_stats.on_hold.ToString();
-                            lvAnimelistDropped.Text = user.anime_stats.dropped.ToString();
-                            lvAnimelistPlanToWatch.Text = user.anime_stats.plan_to_watch.ToString();
-
-                            this._loaded++;
-                            LoadingUI(false);
+                            ((UcEntryList)flpAnimelistMain.Controls[4]).UpdateList(animeList.Where(a => a.watching_status == 1).ToList());
+                            ((UcEntryList)flpAnimelistMain.Controls[3]).UpdateList(animeList.Where(a => a.watching_status == 2).ToList());
+                            ((UcEntryList)flpAnimelistMain.Controls[2]).UpdateList(animeList.Where(a => a.watching_status == 3).ToList());
+                            ((UcEntryList)flpAnimelistMain.Controls[1]).UpdateList(animeList.Where(a => a.watching_status == 4).ToList());
+                            ((UcEntryList)flpAnimelistMain.Controls[0]).UpdateList(animeList.Where(a => a.watching_status == 6).ToList());
                         });
                     }
                     else
                     {
-                        int
-                            _watchingCount = 0,
-                            _completedCount = 0,
-                            _onHoldCount = 0,
-                            _droppedCount = 0,
-                            _ptwCount = 0;
-
-                        // Clearing the datagridviews' rows.
-                        dgvAnimelistWatching.Rows.Clear();
-                        dgvAnimelistCompleted.Rows.Clear();
-                        dgvAnimelistOnHold.Rows.Clear();
-                        dgvAnimelistDropped.Rows.Clear();
-                        dgvAnimelistPlanToWatch.Rows.Clear();
-
-                        if (animeList != null && animeList.Count > 0)
-                        {
-                            foreach (AnimelistEntryModel anime in animeList)
-                            {
-                                switch (anime.watching_status)
-                                {
-                                    case 1:
-                                        {
-                                            dgvAnimelistWatching.Rows.Add(anime.url, ++_watchingCount, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
-                                            break;
-                                        }
-                                    case 2:
-                                        {
-                                            dgvAnimelistCompleted.Rows.Add(anime.url, ++_completedCount, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
-                                            break;
-                                        }
-                                    case 3:
-                                        {
-                                            dgvAnimelistOnHold.Rows.Add(anime.url, ++_onHoldCount, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
-                                            break;
-                                        }
-                                    case 4:
-                                        {
-                                            dgvAnimelistDropped.Rows.Add(anime.url, ++_droppedCount, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
-                                            break;
-                                        }
-                                    case 6:
-                                        {
-                                            dgvAnimelistPlanToWatch.Rows.Add(anime.url, ++_ptwCount, null, anime.title, $"{ anime.watched_episodes }/{ (anime.total_episodes == 0 ? "?" : anime.total_episodes.ToString()) }", anime.score, anime.type);
-                                            break;
-                                        }
-                                }
-                            }
-                        }
-
-                        // Resizing the data grid view to match their rows.
-                        if (dgvAnimelistWatching.Rows.Count > 0)
-                        {
-                            int _height = (dgvAnimelistWatching.Rows.Count + 1) * dgvAnimelistWatching.Rows[0].Height;
-
-                            dgvAnimelistWatching.Height = _height;
-                            pAnimelistWatching.Height = _height + 60;
-                        }
-
-                        if (dgvAnimelistCompleted.Rows.Count > 0)
-                        {
-                            int _height = (dgvAnimelistCompleted.Rows.Count + 1) * dgvAnimelistCompleted.Rows[0].Height;
-
-                            dgvAnimelistCompleted.Height = _height;
-                            pAnimelistCompleted.Height = _height + 60;
-                        }
-
-                        if (dgvAnimelistOnHold.Rows.Count > 0)
-                        {
-                            int _height = (dgvAnimelistOnHold.Rows.Count + 1) * dgvAnimelistOnHold.Rows[0].Height;
-
-                            dgvAnimelistOnHold.Height = _height;
-                            pAnimelistOnHold.Height = _height + 60;
-                        }
-
-                        if (dgvAnimelistDropped.Rows.Count > 0)
-                        {
-                            int _height = (dgvAnimelistDropped.Rows.Count + 1) * dgvAnimelistDropped.Rows[0].Height;
-
-                            dgvAnimelistDropped.Height = _height;
-                            pAnimelistDropped.Height = _height + 60;
-                        }
-
-                        if (dgvAnimelistPlanToWatch.Rows.Count > 0)
-                        {
-                            int _height = (dgvAnimelistPlanToWatch.Rows.Count + 1) * dgvAnimelistPlanToWatch.Rows[0].Height;
-
-                            dgvAnimelistPlanToWatch.Height = _height;
-                            pAnimelistPlanToWatch.Height = _height + 60;
-                        }
-
-                        // Affecting the lists' count.
-                        lvAnimelistWatching.Text = user.anime_stats.watching.ToString();
-                        lvAnimelistCompleted.Text = user.anime_stats.completed.ToString();
-                        lvAnimelistOnHold.Text = user.anime_stats.on_hold.ToString();
-                        lvAnimelistDropped.Text = user.anime_stats.dropped.ToString();
-                        lvAnimelistPlanToWatch.Text = user.anime_stats.plan_to_watch.ToString();
-
-                        this._loaded++;
-                        LoadingUI(false);
+                        ((UcEntryList)flpAnimelistMain.Controls[4]).UpdateList(animeList.Where(a => a.watching_status == 1).ToList());
+                        ((UcEntryList)flpAnimelistMain.Controls[3]).UpdateList(animeList.Where(a => a.watching_status == 2).ToList());
+                        ((UcEntryList)flpAnimelistMain.Controls[2]).UpdateList(animeList.Where(a => a.watching_status == 3).ToList());
+                        ((UcEntryList)flpAnimelistMain.Controls[1]).UpdateList(animeList.Where(a => a.watching_status == 4).ToList());
+                        ((UcEntryList)flpAnimelistMain.Controls[0]).UpdateList(animeList.Where(a => a.watching_status == 6).ToList());
                     }
                 });
             }
@@ -517,39 +324,52 @@ namespace MAL_Reviwer_UI.forms
                 {
                     tcDashboard.Invoke((MethodInvoker)delegate
                     {
-                        // Clearing the datagridviews' rows.
-                        dgvAnimelistWatching.Rows.Clear();
-                        dgvAnimelistCompleted.Rows.Clear();
-                        dgvAnimelistOnHold.Rows.Clear();
-                        dgvAnimelistDropped.Rows.Clear();
-                        dgvAnimelistPlanToWatch.Rows.Clear();
-
-                        lvAnimelistWatching.Text = "0";
-                        lvAnimelistCompleted.Text = "0";
-                        lvAnimelistOnHold.Text = "0";
-                        lvAnimelistDropped.Text = "0";
-                        lvAnimelistPlanToWatch.Text = "0";
+                        foreach (UcEntryList entryList in flpAnimelistMain.Controls)
+                            entryList.ClearList();
                     });
                 }
                 else
                 {
-                    // Clearing the datagridviews' rows.
-                    dgvAnimelistWatching.Rows.Clear();
-                    dgvAnimelistCompleted.Rows.Clear();
-                    dgvAnimelistOnHold.Rows.Clear();
-                    dgvAnimelistDropped.Rows.Clear();
-
-                    dgvAnimelistPlanToWatch.Rows.Clear();
-                    lvAnimelistWatching.Text = "0";
-                    lvAnimelistCompleted.Text = "0";
-                    lvAnimelistOnHold.Text = "0";
-                    lvAnimelistDropped.Text = "0";
-                    lvAnimelistPlanToWatch.Text = "0";
+                    foreach (UcEntryList entryList in flpAnimelistMain.Controls)
+                        entryList.ClearList();
                 }
-
-                this._loaded++;
-                LoadingUI(false);
             }
+
+            this._loaded++;
+            LoadingUI(false);
+        }
+
+        /// <summary>
+        /// Creates all the manga/anime lists.
+        /// </summary>
+        private void CreateLists()
+        {
+            UcEntryList watchingList = new UcEntryList("Watching")
+            {
+                //Dock = DockStyle.Top
+            };
+
+            UcEntryList completedList = new UcEntryList("Completed")
+            {
+                //Dock = DockStyle.Top
+            };
+
+            UcEntryList onHoldList = new UcEntryList("On Hold")
+            {
+                //Dock = DockStyle.Top
+            };
+
+            UcEntryList droppedList = new UcEntryList("Dropped")
+            {
+                //Dock = DockStyle.Top
+            };
+
+            UcEntryList plantToWatchList = new UcEntryList("Plan to Watch")
+            {
+                //Dock = DockStyle.Top
+            };
+
+            flpAnimelistMain.Controls.AddRange(new UcEntryList[] { plantToWatchList, droppedList, onHoldList, completedList, watchingList});
         }
 
         /// <summary>
@@ -559,7 +379,7 @@ namespace MAL_Reviwer_UI.forms
         private void LoadingUI(bool mode = true)
         {
             pDashBoardMain.VerticalScroll.Value = 0;
-            tlpAnimelistMain.VerticalScroll.Value = 0;
+            flpAnimelistMain.VerticalScroll.Value = 0;
 
             if (mode)
             {
