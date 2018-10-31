@@ -48,7 +48,19 @@ namespace MAL_Reviwer_UI.user_controls
         /// <summary>
         /// Resizes the control to fit the displayed data.
         /// </summary>
-        private void ResizeList() => Height = (byte)dgvList.Top + dgvList.Rows.GetRowsHeight(DataGridViewElementStates.Visible) + dgvList.ColumnHeadersHeight;
+        private void ResizeList()
+        {
+            if (dgvList.Rows.Count < 50)
+                Height = dgvList.Top + dgvList.Rows.GetRowsHeight(DataGridViewElementStates.Visible) + lType.Top;
+            else
+                Height = dgvList.Top + 1500 + lType.Top;
+
+            System.Console.WriteLine($"{lType.Text}:");
+            System.Console.WriteLine($"dgv height: {dgvList.Height}");
+            System.Console.WriteLine($"Accumelated rows height: {dgvList.Rows.GetRowsHeight(DataGridViewElementStates.Visible)}");
+            System.Console.WriteLine($"List height: {Height}");
+            System.Console.WriteLine("--------------------------------\n");
+        }
 
         private void DgvList_CellClick(object sender, DataGridViewCellEventArgs e)
         {

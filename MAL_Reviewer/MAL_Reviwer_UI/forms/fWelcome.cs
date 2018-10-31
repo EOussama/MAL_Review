@@ -344,32 +344,13 @@ namespace MAL_Reviwer_UI.forms
         /// </summary>
         private void CreateLists()
         {
-            UcEntryList watchingList = new UcEntryList("Watching")
-            {
-                //Dock = DockStyle.Top
-            };
-
-            UcEntryList completedList = new UcEntryList("Completed")
-            {
-                //Dock = DockStyle.Top
-            };
-
-            UcEntryList onHoldList = new UcEntryList("On Hold")
-            {
-                //Dock = DockStyle.Top
-            };
-
-            UcEntryList droppedList = new UcEntryList("Dropped")
-            {
-                //Dock = DockStyle.Top
-            };
-
-            UcEntryList plantToWatchList = new UcEntryList("Plan to Watch")
-            {
-                //Dock = DockStyle.Top
-            };
-
-            flpAnimelistMain.Controls.AddRange(new UcEntryList[] { plantToWatchList, droppedList, onHoldList, completedList, watchingList});
+            flpAnimelistMain.Controls.AddRange(new UcEntryList[] {
+                new UcEntryList("Plan to Watch"),
+                new UcEntryList("Dropped"),
+                new UcEntryList("On Hold"),
+                new UcEntryList("Completed"),
+                new UcEntryList("Watching")
+            });
         }
 
         /// <summary>
