@@ -363,6 +363,8 @@ namespace MAL_Reviwer_UI.forms
 
         private void ResizeTable()
         {
+            tlpAnimelistMain.RowStyles[0].Height = 0;
+
             for (int i = 0; i < tlpAnimelistMain.RowCount; i++)
                 tlpAnimelistMain.RowStyles[i].Height = ((UcEntryList)tlpAnimelistMain.Controls[i]).ListHeight;
         }

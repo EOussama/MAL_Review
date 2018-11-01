@@ -55,6 +55,7 @@ namespace MAL_Reviwer_UI.user_controls
         private void ResizeList()
         {
             const short _fixedHeight = 1500;
+            Height = 198;
 
             if (dgvList.Rows.Count == 0)
                 listHeight = dgvList.Top + dgvList.Rows.GetRowsHeight(DataGridViewElementStates.Visible) + lType.Top;
