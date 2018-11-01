@@ -71,7 +71,7 @@ namespace MAL_Reviwer_UI.user_controls
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 dgvList.Rows[e.RowIndex].Selected = true;
-                System.Diagnostics.Process.Start(dgvList.Rows[e.ColumnIndex].Tag.ToString());
+                System.Diagnostics.Process.Start(dgvList.Rows[e.RowIndex].Tag.ToString());
             }
         }
     }
