@@ -6,6 +6,10 @@ namespace MAL_Reviwer_UI.user_controls
 {
     public partial class UcEntryList : UserControl
     {
+        private int listHeight = 0;
+
+        public int ListHeight { get => listHeight; }
+
         public UcEntryList(string type)
         {
             InitializeComponent();
@@ -50,10 +54,16 @@ namespace MAL_Reviwer_UI.user_controls
         /// </summary>
         private void ResizeList()
         {
-            if (dgvList.Rows.Count < 50)
-                Height = dgvList.Top + dgvList.Rows.GetRowsHeight(DataGridViewElementStates.Visible) + lType.Top;
+            const short _fixedHeight = 1500;
+
+            if (dgvList.Rows.Count == 0)
+                listHeight = dgvList.Top + dgvList.Rows.GetRowsHeight(DataGridViewElementStates.Visible) + lType.Top;
+            else if (dgvList.Rows.Count < 50)
+                listHeight = dgvList.Top + dgvList.Rows.GetRowsHeight(DataGridViewElementStates.Visible) + dgvList.ColumnHeadersHeight + lType.Top * 3;
             else
-                Height = dgvList.Top + 1500 + lType.Top;
+                listHeight = dgvList.Top + _fixedHeight + dgvList.ColumnHeadersHeight + lType.Top * 3;
+
+            Height = ListHeight;
         }
 
         private void DgvList_CellClick(object sender, DataGridViewCellEventArgs e)

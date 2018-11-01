@@ -301,20 +301,24 @@ namespace MAL_Reviwer_UI.forms
                     {
                         tcDashboard.Invoke((MethodInvoker)delegate
                         {
-                            ((UcEntryList)flpAnimelistMain.Controls[4]).UpdateList(animeList.Where(a => a.watching_status == 1).ToList());
-                            ((UcEntryList)flpAnimelistMain.Controls[3]).UpdateList(animeList.Where(a => a.watching_status == 2).ToList());
-                            ((UcEntryList)flpAnimelistMain.Controls[2]).UpdateList(animeList.Where(a => a.watching_status == 3).ToList());
-                            ((UcEntryList)flpAnimelistMain.Controls[1]).UpdateList(animeList.Where(a => a.watching_status == 4).ToList());
-                            ((UcEntryList)flpAnimelistMain.Controls[0]).UpdateList(animeList.Where(a => a.watching_status == 6).ToList());
+                            ((UcEntryList)tlpAnimelistMain.Controls[0]).UpdateList(animeList.Where(a => a.watching_status == 1).ToList());
+                            ((UcEntryList)tlpAnimelistMain.Controls[1]).UpdateList(animeList.Where(a => a.watching_status == 2).ToList());
+                            ((UcEntryList)tlpAnimelistMain.Controls[2]).UpdateList(animeList.Where(a => a.watching_status == 3).ToList());
+                            ((UcEntryList)tlpAnimelistMain.Controls[3]).UpdateList(animeList.Where(a => a.watching_status == 4).ToList());
+                            ((UcEntryList)tlpAnimelistMain.Controls[4]).UpdateList(animeList.Where(a => a.watching_status == 6).ToList());
+
+                            ResizeTable();
                         });
                     }
                     else
                     {
-                        ((UcEntryList)flpAnimelistMain.Controls[4]).UpdateList(animeList.Where(a => a.watching_status == 1).ToList());
-                        ((UcEntryList)flpAnimelistMain.Controls[3]).UpdateList(animeList.Where(a => a.watching_status == 2).ToList());
-                        ((UcEntryList)flpAnimelistMain.Controls[2]).UpdateList(animeList.Where(a => a.watching_status == 3).ToList());
-                        ((UcEntryList)flpAnimelistMain.Controls[1]).UpdateList(animeList.Where(a => a.watching_status == 4).ToList());
-                        ((UcEntryList)flpAnimelistMain.Controls[0]).UpdateList(animeList.Where(a => a.watching_status == 6).ToList());
+                        ((UcEntryList)tlpAnimelistMain.Controls[0]).UpdateList(animeList.Where(a => a.watching_status == 1).ToList());
+                        ((UcEntryList)tlpAnimelistMain.Controls[1]).UpdateList(animeList.Where(a => a.watching_status == 2).ToList());
+                        ((UcEntryList)tlpAnimelistMain.Controls[2]).UpdateList(animeList.Where(a => a.watching_status == 3).ToList());
+                        ((UcEntryList)tlpAnimelistMain.Controls[3]).UpdateList(animeList.Where(a => a.watching_status == 4).ToList());
+                        ((UcEntryList)tlpAnimelistMain.Controls[4]).UpdateList(animeList.Where(a => a.watching_status == 6).ToList());
+
+                        ResizeTable();
                     }
                 });
             }
@@ -324,14 +328,18 @@ namespace MAL_Reviwer_UI.forms
                 {
                     tcDashboard.Invoke((MethodInvoker)delegate
                     {
-                        foreach (UcEntryList entryList in flpAnimelistMain.Controls)
+                        foreach (UcEntryList entryList in tlpAnimelistMain.Controls)
                             entryList.ClearList();
+
+                        ResizeTable();
                     });
                 }
                 else
                 {
-                    foreach (UcEntryList entryList in flpAnimelistMain.Controls)
+                    foreach (UcEntryList entryList in tlpAnimelistMain.Controls)
                         entryList.ClearList();
+
+                    ResizeTable();
                 }
             }
 
@@ -344,13 +352,19 @@ namespace MAL_Reviwer_UI.forms
         /// </summary>
         private void CreateLists()
         {
-            flpAnimelistMain.Controls.AddRange(new UcEntryList[] {
-                new UcEntryList("Plan to Watch"),
-                new UcEntryList("Dropped"),
-                new UcEntryList("On Hold"),
-                new UcEntryList("Completed"),
-                new UcEntryList("Watching")
+            tlpAnimelistMain.Controls.AddRange(new UcEntryList[] {
+                new UcEntryList("Watching") { Dock = DockStyle.Fill },
+                new UcEntryList("Completed") { Dock = DockStyle.Fill },
+                new UcEntryList("On Hold") { Dock = DockStyle.Fill },
+                new UcEntryList("Dropped") { Dock = DockStyle.Fill },
+                new UcEntryList("Plan to Watch") { Dock = DockStyle.Fill }
             });
+        }
+
+        private void ResizeTable()
+        {
+            for (int i = 0; i < tlpAnimelistMain.RowCount; i++)
+                tlpAnimelistMain.RowStyles[i].Height = ((UcEntryList)tlpAnimelistMain.Controls[i]).ListHeight;
         }
 
         /// <summary>
@@ -360,7 +374,7 @@ namespace MAL_Reviwer_UI.forms
         private void LoadingUI(bool mode = true)
         {
             pDashBoardMain.VerticalScroll.Value = 0;
-            flpAnimelistMain.VerticalScroll.Value = 0;
+            tlpAnimelistMain.VerticalScroll.Value = 0;
 
             if (mode)
             {
