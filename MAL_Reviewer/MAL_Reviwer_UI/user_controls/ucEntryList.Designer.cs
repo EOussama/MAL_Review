@@ -36,6 +36,7 @@
             this.cEntry = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cProgress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cVolumes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cScore = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
@@ -86,6 +87,7 @@
             this.cEntry,
             this.cTitle,
             this.cProgress,
+            this.cVolumes,
             this.cScore,
             this.cType});
             this.dgvList.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -132,6 +134,13 @@
             this.cProgress.Name = "cProgress";
             this.cProgress.ReadOnly = true;
             // 
+            // cVolumes
+            // 
+            this.cVolumes.HeaderText = "Volumes";
+            this.cVolumes.Name = "cVolumes";
+            this.cVolumes.ReadOnly = true;
+            this.cVolumes.Visible = false;
+            // 
             // cScore
             // 
             this.cScore.FillWeight = 63.40329F;
@@ -167,11 +176,12 @@
 
         private System.Windows.Forms.Label lCount;
         private System.Windows.Forms.Label lType;
+        private System.Windows.Forms.DataGridView dgvList;
         private System.Windows.Forms.DataGridViewTextBoxColumn cEntry;
         private System.Windows.Forms.DataGridViewTextBoxColumn cTitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn cProgress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cVolumes;
         private System.Windows.Forms.DataGridViewTextBoxColumn cScore;
         private System.Windows.Forms.DataGridViewTextBoxColumn cType;
-        private System.Windows.Forms.DataGridView dgvList;
     }
 }

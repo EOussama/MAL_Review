@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
+using MAL_Reviewer_API;
 using MAL_Reviewer_API.models.ListEntryModel;
 
 namespace MAL_Reviwer_UI.user_controls
@@ -14,17 +15,23 @@ namespace MAL_Reviwer_UI.user_controls
 
         public int ListHeight { get => listHeight; }
 
-        public UcEntryList(string type)
+        public UcEntryList(string label, EntryType type)
         {
             InitializeComponent();
           
             // Affecting values for the lables.
-            lType.Text = type;
-            lCount.Text = "0";            
+            lType.Text = label;
+            lCount.Text = "0";
+
+            if (type == EntryType.Manga)
+            {
+                dgvList.Columns["cProgress"].HeaderText = "Chapters";
+                dgvList.Columns["cVolumes"].Visible = true;
+            }
         }
 
         /// <summary>
-        /// Populates the list with data.
+        /// Populates the list with anime data.
         /// </summary>
         /// <param name="animeList"></param>
         public void UpdateList(List<AnimelistEntryModel> animeList)
@@ -36,7 +43,27 @@ namespace MAL_Reviwer_UI.user_controls
 
             // Populating the DataDridView.
             animeList.ForEach(a => {
-                dgvList.Rows.Add(_index + 1, a.title, $"{ a.watched_episodes }/ { (a.total_episodes == 0 ? "?" : a.total_episodes.ToString()) }", a.score, a.type);
+                dgvList.Rows.Add(_index + 1, a.title, $"{ a.watched_episodes }/ { (a.total_episodes == 0 ? "?" : a.total_episodes.ToString()) }", "", a.score, a.type);
+                dgvList.Rows[_index++].Tag = a.url;
+            });
+
+            ResizeList();
+        }
+
+        /// <summary>
+        /// Populates the list with manga data.
+        /// </summary>
+        /// <param name="animeList"></param>
+        public void UpdateList(List<MangalistEntryModel> mangaList)
+        {
+            short _index = 0;
+
+            dgvList.Rows.Clear();
+            lCount.Text = mangaList.Count.ToString();
+
+            // Populating the DataDridView.
+            mangaList.ForEach(a => {
+                dgvList.Rows.Add(_index + 1, a.title, $"{ a.read_chapters }/ { (a.total_chapters == 0 ? "?" : a.total_chapters.ToString()) }", $"{ a.read_volumes }/ { (a.total_volumes == 0 ? "?" : a.total_volumes.ToString()) }", a.score, a.type);
                 dgvList.Rows[_index++].Tag = a.url;
             });
 

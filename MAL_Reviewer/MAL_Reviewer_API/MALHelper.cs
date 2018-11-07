@@ -8,6 +8,12 @@ using MAL_Reviewer_API.models.ListEntryModel;
 
 namespace MAL_Reviewer_API
 {
+    public enum EntryType
+    {
+        Anime,
+        Manga
+    }
+
     public static class MALHelper
     {
         private static HttpClient client;
