@@ -7,6 +7,7 @@ using MAL_Reviwer_UI.user_controls;
 using MAL_Reviewer_API;
 using MAL_Reviewer_API.models;
 using MAL_Reviewer_API.models.ListEntryModel;
+using System.Threading;
 
 namespace MAL_Reviwer_UI.forms
 {
@@ -301,6 +302,8 @@ namespace MAL_Reviwer_UI.forms
                     {
                         tcDashboard.Invoke((MethodInvoker)delegate
                         {
+                            RefreshLists();
+
                             ((UcEntryList)tlpAnimelistMain.Controls[0]).UpdateList(animeList.Where(a => a.watching_status == 1).ToList());
                             ((UcEntryList)tlpAnimelistMain.Controls[1]).UpdateList(animeList.Where(a => a.watching_status == 2).ToList());
                             ((UcEntryList)tlpAnimelistMain.Controls[2]).UpdateList(animeList.Where(a => a.watching_status == 3).ToList());
@@ -312,6 +315,8 @@ namespace MAL_Reviwer_UI.forms
                     }
                     else
                     {
+                        RefreshLists();
+
                         ((UcEntryList)tlpAnimelistMain.Controls[0]).UpdateList(animeList.Where(a => a.watching_status == 1).ToList());
                         ((UcEntryList)tlpAnimelistMain.Controls[1]).UpdateList(animeList.Where(a => a.watching_status == 2).ToList());
                         ((UcEntryList)tlpAnimelistMain.Controls[2]).UpdateList(animeList.Where(a => a.watching_status == 3).ToList());
@@ -328,6 +333,8 @@ namespace MAL_Reviwer_UI.forms
                 {
                     tcDashboard.Invoke((MethodInvoker)delegate
                     {
+                        RefreshLists();
+
                         foreach (UcEntryList entryList in tlpAnimelistMain.Controls)
                             entryList.ClearList();
 
@@ -336,6 +343,8 @@ namespace MAL_Reviwer_UI.forms
                 }
                 else
                 {
+                    RefreshLists();
+
                     foreach (UcEntryList entryList in tlpAnimelistMain.Controls)
                         entryList.ClearList();
 
@@ -361,24 +370,45 @@ namespace MAL_Reviwer_UI.forms
             });
         }
 
+        /// <summary>
+        /// Refreshes the lists' UI.
+        /// </summary>
+        private void RefreshLists()
+        {
+            this.tlpAnimelistMain.AutoScroll = false;
+
+            tlpAnimelistMain.Controls.Clear();
+            tlpAnimelistMain.RowStyles.Clear();
+
+            this.tlpAnimelistMain.RowCount = 6;
+            this.tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
+            this.tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
+            this.tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
+            this.tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
+            this.tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
+            this.tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
+
+            this.tlpAnimelistMain.AutoScroll = true;
+
+            CreateLists();
+        }
+
+        /// <summary>
+        /// Resizes the table to fit the content.
+        /// </summary>
         private void ResizeTable()
         {
-            /*tlpAnimelistMain.RowStyles.Clear();
-
-            tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
-            tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
-            tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
-            tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
-            tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));*/
-
-            for (int i = 0; i < tlpAnimelistMain.RowCount - 1; i++)
+            for (int i = 0; i < tlpAnimelistMain.RowCount; i++)
             {
-                tlpAnimelistMain.RowStyles[i] = new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, ((UcEntryList)tlpAnimelistMain.Controls[i]).ListHeight/* + ((UcEntryList)tlpAnimelistMain.Controls[i]).Padding.Bottom*/);
+                if (i != 5)
+                {
+                    tlpAnimelistMain.RowStyles[i] = new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, ((UcEntryList)tlpAnimelistMain.Controls[i]).ListHeight);
+                }
+                else
+                {
+                    tlpAnimelistMain.RowStyles[i] = new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F);
+                }
             }
-
-            Console.WriteLine("test---");
-            Console.WriteLine(tlpAnimelistMain.Controls[0].Height);
-            Console.WriteLine(tlpAnimelistMain.RowStyles[0].Height);
         }
 
         /// <summary>
