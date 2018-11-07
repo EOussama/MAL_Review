@@ -38,7 +38,9 @@ namespace MAL_Reviwer_UI.forms
             pChildCharacters.AutoScroll = true;
             pChildPeople.AutoScroll = true;
 
-            CreateLists();
+            CreateLists(EntryType.Anime);
+            CreateLists(EntryType.Manga);
+
             MALHelper.Init();
         }
 
@@ -291,7 +293,7 @@ namespace MAL_Reviwer_UI.forms
                     {
                         tcDashboard.Invoke((MethodInvoker)delegate
                         {
-                            RefreshLists();
+                            RefreshLists(EntryType.Anime);
 
                             ((UcEntryList)tlpAnimelistMain.Controls[0]).UpdateList(animeList.Where(a => a.watching_status == 1).ToList());
                             ((UcEntryList)tlpAnimelistMain.Controls[1]).UpdateList(animeList.Where(a => a.watching_status == 2).ToList());
@@ -299,12 +301,12 @@ namespace MAL_Reviwer_UI.forms
                             ((UcEntryList)tlpAnimelistMain.Controls[3]).UpdateList(animeList.Where(a => a.watching_status == 4).ToList());
                             ((UcEntryList)tlpAnimelistMain.Controls[4]).UpdateList(animeList.Where(a => a.watching_status == 6).ToList());
 
-                            ResizeTable();
+                            ResizeTable(EntryType.Anime);
                         });
                     }
                     else
                     {
-                        RefreshLists();
+                        RefreshLists(EntryType.Anime);
 
                         ((UcEntryList)tlpAnimelistMain.Controls[0]).UpdateList(animeList.Where(a => a.watching_status == 1).ToList());
                         ((UcEntryList)tlpAnimelistMain.Controls[1]).UpdateList(animeList.Where(a => a.watching_status == 2).ToList());
@@ -312,7 +314,7 @@ namespace MAL_Reviwer_UI.forms
                         ((UcEntryList)tlpAnimelistMain.Controls[3]).UpdateList(animeList.Where(a => a.watching_status == 4).ToList());
                         ((UcEntryList)tlpAnimelistMain.Controls[4]).UpdateList(animeList.Where(a => a.watching_status == 6).ToList());
 
-                        ResizeTable();
+                        ResizeTable(EntryType.Anime);
                     }
                 });
             }
@@ -322,22 +324,22 @@ namespace MAL_Reviwer_UI.forms
                 {
                     tcDashboard.Invoke((MethodInvoker)delegate
                     {
-                        RefreshLists();
+                        RefreshLists(EntryType.Anime);
 
                         foreach (UcEntryList entryList in tlpAnimelistMain.Controls)
                             entryList.ClearList();
 
-                        ResizeTable();
+                        ResizeTable(EntryType.Anime);
                     });
                 }
                 else
                 {
-                    RefreshLists();
+                    RefreshLists(EntryType.Anime);
 
                     foreach (UcEntryList entryList in tlpAnimelistMain.Controls)
                         entryList.ClearList();
 
-                    ResizeTable();
+                    ResizeTable(EntryType.Anime);
                 }
             }
 
@@ -361,7 +363,7 @@ namespace MAL_Reviwer_UI.forms
                     {
                         tcDashboard.Invoke((MethodInvoker)delegate
                         {
-                            RefreshLists();
+                            RefreshLists(EntryType.Manga);
 
                             ((UcEntryList)tlpMangalistMain.Controls[0]).UpdateList(mangaList.Where(a => a.reading_status == 1).ToList());
                             ((UcEntryList)tlpMangalistMain.Controls[1]).UpdateList(mangaList.Where(a => a.reading_status == 2).ToList());
@@ -369,12 +371,12 @@ namespace MAL_Reviwer_UI.forms
                             ((UcEntryList)tlpMangalistMain.Controls[3]).UpdateList(mangaList.Where(a => a.reading_status == 4).ToList());
                             ((UcEntryList)tlpMangalistMain.Controls[4]).UpdateList(mangaList.Where(a => a.reading_status == 6).ToList());
 
-                            ResizeTable();
+                            ResizeTable(EntryType.Manga);
                         });
                     }
                     else
                     {
-                        RefreshLists();
+                        RefreshLists(EntryType.Manga);
                     
                         ((UcEntryList)tlpMangalistMain.Controls[0]).UpdateList(mangaList.Where(a => a.reading_status == 1).ToList());
                         ((UcEntryList)tlpMangalistMain.Controls[1]).UpdateList(mangaList.Where(a => a.reading_status == 2).ToList());
@@ -382,7 +384,7 @@ namespace MAL_Reviwer_UI.forms
                         ((UcEntryList)tlpMangalistMain.Controls[3]).UpdateList(mangaList.Where(a => a.reading_status == 4).ToList());
                         ((UcEntryList)tlpMangalistMain.Controls[4]).UpdateList(mangaList.Where(a => a.reading_status == 6).ToList());
 
-                        ResizeTable();
+                        ResizeTable(EntryType.Manga);
                     }
                 });
             }
@@ -392,22 +394,22 @@ namespace MAL_Reviwer_UI.forms
                 {
                     tcDashboard.Invoke((MethodInvoker)delegate
                     {
-                        RefreshLists();
+                        RefreshLists(EntryType.Manga);
 
                         foreach (UcEntryList entryList in tlpMangalistMain.Controls)
                             entryList.ClearList();
 
-                        ResizeTable();
+                        ResizeTable(EntryType.Manga);
                     });
                 }
                 else
                 {
-                    RefreshLists();
+                    RefreshLists(EntryType.Manga);
 
                     foreach (UcEntryList entryList in tlpMangalistMain.Controls)
                         entryList.ClearList();
 
-                    ResizeTable();
+                    ResizeTable(EntryType.Manga);
                 }
             }
 
@@ -418,106 +420,113 @@ namespace MAL_Reviwer_UI.forms
         /// <summary>
         /// Creates all the manga/anime lists.
         /// </summary>
-        private void CreateLists()
+        private void CreateLists(EntryType type)
         {
-            tlpAnimelistMain.Controls.AddRange(new UcEntryList[] {
-                new UcEntryList("Watching", EntryType.Anime) { Dock = DockStyle.Fill },
-                new UcEntryList("Completed", EntryType.Anime) { Dock = DockStyle.Fill },
-                new UcEntryList("On Hold", EntryType.Anime) { Dock = DockStyle.Fill },
-                new UcEntryList("Dropped", EntryType.Anime) { Dock = DockStyle.Fill },
-                new UcEntryList("Plan to Watch", EntryType.Anime) { Dock = DockStyle.Fill }
-            });
-
-            tlpMangalistMain.Controls.AddRange(new UcEntryList[] {
+            if (type == EntryType.Anime)
+            {
+                tlpAnimelistMain.Controls.AddRange(new UcEntryList[] {
+                    new UcEntryList("Watching", EntryType.Anime) { Dock = DockStyle.Fill },
+                    new UcEntryList("Completed", EntryType.Anime) { Dock = DockStyle.Fill },
+                    new UcEntryList("On Hold", EntryType.Anime) { Dock = DockStyle.Fill },
+                    new UcEntryList("Dropped", EntryType.Anime) { Dock = DockStyle.Fill },
+                    new UcEntryList("Plan to Watch", EntryType.Anime) { Dock = DockStyle.Fill }
+                });
+            }
+            else
+            {
+                tlpMangalistMain.Controls.AddRange(new UcEntryList[] {
                 new UcEntryList("Reading", EntryType.Manga) { Dock = DockStyle.Fill },
                 new UcEntryList("Completed", EntryType.Manga) { Dock = DockStyle.Fill },
                 new UcEntryList("On Hold", EntryType.Manga) { Dock = DockStyle.Fill },
                 new UcEntryList("Dropped", EntryType.Manga) { Dock = DockStyle.Fill },
                 new UcEntryList("Plan to Read", EntryType.Manga) { Dock = DockStyle.Fill }
-            });
+                });
+            }
         }
 
         /// <summary>
         /// Refreshes the lists' UI.
         /// </summary>
-        private void RefreshLists()
+        private void RefreshLists(EntryType type)
         {
-            #region Animelist creation
+            if (type == EntryType.Anime)
+            {
+                #region Animelist creation
 
-            this.tlpAnimelistMain.AutoScroll = false;
+                this.tlpAnimelistMain.AutoScroll = false;
 
-            tlpAnimelistMain.Controls.Clear();
-            tlpAnimelistMain.RowStyles.Clear();
+                tlpAnimelistMain.Controls.Clear();
+                tlpAnimelistMain.RowStyles.Clear();
 
-            this.tlpAnimelistMain.RowCount = 6;
-            this.tlpAnimelistMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
-            this.tlpAnimelistMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
-            this.tlpAnimelistMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
-            this.tlpAnimelistMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
-            this.tlpAnimelistMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
-            this.tlpAnimelistMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
+                this.tlpAnimelistMain.RowCount = 6;
+                this.tlpAnimelistMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
+                this.tlpAnimelistMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
+                this.tlpAnimelistMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
+                this.tlpAnimelistMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
+                this.tlpAnimelistMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
+                this.tlpAnimelistMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
 
-            this.tlpAnimelistMain.AutoScroll = true;
+                this.tlpAnimelistMain.AutoScroll = true;
 
-            #endregion
+                #endregion
+            }
+            else
+            {
+                #region Mangalist creation
 
-            #region Animelist creation
+                this.tlpMangalistMain.AutoScroll = false;
 
-            this.tlpMangalistMain.AutoScroll = false;
+                tlpMangalistMain.Controls.Clear();
+                tlpMangalistMain.RowStyles.Clear();
 
-            tlpMangalistMain.Controls.Clear();
-            tlpMangalistMain.RowStyles.Clear();
+                this.tlpMangalistMain.RowCount = 6;
+                this.tlpMangalistMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
+                this.tlpMangalistMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
+                this.tlpMangalistMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
+                this.tlpMangalistMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
+                this.tlpMangalistMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
+                this.tlpMangalistMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
 
-            this.tlpMangalistMain.RowCount = 6;
-            this.tlpMangalistMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
-            this.tlpMangalistMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
-            this.tlpMangalistMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
-            this.tlpMangalistMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
-            this.tlpMangalistMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
-            this.tlpMangalistMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
+                this.tlpMangalistMain.AutoScroll = true;
 
-            this.tlpMangalistMain.AutoScroll = true;
+                #endregion
+            }
 
-            #endregion
-
-            CreateLists();
+            CreateLists(type);
         }
 
         /// <summary>
         /// Resizes the table to fit the content.
         /// </summary>
-        private void ResizeTable()
+        private void ResizeTable(EntryType type)
         {
-            float
-                _accAnimeHeight = 0,
-                _accMangaHeight = 0;
-
-            // Anime list table resize.
-            for (int i = 0; i < tlpAnimelistMain.RowCount; i++)
+            if (type == EntryType.Anime)
             {
-                if (i != 5)
+                for (int i = 0; i < tlpAnimelistMain.RowCount; i++)
                 {
-                    tlpAnimelistMain.RowStyles[i] = new  RowStyle(SizeType.Absolute, ((UcEntryList)tlpAnimelistMain.Controls[i]).ListHeight);
-                    _accAnimeHeight += tlpAnimelistMain.RowStyles[i].Height;
-                }
-                else
-                {
-                    tlpAnimelistMain.RowStyles[i] = new RowStyle(SizeType.Absolute, 0F);
+                    if (i != 5)
+                    {
+                        tlpAnimelistMain.RowStyles[i] = new RowStyle(SizeType.Absolute, ((UcEntryList)tlpAnimelistMain.Controls[i]).ListHeight);
+                    }
+                    else
+                    {
+                        tlpAnimelistMain.RowStyles[i] = new RowStyle(SizeType.Absolute, 0F);
+                    }
                 }
             }
-
-            //Manga list table resize.
-            for (int i = 0; i < tlpMangalistMain.RowCount; i++)
+            else
             {
-                if (i != 5)
+                for (int i = 0; i < tlpMangalistMain.RowCount; i++)
                 {
-                    tlpMangalistMain.RowStyles[i] = new RowStyle(SizeType.Absolute, ((UcEntryList)tlpMangalistMain.Controls[i]).ListHeight);
-                    _accMangaHeight += tlpMangalistMain.RowStyles[i].Height;
-                }
-                else
-                {
-                    tlpMangalistMain.RowStyles[i] = new RowStyle(SizeType.Absolute, 0F);
-                }
+                    if (i != 5)
+                    {
+                        tlpMangalistMain.RowStyles[i] = new RowStyle(SizeType.Absolute, ((UcEntryList)tlpMangalistMain.Controls[i]).ListHeight);
+                    }
+                    else
+                    {
+                        tlpMangalistMain.RowStyles[i] = new RowStyle(SizeType.Absolute, 0F);
+                    }
+                } 
             }
         }
 
