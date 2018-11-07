@@ -103,7 +103,6 @@ namespace MAL_Reviewer_API
             foreach (int i in System.Linq.Enumerable.Range(1, pages))
             {
                 string url = $"{ client.BaseAddress.AbsoluteUri }user/{ username }/animelist/all/{ i }";
-
                 HttpResponseMessage response = await client.GetAsync(url);
 
                 if (response.IsSuccessStatusCode)
@@ -116,6 +115,34 @@ namespace MAL_Reviewer_API
             }
 
             return animeList;
+        }
+
+        /// <summary>
+        /// Retrieves the given user's mangalist.
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="totalEntries"></param>
+        /// <returns></returns>
+        public async static Task<List<MangalistEntryModel>> GetMangaList(string username, int totalEntries)
+        {
+            int pages = (int)Math.Ceiling((decimal)totalEntries / 300);
+            List<MangalistEntryModel> mangaList = new List<MangalistEntryModel>();
+
+            foreach (int i in System.Linq.Enumerable.Range(1, pages))
+            {
+                string url = $"{ client.BaseAddress.AbsoluteUri }user/{ username }/mangalist/all/{ i }";
+                HttpResponseMessage response = await client.GetAsync(url);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    MangalistEntryResultsModel results = await response.Content.ReadAsAsync <MangalistEntryResultsModel>();
+
+                    foreach (MangalistEntryModel manga in results.manga)
+                        mangaList.Add(manga);
+                }
+            }
+
+            return mangaList;
         }
     }
 }
