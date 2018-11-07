@@ -18,5 +18,6 @@ namespace MAL_Reviewer_API.models
         public MangaStatsModel manga_stats;
         public FavoritesModel favorites;
         public List<AnimelistEntryModel> animeList;
+        public List<MangalistEntryModel> mangaList;
     }
 }

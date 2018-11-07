@@ -52,6 +52,7 @@
     <Compile Include="models\ListEntryModel\AnimelistEntryResultsModel.cs" />
     <Compile Include="models\ListEntryModel\ListEntryModel.cs" />
     <Compile Include="models\ListEntryModel\MangalistEntryModel.cs" />
+    <Compile Include="models\ListEntryModel\MangalistEntryResultsModel.cs" />
     <Compile Include="models\TargetModel\AnimeModel.cs" />
     <Compile Include="models\UserModel\AnimeStatsModel.cs" />
     <Compile Include="models\UserModel\FavoritesModel.cs" />
