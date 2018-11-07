@@ -417,7 +417,7 @@ namespace MAL_Reviwer_UI.forms
         /// <param name="mode"></param>
         private void LoadingUI(bool mode = true)
         {
-            pDashBoardMain.VerticalScroll.Value = 0;
+            tlpDashboardMain.VerticalScroll.Value = 0;
             tlpAnimelistMain.VerticalScroll.Value = 0;
 
             if (mode)
@@ -426,7 +426,7 @@ namespace MAL_Reviwer_UI.forms
                 tcDashboard.TabPages.Remove(tpAnimelist);
                 tcDashboard.TabPages.Remove(tpMangalist);
 
-                pDashBoardMain.Visible = false;
+                tlpDashboardMain.Visible = false;
                 lMALAccPreview.Visible = false;
                 pbDashBoardLoad.Visible = true;
                 bUser.Enabled = false;
@@ -439,7 +439,7 @@ namespace MAL_Reviwer_UI.forms
                 bUser.Text = "Unload this MAL account";
                 pbDashBoardLoad.Visible = false;
                 lMALAccPreview.Visible = false;
-                pDashBoardMain.Visible = true;
+                tlpDashboardMain.Visible = true;
                 bUser.Enabled = true;
             }
         }
