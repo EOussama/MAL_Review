@@ -363,10 +363,22 @@ namespace MAL_Reviwer_UI.forms
 
         private void ResizeTable()
         {
-            tlpAnimelistMain.RowStyles[0].Height = 0;
+            /*tlpAnimelistMain.RowStyles.Clear();
 
-            for (int i = 0; i < tlpAnimelistMain.RowCount; i++)
-                tlpAnimelistMain.RowStyles[i].Height = ((UcEntryList)tlpAnimelistMain.Controls[i]).ListHeight;
+            tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
+            tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
+            tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
+            tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
+            tlpAnimelistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));*/
+
+            for (int i = 0; i < tlpAnimelistMain.RowCount - 1; i++)
+            {
+                tlpAnimelistMain.RowStyles[i] = new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, ((UcEntryList)tlpAnimelistMain.Controls[i]).ListHeight/* + ((UcEntryList)tlpAnimelistMain.Controls[i]).Padding.Bottom*/);
+            }
+
+            Console.WriteLine("test---");
+            Console.WriteLine(tlpAnimelistMain.Controls[0].Height);
+            Console.WriteLine(tlpAnimelistMain.RowStyles[0].Height);
         }
 
         /// <summary>

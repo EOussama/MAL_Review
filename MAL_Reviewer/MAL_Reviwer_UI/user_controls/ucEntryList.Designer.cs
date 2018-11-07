@@ -72,7 +72,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvList.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -107,7 +106,8 @@
             this.dgvList.RowHeadersVisible = false;
             this.dgvList.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvList.RowTemplate.Height = 30;
-            this.dgvList.Size = new System.Drawing.Size(454, 133);
+            this.dgvList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvList.Size = new System.Drawing.Size(454, 94);
             this.dgvList.TabIndex = 23;
             this.dgvList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvList_CellClick);
             // 
@@ -154,8 +154,9 @@
             this.Controls.Add(this.dgvList);
             this.Controls.Add(this.lCount);
             this.Controls.Add(this.lType);
+            this.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.Name = "UcEntryList";
-            this.Size = new System.Drawing.Size(491, 198);
+            this.Size = new System.Drawing.Size(491, 160);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

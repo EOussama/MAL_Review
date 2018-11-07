@@ -6,7 +6,11 @@ namespace MAL_Reviwer_UI.user_controls
 {
     public partial class UcEntryList : UserControl
     {
-        private int listHeight = 0;
+        private const short
+            fixedHeight = 1500,
+            fixedBottom = 23;
+
+        private int listHeight = 0;        
 
         public int ListHeight { get => listHeight; }
 
@@ -54,15 +58,21 @@ namespace MAL_Reviwer_UI.user_controls
         /// </summary>
         private void ResizeList()
         {
-            const short _fixedHeight = 1500;
             Height = 198;
 
+            System.Console.WriteLine(lType.Text);
+            System.Console.WriteLine($"dgvList.Top: {dgvList.Top}");
+            System.Console.WriteLine($"dgvList.Rows.GetRowsHeight(DataGridViewElementStates.None): {dgvList.Rows.GetRowsHeight(DataGridViewElementStates.None)}");
+            System.Console.WriteLine($"dgvList.ColumnHeadersHeight: {dgvList.ColumnHeadersHeight}");
+            System.Console.WriteLine($"lType.Top: {lType.Top}");
+            System.Console.WriteLine("-------------");
+
             if (dgvList.Rows.Count == 0)
-                listHeight = dgvList.Top + dgvList.Rows.GetRowsHeight(DataGridViewElementStates.Visible) + lType.Top;
+                listHeight = dgvList.Top + lType.Top;
             else if (dgvList.Rows.Count < 50)
-                listHeight = dgvList.Top + dgvList.Rows.GetRowsHeight(DataGridViewElementStates.Visible) + dgvList.ColumnHeadersHeight + lType.Top * 3;
+                listHeight = dgvList.Top + dgvList.ColumnHeadersHeight * 2 + dgvList.Rows.GetRowsHeight(DataGridViewElementStates.None) + fixedBottom;
             else
-                listHeight = dgvList.Top + _fixedHeight + dgvList.ColumnHeadersHeight + lType.Top * 3;
+                listHeight = dgvList.Top + dgvList.ColumnHeadersHeight * 2 + fixedHeight + fixedBottom;
 
             Height = ListHeight;
         }
