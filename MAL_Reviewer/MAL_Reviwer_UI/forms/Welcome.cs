@@ -118,6 +118,9 @@ namespace MAL_Reviwer_UI.forms
                     ttExtendedInfo.SetToolTip(lUserBirthday, user.birthday?.ToLongDateString());
                     ttExtendedInfo.SetToolTip(lUserLocation, user.location);
 
+                    ((Card)tlpAnimeMangaCards.Controls[0]).UpdateTooltip(user.username);
+                    ((Card)tlpAnimeMangaCards.Controls[1]).UpdateTooltip(user.username);
+
                     this.loaded++;
                     LoadingUI(false);
                 });
@@ -290,14 +293,31 @@ namespace MAL_Reviwer_UI.forms
         /// <returns></returns>
         private async Task AnimelistUpdateIU(List<AnimelistEntryModel> animeList, MALUserModel user)
         {
-            if (animeList != null && user.anime_stats.total_entries > 0)
+            if (animeList != null)
             {
-                await Task.Run(() =>
+                if (user.anime_stats.total_entries > 0)
                 {
-                    if (tcDashboard.InvokeRequired)
+                    await Task.Run(() =>
                     {
-                        tcDashboard.Invoke((MethodInvoker)delegate
+                        if (tcDashboard.InvokeRequired)
                         {
+                            tcDashboard.Invoke((MethodInvoker)delegate
+                            {
+                                ((Card)tlpAnimeMangaCards.Controls[0]).LabelText = "Public";
+                                RefreshLists(EntryType.Anime);
+
+                                ((EntryList)tlpAnimelistMain.Controls[0]).UpdateList(animeList.Where(a => a.watching_status == 1).ToList());
+                                ((EntryList)tlpAnimelistMain.Controls[1]).UpdateList(animeList.Where(a => a.watching_status == 2).ToList());
+                                ((EntryList)tlpAnimelistMain.Controls[2]).UpdateList(animeList.Where(a => a.watching_status == 3).ToList());
+                                ((EntryList)tlpAnimelistMain.Controls[3]).UpdateList(animeList.Where(a => a.watching_status == 4).ToList());
+                                ((EntryList)tlpAnimelistMain.Controls[4]).UpdateList(animeList.Where(a => a.watching_status == 6).ToList());
+
+                                ResizeTable(EntryType.Anime);
+                            });
+                        }
+                        else
+                        {
+                            ((Card)tlpAnimeMangaCards.Controls[0]).LabelText = "Public";
                             RefreshLists(EntryType.Anime);
 
                             ((EntryList)tlpAnimelistMain.Controls[0]).UpdateList(animeList.Where(a => a.watching_status == 1).ToList());
@@ -307,27 +327,24 @@ namespace MAL_Reviwer_UI.forms
                             ((EntryList)tlpAnimelistMain.Controls[4]).UpdateList(animeList.Where(a => a.watching_status == 6).ToList());
 
                             ResizeTable(EntryType.Anime);
+                        }
+                    });
+                }
+                else
+                {
+                    if (tcDashboard.InvokeRequired)
+                    {
+                        tcDashboard.Invoke((MethodInvoker)delegate
+                        {
+                            RefreshLists(EntryType.Anime);
+
+                            foreach (EntryList entryList in tlpAnimelistMain.Controls)
+                                entryList.ClearList();
+
+                            ResizeTable(EntryType.Anime);
                         });
                     }
                     else
-                    {
-                        RefreshLists(EntryType.Anime);
-
-                        ((EntryList)tlpAnimelistMain.Controls[0]).UpdateList(animeList.Where(a => a.watching_status == 1).ToList());
-                        ((EntryList)tlpAnimelistMain.Controls[1]).UpdateList(animeList.Where(a => a.watching_status == 2).ToList());
-                        ((EntryList)tlpAnimelistMain.Controls[2]).UpdateList(animeList.Where(a => a.watching_status == 3).ToList());
-                        ((EntryList)tlpAnimelistMain.Controls[3]).UpdateList(animeList.Where(a => a.watching_status == 4).ToList());
-                        ((EntryList)tlpAnimelistMain.Controls[4]).UpdateList(animeList.Where(a => a.watching_status == 6).ToList());
-
-                        ResizeTable(EntryType.Anime);
-                    }
-                });
-            }
-            else
-            {
-                if (tcDashboard.InvokeRequired)
-                {
-                    tcDashboard.Invoke((MethodInvoker)delegate
                     {
                         RefreshLists(EntryType.Anime);
 
@@ -335,16 +352,21 @@ namespace MAL_Reviwer_UI.forms
                             entryList.ClearList();
 
                         ResizeTable(EntryType.Anime);
+                    }
+                }
+            }
+            else
+            {
+                if (tcDashboard.InvokeRequired)
+                {
+                    tcDashboard.Invoke((MethodInvoker)delegate
+                    {
+                        ((Card)tlpAnimeMangaCards.Controls[0]).LabelText = "Private";
                     });
                 }
                 else
                 {
-                    RefreshLists(EntryType.Anime);
-
-                    foreach (EntryList entryList in tlpAnimelistMain.Controls)
-                        entryList.ClearList();
-
-                    ResizeTable(EntryType.Anime);
+                    ((Card)tlpAnimeMangaCards.Controls[0]).LabelText = "Private";
                 }
             }
 
@@ -361,14 +383,31 @@ namespace MAL_Reviwer_UI.forms
         /// <returns></returns>
         private async Task MangalistUpdateIU(List<MangalistEntryModel> mangaList, MALUserModel user)
         {
-            if (mangaList != null && user.manga_stats.total_entries > 0)
+            if (mangaList != null)
             {
-                await Task.Run(() =>
+                if (user.manga_stats.total_entries > 0)
                 {
-                    if (tcDashboard.InvokeRequired)
+                    await Task.Run(() =>
                     {
-                        tcDashboard.Invoke((MethodInvoker)delegate
+                        if (tcDashboard.InvokeRequired)
                         {
+                            tcDashboard.Invoke((MethodInvoker)delegate
+                            {
+                                ((Card)tlpAnimeMangaCards.Controls[1]).LabelText = "Public";
+                                RefreshLists(EntryType.Manga);
+
+                                ((EntryList)tlpMangalistMain.Controls[0]).UpdateList(mangaList.Where(a => a.reading_status == 1).ToList());
+                                ((EntryList)tlpMangalistMain.Controls[1]).UpdateList(mangaList.Where(a => a.reading_status == 2).ToList());
+                                ((EntryList)tlpMangalistMain.Controls[2]).UpdateList(mangaList.Where(a => a.reading_status == 3).ToList());
+                                ((EntryList)tlpMangalistMain.Controls[3]).UpdateList(mangaList.Where(a => a.reading_status == 4).ToList());
+                                ((EntryList)tlpMangalistMain.Controls[4]).UpdateList(mangaList.Where(a => a.reading_status == 6).ToList());
+
+                                ResizeTable(EntryType.Manga);
+                            });
+                        }
+                        else
+                        {
+                            ((Card)tlpAnimeMangaCards.Controls[1]).LabelText = "Public";
                             RefreshLists(EntryType.Manga);
 
                             ((EntryList)tlpMangalistMain.Controls[0]).UpdateList(mangaList.Where(a => a.reading_status == 1).ToList());
@@ -378,27 +417,24 @@ namespace MAL_Reviwer_UI.forms
                             ((EntryList)tlpMangalistMain.Controls[4]).UpdateList(mangaList.Where(a => a.reading_status == 6).ToList());
 
                             ResizeTable(EntryType.Manga);
+                        }
+                    });
+                }
+                else
+                {
+                    if (tcDashboard.InvokeRequired)
+                    {
+                        tcDashboard.Invoke((MethodInvoker)delegate
+                        {
+                            RefreshLists(EntryType.Manga);
+
+                            foreach (EntryList entryList in tlpMangalistMain.Controls)
+                                entryList.ClearList();
+
+                            ResizeTable(EntryType.Manga);
                         });
                     }
                     else
-                    {
-                        RefreshLists(EntryType.Manga);
-                    
-                        ((EntryList)tlpMangalistMain.Controls[0]).UpdateList(mangaList.Where(a => a.reading_status == 1).ToList());
-                        ((EntryList)tlpMangalistMain.Controls[1]).UpdateList(mangaList.Where(a => a.reading_status == 2).ToList());
-                        ((EntryList)tlpMangalistMain.Controls[2]).UpdateList(mangaList.Where(a => a.reading_status == 3).ToList());
-                        ((EntryList)tlpMangalistMain.Controls[3]).UpdateList(mangaList.Where(a => a.reading_status == 4).ToList());
-                        ((EntryList)tlpMangalistMain.Controls[4]).UpdateList(mangaList.Where(a => a.reading_status == 6).ToList());
-
-                        ResizeTable(EntryType.Manga);
-                    }
-                });
-            }
-            else
-            {
-                if (tcDashboard.InvokeRequired)
-                {
-                    tcDashboard.Invoke((MethodInvoker)delegate
                     {
                         RefreshLists(EntryType.Manga);
 
@@ -406,16 +442,21 @@ namespace MAL_Reviwer_UI.forms
                             entryList.ClearList();
 
                         ResizeTable(EntryType.Manga);
+                    }
+                }
+            }
+            else
+            {
+                if (tcDashboard.InvokeRequired)
+                {
+                    tcDashboard.Invoke((MethodInvoker)delegate
+                    {
+                        ((Card)tlpAnimeMangaCards.Controls[1]).LabelText = "Private";
                     });
                 }
                 else
                 {
-                    RefreshLists(EntryType.Manga);
-
-                    foreach (EntryList entryList in tlpMangalistMain.Controls)
-                        entryList.ClearList();
-
-                    ResizeTable(EntryType.Manga);
+                    ((Card)tlpAnimeMangaCards.Controls[1]).LabelText = "Private";
                 }
             }
 
@@ -661,6 +702,7 @@ namespace MAL_Reviwer_UI.forms
             {
                 Dock = DockStyle.Fill,
                 Icon = Properties.Resources.icon_anime,
+                LabelVisibility = true,
                 Margin = new Padding(0, 0, 19, 0),
                 Title = "Anime Stats"
             };
@@ -676,6 +718,7 @@ namespace MAL_Reviwer_UI.forms
             {
                 Dock = DockStyle.Fill,
                 Icon = Properties.Resources.icon_manga,
+                LabelVisibility = true,
                 Margin = new Padding(19, 0, 0, 0),
                 Title = "Manga Stats"
             };

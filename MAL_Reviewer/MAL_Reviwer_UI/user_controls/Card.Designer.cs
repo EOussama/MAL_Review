@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.IconPictureBox = new System.Windows.Forms.PictureBox();
             this.TitleLabel = new System.Windows.Forms.Label();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.LabelLabel = new System.Windows.Forms.Label();
             this.ContentPanel = new System.Windows.Forms.Panel();
             this.BottomShadowPanel = new System.Windows.Forms.Panel();
+            this.LabelInfoToolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.IconPictureBox)).BeginInit();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +63,7 @@
             // MainPanel
             // 
             this.MainPanel.BackColor = System.Drawing.Color.Transparent;
+            this.MainPanel.Controls.Add(this.LabelLabel);
             this.MainPanel.Controls.Add(this.ContentPanel);
             this.MainPanel.Controls.Add(this.TitleLabel);
             this.MainPanel.Controls.Add(this.IconPictureBox);
@@ -68,6 +72,19 @@
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(466, 196);
             this.MainPanel.TabIndex = 22;
+            // 
+            // LabelLabel
+            // 
+            this.LabelLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelLabel.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.LabelLabel.Location = new System.Drawing.Point(388, 4);
+            this.LabelLabel.Name = "LabelLabel";
+            this.LabelLabel.Size = new System.Drawing.Size(75, 19);
+            this.LabelLabel.TabIndex = 24;
+            this.LabelLabel.Text = "Public";
+            this.LabelLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.LabelLabel.Visible = false;
             // 
             // ContentPanel
             // 
@@ -89,6 +106,10 @@
             this.BottomShadowPanel.Name = "BottomShadowPanel";
             this.BottomShadowPanel.Size = new System.Drawing.Size(490, 3);
             this.BottomShadowPanel.TabIndex = 23;
+            // 
+            // LabelInfoToolTip
+            // 
+            this.LabelInfoToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
             // Card
             // 
@@ -115,5 +136,7 @@
         private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Panel ContentPanel;
         private System.Windows.Forms.Panel BottomShadowPanel;
+        private System.Windows.Forms.Label LabelLabel;
+        private System.Windows.Forms.ToolTip LabelInfoToolTip;
     }
 }

@@ -38,9 +38,27 @@ namespace MAL_Reviwer_UI.user_controls
             get => ContentPanel;
         }
 
+        public bool LabelVisibility
+        {
+            get => LabelLabel.Visible;
+            set => LabelLabel.Visible = value;
+        }
+
+        public string LabelText
+        {
+            get => LabelLabel.Text;
+            set => LabelLabel.Text = value;
+        }
+
         public Card()
         {
             InitializeComponent();
+        }
+
+        public void UpdateTooltip(string username)
+        {
+            LabelInfoToolTip.ToolTipTitle = $"{Title}";
+            LabelInfoToolTip.SetToolTip(LabelLabel, $"{username}'s {Title.Split(' ')[0].ToLower()} list is {LabelLabel.Text.ToLower()}.");
         }
     }
 }
