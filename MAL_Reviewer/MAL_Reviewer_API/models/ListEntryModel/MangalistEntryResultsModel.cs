@@ -1,13 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
 
 namespace MAL_Reviewer_API.models.ListEntryModel
 {
+    /// <summary>
+    /// The user's Manga list information.
+    /// </summary>
     class MangalistEntryResultsModel
     {
-        public MangalistEntryModel[] manga { get; set; }
+        /// <summary>
+        /// Anime list.
+        /// </summary>
+        [JsonProperty(PropertyName = "manga")]
+        public MangalistEntryModel[] Manga { get; set; }
     }
 }

@@ -116,7 +116,7 @@ namespace MAL_Reviewer_API
                 {
                     AnimelistEntryResultsModel results = await response.Content.ReadAsAsync<AnimelistEntryResultsModel>();
 
-                    foreach (AnimelistEntryModel anime in results.anime)
+                    foreach (AnimelistEntryModel anime in results.Anime)
                         animeList.Add(anime);
                 }
                 else
@@ -150,7 +150,7 @@ namespace MAL_Reviewer_API
                 {
                     MangalistEntryResultsModel results = await response.Content.ReadAsAsync <MangalistEntryResultsModel>();
 
-                    foreach (MangalistEntryModel manga in results.manga)
+                    foreach (MangalistEntryModel manga in results.Manga)
                         mangaList.Add(manga);
                 }
                 else

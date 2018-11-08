@@ -39,8 +39,8 @@ namespace MAL_Reviwer_UI.forms
 
                 // Get the data of the user.
                 MALUserModel userModel = await MALHelper.GetUser(username, cts.Token);
-                List<AnimelistEntryModel> animeList = await MALHelper.GetAnimeList(username, (int)userModel.anime_stats.total_entries, cts.Token);
-                List<MangalistEntryModel> mangaList = await MALHelper.GetMangaList(username, (int)userModel.manga_stats.total_entries, cts.Token);
+                List<AnimelistEntryModel> animeList = await MALHelper.GetAnimeList(username, (int)userModel.Anime_stats.Total_entries, cts.Token);
+                List<MangalistEntryModel> mangaList = await MALHelper.GetMangaList(username, (int)userModel.Manga_stats.Total_entries, cts.Token);
 
                 if (userModel == null) throw new Exception($"No user under the username “{ username }” was found!");
                 else
@@ -50,8 +50,8 @@ namespace MAL_Reviwer_UI.forms
                         this.ready = true;
                         this.Close();
 
-                        userModel.animeList = animeList;
-                        userModel.mangaList = mangaList;
+                        userModel.AnimeList = animeList;
+                        userModel.MangaList = mangaList;
                         UserLoadedEvent?.Invoke(this, userModel);
                     }
                 }

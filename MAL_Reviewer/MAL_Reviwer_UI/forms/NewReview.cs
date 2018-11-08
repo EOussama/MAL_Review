@@ -116,10 +116,10 @@ namespace MAL_Reviwer_UI.forms
 
                 SearchModel searchModel = await MALHelper.Search(searchType, searchTitle, cts.Token);
 
-                if (searchModel != null && searchModel.results != null)
+                if (searchModel != null && searchModel.Results != null)
                 {
                     // Updating the ucTargetSearchCard usercontrolls in a separate thread.
-                    int resultCount = searchModel.results.Length;
+                    int resultCount = searchModel.Results.Length;
                     List<Task> tasks = new List<Task>();
 
                     for (int i = 0; i < pSearchCards.Controls.Count; i++)
@@ -128,13 +128,13 @@ namespace MAL_Reviwer_UI.forms
 
                         if (i < resultCount)
                         {
-                            SearchResultsModel resultsModel = searchModel.results[i];
+                            SearchResultsModel resultsModel = searchModel.Results[i];
                             tasks.Add(
                                 Task.Run(() =>
                                 {
                                     searchCard.Invoke((MethodInvoker)delegate
                                     {
-                                        searchCard.UpdateUI(resultsModel.mal_id, resultsModel.title, resultsModel.type, resultsModel.image_url, rbAnime.Checked ? rbAnime.Text : rbManga.Text);
+                                        searchCard.UpdateUI(resultsModel.Mal_id, resultsModel.Title, resultsModel.Type, resultsModel.Image_url, rbAnime.Checked ? rbAnime.Text : rbManga.Text);
                                         searchCard.Visible = true;
                                     });
                                 })
@@ -237,17 +237,17 @@ namespace MAL_Reviwer_UI.forms
                             lTargetChapters.Visible = false;
                             lVolumesEpisodes.Text = "Episodes";
 
-                            lTargetScore.Text = animeModel.score?.ToString("0.00");
-                            lTargetRank.Text = animeModel.rank.ToString();
+                            lTargetScore.Text = animeModel.Score?.ToString("0.00");
+                            lTargetRank.Text = animeModel.Rank.ToString();
                             lTargetType.Text = animeModel.type;
-                            lTargetStatus.Text = animeModel.airing ? "Airing" : "Finished";
-                            lTargetVolumesEpisodes.Text = animeModel.episodes != null ? animeModel.episodes.ToString() : "?";
-                            lTargetTitle.Text = animeModel.title.Length > 55 ? animeModel.title.Substring(0, 55) + "..." : animeModel.title;
-                            lTargetSynopsis.Text = animeModel.synopsis?.Length > 215 ? animeModel.synopsis?.Substring(0, 215) + "..." : animeModel.synopsis;
-                            pbTargetImage.Load(animeModel.image_url);
-                            bMAL.Tag = animeModel.url;
+                            lTargetStatus.Text = animeModel.Airing ? "Airing" : "Finished";
+                            lTargetVolumesEpisodes.Text = animeModel.Episodes != null ? animeModel.Episodes.ToString() : "?";
+                            lTargetTitle.Text = animeModel.Title.Length > 55 ? animeModel.Title.Substring(0, 55) + "..." : animeModel.Title;
+                            lTargetSynopsis.Text = animeModel.Synopsis?.Length > 215 ? animeModel.Synopsis?.Substring(0, 215) + "..." : animeModel.Synopsis;
+                            pbTargetImage.Load(animeModel.Image_url);
+                            bMAL.Tag = animeModel.Url;
 
-                            this.targetId = animeModel.mal_id;
+                            this.targetId = animeModel.Mal_id;
                             this.type = 0;
                         });
                     }
@@ -288,18 +288,18 @@ namespace MAL_Reviwer_UI.forms
                             lTargetChapters.Visible = true;
                             lVolumesEpisodes.Text = "Volumes";
 
-                            lTargetScore.Text = mangaModel.score?.ToString("0.00");
-                            lTargetRank.Text = mangaModel.rank.ToString();
+                            lTargetScore.Text = mangaModel.Score?.ToString("0.00");
+                            lTargetRank.Text = mangaModel.Rank.ToString();
                             lTargetType.Text = mangaModel.type;
-                            lTargetStatus.Text = mangaModel.publishing ? "Publishing" : "Finished";
-                            lTargetVolumesEpisodes.Text = mangaModel.volumes != null ? mangaModel.volumes.ToString() : "?";
-                            lTargetChapters.Text = mangaModel.chapters != null ? mangaModel.chapters.ToString() : "?";
-                            lTargetTitle.Text = mangaModel.title.Length > 55 ? mangaModel.title.Substring(0, 55) + "..." : mangaModel.title;
-                            lTargetSynopsis.Text = mangaModel.synopsis?.Length > 215 ? mangaModel.synopsis?.Substring(0, 215) + "..." : mangaModel.synopsis;
-                            pbTargetImage.Load(mangaModel.image_url);
-                            bMAL.Tag = mangaModel.url;
+                            lTargetStatus.Text = mangaModel.Publishing ? "Publishing" : "Finished";
+                            lTargetVolumesEpisodes.Text = mangaModel.Volumes != null ? mangaModel.Volumes.ToString() : "?";
+                            lTargetChapters.Text = mangaModel.Chapters != null ? mangaModel.Chapters.ToString() : "?";
+                            lTargetTitle.Text = mangaModel.Title.Length > 55 ? mangaModel.Title.Substring(0, 55) + "..." : mangaModel.Title;
+                            lTargetSynopsis.Text = mangaModel.Synopsis?.Length > 215 ? mangaModel.Synopsis?.Substring(0, 215) + "..." : mangaModel.Synopsis;
+                            pbTargetImage.Load(mangaModel.Image_url);
+                            bMAL.Tag = mangaModel.Url;
 
-                            this.targetId = mangaModel.mal_id;
+                            this.targetId = mangaModel.Mal_id;
                             this.type = 1;
                         });
                     }

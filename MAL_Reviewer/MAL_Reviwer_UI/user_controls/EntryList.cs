@@ -43,8 +43,8 @@ namespace MAL_Reviwer_UI.user_controls
 
             // Populating the DataDridView.
             animeList.ForEach(a => {
-                dgvList.Rows.Add(_index + 1, a.title, $"{ a.watched_episodes }/ { (a.total_episodes == 0 ? "?" : a.total_episodes.ToString()) }", "", a.score, a.type);
-                dgvList.Rows[_index++].Tag = a.url;
+                dgvList.Rows.Add(_index + 1, a.Title, $"{ a.Watched_episodes }/ { (a.Total_episodes == 0 ? "?" : a.Total_episodes.ToString()) }", "", a.Score, a.Type);
+                dgvList.Rows[_index++].Tag = a.Url;
             });
 
             ResizeList();
@@ -63,8 +63,8 @@ namespace MAL_Reviwer_UI.user_controls
 
             // Populating the DataDridView.
             mangaList.ForEach(a => {
-                dgvList.Rows.Add(_index + 1, a.title, $"{ a.read_chapters }/ { (a.total_chapters == 0 ? "?" : a.total_chapters.ToString()) }", $"{ a.read_volumes }/ { (a.total_volumes == 0 ? "?" : a.total_volumes.ToString()) }", a.score, a.type);
-                dgvList.Rows[_index++].Tag = a.url;
+                dgvList.Rows.Add(_index + 1, a.Title, $"{ a.Read_chapters }/ { (a.Total_chapters == 0 ? "?" : a.Total_chapters.ToString()) }", $"{ a.Read_volumes }/ { (a.Total_volumes == 0 ? "?" : a.Total_volumes.ToString()) }", a.Score, a.Type);
+                dgvList.Rows[_index++].Tag = a.Url;
             });
 
             ResizeList();

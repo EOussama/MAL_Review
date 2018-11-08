@@ -1,7 +1,16 @@
-﻿namespace MAL_Reviewer_API.models.ListEntryModel
+﻿using Newtonsoft.Json;
+
+namespace MAL_Reviewer_API.models.ListEntryModel
 {
+    /// <summary>
+    /// The user's Anime list information.
+    /// </summary>
     public class AnimelistEntryResultsModel
     {
-        public AnimelistEntryModel[] anime { get; set; }
+        /// <summary>
+        /// Anime list.
+        /// </summary>
+        [JsonProperty(PropertyName = "anime")]
+        public AnimelistEntryModel[] Anime { get; set; }
     }
 }

@@ -72,8 +72,8 @@ namespace MAL_Reviwer_UI.forms
                         AnimeStatsUpdateUIAsync(user),
                         MangaStatsUpdateUIAsync(user),
                         FavoritesUpdateUIAsync(user),
-                        AnimelistUpdateIU(user.animeList, user),
-                        MangalistUpdateIU(user.mangaList, user)
+                        AnimelistUpdateIU(user.AnimeList, user),
+                        MangalistUpdateIU(user.MangaList, user)
                     });
             });
         }
@@ -105,31 +105,31 @@ namespace MAL_Reviwer_UI.forms
             {
                 tcDashboard.Invoke((MethodInvoker)delegate
                 {
-                    lUserUsername.Text = user.username;
-                    lUserGender.Text = user.gender;
-                    lUserJoinDate.Text = user.joined?.ToLongDateString();
-                    lUserBirthday.Text = user.birthday?.ToLongDateString();
-                    lUserLocation.Text = user.location;
-                    rtbAbout.Text = (user.about == "" || user.about == null) ? "Such empty!" : user.about;
+                    lUserUsername.Text = user.Username;
+                    lUserGender.Text = user.Gender;
+                    lUserJoinDate.Text = user.Joined?.ToLongDateString();
+                    lUserBirthday.Text = user.Birthday?.ToLongDateString();
+                    lUserLocation.Text = user.Location;
+                    rtbAbout.Text = (user.About == "" || user.About == null) ? "Such empty!" : user.About;
 
-                    if (user.image_url != null && user.image_url != "")
-                        pbUserImage.Load(user.image_url);
+                    if (user.Image_url != null && user.Image_url != "")
+                        pbUserImage.Load(user.Image_url);
                     else
                         pbUserImage.Image = Properties.Resources.icon_user;
 
-                    ttExtendedInfo.SetToolTip(lUserUsername, user.username);
-                    ttExtendedInfo.SetToolTip(lUserGender, user.gender);
-                    ttExtendedInfo.SetToolTip(lUserJoinDate, user.joined?.ToLongDateString());
-                    ttExtendedInfo.SetToolTip(lUserBirthday, user.birthday?.ToLongDateString());
-                    ttExtendedInfo.SetToolTip(lUserLocation, user.location);
+                    ttExtendedInfo.SetToolTip(lUserUsername, user.Username);
+                    ttExtendedInfo.SetToolTip(lUserGender, user.Gender);
+                    ttExtendedInfo.SetToolTip(lUserJoinDate, user.Joined?.ToLongDateString());
+                    ttExtendedInfo.SetToolTip(lUserBirthday, user.Birthday?.ToLongDateString());
+                    ttExtendedInfo.SetToolTip(lUserLocation, user.Location);
 
-                    bMALProfile.Tag = user.url;
-                    bMALFriends.Tag = $"https://myanimelist.net/profile/{user.username}/friends";
-                    bMALAnimelist.Tag = $"https://myanimelist.net/animelist/{user.username}";
-                    bMALMangalist.Tag = $"https://myanimelist.net/mangalist/{user.username}";
+                    bMALProfile.Tag = user.Url;
+                    bMALFriends.Tag = $"https://myanimelist.net/profile/{user.Username}/friends";
+                    bMALAnimelist.Tag = $"https://myanimelist.net/animelist/{user.Username}";
+                    bMALMangalist.Tag = $"https://myanimelist.net/mangalist/{user.Username}";
 
-                    ((Card)tlpAnimeMangaCards.Controls[0]).UpdateTooltip(user.username);
-                    ((Card)tlpAnimeMangaCards.Controls[1]).UpdateTooltip(user.username);
+                    ((Card)tlpAnimeMangaCards.Controls[0]).UpdateTooltip(user.Username);
+                    ((Card)tlpAnimeMangaCards.Controls[1]).UpdateTooltip(user.Username);
 
                     this.loaded++;
                     LoadingUI(false);
@@ -148,16 +148,16 @@ namespace MAL_Reviwer_UI.forms
             {
                 tcDashboard.Invoke((MethodInvoker)delegate
                 {
-                    lvDashAnimeWatching.Text = user.anime_stats.watching.ToString();
-                    lvDashAnimeCompleted.Text = user.anime_stats.completed.ToString();
-                    lvDashAnimeOnHold.Text = user.anime_stats.on_hold.ToString();
-                    lvDashAnimeDropped.Text = user.anime_stats.dropped.ToString();
-                    lvDashAnimePTW.Text = user.anime_stats.plan_to_watch.ToString();
-                    lvDashAnimeEpisodes.Text = user.anime_stats.episodes_watched.ToString();
-                    lvDashAnimeRewatches.Text = user.anime_stats.rewatched.ToString();
+                    lvDashAnimeWatching.Text = user.Anime_stats.Watching.ToString();
+                    lvDashAnimeCompleted.Text = user.Anime_stats.Completed.ToString();
+                    lvDashAnimeOnHold.Text = user.Anime_stats.On_hold.ToString();
+                    lvDashAnimeDropped.Text = user.Anime_stats.Dropped.ToString();
+                    lvDashAnimePTW.Text = user.Anime_stats.Plan_to_watch.ToString();
+                    lvDashAnimeEpisodes.Text = user.Anime_stats.Episodes_watched.ToString();
+                    lvDashAnimeRewatches.Text = user.Anime_stats.Rewatched.ToString();
 
-                    lvDashAnimeDaysWatched.Text = user.anime_stats.days_watched?.ToString("0.00");
-                    lvDashAnimeMeanScore.Text = user.anime_stats.mean_score?.ToString("0.00");
+                    lvDashAnimeDaysWatched.Text = user.Anime_stats.Days_watched?.ToString("0.00");
+                    lvDashAnimeMeanScore.Text = user.Anime_stats.Mean_score?.ToString("0.00");
 
                     this.loaded++;
                     LoadingUI(false);
@@ -176,17 +176,17 @@ namespace MAL_Reviwer_UI.forms
             {
                 tcDashboard.Invoke((MethodInvoker)delegate
                 {
-                    lvDashMangaReading.Text = user.manga_stats.reading.ToString();
-                    lvDashMangaCompleted.Text = user.manga_stats.completed.ToString();
-                    lvDashMangaOnHold.Text = user.manga_stats.on_hold.ToString();
-                    lvDashMangaDropped.Text = user.manga_stats.dropped.ToString();
-                    lvDashMangaPTR.Text = user.manga_stats.plan_to_read.ToString();
-                    lvDashMangaVolumes.Text = user.manga_stats.volumes_read.ToString();
-                    lvDashMangaChapters.Text = user.manga_stats.chapters_read.ToString();
-                    lvDashMangaReread.Text = user.manga_stats.reread.ToString();
+                    lvDashMangaReading.Text = user.Manga_stats.Reading.ToString();
+                    lvDashMangaCompleted.Text = user.Manga_stats.Completed.ToString();
+                    lvDashMangaOnHold.Text = user.Manga_stats.On_hold.ToString();
+                    lvDashMangaDropped.Text = user.Manga_stats.Dropped.ToString();
+                    lvDashMangaPTR.Text = user.Manga_stats.Plan_to_read.ToString();
+                    lvDashMangaVolumes.Text = user.Manga_stats.Volumes_read.ToString();
+                    lvDashMangaChapters.Text = user.Manga_stats.Chapters_read.ToString();
+                    lvDashMangaReread.Text = user.Manga_stats.Reread.ToString();
 
-                    lvDashMangaDaysRead.Text = user.manga_stats.days_read?.ToString("0.00");
-                    lvDashMangaMeanScore.Text = user.manga_stats.mean_score?.ToString("0.00");
+                    lvDashMangaDaysRead.Text = user.Manga_stats.Days_read?.ToString("0.00");
+                    lvDashMangaMeanScore.Text = user.Manga_stats.Mean_score?.ToString("0.00");
 
                     this.loaded++;
                     LoadingUI(false);
@@ -213,15 +213,15 @@ namespace MAL_Reviwer_UI.forms
                     List<Task> tasks = new List<Task>();
 
                     // Anime
-                    foreach (FavAnimeModel favAnimeModel in user.favorites.anime)
+                    foreach (FavAnimeModel favAnimeModel in user.Favorites.Anime)
                     {
                         await Task.Run(() =>
                         {
                             pDashboard.Invoke((MethodInvoker)delegate
                             {
-                                FavoriteThumb ucFavThumb = new FavoriteThumb(favAnimeModel.name, favAnimeModel.image_url, "Anime")
+                                FavoriteThumb ucFavThumb = new FavoriteThumb(favAnimeModel.Name, favAnimeModel.Image_url, "Anime")
                                 {
-                                    Tag = favAnimeModel.url,
+                                    Tag = favAnimeModel.Url,
                                     Dock = DockStyle.Top
                                 };
 
@@ -231,15 +231,15 @@ namespace MAL_Reviwer_UI.forms
                     }
 
                     // Manga
-                    foreach (FavMangaModel favMangaModel in user.favorites.manga)
+                    foreach (FavMangaModel favMangaModel in user.Favorites.Manga)
                     {
                         await Task.Run(() =>
                         {
                             pDashboard.Invoke((MethodInvoker)delegate
                             {
-                                FavoriteThumb ucFavThumb = new FavoriteThumb(favMangaModel.name, favMangaModel.image_url, "Manga")
+                                FavoriteThumb ucFavThumb = new FavoriteThumb(favMangaModel.Name, favMangaModel.Image_url, "Manga")
                                 {
-                                    Tag = favMangaModel.url,
+                                    Tag = favMangaModel.Url,
                                     Dock = DockStyle.Top
                                 };
 
@@ -249,15 +249,15 @@ namespace MAL_Reviwer_UI.forms
                     }
 
                     // Characters
-                    foreach (FavCharactersModel favCharacterModel in user.favorites.characters)
+                    foreach (FavCharactersModel favCharacterModel in user.Favorites.Characters)
                     {
                         await Task.Run(() =>
                         {
                             pDashboard.Invoke((MethodInvoker)delegate
                             {
-                                FavoriteThumb ucFavThumb = new FavoriteThumb(favCharacterModel.name, favCharacterModel.image_url, "Character")
+                                FavoriteThumb ucFavThumb = new FavoriteThumb(favCharacterModel.Name, favCharacterModel.Image_url, "Character")
                                 {
-                                    Tag = favCharacterModel.url,
+                                    Tag = favCharacterModel.Url,
                                     Dock = DockStyle.Top
                                 };
 
@@ -267,15 +267,15 @@ namespace MAL_Reviwer_UI.forms
                     }
 
                     // People
-                    foreach (FavPeopleModel favPeopleModel in user.favorites.people)
+                    foreach (FavPeopleModel favPeopleModel in user.Favorites.People)
                     {
                         await Task.Run(() =>
                         {
                             pDashboard.Invoke((MethodInvoker)delegate
                             {
-                                FavoriteThumb ucFavThumb = new FavoriteThumb(favPeopleModel.name, favPeopleModel.image_url, "Person")
+                                FavoriteThumb ucFavThumb = new FavoriteThumb(favPeopleModel.Name, favPeopleModel.Image_url, "Person")
                                 {
-                                    Tag = favPeopleModel.url,
+                                    Tag = favPeopleModel.Url,
                                     Dock = DockStyle.Top
                                 };
 
@@ -284,10 +284,10 @@ namespace MAL_Reviwer_UI.forms
                         });
                     }
 
-                    lFavAnimeCount.Text = user.favorites.anime.Length.ToString();
-                    lFavMangaCount.Text = user.favorites.manga.Length.ToString();
-                    lFavCharactersCount.Text = user.favorites.characters.Length.ToString();
-                    lFavPeopleCount.Text = user.favorites.people.Length.ToString();
+                    lFavAnimeCount.Text = user.Favorites.Anime.Length.ToString();
+                    lFavMangaCount.Text = user.Favorites.Manga.Length.ToString();
+                    lFavCharactersCount.Text = user.Favorites.Characters.Length.ToString();
+                    lFavPeopleCount.Text = user.Favorites.People.Length.ToString();
 
                     this.loaded++;
                     LoadingUI(false);
@@ -305,7 +305,7 @@ namespace MAL_Reviwer_UI.forms
         {
             if (animeList != null)
             {
-                if (user.anime_stats.total_entries > 0)
+                if (user.Anime_stats.Total_entries > 0)
                 {
                     await Task.Run(() =>
                     {
@@ -316,11 +316,11 @@ namespace MAL_Reviwer_UI.forms
                                 ((Card)tlpAnimeMangaCards.Controls[0]).LabelText = "Public";
                                 RefreshLists(EntryType.Anime);
 
-                                ((EntryList)tlpAnimelistMain.Controls[0]).UpdateList(animeList.Where(a => a.watching_status == 1).ToList());
-                                ((EntryList)tlpAnimelistMain.Controls[1]).UpdateList(animeList.Where(a => a.watching_status == 2).ToList());
-                                ((EntryList)tlpAnimelistMain.Controls[2]).UpdateList(animeList.Where(a => a.watching_status == 3).ToList());
-                                ((EntryList)tlpAnimelistMain.Controls[3]).UpdateList(animeList.Where(a => a.watching_status == 4).ToList());
-                                ((EntryList)tlpAnimelistMain.Controls[4]).UpdateList(animeList.Where(a => a.watching_status == 6).ToList());
+                                ((EntryList)tlpAnimelistMain.Controls[0]).UpdateList(animeList.Where(a => a.Watching_status == 1).ToList());
+                                ((EntryList)tlpAnimelistMain.Controls[1]).UpdateList(animeList.Where(a => a.Watching_status == 2).ToList());
+                                ((EntryList)tlpAnimelistMain.Controls[2]).UpdateList(animeList.Where(a => a.Watching_status == 3).ToList());
+                                ((EntryList)tlpAnimelistMain.Controls[3]).UpdateList(animeList.Where(a => a.Watching_status == 4).ToList());
+                                ((EntryList)tlpAnimelistMain.Controls[4]).UpdateList(animeList.Where(a => a.Watching_status == 6).ToList());
 
                                 ResizeTable(EntryType.Anime);
                             });
@@ -330,11 +330,11 @@ namespace MAL_Reviwer_UI.forms
                             ((Card)tlpAnimeMangaCards.Controls[0]).LabelText = "Public";
                             RefreshLists(EntryType.Anime);
 
-                            ((EntryList)tlpAnimelistMain.Controls[0]).UpdateList(animeList.Where(a => a.watching_status == 1).ToList());
-                            ((EntryList)tlpAnimelistMain.Controls[1]).UpdateList(animeList.Where(a => a.watching_status == 2).ToList());
-                            ((EntryList)tlpAnimelistMain.Controls[2]).UpdateList(animeList.Where(a => a.watching_status == 3).ToList());
-                            ((EntryList)tlpAnimelistMain.Controls[3]).UpdateList(animeList.Where(a => a.watching_status == 4).ToList());
-                            ((EntryList)tlpAnimelistMain.Controls[4]).UpdateList(animeList.Where(a => a.watching_status == 6).ToList());
+                            ((EntryList)tlpAnimelistMain.Controls[0]).UpdateList(animeList.Where(a => a.Watching_status == 1).ToList());
+                            ((EntryList)tlpAnimelistMain.Controls[1]).UpdateList(animeList.Where(a => a.Watching_status == 2).ToList());
+                            ((EntryList)tlpAnimelistMain.Controls[2]).UpdateList(animeList.Where(a => a.Watching_status == 3).ToList());
+                            ((EntryList)tlpAnimelistMain.Controls[3]).UpdateList(animeList.Where(a => a.Watching_status == 4).ToList());
+                            ((EntryList)tlpAnimelistMain.Controls[4]).UpdateList(animeList.Where(a => a.Watching_status == 6).ToList());
 
                             ResizeTable(EntryType.Anime);
                         }
@@ -395,7 +395,7 @@ namespace MAL_Reviwer_UI.forms
         {
             if (mangaList != null)
             {
-                if (user.manga_stats.total_entries > 0)
+                if (user.Manga_stats.Total_entries > 0)
                 {
                     await Task.Run(() =>
                     {
@@ -406,11 +406,11 @@ namespace MAL_Reviwer_UI.forms
                                 ((Card)tlpAnimeMangaCards.Controls[1]).LabelText = "Public";
                                 RefreshLists(EntryType.Manga);
 
-                                ((EntryList)tlpMangalistMain.Controls[0]).UpdateList(mangaList.Where(a => a.reading_status == 1).ToList());
-                                ((EntryList)tlpMangalistMain.Controls[1]).UpdateList(mangaList.Where(a => a.reading_status == 2).ToList());
-                                ((EntryList)tlpMangalistMain.Controls[2]).UpdateList(mangaList.Where(a => a.reading_status == 3).ToList());
-                                ((EntryList)tlpMangalistMain.Controls[3]).UpdateList(mangaList.Where(a => a.reading_status == 4).ToList());
-                                ((EntryList)tlpMangalistMain.Controls[4]).UpdateList(mangaList.Where(a => a.reading_status == 6).ToList());
+                                ((EntryList)tlpMangalistMain.Controls[0]).UpdateList(mangaList.Where(a => a.Reading_status == 1).ToList());
+                                ((EntryList)tlpMangalistMain.Controls[1]).UpdateList(mangaList.Where(a => a.Reading_status == 2).ToList());
+                                ((EntryList)tlpMangalistMain.Controls[2]).UpdateList(mangaList.Where(a => a.Reading_status == 3).ToList());
+                                ((EntryList)tlpMangalistMain.Controls[3]).UpdateList(mangaList.Where(a => a.Reading_status == 4).ToList());
+                                ((EntryList)tlpMangalistMain.Controls[4]).UpdateList(mangaList.Where(a => a.Reading_status == 6).ToList());
 
                                 ResizeTable(EntryType.Manga);
                             });
@@ -420,11 +420,11 @@ namespace MAL_Reviwer_UI.forms
                             ((Card)tlpAnimeMangaCards.Controls[1]).LabelText = "Public";
                             RefreshLists(EntryType.Manga);
 
-                            ((EntryList)tlpMangalistMain.Controls[0]).UpdateList(mangaList.Where(a => a.reading_status == 1).ToList());
-                            ((EntryList)tlpMangalistMain.Controls[1]).UpdateList(mangaList.Where(a => a.reading_status == 2).ToList());
-                            ((EntryList)tlpMangalistMain.Controls[2]).UpdateList(mangaList.Where(a => a.reading_status == 3).ToList());
-                            ((EntryList)tlpMangalistMain.Controls[3]).UpdateList(mangaList.Where(a => a.reading_status == 4).ToList());
-                            ((EntryList)tlpMangalistMain.Controls[4]).UpdateList(mangaList.Where(a => a.reading_status == 6).ToList());
+                            ((EntryList)tlpMangalistMain.Controls[0]).UpdateList(mangaList.Where(a => a.Reading_status == 1).ToList());
+                            ((EntryList)tlpMangalistMain.Controls[1]).UpdateList(mangaList.Where(a => a.Reading_status == 2).ToList());
+                            ((EntryList)tlpMangalistMain.Controls[2]).UpdateList(mangaList.Where(a => a.Reading_status == 3).ToList());
+                            ((EntryList)tlpMangalistMain.Controls[3]).UpdateList(mangaList.Where(a => a.Reading_status == 4).ToList());
+                            ((EntryList)tlpMangalistMain.Controls[4]).UpdateList(mangaList.Where(a => a.Reading_status == 6).ToList());
 
                             ResizeTable(EntryType.Manga);
                         }

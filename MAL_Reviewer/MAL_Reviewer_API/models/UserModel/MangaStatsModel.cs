@@ -1,12 +1,46 @@
-﻿namespace MAL_Reviewer_API.models
+﻿using Newtonsoft.Json;
+
+namespace MAL_Reviewer_API.models
 {
-    public class MangaStatsModel : models.UserModel.TargetStatsModel
+    /// <summary>
+    /// The Manga stats of the user.
+    /// </summary>
+    public class MangaStatsModel : UserModel.TargetStatsModel
     {
-        public double? days_read;
-        public int? reading;
-        public int? plan_to_read;
-        public int? reread;
-        public int? chapters_read;
-        public int? volumes_read;
+        /// <summary>
+        /// The time spent reading Manga in days by the user.
+        /// </summary>
+        [JsonProperty(PropertyName = "days_read")]
+        public double? Days_read { get; set; }
+
+        /// <summary>
+        /// The total number of Manga the user is currently reading.
+        /// </summary>
+        [JsonProperty(PropertyName = "reading")]
+        public int? Reading { get; set; }
+
+        /// <summary>
+        /// The total number of Manga the user plans to read.
+        /// </summary>
+        [JsonProperty(PropertyName = "plan_to_read")]
+        public int? Plan_to_read { get; set; }
+
+        /// <summary>
+        /// The total number of rereads of the user.
+        /// </summary>
+        [JsonProperty(PropertyName = "reread")]
+        public int? Reread { get; set; }
+
+        /// <summary>
+        /// The total number of chapters read by the user.
+        /// </summary>
+        [JsonProperty(PropertyName = "chapters_read")]
+        public int? Chapters_read { get; set; }
+
+        /// <summary>
+        /// The total number of volumes read by the user.
+        /// </summary>
+        [JsonProperty(PropertyName = "volumes_read")]
+        public int? Volumes_read { get; set; }
     }
 }

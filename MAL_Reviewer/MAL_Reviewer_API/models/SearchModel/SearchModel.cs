@@ -1,7 +1,16 @@
-﻿namespace MAL_Reviewer_API.models
+﻿using Newtonsoft.Json;
+
+namespace MAL_Reviewer_API.models
 {
+    /// <summary>
+    /// The information related to a search.
+    /// </summary>
     public class SearchModel
     {
-        public SearchResultsModel[] results { get; set; }
+        /// <summary>
+        /// The list of the results of a search.
+        /// </summary>
+        [JsonProperty(PropertyName = "results")]
+        public SearchResultsModel[] Results { get; set; }
     }
 }
