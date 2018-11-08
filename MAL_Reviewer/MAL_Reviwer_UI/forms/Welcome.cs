@@ -569,7 +569,7 @@ namespace MAL_Reviwer_UI.forms
         /// </summary>
         private void CreateCards()
         {
-            #region Profile Card
+            #region Profile card
 
             Card profileInfoCard = new Card()
             {
@@ -584,7 +584,7 @@ namespace MAL_Reviwer_UI.forms
 
             #endregion
 
-            #region Redirect Card
+            #region Redirect card
 
             Card redirectCard = new Card()
             {
@@ -599,7 +599,7 @@ namespace MAL_Reviwer_UI.forms
 
             #endregion
 
-            #region Anime stats
+            #region Anime stats card
 
             Card animeStatsCard = new Card()
             {
@@ -614,7 +614,7 @@ namespace MAL_Reviwer_UI.forms
 
             #endregion
 
-            #region Manga stats
+            #region Manga stats card
 
             Card mangaStatsCard = new Card()
             {
@@ -629,6 +629,35 @@ namespace MAL_Reviwer_UI.forms
 
             #endregion
 
+            #region Favorites card
+
+            Card favoritesCard = new Card()
+            {
+                Dock = DockStyle.Fill,
+                Icon = Properties.Resources.icon_favorite,
+                Margin = new Padding(0, 0, 0, 19),
+                Title = "Favorites"
+            };
+
+            favoritesCard.Content.Controls.Add(tlpFavorites);
+            pDashFavorites.Controls.Add(favoritesCard);
+
+            #endregion
+
+            #region About card
+
+            Card aboutCard = new Card()
+            {
+                Dock = DockStyle.Fill,
+                Icon = Properties.Resources.icon_info,
+                Margin = new Padding(0, 19, 0, 0),
+                Title = "About"
+            };
+
+            aboutCard.Content.Controls.Add(pDashAbout);
+            tlpDashboardMain.Controls.Add(aboutCard);
+
+            #endregion
         }
 
         #endregion
