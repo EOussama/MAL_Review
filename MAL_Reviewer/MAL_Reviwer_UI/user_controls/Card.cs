@@ -1,17 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace MAL_Reviwer_UI.user_controls
 {
     public partial class Card : UserControl
     {
+        public string Title
+        {
+            get => TitleLabel.Text;
+            set => TitleLabel.Text = value;
+        }
+
+        public Image Icon
+        {
+            get => IconPictureBox.Image;
+            set => IconPictureBox.Image = value;
+        }
+
+        public Color Color
+        {
+            get => this.BackColor;
+            set {
+                this.BackColor = value;
+                IconPictureBox.BackColor = value;
+            }
+        }
+
+        public Panel Content
+        {
+            get => ContentPanel;
+        }
+
         public Card()
         {
             InitializeComponent();
