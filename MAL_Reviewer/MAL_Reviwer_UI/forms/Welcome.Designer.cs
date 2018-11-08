@@ -65,6 +65,9 @@
             this.pbUserImage = new System.Windows.Forms.PictureBox();
             this.pRedirectCard = new System.Windows.Forms.Panel();
             this.bMALProfile = new System.Windows.Forms.Button();
+            this.bMALFriends = new System.Windows.Forms.Button();
+            this.bMALAnimelist = new System.Windows.Forms.Button();
+            this.bMALMangalist = new System.Windows.Forms.Button();
             this.tlpAnimeMangaCards = new System.Windows.Forms.TableLayoutPanel();
             this.pDashMangaCard = new System.Windows.Forms.Panel();
             this.lvDashMangaReread = new System.Windows.Forms.Label();
@@ -411,7 +414,7 @@
             this.pDashAbout.Location = new System.Drawing.Point(0, 939);
             this.pDashAbout.Margin = new System.Windows.Forms.Padding(0, 19, 0, 0);
             this.pDashAbout.Name = "pDashAbout";
-            this.pDashAbout.Size = new System.Drawing.Size(591, 385);
+            this.pDashAbout.Size = new System.Drawing.Size(591, 181);
             this.pDashAbout.TabIndex = 17;
             // 
             // rtbAbout
@@ -422,7 +425,7 @@
             this.rtbAbout.Name = "rtbAbout";
             this.rtbAbout.ReadOnly = true;
             this.rtbAbout.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbAbout.Size = new System.Drawing.Size(591, 385);
+            this.rtbAbout.Size = new System.Drawing.Size(591, 181);
             this.rtbAbout.TabIndex = 20;
             this.rtbAbout.Text = "Such empty";
             // 
@@ -607,6 +610,9 @@
             // 
             this.pRedirectCard.BackColor = System.Drawing.Color.Transparent;
             this.pRedirectCard.Controls.Add(this.bMALProfile);
+            this.pRedirectCard.Controls.Add(this.bMALFriends);
+            this.pRedirectCard.Controls.Add(this.bMALAnimelist);
+            this.pRedirectCard.Controls.Add(this.bMALMangalist);
             this.pRedirectCard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pRedirectCard.Location = new System.Drawing.Point(413, 0);
             this.pRedirectCard.Margin = new System.Windows.Forms.Padding(0);
@@ -624,13 +630,71 @@
             this.bMALProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bMALProfile.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bMALProfile.ImageList = this.ilSizeControl;
-            this.bMALProfile.Location = new System.Drawing.Point(0, 172);
+            this.bMALProfile.Location = new System.Drawing.Point(0, 121);
+            this.bMALProfile.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.bMALProfile.Name = "bMALProfile";
-            this.bMALProfile.Size = new System.Drawing.Size(178, 49);
-            this.bMALProfile.TabIndex = 6;
+            this.bMALProfile.Size = new System.Drawing.Size(178, 25);
+            this.bMALProfile.TabIndex = 11;
             this.bMALProfile.Text = "View profile on MAL";
             this.bMALProfile.UseVisualStyleBackColor = false;
             this.bMALProfile.Click += new System.EventHandler(this.BMALProfile_Click);
+            // 
+            // bMALFriends
+            // 
+            this.bMALFriends.BackColor = System.Drawing.Color.Transparent;
+            this.bMALFriends.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bMALFriends.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bMALFriends.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.bMALFriends.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.bMALFriends.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bMALFriends.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bMALFriends.ImageList = this.ilSizeControl;
+            this.bMALFriends.Location = new System.Drawing.Point(0, 146);
+            this.bMALFriends.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.bMALFriends.Name = "bMALFriends";
+            this.bMALFriends.Size = new System.Drawing.Size(178, 25);
+            this.bMALFriends.TabIndex = 10;
+            this.bMALFriends.Text = "View friend list on MAL";
+            this.bMALFriends.UseVisualStyleBackColor = false;
+            this.bMALFriends.Click += new System.EventHandler(this.BMALFriends_Click);
+            // 
+            // bMALAnimelist
+            // 
+            this.bMALAnimelist.BackColor = System.Drawing.Color.Transparent;
+            this.bMALAnimelist.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bMALAnimelist.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bMALAnimelist.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.bMALAnimelist.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.bMALAnimelist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bMALAnimelist.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bMALAnimelist.ImageList = this.ilSizeControl;
+            this.bMALAnimelist.Location = new System.Drawing.Point(0, 171);
+            this.bMALAnimelist.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.bMALAnimelist.Name = "bMALAnimelist";
+            this.bMALAnimelist.Size = new System.Drawing.Size(178, 25);
+            this.bMALAnimelist.TabIndex = 8;
+            this.bMALAnimelist.Text = "View anime list on MAL";
+            this.bMALAnimelist.UseVisualStyleBackColor = false;
+            this.bMALAnimelist.Click += new System.EventHandler(this.BMALAnimelist_Click);
+            // 
+            // bMALMangalist
+            // 
+            this.bMALMangalist.BackColor = System.Drawing.Color.Transparent;
+            this.bMALMangalist.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bMALMangalist.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bMALMangalist.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.bMALMangalist.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.bMALMangalist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bMALMangalist.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bMALMangalist.ImageList = this.ilSizeControl;
+            this.bMALMangalist.Location = new System.Drawing.Point(0, 196);
+            this.bMALMangalist.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.bMALMangalist.Name = "bMALMangalist";
+            this.bMALMangalist.Size = new System.Drawing.Size(178, 25);
+            this.bMALMangalist.TabIndex = 7;
+            this.bMALMangalist.Text = "View manga list on MAL";
+            this.bMALMangalist.UseVisualStyleBackColor = false;
+            this.bMALMangalist.Click += new System.EventHandler(this.BMALMangalist_Click);
             // 
             // tlpAnimeMangaCards
             // 
@@ -1573,7 +1637,6 @@
         private System.Windows.Forms.Label lUserGender;
         private System.Windows.Forms.Label lUserUsername;
         private System.Windows.Forms.Panel pRedirectCard;
-        private System.Windows.Forms.Button bMALProfile;
         private System.Windows.Forms.ToolTip ttExtendedInfo;
         private System.Windows.Forms.PictureBox pbDashBoardLoad;
         private System.Windows.Forms.Label lMALAccPreview;
@@ -1643,5 +1706,9 @@
         private System.Windows.Forms.Panel pDashAbout;
         private System.Windows.Forms.RichTextBox rtbAbout;
         private System.Windows.Forms.TableLayoutPanel tlpMangalistMain;
+        private System.Windows.Forms.Button bMALAnimelist;
+        private System.Windows.Forms.Button bMALMangalist;
+        private System.Windows.Forms.Button bMALProfile;
+        private System.Windows.Forms.Button bMALFriends;
     }
 }

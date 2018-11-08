@@ -84,6 +84,12 @@ namespace MAL_Reviwer_UI.forms
 
         private void BMALProfile_Click(object sender, EventArgs e) => System.Diagnostics.Process.Start(((Button)sender).Tag.ToString());
 
+        private void BMALFriends_Click(object sender, EventArgs e) => System.Diagnostics.Process.Start(((Button)sender).Tag.ToString());
+
+        private void BMALAnimelist_Click(object sender, EventArgs e) => System.Diagnostics.Process.Start(((Button)sender).Tag.ToString());
+
+        private void BMALMangalist_Click(object sender, EventArgs e) => System.Diagnostics.Process.Start(((Button)sender).Tag.ToString());
+
         #endregion
 
         #region Visual updates
@@ -104,7 +110,6 @@ namespace MAL_Reviwer_UI.forms
                     lUserJoinDate.Text = user.joined?.ToLongDateString();
                     lUserBirthday.Text = user.birthday?.ToLongDateString();
                     lUserLocation.Text = user.location;
-                    bMALProfile.Tag = user.url;
                     rtbAbout.Text = (user.about == "" || user.about == null) ? "Such empty!" : user.about;
 
                     if (user.image_url != null && user.image_url != "")
@@ -117,6 +122,11 @@ namespace MAL_Reviwer_UI.forms
                     ttExtendedInfo.SetToolTip(lUserJoinDate, user.joined?.ToLongDateString());
                     ttExtendedInfo.SetToolTip(lUserBirthday, user.birthday?.ToLongDateString());
                     ttExtendedInfo.SetToolTip(lUserLocation, user.location);
+
+                    bMALProfile.Tag = user.url;
+                    bMALFriends.Tag = $"https://myanimelist.net/profile/{user.username}/friends";
+                    bMALAnimelist.Tag = $"https://myanimelist.net/animelist/{user.username}";
+                    bMALMangalist.Tag = $"https://myanimelist.net/mangalist/{user.username}";
 
                     ((Card)tlpAnimeMangaCards.Controls[0]).UpdateTooltip(user.username);
                     ((Card)tlpAnimeMangaCards.Controls[1]).UpdateTooltip(user.username);
@@ -760,6 +770,11 @@ namespace MAL_Reviwer_UI.forms
         }
 
         #endregion
+
+        private void bMALProfile_Click_1(object sender, EventArgs e)
+        {
+
+        }
 
         private void BNew_Click(object sender, EventArgs e) => (new NewReview()).ShowDialog();
     }
