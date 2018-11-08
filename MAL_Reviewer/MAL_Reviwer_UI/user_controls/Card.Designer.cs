@@ -32,6 +32,7 @@
             this.TitleLabel = new System.Windows.Forms.Label();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.ContentPanel = new System.Windows.Forms.Panel();
+            this.BottomShadowPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.IconPictureBox)).BeginInit();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
@@ -79,11 +80,22 @@
             this.ContentPanel.Size = new System.Drawing.Size(466, 153);
             this.ContentPanel.TabIndex = 22;
             // 
+            // BottomShadowPanel
+            // 
+            this.BottomShadowPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BottomShadowPanel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BottomShadowPanel.Location = new System.Drawing.Point(0, 217);
+            this.BottomShadowPanel.Name = "BottomShadowPanel";
+            this.BottomShadowPanel.Size = new System.Drawing.Size(490, 3);
+            this.BottomShadowPanel.TabIndex = 23;
+            // 
             // Card
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.BottomShadowPanel);
             this.Controls.Add(this.MainPanel);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "Card";
@@ -102,5 +114,6 @@
         private System.Windows.Forms.Label TitleLabel;
         private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Panel ContentPanel;
+        private System.Windows.Forms.Panel BottomShadowPanel;
     }
 }

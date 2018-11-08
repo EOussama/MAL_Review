@@ -481,7 +481,7 @@
             // 
             // pCardProfileInfo
             // 
-            this.pCardProfileInfo.BackColor = System.Drawing.SystemColors.Control;
+            this.pCardProfileInfo.BackColor = System.Drawing.Color.Transparent;
             this.pCardProfileInfo.Controls.Add(this.tlpUserInfoCore);
             this.pCardProfileInfo.Controls.Add(this.pbUserImage);
             this.pCardProfileInfo.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -642,7 +642,7 @@
             // 
             // pRedirectCard
             // 
-            this.pRedirectCard.BackColor = System.Drawing.SystemColors.Control;
+            this.pRedirectCard.BackColor = System.Drawing.Color.Transparent;
             this.pRedirectCard.Controls.Add(this.bMALProfile);
             this.pRedirectCard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pRedirectCard.Location = new System.Drawing.Point(413, 0);

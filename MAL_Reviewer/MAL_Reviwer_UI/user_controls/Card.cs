@@ -17,13 +17,19 @@ namespace MAL_Reviwer_UI.user_controls
             set => IconPictureBox.Image = value;
         }
 
-        public Color Color
+        public Color BackgroundColor
         {
             get => this.BackColor;
             set {
                 this.BackColor = value;
                 IconPictureBox.BackColor = value;
             }
+        }
+
+        public Color ShadowColor
+        {
+            get => BottomShadowPanel.BackColor;
+            set => BottomShadowPanel.BackColor = value;
         }
 
         public Panel Content
