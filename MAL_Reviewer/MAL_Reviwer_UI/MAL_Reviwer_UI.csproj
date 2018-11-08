@@ -74,6 +74,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="user_controls\Card.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="user_controls\Card.Designer.cs">
+      <DependentUpon>Card.cs</DependentUpon>
+    </Compile>
     <Compile Include="user_controls\ucEntryList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -111,6 +117,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_controls\Card.resx">
+      <DependentUpon>Card.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user_controls\ucEntryList.resx">
       <DependentUpon>ucEntryList.cs</DependentUpon>

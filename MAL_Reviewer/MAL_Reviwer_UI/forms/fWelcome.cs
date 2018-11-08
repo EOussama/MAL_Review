@@ -569,7 +569,7 @@ namespace MAL_Reviwer_UI.forms
         /// </summary>
         private void CreateCards()
         {
-
+            Card profileInfoCard = new Card();
         }
 
         #endregion
