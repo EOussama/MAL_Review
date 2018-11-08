@@ -65,7 +65,7 @@
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPanel.Location = new System.Drawing.Point(12, 12);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(466, 197);
+            this.MainPanel.Size = new System.Drawing.Size(466, 196);
             this.MainPanel.TabIndex = 22;
             // 
             // ContentPanel
@@ -76,7 +76,7 @@
             this.ContentPanel.BackColor = System.Drawing.Color.Transparent;
             this.ContentPanel.Location = new System.Drawing.Point(0, 43);
             this.ContentPanel.Name = "ContentPanel";
-            this.ContentPanel.Size = new System.Drawing.Size(466, 154);
+            this.ContentPanel.Size = new System.Drawing.Size(466, 153);
             this.ContentPanel.TabIndex = 22;
             // 
             // Card
@@ -85,9 +85,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.MainPanel);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "Card";
             this.Padding = new System.Windows.Forms.Padding(12);
-            this.Size = new System.Drawing.Size(490, 221);
+            this.Size = new System.Drawing.Size(490, 220);
             ((System.ComponentModel.ISupportInitialize)(this.IconPictureBox)).EndInit();
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();

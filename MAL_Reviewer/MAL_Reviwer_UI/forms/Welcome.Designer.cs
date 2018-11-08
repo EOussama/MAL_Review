@@ -65,8 +65,7 @@
             this.lUserUsername = new System.Windows.Forms.Label();
             this.lLocation = new System.Windows.Forms.Label();
             this.pbUserImage = new System.Windows.Forms.PictureBox();
-            this.pCard = new System.Windows.Forms.Panel();
-            this.pbProfileLink = new System.Windows.Forms.PictureBox();
+            this.pRedirectCard = new System.Windows.Forms.Panel();
             this.bMALProfile = new System.Windows.Forms.Button();
             this.tlpAnimeMangaCards = new System.Windows.Forms.TableLayoutPanel();
             this.pDashMangaCard = new System.Windows.Forms.Panel();
@@ -138,13 +137,13 @@
             this.tpAnimelist = new System.Windows.Forms.TabPage();
             this.tlpAnimelistMain = new System.Windows.Forms.TableLayoutPanel();
             this.tpMangalist = new System.Windows.Forms.TabPage();
+            this.tlpMangalistMain = new System.Windows.Forms.TableLayoutPanel();
             this.pHeader = new System.Windows.Forms.Panel();
             this.lVersion = new System.Windows.Forms.Label();
             this.bSettings = new System.Windows.Forms.Button();
             this.lTitle = new System.Windows.Forms.Label();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.ttExtendedInfo = new System.Windows.Forms.ToolTip(this.components);
-            this.tlpMangalistMain = new System.Windows.Forms.TableLayoutPanel();
             this.pSide.SuspendLayout();
             this.pUser.SuspendLayout();
             this.pReviewLookUp.SuspendLayout();
@@ -161,8 +160,7 @@
             this.pCardProfileInfo.SuspendLayout();
             this.tlpUserInfoCore.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserImage)).BeginInit();
-            this.pCard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProfileLink)).BeginInit();
+            this.pRedirectCard.SuspendLayout();
             this.tlpAnimeMangaCards.SuspendLayout();
             this.pDashMangaCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDashManga)).BeginInit();
@@ -409,7 +407,7 @@
             this.tlpDashboardMain.Name = "tlpDashboardMain";
             this.tlpDashboardMain.Padding = new System.Windows.Forms.Padding(0, 0, 35, 0);
             this.tlpDashboardMain.RowCount = 6;
-            this.tlpDashboardMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpDashboardMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 240F));
             this.tlpDashboardMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpDashboardMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpDashboardMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -426,7 +424,7 @@
             this.pDashAbout.Controls.Add(this.pbAbout);
             this.pDashAbout.Controls.Add(this.lDashAbout);
             this.pDashAbout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pDashAbout.Location = new System.Drawing.Point(0, 735);
+            this.pDashAbout.Location = new System.Drawing.Point(0, 800);
             this.pDashAbout.Margin = new System.Windows.Forms.Padding(0, 19, 0, 0);
             this.pDashAbout.Name = "pDashAbout";
             this.pDashAbout.Size = new System.Drawing.Size(591, 185);
@@ -471,14 +469,14 @@
             this.tlpUserInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tlpUserInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tlpUserInfo.Controls.Add(this.pCardProfileInfo, 0, 0);
-            this.tlpUserInfo.Controls.Add(this.pCard, 1, 0);
+            this.tlpUserInfo.Controls.Add(this.pRedirectCard, 1, 0);
             this.tlpUserInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpUserInfo.Location = new System.Drawing.Point(0, 0);
             this.tlpUserInfo.Margin = new System.Windows.Forms.Padding(0, 0, 0, 19);
             this.tlpUserInfo.Name = "tlpUserInfo";
             this.tlpUserInfo.RowCount = 1;
             this.tlpUserInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpUserInfo.Size = new System.Drawing.Size(591, 156);
+            this.tlpUserInfo.Size = new System.Drawing.Size(591, 221);
             this.tlpUserInfo.TabIndex = 14;
             // 
             // pCardProfileInfo
@@ -488,9 +486,9 @@
             this.pCardProfileInfo.Controls.Add(this.pbUserImage);
             this.pCardProfileInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pCardProfileInfo.Location = new System.Drawing.Point(0, 0);
-            this.pCardProfileInfo.Margin = new System.Windows.Forms.Padding(0, 0, 19, 0);
+            this.pCardProfileInfo.Margin = new System.Windows.Forms.Padding(0);
             this.pCardProfileInfo.Name = "pCardProfileInfo";
-            this.pCardProfileInfo.Size = new System.Drawing.Size(394, 156);
+            this.pCardProfileInfo.Size = new System.Drawing.Size(413, 221);
             this.pCardProfileInfo.TabIndex = 0;
             // 
             // tlpUserInfoCore
@@ -511,7 +509,7 @@
             this.tlpUserInfoCore.Controls.Add(this.lBirthday, 0, 3);
             this.tlpUserInfoCore.Controls.Add(this.lUserUsername, 1, 0);
             this.tlpUserInfoCore.Controls.Add(this.lLocation, 0, 4);
-            this.tlpUserInfoCore.Location = new System.Drawing.Point(167, 20);
+            this.tlpUserInfoCore.Location = new System.Drawing.Point(153, 3);
             this.tlpUserInfoCore.Name = "tlpUserInfoCore";
             this.tlpUserInfoCore.RowCount = 5;
             this.tlpUserInfoCore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -519,7 +517,7 @@
             this.tlpUserInfoCore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpUserInfoCore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpUserInfoCore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpUserInfoCore.Size = new System.Drawing.Size(206, 122);
+            this.tlpUserInfoCore.Size = new System.Drawing.Size(256, 187);
             this.tlpUserInfoCore.TabIndex = 6;
             // 
             // lUserLocation
@@ -527,9 +525,9 @@
             this.lUserLocation.AutoSize = true;
             this.lUserLocation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lUserLocation.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lUserLocation.Location = new System.Drawing.Point(78, 96);
+            this.lUserLocation.Location = new System.Drawing.Point(78, 148);
             this.lUserLocation.Name = "lUserLocation";
-            this.lUserLocation.Size = new System.Drawing.Size(125, 26);
+            this.lUserLocation.Size = new System.Drawing.Size(175, 39);
             this.lUserLocation.TabIndex = 10;
             this.lUserLocation.Text = "[Location]";
             this.lUserLocation.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -540,7 +538,7 @@
             this.lUsername.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lUsername.Location = new System.Drawing.Point(3, 0);
             this.lUsername.Name = "lUsername";
-            this.lUsername.Size = new System.Drawing.Size(69, 24);
+            this.lUsername.Size = new System.Drawing.Size(69, 37);
             this.lUsername.TabIndex = 0;
             this.lUsername.Text = "Username";
             // 
@@ -549,9 +547,9 @@
             this.lUserBirthday.AutoSize = true;
             this.lUserBirthday.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lUserBirthday.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lUserBirthday.Location = new System.Drawing.Point(78, 72);
+            this.lUserBirthday.Location = new System.Drawing.Point(78, 111);
             this.lUserBirthday.Name = "lUserBirthday";
-            this.lUserBirthday.Size = new System.Drawing.Size(125, 24);
+            this.lUserBirthday.Size = new System.Drawing.Size(175, 37);
             this.lUserBirthday.TabIndex = 9;
             this.lUserBirthday.Text = "[Birthday]";
             this.lUserBirthday.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -560,9 +558,9 @@
             // 
             this.lGender.AutoSize = true;
             this.lGender.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lGender.Location = new System.Drawing.Point(3, 24);
+            this.lGender.Location = new System.Drawing.Point(3, 37);
             this.lGender.Name = "lGender";
-            this.lGender.Size = new System.Drawing.Size(69, 24);
+            this.lGender.Size = new System.Drawing.Size(69, 37);
             this.lGender.TabIndex = 1;
             this.lGender.Text = "Gender";
             // 
@@ -571,9 +569,9 @@
             this.lUserJoinDate.AutoSize = true;
             this.lUserJoinDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lUserJoinDate.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lUserJoinDate.Location = new System.Drawing.Point(78, 48);
+            this.lUserJoinDate.Location = new System.Drawing.Point(78, 74);
             this.lUserJoinDate.Name = "lUserJoinDate";
-            this.lUserJoinDate.Size = new System.Drawing.Size(125, 24);
+            this.lUserJoinDate.Size = new System.Drawing.Size(175, 37);
             this.lUserJoinDate.TabIndex = 8;
             this.lUserJoinDate.Text = "[Join date]";
             this.lUserJoinDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -582,9 +580,9 @@
             // 
             this.lJoined.AutoSize = true;
             this.lJoined.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lJoined.Location = new System.Drawing.Point(3, 48);
+            this.lJoined.Location = new System.Drawing.Point(3, 74);
             this.lJoined.Name = "lJoined";
-            this.lJoined.Size = new System.Drawing.Size(69, 24);
+            this.lJoined.Size = new System.Drawing.Size(69, 37);
             this.lJoined.TabIndex = 2;
             this.lJoined.Text = "Join date";
             // 
@@ -593,9 +591,9 @@
             this.lUserGender.AutoSize = true;
             this.lUserGender.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lUserGender.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lUserGender.Location = new System.Drawing.Point(78, 24);
+            this.lUserGender.Location = new System.Drawing.Point(78, 37);
             this.lUserGender.Name = "lUserGender";
-            this.lUserGender.Size = new System.Drawing.Size(125, 24);
+            this.lUserGender.Size = new System.Drawing.Size(175, 37);
             this.lUserGender.TabIndex = 7;
             this.lUserGender.Text = "[Gender]";
             this.lUserGender.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -604,9 +602,9 @@
             // 
             this.lBirthday.AutoSize = true;
             this.lBirthday.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lBirthday.Location = new System.Drawing.Point(3, 72);
+            this.lBirthday.Location = new System.Drawing.Point(3, 111);
             this.lBirthday.Name = "lBirthday";
-            this.lBirthday.Size = new System.Drawing.Size(69, 24);
+            this.lBirthday.Size = new System.Drawing.Size(69, 37);
             this.lBirthday.TabIndex = 3;
             this.lBirthday.Text = "Birthday";
             // 
@@ -617,7 +615,7 @@
             this.lUserUsername.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lUserUsername.Location = new System.Drawing.Point(78, 0);
             this.lUserUsername.Name = "lUserUsername";
-            this.lUserUsername.Size = new System.Drawing.Size(125, 24);
+            this.lUserUsername.Size = new System.Drawing.Size(175, 37);
             this.lUserUsername.TabIndex = 6;
             this.lUserUsername.Text = "[Username]";
             this.lUserUsername.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -626,60 +624,46 @@
             // 
             this.lLocation.AutoSize = true;
             this.lLocation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lLocation.Location = new System.Drawing.Point(3, 96);
+            this.lLocation.Location = new System.Drawing.Point(3, 148);
             this.lLocation.Name = "lLocation";
-            this.lLocation.Size = new System.Drawing.Size(69, 26);
+            this.lLocation.Size = new System.Drawing.Size(69, 39);
             this.lLocation.TabIndex = 4;
             this.lLocation.Text = "Location";
             // 
             // pbUserImage
             // 
             this.pbUserImage.Image = ((System.Drawing.Image)(resources.GetObject("pbUserImage.Image")));
-            this.pbUserImage.Location = new System.Drawing.Point(24, 20);
+            this.pbUserImage.Location = new System.Drawing.Point(0, 0);
             this.pbUserImage.Name = "pbUserImage";
-            this.pbUserImage.Size = new System.Drawing.Size(119, 116);
+            this.pbUserImage.Size = new System.Drawing.Size(129, 125);
             this.pbUserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbUserImage.TabIndex = 5;
             this.pbUserImage.TabStop = false;
             // 
-            // pCard
+            // pRedirectCard
             // 
-            this.pCard.BackColor = System.Drawing.SystemColors.Control;
-            this.pCard.Controls.Add(this.pbProfileLink);
-            this.pCard.Controls.Add(this.bMALProfile);
-            this.pCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pCard.Location = new System.Drawing.Point(432, 0);
-            this.pCard.Margin = new System.Windows.Forms.Padding(19, 0, 0, 0);
-            this.pCard.Name = "pCard";
-            this.pCard.Size = new System.Drawing.Size(159, 156);
-            this.pCard.TabIndex = 11;
-            // 
-            // pbProfileLink
-            // 
-            this.pbProfileLink.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbProfileLink.Image = ((System.Drawing.Image)(resources.GetObject("pbProfileLink.Image")));
-            this.pbProfileLink.Location = new System.Drawing.Point(57, 31);
-            this.pbProfileLink.Name = "pbProfileLink";
-            this.pbProfileLink.Size = new System.Drawing.Size(49, 30);
-            this.pbProfileLink.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbProfileLink.TabIndex = 7;
-            this.pbProfileLink.TabStop = false;
+            this.pRedirectCard.BackColor = System.Drawing.SystemColors.Control;
+            this.pRedirectCard.Controls.Add(this.bMALProfile);
+            this.pRedirectCard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pRedirectCard.Location = new System.Drawing.Point(413, 0);
+            this.pRedirectCard.Margin = new System.Windows.Forms.Padding(0);
+            this.pRedirectCard.Name = "pRedirectCard";
+            this.pRedirectCard.Size = new System.Drawing.Size(178, 221);
+            this.pRedirectCard.TabIndex = 11;
             // 
             // bMALProfile
             // 
-            this.bMALProfile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.bMALProfile.BackColor = System.Drawing.Color.Transparent;
             this.bMALProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bMALProfile.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bMALProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
             this.bMALProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.bMALProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bMALProfile.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bMALProfile.ImageList = this.ilSizeControl;
-            this.bMALProfile.Location = new System.Drawing.Point(23, 90);
+            this.bMALProfile.Location = new System.Drawing.Point(0, 172);
             this.bMALProfile.Name = "bMALProfile";
-            this.bMALProfile.Size = new System.Drawing.Size(115, 46);
+            this.bMALProfile.Size = new System.Drawing.Size(178, 49);
             this.bMALProfile.TabIndex = 6;
             this.bMALProfile.Text = "View profile on MAL";
             this.bMALProfile.UseVisualStyleBackColor = false;
@@ -693,7 +677,7 @@
             this.tlpAnimeMangaCards.Controls.Add(this.pDashMangaCard, 1, 0);
             this.tlpAnimeMangaCards.Controls.Add(this.pDashAnimeCard, 0, 0);
             this.tlpAnimeMangaCards.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpAnimeMangaCards.Location = new System.Drawing.Point(0, 194);
+            this.tlpAnimeMangaCards.Location = new System.Drawing.Point(0, 259);
             this.tlpAnimeMangaCards.Margin = new System.Windows.Forms.Padding(0, 19, 0, 19);
             this.tlpAnimeMangaCards.Name = "tlpAnimeMangaCards";
             this.tlpAnimeMangaCards.RowCount = 1;
@@ -1196,7 +1180,7 @@
             this.pDashFavorites.Controls.Add(this.pbDashFavorites);
             this.pDashFavorites.Controls.Add(this.lDashFavorites);
             this.pDashFavorites.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pDashFavorites.Location = new System.Drawing.Point(0, 404);
+            this.pDashFavorites.Location = new System.Drawing.Point(0, 469);
             this.pDashFavorites.Margin = new System.Windows.Forms.Padding(0, 19, 0, 19);
             this.pDashFavorites.Name = "pDashFavorites";
             this.pDashFavorites.Size = new System.Drawing.Size(591, 293);
@@ -1493,6 +1477,28 @@
             this.tpMangalist.Text = "Mangalist";
             this.tpMangalist.UseVisualStyleBackColor = true;
             // 
+            // tlpMangalistMain
+            // 
+            this.tlpMangalistMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlpMangalistMain.AutoScroll = true;
+            this.tlpMangalistMain.ColumnCount = 1;
+            this.tlpMangalistMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMangalistMain.Location = new System.Drawing.Point(35, 33);
+            this.tlpMangalistMain.Margin = new System.Windows.Forms.Padding(0);
+            this.tlpMangalistMain.Name = "tlpMangalistMain";
+            this.tlpMangalistMain.Padding = new System.Windows.Forms.Padding(0, 0, 35, 0);
+            this.tlpMangalistMain.RowCount = 6;
+            this.tlpMangalistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
+            this.tlpMangalistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
+            this.tlpMangalistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
+            this.tlpMangalistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
+            this.tlpMangalistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
+            this.tlpMangalistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
+            this.tlpMangalistMain.Size = new System.Drawing.Size(643, 187);
+            this.tlpMangalistMain.TabIndex = 8;
+            // 
             // pHeader
             // 
             this.pHeader.BackColor = System.Drawing.SystemColors.Control;
@@ -1565,29 +1571,7 @@
             this.ttExtendedInfo.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.ttExtendedInfo.ToolTipTitle = "Information";
             // 
-            // tlpMangalistMain
-            // 
-            this.tlpMangalistMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpMangalistMain.AutoScroll = true;
-            this.tlpMangalistMain.ColumnCount = 1;
-            this.tlpMangalistMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMangalistMain.Location = new System.Drawing.Point(35, 33);
-            this.tlpMangalistMain.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpMangalistMain.Name = "tlpMangalistMain";
-            this.tlpMangalistMain.Padding = new System.Windows.Forms.Padding(0, 0, 35, 0);
-            this.tlpMangalistMain.RowCount = 6;
-            this.tlpMangalistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
-            this.tlpMangalistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
-            this.tlpMangalistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
-            this.tlpMangalistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
-            this.tlpMangalistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
-            this.tlpMangalistMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
-            this.tlpMangalistMain.Size = new System.Drawing.Size(643, 187);
-            this.tlpMangalistMain.TabIndex = 8;
-            // 
-            // fWelcome
+            // Welcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1596,7 +1580,7 @@
             this.Controls.Add(this.pSide);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1000, 620);
-            this.Name = "fWelcome";
+            this.Name = "Welcome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MAL Reviewer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -1619,8 +1603,7 @@
             this.tlpUserInfoCore.ResumeLayout(false);
             this.tlpUserInfoCore.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserImage)).EndInit();
-            this.pCard.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbProfileLink)).EndInit();
+            this.pRedirectCard.ResumeLayout(false);
             this.tlpAnimeMangaCards.ResumeLayout(false);
             this.pDashMangaCard.ResumeLayout(false);
             this.pDashMangaCard.PerformLayout();
@@ -1687,9 +1670,8 @@
         private System.Windows.Forms.Label lUserJoinDate;
         private System.Windows.Forms.Label lUserGender;
         private System.Windows.Forms.Label lUserUsername;
-        private System.Windows.Forms.Panel pCard;
+        private System.Windows.Forms.Panel pRedirectCard;
         private System.Windows.Forms.Button bMALProfile;
-        private System.Windows.Forms.PictureBox pbProfileLink;
         private System.Windows.Forms.ToolTip ttExtendedInfo;
         private System.Windows.Forms.PictureBox pbDashBoardLoad;
         private System.Windows.Forms.Label lMALAccPreview;

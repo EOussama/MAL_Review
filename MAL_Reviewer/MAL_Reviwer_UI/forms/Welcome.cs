@@ -569,7 +569,35 @@ namespace MAL_Reviwer_UI.forms
         /// </summary>
         private void CreateCards()
         {
-            Card profileInfoCard = new Card();
+            #region Profile Card
+
+            Card profileInfoCard = new Card()
+            {
+                Dock = DockStyle.Fill,
+                Icon = Properties.Resources.icon_user,
+                Margin = new Padding(0, 0, 19, 0),
+                Title = "User information"
+            };
+
+            profileInfoCard.Content.Controls.Add(pCardProfileInfo);
+            tlpUserInfo.Controls.Add(profileInfoCard);
+
+            #endregion
+
+            #region Redirect Card
+
+            Card redirectCard = new Card()
+            {
+                Dock = DockStyle.Fill,
+                Icon = Properties.Resources.icon_link,
+                Margin = new Padding(19, 0, 0, 0),
+                Title = "Redirects"
+            };
+
+            redirectCard.Content.Controls.Add(pRedirectCard);
+            tlpUserInfo.Controls.Add(redirectCard);
+
+            #endregion
         }
 
         #endregion
