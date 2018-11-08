@@ -7,7 +7,6 @@ using MAL_Reviwer_UI.user_controls;
 using MAL_Reviewer_API;
 using MAL_Reviewer_API.models;
 using MAL_Reviewer_API.models.ListEntryModel;
-using System.Threading;
 
 namespace MAL_Reviwer_UI.forms
 {
@@ -38,6 +37,7 @@ namespace MAL_Reviwer_UI.forms
             pChildCharacters.AutoScroll = true;
             pChildPeople.AutoScroll = true;
 
+            CreateCards();
             CreateLists(EntryType.Anime);
             CreateLists(EntryType.Manga);
 
@@ -562,6 +562,14 @@ namespace MAL_Reviwer_UI.forms
                 tlpDashboardMain.Visible = true;
                 bUser.Enabled = true;
             }
+        }
+
+        /// <summary>
+        /// Creates the UI cards.
+        /// </summary>
+        private void CreateCards()
+        {
+
         }
 
         #endregion
