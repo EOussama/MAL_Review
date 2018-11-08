@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="enumerations\EntryType.cs" />
     <Compile Include="models\Review.cs" />
     <Compile Include="models\ReviewAspect.cs" />
     <Compile Include="models\ReviewMethod.cs" />

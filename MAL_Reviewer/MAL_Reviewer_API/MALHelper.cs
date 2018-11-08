@@ -9,12 +9,6 @@ using MAL_Reviewer_API.models.ListEntryModel;
 
 namespace MAL_Reviewer_API
 {
-    public enum EntryType
-    {
-        Anime,
-        Manga
-    }
-
     public static class MALHelper
     {
         private static HttpClient client;
@@ -125,6 +119,10 @@ namespace MAL_Reviewer_API
                     foreach (AnimelistEntryModel anime in results.anime)
                         animeList.Add(anime);
                 }
+                else
+                {
+                    animeList = null;
+                }
             }
 
             return animeList;
@@ -154,6 +152,10 @@ namespace MAL_Reviewer_API
 
                     foreach (MangalistEntryModel manga in results.manga)
                         mangaList.Add(manga);
+                }
+                else
+                {
+                    mangaList = null;
                 }
             }
 
