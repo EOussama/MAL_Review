@@ -229,7 +229,7 @@ namespace MAL_Reviwer_UI.forms
                 {
                     cts.Token.ThrowIfCancellationRequested();
 
-                    if (pPreview.IsDisposed)
+                    if (!pPreview.IsDisposed)
                     {
                         pPreview.Invoke((MethodInvoker)delegate
                         {
@@ -280,7 +280,7 @@ namespace MAL_Reviwer_UI.forms
                 {
                     cts.Token.ThrowIfCancellationRequested();
 
-                    if (pPreview.IsDisposed)
+                    if (!pPreview.IsDisposed)
                     {
                         pPreview.Invoke((MethodInvoker)delegate
                         {
