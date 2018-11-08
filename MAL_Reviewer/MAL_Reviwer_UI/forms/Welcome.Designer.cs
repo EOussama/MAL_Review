@@ -71,7 +71,6 @@
             this.pDashMangaCard = new System.Windows.Forms.Panel();
             this.lvDashMangaReread = new System.Windows.Forms.Label();
             this.lDashMangaReread = new System.Windows.Forms.Label();
-            this.pbDashManga = new System.Windows.Forms.PictureBox();
             this.lvDashMangaMeanScore = new System.Windows.Forms.Label();
             this.lDashMangaMeanScore = new System.Windows.Forms.Label();
             this.lvDashMangaDaysRead = new System.Windows.Forms.Label();
@@ -90,9 +89,7 @@
             this.lDashMangaOnHold = new System.Windows.Forms.Label();
             this.lDashMangaCompleted = new System.Windows.Forms.Label();
             this.lDashMangaReading = new System.Windows.Forms.Label();
-            this.lDashMangaTitle = new System.Windows.Forms.Label();
             this.pDashAnimeCard = new System.Windows.Forms.Panel();
-            this.pbDashAnime = new System.Windows.Forms.PictureBox();
             this.lvDashAnimeMeanScore = new System.Windows.Forms.Label();
             this.lDashAnimeMeanScore = new System.Windows.Forms.Label();
             this.lvDashAnimeDaysWatched = new System.Windows.Forms.Label();
@@ -111,7 +108,6 @@
             this.lDashAnimeOnHold = new System.Windows.Forms.Label();
             this.lDashAnimeCompleted = new System.Windows.Forms.Label();
             this.lDashAnimeWatching = new System.Windows.Forms.Label();
-            this.lDashAnimeTitle = new System.Windows.Forms.Label();
             this.pDashFavorites = new System.Windows.Forms.Panel();
             this.tlpFavorites = new System.Windows.Forms.TableLayoutPanel();
             this.pDashFavoriteCharacters = new System.Windows.Forms.Panel();
@@ -163,9 +159,7 @@
             this.pRedirectCard.SuspendLayout();
             this.tlpAnimeMangaCards.SuspendLayout();
             this.pDashMangaCard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDashManga)).BeginInit();
             this.pDashAnimeCard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDashAnime)).BeginInit();
             this.pDashFavorites.SuspendLayout();
             this.tlpFavorites.SuspendLayout();
             this.pDashFavoriteCharacters.SuspendLayout();
@@ -408,7 +402,7 @@
             this.tlpDashboardMain.Padding = new System.Windows.Forms.Padding(0, 0, 35, 0);
             this.tlpDashboardMain.RowCount = 6;
             this.tlpDashboardMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 240F));
-            this.tlpDashboardMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpDashboardMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 280F));
             this.tlpDashboardMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpDashboardMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpDashboardMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -424,7 +418,7 @@
             this.pDashAbout.Controls.Add(this.pbAbout);
             this.pDashAbout.Controls.Add(this.lDashAbout);
             this.pDashAbout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pDashAbout.Location = new System.Drawing.Point(0, 800);
+            this.pDashAbout.Location = new System.Drawing.Point(0, 870);
             this.pDashAbout.Margin = new System.Windows.Forms.Padding(0, 19, 0, 0);
             this.pDashAbout.Name = "pDashAbout";
             this.pDashAbout.Size = new System.Drawing.Size(591, 185);
@@ -683,15 +677,14 @@
             this.tlpAnimeMangaCards.RowCount = 1;
             this.tlpAnimeMangaCards.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpAnimeMangaCards.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpAnimeMangaCards.Size = new System.Drawing.Size(591, 172);
+            this.tlpAnimeMangaCards.Size = new System.Drawing.Size(591, 242);
             this.tlpAnimeMangaCards.TabIndex = 12;
             // 
             // pDashMangaCard
             // 
-            this.pDashMangaCard.BackColor = System.Drawing.SystemColors.Control;
+            this.pDashMangaCard.BackColor = System.Drawing.Color.Transparent;
             this.pDashMangaCard.Controls.Add(this.lvDashMangaReread);
             this.pDashMangaCard.Controls.Add(this.lDashMangaReread);
-            this.pDashMangaCard.Controls.Add(this.pbDashManga);
             this.pDashMangaCard.Controls.Add(this.lvDashMangaMeanScore);
             this.pDashMangaCard.Controls.Add(this.lDashMangaMeanScore);
             this.pDashMangaCard.Controls.Add(this.lvDashMangaDaysRead);
@@ -710,19 +703,18 @@
             this.pDashMangaCard.Controls.Add(this.lDashMangaOnHold);
             this.pDashMangaCard.Controls.Add(this.lDashMangaCompleted);
             this.pDashMangaCard.Controls.Add(this.lDashMangaReading);
-            this.pDashMangaCard.Controls.Add(this.lDashMangaTitle);
             this.pDashMangaCard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pDashMangaCard.Location = new System.Drawing.Point(314, 0);
             this.pDashMangaCard.Margin = new System.Windows.Forms.Padding(19, 0, 0, 0);
             this.pDashMangaCard.Name = "pDashMangaCard";
-            this.pDashMangaCard.Size = new System.Drawing.Size(277, 172);
+            this.pDashMangaCard.Size = new System.Drawing.Size(277, 242);
             this.pDashMangaCard.TabIndex = 13;
             // 
             // lvDashMangaReread
             // 
             this.lvDashMangaReread.AutoSize = true;
             this.lvDashMangaReread.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lvDashMangaReread.Location = new System.Drawing.Point(104, 142);
+            this.lvDashMangaReread.Location = new System.Drawing.Point(102, 113);
             this.lvDashMangaReread.Name = "lvDashMangaReread";
             this.lvDashMangaReread.Size = new System.Drawing.Size(51, 16);
             this.lvDashMangaReread.TabIndex = 40;
@@ -732,29 +724,20 @@
             // lDashMangaReread
             // 
             this.lDashMangaReread.AutoSize = true;
-            this.lDashMangaReread.Location = new System.Drawing.Point(6, 142);
+            this.lDashMangaReread.Location = new System.Drawing.Point(4, 113);
             this.lDashMangaReread.Name = "lDashMangaReread";
             this.lDashMangaReread.Size = new System.Drawing.Size(57, 16);
             this.lDashMangaReread.TabIndex = 39;
             this.lDashMangaReread.Text = "Rereads";
             // 
-            // pbDashManga
-            // 
-            this.pbDashManga.Image = global::MAL_Reviwer_UI.Properties.Resources.icon_manga;
-            this.pbDashManga.Location = new System.Drawing.Point(9, 4);
-            this.pbDashManga.Name = "pbDashManga";
-            this.pbDashManga.Size = new System.Drawing.Size(20, 20);
-            this.pbDashManga.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbDashManga.TabIndex = 38;
-            this.pbDashManga.TabStop = false;
-            // 
             // lvDashMangaMeanScore
             // 
             this.lvDashMangaMeanScore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lvDashMangaMeanScore.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvDashMangaMeanScore.Location = new System.Drawing.Point(184, 133);
+            this.lvDashMangaMeanScore.Location = new System.Drawing.Point(207, 98);
+            this.lvDashMangaMeanScore.Margin = new System.Windows.Forms.Padding(0);
             this.lvDashMangaMeanScore.Name = "lvDashMangaMeanScore";
-            this.lvDashMangaMeanScore.Size = new System.Drawing.Size(91, 25);
+            this.lvDashMangaMeanScore.Size = new System.Drawing.Size(68, 28);
             this.lvDashMangaMeanScore.TabIndex = 37;
             this.lvDashMangaMeanScore.Text = "8.63";
             this.lvDashMangaMeanScore.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -763,7 +746,8 @@
             // 
             this.lDashMangaMeanScore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lDashMangaMeanScore.AutoSize = true;
-            this.lDashMangaMeanScore.Location = new System.Drawing.Point(200, 117);
+            this.lDashMangaMeanScore.Location = new System.Drawing.Point(210, 80);
+            this.lDashMangaMeanScore.Margin = new System.Windows.Forms.Padding(0);
             this.lDashMangaMeanScore.Name = "lDashMangaMeanScore";
             this.lDashMangaMeanScore.Size = new System.Drawing.Size(75, 16);
             this.lDashMangaMeanScore.TabIndex = 36;
@@ -773,9 +757,10 @@
             // 
             this.lvDashMangaDaysRead.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lvDashMangaDaysRead.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvDashMangaDaysRead.Location = new System.Drawing.Point(190, 48);
+            this.lvDashMangaDaysRead.Location = new System.Drawing.Point(208, 19);
+            this.lvDashMangaDaysRead.Margin = new System.Windows.Forms.Padding(0);
             this.lvDashMangaDaysRead.Name = "lvDashMangaDaysRead";
-            this.lvDashMangaDaysRead.Size = new System.Drawing.Size(85, 28);
+            this.lvDashMangaDaysRead.Size = new System.Drawing.Size(68, 28);
             this.lvDashMangaDaysRead.TabIndex = 35;
             this.lvDashMangaDaysRead.Text = "300,65";
             this.lvDashMangaDaysRead.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -784,7 +769,8 @@
             // 
             this.lDashMangaDaysRead.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lDashMangaDaysRead.AutoSize = true;
-            this.lDashMangaDaysRead.Location = new System.Drawing.Point(207, 30);
+            this.lDashMangaDaysRead.Location = new System.Drawing.Point(217, 1);
+            this.lDashMangaDaysRead.Margin = new System.Windows.Forms.Padding(0);
             this.lDashMangaDaysRead.Name = "lDashMangaDaysRead";
             this.lDashMangaDaysRead.Size = new System.Drawing.Size(68, 16);
             this.lDashMangaDaysRead.TabIndex = 34;
@@ -794,7 +780,7 @@
             // 
             this.lvDashMangaChapters.AutoSize = true;
             this.lvDashMangaChapters.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lvDashMangaChapters.Location = new System.Drawing.Point(104, 126);
+            this.lvDashMangaChapters.Location = new System.Drawing.Point(102, 97);
             this.lvDashMangaChapters.Name = "lvDashMangaChapters";
             this.lvDashMangaChapters.Size = new System.Drawing.Size(51, 16);
             this.lvDashMangaChapters.TabIndex = 33;
@@ -805,7 +791,7 @@
             // 
             this.lvDashMangaVolumes.AutoSize = true;
             this.lvDashMangaVolumes.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lvDashMangaVolumes.Location = new System.Drawing.Point(104, 110);
+            this.lvDashMangaVolumes.Location = new System.Drawing.Point(102, 81);
             this.lvDashMangaVolumes.Name = "lvDashMangaVolumes";
             this.lvDashMangaVolumes.Size = new System.Drawing.Size(51, 16);
             this.lvDashMangaVolumes.TabIndex = 32;
@@ -816,7 +802,7 @@
             // 
             this.lvDashMangaPTR.AutoSize = true;
             this.lvDashMangaPTR.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lvDashMangaPTR.Location = new System.Drawing.Point(104, 94);
+            this.lvDashMangaPTR.Location = new System.Drawing.Point(102, 65);
             this.lvDashMangaPTR.Name = "lvDashMangaPTR";
             this.lvDashMangaPTR.Size = new System.Drawing.Size(51, 16);
             this.lvDashMangaPTR.TabIndex = 31;
@@ -827,7 +813,7 @@
             // 
             this.lvDashMangaDropped.AutoSize = true;
             this.lvDashMangaDropped.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lvDashMangaDropped.Location = new System.Drawing.Point(104, 78);
+            this.lvDashMangaDropped.Location = new System.Drawing.Point(102, 49);
             this.lvDashMangaDropped.Name = "lvDashMangaDropped";
             this.lvDashMangaDropped.Size = new System.Drawing.Size(51, 16);
             this.lvDashMangaDropped.TabIndex = 30;
@@ -838,7 +824,7 @@
             // 
             this.lvDashMangaOnHold.AutoSize = true;
             this.lvDashMangaOnHold.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lvDashMangaOnHold.Location = new System.Drawing.Point(104, 62);
+            this.lvDashMangaOnHold.Location = new System.Drawing.Point(102, 33);
             this.lvDashMangaOnHold.Name = "lvDashMangaOnHold";
             this.lvDashMangaOnHold.Size = new System.Drawing.Size(51, 16);
             this.lvDashMangaOnHold.TabIndex = 29;
@@ -849,7 +835,7 @@
             // 
             this.lvDashMangaCompleted.AutoSize = true;
             this.lvDashMangaCompleted.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lvDashMangaCompleted.Location = new System.Drawing.Point(104, 46);
+            this.lvDashMangaCompleted.Location = new System.Drawing.Point(102, 17);
             this.lvDashMangaCompleted.Name = "lvDashMangaCompleted";
             this.lvDashMangaCompleted.Size = new System.Drawing.Size(51, 16);
             this.lvDashMangaCompleted.TabIndex = 28;
@@ -860,7 +846,7 @@
             // 
             this.lvDashMangaReading.AutoSize = true;
             this.lvDashMangaReading.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvDashMangaReading.Location = new System.Drawing.Point(104, 30);
+            this.lvDashMangaReading.Location = new System.Drawing.Point(102, 1);
             this.lvDashMangaReading.Name = "lvDashMangaReading";
             this.lvDashMangaReading.Size = new System.Drawing.Size(51, 16);
             this.lvDashMangaReading.TabIndex = 27;
@@ -870,7 +856,7 @@
             // lDashMangaChapters
             // 
             this.lDashMangaChapters.AutoSize = true;
-            this.lDashMangaChapters.Location = new System.Drawing.Point(6, 126);
+            this.lDashMangaChapters.Location = new System.Drawing.Point(4, 97);
             this.lDashMangaChapters.Name = "lDashMangaChapters";
             this.lDashMangaChapters.Size = new System.Drawing.Size(61, 16);
             this.lDashMangaChapters.TabIndex = 26;
@@ -879,7 +865,7 @@
             // lDashMangaVolumes
             // 
             this.lDashMangaVolumes.AutoSize = true;
-            this.lDashMangaVolumes.Location = new System.Drawing.Point(6, 110);
+            this.lDashMangaVolumes.Location = new System.Drawing.Point(4, 81);
             this.lDashMangaVolumes.Name = "lDashMangaVolumes";
             this.lDashMangaVolumes.Size = new System.Drawing.Size(58, 16);
             this.lDashMangaVolumes.TabIndex = 25;
@@ -888,7 +874,7 @@
             // lDashMangaPTR
             // 
             this.lDashMangaPTR.AutoSize = true;
-            this.lDashMangaPTR.Location = new System.Drawing.Point(6, 94);
+            this.lDashMangaPTR.Location = new System.Drawing.Point(4, 65);
             this.lDashMangaPTR.Name = "lDashMangaPTR";
             this.lDashMangaPTR.Size = new System.Drawing.Size(78, 16);
             this.lDashMangaPTR.TabIndex = 24;
@@ -897,7 +883,7 @@
             // lDashMangaDropped
             // 
             this.lDashMangaDropped.AutoSize = true;
-            this.lDashMangaDropped.Location = new System.Drawing.Point(6, 78);
+            this.lDashMangaDropped.Location = new System.Drawing.Point(4, 49);
             this.lDashMangaDropped.Name = "lDashMangaDropped";
             this.lDashMangaDropped.Size = new System.Drawing.Size(58, 16);
             this.lDashMangaDropped.TabIndex = 23;
@@ -906,7 +892,7 @@
             // lDashMangaOnHold
             // 
             this.lDashMangaOnHold.AutoSize = true;
-            this.lDashMangaOnHold.Location = new System.Drawing.Point(6, 62);
+            this.lDashMangaOnHold.Location = new System.Drawing.Point(4, 33);
             this.lDashMangaOnHold.Name = "lDashMangaOnHold";
             this.lDashMangaOnHold.Size = new System.Drawing.Size(52, 16);
             this.lDashMangaOnHold.TabIndex = 22;
@@ -915,7 +901,7 @@
             // lDashMangaCompleted
             // 
             this.lDashMangaCompleted.AutoSize = true;
-            this.lDashMangaCompleted.Location = new System.Drawing.Point(6, 46);
+            this.lDashMangaCompleted.Location = new System.Drawing.Point(4, 17);
             this.lDashMangaCompleted.Name = "lDashMangaCompleted";
             this.lDashMangaCompleted.Size = new System.Drawing.Size(70, 16);
             this.lDashMangaCompleted.TabIndex = 21;
@@ -924,26 +910,15 @@
             // lDashMangaReading
             // 
             this.lDashMangaReading.AutoSize = true;
-            this.lDashMangaReading.Location = new System.Drawing.Point(6, 30);
+            this.lDashMangaReading.Location = new System.Drawing.Point(4, 1);
             this.lDashMangaReading.Name = "lDashMangaReading";
             this.lDashMangaReading.Size = new System.Drawing.Size(54, 16);
             this.lDashMangaReading.TabIndex = 20;
             this.lDashMangaReading.Text = "Reading";
             // 
-            // lDashMangaTitle
-            // 
-            this.lDashMangaTitle.AutoSize = true;
-            this.lDashMangaTitle.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lDashMangaTitle.Location = new System.Drawing.Point(35, 5);
-            this.lDashMangaTitle.Name = "lDashMangaTitle";
-            this.lDashMangaTitle.Size = new System.Drawing.Size(95, 19);
-            this.lDashMangaTitle.TabIndex = 19;
-            this.lDashMangaTitle.Text = "Manga stats";
-            // 
             // pDashAnimeCard
             // 
-            this.pDashAnimeCard.BackColor = System.Drawing.SystemColors.Control;
-            this.pDashAnimeCard.Controls.Add(this.pbDashAnime);
+            this.pDashAnimeCard.BackColor = System.Drawing.Color.Transparent;
             this.pDashAnimeCard.Controls.Add(this.lvDashAnimeMeanScore);
             this.pDashAnimeCard.Controls.Add(this.lDashAnimeMeanScore);
             this.pDashAnimeCard.Controls.Add(this.lvDashAnimeDaysWatched);
@@ -962,32 +937,22 @@
             this.pDashAnimeCard.Controls.Add(this.lDashAnimeOnHold);
             this.pDashAnimeCard.Controls.Add(this.lDashAnimeCompleted);
             this.pDashAnimeCard.Controls.Add(this.lDashAnimeWatching);
-            this.pDashAnimeCard.Controls.Add(this.lDashAnimeTitle);
             this.pDashAnimeCard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pDashAnimeCard.Location = new System.Drawing.Point(0, 0);
             this.pDashAnimeCard.Margin = new System.Windows.Forms.Padding(0, 0, 19, 0);
             this.pDashAnimeCard.Name = "pDashAnimeCard";
             this.pDashAnimeCard.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.pDashAnimeCard.Size = new System.Drawing.Size(276, 172);
+            this.pDashAnimeCard.Size = new System.Drawing.Size(276, 242);
             this.pDashAnimeCard.TabIndex = 12;
-            // 
-            // pbDashAnime
-            // 
-            this.pbDashAnime.Image = global::MAL_Reviwer_UI.Properties.Resources.icon_anime;
-            this.pbDashAnime.Location = new System.Drawing.Point(10, 4);
-            this.pbDashAnime.Name = "pbDashAnime";
-            this.pbDashAnime.Size = new System.Drawing.Size(20, 20);
-            this.pbDashAnime.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbDashAnime.TabIndex = 2;
-            this.pbDashAnime.TabStop = false;
             // 
             // lvDashAnimeMeanScore
             // 
             this.lvDashAnimeMeanScore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lvDashAnimeMeanScore.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvDashAnimeMeanScore.Location = new System.Drawing.Point(182, 126);
+            this.lvDashAnimeMeanScore.Location = new System.Drawing.Point(207, 98);
+            this.lvDashAnimeMeanScore.Margin = new System.Windows.Forms.Padding(0);
             this.lvDashAnimeMeanScore.Name = "lvDashAnimeMeanScore";
-            this.lvDashAnimeMeanScore.Size = new System.Drawing.Size(91, 25);
+            this.lvDashAnimeMeanScore.Size = new System.Drawing.Size(68, 28);
             this.lvDashAnimeMeanScore.TabIndex = 18;
             this.lvDashAnimeMeanScore.Text = "8.63";
             this.lvDashAnimeMeanScore.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -996,7 +961,8 @@
             // 
             this.lDashAnimeMeanScore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lDashAnimeMeanScore.AutoSize = true;
-            this.lDashAnimeMeanScore.Location = new System.Drawing.Point(198, 110);
+            this.lDashAnimeMeanScore.Location = new System.Drawing.Point(209, 81);
+            this.lDashAnimeMeanScore.Margin = new System.Windows.Forms.Padding(0);
             this.lDashAnimeMeanScore.Name = "lDashAnimeMeanScore";
             this.lDashAnimeMeanScore.Size = new System.Drawing.Size(75, 16);
             this.lDashAnimeMeanScore.TabIndex = 17;
@@ -1006,9 +972,10 @@
             // 
             this.lvDashAnimeDaysWatched.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lvDashAnimeDaysWatched.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvDashAnimeDaysWatched.Location = new System.Drawing.Point(188, 48);
+            this.lvDashAnimeDaysWatched.Location = new System.Drawing.Point(204, 19);
+            this.lvDashAnimeDaysWatched.Margin = new System.Windows.Forms.Padding(0);
             this.lvDashAnimeDaysWatched.Name = "lvDashAnimeDaysWatched";
-            this.lvDashAnimeDaysWatched.Size = new System.Drawing.Size(85, 28);
+            this.lvDashAnimeDaysWatched.Size = new System.Drawing.Size(68, 28);
             this.lvDashAnimeDaysWatched.TabIndex = 16;
             this.lvDashAnimeDaysWatched.Text = "300,65";
             this.lvDashAnimeDaysWatched.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1017,7 +984,8 @@
             // 
             this.lDashAnimeDaysWatched.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lDashAnimeDaysWatched.AutoSize = true;
-            this.lDashAnimeDaysWatched.Location = new System.Drawing.Point(185, 30);
+            this.lDashAnimeDaysWatched.Location = new System.Drawing.Point(196, 1);
+            this.lDashAnimeDaysWatched.Margin = new System.Windows.Forms.Padding(0);
             this.lDashAnimeDaysWatched.Name = "lDashAnimeDaysWatched";
             this.lDashAnimeDaysWatched.Size = new System.Drawing.Size(88, 16);
             this.lDashAnimeDaysWatched.TabIndex = 15;
@@ -1027,7 +995,7 @@
             // 
             this.lvDashAnimeRewatches.AutoSize = true;
             this.lvDashAnimeRewatches.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lvDashAnimeRewatches.Location = new System.Drawing.Point(105, 138);
+            this.lvDashAnimeRewatches.Location = new System.Drawing.Point(102, 109);
             this.lvDashAnimeRewatches.Name = "lvDashAnimeRewatches";
             this.lvDashAnimeRewatches.Size = new System.Drawing.Size(51, 16);
             this.lvDashAnimeRewatches.TabIndex = 14;
@@ -1038,7 +1006,7 @@
             // 
             this.lvDashAnimeEpisodes.AutoSize = true;
             this.lvDashAnimeEpisodes.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lvDashAnimeEpisodes.Location = new System.Drawing.Point(105, 120);
+            this.lvDashAnimeEpisodes.Location = new System.Drawing.Point(102, 91);
             this.lvDashAnimeEpisodes.Name = "lvDashAnimeEpisodes";
             this.lvDashAnimeEpisodes.Size = new System.Drawing.Size(51, 16);
             this.lvDashAnimeEpisodes.TabIndex = 13;
@@ -1049,7 +1017,7 @@
             // 
             this.lvDashAnimePTW.AutoSize = true;
             this.lvDashAnimePTW.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lvDashAnimePTW.Location = new System.Drawing.Point(105, 102);
+            this.lvDashAnimePTW.Location = new System.Drawing.Point(102, 73);
             this.lvDashAnimePTW.Name = "lvDashAnimePTW";
             this.lvDashAnimePTW.Size = new System.Drawing.Size(51, 16);
             this.lvDashAnimePTW.TabIndex = 12;
@@ -1060,7 +1028,7 @@
             // 
             this.lvDashAnimeDropped.AutoSize = true;
             this.lvDashAnimeDropped.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lvDashAnimeDropped.Location = new System.Drawing.Point(105, 84);
+            this.lvDashAnimeDropped.Location = new System.Drawing.Point(102, 55);
             this.lvDashAnimeDropped.Name = "lvDashAnimeDropped";
             this.lvDashAnimeDropped.Size = new System.Drawing.Size(51, 16);
             this.lvDashAnimeDropped.TabIndex = 11;
@@ -1071,7 +1039,7 @@
             // 
             this.lvDashAnimeOnHold.AutoSize = true;
             this.lvDashAnimeOnHold.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lvDashAnimeOnHold.Location = new System.Drawing.Point(105, 66);
+            this.lvDashAnimeOnHold.Location = new System.Drawing.Point(102, 37);
             this.lvDashAnimeOnHold.Name = "lvDashAnimeOnHold";
             this.lvDashAnimeOnHold.Size = new System.Drawing.Size(51, 16);
             this.lvDashAnimeOnHold.TabIndex = 10;
@@ -1082,7 +1050,7 @@
             // 
             this.lvDashAnimeCompleted.AutoSize = true;
             this.lvDashAnimeCompleted.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lvDashAnimeCompleted.Location = new System.Drawing.Point(105, 48);
+            this.lvDashAnimeCompleted.Location = new System.Drawing.Point(102, 19);
             this.lvDashAnimeCompleted.Name = "lvDashAnimeCompleted";
             this.lvDashAnimeCompleted.Size = new System.Drawing.Size(51, 16);
             this.lvDashAnimeCompleted.TabIndex = 9;
@@ -1093,7 +1061,7 @@
             // 
             this.lvDashAnimeWatching.AutoSize = true;
             this.lvDashAnimeWatching.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvDashAnimeWatching.Location = new System.Drawing.Point(105, 30);
+            this.lvDashAnimeWatching.Location = new System.Drawing.Point(102, 1);
             this.lvDashAnimeWatching.Name = "lvDashAnimeWatching";
             this.lvDashAnimeWatching.Size = new System.Drawing.Size(51, 16);
             this.lvDashAnimeWatching.TabIndex = 8;
@@ -1103,7 +1071,7 @@
             // lDashAnimeRewatches
             // 
             this.lDashAnimeRewatches.AutoSize = true;
-            this.lDashAnimeRewatches.Location = new System.Drawing.Point(7, 138);
+            this.lDashAnimeRewatches.Location = new System.Drawing.Point(4, 109);
             this.lDashAnimeRewatches.Name = "lDashAnimeRewatches";
             this.lDashAnimeRewatches.Size = new System.Drawing.Size(71, 16);
             this.lDashAnimeRewatches.TabIndex = 7;
@@ -1112,7 +1080,7 @@
             // lDashAnimeEpisodes
             // 
             this.lDashAnimeEpisodes.AutoSize = true;
-            this.lDashAnimeEpisodes.Location = new System.Drawing.Point(7, 120);
+            this.lDashAnimeEpisodes.Location = new System.Drawing.Point(4, 91);
             this.lDashAnimeEpisodes.Name = "lDashAnimeEpisodes";
             this.lDashAnimeEpisodes.Size = new System.Drawing.Size(61, 16);
             this.lDashAnimeEpisodes.TabIndex = 6;
@@ -1121,7 +1089,7 @@
             // lDashAnimePTW
             // 
             this.lDashAnimePTW.AutoSize = true;
-            this.lDashAnimePTW.Location = new System.Drawing.Point(7, 102);
+            this.lDashAnimePTW.Location = new System.Drawing.Point(4, 73);
             this.lDashAnimePTW.Name = "lDashAnimePTW";
             this.lDashAnimePTW.Size = new System.Drawing.Size(84, 16);
             this.lDashAnimePTW.TabIndex = 5;
@@ -1130,7 +1098,7 @@
             // lDashAnimeDropped
             // 
             this.lDashAnimeDropped.AutoSize = true;
-            this.lDashAnimeDropped.Location = new System.Drawing.Point(7, 84);
+            this.lDashAnimeDropped.Location = new System.Drawing.Point(4, 55);
             this.lDashAnimeDropped.Name = "lDashAnimeDropped";
             this.lDashAnimeDropped.Size = new System.Drawing.Size(58, 16);
             this.lDashAnimeDropped.TabIndex = 4;
@@ -1139,7 +1107,7 @@
             // lDashAnimeOnHold
             // 
             this.lDashAnimeOnHold.AutoSize = true;
-            this.lDashAnimeOnHold.Location = new System.Drawing.Point(7, 66);
+            this.lDashAnimeOnHold.Location = new System.Drawing.Point(4, 37);
             this.lDashAnimeOnHold.Name = "lDashAnimeOnHold";
             this.lDashAnimeOnHold.Size = new System.Drawing.Size(52, 16);
             this.lDashAnimeOnHold.TabIndex = 3;
@@ -1148,7 +1116,7 @@
             // lDashAnimeCompleted
             // 
             this.lDashAnimeCompleted.AutoSize = true;
-            this.lDashAnimeCompleted.Location = new System.Drawing.Point(7, 48);
+            this.lDashAnimeCompleted.Location = new System.Drawing.Point(4, 19);
             this.lDashAnimeCompleted.Name = "lDashAnimeCompleted";
             this.lDashAnimeCompleted.Size = new System.Drawing.Size(70, 16);
             this.lDashAnimeCompleted.TabIndex = 2;
@@ -1157,21 +1125,11 @@
             // lDashAnimeWatching
             // 
             this.lDashAnimeWatching.AutoSize = true;
-            this.lDashAnimeWatching.Location = new System.Drawing.Point(7, 30);
+            this.lDashAnimeWatching.Location = new System.Drawing.Point(4, 1);
             this.lDashAnimeWatching.Name = "lDashAnimeWatching";
             this.lDashAnimeWatching.Size = new System.Drawing.Size(60, 16);
             this.lDashAnimeWatching.TabIndex = 1;
             this.lDashAnimeWatching.Text = "Watching";
-            // 
-            // lDashAnimeTitle
-            // 
-            this.lDashAnimeTitle.AutoSize = true;
-            this.lDashAnimeTitle.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lDashAnimeTitle.Location = new System.Drawing.Point(36, 5);
-            this.lDashAnimeTitle.Name = "lDashAnimeTitle";
-            this.lDashAnimeTitle.Size = new System.Drawing.Size(93, 19);
-            this.lDashAnimeTitle.TabIndex = 0;
-            this.lDashAnimeTitle.Text = "Anime stats";
             // 
             // pDashFavorites
             // 
@@ -1180,7 +1138,7 @@
             this.pDashFavorites.Controls.Add(this.pbDashFavorites);
             this.pDashFavorites.Controls.Add(this.lDashFavorites);
             this.pDashFavorites.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pDashFavorites.Location = new System.Drawing.Point(0, 469);
+            this.pDashFavorites.Location = new System.Drawing.Point(0, 539);
             this.pDashFavorites.Margin = new System.Windows.Forms.Padding(0, 19, 0, 19);
             this.pDashFavorites.Name = "pDashFavorites";
             this.pDashFavorites.Size = new System.Drawing.Size(591, 293);
@@ -1607,10 +1565,8 @@
             this.tlpAnimeMangaCards.ResumeLayout(false);
             this.pDashMangaCard.ResumeLayout(false);
             this.pDashMangaCard.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDashManga)).EndInit();
             this.pDashAnimeCard.ResumeLayout(false);
             this.pDashAnimeCard.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDashAnime)).EndInit();
             this.pDashFavorites.ResumeLayout(false);
             this.pDashFavorites.PerformLayout();
             this.tlpFavorites.ResumeLayout(false);
@@ -1680,7 +1636,6 @@
         private System.Windows.Forms.Panel pDashAnimeCard;
         private System.Windows.Forms.TableLayoutPanel tlpUserInfo;
         private System.Windows.Forms.TableLayoutPanel tlpUserInfoCore;
-        private System.Windows.Forms.Label lDashAnimeTitle;
         private System.Windows.Forms.Label lvDashAnimeRewatches;
         private System.Windows.Forms.Label lvDashAnimeEpisodes;
         private System.Windows.Forms.Label lvDashAnimePTW;
@@ -1717,9 +1672,6 @@
         private System.Windows.Forms.Label lDashMangaOnHold;
         private System.Windows.Forms.Label lDashMangaCompleted;
         private System.Windows.Forms.Label lDashMangaReading;
-        private System.Windows.Forms.Label lDashMangaTitle;
-        private System.Windows.Forms.PictureBox pbDashManga;
-        private System.Windows.Forms.PictureBox pbDashAnime;
         private System.Windows.Forms.Label lvDashMangaReread;
         private System.Windows.Forms.Label lDashMangaReread;
         private System.Windows.Forms.Panel pDashFavorites;

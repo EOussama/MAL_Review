@@ -598,6 +598,37 @@ namespace MAL_Reviwer_UI.forms
             tlpUserInfo.Controls.Add(redirectCard);
 
             #endregion
+
+            #region Anime stats
+
+            Card animeStatsCard = new Card()
+            {
+                Dock = DockStyle.Fill,
+                Icon = Properties.Resources.icon_anime,
+                Margin = new Padding(0, 0, 19, 0),
+                Title = "Anime Stats"
+            };
+
+            animeStatsCard.Content.Controls.Add(pDashAnimeCard);
+            tlpAnimeMangaCards.Controls.Add(animeStatsCard);
+
+            #endregion
+
+            #region Manga stats
+
+            Card mangaStatsCard = new Card()
+            {
+                Dock = DockStyle.Fill,
+                Icon = Properties.Resources.icon_manga,
+                Margin = new Padding(19, 0, 0, 0),
+                Title = "Manga Stats"
+            };
+
+            mangaStatsCard.Content.Controls.Add(pDashMangaCard);
+            tlpAnimeMangaCards.Controls.Add(mangaStatsCard);
+
+            #endregion
+
         }
 
         #endregion
