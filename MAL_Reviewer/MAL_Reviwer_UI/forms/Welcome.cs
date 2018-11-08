@@ -543,38 +543,80 @@ namespace MAL_Reviwer_UI.forms
         /// <param name="mode"></param>
         private void LoadingUI(bool mode = true)
         {
-            tlpDashboardMain.VerticalScroll.Value = 0;
-            tlpAnimelistMain.VerticalScroll.Value = 0;
-            tlpMangalistMain.VerticalScroll.Value = 0;
-
-            if (mode)
+            if (pDashboard.InvokeRequired)
             {
-                tcDashboard.SelectedIndex = 0;
-                tcDashboard.TabPages.Remove(tpAnimelist);
-                tcDashboard.TabPages.Remove(tpMangalist);
+                pDashboard.Invoke((MethodInvoker)delegate
+                {
+                    tlpDashboardMain.VerticalScroll.Value = 0;
+                    tlpAnimelistMain.VerticalScroll.Value = 0;
+                    tlpMangalistMain.VerticalScroll.Value = 0;
 
-                tlpDashboardMain.Visible = false;
-                lMALAccPreview.Visible = false;
-                pbDashBoardLoad.Visible = true;
-                bUser.Enabled = false;
+                    if (mode)
+                    {
+                        tcDashboard.SelectedIndex = 0;
+                        tcDashboard.TabPages.Remove(tpAnimelist);
+                        tcDashboard.TabPages.Remove(tpMangalist);
+
+                        tlpDashboardMain.Visible = false;
+                        lMALAccPreview.Visible = false;
+                        pbDashBoardLoad.Visible = true;
+                        bUser.Enabled = false;
+                    }
+                    else if (mode == false && this.loaded == 6)
+                    {
+                        if (animePublic)
+                        {
+                            tcDashboard.TabPages.Add(tpAnimelist);
+                        }
+
+                        if (mangaPublic)
+                        {
+                            tcDashboard.TabPages.Add(tpMangalist);
+                        }
+
+                        bUser.Text = "Unload this MAL account";
+                        pbDashBoardLoad.Visible = false;
+                        lMALAccPreview.Visible = false;
+                        tlpDashboardMain.Visible = true;
+                        bUser.Enabled = true;
+                    }
+                });
             }
-            else if (mode == false && this.loaded == 6)
+            else
             {
-                if (animePublic)
-                {
-                    tcDashboard.TabPages.Add(tpAnimelist);
-                }
+                tlpDashboardMain.VerticalScroll.Value = 0;
+                tlpAnimelistMain.VerticalScroll.Value = 0;
+                tlpMangalistMain.VerticalScroll.Value = 0;
 
-                if (mangaPublic)
+                if (mode)
                 {
-                    tcDashboard.TabPages.Add(tpMangalist);
-                }
+                    tcDashboard.SelectedIndex = 0;
+                    tcDashboard.TabPages.Remove(tpAnimelist);
+                    tcDashboard.TabPages.Remove(tpMangalist);
 
-                bUser.Text = "Unload this MAL account";
-                pbDashBoardLoad.Visible = false;
-                lMALAccPreview.Visible = false;
-                tlpDashboardMain.Visible = true;
-                bUser.Enabled = true;
+                    tlpDashboardMain.Visible = false;
+                    lMALAccPreview.Visible = false;
+                    pbDashBoardLoad.Visible = true;
+                    bUser.Enabled = false;
+                }
+                else if (mode == false && this.loaded == 6)
+                {
+                    if (animePublic)
+                    {
+                        tcDashboard.TabPages.Add(tpAnimelist);
+                    }
+
+                    if (mangaPublic)
+                    {
+                        tcDashboard.TabPages.Add(tpMangalist);
+                    }
+
+                    bUser.Text = "Unload this MAL account";
+                    pbDashBoardLoad.Visible = false;
+                    lMALAccPreview.Visible = false;
+                    tlpDashboardMain.Visible = true;
+                    bUser.Enabled = true;
+                }
             }
         }
 
