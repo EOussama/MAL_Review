@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using MAL_Reviwer_UI.user_controls;
 using MAL_Reviewer_API;
@@ -11,15 +12,20 @@ namespace MAL_Reviwer_UI.forms
 {
     public partial class fNewReview : Form
     {
-        private bool _ready = true;
-        private int _targetId = 0;
-        private byte _type = 0;
-        private string _lastSearch = string.Empty;
-        private Timer _inputDelay;
+        private bool
+            ready = true,
+            allow = true;
+
+        private int targetId = 0;
+        private byte type = 0;
+        private string lastSearch = string.Empty;
+        private System.Windows.Forms.Timer inputDelay;
+        private CancellationTokenSource cts;
 
         public fNewReview()
         {
             InitializeComponent();
+            this.ActiveControl = tbSearch;
 
             // Wiring up eventhandlers to the radio buttons
             rbAnime.CheckedChanged += RbAnime_CheckedChanged;
@@ -45,11 +51,13 @@ namespace MAL_Reviwer_UI.forms
             }
 
             // input delay timer setup.
-            this._inputDelay = new Timer
+            this.inputDelay = new System.Windows.Forms.Timer
             {
                 Interval = 500
             };
-            this._inputDelay.Tick += _inputDelay_Tick;
+            this.inputDelay.Tick += _inputDelay_Tick;
+
+            cts = new CancellationTokenSource();
         }
 
         #region Manga/Anime labeling
@@ -73,20 +81,20 @@ namespace MAL_Reviwer_UI.forms
             string _currentSearch = tbSearch.Text.Trim().ToLower();
 
             // Check if the search request has already been sent or not.
-           if (!this._ready || _currentSearch.Length < 3)
+           if (!this.ready || _currentSearch.Length < 3)
             {
                 pSearchCards.Visible = false;
                 return;
             }
 
             // Reset the input timer.
-            this._inputDelay.Stop();
-            this._inputDelay.Start();
+            this.inputDelay.Stop();
+            this.inputDelay.Start();
         }
 
         private async void _inputDelay_Tick(object sender, EventArgs e)
         {
-            this._inputDelay.Stop();
+            this.inputDelay.Stop();
             tbSearch.Enabled = false;
 
             try
@@ -95,16 +103,18 @@ namespace MAL_Reviwer_UI.forms
                     searchTitle = tbSearch.Text.Trim().ToLower(),
                     searchType = rbAnime.Checked ? rbAnime.Text.ToLower() : rbManga.Text.ToLower();
 
-                if (this._lastSearch == searchTitle && this._type == (rbAnime.Checked ? int.Parse(rbAnime.Tag.ToString()) : int.Parse(rbManga.Tag.ToString())))
+                if (this.lastSearch == searchTitle && this.type == (rbAnime.Checked ? int.Parse(rbAnime.Tag.ToString()) : int.Parse(rbManga.Tag.ToString())))
                     return;
 
-                this._lastSearch = searchTitle;
-                this._type = (byte)(rbAnime.Checked ? int.Parse(rbAnime.Tag.ToString()) : int.Parse(rbManga.Tag.ToString()));
+                this.lastSearch = searchTitle;
+                this.type = (byte)(rbAnime.Checked ? int.Parse(rbAnime.Tag.ToString()) : int.Parse(rbManga.Tag.ToString()));
                 pbLoading.Visible = true;
                 pSearchCards.Visible = false;
-                this._ready = false;
+                rbAnime.Enabled = false;
+                rbManga.Enabled = false;
+                this.ready = false;
 
-                SearchModel searchModel = await MALHelper.Search(searchType, searchTitle);
+                SearchModel searchModel = await MALHelper.Search(searchType, searchTitle, cts.Token);
 
                 if (searchModel != null && searchModel.results != null)
                 {
@@ -145,20 +155,26 @@ namespace MAL_Reviwer_UI.forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                if (this.allow)
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             finally
             {
-                tbSearch.Enabled = true;
-                pbLoading.Visible = false;
-                this._ready = true;
+                if (this.allow)
+                {
+                    tbSearch.Enabled = true;
+                    pbLoading.Visible = false;
+                    rbAnime.Enabled = true;
+                    rbManga.Enabled = true;
+                    this.ready = true;
+                }
             }
         }
 
         private void SearchCard_CardMouseClickEvent(object sender, int targetId)
         {
             // Checking if the targetId isn't equal to the current previewed Anime/Manga's mal_id.
-            if (this._targetId == targetId && this._type  == (rbAnime.Checked ? int.Parse(rbAnime.Tag.ToString()) : int.Parse(rbManga.Tag.ToString())))
+            if (this.targetId == targetId && this.type  == (rbAnime.Checked ? int.Parse(rbAnime.Tag.ToString()) : int.Parse(rbManga.Tag.ToString())))
                 return;
 
             pPreview.Visible = false;
@@ -207,40 +223,49 @@ namespace MAL_Reviwer_UI.forms
             try
             {
                 AnimeModel animeModel = await MALHelper.GetAnime(animeId);
-                
+
                 // Updating the preview UI in a separate thread.
                 await Task.Run(() =>
                 {
-                    pPreview.Invoke((MethodInvoker)delegate
+                    cts.Token.ThrowIfCancellationRequested();
+
+                    if (pPreview.IsDisposed)
                     {
-                        lChapters.Visible = false;
-                        lTargetChapters.Visible = false;
-                        lVolumesEpisodes.Text = "Episodes";
+                        pPreview.Invoke((MethodInvoker)delegate
+                        {
+                            lChapters.Visible = false;
+                            lTargetChapters.Visible = false;
+                            lVolumesEpisodes.Text = "Episodes";
 
-                        lTargetScore.Text = animeModel.score?.ToString("0.00");
-                        lTargetRank.Text = animeModel.rank.ToString();
-                        lTargetType.Text = animeModel.type;
-                        lTargetStatus.Text = animeModel.airing ? "Airing" : "Finished";
-                        lTargetVolumesEpisodes.Text = animeModel.episodes != null ? animeModel.episodes.ToString() : "?";
-                        lTargetTitle.Text = animeModel.title.Length > 55 ? animeModel.title.Substring(0, 55) + "..." : animeModel.title;
-                        lTargetSynopsis.Text = animeModel.synopsis?.Length > 215 ? animeModel.synopsis?.Substring(0, 215) + "..." : animeModel.synopsis;
-                        pbTargetImage.Load(animeModel.image_url);
-                        bMAL.Tag = animeModel.url;
+                            lTargetScore.Text = animeModel.score?.ToString("0.00");
+                            lTargetRank.Text = animeModel.rank.ToString();
+                            lTargetType.Text = animeModel.type;
+                            lTargetStatus.Text = animeModel.airing ? "Airing" : "Finished";
+                            lTargetVolumesEpisodes.Text = animeModel.episodes != null ? animeModel.episodes.ToString() : "?";
+                            lTargetTitle.Text = animeModel.title.Length > 55 ? animeModel.title.Substring(0, 55) + "..." : animeModel.title;
+                            lTargetSynopsis.Text = animeModel.synopsis?.Length > 215 ? animeModel.synopsis?.Substring(0, 215) + "..." : animeModel.synopsis;
+                            pbTargetImage.Load(animeModel.image_url);
+                            bMAL.Tag = animeModel.url;
 
-                        this._targetId = animeModel.mal_id;
-                        this._type = 0;
-                    });
+                            this.targetId = animeModel.mal_id;
+                            this.type = 0;
+                        });
+                    }
                 });
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (this.allow)
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             finally
             {
-                pSearchCards.Visible = false;
-                pbLoadingPreview.Visible = false;
-                pPreview.Visible = true;
+                if (this.allow)
+                {
+                    pSearchCards.Visible = false;
+                    pbLoadingPreview.Visible = false;
+                    pPreview.Visible = true;
+                }
             }
         }
 
@@ -270,8 +295,8 @@ namespace MAL_Reviwer_UI.forms
                         pbTargetImage.Load(mangaModel.image_url);
                         bMAL.Tag = mangaModel.url;
 
-                        this._targetId = mangaModel.mal_id;
-                        this._type = 1;
+                        this.targetId = mangaModel.mal_id;
+                        this.type = 1;
                     });
                 });
             }
@@ -291,6 +316,13 @@ namespace MAL_Reviwer_UI.forms
 
         #endregion
 
-        private void FNewReview_FormClosing(object sender, FormClosingEventArgs e) => e.Cancel = !this._ready;
+        private void FNewReview_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!this.ready)
+            {
+                cts.Cancel();
+                this.allow = false;
+            }
+        }
     }
 }

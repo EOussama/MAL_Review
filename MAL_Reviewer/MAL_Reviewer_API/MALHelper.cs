@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading;
 using System.Threading.Tasks;
 using MAL_Reviewer_API.models;
 using MAL_Reviewer_API.models.ListEntryModel;
@@ -35,10 +36,12 @@ namespace MAL_Reviewer_API
         /// <param name="type"></param>
         /// <param name="title"></param>
         /// <returns> Task<SearchModel> </returns>
-        public async static Task<SearchModel> Search(string type, string title)
+        public async static Task<SearchModel> Search(string type, string title, CancellationToken ct)
         {
             string url = $"{ client.BaseAddress.AbsoluteUri }search/{ type }?q={ title }&page=1&limit=10";
             HttpResponseMessage response = await client.GetAsync(url);
+
+            ct.ThrowIfCancellationRequested();
 
             if (response.IsSuccessStatusCode)
                 return await response.Content.ReadAsAsync<SearchModel>();
@@ -84,10 +87,12 @@ namespace MAL_Reviewer_API
         /// </summary>
         /// <param name="username"></param>
         /// <returns></returns>
-        public async static Task<MALUserModel> GetUser(string username)
+        public async static Task<MALUserModel> GetUser(string username, CancellationToken ct)
         {
             string url = $"{ client.BaseAddress.AbsoluteUri }user/{ username }";
             HttpResponseMessage response = await client.GetAsync(url);
+
+            ct.ThrowIfCancellationRequested();
 
             if (response.IsSuccessStatusCode)
                 return await response.Content.ReadAsAsync<MALUserModel>();
@@ -101,7 +106,7 @@ namespace MAL_Reviewer_API
         /// <param name="username"></param>
         /// <param name="totalEntries"></param>
         /// <returns></returns>
-        public async static Task<List<AnimelistEntryModel>> GetAnimeList(string username, int totalEntries)
+        public async static Task<List<AnimelistEntryModel>> GetAnimeList(string username, int totalEntries, CancellationToken ct)
         {
             int pages = (int)Math.Ceiling((decimal)totalEntries / 300);
             List<AnimelistEntryModel> animeList = new List<AnimelistEntryModel>();
@@ -110,6 +115,8 @@ namespace MAL_Reviewer_API
             {
                 string url = $"{ client.BaseAddress.AbsoluteUri }user/{ username }/animelist/all/{ i }";
                 HttpResponseMessage response = await client.GetAsync(url);
+
+                ct.ThrowIfCancellationRequested();
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -129,7 +136,7 @@ namespace MAL_Reviewer_API
         /// <param name="username"></param>
         /// <param name="totalEntries"></param>
         /// <returns></returns>
-        public async static Task<List<MangalistEntryModel>> GetMangaList(string username, int totalEntries)
+        public async static Task<List<MangalistEntryModel>> GetMangaList(string username, int totalEntries, CancellationToken ct)
         {
             int pages = (int)Math.Ceiling((decimal)totalEntries / 300);
             List<MangalistEntryModel> mangaList = new List<MangalistEntryModel>();
@@ -138,6 +145,8 @@ namespace MAL_Reviewer_API
             {
                 string url = $"{ client.BaseAddress.AbsoluteUri }user/{ username }/mangalist/all/{ i }";
                 HttpResponseMessage response = await client.GetAsync(url);
+
+                ct.ThrowIfCancellationRequested();
 
                 if (response.IsSuccessStatusCode)
                 {

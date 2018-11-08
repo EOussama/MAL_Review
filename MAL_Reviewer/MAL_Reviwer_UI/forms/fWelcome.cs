@@ -506,7 +506,7 @@ namespace MAL_Reviwer_UI.forms
                 {
                     if (i != 5)
                     {
-                        tlpAnimelistMain.RowStyles[i] = new RowStyle(SizeType.Absolute, ((UcEntryList)tlpAnimelistMain.Controls[i]).ListHeight);
+                        tlpAnimelistMain.RowStyles[i] = new RowStyle(SizeType.Absolute, ((UcEntryList)tlpAnimelistMain.Controls[i]).ListHeight + ((UcEntryList)tlpAnimelistMain.Controls[i]).Margin.Bottom);
                     }
                     else
                     {
@@ -520,7 +520,7 @@ namespace MAL_Reviwer_UI.forms
                 {
                     if (i != 5)
                     {
-                        tlpMangalistMain.RowStyles[i] = new RowStyle(SizeType.Absolute, ((UcEntryList)tlpMangalistMain.Controls[i]).ListHeight);
+                        tlpMangalistMain.RowStyles[i] = new RowStyle(SizeType.Absolute, ((UcEntryList)tlpMangalistMain.Controls[i]).ListHeight + ((UcEntryList)tlpMangalistMain.Controls[i]).Margin.Bottom);
                     }
                     else
                     {
