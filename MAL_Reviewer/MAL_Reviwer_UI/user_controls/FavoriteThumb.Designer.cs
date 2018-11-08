@@ -1,6 +1,6 @@
 ﻿namespace MAL_Reviwer_UI.user_controls
 {
-    partial class ucFavoriteThumb
+    partial class FavoriteThumb
     {
         /// <summary> 
         /// Required designer variable.

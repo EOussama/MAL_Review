@@ -1,6 +1,6 @@
 ﻿namespace MAL_Reviwer_UI.user_controls
 {
-    partial class UcEntryList
+    partial class EntryList
     {
         /// <summary> 
         /// Required designer variable.

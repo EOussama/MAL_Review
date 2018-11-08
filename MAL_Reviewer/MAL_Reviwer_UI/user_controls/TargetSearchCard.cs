@@ -5,12 +5,12 @@ using System.Windows.Forms;
 
 namespace MAL_Reviwer_UI.user_controls
 {
-    public partial class ucTargetSearchCard : UserControl
+    public partial class TargetSearchCard : UserControl
     {
         public event EventHandler<int> CardMouseClickEvent;
         private int _targetId;
 
-        public ucTargetSearchCard()
+        public TargetSearchCard()
         {
             InitializeComponent();
 

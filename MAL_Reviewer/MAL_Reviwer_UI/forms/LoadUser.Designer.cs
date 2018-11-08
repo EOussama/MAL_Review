@@ -1,6 +1,6 @@
 ﻿namespace MAL_Reviwer_UI.forms
 {
-    partial class fLoadUser
+    partial class LoadUser
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fLoadUser));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadUser));
             this.lTitle = new System.Windows.Forms.Label();
             this.pMALUsername = new System.Windows.Forms.Panel();
             this.pbLoading = new System.Windows.Forms.PictureBox();

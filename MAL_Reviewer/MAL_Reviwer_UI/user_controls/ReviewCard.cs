@@ -2,9 +2,9 @@
 
 namespace MAL_Reviwer_UI.user_controls
 {
-    public partial class ucReviewCard : UserControl
+    public partial class ReviewCard : UserControl
     {
-        public ucReviewCard()
+        public ReviewCard()
         {
             InitializeComponent();
         }

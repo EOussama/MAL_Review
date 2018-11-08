@@ -10,11 +10,11 @@ using MAL_Reviewer_API.models.ListEntryModel;
 
 namespace MAL_Reviwer_UI.forms
 {
-    public partial class fWelcome : Form
+    public partial class Welcome : Form
     {
         private short _loaded = 0;
 
-        public fWelcome()
+        public Welcome()
         {
             InitializeComponent();
 
@@ -48,7 +48,7 @@ namespace MAL_Reviwer_UI.forms
 
         private void BUser_Click(object sender, EventArgs e)
         {
-            fLoadUser fLoadUser = new fLoadUser();
+            LoadUser fLoadUser = new LoadUser();
 
             fLoadUser.UserLoadedEvent += FLoadUser_UserLoadedEvent;
             fLoadUser.ShowDialog();
@@ -201,7 +201,7 @@ namespace MAL_Reviwer_UI.forms
                         {
                             pDashboard.Invoke((MethodInvoker)delegate
                             {
-                                ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favAnimeModel.name, favAnimeModel.image_url, "Anime")
+                                FavoriteThumb ucFavThumb = new FavoriteThumb(favAnimeModel.name, favAnimeModel.image_url, "Anime")
                                 {
                                     Tag = favAnimeModel.url,
                                     Dock = DockStyle.Top
@@ -219,7 +219,7 @@ namespace MAL_Reviwer_UI.forms
                         {
                             pDashboard.Invoke((MethodInvoker)delegate
                             {
-                                ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favMangaModel.name, favMangaModel.image_url, "Manga")
+                                FavoriteThumb ucFavThumb = new FavoriteThumb(favMangaModel.name, favMangaModel.image_url, "Manga")
                                 {
                                     Tag = favMangaModel.url,
                                     Dock = DockStyle.Top
@@ -237,7 +237,7 @@ namespace MAL_Reviwer_UI.forms
                         {
                             pDashboard.Invoke((MethodInvoker)delegate
                             {
-                                ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favCharacterModel.name, favCharacterModel.image_url, "Character")
+                                FavoriteThumb ucFavThumb = new FavoriteThumb(favCharacterModel.name, favCharacterModel.image_url, "Character")
                                 {
                                     Tag = favCharacterModel.url,
                                     Dock = DockStyle.Top
@@ -255,7 +255,7 @@ namespace MAL_Reviwer_UI.forms
                         {
                             pDashboard.Invoke((MethodInvoker)delegate
                             {
-                                ucFavoriteThumb ucFavThumb = new ucFavoriteThumb(favPeopleModel.name, favPeopleModel.image_url, "Person")
+                                FavoriteThumb ucFavThumb = new FavoriteThumb(favPeopleModel.name, favPeopleModel.image_url, "Person")
                                 {
                                     Tag = favPeopleModel.url,
                                     Dock = DockStyle.Top
@@ -295,11 +295,11 @@ namespace MAL_Reviwer_UI.forms
                         {
                             RefreshLists(EntryType.Anime);
 
-                            ((UcEntryList)tlpAnimelistMain.Controls[0]).UpdateList(animeList.Where(a => a.watching_status == 1).ToList());
-                            ((UcEntryList)tlpAnimelistMain.Controls[1]).UpdateList(animeList.Where(a => a.watching_status == 2).ToList());
-                            ((UcEntryList)tlpAnimelistMain.Controls[2]).UpdateList(animeList.Where(a => a.watching_status == 3).ToList());
-                            ((UcEntryList)tlpAnimelistMain.Controls[3]).UpdateList(animeList.Where(a => a.watching_status == 4).ToList());
-                            ((UcEntryList)tlpAnimelistMain.Controls[4]).UpdateList(animeList.Where(a => a.watching_status == 6).ToList());
+                            ((EntryList)tlpAnimelistMain.Controls[0]).UpdateList(animeList.Where(a => a.watching_status == 1).ToList());
+                            ((EntryList)tlpAnimelistMain.Controls[1]).UpdateList(animeList.Where(a => a.watching_status == 2).ToList());
+                            ((EntryList)tlpAnimelistMain.Controls[2]).UpdateList(animeList.Where(a => a.watching_status == 3).ToList());
+                            ((EntryList)tlpAnimelistMain.Controls[3]).UpdateList(animeList.Where(a => a.watching_status == 4).ToList());
+                            ((EntryList)tlpAnimelistMain.Controls[4]).UpdateList(animeList.Where(a => a.watching_status == 6).ToList());
 
                             ResizeTable(EntryType.Anime);
                         });
@@ -308,11 +308,11 @@ namespace MAL_Reviwer_UI.forms
                     {
                         RefreshLists(EntryType.Anime);
 
-                        ((UcEntryList)tlpAnimelistMain.Controls[0]).UpdateList(animeList.Where(a => a.watching_status == 1).ToList());
-                        ((UcEntryList)tlpAnimelistMain.Controls[1]).UpdateList(animeList.Where(a => a.watching_status == 2).ToList());
-                        ((UcEntryList)tlpAnimelistMain.Controls[2]).UpdateList(animeList.Where(a => a.watching_status == 3).ToList());
-                        ((UcEntryList)tlpAnimelistMain.Controls[3]).UpdateList(animeList.Where(a => a.watching_status == 4).ToList());
-                        ((UcEntryList)tlpAnimelistMain.Controls[4]).UpdateList(animeList.Where(a => a.watching_status == 6).ToList());
+                        ((EntryList)tlpAnimelistMain.Controls[0]).UpdateList(animeList.Where(a => a.watching_status == 1).ToList());
+                        ((EntryList)tlpAnimelistMain.Controls[1]).UpdateList(animeList.Where(a => a.watching_status == 2).ToList());
+                        ((EntryList)tlpAnimelistMain.Controls[2]).UpdateList(animeList.Where(a => a.watching_status == 3).ToList());
+                        ((EntryList)tlpAnimelistMain.Controls[3]).UpdateList(animeList.Where(a => a.watching_status == 4).ToList());
+                        ((EntryList)tlpAnimelistMain.Controls[4]).UpdateList(animeList.Where(a => a.watching_status == 6).ToList());
 
                         ResizeTable(EntryType.Anime);
                     }
@@ -326,7 +326,7 @@ namespace MAL_Reviwer_UI.forms
                     {
                         RefreshLists(EntryType.Anime);
 
-                        foreach (UcEntryList entryList in tlpAnimelistMain.Controls)
+                        foreach (EntryList entryList in tlpAnimelistMain.Controls)
                             entryList.ClearList();
 
                         ResizeTable(EntryType.Anime);
@@ -336,7 +336,7 @@ namespace MAL_Reviwer_UI.forms
                 {
                     RefreshLists(EntryType.Anime);
 
-                    foreach (UcEntryList entryList in tlpAnimelistMain.Controls)
+                    foreach (EntryList entryList in tlpAnimelistMain.Controls)
                         entryList.ClearList();
 
                     ResizeTable(EntryType.Anime);
@@ -365,11 +365,11 @@ namespace MAL_Reviwer_UI.forms
                         {
                             RefreshLists(EntryType.Manga);
 
-                            ((UcEntryList)tlpMangalistMain.Controls[0]).UpdateList(mangaList.Where(a => a.reading_status == 1).ToList());
-                            ((UcEntryList)tlpMangalistMain.Controls[1]).UpdateList(mangaList.Where(a => a.reading_status == 2).ToList());
-                            ((UcEntryList)tlpMangalistMain.Controls[2]).UpdateList(mangaList.Where(a => a.reading_status == 3).ToList());
-                            ((UcEntryList)tlpMangalistMain.Controls[3]).UpdateList(mangaList.Where(a => a.reading_status == 4).ToList());
-                            ((UcEntryList)tlpMangalistMain.Controls[4]).UpdateList(mangaList.Where(a => a.reading_status == 6).ToList());
+                            ((EntryList)tlpMangalistMain.Controls[0]).UpdateList(mangaList.Where(a => a.reading_status == 1).ToList());
+                            ((EntryList)tlpMangalistMain.Controls[1]).UpdateList(mangaList.Where(a => a.reading_status == 2).ToList());
+                            ((EntryList)tlpMangalistMain.Controls[2]).UpdateList(mangaList.Where(a => a.reading_status == 3).ToList());
+                            ((EntryList)tlpMangalistMain.Controls[3]).UpdateList(mangaList.Where(a => a.reading_status == 4).ToList());
+                            ((EntryList)tlpMangalistMain.Controls[4]).UpdateList(mangaList.Where(a => a.reading_status == 6).ToList());
 
                             ResizeTable(EntryType.Manga);
                         });
@@ -378,11 +378,11 @@ namespace MAL_Reviwer_UI.forms
                     {
                         RefreshLists(EntryType.Manga);
                     
-                        ((UcEntryList)tlpMangalistMain.Controls[0]).UpdateList(mangaList.Where(a => a.reading_status == 1).ToList());
-                        ((UcEntryList)tlpMangalistMain.Controls[1]).UpdateList(mangaList.Where(a => a.reading_status == 2).ToList());
-                        ((UcEntryList)tlpMangalistMain.Controls[2]).UpdateList(mangaList.Where(a => a.reading_status == 3).ToList());
-                        ((UcEntryList)tlpMangalistMain.Controls[3]).UpdateList(mangaList.Where(a => a.reading_status == 4).ToList());
-                        ((UcEntryList)tlpMangalistMain.Controls[4]).UpdateList(mangaList.Where(a => a.reading_status == 6).ToList());
+                        ((EntryList)tlpMangalistMain.Controls[0]).UpdateList(mangaList.Where(a => a.reading_status == 1).ToList());
+                        ((EntryList)tlpMangalistMain.Controls[1]).UpdateList(mangaList.Where(a => a.reading_status == 2).ToList());
+                        ((EntryList)tlpMangalistMain.Controls[2]).UpdateList(mangaList.Where(a => a.reading_status == 3).ToList());
+                        ((EntryList)tlpMangalistMain.Controls[3]).UpdateList(mangaList.Where(a => a.reading_status == 4).ToList());
+                        ((EntryList)tlpMangalistMain.Controls[4]).UpdateList(mangaList.Where(a => a.reading_status == 6).ToList());
 
                         ResizeTable(EntryType.Manga);
                     }
@@ -396,7 +396,7 @@ namespace MAL_Reviwer_UI.forms
                     {
                         RefreshLists(EntryType.Manga);
 
-                        foreach (UcEntryList entryList in tlpMangalistMain.Controls)
+                        foreach (EntryList entryList in tlpMangalistMain.Controls)
                             entryList.ClearList();
 
                         ResizeTable(EntryType.Manga);
@@ -406,7 +406,7 @@ namespace MAL_Reviwer_UI.forms
                 {
                     RefreshLists(EntryType.Manga);
 
-                    foreach (UcEntryList entryList in tlpMangalistMain.Controls)
+                    foreach (EntryList entryList in tlpMangalistMain.Controls)
                         entryList.ClearList();
 
                     ResizeTable(EntryType.Manga);
@@ -424,22 +424,22 @@ namespace MAL_Reviwer_UI.forms
         {
             if (type == EntryType.Anime)
             {
-                tlpAnimelistMain.Controls.AddRange(new UcEntryList[] {
-                    new UcEntryList("Watching", EntryType.Anime) { Dock = DockStyle.Fill },
-                    new UcEntryList("Completed", EntryType.Anime) { Dock = DockStyle.Fill },
-                    new UcEntryList("On Hold", EntryType.Anime) { Dock = DockStyle.Fill },
-                    new UcEntryList("Dropped", EntryType.Anime) { Dock = DockStyle.Fill },
-                    new UcEntryList("Plan to Watch", EntryType.Anime) { Dock = DockStyle.Fill }
+                tlpAnimelistMain.Controls.AddRange(new EntryList[] {
+                    new EntryList("Watching", EntryType.Anime) { Dock = DockStyle.Fill },
+                    new EntryList("Completed", EntryType.Anime) { Dock = DockStyle.Fill },
+                    new EntryList("On Hold", EntryType.Anime) { Dock = DockStyle.Fill },
+                    new EntryList("Dropped", EntryType.Anime) { Dock = DockStyle.Fill },
+                    new EntryList("Plan to Watch", EntryType.Anime) { Dock = DockStyle.Fill }
                 });
             }
             else
             {
-                tlpMangalistMain.Controls.AddRange(new UcEntryList[] {
-                new UcEntryList("Reading", EntryType.Manga) { Dock = DockStyle.Fill },
-                new UcEntryList("Completed", EntryType.Manga) { Dock = DockStyle.Fill },
-                new UcEntryList("On Hold", EntryType.Manga) { Dock = DockStyle.Fill },
-                new UcEntryList("Dropped", EntryType.Manga) { Dock = DockStyle.Fill },
-                new UcEntryList("Plan to Read", EntryType.Manga) { Dock = DockStyle.Fill }
+                tlpMangalistMain.Controls.AddRange(new EntryList[] {
+                new EntryList("Reading", EntryType.Manga) { Dock = DockStyle.Fill },
+                new EntryList("Completed", EntryType.Manga) { Dock = DockStyle.Fill },
+                new EntryList("On Hold", EntryType.Manga) { Dock = DockStyle.Fill },
+                new EntryList("Dropped", EntryType.Manga) { Dock = DockStyle.Fill },
+                new EntryList("Plan to Read", EntryType.Manga) { Dock = DockStyle.Fill }
                 });
             }
         }
@@ -506,7 +506,7 @@ namespace MAL_Reviwer_UI.forms
                 {
                     if (i != 5)
                     {
-                        tlpAnimelistMain.RowStyles[i] = new RowStyle(SizeType.Absolute, ((UcEntryList)tlpAnimelistMain.Controls[i]).ListHeight + ((UcEntryList)tlpAnimelistMain.Controls[i]).Margin.Bottom);
+                        tlpAnimelistMain.RowStyles[i] = new RowStyle(SizeType.Absolute, ((EntryList)tlpAnimelistMain.Controls[i]).ListHeight + ((EntryList)tlpAnimelistMain.Controls[i]).Margin.Bottom);
                     }
                     else
                     {
@@ -520,7 +520,7 @@ namespace MAL_Reviwer_UI.forms
                 {
                     if (i != 5)
                     {
-                        tlpMangalistMain.RowStyles[i] = new RowStyle(SizeType.Absolute, ((UcEntryList)tlpMangalistMain.Controls[i]).ListHeight + ((UcEntryList)tlpMangalistMain.Controls[i]).Margin.Bottom);
+                        tlpMangalistMain.RowStyles[i] = new RowStyle(SizeType.Absolute, ((EntryList)tlpMangalistMain.Controls[i]).ListHeight + ((EntryList)tlpMangalistMain.Controls[i]).Margin.Bottom);
                     }
                     else
                     {
@@ -574,6 +574,6 @@ namespace MAL_Reviwer_UI.forms
 
         #endregion
 
-        private void BNew_Click(object sender, EventArgs e) => (new fNewReview()).ShowDialog();
+        private void BNew_Click(object sender, EventArgs e) => (new NewReview()).ShowDialog();
     }
 }

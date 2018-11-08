@@ -10,7 +10,7 @@ using MAL_Reviewer_API.models;
 
 namespace MAL_Reviwer_UI.forms
 {
-    public partial class fNewReview : Form
+    public partial class NewReview : Form
     {
         private bool
             ready = true,
@@ -22,7 +22,7 @@ namespace MAL_Reviwer_UI.forms
         private System.Windows.Forms.Timer inputDelay;
         private CancellationTokenSource cts;
 
-        public fNewReview()
+        public NewReview()
         {
             InitializeComponent();
             this.ActiveControl = tbSearch;
@@ -38,7 +38,7 @@ namespace MAL_Reviwer_UI.forms
             // Populating the pSearchCards panel with ucTargetSearchCard user controls.
             foreach (int i in Enumerable.Range(1, 10))
             {
-                ucTargetSearchCard searchCard = new ucTargetSearchCard();
+                TargetSearchCard searchCard = new TargetSearchCard();
                 int searchCardCount = pSearchCards.Controls.Count;
 
                 if (searchCardCount < 5)
@@ -124,7 +124,7 @@ namespace MAL_Reviwer_UI.forms
 
                     for (int i = 0; i < pSearchCards.Controls.Count; i++)
                     {
-                        ucTargetSearchCard searchCard = (ucTargetSearchCard)pSearchCards.Controls[i];
+                        TargetSearchCard searchCard = (TargetSearchCard)pSearchCards.Controls[i];
 
                         if (i < resultCount)
                         {
@@ -278,37 +278,46 @@ namespace MAL_Reviwer_UI.forms
                 // Updating the preview UI in a separate thread.
                 await Task.Run(() =>
                 {
-                    pPreview.Invoke((MethodInvoker)delegate
+                    cts.Token.ThrowIfCancellationRequested();
+
+                    if (pPreview.IsDisposed)
                     {
-                        lChapters.Visible = true;
-                        lTargetChapters.Visible = true;
-                        lVolumesEpisodes.Text = "Volumes";
+                        pPreview.Invoke((MethodInvoker)delegate
+                        {
+                            lChapters.Visible = true;
+                            lTargetChapters.Visible = true;
+                            lVolumesEpisodes.Text = "Volumes";
 
-                        lTargetScore.Text = mangaModel.score?.ToString("0.00");
-                        lTargetRank.Text = mangaModel.rank.ToString();
-                        lTargetType.Text = mangaModel.type;
-                        lTargetStatus.Text = mangaModel.publishing ? "Publishing" : "Finished";
-                        lTargetVolumesEpisodes.Text = mangaModel.volumes != null ? mangaModel.volumes.ToString() : "?";
-                        lTargetChapters.Text = mangaModel.chapters != null ? mangaModel.chapters.ToString() : "?";
-                        lTargetTitle.Text = mangaModel.title.Length > 55 ? mangaModel.title.Substring(0, 55) + "..." : mangaModel.title;
-                        lTargetSynopsis.Text = mangaModel.synopsis?.Length > 215 ? mangaModel.synopsis?.Substring(0, 215) + "..." : mangaModel.synopsis;
-                        pbTargetImage.Load(mangaModel.image_url);
-                        bMAL.Tag = mangaModel.url;
+                            lTargetScore.Text = mangaModel.score?.ToString("0.00");
+                            lTargetRank.Text = mangaModel.rank.ToString();
+                            lTargetType.Text = mangaModel.type;
+                            lTargetStatus.Text = mangaModel.publishing ? "Publishing" : "Finished";
+                            lTargetVolumesEpisodes.Text = mangaModel.volumes != null ? mangaModel.volumes.ToString() : "?";
+                            lTargetChapters.Text = mangaModel.chapters != null ? mangaModel.chapters.ToString() : "?";
+                            lTargetTitle.Text = mangaModel.title.Length > 55 ? mangaModel.title.Substring(0, 55) + "..." : mangaModel.title;
+                            lTargetSynopsis.Text = mangaModel.synopsis?.Length > 215 ? mangaModel.synopsis?.Substring(0, 215) + "..." : mangaModel.synopsis;
+                            pbTargetImage.Load(mangaModel.image_url);
+                            bMAL.Tag = mangaModel.url;
 
-                        this.targetId = mangaModel.mal_id;
-                        this.type = 1;
-                    });
+                            this.targetId = mangaModel.mal_id;
+                            this.type = 1;
+                        });
+                    }
                 });
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (this.allow)
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             finally
             {
-                pSearchCards.Visible = false;
-                pbLoadingPreview.Visible = false;
-                pPreview.Visible = true;
+                if (this.allow)
+                {
+                    pSearchCards.Visible = false;
+                    pbLoadingPreview.Visible = false;
+                    pPreview.Visible = true;
+                }
             }
         }
 

@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace MAL_Reviwer_UI.user_controls
 {
-    public partial class ucFavoriteThumb : UserControl
+    public partial class FavoriteThumb : UserControl
     {
-        public ucFavoriteThumb(string title, string image_url, string type)
+        public FavoriteThumb(string title, string image_url, string type)
         {
             InitializeComponent();
 

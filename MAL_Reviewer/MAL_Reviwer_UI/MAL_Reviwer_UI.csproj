@@ -49,23 +49,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="forms\fLoadUser.cs">
+    <Compile Include="forms\LoadUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\fLoadUser.Designer.cs">
-      <DependentUpon>fLoadUser.cs</DependentUpon>
+    <Compile Include="forms\LoadUser.Designer.cs">
+      <DependentUpon>LoadUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\fNewReview.cs">
+    <Compile Include="forms\NewReview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\fNewReview.Designer.cs">
-      <DependentUpon>fNewReview.cs</DependentUpon>
+    <Compile Include="forms\NewReview.Designer.cs">
+      <DependentUpon>NewReview.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\fWelcome.cs">
+    <Compile Include="forms\Welcome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\fWelcome.Designer.cs">
-      <DependentUpon>fWelcome.cs</DependentUpon>
+    <Compile Include="forms\Welcome.Designer.cs">
+      <DependentUpon>Welcome.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,38 +80,38 @@
     <Compile Include="user_controls\Card.Designer.cs">
       <DependentUpon>Card.cs</DependentUpon>
     </Compile>
-    <Compile Include="user_controls\ucEntryList.cs">
+    <Compile Include="user_controls\EntryList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="user_controls\ucEntryList.Designer.cs">
-      <DependentUpon>ucEntryList.cs</DependentUpon>
+    <Compile Include="user_controls\EntryList.Designer.cs">
+      <DependentUpon>EntryList.cs</DependentUpon>
     </Compile>
-    <Compile Include="user_controls\ucFavoriteThumb.cs">
+    <Compile Include="user_controls\FavoriteThumb.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="user_controls\ucFavoriteThumb.Designer.cs">
-      <DependentUpon>ucFavoriteThumb.cs</DependentUpon>
+    <Compile Include="user_controls\FavoriteThumb.Designer.cs">
+      <DependentUpon>FavoriteThumb.cs</DependentUpon>
     </Compile>
-    <Compile Include="user_controls\ucReviewCard.cs">
+    <Compile Include="user_controls\ReviewCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="user_controls\ucReviewCard.Designer.cs">
-      <DependentUpon>ucReviewCard.cs</DependentUpon>
+    <Compile Include="user_controls\ReviewCard.Designer.cs">
+      <DependentUpon>ReviewCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="user_controls\ucTargetSearchCard.cs">
+    <Compile Include="user_controls\TargetSearchCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="user_controls\ucTargetSearchCard.Designer.cs">
-      <DependentUpon>ucTargetSearchCard.cs</DependentUpon>
+    <Compile Include="user_controls\TargetSearchCard.Designer.cs">
+      <DependentUpon>TargetSearchCard.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="forms\fLoadUser.resx">
-      <DependentUpon>fLoadUser.cs</DependentUpon>
+    <EmbeddedResource Include="forms\LoadUser.resx">
+      <DependentUpon>LoadUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\fNewReview.resx">
-      <DependentUpon>fNewReview.cs</DependentUpon>
+    <EmbeddedResource Include="forms\NewReview.resx">
+      <DependentUpon>NewReview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\fWelcome.resx">
-      <DependentUpon>fWelcome.cs</DependentUpon>
+    <EmbeddedResource Include="forms\Welcome.resx">
+      <DependentUpon>Welcome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -121,17 +121,17 @@
     <EmbeddedResource Include="user_controls\Card.resx">
       <DependentUpon>Card.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="user_controls\ucEntryList.resx">
-      <DependentUpon>ucEntryList.cs</DependentUpon>
+    <EmbeddedResource Include="user_controls\EntryList.resx">
+      <DependentUpon>EntryList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="user_controls\ucFavoriteThumb.resx">
-      <DependentUpon>ucFavoriteThumb.cs</DependentUpon>
+    <EmbeddedResource Include="user_controls\FavoriteThumb.resx">
+      <DependentUpon>FavoriteThumb.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="user_controls\ucReviewCard.resx">
-      <DependentUpon>ucReviewCard.cs</DependentUpon>
+    <EmbeddedResource Include="user_controls\ReviewCard.resx">
+      <DependentUpon>ReviewCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="user_controls\ucTargetSearchCard.resx">
-      <DependentUpon>ucTargetSearchCard.cs</DependentUpon>
+    <EmbeddedResource Include="user_controls\TargetSearchCard.resx">
+      <DependentUpon>TargetSearchCard.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

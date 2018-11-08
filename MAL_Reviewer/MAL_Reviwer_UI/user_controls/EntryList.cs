@@ -5,7 +5,7 @@ using MAL_Reviewer_API.models.ListEntryModel;
 
 namespace MAL_Reviwer_UI.user_controls
 {
-    public partial class UcEntryList : UserControl
+    public partial class EntryList : UserControl
     {
         private const short
             fixedHeight = 1500,
@@ -15,7 +15,7 @@ namespace MAL_Reviwer_UI.user_controls
 
         public int ListHeight { get => listHeight; }
 
-        public UcEntryList(string label, EntryType type)
+        public EntryList(string label, EntryType type)
         {
             InitializeComponent();
           

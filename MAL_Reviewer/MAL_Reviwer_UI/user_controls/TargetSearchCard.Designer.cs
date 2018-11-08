@@ -1,6 +1,6 @@
 ﻿namespace MAL_Reviwer_UI.user_controls
 {
-    partial class ucTargetSearchCard
+    partial class TargetSearchCard
     {
         /// <summary> 
         /// Required designer variable.

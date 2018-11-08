@@ -1,6 +1,6 @@
 ﻿namespace MAL_Reviwer_UI.user_controls
 {
-    partial class ucReviewCard
+    partial class ReviewCard
     {
         /// <summary> 
         /// Required designer variable.
