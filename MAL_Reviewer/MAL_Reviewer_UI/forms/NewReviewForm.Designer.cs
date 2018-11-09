@@ -36,6 +36,7 @@
             this.pbShow = new System.Windows.Forms.PictureBox();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.pPreview = new System.Windows.Forms.Panel();
+            this.lTargetSynopsis = new System.Windows.Forms.RichTextBox();
             this.lChapters = new System.Windows.Forms.Label();
             this.lTargetTitle = new System.Windows.Forms.Label();
             this.lTargetChapters = new System.Windows.Forms.Label();
@@ -71,7 +72,6 @@
             this.ClearButton = new System.Windows.Forms.Button();
             this.ReviewButton = new System.Windows.Forms.Button();
             this.InfoTooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.lTargetSynopsis = new System.Windows.Forms.RichTextBox();
             this.pReviewLookUp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbShow)).BeginInit();
@@ -162,6 +162,18 @@
             this.pPreview.Size = new System.Drawing.Size(255, 339);
             this.pPreview.TabIndex = 4;
             this.pPreview.Visible = false;
+            // 
+            // lTargetSynopsis
+            // 
+            this.lTargetSynopsis.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lTargetSynopsis.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTargetSynopsis.Location = new System.Drawing.Point(10, 249);
+            this.lTargetSynopsis.Name = "lTargetSynopsis";
+            this.lTargetSynopsis.ReadOnly = true;
+            this.lTargetSynopsis.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.lTargetSynopsis.Size = new System.Drawing.Size(235, 77);
+            this.lTargetSynopsis.TabIndex = 21;
+            this.lTargetSynopsis.Text = "Such empty";
             // 
             // lChapters
             // 
@@ -539,6 +551,7 @@
             this.ClearButton.TabIndex = 14;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // ReviewButton
             // 
@@ -557,17 +570,6 @@
             // 
             this.InfoTooltip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.InfoTooltip.ToolTipTitle = "Target title";
-            // 
-            // lTargetSynopsis
-            // 
-            this.lTargetSynopsis.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lTargetSynopsis.Location = new System.Drawing.Point(10, 249);
-            this.lTargetSynopsis.Name = "lTargetSynopsis";
-            this.lTargetSynopsis.ReadOnly = true;
-            this.lTargetSynopsis.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.lTargetSynopsis.Size = new System.Drawing.Size(235, 77);
-            this.lTargetSynopsis.TabIndex = 21;
-            this.lTargetSynopsis.Text = "Such empty";
             // 
             // NewReviewForm
             // 

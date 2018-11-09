@@ -35,7 +35,7 @@ namespace MAL_Reviewer_API.models
         /// The entry's type; (Anime, OVA, ONA, Movie, Special, Manga, Manwha, One Shot, Nover...).
         /// </summary>
         [JsonProperty(PropertyName = "type")]
-        public string type { get; set; }
+        public string Type { get; set; }
 
         /// <summary>
         /// The score of the entry on MAL.

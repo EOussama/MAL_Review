@@ -221,10 +221,14 @@ namespace MAL_Reviewer_UI.forms
         {
             pbLoading.Visible = state;
             pSearchCards.Visible = !state && (bool)pSearchCards.Controls[0].Tag == true;
-            pSearchCards.VerticalScroll.Value = 0;
             tbSearch.Enabled = !state;
             rbAnime.Enabled = !state;
             rbManga.Enabled = !state;
+            ClearButton.Enabled = !state;
+
+            // Reseting the vertical scrolling.
+            pSearchCards.VerticalScroll.Value = 0;
+            // TODO scroll synopsis to top.
 
             if (!state)
             {
@@ -297,7 +301,7 @@ namespace MAL_Reviewer_UI.forms
 
                             lTargetScore.Text = animeModel.Score?.ToString("0.00");
                             lTargetRank.Text = animeModel.Rank.ToString();
-                            lTargetType.Text = animeModel.type;
+                            lTargetType.Text = animeModel.Type;
                             lTargetStatus.Text = animeModel.Airing ? "Airing" : "Finished";
                             lTargetVolumesEpisodes.Text = animeModel.Episodes != null ? animeModel.Episodes.ToString() : "?";
                             lTargetTitle.Text = animeModel.Title.Length > 55 ? animeModel.Title.Substring(0, 55) + "..." : animeModel.Title;
@@ -308,7 +312,7 @@ namespace MAL_Reviewer_UI.forms
                             lTargetChapters.Visible = false;
                             lChapters.Visible = false;
 
-                            InfoTooltip.ToolTipTitle = $"{ animeModel.type } title";
+                            InfoTooltip.ToolTipTitle = $"{ animeModel.Type } title";
                             InfoTooltip.SetToolTip(lTargetTitle, animeModel.Title);
 
                             this.targetId = animeModel.Mal_id;
@@ -354,7 +358,7 @@ namespace MAL_Reviewer_UI.forms
 
                             lTargetScore.Text = mangaModel.Score?.ToString("0.00");
                             lTargetRank.Text = mangaModel.Rank.ToString();
-                            lTargetType.Text = mangaModel.type;
+                            lTargetType.Text = mangaModel.Type;
                             lTargetStatus.Text = mangaModel.Publishing ? "Publishing" : "Finished";
                             lTargetVolumesEpisodes.Text = mangaModel.Volumes != null ? mangaModel.Volumes.ToString() : "?";
                             lTargetChapters.Text = mangaModel.Chapters != null ? mangaModel.Chapters.ToString() : "?";
@@ -363,7 +367,7 @@ namespace MAL_Reviewer_UI.forms
                             pbTargetImage.Load(mangaModel.Image_url);
                             MALPageButton.Tag = mangaModel.Url;
 
-                            InfoTooltip.ToolTipTitle = $"{ mangaModel.type } title";
+                            InfoTooltip.ToolTipTitle = $"{ mangaModel.Type } title";
                             InfoTooltip.SetToolTip(lTargetTitle, mangaModel.Title);
 
                             this.targetId = mangaModel.Mal_id;
@@ -388,6 +392,22 @@ namespace MAL_Reviewer_UI.forms
         }
 
         private void BMAL_Click(object sender, EventArgs e) => System.Diagnostics.Process.Start(((Button)sender).Tag.ToString());
+
+        #endregion
+
+        #region Form submition
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            tbSearch.Clear();
+            pPreview.Visible = false;
+
+            rbAnime.Checked = true;
+            rbScale10.Checked = true;
+            rbDecimalNo.Checked = true;
+
+            this.ActiveControl = tbSearch;
+        }
 
         #endregion
 
