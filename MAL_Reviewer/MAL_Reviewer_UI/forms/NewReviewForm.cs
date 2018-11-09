@@ -49,6 +49,7 @@ namespace MAL_Reviewer_UI.forms
                 searchCard.CardMouseClickEvent += SearchCard_CardMouseClickEvent;
                 searchCard.Top = searchCard.Height * searchCardCount;
                 searchCard.Visible = false;
+                searchCard.Tag = false;
                 pSearchCards.Controls.Add(searchCard);
             }
 
@@ -103,7 +104,6 @@ namespace MAL_Reviewer_UI.forms
         private async void _inputDelay_Tick(object sender, EventArgs e)
         {
             this.inputDelay.Stop();
-            tbSearch.Enabled = false;
 
             try
             {
@@ -114,12 +114,11 @@ namespace MAL_Reviewer_UI.forms
                 if (this.lastSearch == searchTitle && this.type == (rbAnime.Checked ? int.Parse(rbAnime.Tag.ToString()) : int.Parse(rbManga.Tag.ToString())))
                     return;
 
+                // Get last search and type.
                 this.lastSearch = searchTitle;
                 this.type = (byte)(rbAnime.Checked ? int.Parse(rbAnime.Tag.ToString()) : int.Parse(rbManga.Tag.ToString()));
-                pbLoading.Visible = true;
-                pSearchCards.Visible = false;
-                rbAnime.Enabled = false;
-                rbManga.Enabled = false;
+
+                ToggleSearchLoading(true);
                 this.ready = false;
 
                 SearchModel searchModel = await MALHelper.Search(searchType, searchTitle, cts.Token);
@@ -145,6 +144,7 @@ namespace MAL_Reviewer_UI.forms
                                     {
                                         searchCard.UpdateUI(resultsModel.Mal_id, resultsModel.Title, resultsModel.Type, resultsModel.Image_url, rbAnime.Checked ? rbAnime.Text : rbManga.Text);
                                         searchCard.Visible = true;
+                                        searchCard.Tag = true;
                                     });
                                 })
                             );
@@ -154,12 +154,26 @@ namespace MAL_Reviewer_UI.forms
                             searchCard.Invoke((MethodInvoker)delegate
                             {
                                 searchCard.Visible = false;
+                                searchCard.Tag = false;
                             });
+                        }
+
+                        if (i < resultCount + 1 && resultCount < 5)
+                        {
+                            pSearchCards.Height = searchCard.Height * i;
                         }
                     }
 
                     await Task.WhenAll(tasks);
                     pSearchCards.Visible = true;
+                }
+                else
+                {
+                    foreach (TargetSearchCardControl targetSearchCardControl in pSearchCards.Controls)
+                    {
+                        targetSearchCardControl.Visible = false;
+                        targetSearchCardControl.Tag = false;
+                    }
                 }
             }
             catch (Exception ex)
@@ -171,10 +185,7 @@ namespace MAL_Reviewer_UI.forms
             {
                 if (this.allow)
                 {
-                    tbSearch.Enabled = true;
-                    pbLoading.Visible = false;
-                    rbAnime.Enabled = true;
-                    rbManga.Enabled = true;
+                    ToggleSearchLoading(false);
                     this.ready = true;
                 }
             }
@@ -194,11 +205,25 @@ namespace MAL_Reviewer_UI.forms
                 PreviewManga(targetId);
         }
 
+        /// <summary>
+        /// Toggles the loading animation for the search UI.
+        /// </summary>
+        /// <param name="state"></param>
+        private void ToggleSearchLoading(bool state)
+        {
+            pbLoading.Visible = state;
+            pSearchCards.Visible = !state && (bool)pSearchCards.Controls[0].Tag == true;
+            tbSearch.Enabled = !state;
+            rbAnime.Enabled = !state;
+            rbManga.Enabled = !state;
+        }
+
         #region Search panel icon toggler
 
         private void TbSearch_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left && tbSearch.Focused && tbSearch.Text.Trim().Length > 2 && pSearchCards.Controls.Count > 0 && pSearchCards.Visible == false)
+            // pSearchCards.Controls.OfType<TargetSearchCardControl>().Count(control => (bool)control.Tag == true) > 0
+            if (e.Button == MouseButtons.Left && tbSearch.Focused && tbSearch.Text.Trim().Length > 2 && (bool)pSearchCards.Controls[0].Tag == true && pSearchCards.Visible == false)
                 pSearchCards.Visible = true;
         }
 
