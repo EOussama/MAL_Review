@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="MAL_Reviewer/MAL_Reviwer_UI/images/logo/logo.svg" width="200">
+    <img src="MAL_Reviewer/MAL_Reviewer_UI/images/logo/logo.svg" width="200">
 </p>
 <h1 align="center">MAL Reviewer</h1>
 
