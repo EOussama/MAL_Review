@@ -1,6 +1,6 @@
 ﻿namespace MAL_Reviewer_UI.user_controls
 {
-    partial class TargetSearchCard
+    partial class TargetSearchCardControl
     {
         /// <summary> 
         /// Required designer variable.

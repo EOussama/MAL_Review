@@ -5,12 +5,12 @@ using System.Windows.Forms;
 
 namespace MAL_Reviewer_UI.user_controls
 {
-    public partial class TargetSearchCard : UserControl
+    public partial class TargetSearchCardControl : UserControl
     {
         public event EventHandler<int> CardMouseClickEvent;
         private int _targetId;
 
-        public TargetSearchCard()
+        public TargetSearchCardControl()
         {
             InitializeComponent();
 

@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace MAL_Reviewer_UI.user_controls
 {
-    public partial class FavoriteThumb : UserControl
+    public partial class FavoriteThumbControl : UserControl
     {
-        public FavoriteThumb(string title, string image_url, string type)
+        public FavoriteThumbControl(string title, string image_url, string type)
         {
             InitializeComponent();
 

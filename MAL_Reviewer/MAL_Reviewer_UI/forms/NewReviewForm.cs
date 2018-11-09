@@ -10,7 +10,7 @@ using MAL_Reviewer_API.models;
 
 namespace MAL_Reviewer_UI.forms
 {
-    public partial class NewReview : Form
+    public partial class NewReviewForm : Form
     {
         private bool
             ready = true,
@@ -22,7 +22,7 @@ namespace MAL_Reviewer_UI.forms
         private System.Windows.Forms.Timer inputDelay;
         private CancellationTokenSource cts;
 
-        public NewReview()
+        public NewReviewForm()
         {
             InitializeComponent();
             this.ActiveControl = tbSearch;
@@ -38,7 +38,7 @@ namespace MAL_Reviewer_UI.forms
             // Populating the pSearchCards panel with ucTargetSearchCard user controls.
             foreach (int i in Enumerable.Range(1, 10))
             {
-                TargetSearchCard searchCard = new TargetSearchCard();
+                TargetSearchCardControl searchCard = new TargetSearchCardControl();
                 int searchCardCount = pSearchCards.Controls.Count;
 
                 if (searchCardCount < 5)
@@ -124,7 +124,7 @@ namespace MAL_Reviewer_UI.forms
 
                     for (int i = 0; i < pSearchCards.Controls.Count; i++)
                     {
-                        TargetSearchCard searchCard = (TargetSearchCard)pSearchCards.Controls[i];
+                        TargetSearchCardControl searchCard = (TargetSearchCardControl)pSearchCards.Controls[i];
 
                         if (i < resultCount)
                         {

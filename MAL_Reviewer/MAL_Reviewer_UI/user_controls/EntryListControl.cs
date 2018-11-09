@@ -5,7 +5,7 @@ using MAL_Reviewer_Review.enumerations;
 
 namespace MAL_Reviewer_UI.user_controls
 {
-    public partial class EntryList : UserControl
+    public partial class EntryListControl : UserControl
     {
         private const short
             fixedHeight = 1500,
@@ -15,7 +15,7 @@ namespace MAL_Reviewer_UI.user_controls
 
         public int ListHeight { get => listHeight; }
 
-        public EntryList(string label, EntryType type)
+        public EntryListControl(string label, EntryType type)
         {
             InitializeComponent();
           

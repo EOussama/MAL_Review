@@ -8,7 +8,7 @@ using MAL_Reviewer_API.models.ListEntryModel;
 
 namespace MAL_Reviewer_UI.forms
 {
-    public partial class LoadUser : Form
+    public partial class LoadUserForm : Form
     {
         private bool
             ready = true,
@@ -17,7 +17,7 @@ namespace MAL_Reviewer_UI.forms
         private CancellationTokenSource cts;
         public event EventHandler<MALUserModel> UserLoadedEvent;
 
-        public LoadUser()
+        public LoadUserForm()
         {
             InitializeComponent();
             this.ActiveControl = tbMALUsername;

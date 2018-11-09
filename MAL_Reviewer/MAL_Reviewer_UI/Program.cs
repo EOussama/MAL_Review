@@ -13,7 +13,7 @@ namespace MAL_Reviewer_UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new forms.Welcome());
+            Application.Run(new forms.WelcomeForm());
         }
     }
 }

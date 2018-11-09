@@ -1,6 +1,6 @@
 ﻿namespace MAL_Reviewer_UI.user_controls
 {
-    partial class EntryList
+    partial class EntryListControl
     {
         /// <summary> 
         /// Required designer variable.

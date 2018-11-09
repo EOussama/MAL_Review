@@ -1,6 +1,6 @@
 ﻿namespace MAL_Reviewer_UI.forms
 {
-    partial class LoadUser
+    partial class LoadUserForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadUser));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadUserForm));
             this.lTitle = new System.Windows.Forms.Label();
             this.pMALUsername = new System.Windows.Forms.Panel();
             this.pbLoading = new System.Windows.Forms.PictureBox();

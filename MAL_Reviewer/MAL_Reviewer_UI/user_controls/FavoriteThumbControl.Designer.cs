@@ -1,6 +1,6 @@
 ﻿namespace MAL_Reviewer_UI.user_controls
 {
-    partial class FavoriteThumb
+    partial class FavoriteThumbControl
     {
         /// <summary> 
         /// Required designer variable.

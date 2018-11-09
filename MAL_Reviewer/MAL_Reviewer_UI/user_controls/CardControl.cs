@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace MAL_Reviewer_UI.user_controls
 {
-    public partial class Card : UserControl
+    public partial class CardControl : UserControl
     {
         public string Title
         {
@@ -50,7 +50,7 @@ namespace MAL_Reviewer_UI.user_controls
             set => LabelLabel.Text = value;
         }
 
-        public Card()
+        public CardControl()
         {
             InitializeComponent();
         }

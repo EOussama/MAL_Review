@@ -1,6 +1,6 @@
 ﻿namespace MAL_Reviewer_UI.user_controls
 {
-    partial class ReviewCard
+    partial class ReviewCardControl
     {
         /// <summary> 
         /// Required designer variable.
