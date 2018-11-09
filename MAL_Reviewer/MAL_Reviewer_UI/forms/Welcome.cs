@@ -128,9 +128,6 @@ namespace MAL_Reviewer_UI.forms
                     bMALAnimelist.Tag = $"https://myanimelist.net/animelist/{user.Username}";
                     bMALMangalist.Tag = $"https://myanimelist.net/mangalist/{user.Username}";
 
-                    ((Card)tlpAnimeMangaCards.Controls[0]).UpdateTooltip(user.Username);
-                    ((Card)tlpAnimeMangaCards.Controls[1]).UpdateTooltip(user.Username);
-
                     this.loaded++;
                     LoadingUI(false);
                 });
@@ -303,6 +300,8 @@ namespace MAL_Reviewer_UI.forms
         /// <returns></returns>
         private async Task AnimelistUpdateIU(List<AnimelistEntryModel> animeList, MALUserModel user)
         {
+            animePublic = animeList != null;
+
             if (animeList != null)
             {
                 if (user.Anime_stats.Total_entries > 0)
@@ -314,6 +313,9 @@ namespace MAL_Reviewer_UI.forms
                             tcDashboard.Invoke((MethodInvoker)delegate
                             {
                                 ((Card)tlpAnimeMangaCards.Controls[0]).LabelText = "Public";
+                                ((Card)tlpAnimeMangaCards.Controls[0]).UpdateTooltip(user.Username);
+                                bMALAnimelist.Enabled = animePublic;
+
                                 RefreshLists(EntryType.Anime);
 
                                 ((EntryList)tlpAnimelistMain.Controls[0]).UpdateList(animeList.Where(a => a.Watching_status == 1).ToList());
@@ -328,6 +330,9 @@ namespace MAL_Reviewer_UI.forms
                         else
                         {
                             ((Card)tlpAnimeMangaCards.Controls[0]).LabelText = "Public";
+                            ((Card)tlpAnimeMangaCards.Controls[0]).UpdateTooltip(user.Username);
+                            bMALAnimelist.Enabled = animePublic;
+
                             RefreshLists(EntryType.Anime);
 
                             ((EntryList)tlpAnimelistMain.Controls[0]).UpdateList(animeList.Where(a => a.Watching_status == 1).ToList());
@@ -346,6 +351,10 @@ namespace MAL_Reviewer_UI.forms
                     {
                         tcDashboard.Invoke((MethodInvoker)delegate
                         {
+                            ((Card)tlpAnimeMangaCards.Controls[0]).LabelText = "Public";
+                            ((Card)tlpAnimeMangaCards.Controls[0]).UpdateTooltip(user.Username);
+                            bMALAnimelist.Enabled = animePublic;
+
                             RefreshLists(EntryType.Anime);
 
                             foreach (EntryList entryList in tlpAnimelistMain.Controls)
@@ -356,6 +365,10 @@ namespace MAL_Reviewer_UI.forms
                     }
                     else
                     {
+                        ((Card)tlpAnimeMangaCards.Controls[0]).LabelText = "Public";
+                        ((Card)tlpAnimeMangaCards.Controls[0]).UpdateTooltip(user.Username);
+                        bMALAnimelist.Enabled = animePublic;
+
                         RefreshLists(EntryType.Anime);
 
                         foreach (EntryList entryList in tlpAnimelistMain.Controls)
@@ -372,15 +385,18 @@ namespace MAL_Reviewer_UI.forms
                     tcDashboard.Invoke((MethodInvoker)delegate
                     {
                         ((Card)tlpAnimeMangaCards.Controls[0]).LabelText = "Private";
+                        ((Card)tlpAnimeMangaCards.Controls[0]).UpdateTooltip(user.Username);
+                        bMALAnimelist.Enabled = animePublic;
                     });
                 }
                 else
                 {
                     ((Card)tlpAnimeMangaCards.Controls[0]).LabelText = "Private";
+                    ((Card)tlpAnimeMangaCards.Controls[0]).UpdateTooltip(user.Username);
+                    bMALAnimelist.Enabled = animePublic;
                 }
             }
 
-            animePublic = animeList != null;
             this.loaded++;
             LoadingUI(false);
         }
@@ -393,6 +409,8 @@ namespace MAL_Reviewer_UI.forms
         /// <returns></returns>
         private async Task MangalistUpdateIU(List<MangalistEntryModel> mangaList, MALUserModel user)
         {
+            mangaPublic = mangaList != null;
+
             if (mangaList != null)
             {
                 if (user.Manga_stats.Total_entries > 0)
@@ -404,6 +422,9 @@ namespace MAL_Reviewer_UI.forms
                             tcDashboard.Invoke((MethodInvoker)delegate
                             {
                                 ((Card)tlpAnimeMangaCards.Controls[1]).LabelText = "Public";
+                                ((Card)tlpAnimeMangaCards.Controls[1]).UpdateTooltip(user.Username);
+                                bMALMangalist.Enabled = mangaPublic;
+
                                 RefreshLists(EntryType.Manga);
 
                                 ((EntryList)tlpMangalistMain.Controls[0]).UpdateList(mangaList.Where(a => a.Reading_status == 1).ToList());
@@ -418,6 +439,9 @@ namespace MAL_Reviewer_UI.forms
                         else
                         {
                             ((Card)tlpAnimeMangaCards.Controls[1]).LabelText = "Public";
+                            ((Card)tlpAnimeMangaCards.Controls[1]).UpdateTooltip(user.Username);
+                            bMALMangalist.Enabled = mangaPublic;
+
                             RefreshLists(EntryType.Manga);
 
                             ((EntryList)tlpMangalistMain.Controls[0]).UpdateList(mangaList.Where(a => a.Reading_status == 1).ToList());
@@ -436,6 +460,10 @@ namespace MAL_Reviewer_UI.forms
                     {
                         tcDashboard.Invoke((MethodInvoker)delegate
                         {
+                            ((Card)tlpAnimeMangaCards.Controls[1]).LabelText = "Public";
+                            ((Card)tlpAnimeMangaCards.Controls[1]).UpdateTooltip(user.Username);
+                            bMALMangalist.Enabled = mangaPublic;
+
                             RefreshLists(EntryType.Manga);
 
                             foreach (EntryList entryList in tlpMangalistMain.Controls)
@@ -446,6 +474,10 @@ namespace MAL_Reviewer_UI.forms
                     }
                     else
                     {
+                        ((Card)tlpAnimeMangaCards.Controls[1]).LabelText = "Public";
+                        ((Card)tlpAnimeMangaCards.Controls[1]).UpdateTooltip(user.Username);
+                        bMALMangalist.Enabled = mangaPublic;
+
                         RefreshLists(EntryType.Manga);
 
                         foreach (EntryList entryList in tlpMangalistMain.Controls)
@@ -462,15 +494,18 @@ namespace MAL_Reviewer_UI.forms
                     tcDashboard.Invoke((MethodInvoker)delegate
                     {
                         ((Card)tlpAnimeMangaCards.Controls[1]).LabelText = "Private";
+                        ((Card)tlpAnimeMangaCards.Controls[1]).UpdateTooltip(user.Username);
+                        bMALMangalist.Enabled = mangaPublic;
                     });
                 }
                 else
                 {
                     ((Card)tlpAnimeMangaCards.Controls[1]).LabelText = "Private";
+                    ((Card)tlpAnimeMangaCards.Controls[1]).UpdateTooltip(user.Username);
+                    bMALMangalist.Enabled = mangaPublic;
                 }
             }
 
-            mangaPublic = mangaList != null;
             this.loaded++;
             LoadingUI(false);
         }
