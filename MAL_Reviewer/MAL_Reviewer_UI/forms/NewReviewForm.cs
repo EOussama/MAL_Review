@@ -128,39 +128,35 @@ namespace MAL_Reviewer_UI.forms
                 {
                     // Updating the ucTargetSearchCard usercontrolls in a separate thread.
                     int resultCount = searchModel.Results.Length;
-                    List<Task> tasks = new List<Task>();
 
-                    for (int i = 0; i < pSearchCards.Controls.Count; i++)
+                    await Task.Run(() =>
                     {
-                        TargetSearchCardControl searchCard = (TargetSearchCardControl)pSearchCards.Controls[i];
+                        Parallel.For(0, pSearchCards.Controls.Count, i =>
+                        {
+                            TargetSearchCardControl searchCard = (TargetSearchCardControl)pSearchCards.Controls[i];
 
-                        // Check if the current user control is withing the range of number of results, if yes, make it visible and update it.
-                        if (i < resultCount)
-                        {
-                            SearchResultsModel resultsModel = searchModel.Results[i];
-                            tasks.Add(
-                                Task.Run(() =>
-                                {
-                                    searchCard.Invoke((MethodInvoker)delegate
-                                    {
-                                        searchCard.UpdateUI(resultsModel.Mal_id, resultsModel.Title, resultsModel.Type, resultsModel.Image_url, rbAnime.Checked ? rbAnime.Text : rbManga.Text);
-                                        searchCard.Visible = true;
-                                        searchCard.Tag = true;
-                                    });
-                                })
-                            );
-                        }
-                        else
-                        {
-                            searchCard.Invoke((MethodInvoker)delegate
+                            // Check if the current user control is withing the range of number of results, if yes, make it visible and update it.
+                            if (i < resultCount)
                             {
-                                searchCard.Visible = false;
-                                searchCard.Tag = false;
-                            });
-                        }
-                    }
+                                SearchResultsModel resultsModel = searchModel.Results[i];
 
-                    await Task.WhenAll(tasks);
+                                searchCard.Invoke((MethodInvoker)delegate
+                                {
+                                    searchCard.UpdateUI(resultsModel.Mal_id, resultsModel.Title, resultsModel.Type, resultsModel.Image_url, rbAnime.Checked ? rbAnime.Text : rbManga.Text);
+                                    searchCard.Visible = true;
+                                    searchCard.Tag = true;
+                                });
+                            }
+                            else
+                            {
+                                searchCard.Invoke((MethodInvoker)delegate
+                                {
+                                    searchCard.Visible = false;
+                                    searchCard.Tag = false;
+                                });
+                            }
+                        });
+                    });
 
                     if (resultCount < 4)
                     {
