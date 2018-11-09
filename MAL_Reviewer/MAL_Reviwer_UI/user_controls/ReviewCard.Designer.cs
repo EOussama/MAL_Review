@@ -1,4 +1,4 @@
-﻿namespace MAL_Reviwer_UI.user_controls
+﻿namespace MAL_Reviewer_UI.user_controls
 {
     partial class ReviewCard
     {
@@ -91,7 +91,7 @@
             // 
             this.bLink.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bLink.BackColor = System.Drawing.Color.Transparent;
-            this.bLink.BackgroundImage = global::MAL_Reviwer_UI.Properties.Resources.icon_link;
+            this.bLink.BackgroundImage = global::MAL_Reviewer_UI.Properties.Resources.icon_link;
             this.bLink.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bLink.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bLink.FlatAppearance.BorderSize = 0;
@@ -109,7 +109,7 @@
             // 
             this.bRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bRemove.BackColor = System.Drawing.Color.Transparent;
-            this.bRemove.BackgroundImage = global::MAL_Reviwer_UI.Properties.Resources.icon_close;
+            this.bRemove.BackgroundImage = global::MAL_Reviewer_UI.Properties.Resources.icon_close;
             this.bRemove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bRemove.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bRemove.FlatAppearance.BorderSize = 0;

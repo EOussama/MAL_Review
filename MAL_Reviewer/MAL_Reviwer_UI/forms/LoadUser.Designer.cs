@@ -1,4 +1,4 @@
-﻿namespace MAL_Reviwer_UI.forms
+﻿namespace MAL_Reviewer_UI.forms
 {
     partial class LoadUser
     {
@@ -69,7 +69,7 @@
             // 
             // pbLoading
             // 
-            this.pbLoading.Image = global::MAL_Reviwer_UI.Properties.Resources.loading_gif_control_light;
+            this.pbLoading.Image = global::MAL_Reviewer_UI.Properties.Resources.loading_gif_control_light;
             this.pbLoading.Location = new System.Drawing.Point(200, 5);
             this.pbLoading.Name = "pbLoading";
             this.pbLoading.Size = new System.Drawing.Size(25, 24);
@@ -80,7 +80,7 @@
             // 
             // pbSearch
             // 
-            this.pbSearch.Image = global::MAL_Reviwer_UI.Properties.Resources.icon_user;
+            this.pbSearch.Image = global::MAL_Reviewer_UI.Properties.Resources.icon_user;
             this.pbSearch.Location = new System.Drawing.Point(204, 7);
             this.pbSearch.Name = "pbSearch";
             this.pbSearch.Size = new System.Drawing.Size(20, 20);
@@ -100,7 +100,7 @@
             // 
             // pbLogo
             // 
-            this.pbLogo.Image = global::MAL_Reviwer_UI.Properties.Resources.logo;
+            this.pbLogo.Image = global::MAL_Reviewer_UI.Properties.Resources.logo;
             this.pbLogo.Location = new System.Drawing.Point(12, 19);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(310, 96);

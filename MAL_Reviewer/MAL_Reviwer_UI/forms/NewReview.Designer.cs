@@ -1,4 +1,4 @@
-﻿namespace MAL_Reviwer_UI.forms
+﻿namespace MAL_Reviewer_UI.forms
 {
     partial class NewReview
     {
@@ -103,7 +103,7 @@
             // 
             // pbLoading
             // 
-            this.pbLoading.Image = global::MAL_Reviwer_UI.Properties.Resources.loading_gif_control_light;
+            this.pbLoading.Image = global::MAL_Reviewer_UI.Properties.Resources.loading_gif_control_light;
             this.pbLoading.Location = new System.Drawing.Point(199, 5);
             this.pbLoading.Name = "pbLoading";
             this.pbLoading.Size = new System.Drawing.Size(25, 24);
@@ -540,7 +540,7 @@
             // 
             // pbLoadingPreview
             // 
-            this.pbLoadingPreview.Image = global::MAL_Reviwer_UI.Properties.Resources.loading_gif_control;
+            this.pbLoadingPreview.Image = global::MAL_Reviewer_UI.Properties.Resources.loading_gif_control;
             this.pbLoadingPreview.Location = new System.Drawing.Point(455, 141);
             this.pbLoadingPreview.Name = "pbLoadingPreview";
             this.pbLoadingPreview.Size = new System.Drawing.Size(25, 24);

@@ -1,4 +1,4 @@
-﻿namespace MAL_Reviwer_UI.user_controls
+﻿namespace MAL_Reviewer_UI.user_controls
 {
     partial class TargetSearchCard
     {
@@ -39,7 +39,7 @@
             // pbTargetImage
             // 
             this.pbTargetImage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbTargetImage.Image = global::MAL_Reviwer_UI.Properties.Resources.loading_gif_control_light;
+            this.pbTargetImage.Image = global::MAL_Reviewer_UI.Properties.Resources.loading_gif_control_light;
             this.pbTargetImage.Location = new System.Drawing.Point(3, 3);
             this.pbTargetImage.Name = "pbTargetImage";
             this.pbTargetImage.Size = new System.Drawing.Size(48, 48);

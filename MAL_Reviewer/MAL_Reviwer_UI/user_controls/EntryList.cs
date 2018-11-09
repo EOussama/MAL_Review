@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using MAL_Reviewer_API.models.ListEntryModel;
 using MAL_Reviewer_Review.enumerations;
 
-namespace MAL_Reviwer_UI.user_controls
+namespace MAL_Reviewer_UI.user_controls
 {
     public partial class EntryList : UserControl
     {

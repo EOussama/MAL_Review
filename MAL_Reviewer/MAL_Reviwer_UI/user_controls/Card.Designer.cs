@@ -1,4 +1,4 @@
-﻿namespace MAL_Reviwer_UI.user_controls
+﻿namespace MAL_Reviewer_UI.user_controls
 {
     partial class Card
     {
@@ -42,7 +42,7 @@
             // 
             // IconPictureBox
             // 
-            this.IconPictureBox.Image = global::MAL_Reviwer_UI.Properties.Resources.icon_add;
+            this.IconPictureBox.Image = global::MAL_Reviewer_UI.Properties.Resources.icon_add;
             this.IconPictureBox.Location = new System.Drawing.Point(3, 3);
             this.IconPictureBox.Name = "IconPictureBox";
             this.IconPictureBox.Size = new System.Drawing.Size(20, 20);

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAL_Reviwer_UI", "MAL_Reviwer_UI\MAL_Reviwer_UI.csproj", "{75B6EDAD-72E0-4343-B9F2-187C8DA035A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAL_Reviewer_UI", "MAL_Reviwer_UI\MAL_Reviewer_UI.csproj", "{75B6EDAD-72E0-4343-B9F2-187C8DA035A7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAL_Reviewer_API", "MAL_Reviewer_API\MAL_Reviewer_API.csproj", "{3DAF19BB-E29B-4E5B-9C48-2E634933C03B}"
 EndProject

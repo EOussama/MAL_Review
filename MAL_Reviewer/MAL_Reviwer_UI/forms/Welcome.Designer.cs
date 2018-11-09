@@ -1,4 +1,4 @@
-﻿namespace MAL_Reviwer_UI.forms
+﻿namespace MAL_Reviewer_UI.forms
 {
     partial class Welcome
     {
@@ -1530,7 +1530,7 @@
             this.pbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbLogo.Image = global::MAL_Reviwer_UI.Properties.Resources.logo;
+            this.pbLogo.Image = global::MAL_Reviewer_UI.Properties.Resources.logo;
             this.pbLogo.Location = new System.Drawing.Point(9, 10);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(734, 152);

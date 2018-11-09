@@ -6,7 +6,7 @@ using MAL_Reviewer_API;
 using MAL_Reviewer_API.models;
 using MAL_Reviewer_API.models.ListEntryModel;
 
-namespace MAL_Reviwer_UI.forms
+namespace MAL_Reviewer_UI.forms
 {
     public partial class LoadUser : Form
     {
