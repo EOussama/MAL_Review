@@ -69,7 +69,6 @@
             this.rbManga = new System.Windows.Forms.RadioButton();
             this.lTitle = new System.Windows.Forms.Label();
             this.lPreview = new System.Windows.Forms.Label();
-            this.pbLoadingPreview = new System.Windows.Forms.PictureBox();
             this.pReviewLookUp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbShow)).BeginInit();
@@ -79,7 +78,6 @@
             this.gbRating.SuspendLayout();
             this.gbRatingScale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupScaleOther)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLoadingPreview)).BeginInit();
             this.SuspendLayout();
             // 
             // pSectionSeparator
@@ -538,23 +536,11 @@
             this.lPreview.Text = "Anime preview";
             this.lPreview.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pbLoadingPreview
-            // 
-            this.pbLoadingPreview.Image = global::MAL_Reviewer_UI.Properties.Resources.loading_gif_control;
-            this.pbLoadingPreview.Location = new System.Drawing.Point(455, 141);
-            this.pbLoadingPreview.Name = "pbLoadingPreview";
-            this.pbLoadingPreview.Size = new System.Drawing.Size(25, 24);
-            this.pbLoadingPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLoadingPreview.TabIndex = 2;
-            this.pbLoadingPreview.TabStop = false;
-            this.pbLoadingPreview.Visible = false;
-            // 
-            // fNewReview
+            // NewReviewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 363);
-            this.Controls.Add(this.pbLoadingPreview);
             this.Controls.Add(this.pSetup);
             this.Controls.Add(this.pPreview);
             this.Controls.Add(this.pSectionSeparator);
@@ -562,7 +548,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "fNewReview";
+            this.Name = "NewReviewForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Review";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FNewReview_FormClosing);
@@ -580,7 +566,6 @@
             this.gbRatingScale.ResumeLayout(false);
             this.gbRatingScale.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupScaleOther)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLoadingPreview)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -627,6 +612,5 @@
         private System.Windows.Forms.Label lStatus;
         private System.Windows.Forms.Label lTargetStatus;
         private System.Windows.Forms.Label lPreview;
-        private System.Windows.Forms.PictureBox pbLoadingPreview;
     }
 }

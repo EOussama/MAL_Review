@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\Loader.cs" />
     <Compile Include="forms\LoadUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +93,12 @@
     <Compile Include="user_controls\FavoriteThumbControl.Designer.cs">
       <DependentUpon>FavoriteThumbControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="user_controls\LoaderControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="user_controls\LoaderControl.Designer.cs">
+      <DependentUpon>LoaderControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="user_controls\ReviewCardControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -126,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="user_controls\FavoriteThumbControl.resx">
       <DependentUpon>FavoriteThumbControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_controls\LoaderControl.resx">
+      <DependentUpon>LoaderControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user_controls\ReviewCardControl.resx">
       <DependentUpon>ReviewCardControl.cs</DependentUpon>

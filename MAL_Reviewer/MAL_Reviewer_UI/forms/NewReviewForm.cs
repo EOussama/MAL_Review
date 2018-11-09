@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using MAL_Reviewer_UI.user_controls;
+using MAL_Reviewer_UI.classes;
 using MAL_Reviewer_API;
 using MAL_Reviewer_API.models;
 
@@ -16,11 +17,12 @@ namespace MAL_Reviewer_UI.forms
             ready = true,
             allow = true;
 
-        private int targetId = 0;
         private byte type = 0;
+        private int targetId = 0;
         private string lastSearch = string.Empty;
         private System.Windows.Forms.Timer inputDelay;
         private CancellationTokenSource cts;
+        private LoaderControl previewLoader;
 
         public NewReviewForm()
         {
@@ -56,6 +58,12 @@ namespace MAL_Reviewer_UI.forms
                 Interval = 500
             };
             this.inputDelay.Tick += _inputDelay_Tick;
+
+            // Create loaders
+            previewLoader = new LoaderControl()
+            {
+                Color = System.Drawing.SystemColors.Control
+            };
 
             cts = new CancellationTokenSource();
         }
@@ -126,6 +134,7 @@ namespace MAL_Reviewer_UI.forms
                     {
                         TargetSearchCardControl searchCard = (TargetSearchCardControl)pSearchCards.Controls[i];
 
+                        // Check if the current user control is withing the range of number of results, if yes, make it visible and update it.
                         if (i < resultCount)
                         {
                             SearchResultsModel resultsModel = searchModel.Results[i];
@@ -177,14 +186,15 @@ namespace MAL_Reviewer_UI.forms
             if (this.targetId == targetId && this.type  == (rbAnime.Checked ? int.Parse(rbAnime.Tag.ToString()) : int.Parse(rbManga.Tag.ToString())))
                 return;
 
-            pPreview.Visible = false;
-            pbLoadingPreview.Visible = true;
+            pPreview.ToggleLoad(true, previewLoader);
 
             if (rbAnime.Checked)
                 PreviewAnime(targetId);
             else
                 PreviewManga(targetId);
         }
+
+        #region Search panel icon toggler
 
         private void TbSearch_MouseClick(object sender, MouseEventArgs e)
         {
@@ -212,7 +222,9 @@ namespace MAL_Reviewer_UI.forms
             }
         }
 
-        private void PbShow_MouseLeave(object sender, EventArgs e) => pbShow.Image = (rbAnime.Checked ? Properties.Resources.icon_anime : Properties.Resources.icon_manga);
+        private void PbShow_MouseLeave(object sender, EventArgs e) => pbShow.Image = (rbAnime.Checked ? Properties.Resources.icon_anime : Properties.Resources.icon_manga); 
+        
+        #endregion
 
         #endregion
 
@@ -224,7 +236,6 @@ namespace MAL_Reviewer_UI.forms
             {
                 AnimeModel animeModel = await MALHelper.GetAnime(animeId);
 
-                // Updating the preview UI in a separate thread.
                 await Task.Run(() =>
                 {
                     cts.Token.ThrowIfCancellationRequested();
@@ -263,8 +274,7 @@ namespace MAL_Reviewer_UI.forms
                 if (this.allow)
                 {
                     pSearchCards.Visible = false;
-                    pbLoadingPreview.Visible = false;
-                    pPreview.Visible = true;
+                    pPreview.ToggleLoad(false, previewLoader);
                 }
             }
         }
@@ -275,7 +285,6 @@ namespace MAL_Reviewer_UI.forms
             {
                 MangaModel mangaModel = await MALHelper.GetManga(mangaId);
 
-                // Updating the preview UI in a separate thread.
                 await Task.Run(() =>
                 {
                     cts.Token.ThrowIfCancellationRequested();
@@ -315,8 +324,7 @@ namespace MAL_Reviewer_UI.forms
                 if (this.allow)
                 {
                     pSearchCards.Visible = false;
-                    pbLoadingPreview.Visible = false;
-                    pPreview.Visible = true;
+                    pPreview.ToggleLoad(false, previewLoader);
                 }
             }
         }
