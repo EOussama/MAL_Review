@@ -806,11 +806,6 @@ namespace MAL_Reviewer_UI.forms
 
         #endregion
 
-        private void bMALProfile_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void BNew_Click(object sender, EventArgs e) => (new NewReview()).ShowDialog();
     }
 }
