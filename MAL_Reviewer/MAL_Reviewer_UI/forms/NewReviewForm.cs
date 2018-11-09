@@ -91,7 +91,7 @@ namespace MAL_Reviewer_UI.forms
             string _currentSearch = tbSearch.Text.Trim().ToLower();
 
             // Check if the search request has already been sent or not.
-           if (!this.ready || _currentSearch.Length < 3)
+            if (!this.ready || _currentSearch.Length < 3)
             {
                 pSearchCards.Visible = false;
                 return;
@@ -158,14 +158,19 @@ namespace MAL_Reviewer_UI.forms
                                 searchCard.Tag = false;
                             });
                         }
-
-                        if (i < resultCount + 1 && resultCount < 5)
-                        {
-                            pSearchCards.Height = searchCard.Height * i;
-                        }
                     }
 
                     await Task.WhenAll(tasks);
+
+                    if (resultCount < 4)
+                    {
+                        pSearchCards.Height = pSearchCards.Controls[0].Height * resultCount;
+                    }
+                    else
+                    {
+                        pSearchCards.Height = pSearchCards.Controls[0].Height * 4;
+                    }
+
                     pSearchCards.Visible = true;
                 }
                 else
