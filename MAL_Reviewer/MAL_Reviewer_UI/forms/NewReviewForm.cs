@@ -78,6 +78,7 @@ namespace MAL_Reviewer_UI.forms
             lTitle.Text = $"{ (rbAnime.Checked ? rbAnime.Text : rbManga.Text) } title";
             lPreview.Text = $"{ (rbAnime.Checked ? rbAnime.Text : rbManga.Text) } preview";
             pbShow.Image = (rbAnime.Checked ? Properties.Resources.icon_anime : Properties.Resources.icon_manga);
+            TargetNotFoundLabel.Visible = false;
             TbSearch_TextChanged(this, EventArgs.Empty);
         }
 
@@ -216,6 +217,9 @@ namespace MAL_Reviewer_UI.forms
             tbSearch.Enabled = !state;
             rbAnime.Enabled = !state;
             rbManga.Enabled = !state;
+
+            TargetNotFoundLabel.Visible = !state && (bool)pSearchCards.Controls[0].Tag == false;
+            TargetNotFoundLabel.Text = $"{ ((rbAnime.Checked) ? rbAnime : rbManga).Text } with that title was not found on MAL.";
         }
 
         #region Search panel icon toggler

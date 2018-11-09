@@ -69,6 +69,7 @@
             this.rbManga = new System.Windows.Forms.RadioButton();
             this.lTitle = new System.Windows.Forms.Label();
             this.lPreview = new System.Windows.Forms.Label();
+            this.TargetNotFoundLabel = new System.Windows.Forms.Label();
             this.pReviewLookUp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbShow)).BeginInit();
@@ -330,6 +331,7 @@
             this.pSetup.Controls.Add(this.rbManga);
             this.pSetup.Controls.Add(this.lTitle);
             this.pSetup.Controls.Add(this.pReviewLookUp);
+            this.pSetup.Controls.Add(this.TargetNotFoundLabel);
             this.pSetup.Location = new System.Drawing.Point(27, 12);
             this.pSetup.Name = "pSetup";
             this.pSetup.Size = new System.Drawing.Size(255, 339);
@@ -348,7 +350,7 @@
             // pRatingSeparator
             // 
             this.pRatingSeparator.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pRatingSeparator.Location = new System.Drawing.Point(12, 275);
+            this.pRatingSeparator.Location = new System.Drawing.Point(12, 320);
             this.pRatingSeparator.Name = "pRatingSeparator";
             this.pRatingSeparator.Size = new System.Drawing.Size(231, 6);
             this.pRatingSeparator.TabIndex = 2;
@@ -356,7 +358,7 @@
             // pTitleSeparator
             // 
             this.pTitleSeparator.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pTitleSeparator.Location = new System.Drawing.Point(12, 88);
+            this.pTitleSeparator.Location = new System.Drawing.Point(12, 133);
             this.pTitleSeparator.Name = "pTitleSeparator";
             this.pTitleSeparator.Size = new System.Drawing.Size(231, 6);
             this.pTitleSeparator.TabIndex = 1;
@@ -368,7 +370,7 @@
             this.gbRating.Controls.Add(this.lRatingDecimal);
             this.gbRating.Controls.Add(this.gbRatingScale);
             this.gbRating.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbRating.Location = new System.Drawing.Point(12, 103);
+            this.gbRating.Location = new System.Drawing.Point(12, 148);
             this.gbRating.Name = "gbRating";
             this.gbRating.Size = new System.Drawing.Size(231, 159);
             this.gbRating.TabIndex = 0;
@@ -536,6 +538,18 @@
             this.lPreview.Text = "Anime preview";
             this.lPreview.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // TargetNotFoundLabel
+            // 
+            this.TargetNotFoundLabel.AutoSize = true;
+            this.TargetNotFoundLabel.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TargetNotFoundLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.TargetNotFoundLabel.Location = new System.Drawing.Point(10, 81);
+            this.TargetNotFoundLabel.Name = "TargetNotFoundLabel";
+            this.TargetNotFoundLabel.Size = new System.Drawing.Size(227, 13);
+            this.TargetNotFoundLabel.TabIndex = 7;
+            this.TargetNotFoundLabel.Text = "Unable to find a [target] with this title on MAL.";
+            this.TargetNotFoundLabel.Visible = false;
+            // 
             // NewReviewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -612,5 +626,6 @@
         private System.Windows.Forms.Label lStatus;
         private System.Windows.Forms.Label lTargetStatus;
         private System.Windows.Forms.Label lPreview;
+        private System.Windows.Forms.Label TargetNotFoundLabel;
     }
 }
