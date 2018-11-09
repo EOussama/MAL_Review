@@ -58,7 +58,7 @@ namespace MAL_Reviewer_UI.user_controls
         public void UpdateTooltip(string username)
         {
             LabelInfoToolTip.ToolTipTitle = $"{Title}";
-            LabelInfoToolTip.SetToolTip(LabelLabel, $"{username}'s {Title.Split(' ')[0].ToLower()} list is {LabelLabel.Text.ToLower()}.");
+            LabelInfoToolTip.SetToolTip(LabelLabel, $"{username}'s {Title.Split(' ')[0]} list is {LabelLabel.Text.ToLower()}.");
         }
     }
 }

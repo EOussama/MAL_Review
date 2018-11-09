@@ -398,7 +398,7 @@
             this.tlpDashboardMain.Name = "tlpDashboardMain";
             this.tlpDashboardMain.Padding = new System.Windows.Forms.Padding(0, 0, 35, 0);
             this.tlpDashboardMain.RowCount = 4;
-            this.tlpDashboardMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 240F));
+            this.tlpDashboardMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 255F));
             this.tlpDashboardMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 280F));
             this.tlpDashboardMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 400F));
             this.tlpDashboardMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
@@ -411,10 +411,10 @@
             this.pDashAbout.BackColor = System.Drawing.Color.Transparent;
             this.pDashAbout.Controls.Add(this.rtbAbout);
             this.pDashAbout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pDashAbout.Location = new System.Drawing.Point(0, 939);
+            this.pDashAbout.Location = new System.Drawing.Point(0, 954);
             this.pDashAbout.Margin = new System.Windows.Forms.Padding(0, 19, 0, 0);
             this.pDashAbout.Name = "pDashAbout";
-            this.pDashAbout.Size = new System.Drawing.Size(591, 181);
+            this.pDashAbout.Size = new System.Drawing.Size(591, 186);
             this.pDashAbout.TabIndex = 17;
             // 
             // rtbAbout
@@ -425,7 +425,7 @@
             this.rtbAbout.Name = "rtbAbout";
             this.rtbAbout.ReadOnly = true;
             this.rtbAbout.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbAbout.Size = new System.Drawing.Size(591, 181);
+            this.rtbAbout.Size = new System.Drawing.Size(591, 186);
             this.rtbAbout.TabIndex = 20;
             this.rtbAbout.Text = "Such empty";
             // 
@@ -442,7 +442,7 @@
             this.tlpUserInfo.Name = "tlpUserInfo";
             this.tlpUserInfo.RowCount = 1;
             this.tlpUserInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpUserInfo.Size = new System.Drawing.Size(591, 221);
+            this.tlpUserInfo.Size = new System.Drawing.Size(591, 236);
             this.tlpUserInfo.TabIndex = 14;
             // 
             // pCardProfileInfo
@@ -454,7 +454,7 @@
             this.pCardProfileInfo.Location = new System.Drawing.Point(0, 0);
             this.pCardProfileInfo.Margin = new System.Windows.Forms.Padding(0);
             this.pCardProfileInfo.Name = "pCardProfileInfo";
-            this.pCardProfileInfo.Size = new System.Drawing.Size(413, 221);
+            this.pCardProfileInfo.Size = new System.Drawing.Size(413, 236);
             this.pCardProfileInfo.TabIndex = 0;
             // 
             // tlpUserInfoCore
@@ -483,7 +483,7 @@
             this.tlpUserInfoCore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpUserInfoCore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpUserInfoCore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpUserInfoCore.Size = new System.Drawing.Size(256, 187);
+            this.tlpUserInfoCore.Size = new System.Drawing.Size(256, 202);
             this.tlpUserInfoCore.TabIndex = 6;
             // 
             // lUserLocation
@@ -491,9 +491,9 @@
             this.lUserLocation.AutoSize = true;
             this.lUserLocation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lUserLocation.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lUserLocation.Location = new System.Drawing.Point(78, 148);
+            this.lUserLocation.Location = new System.Drawing.Point(78, 160);
             this.lUserLocation.Name = "lUserLocation";
-            this.lUserLocation.Size = new System.Drawing.Size(175, 39);
+            this.lUserLocation.Size = new System.Drawing.Size(175, 42);
             this.lUserLocation.TabIndex = 10;
             this.lUserLocation.Text = "[Location]";
             this.lUserLocation.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -504,7 +504,7 @@
             this.lUsername.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lUsername.Location = new System.Drawing.Point(3, 0);
             this.lUsername.Name = "lUsername";
-            this.lUsername.Size = new System.Drawing.Size(69, 37);
+            this.lUsername.Size = new System.Drawing.Size(69, 40);
             this.lUsername.TabIndex = 0;
             this.lUsername.Text = "Username";
             // 
@@ -513,9 +513,9 @@
             this.lUserBirthday.AutoSize = true;
             this.lUserBirthday.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lUserBirthday.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lUserBirthday.Location = new System.Drawing.Point(78, 111);
+            this.lUserBirthday.Location = new System.Drawing.Point(78, 120);
             this.lUserBirthday.Name = "lUserBirthday";
-            this.lUserBirthday.Size = new System.Drawing.Size(175, 37);
+            this.lUserBirthday.Size = new System.Drawing.Size(175, 40);
             this.lUserBirthday.TabIndex = 9;
             this.lUserBirthday.Text = "[Birthday]";
             this.lUserBirthday.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -524,9 +524,9 @@
             // 
             this.lGender.AutoSize = true;
             this.lGender.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lGender.Location = new System.Drawing.Point(3, 37);
+            this.lGender.Location = new System.Drawing.Point(3, 40);
             this.lGender.Name = "lGender";
-            this.lGender.Size = new System.Drawing.Size(69, 37);
+            this.lGender.Size = new System.Drawing.Size(69, 40);
             this.lGender.TabIndex = 1;
             this.lGender.Text = "Gender";
             // 
@@ -535,9 +535,9 @@
             this.lUserJoinDate.AutoSize = true;
             this.lUserJoinDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lUserJoinDate.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lUserJoinDate.Location = new System.Drawing.Point(78, 74);
+            this.lUserJoinDate.Location = new System.Drawing.Point(78, 80);
             this.lUserJoinDate.Name = "lUserJoinDate";
-            this.lUserJoinDate.Size = new System.Drawing.Size(175, 37);
+            this.lUserJoinDate.Size = new System.Drawing.Size(175, 40);
             this.lUserJoinDate.TabIndex = 8;
             this.lUserJoinDate.Text = "[Join date]";
             this.lUserJoinDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -546,9 +546,9 @@
             // 
             this.lJoined.AutoSize = true;
             this.lJoined.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lJoined.Location = new System.Drawing.Point(3, 74);
+            this.lJoined.Location = new System.Drawing.Point(3, 80);
             this.lJoined.Name = "lJoined";
-            this.lJoined.Size = new System.Drawing.Size(69, 37);
+            this.lJoined.Size = new System.Drawing.Size(69, 40);
             this.lJoined.TabIndex = 2;
             this.lJoined.Text = "Join date";
             // 
@@ -557,9 +557,9 @@
             this.lUserGender.AutoSize = true;
             this.lUserGender.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lUserGender.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lUserGender.Location = new System.Drawing.Point(78, 37);
+            this.lUserGender.Location = new System.Drawing.Point(78, 40);
             this.lUserGender.Name = "lUserGender";
-            this.lUserGender.Size = new System.Drawing.Size(175, 37);
+            this.lUserGender.Size = new System.Drawing.Size(175, 40);
             this.lUserGender.TabIndex = 7;
             this.lUserGender.Text = "[Gender]";
             this.lUserGender.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -568,9 +568,9 @@
             // 
             this.lBirthday.AutoSize = true;
             this.lBirthday.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lBirthday.Location = new System.Drawing.Point(3, 111);
+            this.lBirthday.Location = new System.Drawing.Point(3, 120);
             this.lBirthday.Name = "lBirthday";
-            this.lBirthday.Size = new System.Drawing.Size(69, 37);
+            this.lBirthday.Size = new System.Drawing.Size(69, 40);
             this.lBirthday.TabIndex = 3;
             this.lBirthday.Text = "Birthday";
             // 
@@ -581,7 +581,7 @@
             this.lUserUsername.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lUserUsername.Location = new System.Drawing.Point(78, 0);
             this.lUserUsername.Name = "lUserUsername";
-            this.lUserUsername.Size = new System.Drawing.Size(175, 37);
+            this.lUserUsername.Size = new System.Drawing.Size(175, 40);
             this.lUserUsername.TabIndex = 6;
             this.lUserUsername.Text = "[Username]";
             this.lUserUsername.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -590,14 +590,15 @@
             // 
             this.lLocation.AutoSize = true;
             this.lLocation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lLocation.Location = new System.Drawing.Point(3, 148);
+            this.lLocation.Location = new System.Drawing.Point(3, 160);
             this.lLocation.Name = "lLocation";
-            this.lLocation.Size = new System.Drawing.Size(69, 39);
+            this.lLocation.Size = new System.Drawing.Size(69, 42);
             this.lLocation.TabIndex = 4;
             this.lLocation.Text = "Location";
             // 
             // pbUserImage
             // 
+            this.pbUserImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbUserImage.Image = ((System.Drawing.Image)(resources.GetObject("pbUserImage.Image")));
             this.pbUserImage.Location = new System.Drawing.Point(0, 0);
             this.pbUserImage.Name = "pbUserImage";
@@ -617,82 +618,90 @@
             this.pRedirectCard.Location = new System.Drawing.Point(413, 0);
             this.pRedirectCard.Margin = new System.Windows.Forms.Padding(0);
             this.pRedirectCard.Name = "pRedirectCard";
-            this.pRedirectCard.Size = new System.Drawing.Size(178, 221);
+            this.pRedirectCard.Size = new System.Drawing.Size(178, 236);
             this.pRedirectCard.TabIndex = 11;
             // 
             // bMALProfile
             // 
+            this.bMALProfile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.bMALProfile.BackColor = System.Drawing.Color.Transparent;
             this.bMALProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bMALProfile.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bMALProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
             this.bMALProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.bMALProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bMALProfile.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bMALProfile.ImageList = this.ilSizeControl;
-            this.bMALProfile.Location = new System.Drawing.Point(0, 121);
-            this.bMALProfile.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.bMALProfile.Location = new System.Drawing.Point(0, 3);
+            this.bMALProfile.Margin = new System.Windows.Forms.Padding(0);
             this.bMALProfile.Name = "bMALProfile";
-            this.bMALProfile.Size = new System.Drawing.Size(178, 25);
+            this.bMALProfile.Size = new System.Drawing.Size(177, 28);
             this.bMALProfile.TabIndex = 11;
-            this.bMALProfile.Text = "View profile on MAL";
+            this.bMALProfile.Text = "View profile on MAL.";
+            this.ttExtendedInfo.SetToolTip(this.bMALProfile, "View profile on MAL");
             this.bMALProfile.UseVisualStyleBackColor = false;
             this.bMALProfile.Click += new System.EventHandler(this.BMALProfile_Click);
             // 
             // bMALFriends
             // 
+            this.bMALFriends.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.bMALFriends.BackColor = System.Drawing.Color.Transparent;
             this.bMALFriends.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bMALFriends.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bMALFriends.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
             this.bMALFriends.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.bMALFriends.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bMALFriends.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bMALFriends.ImageList = this.ilSizeControl;
-            this.bMALFriends.Location = new System.Drawing.Point(0, 146);
-            this.bMALFriends.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.bMALFriends.Location = new System.Drawing.Point(0, 34);
+            this.bMALFriends.Margin = new System.Windows.Forms.Padding(0);
             this.bMALFriends.Name = "bMALFriends";
-            this.bMALFriends.Size = new System.Drawing.Size(178, 25);
+            this.bMALFriends.Size = new System.Drawing.Size(177, 28);
             this.bMALFriends.TabIndex = 10;
             this.bMALFriends.Text = "View friend list on MAL";
+            this.ttExtendedInfo.SetToolTip(this.bMALFriends, "View friend list on MAL.");
             this.bMALFriends.UseVisualStyleBackColor = false;
             this.bMALFriends.Click += new System.EventHandler(this.BMALFriends_Click);
             // 
             // bMALAnimelist
             // 
+            this.bMALAnimelist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.bMALAnimelist.BackColor = System.Drawing.Color.Transparent;
             this.bMALAnimelist.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bMALAnimelist.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bMALAnimelist.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
             this.bMALAnimelist.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.bMALAnimelist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bMALAnimelist.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bMALAnimelist.ImageList = this.ilSizeControl;
-            this.bMALAnimelist.Location = new System.Drawing.Point(0, 171);
-            this.bMALAnimelist.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.bMALAnimelist.Location = new System.Drawing.Point(0, 65);
+            this.bMALAnimelist.Margin = new System.Windows.Forms.Padding(0);
             this.bMALAnimelist.Name = "bMALAnimelist";
-            this.bMALAnimelist.Size = new System.Drawing.Size(178, 25);
+            this.bMALAnimelist.Size = new System.Drawing.Size(177, 28);
             this.bMALAnimelist.TabIndex = 8;
             this.bMALAnimelist.Text = "View anime list on MAL";
+            this.ttExtendedInfo.SetToolTip(this.bMALAnimelist, "View anime list on MAL.");
             this.bMALAnimelist.UseVisualStyleBackColor = false;
             this.bMALAnimelist.Click += new System.EventHandler(this.BMALAnimelist_Click);
             // 
             // bMALMangalist
             // 
+            this.bMALMangalist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.bMALMangalist.BackColor = System.Drawing.Color.Transparent;
             this.bMALMangalist.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bMALMangalist.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bMALMangalist.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
             this.bMALMangalist.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.bMALMangalist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bMALMangalist.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bMALMangalist.ImageList = this.ilSizeControl;
-            this.bMALMangalist.Location = new System.Drawing.Point(0, 196);
-            this.bMALMangalist.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.bMALMangalist.Location = new System.Drawing.Point(0, 96);
+            this.bMALMangalist.Margin = new System.Windows.Forms.Padding(0);
             this.bMALMangalist.Name = "bMALMangalist";
-            this.bMALMangalist.Size = new System.Drawing.Size(178, 25);
+            this.bMALMangalist.Size = new System.Drawing.Size(177, 28);
             this.bMALMangalist.TabIndex = 7;
             this.bMALMangalist.Text = "View manga list on MAL";
+            this.ttExtendedInfo.SetToolTip(this.bMALMangalist, "View manga list on MAL.");
             this.bMALMangalist.UseVisualStyleBackColor = false;
             this.bMALMangalist.Click += new System.EventHandler(this.BMALMangalist_Click);
             // 
@@ -704,7 +713,7 @@
             this.tlpAnimeMangaCards.Controls.Add(this.pDashMangaCard, 1, 0);
             this.tlpAnimeMangaCards.Controls.Add(this.pDashAnimeCard, 0, 0);
             this.tlpAnimeMangaCards.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpAnimeMangaCards.Location = new System.Drawing.Point(0, 259);
+            this.tlpAnimeMangaCards.Location = new System.Drawing.Point(0, 274);
             this.tlpAnimeMangaCards.Margin = new System.Windows.Forms.Padding(0, 19, 0, 19);
             this.tlpAnimeMangaCards.Name = "tlpAnimeMangaCards";
             this.tlpAnimeMangaCards.RowCount = 1;
@@ -1169,7 +1178,7 @@
             this.pDashFavorites.BackColor = System.Drawing.Color.Transparent;
             this.pDashFavorites.Controls.Add(this.tlpFavorites);
             this.pDashFavorites.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pDashFavorites.Location = new System.Drawing.Point(0, 539);
+            this.pDashFavorites.Location = new System.Drawing.Point(0, 554);
             this.pDashFavorites.Margin = new System.Windows.Forms.Padding(0, 19, 0, 19);
             this.pDashFavorites.Name = "pDashFavorites";
             this.pDashFavorites.Size = new System.Drawing.Size(591, 362);
