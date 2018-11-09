@@ -13,11 +13,11 @@ namespace MAL_Reviewer_UI.forms
 {
     public partial class Welcome : Form
     {
-        private short loaded = 0;
 
         private bool
             animePublic = true,
             mangaPublic = true;
+        private short loaded = 0;
 
         public Welcome()
         {
