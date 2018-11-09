@@ -15,7 +15,8 @@ namespace MAL_Reviewer_UI.forms
     {
         private bool
             ready = true,
-            allow = true;
+            allow = true,
+            dataFetched = false;
 
         private byte type = 0;
         private int targetId = 0;
@@ -78,7 +79,7 @@ namespace MAL_Reviewer_UI.forms
             lTitle.Text = $"{ (rbAnime.Checked ? rbAnime.Text : rbManga.Text) } title";
             lPreview.Text = $"{ (rbAnime.Checked ? rbAnime.Text : rbManga.Text) } preview";
             pbShow.Image = (rbAnime.Checked ? Properties.Resources.icon_anime : Properties.Resources.icon_manga);
-            TargetNotFoundLabel.Visible = false;
+            TargetNotFoundLabel.Text = $"Input the { (rbAnime.Checked ? rbAnime : rbManga).Text } title you want review on the text box above, meanwhile we will fetch any related data from MAL to help provide more information on the review target.";
             TbSearch_TextChanged(this, EventArgs.Empty);
         }
 
@@ -94,6 +95,8 @@ namespace MAL_Reviewer_UI.forms
             if (!this.ready || _currentSearch.Length < 3)
             {
                 pSearchCards.Visible = false;
+                TargetNotFoundLabel.Text = $"Input the { (rbAnime.Checked ? rbAnime : rbManga).Text } title you want review on the text box above, meanwhile we will fetch any related data from MAL to help provide more information on the review target.";
+
                 return;
             }
 
@@ -167,6 +170,7 @@ namespace MAL_Reviewer_UI.forms
                         pSearchCards.Height = pSearchCards.Controls[0].Height * 4;
                     }
 
+                    dataFetched = true;
                     pSearchCards.Visible = true;
                 }
                 else
@@ -176,6 +180,8 @@ namespace MAL_Reviewer_UI.forms
                         targetSearchCardControl.Visible = false;
                         targetSearchCardControl.Tag = false;
                     }
+
+                    dataFetched = false;
                 }
             }
             catch (Exception ex)
@@ -215,12 +221,23 @@ namespace MAL_Reviewer_UI.forms
         {
             pbLoading.Visible = state;
             pSearchCards.Visible = !state && (bool)pSearchCards.Controls[0].Tag == true;
+            pSearchCards.VerticalScroll.Value = 0;
             tbSearch.Enabled = !state;
             rbAnime.Enabled = !state;
             rbManga.Enabled = !state;
 
-            TargetNotFoundLabel.Visible = !state && (bool)pSearchCards.Controls[0].Tag == false;
-            TargetNotFoundLabel.Text = $"{ ((rbAnime.Checked) ? rbAnime : rbManga).Text } with that title was not found on MAL.";
+            if (!state)
+            {
+                if (dataFetched)
+                {
+                    TargetNotFoundLabel.Text = $"Input the { (rbAnime.Checked ? rbAnime : rbManga).Text } title you want review on the text box above, meanwhile we will fetch any related data from MAL to help provide more information on the review target.";
+                }
+                else
+                {
+                    TargetNotFoundLabel.Text = $"No { ((rbAnime.Checked) ? rbAnime : rbManga).Text } with that title was found on MAL.";
+                }
+            }
+            
         }
 
         #region Search panel icon toggler
@@ -286,7 +303,13 @@ namespace MAL_Reviewer_UI.forms
                             lTargetTitle.Text = animeModel.Title.Length > 55 ? animeModel.Title.Substring(0, 55) + "..." : animeModel.Title;
                             lTargetSynopsis.Text = animeModel.Synopsis?.Length > 215 ? animeModel.Synopsis?.Substring(0, 215) + "..." : animeModel.Synopsis;
                             pbTargetImage.Load(animeModel.Image_url);
-                            bMAL.Tag = animeModel.Url;
+                            MALPageButton.Tag = animeModel.Url;
+
+                            lTargetChapters.Visible = false;
+                            lChapters.Visible = false;
+
+                            InfoTooltip.ToolTipTitle = $"{ animeModel.type } title";
+                            InfoTooltip.SetToolTip(lTargetTitle, animeModel.Title);
 
                             this.targetId = animeModel.Mal_id;
                             this.type = 0;
@@ -303,8 +326,10 @@ namespace MAL_Reviewer_UI.forms
             {
                 if (this.allow)
                 {
-                    pSearchCards.Visible = false;
                     pPreview.ToggleLoad(false, previewLoader);
+                    pSearchCards.Visible = false;
+                    lTargetChapters.Visible = false;
+                    lChapters.Visible = false;
                 }
             }
         }
@@ -336,7 +361,10 @@ namespace MAL_Reviewer_UI.forms
                             lTargetTitle.Text = mangaModel.Title.Length > 55 ? mangaModel.Title.Substring(0, 55) + "..." : mangaModel.Title;
                             lTargetSynopsis.Text = mangaModel.Synopsis?.Length > 215 ? mangaModel.Synopsis?.Substring(0, 215) + "..." : mangaModel.Synopsis;
                             pbTargetImage.Load(mangaModel.Image_url);
-                            bMAL.Tag = mangaModel.Url;
+                            MALPageButton.Tag = mangaModel.Url;
+
+                            InfoTooltip.ToolTipTitle = $"{ mangaModel.type } title";
+                            InfoTooltip.SetToolTip(lTargetTitle, mangaModel.Title);
 
                             this.targetId = mangaModel.Mal_id;
                             this.type = 1;
@@ -363,7 +391,7 @@ namespace MAL_Reviewer_UI.forms
 
         #endregion
 
-        private void FNewReview_FormClosing(object sender, FormClosingEventArgs e)
+        private void NewReviewForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!this.ready)
             {

@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace MAL_Reviewer_UI.classes
 {
@@ -14,6 +15,7 @@ namespace MAL_Reviewer_UI.classes
         /// <param name="control"></param>
         /// <param name="state"></param>
         /// <param name="loaderControl"></param>
+        /// <param name="exceptions"></param>
         public static void ToggleLoad(this Control control, bool state, user_controls.LoaderControl loaderControl)
         {
             // Ensuring the targeted control is visible.
