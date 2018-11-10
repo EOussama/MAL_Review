@@ -202,7 +202,7 @@ namespace MAL_Reviewer_UI.forms
         private void SearchCard_CardMouseClickEvent(object sender, int targetId)
         {
             // Checking if the targetId isn't equal to the current previewed Anime/Manga's mal_id.
-            if (this.targetId == targetId && this.type  == (rbAnime.Checked ? int.Parse(rbAnime.Tag.ToString()) : int.Parse(rbManga.Tag.ToString())))
+            if (this.targetId == targetId && this.type  == (rbAnime.Checked ? int.Parse(rbAnime.Tag.ToString()) : int.Parse(rbManga.Tag.ToString())) && pPreview.Visible)
                 return;
 
             pPreview.ToggleLoad(true, previewLoader);
