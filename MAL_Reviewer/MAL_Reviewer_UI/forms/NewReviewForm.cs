@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -29,6 +28,7 @@ namespace MAL_Reviewer_UI.forms
         {
             InitializeComponent();
             this.ActiveControl = tbSearch;
+            TargetNotFoundLabel.Text = $"Input the { (rbAnime.Checked ? rbAnime : rbManga).Text } title you want review on the text box above, meanwhile we will fetch any related data from MAL to help provide more information on the review target.";
 
             // Wiring up eventhandlers to the radio buttons
             rbAnime.CheckedChanged += RbAnime_CheckedChanged;
@@ -95,7 +95,13 @@ namespace MAL_Reviewer_UI.forms
             if (!this.ready || _currentSearch.Length < 3)
             {
                 pSearchCards.Visible = false;
-                TargetNotFoundLabel.Text = $"Input the { (rbAnime.Checked ? rbAnime : rbManga).Text } title you want review on the text box above, meanwhile we will fetch any related data from MAL to help provide more information on the review target.";
+
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                sb.Append("Input the ")
+                    .Append((rbAnime.Checked ? rbAnime : rbManga).Text)
+                    .Append(" title you want review on the text box above, meanwhile we will fetch any related data from MAL to help provide more information on the review target.");
+
+                TargetNotFoundLabel.Text = sb.ToString();
 
                 return;
             }
