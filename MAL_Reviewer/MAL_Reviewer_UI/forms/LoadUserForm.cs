@@ -10,27 +10,28 @@ namespace MAL_Reviewer_UI.forms
 {
     public partial class LoadUserForm : Form
     {
+        public event EventHandler<MALUserModel> UserLoadedEvent;
+
         private bool
             ready = true,
             allow = true;
 
         private CancellationTokenSource cts;
-        public event EventHandler<MALUserModel> UserLoadedEvent;
 
         public LoadUserForm()
         {
             InitializeComponent();
-            this.ActiveControl = tbMALUsername;
 
+            this.ActiveControl = searchControl.Controls["inputTextBox"];
             cts = new CancellationTokenSource();
         }
 
         private async void BLoad_Click(object sender, EventArgs e)
         {
-            string username = tbMALUsername.Text.Trim();
+            string username = searchControl.InnerText.Trim();
 
-            bLoad.Enabled = false;
-            pbLoading.Visible = true;
+            this.bLoad.Enabled = false;
+            this.searchControl.ToggleLoading(true);
             this.ready = false;
 
             try
@@ -39,13 +40,14 @@ namespace MAL_Reviewer_UI.forms
 
                 // Get the data of the user.
                 MALUserModel userModel = await MALHelper.GetUser(username, cts.Token);
-                List<AnimelistEntryModel> animeList = await MALHelper.GetAnimeList(username, (int)userModel.Anime_stats.Total_entries, cts.Token);
-                List<MangalistEntryModel> mangaList = await MALHelper.GetMangaList(username, (int)userModel.Manga_stats.Total_entries, cts.Token);
 
                 if (userModel == null) throw new Exception($"No user under the username “{ username }” was found!");
                 else
                 {
-                    if (this.allow)
+                    List<AnimelistEntryModel> animeList = await MALHelper.GetAnimeList(username, (int)userModel?.Anime_stats.Total_entries, cts.Token);
+                    List<MangalistEntryModel> mangaList = await MALHelper.GetMangaList(username, (int)userModel?.Manga_stats.Total_entries, cts.Token);
+
+                if (this.allow)
                     {
                         this.ready = true;
                         this.Close();
@@ -65,10 +67,10 @@ namespace MAL_Reviewer_UI.forms
             {
                 if (this.allow)
                 {
-                    pbLoading.Visible = false;
-                    bLoad.Enabled = true;
+                    this.bLoad.Enabled = true;
+                    this.searchControl.ToggleLoading(false);
+                    this.ActiveControl = searchControl.Controls["inputTextBox"];
                     this.ready = true;
-                    this.ActiveControl = tbMALUsername;
                 }
             }
         }

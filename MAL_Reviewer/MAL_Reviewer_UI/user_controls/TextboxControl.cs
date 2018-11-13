@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace MAL_Reviewer_UI.user_controls
@@ -8,6 +9,8 @@ namespace MAL_Reviewer_UI.user_controls
     /// </summary>
     public partial class TextboxControl : UserControl
     {
+        public event EventHandler<string> TextboxSubmitEvent;
+
         private bool toggleIcon = true;
         private const int searchInterval = 500;
         LoaderControl loaderControl;
@@ -81,6 +84,11 @@ namespace MAL_Reviewer_UI.user_controls
         /// </summary>
         public bool AllowLoad { get; set; } = false;
 
+        /// <summary>
+        /// Sets and gets the ability to auto submit the textbox when finished typing.
+        /// </summary>
+        public bool AutoSubmit { get; set; } = false;
+
         public TextboxControl()
         {
             InitializeComponent();
@@ -108,9 +116,15 @@ namespace MAL_Reviewer_UI.user_controls
         private void InputDelay_Tick(object sender, System.EventArgs e)
         {
             this.inputDelay.Stop();
+
+            // Check if the ability to submit the textbox when finished typing is on.
+            if (this.AutoSubmit)
+            {
+                this.Submit();
+            }
             
             // Check if the loading animation is allowed.
-            if (this.AllowLoad )
+            if (this.AllowLoad)
             {
                 // Toggle the loading animation.
                 this.ToggleLoading(true);
@@ -127,8 +141,14 @@ namespace MAL_Reviewer_UI.user_controls
             this.loaderControl.Visible = state && this.ToggleIcon;
 
             this.Cursor = (state ? Cursors.WaitCursor : Cursors.Default);
+        }
 
-            System.Threading.Thread.Sleep(3000);
+        /// <summary>
+        /// Submit the textbox.
+        /// </summary>
+        public void Submit()
+        {
+            this.TextboxSubmitEvent?.Invoke(this, inputTextBox.Text);
         }
     }
 }
