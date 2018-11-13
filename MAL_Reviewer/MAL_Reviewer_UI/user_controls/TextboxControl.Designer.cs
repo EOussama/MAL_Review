@@ -37,10 +37,10 @@
             // 
             this.iconPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconPictureBox.Image = global::MAL_Reviewer_UI.Properties.Resources.icon_user;
-            this.iconPictureBox.Location = new System.Drawing.Point(205, 6);
+            this.iconPictureBox.Image = global::MAL_Reviewer_UI.Properties.Resources.icon_open;
+            this.iconPictureBox.Location = new System.Drawing.Point(203, 5);
             this.iconPictureBox.Name = "iconPictureBox";
-            this.iconPictureBox.Size = new System.Drawing.Size(22, 22);
+            this.iconPictureBox.Size = new System.Drawing.Size(22, 23);
             this.iconPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconPictureBox.TabIndex = 8;
             this.iconPictureBox.TabStop = false;
@@ -63,10 +63,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.iconPictureBox);
             this.Controls.Add(this.inputTextBox);
             this.Name = "TextboxControl";
-            this.Size = new System.Drawing.Size(232, 33);
+            this.Size = new System.Drawing.Size(230, 34);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

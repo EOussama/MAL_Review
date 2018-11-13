@@ -41,6 +41,7 @@
             this.pbLoading = new System.Windows.Forms.PictureBox();
             this.pbSearch = new System.Windows.Forms.PictureBox();
             this.textboxControl1 = new MAL_Reviewer_UI.user_controls.TextboxControl();
+            this.textboxControl2 = new MAL_Reviewer_UI.user_controls.TextboxControl();
             this.pMALUsername.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
@@ -162,21 +163,34 @@
             // 
             // textboxControl1
             // 
-            this.textboxControl1.AllowLoad = true;
-            this.textboxControl1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textboxControl1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.textboxControl1.AllowLoad = false;
+            this.textboxControl1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.textboxControl1.Icon = ((System.Drawing.Image)(resources.GetObject("textboxControl1.Icon")));
             this.textboxControl1.InnerText = "";
-            this.textboxControl1.Location = new System.Drawing.Point(49, 427);
+            this.textboxControl1.Location = new System.Drawing.Point(63, 317);
             this.textboxControl1.Name = "textboxControl1";
             this.textboxControl1.Size = new System.Drawing.Size(232, 33);
             this.textboxControl1.TabIndex = 17;
+            this.textboxControl1.ToggleIcon = true;
+            // 
+            // textboxControl2
+            // 
+            this.textboxControl2.AllowLoad = false;
+            this.textboxControl2.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.textboxControl2.Icon = ((System.Drawing.Image)(resources.GetObject("textboxControl2.Icon")));
+            this.textboxControl2.InnerText = "";
+            this.textboxControl2.Location = new System.Drawing.Point(63, 356);
+            this.textboxControl2.Name = "textboxControl2";
+            this.textboxControl2.Size = new System.Drawing.Size(232, 33);
+            this.textboxControl2.TabIndex = 18;
+            this.textboxControl2.ToggleIcon = false;
             // 
             // LoadUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 472);
+            this.Controls.Add(this.textboxControl2);
             this.Controls.Add(this.textboxControl1);
             this.Controls.Add(this.pBottomSeparator);
             this.Controls.Add(this.lDisclaimer);
@@ -217,5 +231,6 @@
         private System.Windows.Forms.Label lDisclaimer;
         private System.Windows.Forms.Panel pBottomSeparator;
         private user_controls.TextboxControl textboxControl1;
+        private user_controls.TextboxControl textboxControl2;
     }
 }

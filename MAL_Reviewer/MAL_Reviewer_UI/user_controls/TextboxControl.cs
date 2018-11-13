@@ -8,6 +8,7 @@ namespace MAL_Reviewer_UI.user_controls
     /// </summary>
     public partial class TextboxControl : UserControl
     {
+        private bool toggleIcon = true;
         private const int searchInterval = 500;
         LoaderControl loaderControl;
         private Timer inputDelay;
@@ -31,6 +32,28 @@ namespace MAL_Reviewer_UI.user_controls
         }
 
         /// <summary>
+        /// Enables and disables the use of an icon for the textbox.
+        /// </summary>
+        public bool ToggleIcon
+        {
+            get => this.toggleIcon;
+            set
+            {
+                this.toggleIcon = value;
+                this.iconPictureBox.Visible = value;
+
+                if (value)
+                {
+                    this.inputTextBox.Width = this.Width - (this.inputTextBox.Left * 2) - this.iconPictureBox.Width - (this.iconPictureBox.Left - this.inputTextBox.Right);
+                }
+                else
+                {
+                    this.inputTextBox.Width = this.Width - (this.inputTextBox.Left * 2);
+                }
+            }
+        }
+
+        /// <summary>
         /// Sets and gets the background color of the textbox.
         /// </summary>
         public Color BackgroundColor
@@ -46,6 +69,14 @@ namespace MAL_Reviewer_UI.user_controls
         }
 
         /// <summary>
+        /// Sets the maximum input length of the textbox.
+        /// </summary>
+        public int MaxLength
+        {
+            set => this.inputTextBox.MaxLength = value;
+        }
+
+        /// <summary>
         /// Sets and gets the ability to activates the loading animation whne finishing typing.
         /// </summary>
         public bool AllowLoad { get; set; } = false;
@@ -54,12 +85,13 @@ namespace MAL_Reviewer_UI.user_controls
         {
             InitializeComponent();
 
-            loaderControl = new LoaderControl()
+            this.loaderControl = new LoaderControl()
             {
                 Color = this.BackgroundColor,
                 Bounds = this.iconPictureBox.Bounds
             };
-            loaderControl.BringToFront();
+            this.Controls.Add(loaderControl);
+            this.loaderControl.BringToFront();
             this.inputDelay = new Timer
             {
                 Interval = searchInterval
@@ -78,7 +110,7 @@ namespace MAL_Reviewer_UI.user_controls
             this.inputDelay.Stop();
             
             // Check if the loading animation is allowed.
-            if (this.AllowLoad)
+            if (this.AllowLoad )
             {
                 // Toggle the loading animation.
                 this.ToggleLoading(true);
@@ -91,10 +123,12 @@ namespace MAL_Reviewer_UI.user_controls
         public void ToggleLoading(bool state)
         {
             this.inputTextBox.Enabled = !state;
-            this.iconPictureBox.Visible = !state;
-            this.loaderControl.Visible = state;
+            this.iconPictureBox.Visible = !state && this.ToggleIcon;
+            this.loaderControl.Visible = state && this.ToggleIcon;
 
             this.Cursor = (state ? Cursors.WaitCursor : Cursors.Default);
+
+            System.Threading.Thread.Sleep(3000);
         }
     }
 }
