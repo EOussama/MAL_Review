@@ -19,18 +19,14 @@ namespace MAL_Reviewer_UI.forms
 
         private byte type = 0;
         private int targetId = 0;
-        private string lastSearch = string.Empty;
-        private System.Windows.Forms.Timer inputDelay;
         private CancellationTokenSource cts;
         private LoaderControl previewLoader;
 
         public NewReviewForm()
         {
             InitializeComponent();
-            this.ActiveControl = tbSearch;
-            TargetNotFoundLabel.Text = $"Input the { (rbAnime.Checked ? rbAnime : rbManga).Text } title you want review on the text box above, meanwhile we will fetch any related data from MAL to help provide more information on the review target.";
 
-            // Wiring up eventhandlers to the radio buttons
+            // Wiring up eventhandlers to the radio buttons.
             rbAnime.CheckedChanged += RbAnime_CheckedChanged;
             rbScaleOther.CheckedChanged += RbScaleOther_CheckedChanged;
 
@@ -54,21 +50,25 @@ namespace MAL_Reviewer_UI.forms
                 pSearchCards.Controls.Add(searchCard);
             }
 
-            // input delay timer setup.
-            this.inputDelay = new System.Windows.Forms.Timer
-            {
-                Interval = 500
-            };
-            this.inputDelay.Tick += _inputDelay_Tick;
-
-            // Create loaders
+            // Create loaders.
             previewLoader = new LoaderControl()
             {
                 Color = System.Drawing.SystemColors.Control
             };
 
+            // Wiring the text input events.
+            searchControl.Tag = this.type;
+            this.searchControl.TextboxSubmitEvent += SearchControl_TextboxSubmitEvent;
+            this.searchControl.Controls["inputTextBox"].MouseClick += SearchControl_MouseClick;
+            this.searchControl.Controls["inputTextBox"].TextChanged += SearchControl_TextChanged;
+            this.searchControl.Controls["iconPictureBox"].MouseClick += PbShow_MouseClick;
+            this.searchControl.Controls["iconPictureBox"].MouseEnter += PbShow_MouseEnter;
+            this.searchControl.Controls["iconPictureBox"].MouseLeave += PbShow_MouseLeave;
+
             cts = new CancellationTokenSource();
-        }
+            this.ActiveControl = this.searchControl.Controls["inputTextBox"];
+            TargetNotFoundLabel.Text = $"Input the { (rbAnime.Checked ? rbAnime : rbManga).Text } title you want review on the text box above, meanwhile we will fetch any related data from MAL to help provide more information on the review target.";
+        }        
 
         #region Manga/Anime labeling
 
@@ -76,62 +76,30 @@ namespace MAL_Reviewer_UI.forms
 
         private void RbAnime_CheckedChanged(object sender, EventArgs e)
         {
-            lTitle.Text = $"{ (rbAnime.Checked ? rbAnime.Text : rbManga.Text) } title";
-            lPreview.Text = $"{ (rbAnime.Checked ? rbAnime.Text : rbManga.Text) } preview";
-            pbShow.Image = (rbAnime.Checked ? Properties.Resources.icon_anime : Properties.Resources.icon_manga);
-            TargetNotFoundLabel.Text = $"Input the { (rbAnime.Checked ? rbAnime : rbManga).Text } title you want review on the text box above, meanwhile we will fetch any related data from MAL to help provide more information on the review target.";
-            TbSearch_TextChanged(this, EventArgs.Empty);
+            this.lTitle.Text = $"{ (rbAnime.Checked ? rbAnime.Text : rbManga.Text) } title";
+            this.lPreview.Text = $"{ (rbAnime.Checked ? rbAnime.Text : rbManga.Text) } preview";
+            this.TargetNotFoundLabel.Text = $"Input the { (rbAnime.Checked ? rbAnime : rbManga).Text } title you want review on the text box above, meanwhile we will fetch any related data from MAL to help provide more information on the review target.";
+
+            this.searchControl.Icon = (rbAnime.Checked ? Properties.Resources.icon_anime : Properties.Resources.icon_manga);
+            this.searchControl.Tag = (byte)(rbAnime.Checked ? int.Parse(rbAnime.Tag.ToString()) : int.Parse(rbManga.Tag.ToString()));
+            this.searchControl.Submit();
         }
 
         #endregion
 
         #region Target Search
 
-        private void TbSearch_TextChanged(object sender, EventArgs e)
+        private async void SearchControl_TextboxSubmitEvent(object sender, string e)
         {
-            string _currentSearch = tbSearch.Text.Trim().ToLower();
-
-            // Check if the search request has already been sent or not.
-            if (!this.ready || _currentSearch.Length < 3)
-            {
-                pSearchCards.Visible = false;
-
-                System.Text.StringBuilder sb = new System.Text.StringBuilder();
-                sb.Append("Input the ")
-                    .Append((rbAnime.Checked ? rbAnime : rbManga).Text)
-                    .Append(" title you want review on the text box above, meanwhile we will fetch any related data from MAL to help provide more information on the review target.");
-
-                TargetNotFoundLabel.Text = sb.ToString();
-
-                return;
-            }
-
-            // Reset the input timer.
-            this.inputDelay.Stop();
-            this.inputDelay.Start();
-        }
-
-        private async void _inputDelay_Tick(object sender, EventArgs e)
-        {
-            this.inputDelay.Stop();
-
             try
             {
-                string
-                    searchTitle = tbSearch.Text.Trim().ToLower(),
-                    searchType = rbAnime.Checked ? rbAnime.Text.ToLower() : rbManga.Text.ToLower();
-
-                if (this.lastSearch == searchTitle && this.type == (rbAnime.Checked ? int.Parse(rbAnime.Tag.ToString()) : int.Parse(rbManga.Tag.ToString())))
-                    return;
-
-                // Get last search and type.
-                this.lastSearch = searchTitle;
-                this.type = (byte)(rbAnime.Checked ? int.Parse(rbAnime.Tag.ToString()) : int.Parse(rbManga.Tag.ToString()));
+                string searchType = rbAnime.Checked ? rbAnime.Text.ToLower() : rbManga.Text.ToLower();
 
                 ToggleSearchLoading(true);
+                this.searchControl.Tag = this.type;
                 this.ready = false;
 
-                SearchModel searchModel = await MALHelper.Search(searchType, searchTitle, cts.Token);
+                SearchModel searchModel = await MALHelper.Search(searchType, searchControl.InnerText.Trim(), cts.Token);
 
                 if (searchModel != null && searchModel.Results != null)
                 {
@@ -200,6 +168,7 @@ namespace MAL_Reviewer_UI.forms
                 if (this.allow)
                 {
                     ToggleSearchLoading(false);
+                    this.ActiveControl = this.searchControl.Controls["inputTextBox"];
                     this.ready = true;
                 }
             }
@@ -207,8 +176,15 @@ namespace MAL_Reviewer_UI.forms
 
         private void SearchCard_CardMouseClickEvent(object sender, int targetId)
         {
+            var x = (rbAnime.Checked ? int.Parse(rbAnime.Tag.ToString()) : int.Parse(rbManga.Tag.ToString()));
+            Console.WriteLine("---[Testing]---");
+            Console.WriteLine($"Last targetId {this.targetId}");
+            Console.WriteLine($"Current targetId {targetId}");
+            Console.WriteLine($"Last type {this.type}");
+            Console.WriteLine($"Current type {x}");
+            Console.WriteLine("---------------");
             // Checking if the targetId isn't equal to the current previewed Anime/Manga's mal_id.
-            if (this.targetId == targetId && this.type  == (rbAnime.Checked ? int.Parse(rbAnime.Tag.ToString()) : int.Parse(rbManga.Tag.ToString())) && pPreview.Visible)
+            if (this.targetId == targetId && this.type == (rbAnime.Checked ? int.Parse(rbAnime.Tag.ToString()) : int.Parse(rbManga.Tag.ToString())) && pPreview.Visible)
                 return;
 
             pPreview.ToggleLoad(true, previewLoader);
@@ -225,9 +201,8 @@ namespace MAL_Reviewer_UI.forms
         /// <param name="state"></param>
         private void ToggleSearchLoading(bool state)
         {
-            pbLoading.Visible = state;
+            searchControl.ToggleLoading(state);
             pSearchCards.Visible = !state && (bool)pSearchCards.Controls[0].Tag == true;
-            tbSearch.Enabled = !state;
             rbAnime.Enabled = !state;
             rbManga.Enabled = !state;
             ClearButton.Enabled = !state;
@@ -252,34 +227,43 @@ namespace MAL_Reviewer_UI.forms
 
         #region Search panel icon toggler
 
-        private void TbSearch_MouseClick(object sender, MouseEventArgs e)
+        private void SearchControl_TextChanged(object sender, EventArgs e)
         {
-            // pSearchCards.Controls.OfType<TargetSearchCardControl>().Count(control => (bool)control.Tag == true) > 0
-            if (e.Button == MouseButtons.Left && tbSearch.Focused && tbSearch.Text.Trim().Length > 2 && (bool)pSearchCards.Controls[0].Tag == true && pSearchCards.Visible == false)
+            if (searchControl.InnerText.Trim().Length < 3)
+            {
+                pSearchCards.Visible = false;
+            }
+        }
+
+        private void SearchControl_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && searchControl.Controls["inputTextBox"].Focused && searchControl.InnerText.Trim().Length > 2 && (bool)pSearchCards.Controls[0].Tag == true && pSearchCards.Visible == false)
+            {
                 pSearchCards.Visible = true;
+            }
         }
 
         private void PbShow_MouseClick(object sender, MouseEventArgs e)
         {
             pSearchCards.Visible = false;
-            pbShow.Cursor = Cursors.Default;
-            pbShow.Image = (rbAnime.Checked ? Properties.Resources.icon_anime : Properties.Resources.icon_manga);
+            searchControl.Controls["iconPictureBox"].Cursor = Cursors.Default;
+            searchControl.Icon = (rbAnime.Checked ? Properties.Resources.icon_anime : Properties.Resources.icon_manga);
         }
 
         private void PbShow_MouseEnter(object sender, EventArgs e)
         {
-            if (tbSearch.Text.Trim().Length > 2 && pSearchCards.Controls.Count > 0 && pSearchCards.Controls[0]?.Visible == true && pSearchCards.Visible == true)
+            if (searchControl.InnerText.Trim().Length > 2 && pSearchCards.Controls.Count > 0 && pSearchCards.Controls[0]?.Visible == true && pSearchCards.Visible == true)
             {
-                pbShow.Cursor = Cursors.Hand;
-                pbShow.Image = Properties.Resources.icon_close;
+                searchControl.Controls["iconPictureBox"].Cursor = Cursors.Hand;
+                searchControl.Icon = Properties.Resources.icon_close;
             }
             else
             {
-                pbShow.Cursor = Cursors.Default;
+                searchControl.Controls["iconPictureBox"].Cursor = Cursors.Default;
             }
         }
 
-        private void PbShow_MouseLeave(object sender, EventArgs e) => pbShow.Image = (rbAnime.Checked ? Properties.Resources.icon_anime : Properties.Resources.icon_manga); 
+        private void PbShow_MouseLeave(object sender, EventArgs e) => searchControl.Icon = (rbAnime.Checked ? Properties.Resources.icon_anime : Properties.Resources.icon_manga); 
         
         #endregion
 
@@ -322,7 +306,7 @@ namespace MAL_Reviewer_UI.forms
                             InfoTooltip.SetToolTip(lTargetTitle, animeModel.Title);
 
                             this.targetId = animeModel.Mal_id;
-                            this.type = 0;
+                            this.type = 1;
                         });
                     }
                 });
@@ -377,7 +361,7 @@ namespace MAL_Reviewer_UI.forms
                             InfoTooltip.SetToolTip(lTargetTitle, mangaModel.Title);
 
                             this.targetId = mangaModel.Mal_id;
-                            this.type = 1;
+                            this.type = 2;
                         });
                     }
                 });
@@ -405,14 +389,14 @@ namespace MAL_Reviewer_UI.forms
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
-            tbSearch.Clear();
+            searchControl.Clear();
             pPreview.Visible = false;
 
             rbAnime.Checked = true;
             rbScale10.Checked = true;
             rbDecimalNo.Checked = true;
 
-            this.ActiveControl = tbSearch;
+            this.ActiveControl = this.searchControl.Controls["inputTextBox"];
         }
 
         #endregion

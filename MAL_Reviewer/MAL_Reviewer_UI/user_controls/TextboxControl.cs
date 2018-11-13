@@ -12,7 +12,12 @@ namespace MAL_Reviewer_UI.user_controls
         public event EventHandler<string> TextboxSubmitEvent;
 
         private bool toggleIcon = true;
+        private byte extra = 0;
+        private string lastSub = "";
+
+        private int subMin = 3;
         private const int searchInterval = 500;
+
         LoaderControl loaderControl;
         private Timer inputDelay;
 
@@ -80,6 +85,15 @@ namespace MAL_Reviewer_UI.user_controls
         }
 
         /// <summary>
+        /// Sets and gets the minimum length required to submit the textbox.
+        /// </summary>
+        public int SubmitMin
+        {
+            get => this.subMin;
+            set => this.subMin = value;
+        }
+
+        /// <summary>
         /// Sets and gets the ability to activates the loading animation whne finishing typing.
         /// </summary>
         public bool AllowLoad { get; set; } = false;
@@ -122,13 +136,6 @@ namespace MAL_Reviewer_UI.user_controls
             {
                 this.Submit();
             }
-            
-            // Check if the loading animation is allowed.
-            if (this.AllowLoad)
-            {
-                // Toggle the loading animation.
-                this.ToggleLoading(true);
-            }
         }
 
         /// <summary>
@@ -148,7 +155,26 @@ namespace MAL_Reviewer_UI.user_controls
         /// </summary>
         public void Submit()
         {
-            this.TextboxSubmitEvent?.Invoke(this, inputTextBox.Text);
+            // Check if the length of the textbox's value is bigger or equal to the minimum allowed and if the
+            // value about to be submited isn't the same as the last one.
+            if (this.inputTextBox.Text.Trim().Length >= this.SubmitMin && (this.lastSub != this.inputTextBox.Text.Trim() || byte.Parse(this.Tag.ToString()) != this.extra))
+            {
+                this.TextboxSubmitEvent?.Invoke(this, inputTextBox.Text);
+                this.lastSub = this.inputTextBox.Text.Trim();
+                this.extra = byte.Parse(this.Tag.ToString());
+
+                // Check if the loading animation is allowed.
+                if (this.AllowLoad)
+                {
+                    // Toggle the loading animation.
+                    this.ToggleLoading(true);
+                }
+            }
         }
+
+        /// <summary>
+        /// Clear the textbox.
+        /// </summary>
+        public void Clear() => this.inputTextBox.Clear();
     }
 }

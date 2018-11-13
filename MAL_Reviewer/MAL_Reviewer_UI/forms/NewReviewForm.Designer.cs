@@ -31,10 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewReviewForm));
             this.pSectionSeparator = new System.Windows.Forms.Panel();
-            this.pReviewLookUp = new System.Windows.Forms.Panel();
-            this.pbLoading = new System.Windows.Forms.PictureBox();
-            this.pbShow = new System.Windows.Forms.PictureBox();
-            this.tbSearch = new System.Windows.Forms.TextBox();
             this.pPreview = new System.Windows.Forms.Panel();
             this.lTargetSynopsis = new System.Windows.Forms.RichTextBox();
             this.lChapters = new System.Windows.Forms.Label();
@@ -53,6 +49,7 @@
             this.lTargetScore = new System.Windows.Forms.Label();
             this.lTargetStatus = new System.Windows.Forms.Label();
             this.pSetup = new System.Windows.Forms.Panel();
+            this.searchControl = new MAL_Reviewer_UI.user_controls.TextboxControl();
             this.pSearchCards = new System.Windows.Forms.Panel();
             this.gbRating = new System.Windows.Forms.GroupBox();
             this.rbDecimalNo = new System.Windows.Forms.RadioButton();
@@ -72,9 +69,6 @@
             this.ClearButton = new System.Windows.Forms.Button();
             this.ReviewButton = new System.Windows.Forms.Button();
             this.InfoTooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.pReviewLookUp.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbShow)).BeginInit();
             this.pPreview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTargetImage)).BeginInit();
             this.pSetup.SuspendLayout();
@@ -90,54 +84,6 @@
             this.pSectionSeparator.Name = "pSectionSeparator";
             this.pSectionSeparator.Size = new System.Drawing.Size(6, 310);
             this.pSectionSeparator.TabIndex = 0;
-            // 
-            // pReviewLookUp
-            // 
-            this.pReviewLookUp.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pReviewLookUp.Controls.Add(this.pbLoading);
-            this.pReviewLookUp.Controls.Add(this.pbShow);
-            this.pReviewLookUp.Controls.Add(this.tbSearch);
-            this.pReviewLookUp.Location = new System.Drawing.Point(12, 40);
-            this.pReviewLookUp.Name = "pReviewLookUp";
-            this.pReviewLookUp.Size = new System.Drawing.Size(230, 35);
-            this.pReviewLookUp.TabIndex = 3;
-            // 
-            // pbLoading
-            // 
-            this.pbLoading.Image = global::MAL_Reviewer_UI.Properties.Resources.loading_gif_control_light;
-            this.pbLoading.Location = new System.Drawing.Point(199, 5);
-            this.pbLoading.Name = "pbLoading";
-            this.pbLoading.Size = new System.Drawing.Size(25, 24);
-            this.pbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLoading.TabIndex = 0;
-            this.pbLoading.TabStop = false;
-            this.pbLoading.Visible = false;
-            // 
-            // pbShow
-            // 
-            this.pbShow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbShow.Image = ((System.Drawing.Image)(resources.GetObject("pbShow.Image")));
-            this.pbShow.Location = new System.Drawing.Point(204, 8);
-            this.pbShow.Name = "pbShow";
-            this.pbShow.Size = new System.Drawing.Size(20, 20);
-            this.pbShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbShow.TabIndex = 1;
-            this.pbShow.TabStop = false;
-            this.pbShow.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PbShow_MouseClick);
-            this.pbShow.MouseEnter += new System.EventHandler(this.PbShow_MouseEnter);
-            this.pbShow.MouseLeave += new System.EventHandler(this.PbShow_MouseLeave);
-            // 
-            // tbSearch
-            // 
-            this.tbSearch.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.tbSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbSearch.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSearch.Location = new System.Drawing.Point(9, 7);
-            this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Size = new System.Drawing.Size(188, 20);
-            this.tbSearch.TabIndex = 0;
-            this.tbSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TbSearch_MouseClick);
-            this.tbSearch.TextChanged += new System.EventHandler(this.TbSearch_TextChanged);
             // 
             // pPreview
             // 
@@ -331,17 +277,32 @@
             // 
             // pSetup
             // 
+            this.pSetup.Controls.Add(this.searchControl);
             this.pSetup.Controls.Add(this.pSearchCards);
             this.pSetup.Controls.Add(this.gbRating);
             this.pSetup.Controls.Add(this.rbAnime);
             this.pSetup.Controls.Add(this.rbManga);
             this.pSetup.Controls.Add(this.lTitle);
-            this.pSetup.Controls.Add(this.pReviewLookUp);
             this.pSetup.Controls.Add(this.TargetNotFoundLabel);
             this.pSetup.Location = new System.Drawing.Point(27, 12);
             this.pSetup.Name = "pSetup";
             this.pSetup.Size = new System.Drawing.Size(255, 339);
             this.pSetup.TabIndex = 5;
+            // 
+            // searchControl
+            // 
+            this.searchControl.AllowLoad = true;
+            this.searchControl.AutoSubmit = true;
+            this.searchControl.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.searchControl.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.searchControl.Icon = global::MAL_Reviewer_UI.Properties.Resources.icon_anime;
+            this.searchControl.InnerText = "";
+            this.searchControl.Location = new System.Drawing.Point(12, 40);
+            this.searchControl.Name = "searchControl";
+            this.searchControl.Size = new System.Drawing.Size(230, 35);
+            this.searchControl.SubmitMin = 3;
+            this.searchControl.TabIndex = 0;
+            this.searchControl.ToggleIcon = true;
             // 
             // pSearchCards
             // 
@@ -492,7 +453,7 @@
             this.rbAnime.Size = new System.Drawing.Size(54, 17);
             this.rbAnime.TabIndex = 4;
             this.rbAnime.TabStop = true;
-            this.rbAnime.Tag = "0";
+            this.rbAnime.Tag = "1";
             this.rbAnime.Text = "Anime";
             this.rbAnime.UseVisualStyleBackColor = true;
             // 
@@ -503,7 +464,7 @@
             this.rbManga.Name = "rbManga";
             this.rbManga.Size = new System.Drawing.Size(58, 17);
             this.rbManga.TabIndex = 0;
-            this.rbManga.Tag = "1";
+            this.rbManga.Tag = "2";
             this.rbManga.Text = "Manga";
             this.rbManga.UseVisualStyleBackColor = true;
             // 
@@ -589,10 +550,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Review";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NewReviewForm_FormClosing);
-            this.pReviewLookUp.ResumeLayout(false);
-            this.pReviewLookUp.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbShow)).EndInit();
             this.pPreview.ResumeLayout(false);
             this.pPreview.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTargetImage)).EndInit();
@@ -610,14 +567,11 @@
         #endregion
 
         private System.Windows.Forms.Panel pSectionSeparator;
-        private System.Windows.Forms.Panel pReviewLookUp;
-        private System.Windows.Forms.TextBox tbSearch;
         private System.Windows.Forms.Panel pPreview;
         private System.Windows.Forms.Panel pSetup;
         private System.Windows.Forms.Label lTitle;
         private System.Windows.Forms.RadioButton rbAnime;
         private System.Windows.Forms.RadioButton rbManga;
-        private System.Windows.Forms.PictureBox pbShow;
         private System.Windows.Forms.GroupBox gbRating;
         private System.Windows.Forms.GroupBox gbRatingScale;
         private System.Windows.Forms.NumericUpDown nupScaleOther;
@@ -629,7 +583,6 @@
         private System.Windows.Forms.RadioButton rbDecimalYes;
         private System.Windows.Forms.Label lRatingDecimal;
         private System.Windows.Forms.Panel pSearchCards;
-        private System.Windows.Forms.PictureBox pbLoading;
         private System.Windows.Forms.Label lTargetTitle;
         private System.Windows.Forms.PictureBox pbTargetImage;
         private System.Windows.Forms.Label lType;
@@ -651,5 +604,6 @@
         private System.Windows.Forms.Button ReviewButton;
         private System.Windows.Forms.ToolTip InfoTooltip;
         private System.Windows.Forms.RichTextBox lTargetSynopsis;
+        private user_controls.TextboxControl searchControl;
     }
 }

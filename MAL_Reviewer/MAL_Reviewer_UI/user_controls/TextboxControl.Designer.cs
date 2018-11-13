@@ -57,6 +57,7 @@
             this.inputTextBox.Name = "inputTextBox";
             this.inputTextBox.Size = new System.Drawing.Size(191, 20);
             this.inputTextBox.TabIndex = 7;
+            this.inputTextBox.Tag = "";
             this.inputTextBox.TextChanged += new System.EventHandler(this.InputTextBox_TextChanged);
             // 
             // TextboxControl
@@ -67,6 +68,7 @@
             this.Controls.Add(this.inputTextBox);
             this.Name = "TextboxControl";
             this.Size = new System.Drawing.Size(232, 36);
+            this.Tag = "0";
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
