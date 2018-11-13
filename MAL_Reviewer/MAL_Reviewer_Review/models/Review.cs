@@ -1,26 +1,67 @@
-﻿namespace MAL_Reviewer_Review.models
+﻿using System;
+using MAL_Reviewer_Review.enumerations;
+
+namespace MAL_Reviewer_Review.models
 {
+    /// <summary>
+    /// The review model.
+    /// </summary>
     class Review
     {
-        private ReviewTemplate _reviewTemplate;
-        private string _targetTitle;
-        private string _reviewIntro;
-        private double _reviewRating;
-        private bool _introUse;
-
-        public Review(string targetTitle, string reviewIntro, double reviewRating, bool introUse, ReviewTemplate reviewTemplate)
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="targetTitle"></param>
+        /// <param name="targetId"></param>
+        /// <param name="targetType"></param>
+        /// <param name="reviewRating"></param>
+        /// <param name="created"></param>
+        /// <param name="lastModified"></param>
+        /// <param name="reviewTemplate"></param>
+        public Review(string targetTitle, int targetId, EntryType targetType, double reviewRating, DateTime creationDate, DateTime lastModified, ReviewTemplate reviewTemplate)
         {
-            this.targetTitle = targetTitle;
-            this.reviewIntro = reviewIntro;
-            this.reviewRating = reviewRating;
-            this.introUse = introUse;
-            this.reviewTemplate = reviewTemplate;
+            TargetTitle = targetTitle;
+            TargetId = targetId;
+            TargetType = targetType;
+            ReviewRating = reviewRating;
+            CreatedDate = creationDate;
+            LastModified = lastModified;
+            ReviewTemplate = reviewTemplate;
         }
 
-        public string targetTitle { get => _targetTitle; set => _targetTitle = value; }
-        public string reviewIntro { get => _reviewIntro; set => _reviewIntro = value; }
-        public double reviewRating { get => _reviewRating; set => _reviewRating = value; }
-        public bool introUse { get => _introUse; set => _introUse = value; }
-        internal ReviewTemplate reviewTemplate { get => _reviewTemplate; set => _reviewTemplate = value; }
+        /// <summary>
+        /// The review's title.
+        /// </summary>
+        public string TargetTitle { get; set; }
+
+        /// <summary>
+        /// The MAL ID of the Anime or Manga reviewed.
+        /// </summary>
+        public int TargetId { get; set; }
+
+        /// <summary>
+        /// The type of the review's target (ex; Anime or Manga).
+        /// </summary>
+        public EntryType TargetType { get; set; }
+
+        /// <summary>
+        /// The review's rating.
+        /// </summary>
+        public double ReviewRating { get; set; }
+
+        /// <summary>
+        /// The date of when the review was created.
+        /// </summary>
+        public DateTime CreatedDate { get; set; }
+
+        /// <summary>
+        /// The date of when the review was last modified.
+        /// </summary>
+        public DateTime LastModified { get; set; }
+
+        /// <summary>
+        /// The review's template.
+        /// </summary>
+        public ReviewTemplate ReviewTemplate { get; set; }
     }
 }
