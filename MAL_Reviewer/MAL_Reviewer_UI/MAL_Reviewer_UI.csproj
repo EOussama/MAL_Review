@@ -111,6 +111,12 @@
     <Compile Include="user_controls\TargetSearchCardControl.Designer.cs">
       <DependentUpon>TargetSearchCardControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="user_controls\TextboxControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="user_controls\TextboxControl.Designer.cs">
+      <DependentUpon>TextboxControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="forms\LoadUserForm.resx">
       <DependentUpon>LoadUserForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="user_controls\TargetSearchCardControl.resx">
       <DependentUpon>TargetSearchCardControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_controls\TextboxControl.resx">
+      <DependentUpon>TextboxControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

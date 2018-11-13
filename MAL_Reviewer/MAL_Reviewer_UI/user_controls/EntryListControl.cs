@@ -13,6 +13,9 @@ namespace MAL_Reviewer_UI.user_controls
 
         private int listHeight = 0;        
 
+        /// <summary>
+        /// Gets the list's height.
+        /// </summary>
         public int ListHeight { get => listHeight; }
 
         public EntryListControl(string label, EntryType type)

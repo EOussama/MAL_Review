@@ -5,10 +5,13 @@ using System.Windows.Forms;
 
 namespace MAL_Reviewer_UI.user_controls
 {
+    /// <summary>
+    /// Search card control.
+    /// </summary>
     public partial class TargetSearchCardControl : UserControl
     {
         public event EventHandler<int> CardMouseClickEvent;
-        private int _targetId;
+        private int targetId;
 
         public TargetSearchCardControl()
         {
@@ -32,8 +35,19 @@ namespace MAL_Reviewer_UI.user_controls
             this.lTargetType.MouseLeave += CardMouseLeave;
         }
 
-        public int TargetId { get => _targetId; set => _targetId = value; }
+        /// <summary>
+        /// Sets and gets the MAL id of the target assigned to the card.
+        /// </summary>
+        public int TargetId { get => targetId; set => targetId = value; }
 
+        /// <summary>
+        /// Updates the card's UI.
+        /// </summary>
+        /// <param name="targetId"></param>
+        /// <param name="targetTitle"></param>
+        /// <param name="targetType"></param>
+        /// <param name="targetImageUrl"></param>
+        /// <param name="searchType"></param>
         public void UpdateUI (int targetId, string targetTitle, string targetType, string targetImageUrl, string searchType)
         {
             StringBuilder sb = new StringBuilder();

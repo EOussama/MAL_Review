@@ -31,19 +31,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadUserForm));
             this.lTitle = new System.Windows.Forms.Label();
             this.pMALUsername = new System.Windows.Forms.Panel();
-            this.pbLoading = new System.Windows.Forms.PictureBox();
-            this.pbSearch = new System.Windows.Forms.PictureBox();
             this.tbMALUsername = new System.Windows.Forms.TextBox();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.pTopSeparator = new System.Windows.Forms.Panel();
             this.bLoad = new System.Windows.Forms.Button();
             this.llNoAcc = new System.Windows.Forms.LinkLabel();
             this.lDisclaimer = new System.Windows.Forms.Label();
             this.pBottomSeparator = new System.Windows.Forms.Panel();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.pbLoading = new System.Windows.Forms.PictureBox();
+            this.pbSearch = new System.Windows.Forms.PictureBox();
+            this.textboxControl1 = new MAL_Reviewer_UI.user_controls.TextboxControl();
             this.pMALUsername.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // lTitle
@@ -67,27 +68,6 @@
             this.pMALUsername.Size = new System.Drawing.Size(230, 35);
             this.pMALUsername.TabIndex = 3;
             // 
-            // pbLoading
-            // 
-            this.pbLoading.Image = global::MAL_Reviewer_UI.Properties.Resources.loading_gif_control_light;
-            this.pbLoading.Location = new System.Drawing.Point(200, 5);
-            this.pbLoading.Name = "pbLoading";
-            this.pbLoading.Size = new System.Drawing.Size(25, 24);
-            this.pbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLoading.TabIndex = 6;
-            this.pbLoading.TabStop = false;
-            this.pbLoading.Visible = false;
-            // 
-            // pbSearch
-            // 
-            this.pbSearch.Image = global::MAL_Reviewer_UI.Properties.Resources.icon_user;
-            this.pbSearch.Location = new System.Drawing.Point(204, 7);
-            this.pbSearch.Name = "pbSearch";
-            this.pbSearch.Size = new System.Drawing.Size(20, 20);
-            this.pbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSearch.TabIndex = 1;
-            this.pbSearch.TabStop = false;
-            // 
             // tbMALUsername
             // 
             this.tbMALUsername.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -97,16 +77,6 @@
             this.tbMALUsername.Name = "tbMALUsername";
             this.tbMALUsername.Size = new System.Drawing.Size(188, 20);
             this.tbMALUsername.TabIndex = 0;
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.Image = global::MAL_Reviewer_UI.Properties.Resources.logo;
-            this.pbLogo.Location = new System.Drawing.Point(12, 19);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(310, 96);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLogo.TabIndex = 4;
-            this.pbLogo.TabStop = false;
             // 
             // pTopSeparator
             // 
@@ -159,11 +129,55 @@
             this.pBottomSeparator.Size = new System.Drawing.Size(257, 6);
             this.pBottomSeparator.TabIndex = 6;
             // 
-            // fLoadUser
+            // pbLogo
+            // 
+            this.pbLogo.Image = global::MAL_Reviewer_UI.Properties.Resources.logo;
+            this.pbLogo.Location = new System.Drawing.Point(12, 19);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(310, 96);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLogo.TabIndex = 4;
+            this.pbLogo.TabStop = false;
+            // 
+            // pbLoading
+            // 
+            this.pbLoading.Image = global::MAL_Reviewer_UI.Properties.Resources.loading_gif_control_light;
+            this.pbLoading.Location = new System.Drawing.Point(200, 5);
+            this.pbLoading.Name = "pbLoading";
+            this.pbLoading.Size = new System.Drawing.Size(25, 24);
+            this.pbLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLoading.TabIndex = 6;
+            this.pbLoading.TabStop = false;
+            this.pbLoading.Visible = false;
+            // 
+            // pbSearch
+            // 
+            this.pbSearch.Image = global::MAL_Reviewer_UI.Properties.Resources.icon_user;
+            this.pbSearch.Location = new System.Drawing.Point(204, 7);
+            this.pbSearch.Name = "pbSearch";
+            this.pbSearch.Size = new System.Drawing.Size(20, 20);
+            this.pbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSearch.TabIndex = 1;
+            this.pbSearch.TabStop = false;
+            // 
+            // textboxControl1
+            // 
+            this.textboxControl1.AllowLoad = true;
+            this.textboxControl1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.textboxControl1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.textboxControl1.Icon = ((System.Drawing.Image)(resources.GetObject("textboxControl1.Icon")));
+            this.textboxControl1.InnerText = "";
+            this.textboxControl1.Location = new System.Drawing.Point(49, 427);
+            this.textboxControl1.Name = "textboxControl1";
+            this.textboxControl1.Size = new System.Drawing.Size(232, 33);
+            this.textboxControl1.TabIndex = 17;
+            // 
+            // LoadUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 472);
+            this.Controls.Add(this.textboxControl1);
             this.Controls.Add(this.pBottomSeparator);
             this.Controls.Add(this.lDisclaimer);
             this.Controls.Add(this.llNoAcc);
@@ -175,15 +189,15 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "fLoadUser";
+            this.Name = "LoadUserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Load your MAL info";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FLoadUser_FormClosing);
             this.pMALUsername.ResumeLayout(false);
             this.pMALUsername.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoading)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,5 +216,6 @@
         private System.Windows.Forms.LinkLabel llNoAcc;
         private System.Windows.Forms.Label lDisclaimer;
         private System.Windows.Forms.Panel pBottomSeparator;
+        private user_controls.TextboxControl textboxControl1;
     }
 }
