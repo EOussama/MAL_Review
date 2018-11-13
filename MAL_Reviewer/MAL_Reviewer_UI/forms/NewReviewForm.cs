@@ -205,7 +205,6 @@ namespace MAL_Reviewer_UI.forms
             pSearchCards.Visible = !state && (bool)pSearchCards.Controls[0].Tag == true;
             rbAnime.Enabled = !state;
             rbManga.Enabled = !state;
-            ClearButton.Enabled = !state;
 
             // Reseting the vertical scrolling.
             pSearchCards.VerticalScroll.Value = 0;
@@ -387,16 +386,9 @@ namespace MAL_Reviewer_UI.forms
 
         #region Form submition
 
-        private void ClearButton_Click(object sender, EventArgs e)
+        private void ReviewButton_Click(object sender, EventArgs e)
         {
-            searchControl.Clear();
-            pPreview.Visible = false;
 
-            rbAnime.Checked = true;
-            rbScale10.Checked = true;
-            rbDecimalNo.Checked = true;
-
-            this.ActiveControl = this.searchControl.Controls["inputTextBox"];
         }
 
         #endregion

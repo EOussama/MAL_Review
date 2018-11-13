@@ -66,7 +66,6 @@
             this.lTitle = new System.Windows.Forms.Label();
             this.TargetNotFoundLabel = new System.Windows.Forms.Label();
             this.lPreview = new System.Windows.Forms.Label();
-            this.ClearButton = new System.Windows.Forms.Button();
             this.ReviewButton = new System.Windows.Forms.Button();
             this.InfoTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.pPreview.SuspendLayout();
@@ -302,6 +301,7 @@
             this.searchControl.Size = new System.Drawing.Size(230, 35);
             this.searchControl.SubmitMin = 3;
             this.searchControl.TabIndex = 0;
+            this.searchControl.Tag = "0";
             this.searchControl.ToggleIcon = true;
             // 
             // pSearchCards
@@ -501,19 +501,6 @@
             this.lPreview.Text = "Anime preview";
             this.lPreview.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ClearButton
-            // 
-            this.ClearButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ClearButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ClearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ClearButton.Location = new System.Drawing.Point(394, 369);
-            this.ClearButton.Name = "ClearButton";
-            this.ClearButton.Size = new System.Drawing.Size(99, 27);
-            this.ClearButton.TabIndex = 14;
-            this.ClearButton.Text = "Clear";
-            this.ClearButton.UseVisualStyleBackColor = true;
-            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
-            // 
             // ReviewButton
             // 
             this.ReviewButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -526,6 +513,7 @@
             this.ReviewButton.TabIndex = 15;
             this.ReviewButton.Text = "Review";
             this.ReviewButton.UseVisualStyleBackColor = true;
+            this.ReviewButton.Click += new System.EventHandler(this.ReviewButton_Click);
             // 
             // InfoTooltip
             // 
@@ -538,7 +526,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 411);
             this.Controls.Add(this.ReviewButton);
-            this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.pSetup);
             this.Controls.Add(this.pPreview);
             this.Controls.Add(this.pSectionSeparator);
@@ -600,7 +587,6 @@
         private System.Windows.Forms.Label lTargetStatus;
         private System.Windows.Forms.Label lPreview;
         private System.Windows.Forms.Label TargetNotFoundLabel;
-        private System.Windows.Forms.Button ClearButton;
         private System.Windows.Forms.Button ReviewButton;
         private System.Windows.Forms.ToolTip InfoTooltip;
         private System.Windows.Forms.RichTextBox lTargetSynopsis;
