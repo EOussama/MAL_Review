@@ -36,7 +36,7 @@ namespace MAL_Reviewer_UI.user_controls
         }
 
         /// <summary>
-        /// Sets and gets the MAL id of the target assigned to the card.
+        /// Gets and sets the MAL id of the target assigned to the card.
         /// </summary>
         public int TargetId { get => targetId; set => targetId = value; }
 

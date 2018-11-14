@@ -9,7 +9,7 @@ namespace MAL_Reviewer_UI.user_controls
     public partial class CardControl : UserControl
     {
         /// <summary>
-        /// Sets and gets the title of the card.
+        /// Gets and sets the title of the card.
         /// </summary>
         public string Title
         {
@@ -18,7 +18,7 @@ namespace MAL_Reviewer_UI.user_controls
         }
 
         /// <summary>
-        /// Sets and gets the icon of the card.
+        /// Gets and sets the icon of the card.
         /// </summary>
         public Image Icon
         {
@@ -27,7 +27,7 @@ namespace MAL_Reviewer_UI.user_controls
         }
 
         /// <summary>
-        /// Sets and gets the background color of the card.
+        /// Gets and sets the background color of the card.
         /// </summary>
         public Color BackgroundColor
         {
@@ -39,7 +39,7 @@ namespace MAL_Reviewer_UI.user_controls
         }
 
         /// <summary>
-        /// Sets and gets the color of the card's shadow.
+        /// Gets and sets the color of the card's shadow.
         /// </summary>
         public Color ShadowColor
         {
@@ -56,7 +56,7 @@ namespace MAL_Reviewer_UI.user_controls
         }
 
         /// <summary>
-        /// Sets and gets the visibility of the card's label.
+        /// Gets and sets the visibility of the card's label.
         /// </summary>
         public bool LabelVisibility
         {
@@ -65,7 +65,7 @@ namespace MAL_Reviewer_UI.user_controls
         }
 
         /// <summary>
-        /// Sets and gets the text of the card's label.
+        /// Gets and sets the text of the card's label.
         /// </summary>
         public string LabelText
         {

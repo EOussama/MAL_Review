@@ -96,10 +96,23 @@ namespace MAL_Reviewer_UI.forms
         {
             foreach (var x in Enumerable.Range(1, 10))
             {
-                reviewTemplatesFlowPanel.Controls.Add(new ReviewTemplatePreviewCardControl() { Width = 176 });
+                ReviewTemplatePreviewCardControl control = new ReviewTemplatePreviewCardControl();
+
+                control.ControlCheckedEventHandler += ReviewTemplateCard_ControlCheckedEventHandler;
+                reviewTemplatesFlowPanel.Controls.Add(control);
             }
 
+            // Update the template count on the group box title.
             reviewTemplatesGroupBox.Text = $"Review templates [{ reviewTemplatesFlowPanel.Controls.Count }]";
+        }
+
+        private void ReviewTemplateCard_ControlCheckedEventHandler(object sender, EventArgs e)
+        {
+            // Unchecking all other review template cards.
+            reviewTemplatesFlowPanel.Controls
+                                    .OfType<ReviewTemplatePreviewCardControl>()
+                                    .Where(control => control != (ReviewTemplatePreviewCardControl)sender)
+                                    .ToList().ForEach(control => control.Check(false));
         }
 
         #endregion

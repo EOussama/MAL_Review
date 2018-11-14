@@ -30,9 +30,9 @@
         {
             this.selectRadioButton = new System.Windows.Forms.RadioButton();
             this.containerPanel = new System.Windows.Forms.Panel();
-            this.aspectsLabel = new System.Windows.Forms.Label();
-            this.tldrLabel = new System.Windows.Forms.Label();
             this.introLabel = new System.Windows.Forms.Label();
+            this.tldrLabel = new System.Windows.Forms.Label();
+            this.aspectsLabel = new System.Windows.Forms.Label();
             this.containerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,19 +63,19 @@
             this.containerPanel.Size = new System.Drawing.Size(156, 118);
             this.containerPanel.TabIndex = 1;
             // 
-            // aspectsLabel
+            // introLabel
             // 
-            this.aspectsLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.introLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.aspectsLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aspectsLabel.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aspectsLabel.Location = new System.Drawing.Point(11, 26);
-            this.aspectsLabel.Name = "aspectsLabel";
-            this.aspectsLabel.Padding = new System.Windows.Forms.Padding(5);
-            this.aspectsLabel.Size = new System.Drawing.Size(134, 27);
-            this.aspectsLabel.TabIndex = 1;
-            this.aspectsLabel.Text = "Aspects: 6";
-            this.aspectsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.introLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.introLabel.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.introLabel.Location = new System.Drawing.Point(11, 54);
+            this.introLabel.Name = "introLabel";
+            this.introLabel.Padding = new System.Windows.Forms.Padding(5);
+            this.introLabel.Size = new System.Drawing.Size(134, 27);
+            this.introLabel.TabIndex = 3;
+            this.introLabel.Text = "Intro: false";
+            this.introLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tldrLabel
             // 
@@ -91,19 +91,19 @@
             this.tldrLabel.Text = "tl;dr: false";
             this.tldrLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // introLabel
+            // aspectsLabel
             // 
-            this.introLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.aspectsLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.introLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.introLabel.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.introLabel.Location = new System.Drawing.Point(11, 54);
-            this.introLabel.Name = "introLabel";
-            this.introLabel.Padding = new System.Windows.Forms.Padding(5);
-            this.introLabel.Size = new System.Drawing.Size(134, 27);
-            this.introLabel.TabIndex = 3;
-            this.introLabel.Text = "Intro: false";
-            this.introLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.aspectsLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.aspectsLabel.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aspectsLabel.Location = new System.Drawing.Point(11, 26);
+            this.aspectsLabel.Name = "aspectsLabel";
+            this.aspectsLabel.Padding = new System.Windows.Forms.Padding(5);
+            this.aspectsLabel.Size = new System.Drawing.Size(134, 27);
+            this.aspectsLabel.TabIndex = 1;
+            this.aspectsLabel.Text = "Aspects: 6";
+            this.aspectsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ReviewTemplatePreviewCardControl
             // 
@@ -111,6 +111,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Controls.Add(this.containerPanel);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ReviewTemplatePreviewCardControl";
             this.Padding = new System.Windows.Forms.Padding(10);

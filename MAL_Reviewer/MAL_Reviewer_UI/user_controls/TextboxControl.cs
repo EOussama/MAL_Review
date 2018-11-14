@@ -22,7 +22,7 @@ namespace MAL_Reviewer_UI.user_controls
         private Timer inputDelay;
 
         /// <summary>
-        /// Sets and gets the text in inputTextBox.
+        /// Gets and sets the text in inputTextBox.
         /// </summary>
         public string InnerText
         {
@@ -31,7 +31,7 @@ namespace MAL_Reviewer_UI.user_controls
         }
 
         /// <summary>
-        /// Sets and gets the icon of the iconPictureBox.
+        /// Gets and sets the icon of the iconPictureBox.
         /// </summary>
         public Image Icon
         {
@@ -62,7 +62,7 @@ namespace MAL_Reviewer_UI.user_controls
         }
 
         /// <summary>
-        /// Sets and gets the background color of the textbox.
+        /// Gets and sets the background color of the textbox.
         /// </summary>
         public Color BackgroundColor
         {
@@ -85,7 +85,7 @@ namespace MAL_Reviewer_UI.user_controls
         }
 
         /// <summary>
-        /// Sets and gets the minimum length required to submit the textbox.
+        /// Gets and sets the minimum length required to submit the textbox.
         /// </summary>
         public int SubmitMin
         {
@@ -94,12 +94,12 @@ namespace MAL_Reviewer_UI.user_controls
         }
 
         /// <summary>
-        /// Sets and gets the ability to activates the loading animation whne finishing typing.
+        /// Gets and sets the ability to activates the loading animation whne finishing typing.
         /// </summary>
         public bool AllowLoad { get; set; } = false;
 
         /// <summary>
-        /// Sets and gets the ability to auto submit the textbox when finished typing.
+        /// Gets and sets the ability to auto submit the textbox when finished typing.
         /// </summary>
         public bool AutoSubmit { get; set; } = false;
 
