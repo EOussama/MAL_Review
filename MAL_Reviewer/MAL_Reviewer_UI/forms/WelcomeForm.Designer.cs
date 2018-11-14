@@ -482,6 +482,7 @@
             // 
             // lUserLocation
             // 
+            this.lUserLocation.AutoEllipsis = true;
             this.lUserLocation.AutoSize = true;
             this.lUserLocation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lUserLocation.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -504,6 +505,7 @@
             // 
             // lUserBirthday
             // 
+            this.lUserBirthday.AutoEllipsis = true;
             this.lUserBirthday.AutoSize = true;
             this.lUserBirthday.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lUserBirthday.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -526,6 +528,7 @@
             // 
             // lUserJoinDate
             // 
+            this.lUserJoinDate.AutoEllipsis = true;
             this.lUserJoinDate.AutoSize = true;
             this.lUserJoinDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lUserJoinDate.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -548,6 +551,7 @@
             // 
             // lUserGender
             // 
+            this.lUserGender.AutoEllipsis = true;
             this.lUserGender.AutoSize = true;
             this.lUserGender.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lUserGender.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -570,6 +574,7 @@
             // 
             // lUserUsername
             // 
+            this.lUserUsername.AutoEllipsis = true;
             this.lUserUsername.AutoSize = true;
             this.lUserUsername.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lUserUsername.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

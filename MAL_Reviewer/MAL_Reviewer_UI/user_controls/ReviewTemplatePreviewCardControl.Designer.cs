@@ -40,6 +40,7 @@
             // 
             // selectRadioButton
             // 
+            this.selectRadioButton.AutoEllipsis = true;
             this.selectRadioButton.AutoSize = true;
             this.selectRadioButton.BackColor = System.Drawing.Color.Transparent;
             this.selectRadioButton.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

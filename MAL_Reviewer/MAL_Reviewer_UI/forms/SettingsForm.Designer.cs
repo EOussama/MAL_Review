@@ -31,13 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.sidePanel = new System.Windows.Forms.Panel();
-            this.sizeControlImageList = new System.Windows.Forms.ImageList(this.components);
-            this.contentPanel = new System.Windows.Forms.Panel();
             this.infoButton = new System.Windows.Forms.Button();
+            this.sizeControlImageList = new System.Windows.Forms.ImageList(this.components);
             this.searchButton = new System.Windows.Forms.Button();
             this.templateButton = new System.Windows.Forms.Button();
             this.themeButton = new System.Windows.Forms.Button();
             this.userButton = new System.Windows.Forms.Button();
+            this.contentPanel = new System.Windows.Forms.Panel();
             this.extraInfo = new System.Windows.Forms.ToolTip(this.components);
             this.sidePanel.SuspendLayout();
             this.SuspendLayout();
@@ -55,25 +55,6 @@
             this.sidePanel.Name = "sidePanel";
             this.sidePanel.Size = new System.Drawing.Size(75, 473);
             this.sidePanel.TabIndex = 0;
-            // 
-            // sizeControlImageList
-            // 
-            this.sizeControlImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("sizeControlImageList.ImageStream")));
-            this.sizeControlImageList.TransparentColor = System.Drawing.SystemColors.ControlLight;
-            this.sizeControlImageList.Images.SetKeyName(0, "icon-user.png");
-            this.sizeControlImageList.Images.SetKeyName(1, "icon_search.png");
-            this.sizeControlImageList.Images.SetKeyName(2, "icon_info.png");
-            this.sizeControlImageList.Images.SetKeyName(3, "icon_template.png");
-            this.sizeControlImageList.Images.SetKeyName(4, "icon_theme.png");
-            // 
-            // contentPanel
-            // 
-            this.contentPanel.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contentPanel.Location = new System.Drawing.Point(75, 0);
-            this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(671, 473);
-            this.contentPanel.TabIndex = 1;
             // 
             // infoButton
             // 
@@ -94,6 +75,16 @@
             this.extraInfo.SetToolTip(this.infoButton, "About");
             this.infoButton.UseVisualStyleBackColor = false;
             this.infoButton.Click += new System.EventHandler(this.InfoButton_Click);
+            // 
+            // sizeControlImageList
+            // 
+            this.sizeControlImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("sizeControlImageList.ImageStream")));
+            this.sizeControlImageList.TransparentColor = System.Drawing.SystemColors.ControlLight;
+            this.sizeControlImageList.Images.SetKeyName(0, "icon-user.png");
+            this.sizeControlImageList.Images.SetKeyName(1, "icon_search.png");
+            this.sizeControlImageList.Images.SetKeyName(2, "icon_info.png");
+            this.sizeControlImageList.Images.SetKeyName(3, "icon_template.png");
+            this.sizeControlImageList.Images.SetKeyName(4, "icon_theme.png");
             // 
             // searchButton
             // 
@@ -175,11 +166,21 @@
             this.userButton.UseVisualStyleBackColor = false;
             this.userButton.Click += new System.EventHandler(this.UserButton_Click);
             // 
+            // contentPanel
+            // 
+            this.contentPanel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contentPanel.Location = new System.Drawing.Point(75, 0);
+            this.contentPanel.Name = "contentPanel";
+            this.contentPanel.Padding = new System.Windows.Forms.Padding(30, 0, 30, 0);
+            this.contentPanel.Size = new System.Drawing.Size(600, 473);
+            this.contentPanel.TabIndex = 1;
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 473);
+            this.ClientSize = new System.Drawing.Size(675, 473);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.sidePanel);
             this.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

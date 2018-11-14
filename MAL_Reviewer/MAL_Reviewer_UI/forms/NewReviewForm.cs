@@ -24,6 +24,9 @@ namespace MAL_Reviewer_UI.forms
         private CancellationTokenSource cts;
         private LoaderControl previewLoader;
 
+        /// <summary>
+        /// Constructor.
+        /// </summary>
         public NewReviewForm()
         {
             InitializeComponent();
@@ -324,7 +327,7 @@ namespace MAL_Reviewer_UI.forms
                             lTargetType.Text = animeModel.Type;
                             lTargetStatus.Text = animeModel.Airing ? "Airing" : "Finished";
                             lTargetVolumesEpisodes.Text = animeModel.Episodes != null ? animeModel.Episodes.ToString() : "?";
-                            lTargetTitle.Text = animeModel.Title.Length > 55 ? animeModel.Title.Substring(0, 55) + "..." : animeModel.Title;
+                            lTargetTitle.Text = animeModel.Title;
                             lTargetSynopsis.Text = animeModel.Synopsis;
                             pbTargetImage.Load(animeModel.Image_url);
                             MALPageButton.Tag = animeModel.Url;
@@ -382,7 +385,7 @@ namespace MAL_Reviewer_UI.forms
                             lTargetStatus.Text = mangaModel.Publishing ? "Publishing" : "Finished";
                             lTargetVolumesEpisodes.Text = mangaModel.Volumes != null ? mangaModel.Volumes.ToString() : "?";
                             lTargetChapters.Text = mangaModel.Chapters != null ? mangaModel.Chapters.ToString() : "?";
-                            lTargetTitle.Text = mangaModel.Title.Length > 55 ? mangaModel.Title.Substring(0, 55) + "..." : mangaModel.Title;
+                            lTargetTitle.Text = mangaModel.Title;
                             lTargetSynopsis.Text = mangaModel.Synopsis;
                             pbTargetImage.Load(mangaModel.Image_url);
                             MALPageButton.Tag = mangaModel.Url;

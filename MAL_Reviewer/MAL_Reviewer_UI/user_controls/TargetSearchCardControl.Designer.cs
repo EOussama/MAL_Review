@@ -73,7 +73,7 @@
             // 
             this.ttTitle.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
-            // ucTargetSearchCard
+            // TargetSearchCardControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -82,7 +82,7 @@
             this.Controls.Add(this.lTargetTitle);
             this.Controls.Add(this.pbTargetImage);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Name = "ucTargetSearchCard";
+            this.Name = "TargetSearchCardControl";
             this.Size = new System.Drawing.Size(230, 54);
             ((System.ComponentModel.ISupportInitialize)(this.pbTargetImage)).EndInit();
             this.ResumeLayout(false);

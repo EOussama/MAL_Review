@@ -36,6 +36,7 @@
             this.lChapters = new System.Windows.Forms.Label();
             this.lTargetTitle = new System.Windows.Forms.Label();
             this.lTargetChapters = new System.Windows.Forms.Label();
+            this.pbTargetImage = new System.Windows.Forms.PictureBox();
             this.lScore = new System.Windows.Forms.Label();
             this.MALPageButton = new System.Windows.Forms.Button();
             this.lVolumesEpisodes = new System.Windows.Forms.Label();
@@ -48,6 +49,7 @@
             this.lTargetScore = new System.Windows.Forms.Label();
             this.lTargetStatus = new System.Windows.Forms.Label();
             this.pSetup = new System.Windows.Forms.Panel();
+            this.searchControl = new MAL_Reviewer_UI.user_controls.TextboxControl();
             this.pSearchCards = new System.Windows.Forms.Panel();
             this.gbRating = new System.Windows.Forms.GroupBox();
             this.rbDecimalNo = new System.Windows.Forms.RadioButton();
@@ -67,16 +69,14 @@
             this.ReviewButton = new System.Windows.Forms.Button();
             this.InfoTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.reviewTemplatesGroupBox = new System.Windows.Forms.GroupBox();
-            this.pbTargetImage = new System.Windows.Forms.PictureBox();
             this.reviewTemplatesFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.searchControl = new MAL_Reviewer_UI.user_controls.TextboxControl();
             this.pPreview.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTargetImage)).BeginInit();
             this.pSetup.SuspendLayout();
             this.gbRating.SuspendLayout();
             this.gbRatingScale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupScaleOther)).BeginInit();
             this.reviewTemplatesGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTargetImage)).BeginInit();
             this.SuspendLayout();
             // 
             // pSectionSeparator
@@ -135,6 +135,7 @@
             // 
             // lTargetTitle
             // 
+            this.lTargetTitle.AutoEllipsis = true;
             this.lTargetTitle.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lTargetTitle.Location = new System.Drawing.Point(10, 19);
             this.lTargetTitle.Name = "lTargetTitle";
@@ -154,6 +155,15 @@
             this.lTargetChapters.Text = "23";
             this.lTargetChapters.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lTargetChapters.Visible = false;
+            // 
+            // pbTargetImage
+            // 
+            this.pbTargetImage.Location = new System.Drawing.Point(13, 66);
+            this.pbTargetImage.Name = "pbTargetImage";
+            this.pbTargetImage.Size = new System.Drawing.Size(124, 163);
+            this.pbTargetImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbTargetImage.TabIndex = 0;
+            this.pbTargetImage.TabStop = false;
             // 
             // lScore
             // 
@@ -281,6 +291,22 @@
             this.pSetup.Name = "pSetup";
             this.pSetup.Size = new System.Drawing.Size(255, 339);
             this.pSetup.TabIndex = 5;
+            // 
+            // searchControl
+            // 
+            this.searchControl.AllowLoad = true;
+            this.searchControl.AutoSubmit = true;
+            this.searchControl.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.searchControl.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.searchControl.Icon = global::MAL_Reviewer_UI.Properties.Resources.icon_anime;
+            this.searchControl.InnerText = "";
+            this.searchControl.Location = new System.Drawing.Point(12, 40);
+            this.searchControl.Name = "searchControl";
+            this.searchControl.Size = new System.Drawing.Size(230, 35);
+            this.searchControl.SubmitMin = 3;
+            this.searchControl.TabIndex = 0;
+            this.searchControl.Tag = "0";
+            this.searchControl.ToggleIcon = true;
             // 
             // pSearchCards
             // 
@@ -511,15 +537,6 @@
             this.reviewTemplatesGroupBox.TabStop = false;
             this.reviewTemplatesGroupBox.Text = "Review templates [x]";
             // 
-            // pbTargetImage
-            // 
-            this.pbTargetImage.Location = new System.Drawing.Point(13, 66);
-            this.pbTargetImage.Name = "pbTargetImage";
-            this.pbTargetImage.Size = new System.Drawing.Size(124, 163);
-            this.pbTargetImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbTargetImage.TabIndex = 0;
-            this.pbTargetImage.TabStop = false;
-            // 
             // reviewTemplatesFlowPanel
             // 
             this.reviewTemplatesFlowPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -530,22 +547,6 @@
             this.reviewTemplatesFlowPanel.Size = new System.Drawing.Size(559, 163);
             this.reviewTemplatesFlowPanel.TabIndex = 22;
             this.reviewTemplatesFlowPanel.WrapContents = false;
-            // 
-            // searchControl
-            // 
-            this.searchControl.AllowLoad = true;
-            this.searchControl.AutoSubmit = true;
-            this.searchControl.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.searchControl.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.searchControl.Icon = global::MAL_Reviewer_UI.Properties.Resources.icon_anime;
-            this.searchControl.InnerText = "";
-            this.searchControl.Location = new System.Drawing.Point(12, 40);
-            this.searchControl.Name = "searchControl";
-            this.searchControl.Size = new System.Drawing.Size(230, 35);
-            this.searchControl.SubmitMin = 3;
-            this.searchControl.TabIndex = 0;
-            this.searchControl.Tag = "0";
-            this.searchControl.ToggleIcon = true;
             // 
             // NewReviewForm
             // 
@@ -567,6 +568,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NewReviewForm_FormClosing);
             this.pPreview.ResumeLayout(false);
             this.pPreview.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTargetImage)).EndInit();
             this.pSetup.ResumeLayout(false);
             this.pSetup.PerformLayout();
             this.gbRating.ResumeLayout(false);
@@ -575,7 +577,6 @@
             this.gbRatingScale.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupScaleOther)).EndInit();
             this.reviewTemplatesGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbTargetImage)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -9,7 +9,7 @@ namespace MAL_Reviewer_UI.user_controls
         {
             InitializeComponent();
 
-            this.lTitle.Text = title.Length > 32 ? title.Substring(0, 32) + "..." : title;
+            this.lTitle.Text = title;
 
             if (image_url != null && image_url != "")
                 this.pbImage.Load(image_url);

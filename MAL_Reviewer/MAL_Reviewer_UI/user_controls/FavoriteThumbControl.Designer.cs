@@ -39,6 +39,7 @@
             // 
             this.lTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.lTitle.AutoEllipsis = true;
             this.lTitle.Font = new System.Drawing.Font("Bahnschrift Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lTitle.Location = new System.Drawing.Point(54, 5);
             this.lTitle.Name = "lTitle";
@@ -59,7 +60,7 @@
             // 
             this.ttTitle.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
-            // ucFavoriteThumb
+            // FavoriteThumbControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -67,7 +68,7 @@
             this.Controls.Add(this.lTitle);
             this.Controls.Add(this.pbImage);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Name = "ucFavoriteThumb";
+            this.Name = "FavoriteThumbControl";
             this.Size = new System.Drawing.Size(191, 56);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.UcFavoriteThumb_MouseClick);
             this.MouseEnter += new System.EventHandler(this.UcFavoriteThumb_MouseEnter);
