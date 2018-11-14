@@ -808,6 +808,8 @@ namespace MAL_Reviewer_UI.forms
 
         #endregion
 
+        private void BSettings_Click(object sender, EventArgs e) => (new SettingsForm()).ShowDialog();
+
         private void BNew_Click(object sender, EventArgs e) => (new NewReviewForm()).ShowDialog();
     }
 }

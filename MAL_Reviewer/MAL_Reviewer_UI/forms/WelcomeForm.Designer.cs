@@ -35,6 +35,7 @@
             this.pUser = new System.Windows.Forms.Panel();
             this.bUser = new System.Windows.Forms.Button();
             this.pReviewLookUp = new System.Windows.Forms.Panel();
+            this.reviewSearchControl = new MAL_Reviewer_UI.user_controls.TextboxControl();
             this.pButtons = new System.Windows.Forms.Panel();
             this.bClear = new System.Windows.Forms.Button();
             this.ilSizeControl = new System.Windows.Forms.ImageList(this.components);
@@ -137,7 +138,6 @@
             this.lTitle = new System.Windows.Forms.Label();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.ttExtendedInfo = new System.Windows.Forms.ToolTip(this.components);
-            this.reviewSearchControl = new MAL_Reviewer_UI.user_controls.TextboxControl();
             this.pSide.SuspendLayout();
             this.pUser.SuspendLayout();
             this.pReviewLookUp.SuspendLayout();
@@ -230,6 +230,23 @@
             this.pReviewLookUp.Name = "pReviewLookUp";
             this.pReviewLookUp.Size = new System.Drawing.Size(230, 35);
             this.pReviewLookUp.TabIndex = 2;
+            // 
+            // reviewSearchControl
+            // 
+            this.reviewSearchControl.AllowLoad = false;
+            this.reviewSearchControl.AutoSubmit = false;
+            this.reviewSearchControl.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.reviewSearchControl.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
+            this.reviewSearchControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reviewSearchControl.Icon = global::MAL_Reviewer_UI.Properties.Resources.icon_search;
+            this.reviewSearchControl.InnerText = "";
+            this.reviewSearchControl.Location = new System.Drawing.Point(0, 0);
+            this.reviewSearchControl.Name = "reviewSearchControl";
+            this.reviewSearchControl.Size = new System.Drawing.Size(230, 35);
+            this.reviewSearchControl.SubmitMin = 3;
+            this.reviewSearchControl.TabIndex = 7;
+            this.reviewSearchControl.Tag = "0";
+            this.reviewSearchControl.ToggleIcon = true;
             // 
             // pButtons
             // 
@@ -1499,6 +1516,7 @@
             this.bSettings.Size = new System.Drawing.Size(74, 67);
             this.bSettings.TabIndex = 6;
             this.bSettings.UseVisualStyleBackColor = false;
+            this.bSettings.Click += new System.EventHandler(this.BSettings_Click);
             // 
             // lTitle
             // 
@@ -1528,21 +1546,6 @@
             // 
             this.ttExtendedInfo.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.ttExtendedInfo.ToolTipTitle = "Information";
-            // 
-            // reviewSearchControl
-            // 
-            this.reviewSearchControl.AllowLoad = false;
-            this.reviewSearchControl.AutoSubmit = false;
-            this.reviewSearchControl.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.reviewSearchControl.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
-            this.reviewSearchControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reviewSearchControl.Icon = global::MAL_Reviewer_UI.Properties.Resources.icon_search;
-            this.reviewSearchControl.InnerText = "";
-            this.reviewSearchControl.Location = new System.Drawing.Point(0, 0);
-            this.reviewSearchControl.Name = "reviewSearchControl";
-            this.reviewSearchControl.Size = new System.Drawing.Size(230, 35);
-            this.reviewSearchControl.TabIndex = 7;
-            this.reviewSearchControl.ToggleIcon = true;
             // 
             // WelcomeForm
             // 

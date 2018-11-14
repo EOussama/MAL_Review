@@ -62,6 +62,12 @@
     <Compile Include="forms\NewReviewForm.Designer.cs">
       <DependentUpon>NewReviewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\WelcomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\NewReviewForm.resx">
       <DependentUpon>NewReviewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\WelcomeForm.resx">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
