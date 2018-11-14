@@ -93,6 +93,7 @@
             this.infoButton.TabIndex = 8;
             this.extraInfo.SetToolTip(this.infoButton, "About");
             this.infoButton.UseVisualStyleBackColor = false;
+            this.infoButton.Click += new System.EventHandler(this.InfoButton_Click);
             // 
             // searchButton
             // 
@@ -112,6 +113,7 @@
             this.searchButton.TabIndex = 7;
             this.extraInfo.SetToolTip(this.searchButton, "Search settings");
             this.searchButton.UseVisualStyleBackColor = false;
+            this.searchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // templateButton
             // 
@@ -151,6 +153,7 @@
             this.themeButton.TabIndex = 5;
             this.extraInfo.SetToolTip(this.themeButton, "Theme settings");
             this.themeButton.UseVisualStyleBackColor = false;
+            this.themeButton.Click += new System.EventHandler(this.ThemeButton_Click);
             // 
             // userButton
             // 
@@ -170,6 +173,7 @@
             this.userButton.TabIndex = 4;
             this.extraInfo.SetToolTip(this.userButton, "User settings");
             this.userButton.UseVisualStyleBackColor = false;
+            this.userButton.Click += new System.EventHandler(this.UserButton_Click);
             // 
             // SettingsForm
             // 

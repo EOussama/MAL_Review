@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
+using MAL_Reviewer_UI.classes;
 using MAL_Reviewer_UI.forms.sub_forms;
 
 namespace MAL_Reviewer_UI.forms
@@ -7,7 +10,11 @@ namespace MAL_Reviewer_UI.forms
     public partial class SettingsForm : Form
     {
         private Form
-            template;
+            userSubForm,
+            themeSubForm,
+            templateSubForm,
+            searchSubForm,
+            infoSubForm;
 
         /// <summary>
         /// Constructor.
@@ -17,7 +24,27 @@ namespace MAL_Reviewer_UI.forms
             InitializeComponent();
 
             // Instanciating the sub forms.
-            template = new SettingsTemplateForm()
+            userSubForm = new Form()
+            {
+                TopLevel = false,
+                Dock = DockStyle.Fill
+            };
+            themeSubForm = new Form()
+            {
+                TopLevel = false,
+                Dock = DockStyle.Fill
+            };
+            templateSubForm = new SettingsTemplateForm()
+            {
+                TopLevel = false,
+                Dock = DockStyle.Fill
+            };
+            searchSubForm = new Form()
+            {
+                TopLevel = false,
+                Dock = DockStyle.Fill
+            };
+            infoSubForm = new Form()
             {
                 TopLevel = false,
                 Dock = DockStyle.Fill
@@ -25,17 +52,61 @@ namespace MAL_Reviewer_UI.forms
 
             // Adding the sub forms to the content panel.
             contentPanel.Controls.AddRange(new Form[] {
-                template
+                userSubForm,
+                themeSubForm,
+                templateSubForm,
+                searchSubForm,
+                infoSubForm
             });
+        }
+
+        private void UserButton_Click(object sender, EventArgs e)
+        {
+            if (!userSubForm.Visible)
+            {
+                this.userSubForm.Show();
+                this.HideAllExcept(userSubForm);
+                ((Button)sender).Highlight(Color.LightGray, Color.Transparent, sidePanel.Controls.OfType<Button>().Where(btn => btn != (Button)sender).ToArray());
+            }
+        }
+
+        private void ThemeButton_Click(object sender, EventArgs e)
+        {
+            if (!themeSubForm.Visible)
+            {
+                this.themeSubForm.Show();
+                this.HideAllExcept(themeSubForm);
+                ((Button)sender).Highlight(Color.LightGray, Color.Transparent, sidePanel.Controls.OfType<Button>().Where(btn => btn != (Button)sender).ToArray());
+            }
         }
 
         private void TemplateButton_Click(object sender, EventArgs e)
         {
-            if (!template.Visible)
+            if (!templateSubForm.Visible)
             {
-                template.Show();
-                HideAllExcept(template);
-                Console.WriteLine("shown");
+                this.templateSubForm.Show();
+                this.HideAllExcept(templateSubForm);
+                ((Button)sender).Highlight(Color.LightGray, Color.Transparent, sidePanel.Controls.OfType<Button>().Where(btn => btn != (Button)sender).ToArray());
+            }
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            if (!searchSubForm.Visible)
+            {
+                this.searchSubForm.Show();
+                this.HideAllExcept(searchSubForm);
+                ((Button)sender).Highlight(Color.LightGray, Color.Transparent, sidePanel.Controls.OfType<Button>().Where(btn => btn != (Button)sender).ToArray());
+            }
+        }
+
+        private void InfoButton_Click(object sender, EventArgs e)
+        {
+            if (!infoSubForm.Visible)
+            {
+                this.infoSubForm.Show();
+                this.HideAllExcept(infoSubForm);
+                ((Button)sender).Highlight(Color.LightGray, Color.Transparent, sidePanel.Controls.OfType<Button>().Where(btn => btn != (Button)sender).ToArray());
             }
         }
 

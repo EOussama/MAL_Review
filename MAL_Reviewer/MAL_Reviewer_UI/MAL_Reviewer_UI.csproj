@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\ButtonHighlight.cs" />
     <Compile Include="classes\Loader.cs" />
     <Compile Include="forms\LoadUserForm.cs">
       <SubType>Form</SubType>
