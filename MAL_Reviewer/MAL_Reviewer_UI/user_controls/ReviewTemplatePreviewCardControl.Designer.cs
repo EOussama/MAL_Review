@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.selectRadioButton = new System.Windows.Forms.RadioButton();
             this.containerPanel = new System.Windows.Forms.Panel();
             this.introLabel = new System.Windows.Forms.Label();
             this.tldrLabel = new System.Windows.Forms.Label();
             this.aspectsLabel = new System.Windows.Forms.Label();
+            this.extraInfoTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.containerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,6 +107,10 @@
             this.aspectsLabel.Text = "Aspects: 6";
             this.aspectsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // extraInfoTooltip
+            // 
+            this.extraInfoTooltip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
             // ReviewTemplatePreviewCardControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -129,5 +135,6 @@
         private System.Windows.Forms.Label introLabel;
         private System.Windows.Forms.Label tldrLabel;
         private System.Windows.Forms.Label aspectsLabel;
+        private System.Windows.Forms.ToolTip extraInfoTooltip;
     }
 }

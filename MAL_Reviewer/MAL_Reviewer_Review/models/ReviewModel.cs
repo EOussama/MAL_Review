@@ -6,7 +6,7 @@ namespace MAL_Reviewer_Review.models
     /// <summary>
     /// The review model.
     /// </summary>
-    class Review
+    public class ReviewModel
     {
         /// <summary>
         /// Constructor.
@@ -18,7 +18,8 @@ namespace MAL_Reviewer_Review.models
         /// <param name="created"></param>
         /// <param name="lastModified"></param>
         /// <param name="reviewTemplate"></param>
-        public Review(string targetTitle, int targetId, EntryType targetType, double reviewRating, DateTime creationDate, DateTime lastModified, ReviewTemplate reviewTemplate)
+        /// <param name="reviewMethod"></param>
+        public ReviewModel(string targetTitle, int targetId, EntryType targetType, double reviewRating, DateTime creationDate, DateTime lastModified, ReviewTemplateModel reviewTemplate, ReviewMethodModel reviewMethod)
         {
             TargetTitle = targetTitle;
             TargetId = targetId;
@@ -27,6 +28,7 @@ namespace MAL_Reviewer_Review.models
             CreatedDate = creationDate;
             LastModified = lastModified;
             ReviewTemplate = reviewTemplate;
+            ReviewMethod= reviewMethod;
         }
 
         /// <summary>
@@ -62,6 +64,11 @@ namespace MAL_Reviewer_Review.models
         /// <summary>
         /// The review's template.
         /// </summary>
-        public ReviewTemplate ReviewTemplate { get; set; }
+        public ReviewTemplateModel ReviewTemplate { get; set; }
+
+        /// <summary>
+        /// The review method of the review template.
+        /// </summary>
+        public ReviewMethodModel ReviewMethod { get; set; }
     }
 }

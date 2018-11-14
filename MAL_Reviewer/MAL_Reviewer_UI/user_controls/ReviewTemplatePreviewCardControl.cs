@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
+using MAL_Reviewer_Review.models;
 
 namespace MAL_Reviewer_UI.user_controls
 {
@@ -12,13 +14,29 @@ namespace MAL_Reviewer_UI.user_controls
     public partial class ReviewTemplatePreviewCardControl : UserControl
     {
         public event EventHandler ControlCheckedEventHandler;
+        private ReviewTemplateModel reviewTemplateModel;
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public ReviewTemplatePreviewCardControl()
+        public ReviewTemplatePreviewCardControl(ReviewTemplateModel reviewTemplateModel)
         {
             InitializeComponent();
+
+            StringBuilder sb = new StringBuilder();
+
+            this.reviewTemplateModel = reviewTemplateModel;
+            this.selectRadioButton.Text = (this.reviewTemplateModel.TemplateName.Length > 20 ? sb.Append(this.reviewTemplateModel.TemplateName.Substring(0, 20)).Append("...").ToString() : this.reviewTemplateModel.TemplateName); sb.Clear();
+            this.aspectsLabel.Text = sb.Append("Aspects: ").Append(this.reviewTemplateModel.TemplateAspects?.Count).ToString(); sb.Clear();
+            this.introLabel.Text = sb.Append("intro: ").Append(this.reviewTemplateModel.UseIntro.ToString()).ToString().ToLower(); sb.Clear();
+            this.tldrLabel.Text = sb.Append("tl;dr: ").Append(this.reviewTemplateModel.AddTLDR.ToString().ToLower()).ToString(); sb.Clear();
+            this.extraInfoTooltip.ToolTipTitle = this.reviewTemplateModel.TemplateName;
+
+            // Tooltip content.
+            string aspectString = this.reviewTemplateModel.TemplateAspects.Count > 0 ? string.Empty : " ";
+            this.reviewTemplateModel.TemplateAspects.ForEach(aspect => aspectString += $"{ aspect.AspectName }\n");
+            this.extraInfoTooltip.SetToolTip(this, aspectString);
+            this.extraInfoTooltip.SetToolTip(this.containerPanel, aspectString);
 
             // Wiring the mouse events to the control.
             this.MouseEnter += Control_MouseEnter;
@@ -36,6 +54,8 @@ namespace MAL_Reviewer_UI.user_controls
                 control.MouseEnter += Control_MouseEnter;
                 control.MouseLeave += Control_MouseLeave;
                 control.MouseClick += Control_MouseClick;
+
+                this.extraInfoTooltip.SetToolTip(control, aspectString);
             }
         }        
 
@@ -84,7 +104,10 @@ namespace MAL_Reviewer_UI.user_controls
 
         private void Control_MouseClick(object sender, MouseEventArgs e)
         {
-            Check(true);
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Check(true);
+            }
         }
     }
 }

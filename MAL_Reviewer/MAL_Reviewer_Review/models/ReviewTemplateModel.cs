@@ -6,7 +6,7 @@ namespace MAL_Reviewer_Review.models
     /// <summary>
     /// Review template model.
     /// </summary>
-    class ReviewTemplate
+    public class ReviewTemplateModel
     {
         /// <summary>
         /// Constructor.
@@ -17,8 +17,7 @@ namespace MAL_Reviewer_Review.models
         /// <param name="addTLDR"></param>
         /// <param name="creationDate"></param>
         /// <param name="templateAspects"></param>
-        /// <param name="templateReviewMethod"></param>
-        public ReviewTemplate(string templateName, string templateReviewIntro, bool useIntro, bool addTLDR, DateTime creationDate, List<ReviewAspect> templateAspects, ReviewMethod templateReviewMethod)
+        public ReviewTemplateModel(string templateName, string templateReviewIntro, bool useIntro, bool addTLDR, DateTime creationDate, List<ReviewAspectModel> templateAspects)
         {
             TemplateName = templateName;
             TemplateReviewIntro = templateReviewIntro;
@@ -26,7 +25,6 @@ namespace MAL_Reviewer_Review.models
             AddTLDR = addTLDR;
             CreationDate = creationDate;
             TemplateAspects = templateAspects;
-            TemplateReviewMethod = templateReviewMethod;
         }
 
         /// <summary>
@@ -57,11 +55,6 @@ namespace MAL_Reviewer_Review.models
         /// <summary>
         /// The list of the aspects of the review template (ex; Art, Story, Sound...).
         /// </summary>
-        public List<ReviewAspect> TemplateAspects { get; set; }
-
-        /// <summary>
-        /// The review method of the review template.
-        /// </summary>
-        public ReviewMethod TemplateReviewMethod { get; set; }
+        public List<ReviewAspectModel> TemplateAspects { get; set; }
     }
 }

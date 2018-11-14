@@ -7,6 +7,7 @@ using MAL_Reviewer_UI.user_controls;
 using MAL_Reviewer_API;
 using MAL_Reviewer_API.models;
 using MAL_Reviewer_API.models.ListEntryModel;
+using MAL_Reviewer_Review;
 using MAL_Reviewer_Review.enumerations;
 
 namespace MAL_Reviewer_UI.forms
@@ -47,6 +48,7 @@ namespace MAL_Reviewer_UI.forms
             CreateLists(EntryType.Manga);
 
             MALHelper.Init();
+            Review.LoadReviewTemplates();
         }
 
         #region User Data Load

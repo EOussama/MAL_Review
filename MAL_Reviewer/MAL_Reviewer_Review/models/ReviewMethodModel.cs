@@ -3,14 +3,14 @@
     /// <summary>
     /// Review method model.
     /// </summary>
-    class ReviewMethod
+    public class ReviewMethodModel
     {
         /// <summary>
         /// Constructor.
         /// </summary>
         /// <param name="reviewScale"></param>
         /// <param name="decimalUse"></param>
-        public ReviewMethod(byte reviewScale, bool decimalUse)
+        public ReviewMethodModel(byte reviewScale, bool decimalUse)
         {
             this.ReviewScale = reviewScale;
             this.DecimalUse = decimalUse;

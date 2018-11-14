@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Drawing;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -8,6 +7,8 @@ using MAL_Reviewer_UI.user_controls;
 using MAL_Reviewer_UI.classes;
 using MAL_Reviewer_API;
 using MAL_Reviewer_API.models;
+using MAL_Reviewer_Review;
+using MAL_Reviewer_Review.models;
 
 namespace MAL_Reviewer_UI.forms
 {
@@ -89,23 +90,6 @@ namespace MAL_Reviewer_UI.forms
             this.searchControl.Submit();
         }
 
-        /// <summary>
-        /// Loads the review templates and displays them in the preview panel.
-        /// </summary>
-        private void LoadReviewTemplates()
-        {
-            foreach (var x in Enumerable.Range(1, 10))
-            {
-                ReviewTemplatePreviewCardControl control = new ReviewTemplatePreviewCardControl();
-
-                control.ControlCheckedEventHandler += ReviewTemplateCard_ControlCheckedEventHandler;
-                reviewTemplatesFlowPanel.Controls.Add(control);
-            }
-
-            // Update the template count on the group box title.
-            reviewTemplatesGroupBox.Text = $"Review templates [{ reviewTemplatesFlowPanel.Controls.Count }]";
-        }
-
         private void ReviewTemplateCard_ControlCheckedEventHandler(object sender, EventArgs e)
         {
             // Unchecking all other review template cards.
@@ -113,6 +97,23 @@ namespace MAL_Reviewer_UI.forms
                                     .OfType<ReviewTemplatePreviewCardControl>()
                                     .Where(control => control != (ReviewTemplatePreviewCardControl)sender)
                                     .ToList().ForEach(control => control.Check(false));
+        }
+
+        /// <summary>
+        /// Loads the review templates and displays them in the preview panel.
+        /// </summary>
+        private void LoadReviewTemplates()
+        {
+            foreach (ReviewTemplateModel reviewTemplateModel in Review.ReviewTemplates)
+            {
+                ReviewTemplatePreviewCardControl control = new ReviewTemplatePreviewCardControl(reviewTemplateModel);
+
+                control.ControlCheckedEventHandler += ReviewTemplateCard_ControlCheckedEventHandler;
+                reviewTemplatesFlowPanel.Controls.Add(control);
+            }
+
+            // Update the template count on the group box title.
+            reviewTemplatesGroupBox.Text = $"Review templates [{ reviewTemplatesFlowPanel.Controls.Count }]";
         }
 
         #endregion

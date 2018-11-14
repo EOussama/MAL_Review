@@ -3,7 +3,7 @@
     /// <summary>
     /// The review aspect model.
     /// </summary>
-    class ReviewAspect
+    public class ReviewAspectModel
     {
         /// <summary>
         /// Constructor.
@@ -11,7 +11,7 @@
         /// <param name="aspectName"></param>
         /// <param name="aspectReview"></param>
         /// <param name="aspectRating"></param>
-        public ReviewAspect(string aspectName, string aspectReview, double aspectRating)
+        public ReviewAspectModel(string aspectName, string aspectReview, double aspectRating)
         {
             this.AspectName = aspectName;
             this.AspectReview = aspectReview;
