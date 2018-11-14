@@ -1,6 +1,6 @@
 ﻿namespace MAL_Reviewer_UI.forms.sub_forms
 {
-    partial class SettingsTemplateForm
+    partial class SettingsBaseForm
     {
         /// <summary>
         /// Required designer variable.
@@ -39,32 +39,32 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.contentPanel.AutoScroll = true;
-            this.contentPanel.Location = new System.Drawing.Point(12, 71);
+            this.contentPanel.Location = new System.Drawing.Point(12, 74);
             this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(647, 389);
-            this.contentPanel.TabIndex = 8;
+            this.contentPanel.Size = new System.Drawing.Size(647, 387);
+            this.contentPanel.TabIndex = 5;
             // 
             // linePanel
             // 
             this.linePanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.linePanel.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.linePanel.Location = new System.Drawing.Point(12, 51);
+            this.linePanel.Location = new System.Drawing.Point(12, 54);
             this.linePanel.Name = "linePanel";
             this.linePanel.Size = new System.Drawing.Size(647, 5);
-            this.linePanel.TabIndex = 7;
+            this.linePanel.TabIndex = 4;
             // 
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(12, 15);
+            this.titleLabel.Location = new System.Drawing.Point(12, 18);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(175, 25);
-            this.titleLabel.TabIndex = 6;
-            this.titleLabel.Text = "Template settings";
+            this.titleLabel.Size = new System.Drawing.Size(138, 25);
+            this.titleLabel.TabIndex = 3;
+            this.titleLabel.Text = "Base settings";
             // 
-            // SettingsTemplateForm
+            // SettingsBaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -73,11 +73,10 @@
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.linePanel);
             this.Controls.Add(this.titleLabel);
-            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "SettingsTemplateForm";
+            this.Name = "SettingsBaseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SettingsTemplateForm";
+            this.Text = "SettinsBaseForm";
             this.ResumeLayout(false);
             this.PerformLayout();
 

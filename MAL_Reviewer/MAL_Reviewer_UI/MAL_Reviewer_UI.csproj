@@ -75,6 +75,12 @@
     <Compile Include="forms\sub_forms\SettingsTemplateForm.Designer.cs">
       <DependentUpon>SettingsTemplateForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\sub_forms\SettingsBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\sub_forms\SettingsBaseForm.Designer.cs">
+      <DependentUpon>SettingsBaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\WelcomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\sub_forms\SettingsTemplateForm.resx">
       <DependentUpon>SettingsTemplateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\sub_forms\SettingsBaseForm.resx">
+      <DependentUpon>SettingsBaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\WelcomeForm.resx">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
