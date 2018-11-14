@@ -49,7 +49,6 @@
             this.lTargetScore = new System.Windows.Forms.Label();
             this.lTargetStatus = new System.Windows.Forms.Label();
             this.pSetup = new System.Windows.Forms.Panel();
-            this.searchControl = new MAL_Reviewer_UI.user_controls.TextboxControl();
             this.pSearchCards = new System.Windows.Forms.Panel();
             this.gbRating = new System.Windows.Forms.GroupBox();
             this.rbDecimalNo = new System.Windows.Forms.RadioButton();
@@ -68,6 +67,8 @@
             this.lPreview = new System.Windows.Forms.Label();
             this.ReviewButton = new System.Windows.Forms.Button();
             this.InfoTooltip = new System.Windows.Forms.ToolTip(this.components);
+            this.reviewTemplateGroupBox = new System.Windows.Forms.GroupBox();
+            this.searchControl = new MAL_Reviewer_UI.user_controls.TextboxControl();
             this.pPreview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTargetImage)).BeginInit();
             this.pSetup.SuspendLayout();
@@ -288,22 +289,6 @@
             this.pSetup.Size = new System.Drawing.Size(255, 339);
             this.pSetup.TabIndex = 5;
             // 
-            // searchControl
-            // 
-            this.searchControl.AllowLoad = true;
-            this.searchControl.AutoSubmit = true;
-            this.searchControl.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.searchControl.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.searchControl.Icon = global::MAL_Reviewer_UI.Properties.Resources.icon_anime;
-            this.searchControl.InnerText = "";
-            this.searchControl.Location = new System.Drawing.Point(12, 40);
-            this.searchControl.Name = "searchControl";
-            this.searchControl.Size = new System.Drawing.Size(230, 35);
-            this.searchControl.SubmitMin = 3;
-            this.searchControl.TabIndex = 0;
-            this.searchControl.Tag = "0";
-            this.searchControl.ToggleIcon = true;
-            // 
             // pSearchCards
             // 
             this.pSearchCards.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -503,11 +488,11 @@
             // 
             // ReviewButton
             // 
-            this.ReviewButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ReviewButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ReviewButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ReviewButton.Enabled = false;
             this.ReviewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ReviewButton.Location = new System.Drawing.Point(499, 369);
+            this.ReviewButton.Location = new System.Drawing.Point(499, 543);
             this.ReviewButton.Name = "ReviewButton";
             this.ReviewButton.Size = new System.Drawing.Size(99, 27);
             this.ReviewButton.TabIndex = 15;
@@ -520,11 +505,41 @@
             this.InfoTooltip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.InfoTooltip.ToolTipTitle = "Target title";
             // 
+            // reviewTemplateGroupBox
+            // 
+            this.reviewTemplateGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.reviewTemplateGroupBox.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reviewTemplateGroupBox.Location = new System.Drawing.Point(27, 377);
+            this.reviewTemplateGroupBox.Name = "reviewTemplateGroupBox";
+            this.reviewTemplateGroupBox.Size = new System.Drawing.Size(571, 146);
+            this.reviewTemplateGroupBox.TabIndex = 16;
+            this.reviewTemplateGroupBox.TabStop = false;
+            this.reviewTemplateGroupBox.Text = "Review templates";
+            // 
+            // searchControl
+            // 
+            this.searchControl.AllowLoad = true;
+            this.searchControl.AutoSubmit = true;
+            this.searchControl.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.searchControl.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.searchControl.Icon = global::MAL_Reviewer_UI.Properties.Resources.icon_anime;
+            this.searchControl.InnerText = "";
+            this.searchControl.Location = new System.Drawing.Point(12, 40);
+            this.searchControl.Name = "searchControl";
+            this.searchControl.Size = new System.Drawing.Size(230, 35);
+            this.searchControl.SubmitMin = 3;
+            this.searchControl.TabIndex = 0;
+            this.searchControl.Tag = "0";
+            this.searchControl.ToggleIcon = true;
+            // 
             // NewReviewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 411);
+            this.ClientSize = new System.Drawing.Size(624, 585);
+            this.Controls.Add(this.reviewTemplateGroupBox);
             this.Controls.Add(this.ReviewButton);
             this.Controls.Add(this.pSetup);
             this.Controls.Add(this.pPreview);
@@ -591,5 +606,6 @@
         private System.Windows.Forms.ToolTip InfoTooltip;
         private System.Windows.Forms.RichTextBox lTargetSynopsis;
         private user_controls.TextboxControl searchControl;
+        private System.Windows.Forms.GroupBox reviewTemplateGroupBox;
     }
 }
