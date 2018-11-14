@@ -31,13 +31,14 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.sidePanel = new System.Windows.Forms.Panel();
-            this.userButton = new System.Windows.Forms.Button();
-            this.themeButton = new System.Windows.Forms.Button();
-            this.templateButton = new System.Windows.Forms.Button();
-            this.searchButton = new System.Windows.Forms.Button();
             this.sizeControlImageList = new System.Windows.Forms.ImageList(this.components);
-            this.infoButton = new System.Windows.Forms.Button();
             this.contentPanel = new System.Windows.Forms.Panel();
+            this.infoButton = new System.Windows.Forms.Button();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.templateButton = new System.Windows.Forms.Button();
+            this.themeButton = new System.Windows.Forms.Button();
+            this.userButton = new System.Windows.Forms.Button();
+            this.extraInfo = new System.Windows.Forms.ToolTip(this.components);
             this.sidePanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,78 +56,6 @@
             this.sidePanel.Size = new System.Drawing.Size(75, 473);
             this.sidePanel.TabIndex = 0;
             // 
-            // userButton
-            // 
-            this.userButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.userButton.BackColor = System.Drawing.Color.Transparent;
-            this.userButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.userButton.FlatAppearance.BorderSize = 0;
-            this.userButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.userButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.userButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.userButton.ImageIndex = 0;
-            this.userButton.ImageList = this.sizeControlImageList;
-            this.userButton.Location = new System.Drawing.Point(3, 3);
-            this.userButton.Name = "userButton";
-            this.userButton.Size = new System.Drawing.Size(69, 67);
-            this.userButton.TabIndex = 4;
-            this.userButton.UseVisualStyleBackColor = false;
-            // 
-            // themeButton
-            // 
-            this.themeButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.themeButton.BackColor = System.Drawing.Color.Transparent;
-            this.themeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.themeButton.FlatAppearance.BorderSize = 0;
-            this.themeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.themeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.themeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.themeButton.ImageIndex = 4;
-            this.themeButton.ImageList = this.sizeControlImageList;
-            this.themeButton.Location = new System.Drawing.Point(3, 71);
-            this.themeButton.Name = "themeButton";
-            this.themeButton.Size = new System.Drawing.Size(69, 67);
-            this.themeButton.TabIndex = 5;
-            this.themeButton.UseVisualStyleBackColor = false;
-            // 
-            // templateButton
-            // 
-            this.templateButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.templateButton.BackColor = System.Drawing.Color.Transparent;
-            this.templateButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.templateButton.FlatAppearance.BorderSize = 0;
-            this.templateButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.templateButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.templateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.templateButton.ImageIndex = 3;
-            this.templateButton.ImageList = this.sizeControlImageList;
-            this.templateButton.Location = new System.Drawing.Point(3, 139);
-            this.templateButton.Name = "templateButton";
-            this.templateButton.Size = new System.Drawing.Size(69, 67);
-            this.templateButton.TabIndex = 6;
-            this.templateButton.UseVisualStyleBackColor = false;
-            // 
-            // searchButton
-            // 
-            this.searchButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchButton.BackColor = System.Drawing.Color.Transparent;
-            this.searchButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.searchButton.FlatAppearance.BorderSize = 0;
-            this.searchButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.searchButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchButton.ImageIndex = 1;
-            this.searchButton.ImageList = this.sizeControlImageList;
-            this.searchButton.Location = new System.Drawing.Point(3, 207);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(69, 67);
-            this.searchButton.TabIndex = 7;
-            this.searchButton.UseVisualStyleBackColor = false;
-            // 
             // sizeControlImageList
             // 
             this.sizeControlImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("sizeControlImageList.ImageStream")));
@@ -136,6 +65,15 @@
             this.sizeControlImageList.Images.SetKeyName(2, "icon_info.png");
             this.sizeControlImageList.Images.SetKeyName(3, "icon_template.png");
             this.sizeControlImageList.Images.SetKeyName(4, "icon_theme.png");
+            // 
+            // contentPanel
+            // 
+            this.contentPanel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contentPanel.Location = new System.Drawing.Point(75, 0);
+            this.contentPanel.Name = "contentPanel";
+            this.contentPanel.Size = new System.Drawing.Size(671, 473);
+            this.contentPanel.TabIndex = 1;
             // 
             // infoButton
             // 
@@ -153,16 +91,85 @@
             this.infoButton.Name = "infoButton";
             this.infoButton.Size = new System.Drawing.Size(69, 67);
             this.infoButton.TabIndex = 8;
+            this.extraInfo.SetToolTip(this.infoButton, "About");
             this.infoButton.UseVisualStyleBackColor = false;
             // 
-            // contentPanel
+            // searchButton
             // 
-            this.contentPanel.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contentPanel.Location = new System.Drawing.Point(75, 0);
-            this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(671, 473);
-            this.contentPanel.TabIndex = 1;
+            this.searchButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchButton.BackColor = System.Drawing.Color.Transparent;
+            this.searchButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.searchButton.FlatAppearance.BorderSize = 0;
+            this.searchButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.searchButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchButton.ImageIndex = 1;
+            this.searchButton.ImageList = this.sizeControlImageList;
+            this.searchButton.Location = new System.Drawing.Point(3, 207);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(69, 67);
+            this.searchButton.TabIndex = 7;
+            this.extraInfo.SetToolTip(this.searchButton, "Search settings");
+            this.searchButton.UseVisualStyleBackColor = false;
+            // 
+            // templateButton
+            // 
+            this.templateButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.templateButton.BackColor = System.Drawing.Color.Transparent;
+            this.templateButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.templateButton.FlatAppearance.BorderSize = 0;
+            this.templateButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.templateButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.templateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.templateButton.ImageIndex = 3;
+            this.templateButton.ImageList = this.sizeControlImageList;
+            this.templateButton.Location = new System.Drawing.Point(3, 139);
+            this.templateButton.Name = "templateButton";
+            this.templateButton.Size = new System.Drawing.Size(69, 67);
+            this.templateButton.TabIndex = 6;
+            this.extraInfo.SetToolTip(this.templateButton, "Template settings");
+            this.templateButton.UseVisualStyleBackColor = false;
+            this.templateButton.Click += new System.EventHandler(this.TemplateButton_Click);
+            // 
+            // themeButton
+            // 
+            this.themeButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.themeButton.BackColor = System.Drawing.Color.Transparent;
+            this.themeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.themeButton.FlatAppearance.BorderSize = 0;
+            this.themeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.themeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.themeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.themeButton.ImageIndex = 4;
+            this.themeButton.ImageList = this.sizeControlImageList;
+            this.themeButton.Location = new System.Drawing.Point(3, 71);
+            this.themeButton.Name = "themeButton";
+            this.themeButton.Size = new System.Drawing.Size(69, 67);
+            this.themeButton.TabIndex = 5;
+            this.extraInfo.SetToolTip(this.themeButton, "Theme settings");
+            this.themeButton.UseVisualStyleBackColor = false;
+            // 
+            // userButton
+            // 
+            this.userButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.userButton.BackColor = System.Drawing.Color.Transparent;
+            this.userButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.userButton.FlatAppearance.BorderSize = 0;
+            this.userButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.userButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.userButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.userButton.ImageIndex = 0;
+            this.userButton.ImageList = this.sizeControlImageList;
+            this.userButton.Location = new System.Drawing.Point(3, 3);
+            this.userButton.Name = "userButton";
+            this.userButton.Size = new System.Drawing.Size(69, 67);
+            this.userButton.TabIndex = 4;
+            this.extraInfo.SetToolTip(this.userButton, "User settings");
+            this.userButton.UseVisualStyleBackColor = false;
             // 
             // SettingsForm
             // 
@@ -192,5 +199,6 @@
         private System.Windows.Forms.ImageList sizeControlImageList;
         private System.Windows.Forms.Button infoButton;
         private System.Windows.Forms.Panel contentPanel;
+        private System.Windows.Forms.ToolTip extraInfo;
     }
 }
