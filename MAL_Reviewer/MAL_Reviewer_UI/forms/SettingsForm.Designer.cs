@@ -37,12 +37,13 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.sizeControlImageList = new System.Windows.Forms.ImageList(this.components);
             this.infoButton = new System.Windows.Forms.Button();
+            this.contentPanel = new System.Windows.Forms.Panel();
             this.sidePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidePanel
             // 
-            this.sidePanel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.sidePanel.BackColor = System.Drawing.SystemColors.Control;
             this.sidePanel.Controls.Add(this.infoButton);
             this.sidePanel.Controls.Add(this.searchButton);
             this.sidePanel.Controls.Add(this.templateButton);
@@ -82,8 +83,9 @@
             this.themeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
             this.themeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.themeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.themeButton.ImageIndex = 0;
-            this.themeButton.Location = new System.Drawing.Point(3, 76);
+            this.themeButton.ImageIndex = 4;
+            this.themeButton.ImageList = this.sizeControlImageList;
+            this.themeButton.Location = new System.Drawing.Point(3, 71);
             this.themeButton.Name = "themeButton";
             this.themeButton.Size = new System.Drawing.Size(69, 67);
             this.themeButton.TabIndex = 5;
@@ -99,8 +101,9 @@
             this.templateButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
             this.templateButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.templateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.templateButton.ImageIndex = 0;
-            this.templateButton.Location = new System.Drawing.Point(3, 149);
+            this.templateButton.ImageIndex = 3;
+            this.templateButton.ImageList = this.sizeControlImageList;
+            this.templateButton.Location = new System.Drawing.Point(3, 139);
             this.templateButton.Name = "templateButton";
             this.templateButton.Size = new System.Drawing.Size(69, 67);
             this.templateButton.TabIndex = 6;
@@ -118,7 +121,7 @@
             this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchButton.ImageIndex = 1;
             this.searchButton.ImageList = this.sizeControlImageList;
-            this.searchButton.Location = new System.Drawing.Point(3, 222);
+            this.searchButton.Location = new System.Drawing.Point(3, 207);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(69, 67);
             this.searchButton.TabIndex = 7;
@@ -131,6 +134,8 @@
             this.sizeControlImageList.Images.SetKeyName(0, "icon-user.png");
             this.sizeControlImageList.Images.SetKeyName(1, "icon_search.png");
             this.sizeControlImageList.Images.SetKeyName(2, "icon_info.png");
+            this.sizeControlImageList.Images.SetKeyName(3, "icon_template.png");
+            this.sizeControlImageList.Images.SetKeyName(4, "icon_theme.png");
             // 
             // infoButton
             // 
@@ -144,17 +149,27 @@
             this.infoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.infoButton.ImageIndex = 2;
             this.infoButton.ImageList = this.sizeControlImageList;
-            this.infoButton.Location = new System.Drawing.Point(3, 295);
+            this.infoButton.Location = new System.Drawing.Point(3, 275);
             this.infoButton.Name = "infoButton";
             this.infoButton.Size = new System.Drawing.Size(69, 67);
             this.infoButton.TabIndex = 8;
             this.infoButton.UseVisualStyleBackColor = false;
+            // 
+            // contentPanel
+            // 
+            this.contentPanel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contentPanel.Location = new System.Drawing.Point(75, 0);
+            this.contentPanel.Name = "contentPanel";
+            this.contentPanel.Size = new System.Drawing.Size(671, 473);
+            this.contentPanel.TabIndex = 1;
             // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(746, 473);
+            this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.sidePanel);
             this.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -176,5 +191,6 @@
         private System.Windows.Forms.Button userButton;
         private System.Windows.Forms.ImageList sizeControlImageList;
         private System.Windows.Forms.Button infoButton;
+        private System.Windows.Forms.Panel contentPanel;
     }
 }
