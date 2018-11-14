@@ -36,7 +36,6 @@
             this.lChapters = new System.Windows.Forms.Label();
             this.lTargetTitle = new System.Windows.Forms.Label();
             this.lTargetChapters = new System.Windows.Forms.Label();
-            this.pbTargetImage = new System.Windows.Forms.PictureBox();
             this.lScore = new System.Windows.Forms.Label();
             this.MALPageButton = new System.Windows.Forms.Button();
             this.lVolumesEpisodes = new System.Windows.Forms.Label();
@@ -67,14 +66,17 @@
             this.lPreview = new System.Windows.Forms.Label();
             this.ReviewButton = new System.Windows.Forms.Button();
             this.InfoTooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.reviewTemplateGroupBox = new System.Windows.Forms.GroupBox();
+            this.reviewTemplatesGroupBox = new System.Windows.Forms.GroupBox();
+            this.pbTargetImage = new System.Windows.Forms.PictureBox();
+            this.reviewTemplatesFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.searchControl = new MAL_Reviewer_UI.user_controls.TextboxControl();
             this.pPreview.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTargetImage)).BeginInit();
             this.pSetup.SuspendLayout();
             this.gbRating.SuspendLayout();
             this.gbRatingScale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupScaleOther)).BeginInit();
+            this.reviewTemplatesGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTargetImage)).BeginInit();
             this.SuspendLayout();
             // 
             // pSectionSeparator
@@ -152,15 +154,6 @@
             this.lTargetChapters.Text = "23";
             this.lTargetChapters.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lTargetChapters.Visible = false;
-            // 
-            // pbTargetImage
-            // 
-            this.pbTargetImage.Location = new System.Drawing.Point(13, 66);
-            this.pbTargetImage.Name = "pbTargetImage";
-            this.pbTargetImage.Size = new System.Drawing.Size(124, 163);
-            this.pbTargetImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbTargetImage.TabIndex = 0;
-            this.pbTargetImage.TabStop = false;
             // 
             // lScore
             // 
@@ -492,7 +485,7 @@
             this.ReviewButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ReviewButton.Enabled = false;
             this.ReviewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ReviewButton.Location = new System.Drawing.Point(499, 543);
+            this.ReviewButton.Location = new System.Drawing.Point(499, 588);
             this.ReviewButton.Name = "ReviewButton";
             this.ReviewButton.Size = new System.Drawing.Size(99, 27);
             this.ReviewButton.TabIndex = 15;
@@ -505,18 +498,38 @@
             this.InfoTooltip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.InfoTooltip.ToolTipTitle = "Target title";
             // 
-            // reviewTemplateGroupBox
+            // reviewTemplatesGroupBox
             // 
-            this.reviewTemplateGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.reviewTemplatesGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.reviewTemplateGroupBox.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reviewTemplateGroupBox.Location = new System.Drawing.Point(27, 377);
-            this.reviewTemplateGroupBox.Name = "reviewTemplateGroupBox";
-            this.reviewTemplateGroupBox.Size = new System.Drawing.Size(571, 146);
-            this.reviewTemplateGroupBox.TabIndex = 16;
-            this.reviewTemplateGroupBox.TabStop = false;
-            this.reviewTemplateGroupBox.Text = "Review templates";
+            this.reviewTemplatesGroupBox.Controls.Add(this.reviewTemplatesFlowPanel);
+            this.reviewTemplatesGroupBox.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reviewTemplatesGroupBox.Location = new System.Drawing.Point(27, 377);
+            this.reviewTemplatesGroupBox.Name = "reviewTemplatesGroupBox";
+            this.reviewTemplatesGroupBox.Size = new System.Drawing.Size(571, 196);
+            this.reviewTemplatesGroupBox.TabIndex = 16;
+            this.reviewTemplatesGroupBox.TabStop = false;
+            this.reviewTemplatesGroupBox.Text = "Review templates [x]";
+            // 
+            // pbTargetImage
+            // 
+            this.pbTargetImage.Location = new System.Drawing.Point(13, 66);
+            this.pbTargetImage.Name = "pbTargetImage";
+            this.pbTargetImage.Size = new System.Drawing.Size(124, 163);
+            this.pbTargetImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbTargetImage.TabIndex = 0;
+            this.pbTargetImage.TabStop = false;
+            // 
+            // reviewTemplatesFlowPanel
+            // 
+            this.reviewTemplatesFlowPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.reviewTemplatesFlowPanel.AutoScroll = true;
+            this.reviewTemplatesFlowPanel.Location = new System.Drawing.Point(6, 26);
+            this.reviewTemplatesFlowPanel.Name = "reviewTemplatesFlowPanel";
+            this.reviewTemplatesFlowPanel.Size = new System.Drawing.Size(559, 163);
+            this.reviewTemplatesFlowPanel.TabIndex = 22;
+            this.reviewTemplatesFlowPanel.WrapContents = false;
             // 
             // searchControl
             // 
@@ -538,8 +551,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 585);
-            this.Controls.Add(this.reviewTemplateGroupBox);
+            this.ClientSize = new System.Drawing.Size(624, 632);
+            this.Controls.Add(this.reviewTemplatesGroupBox);
             this.Controls.Add(this.ReviewButton);
             this.Controls.Add(this.pSetup);
             this.Controls.Add(this.pPreview);
@@ -554,7 +567,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NewReviewForm_FormClosing);
             this.pPreview.ResumeLayout(false);
             this.pPreview.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTargetImage)).EndInit();
             this.pSetup.ResumeLayout(false);
             this.pSetup.PerformLayout();
             this.gbRating.ResumeLayout(false);
@@ -562,6 +574,8 @@
             this.gbRatingScale.ResumeLayout(false);
             this.gbRatingScale.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupScaleOther)).EndInit();
+            this.reviewTemplatesGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbTargetImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -606,6 +620,7 @@
         private System.Windows.Forms.ToolTip InfoTooltip;
         private System.Windows.Forms.RichTextBox lTargetSynopsis;
         private user_controls.TextboxControl searchControl;
-        private System.Windows.Forms.GroupBox reviewTemplateGroupBox;
+        private System.Windows.Forms.GroupBox reviewTemplatesGroupBox;
+        private System.Windows.Forms.FlowLayoutPanel reviewTemplatesFlowPanel;
     }
 }

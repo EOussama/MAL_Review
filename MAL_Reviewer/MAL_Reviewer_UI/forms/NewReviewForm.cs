@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Drawing;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -65,12 +66,15 @@ namespace MAL_Reviewer_UI.forms
             this.searchControl.Controls["iconPictureBox"].MouseEnter += PbShow_MouseEnter;
             this.searchControl.Controls["iconPictureBox"].MouseLeave += PbShow_MouseLeave;
 
+            // Loading the review templates.
+            LoadReviewTemplates();
+
             cts = new CancellationTokenSource();
             this.ActiveControl = this.searchControl.Controls["inputTextBox"];
             TargetNotFoundLabel.Text = $"Input the { (rbAnime.Checked ? rbAnime : rbManga).Text } title you want review on the text box above, meanwhile we will fetch any related data from MAL to help provide more information on the review target.";
         }        
 
-        #region Manga/Anime labeling
+        #region UI Updates
 
         private void RbScaleOther_CheckedChanged(object sender, EventArgs e) => nupScaleOther.Enabled = rbScaleOther.Checked;
 
@@ -83,6 +87,19 @@ namespace MAL_Reviewer_UI.forms
             this.searchControl.Icon = (rbAnime.Checked ? Properties.Resources.icon_anime : Properties.Resources.icon_manga);
             this.searchControl.Tag = (byte)(rbAnime.Checked ? int.Parse(rbAnime.Tag.ToString()) : int.Parse(rbManga.Tag.ToString()));
             this.searchControl.Submit();
+        }
+
+        /// <summary>
+        /// Loads the review templates and displays them in the preview panel.
+        /// </summary>
+        private void LoadReviewTemplates()
+        {
+            foreach (var x in Enumerable.Range(1, 10))
+            {
+                reviewTemplatesFlowPanel.Controls.Add(new ReviewTemplatePreviewCardControl() { Width = 176 });
+            }
+
+            reviewTemplatesGroupBox.Text = $"Review templates [{ reviewTemplatesFlowPanel.Controls.Count }]";
         }
 
         #endregion

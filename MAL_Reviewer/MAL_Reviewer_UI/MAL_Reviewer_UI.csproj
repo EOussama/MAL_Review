@@ -105,6 +105,12 @@
     <Compile Include="user_controls\ReviewCardControl.Designer.cs">
       <DependentUpon>ReviewCardControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="user_controls\ReviewTemplatePreviewCardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="user_controls\ReviewTemplatePreviewCardControl.Designer.cs">
+      <DependentUpon>ReviewTemplatePreviewCardControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="user_controls\TargetSearchCardControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="user_controls\ReviewCardControl.resx">
       <DependentUpon>ReviewCardControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_controls\ReviewTemplatePreviewCardControl.resx">
+      <DependentUpon>ReviewTemplatePreviewCardControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user_controls\TargetSearchCardControl.resx">
       <DependentUpon>TargetSearchCardControl.cs</DependentUpon>
