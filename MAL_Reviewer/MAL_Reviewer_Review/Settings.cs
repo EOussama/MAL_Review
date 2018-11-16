@@ -78,7 +78,14 @@ namespace MAL_Reviewer_Core
         public void LoadSettings()
         {
             // Loading the review template's settings.
-            this.ReviewTemplatesSettings.LoadSettings();
+            IFormatter binaryFormatter = new BinaryFormatter();
+            Stream fileStream = new FileStream(Path.Combine(STORAGE_PATH, STORAGE_FOLDER, STORAGE_FILE), FileMode.Open, FileAccess.Read, FileShare.None);
+
+            // Loading the data.
+            Settings loadedData = (Settings) binaryFormatter.Deserialize(fileStream);
+            this.ReviewTemplatesSettings = loadedData.ReviewTemplatesSettings;
+
+            fileStream.Close();
         }
 
         /// <summary>
@@ -87,9 +94,8 @@ namespace MAL_Reviewer_Core
         public void SaveSettings()
         {
             // Saving the review template's settings.
-            //this.ReviewTemplatesSettings.SaveSettings();
             IFormatter binaryFormatter = new BinaryFormatter();
-            Stream fileStream = new FileStream(Path.Combine(STORAGE_PATH, STORAGE_FILE), FileMode.Create, FileAccess.Write, FileShare.None);
+            Stream fileStream = new FileStream(Path.Combine(STORAGE_PATH, STORAGE_FOLDER, STORAGE_FILE), FileMode.OpenOrCreate, FileAccess.Write, FileShare.None);
 
             binaryFormatter.Serialize(fileStream, this);
             fileStream.Close();
@@ -128,7 +134,7 @@ namespace MAL_Reviewer_Core
         /// <returns></returns>
         public static bool DoesStorageFileExist()
         {
-            return File.Exists(Path.Combine(STORAGE_PATH, STORAGE_FILE));
+            return File.Exists(Path.Combine(STORAGE_PATH, STORAGE_FOLDER, STORAGE_FILE));
         }
     }
 }

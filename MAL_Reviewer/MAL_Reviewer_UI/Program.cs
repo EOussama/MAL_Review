@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using MAL_Reviewer_Core;
 
 namespace MAL_Reviewer_UI
 {
@@ -13,6 +14,17 @@ namespace MAL_Reviewer_UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            // Initializing the application's core.
+            Core.Init();
+
+            // Application shutdown event
+            Application.ApplicationExit += (s, e) =>
+            {
+                // Saving global settings.
+                Core.Settings.SaveSettings();
+            };
+
             Application.Run(new forms.WelcomeForm());
         }
     }

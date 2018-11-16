@@ -46,9 +46,6 @@ namespace MAL_Reviewer_UI.forms
             CreateCards();
             CreateLists(EntryType.Anime);
             CreateLists(EntryType.Manga);
-
-            // Initializing the application's core.
-            Core.Init();
         }
 
         #region User Data Load
