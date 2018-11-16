@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             this.contentPanel = new System.Windows.Forms.Panel();
-            this.linePanel = new System.Windows.Forms.Panel();
-            this.titleLabel = new System.Windows.Forms.Label();
-            this.templateListBox = new System.Windows.Forms.ListBox();
-            this.templateLabel = new System.Windows.Forms.Label();
             this.templatePreviewPanel = new System.Windows.Forms.Panel();
-            this.templatePreviewLabel = new System.Windows.Forms.Label();
+            this.templateDefaultButton = new System.Windows.Forms.Button();
+            this.templateUpdateButton = new System.Windows.Forms.Button();
+            this.templateDeleteButton = new System.Windows.Forms.Button();
+            this.templateTLDRCheckBox = new System.Windows.Forms.CheckBox();
+            this.templateIntroCheckBox = new System.Windows.Forms.CheckBox();
             this.templateAspectsPanel = new System.Windows.Forms.Panel();
             this.templateAspectsFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.templateIntroCheckBox = new System.Windows.Forms.CheckBox();
-            this.templateTLDRCheckBox = new System.Windows.Forms.CheckBox();
-            this.templateDeleteButton = new System.Windows.Forms.Button();
-            this.templateUpdateButton = new System.Windows.Forms.Button();
-            this.templateDefaultButton = new System.Windows.Forms.Button();
+            this.templatePreviewLabel = new System.Windows.Forms.Label();
+            this.templateLabel = new System.Windows.Forms.Label();
+            this.templateListBox = new System.Windows.Forms.ListBox();
+            this.linePanel = new System.Windows.Forms.Panel();
+            this.titleLabel = new System.Windows.Forms.Label();
+            this.aspectsTextBox = new MAL_Reviewer_UI.user_controls.TextboxControl();
             this.contentPanel.SuspendLayout();
             this.templatePreviewPanel.SuspendLayout();
             this.templateAspectsPanel.SuspendLayout();
@@ -60,6 +61,143 @@
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Size = new System.Drawing.Size(635, 366);
             this.contentPanel.TabIndex = 8;
+            // 
+            // templatePreviewPanel
+            // 
+            this.templatePreviewPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.templatePreviewPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.templatePreviewPanel.Controls.Add(this.templateDefaultButton);
+            this.templatePreviewPanel.Controls.Add(this.templateUpdateButton);
+            this.templatePreviewPanel.Controls.Add(this.templateDeleteButton);
+            this.templatePreviewPanel.Controls.Add(this.templateTLDRCheckBox);
+            this.templatePreviewPanel.Controls.Add(this.templateIntroCheckBox);
+            this.templatePreviewPanel.Controls.Add(this.templateAspectsPanel);
+            this.templatePreviewPanel.Controls.Add(this.templatePreviewLabel);
+            this.templatePreviewPanel.Location = new System.Drawing.Point(393, 32);
+            this.templatePreviewPanel.Name = "templatePreviewPanel";
+            this.templatePreviewPanel.Size = new System.Drawing.Size(239, 323);
+            this.templatePreviewPanel.TabIndex = 2;
+            // 
+            // templateDefaultButton
+            // 
+            this.templateDefaultButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.templateDefaultButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.templateDefaultButton.Enabled = false;
+            this.templateDefaultButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.templateDefaultButton.Location = new System.Drawing.Point(3, 291);
+            this.templateDefaultButton.Name = "templateDefaultButton";
+            this.templateDefaultButton.Size = new System.Drawing.Size(75, 27);
+            this.templateDefaultButton.TabIndex = 18;
+            this.templateDefaultButton.Text = "Default";
+            this.templateDefaultButton.UseVisualStyleBackColor = true;
+            // 
+            // templateUpdateButton
+            // 
+            this.templateUpdateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.templateUpdateButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.templateUpdateButton.Enabled = false;
+            this.templateUpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.templateUpdateButton.Location = new System.Drawing.Point(81, 291);
+            this.templateUpdateButton.Name = "templateUpdateButton";
+            this.templateUpdateButton.Size = new System.Drawing.Size(75, 27);
+            this.templateUpdateButton.TabIndex = 17;
+            this.templateUpdateButton.Text = "Update";
+            this.templateUpdateButton.UseVisualStyleBackColor = true;
+            // 
+            // templateDeleteButton
+            // 
+            this.templateDeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.templateDeleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.templateDeleteButton.Enabled = false;
+            this.templateDeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.templateDeleteButton.Location = new System.Drawing.Point(159, 291);
+            this.templateDeleteButton.Name = "templateDeleteButton";
+            this.templateDeleteButton.Size = new System.Drawing.Size(75, 27);
+            this.templateDeleteButton.TabIndex = 16;
+            this.templateDeleteButton.Text = "Delete";
+            this.templateDeleteButton.UseVisualStyleBackColor = true;
+            // 
+            // templateTLDRCheckBox
+            // 
+            this.templateTLDRCheckBox.AutoSize = true;
+            this.templateTLDRCheckBox.Location = new System.Drawing.Point(17, 236);
+            this.templateTLDRCheckBox.Name = "templateTLDRCheckBox";
+            this.templateTLDRCheckBox.Size = new System.Drawing.Size(65, 17);
+            this.templateTLDRCheckBox.TabIndex = 6;
+            this.templateTLDRCheckBox.Text = "Add tl:dr";
+            this.templateTLDRCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // templateIntroCheckBox
+            // 
+            this.templateIntroCheckBox.AutoSize = true;
+            this.templateIntroCheckBox.Location = new System.Drawing.Point(17, 206);
+            this.templateIntroCheckBox.Name = "templateIntroCheckBox";
+            this.templateIntroCheckBox.Size = new System.Drawing.Size(102, 17);
+            this.templateIntroCheckBox.TabIndex = 5;
+            this.templateIntroCheckBox.Text = "Add review intro";
+            this.templateIntroCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // templateAspectsPanel
+            // 
+            this.templateAspectsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.templateAspectsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.templateAspectsPanel.Controls.Add(this.aspectsTextBox);
+            this.templateAspectsPanel.Controls.Add(this.templateAspectsFlowPanel);
+            this.templateAspectsPanel.Location = new System.Drawing.Point(17, 66);
+            this.templateAspectsPanel.Name = "templateAspectsPanel";
+            this.templateAspectsPanel.Size = new System.Drawing.Size(205, 125);
+            this.templateAspectsPanel.TabIndex = 4;
+            // 
+            // templateAspectsFlowPanel
+            // 
+            this.templateAspectsFlowPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.templateAspectsFlowPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.templateAspectsFlowPanel.Location = new System.Drawing.Point(0, 35);
+            this.templateAspectsFlowPanel.Name = "templateAspectsFlowPanel";
+            this.templateAspectsFlowPanel.Size = new System.Drawing.Size(203, 88);
+            this.templateAspectsFlowPanel.TabIndex = 3;
+            // 
+            // templatePreviewLabel
+            // 
+            this.templatePreviewLabel.AutoEllipsis = true;
+            this.templatePreviewLabel.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.templatePreviewLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.templatePreviewLabel.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.templatePreviewLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.templatePreviewLabel.Location = new System.Drawing.Point(0, 0);
+            this.templatePreviewLabel.Name = "templatePreviewLabel";
+            this.templatePreviewLabel.Size = new System.Drawing.Size(237, 46);
+            this.templatePreviewLabel.TabIndex = 3;
+            this.templatePreviewLabel.Text = "Template name";
+            this.templatePreviewLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // templateLabel
+            // 
+            this.templateLabel.AutoSize = true;
+            this.templateLabel.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.templateLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.templateLabel.Location = new System.Drawing.Point(1, 1);
+            this.templateLabel.Name = "templateLabel";
+            this.templateLabel.Size = new System.Drawing.Size(158, 19);
+            this.templateLabel.TabIndex = 1;
+            this.templateLabel.Text = "Review templates [x]";
+            // 
+            // templateListBox
+            // 
+            this.templateListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.templateListBox.BackColor = System.Drawing.SystemColors.Control;
+            this.templateListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.templateListBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.templateListBox.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.templateListBox.FormattingEnabled = true;
+            this.templateListBox.ItemHeight = 19;
+            this.templateListBox.Location = new System.Drawing.Point(5, 32);
+            this.templateListBox.Name = "templateListBox";
+            this.templateListBox.Size = new System.Drawing.Size(239, 323);
+            this.templateListBox.TabIndex = 0;
             // 
             // linePanel
             // 
@@ -81,139 +219,23 @@
             this.titleLabel.TabIndex = 6;
             this.titleLabel.Text = "Template settings";
             // 
-            // templateListBox
+            // aspectsTextBox
             // 
-            this.templateListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.templateListBox.BackColor = System.Drawing.SystemColors.Control;
-            this.templateListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.templateListBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.templateListBox.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.templateListBox.FormattingEnabled = true;
-            this.templateListBox.ItemHeight = 19;
-            this.templateListBox.Location = new System.Drawing.Point(5, 32);
-            this.templateListBox.Name = "templateListBox";
-            this.templateListBox.Size = new System.Drawing.Size(239, 323);
-            this.templateListBox.TabIndex = 0;
-            // 
-            // templateLabel
-            // 
-            this.templateLabel.AutoSize = true;
-            this.templateLabel.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.templateLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.templateLabel.Location = new System.Drawing.Point(1, 1);
-            this.templateLabel.Name = "templateLabel";
-            this.templateLabel.Size = new System.Drawing.Size(158, 19);
-            this.templateLabel.TabIndex = 1;
-            this.templateLabel.Text = "Review templates [x]";
-            // 
-            // templatePreviewPanel
-            // 
-            this.templatePreviewPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.aspectsTextBox.AllowLoad = false;
+            this.aspectsTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.templatePreviewPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.templatePreviewPanel.Controls.Add(this.templateDefaultButton);
-            this.templatePreviewPanel.Controls.Add(this.templateUpdateButton);
-            this.templatePreviewPanel.Controls.Add(this.templateDeleteButton);
-            this.templatePreviewPanel.Controls.Add(this.templateTLDRCheckBox);
-            this.templatePreviewPanel.Controls.Add(this.templateIntroCheckBox);
-            this.templatePreviewPanel.Controls.Add(this.templateAspectsPanel);
-            this.templatePreviewPanel.Controls.Add(this.templatePreviewLabel);
-            this.templatePreviewPanel.Location = new System.Drawing.Point(393, 32);
-            this.templatePreviewPanel.Name = "templatePreviewPanel";
-            this.templatePreviewPanel.Size = new System.Drawing.Size(239, 323);
-            this.templatePreviewPanel.TabIndex = 2;
-            // 
-            // templatePreviewLabel
-            // 
-            this.templatePreviewLabel.AutoEllipsis = true;
-            this.templatePreviewLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.templatePreviewLabel.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.templatePreviewLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.templatePreviewLabel.Location = new System.Drawing.Point(0, 0);
-            this.templatePreviewLabel.Name = "templatePreviewLabel";
-            this.templatePreviewLabel.Size = new System.Drawing.Size(237, 46);
-            this.templatePreviewLabel.TabIndex = 3;
-            this.templatePreviewLabel.Text = "Template name";
-            this.templatePreviewLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // templateAspectsPanel
-            // 
-            this.templateAspectsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.templateAspectsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.templateAspectsPanel.Controls.Add(this.templateAspectsFlowPanel);
-            this.templateAspectsPanel.Location = new System.Drawing.Point(17, 78);
-            this.templateAspectsPanel.Name = "templateAspectsPanel";
-            this.templateAspectsPanel.Size = new System.Drawing.Size(205, 125);
-            this.templateAspectsPanel.TabIndex = 4;
-            // 
-            // templateAspectsFlowPanel
-            // 
-            this.templateAspectsFlowPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.templateAspectsFlowPanel.Location = new System.Drawing.Point(0, 40);
-            this.templateAspectsFlowPanel.Name = "templateAspectsFlowPanel";
-            this.templateAspectsFlowPanel.Size = new System.Drawing.Size(203, 83);
-            this.templateAspectsFlowPanel.TabIndex = 3;
-            // 
-            // templateIntroCheckBox
-            // 
-            this.templateIntroCheckBox.AutoSize = true;
-            this.templateIntroCheckBox.Location = new System.Drawing.Point(17, 221);
-            this.templateIntroCheckBox.Name = "templateIntroCheckBox";
-            this.templateIntroCheckBox.Size = new System.Drawing.Size(102, 17);
-            this.templateIntroCheckBox.TabIndex = 5;
-            this.templateIntroCheckBox.Text = "Add review intro";
-            this.templateIntroCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // templateTLDRCheckBox
-            // 
-            this.templateTLDRCheckBox.AutoSize = true;
-            this.templateTLDRCheckBox.Location = new System.Drawing.Point(17, 251);
-            this.templateTLDRCheckBox.Name = "templateTLDRCheckBox";
-            this.templateTLDRCheckBox.Size = new System.Drawing.Size(65, 17);
-            this.templateTLDRCheckBox.TabIndex = 6;
-            this.templateTLDRCheckBox.Text = "Add tl:dr";
-            this.templateTLDRCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // templateDeleteButton
-            // 
-            this.templateDeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.templateDeleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.templateDeleteButton.Enabled = false;
-            this.templateDeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.templateDeleteButton.Location = new System.Drawing.Point(159, 291);
-            this.templateDeleteButton.Name = "templateDeleteButton";
-            this.templateDeleteButton.Size = new System.Drawing.Size(75, 27);
-            this.templateDeleteButton.TabIndex = 16;
-            this.templateDeleteButton.Text = "Delete";
-            this.templateDeleteButton.UseVisualStyleBackColor = true;
-            // 
-            // templateUpdateButton
-            // 
-            this.templateUpdateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.templateUpdateButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.templateUpdateButton.Enabled = false;
-            this.templateUpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.templateUpdateButton.Location = new System.Drawing.Point(81, 291);
-            this.templateUpdateButton.Name = "templateUpdateButton";
-            this.templateUpdateButton.Size = new System.Drawing.Size(75, 27);
-            this.templateUpdateButton.TabIndex = 17;
-            this.templateUpdateButton.Text = "Update";
-            this.templateUpdateButton.UseVisualStyleBackColor = true;
-            // 
-            // templateDefaultButton
-            // 
-            this.templateDefaultButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.templateDefaultButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.templateDefaultButton.Enabled = false;
-            this.templateDefaultButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.templateDefaultButton.Location = new System.Drawing.Point(3, 291);
-            this.templateDefaultButton.Name = "templateDefaultButton";
-            this.templateDefaultButton.Size = new System.Drawing.Size(75, 27);
-            this.templateDefaultButton.TabIndex = 18;
-            this.templateDefaultButton.Text = "Default";
-            this.templateDefaultButton.UseVisualStyleBackColor = true;
+            this.aspectsTextBox.AutoSubmit = false;
+            this.aspectsTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aspectsTextBox.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.aspectsTextBox.Icon = global::MAL_Reviewer_UI.Properties.Resources.icon_add;
+            this.aspectsTextBox.InnerText = "";
+            this.aspectsTextBox.Location = new System.Drawing.Point(3, -1);
+            this.aspectsTextBox.Name = "aspectsTextBox";
+            this.aspectsTextBox.Size = new System.Drawing.Size(201, 36);
+            this.aspectsTextBox.SubmitMin = 3;
+            this.aspectsTextBox.TabIndex = 3;
+            this.aspectsTextBox.Tag = "0";
+            this.aspectsTextBox.ToggleIcon = true;
             // 
             // SettingsTemplateForm
             // 
@@ -255,5 +277,6 @@
         private System.Windows.Forms.Button templateDefaultButton;
         private System.Windows.Forms.Button templateUpdateButton;
         private System.Windows.Forms.Button templateDeleteButton;
+        private user_controls.TextboxControl aspectsTextBox;
     }
 }

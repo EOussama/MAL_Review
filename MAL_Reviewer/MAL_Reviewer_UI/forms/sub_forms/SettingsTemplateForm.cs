@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using System.Drawing;
 using MAL_Reviewer_Review;
 
 namespace MAL_Reviewer_UI.forms.sub_forms
@@ -13,6 +14,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
             InitializeComponent();
 
             LoadReviewTemplates();
+            StyleAspectAdd();
         }
 
         /// <summary>
@@ -24,6 +26,15 @@ namespace MAL_Reviewer_UI.forms.sub_forms
 
             templateListBox.Items.Clear();
             Review.ReviewTemplates.ForEach(revTemp => templateListBox.Items.Add(revTemp.TemplateName));
+        }
+
+        /// <summary>
+        /// Adds visual updates to the add button of the aspects.
+        /// </summary>
+        private void StyleAspectAdd()
+        {
+            // Add the hand cursor.
+            aspectsTextBox.Controls["iconPictureBox"].Cursor = Cursors.Hand;
         }
     }
 }
