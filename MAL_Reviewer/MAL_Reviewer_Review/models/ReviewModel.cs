@@ -3,6 +3,7 @@ using MAL_Reviewer_Core.enumerations;
 
 namespace MAL_Reviewer_Core.models
 {
+    [Serializable]
     /// <summary>
     /// The review model.
     /// </summary>

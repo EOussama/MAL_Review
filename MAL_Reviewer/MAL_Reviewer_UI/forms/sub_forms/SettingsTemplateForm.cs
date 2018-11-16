@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using MAL_Reviewer_Core;
 using MAL_Reviewer_Core.controllers;
 using MAL_Reviewer_Core.exceptions;
 using MAL_Reviewer_Core.models;
@@ -45,7 +46,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
             {
                 if (newName.Length == 0) throw new Exception("Input a valid name for the review template.");
 
-                ReviewTemplateModel reviewTemplateModel = ReviewTemplatesController.GetReviewTemplate((short)this.templateListBox.SelectedIndex);
+                ReviewTemplateModel reviewTemplateModel = Core.Settings.ReviewTemplatesSettings.GetReviewTemplate((short)this.templateListBox.SelectedIndex);
                 string oldName = reviewTemplateModel.TemplateName;
 
                 reviewTemplateModel.TemplateName = newName;
@@ -58,7 +59,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
 
                 reviewTemplateModel.LastModified = DateTime.Now;
 
-                ReviewTemplatesController.UpdateReviewTemplate((short)this.templateListBox.SelectedIndex, reviewTemplateModel);
+                Core.Settings.ReviewTemplatesSettings.UpdateReviewTemplate((short)this.templateListBox.SelectedIndex, reviewTemplateModel);
                 LoadReviewTemplates();
 
                 MessageBox.Show($"The review template “{ oldName }” was successfully updated!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -81,7 +82,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
             {
                 try
                 {
-                    reviewTemplateName = ReviewTemplatesController.DeleteReviewTemplate((short)this.templateListBox.SelectedIndex);
+                    reviewTemplateName = Core.Settings.ReviewTemplatesSettings.DeleteReviewTemplate((short)this.templateListBox.SelectedIndex);
                 }
                 catch (Exception ex)
                 {
@@ -99,10 +100,10 @@ namespace MAL_Reviewer_UI.forms.sub_forms
             try
             {
                 // Getting the appropriate review template name.
-                string reviewTemplateName = ReviewTemplatesController.GetDuplicateName();
+                string reviewTemplateName = Core.Settings.ReviewTemplatesSettings.GetDuplicateName();
 
                 // Creating a new empty review template.
-                ReviewTemplatesController.AddReviewTemplate(new ReviewTemplateModel(reviewTemplateName, "", false, false, DateTime.Now, DateTime.Now, new List<ReviewAspectModel>()));
+                Core.Settings.ReviewTemplatesSettings.AddReviewTemplate(new ReviewTemplateModel(reviewTemplateName, "", false, false, DateTime.Now, DateTime.Now, new List<ReviewAspectModel>()));
 
                 // Refreshing the UI.
                 LoadReviewTemplates();
@@ -128,11 +129,11 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         /// </summary>
         private void LoadReviewTemplates()
         {
-            this.templateLabel.Text = $"Review templates [{ ReviewTemplatesController.ReviewTemplates.Count } / { ReviewTemplatesController.MaxReviewTemplates }]";
+            this.templateLabel.Text = $"Review templates [{ Core.Settings.ReviewTemplatesSettings.ReviewTemplates.Count } / { ReviewTemplatesController.MaxReviewTemplates }]";
 
             this.lastIndex = (short)this.templateListBox.SelectedIndex;
             this.templateListBox.DataSource = null;
-            this.templateListBox.DataSource = ReviewTemplatesController.ReviewTemplates;
+            this.templateListBox.DataSource = Core.Settings.ReviewTemplatesSettings.ReviewTemplates;
             this.templateListBox.DisplayMember = "TemplateName";
 
             ResetLastSelectedItem();
@@ -153,7 +154,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
             if (this.templateListBox.DataSource != null)
             {
                 // Fetching the selected review template.
-                ReviewTemplateModel reviewTemplateModel = ReviewTemplatesController.GetReviewTemplate((short)this.templateListBox.SelectedIndex);
+                ReviewTemplateModel reviewTemplateModel = Core.Settings.ReviewTemplatesSettings.GetReviewTemplate((short)this.templateListBox.SelectedIndex);
 
                 // Updating the title.
                 this.templatePreviewRichTextBox.Text = reviewTemplateModel.TemplateName;
@@ -183,7 +184,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         /// </summary>
         private void DisplayEmptyUI()
         {
-            if (ReviewTemplatesController.ReviewTemplates.Count > 0 && this.noPreviewLabel.Visible == true)
+            if (Core.Settings.ReviewTemplatesSettings.ReviewTemplates.Count > 0 && this.noPreviewLabel.Visible == true)
             {
                 // Showing all the preview panel's children but the noPreview label.
                 foreach (Control control in this.templatePreviewPanel.Controls)
@@ -195,7 +196,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
                 this.noPreviewLabel.Visible = false;
                 
             }
-            else if (ReviewTemplatesController.ReviewTemplates.Count == 0 && this.noPreviewLabel.Visible == false)
+            else if (Core.Settings.ReviewTemplatesSettings.ReviewTemplates.Count == 0 && this.noPreviewLabel.Visible == false)
             {
                 // Hiding all the preview panel's children but the noPreview label.
                 foreach (Control control in this.templatePreviewPanel.Controls)

@@ -1,5 +1,8 @@
-﻿namespace MAL_Reviewer_Core.models
+﻿using System;
+
+namespace MAL_Reviewer_Core.models
 {
+    [Serializable]
     /// <summary>
     /// Review method model.
     /// </summary>

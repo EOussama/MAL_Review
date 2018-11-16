@@ -7,6 +7,7 @@ using MAL_Reviewer_UI.user_controls;
 using MAL_Reviewer_UI.classes;
 using MAL_Reviewer_API;
 using MAL_Reviewer_API.models;
+using MAL_Reviewer_Core;
 using MAL_Reviewer_Core.models;
 using MAL_Reviewer_Core.controllers;
 
@@ -113,7 +114,7 @@ namespace MAL_Reviewer_UI.forms
         /// </summary>
         private void LoadReviewTemplates()
         {
-            foreach (ReviewTemplateModel reviewTemplateModel in ReviewTemplatesController.ReviewTemplates)
+            foreach (ReviewTemplateModel reviewTemplateModel in Core.Settings.ReviewTemplatesSettings.ReviewTemplates)
             {
                 ReviewTemplatePreviewCardControl control = new ReviewTemplatePreviewCardControl(reviewTemplateModel);
 

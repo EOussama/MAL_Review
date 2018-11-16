@@ -2,6 +2,7 @@
 
 namespace MAL_Reviewer_Core.exceptions
 {
+    [Serializable]
     /// <summary>
     /// Exception that asserts the maximum review templates allowed to be created.
     /// </summary>

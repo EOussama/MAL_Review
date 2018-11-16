@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace MAL_Reviewer_Core.models
 {
+    [Serializable]
     /// <summary>
     /// Review template model.
     /// </summary>

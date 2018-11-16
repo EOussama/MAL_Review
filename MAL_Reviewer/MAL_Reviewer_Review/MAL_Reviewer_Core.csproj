@@ -45,6 +45,7 @@
     <Compile Include="Core.cs" />
     <Compile Include="enumerations\EntryType.cs" />
     <Compile Include="exceptions\MaximumReviewTemplatesException.cs" />
+    <Compile Include="interfaces\ISettings.cs" />
     <Compile Include="models\ReviewModel.cs" />
     <Compile Include="models\ReviewAspectModel.cs" />
     <Compile Include="models\ReviewMethodModel.cs" />

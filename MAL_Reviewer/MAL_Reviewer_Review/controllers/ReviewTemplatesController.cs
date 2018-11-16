@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using MAL_Reviewer_Core.exceptions;
+using MAL_Reviewer_Core.interfaces;
 using MAL_Reviewer_Core.models;
 
 namespace MAL_Reviewer_Core.controllers
 {
+    [Serializable]
     /// <summary>
     /// The collection of review templates
     /// /// </summary>
-    public static class ReviewTemplatesController
+    public class ReviewTemplatesController : ISettings
     {
         /// <summary>
         /// The default name of every review template.
@@ -24,14 +26,19 @@ namespace MAL_Reviewer_Core.controllers
         /// <summary>
         /// Contains all the template reviews in memory.
         /// </summary>
-        public static List<ReviewTemplateModel> ReviewTemplates { get; set; }
+        public List<ReviewTemplateModel> ReviewTemplates { get; set; }
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        public ReviewTemplatesController() { }
 
         /// <summary>
         /// Gets a review template by index.
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        public static ReviewTemplateModel GetReviewTemplate(short index)
+        public ReviewTemplateModel GetReviewTemplate(short index)
         {
             try
             {
@@ -47,7 +54,7 @@ namespace MAL_Reviewer_Core.controllers
         /// Adds a new review template to the collection.
         /// </summary>
         /// <param name="reviewTemplateModel"></param>
-        public static void AddReviewTemplate(ReviewTemplateModel reviewTemplateModel)
+        public void AddReviewTemplate(ReviewTemplateModel reviewTemplateModel)
         {
             if (ReviewTemplates.Count < MaxReviewTemplates)
             {
@@ -64,7 +71,7 @@ namespace MAL_Reviewer_Core.controllers
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        public static string DeleteReviewTemplate(short index)
+        public string DeleteReviewTemplate(short index)
         {
             string revTempName = string.Empty;
 
@@ -86,7 +93,7 @@ namespace MAL_Reviewer_Core.controllers
         /// </summary>
         /// <param name="index"></param>
         /// <param name="reviewTemplateModel"></param>
-        public static void UpdateReviewTemplate(short index, ReviewTemplateModel reviewTemplateModel)
+        public void UpdateReviewTemplate(short index, ReviewTemplateModel reviewTemplateModel)
         {
             try
             {
@@ -102,7 +109,7 @@ namespace MAL_Reviewer_Core.controllers
         /// Appends the proper number in a string to avoid duplicating the review template names.
         /// </summary>
         /// <returns></returns>
-        public static string GetDuplicateName()
+        public string GetDuplicateName()
         {
             // Getting the number of the review template that have the same default review template name as their title.
             int nameDups = ReviewTemplates.Where(reviewTemp => reviewTemp.TemplateName.StartsWith(defaultReviewTemplateName)).Count();
@@ -113,11 +120,28 @@ namespace MAL_Reviewer_Core.controllers
             return reviewTemplateName;
         }
 
+
+        /// <summary>
+        /// Saves the review templates in the memory.
+        /// </summary>
+        public void SaveSettings()
+        {
+            
+        }
+
+        /// <summary>
+        /// Loads review templates to the memory.
+        /// </summary>
+        public void LoadSettings()
+        {
+            
+        }
+
         /// <summary>
         /// Generate default template settings when the application first runs or
         /// when a template setting is requested.
         /// </summary>
-        public static void SeedSettings()
+        public void SeedSettings()
         {
             // Instanciating the review template's controller.
             ReviewTemplates = new List<ReviewTemplateModel>();
@@ -133,22 +157,6 @@ namespace MAL_Reviewer_Core.controllers
 
             // Adding the default “Mazy MAL review”.
             AddReviewTemplate(new ReviewTemplateModel("Lazy MAL review", "", false, true, DateTime.Now, DateTime.Now, new List<ReviewAspectModel>()));
-        }
-
-        /// <summary>
-        /// Saves the review templates in the memory.
-        /// </summary>
-        public static void SaveSettings()
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Loads review templates to the memory.
-        /// </summary>
-        public static void LoadSettings()
-        {
-            throw new NotImplementedException();
         }
     }
 }

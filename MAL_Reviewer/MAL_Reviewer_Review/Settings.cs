@@ -1,29 +1,45 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using MAL_Reviewer_Core.controllers;
+using MAL_Reviewer_Core.interfaces;
 
 namespace MAL_Reviewer_Core
 {
+    [Serializable]
     /// <summary>
     /// The application's settings.
     /// </summary>
-    public static class Settings
+    public class Settings : ISettings
     {
         /// The path where the storage folder is(should be) located.
         private static readonly string STORAGE_PATH = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+        /// <summary>
+        /// The review template's settings.
+        /// </summary>
+        public ReviewTemplatesController ReviewTemplatesSettings { get; set; }
 
         /// <summary>
         ///  The storage folder and file.
         /// </summary>
         private const string
             STORAGE_FOLDER = "MAL_Reviewer",
-            STORAGE_FILE = "settings.bat";
+            STORAGE_FILE = "settings.dat";
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        public Settings()
+        {
+            this.ReviewTemplatesSettings = new ReviewTemplatesController();
+        }
 
         /// <summary>
         /// Initializing the settings.
         /// </summary>
-        public static void Init()
+        public void Init()
         {
             // Check if the storage folder exists.
             if (DoesStorageFolderExist())
@@ -32,58 +48,69 @@ namespace MAL_Reviewer_Core
                 if (!DoesStorageFileExist())
                 {
                     // Seeding default settings.
-                    SeedSettings();
+                    this.SeedSettings();
 
                     // Serializing the data.
+                    this.SaveSettings();
                 }
                 else
                 {
-                    // Load
+                    // Loading the settings into the memory.
+                    this.LoadSettings();
                 }
             }
             else
             {
                 // Creating the storage folder.
-                Directory.CreateDirectory(Path.Combine(STORAGE_PATH, STORAGE_FOLDER));
+                this.CreateStorageFolder();
 
                 // Seeding default settings.
-                SeedSettings();
+                this.SeedSettings();
 
                 // Serializing the data.
-                using (FileStream fileStream = new FileStream(Path.Combine(STORAGE_PATH, STORAGE_FILE), FileMode.Create))
-                {
-                    BinaryFormatter binaryFormatter = new BinaryFormatter();
-
-                    binaryFormatter.Serialize(fileStream, "");
-                    fileStream.Close();
-                }
+                this.SaveSettings();
             }
         }
 
         /// <summary>
         /// Loads stored settings to the memory into the memory.
         /// </summary>
-        public static void LoadSettings()
+        public void LoadSettings()
         {
-            
+            // Loading the review template's settings.
+            this.ReviewTemplatesSettings.LoadSettings();
         }
 
         /// <summary>
         /// Saves the settings in the memory into a binary file.
         /// </summary>
-        public static void SaveSettings()
+        public void SaveSettings()
         {
+            // Saving the review template's settings.
+            //this.ReviewTemplatesSettings.SaveSettings();
+            IFormatter binaryFormatter = new BinaryFormatter();
+            Stream fileStream = new FileStream(Path.Combine(STORAGE_PATH, STORAGE_FILE), FileMode.Create, FileAccess.Write, FileShare.None);
 
+            binaryFormatter.Serialize(fileStream, this);
+            fileStream.Close();
         }
 
         /// <summary>
         /// Generates default setting values for when the application first runs,
         /// also when a global reset is needed.
         /// </summary>
-        public static void SeedSettings()
+        public void SeedSettings()
         {
             // Seeding review template settings.
-            ReviewTemplatesController.SeedSettings();
+            this.ReviewTemplatesSettings.SeedSettings();
+        }
+
+        /// <summary>
+        /// Creates the storage folder.
+        /// </summary>
+        private void CreateStorageFolder()
+        {
+            Directory.CreateDirectory(Path.Combine(STORAGE_PATH, STORAGE_FOLDER));
         }
 
         /// <summary>
