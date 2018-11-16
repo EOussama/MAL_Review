@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using MAL_Reviewer_Review.exceptions;
-using MAL_Reviewer_Review.models;
+using MAL_Reviewer_Core.exceptions;
+using MAL_Reviewer_Core.models;
 
-namespace MAL_Reviewer_Review.controllers
+namespace MAL_Reviewer_Core.controllers
 {
     /// <summary>
     /// The collection of review templates
@@ -111,6 +111,44 @@ namespace MAL_Reviewer_Review.controllers
             string reviewTemplateName = $"{ defaultReviewTemplateName }{ (nameDups > 0 ? (" " + nameDups.ToString()) : "") }";
 
             return reviewTemplateName;
+        }
+
+        /// <summary>
+        /// Generate default template settings when the application first runs or
+        /// when a template setting is requested.
+        /// </summary>
+        public static void SeedSettings()
+        {
+            // Instanciating the review template's controller.
+            ReviewTemplates = new List<ReviewTemplateModel>();
+
+            // Adding the default “Classic MAL review”.
+            AddReviewTemplate(new ReviewTemplateModel("Classic MAL review", "", true, false, DateTime.Now, DateTime.Now, new List<ReviewAspectModel>() {
+                        new ReviewAspectModel("Story", "", 0),
+                        new ReviewAspectModel("Art", "", 0),
+                        new ReviewAspectModel("Sound", "", 0),
+                        new ReviewAspectModel("Character", "", 0),
+                        new ReviewAspectModel("Enjoyment", "", 0)
+                    }));
+
+            // Adding the default “Mazy MAL review”.
+            AddReviewTemplate(new ReviewTemplateModel("Lazy MAL review", "", false, true, DateTime.Now, DateTime.Now, new List<ReviewAspectModel>()));
+        }
+
+        /// <summary>
+        /// Saves the review templates in the memory.
+        /// </summary>
+        public static void SaveSettings()
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Loads review templates to the memory.
+        /// </summary>
+        public static void LoadSettings()
+        {
+            throw new NotImplementedException();
         }
     }
 }

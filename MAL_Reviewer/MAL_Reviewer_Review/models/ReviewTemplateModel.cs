@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MAL_Reviewer_Review.models
+namespace MAL_Reviewer_Core.models
 {
     /// <summary>
     /// Review template model.

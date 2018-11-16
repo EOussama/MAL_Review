@@ -7,8 +7,8 @@
     <ProjectGuid>{B2E0795B-0A84-442C-8C19-659E63B45CC0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MAL_Reviewer_Review</RootNamespace>
-    <AssemblyName>MAL_Reviewer_Review</AssemblyName>
+    <RootNamespace>MAL_Reviewer_Core</RootNamespace>
+    <AssemblyName>MAL_Reviewer_Core</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,7 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="controllers\ReviewTemplates.cs" />
+    <Compile Include="controllers\ReviewTemplatesController.cs" />
+    <Compile Include="Core.cs" />
     <Compile Include="enumerations\EntryType.cs" />
     <Compile Include="exceptions\MaximumReviewTemplatesException.cs" />
     <Compile Include="models\ReviewModel.cs" />
@@ -49,7 +50,13 @@
     <Compile Include="models\ReviewMethodModel.cs" />
     <Compile Include="models\ReviewTemplateModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Review.cs" />
+    <Compile Include="Settings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MAL_Reviewer_API\MAL_Reviewer_API.csproj">
+      <Project>{3daf19bb-e29b-4e5b-9c48-2e634933c03b}</Project>
+      <Name>MAL_Reviewer_API</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,4 @@
-﻿namespace MAL_Reviewer_Review.enumerations
+﻿namespace MAL_Reviewer_Core.enumerations
 {
     /// <summary>
     /// Entry target types

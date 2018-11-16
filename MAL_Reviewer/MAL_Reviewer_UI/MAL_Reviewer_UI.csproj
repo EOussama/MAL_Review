@@ -207,9 +207,9 @@
       <Project>{3daf19bb-e29b-4e5b-9c48-2e634933c03b}</Project>
       <Name>MAL_Reviewer_API</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\scripting\C#\MAL_Reviewer\MAL_Reviewer\MAL_Reviewer_Review\MAL_Reviewer_Review.csproj">
+    <ProjectReference Include="..\MAL_Reviewer_Review\MAL_Reviewer_Core.csproj">
       <Project>{b2e0795b-0a84-442c-8c19-659e63b45cc0}</Project>
-      <Name>MAL_Reviewer_Review</Name>
+      <Name>MAL_Reviewer_Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

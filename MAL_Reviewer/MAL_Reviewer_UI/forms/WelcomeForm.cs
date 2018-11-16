@@ -7,8 +7,8 @@ using MAL_Reviewer_UI.user_controls;
 using MAL_Reviewer_API;
 using MAL_Reviewer_API.models;
 using MAL_Reviewer_API.models.ListEntryModel;
-using MAL_Reviewer_Review;
-using MAL_Reviewer_Review.enumerations;
+using MAL_Reviewer_Core;
+using MAL_Reviewer_Core.enumerations;
 
 namespace MAL_Reviewer_UI.forms
 {
@@ -47,8 +47,8 @@ namespace MAL_Reviewer_UI.forms
             CreateLists(EntryType.Anime);
             CreateLists(EntryType.Manga);
 
-            MALHelper.Init();
-            Review.LoadReviewTemplates();
+            // Initializing the application's core.
+            Core.Init();
         }
 
         #region User Data Load

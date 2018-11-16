@@ -2,7 +2,7 @@
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
-using MAL_Reviewer_Review.models;
+using MAL_Reviewer_Core.models;
 
 namespace MAL_Reviewer_UI.user_controls
 {

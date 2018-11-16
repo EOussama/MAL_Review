@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MAL_Reviewer_Review.exceptions
+namespace MAL_Reviewer_Core.exceptions
 {
     /// <summary>
     /// Exception that asserts the maximum review templates allowed to be created.

@@ -1,4 +1,4 @@
-﻿namespace MAL_Reviewer_Review.models
+﻿namespace MAL_Reviewer_Core.models
 {
     /// <summary>
     /// The review aspect model.

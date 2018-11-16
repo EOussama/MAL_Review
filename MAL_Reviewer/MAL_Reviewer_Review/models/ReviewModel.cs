@@ -1,7 +1,7 @@
 ﻿using System;
-using MAL_Reviewer_Review.enumerations;
+using MAL_Reviewer_Core.enumerations;
 
-namespace MAL_Reviewer_Review.models
+namespace MAL_Reviewer_Core.models
 {
     /// <summary>
     /// The review model.

@@ -7,8 +7,8 @@ using MAL_Reviewer_UI.user_controls;
 using MAL_Reviewer_UI.classes;
 using MAL_Reviewer_API;
 using MAL_Reviewer_API.models;
-using MAL_Reviewer_Review.models;
-using MAL_Reviewer_Review.controllers;
+using MAL_Reviewer_Core.models;
+using MAL_Reviewer_Core.controllers;
 
 namespace MAL_Reviewer_UI.forms
 {
@@ -74,8 +74,11 @@ namespace MAL_Reviewer_UI.forms
             LoadReviewTemplates();
 
             cts = new CancellationTokenSource();
+            string target = (rbAnime.Checked ? rbAnime : rbManga).Text;
+
             this.ActiveControl = this.searchControl.Controls["inputTextBox"];
-            TargetNotFoundLabel.Text = $"Input the { (rbAnime.Checked ? rbAnime : rbManga).Text } title you want review on the text box above, meanwhile we will fetch any related data from MAL to help provide more information on the review target.";
+            this.searchControl.Placeholder = $"{ target } title...";
+            TargetNotFoundLabel.Text = $"Input the { target } title you want review on the text box above, meanwhile we will fetch any related data from MAL to help provide more information on the review target.";
         }        
 
         #region UI Updates
@@ -84,10 +87,13 @@ namespace MAL_Reviewer_UI.forms
 
         private void RbAnime_CheckedChanged(object sender, EventArgs e)
         {
-            this.lTitle.Text = $"{ (rbAnime.Checked ? rbAnime.Text : rbManga.Text) } title";
-            this.lPreview.Text = $"{ (rbAnime.Checked ? rbAnime.Text : rbManga.Text) } preview";
-            this.TargetNotFoundLabel.Text = $"Input the { (rbAnime.Checked ? rbAnime : rbManga).Text } title you want review on the text box above, meanwhile we will fetch any related data from MAL to help provide more information on the review target.";
+            string target = (rbAnime.Checked ? rbAnime : rbManga).Text;
 
+            this.lTitle.Text = $"{ target } title";
+            this.lPreview.Text = $"{ target } preview";
+            this.TargetNotFoundLabel.Text = $"Input the { target } title you want review on the text box above, meanwhile we will fetch any related data from MAL to help provide more information on the review target.";
+
+            this.searchControl.Placeholder = $"{ target } title...";
             this.searchControl.Icon = (rbAnime.Checked ? Properties.Resources.icon_anime : Properties.Resources.icon_manga);
             this.searchControl.Tag = (byte)(rbAnime.Checked ? int.Parse(rbAnime.Tag.ToString()) : int.Parse(rbManga.Tag.ToString()));
             this.searchControl.Submit();

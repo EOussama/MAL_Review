@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using MAL_Reviewer_Review.controllers;
-using MAL_Reviewer_Review.exceptions;
-using MAL_Reviewer_Review.models;
+using MAL_Reviewer_Core.controllers;
+using MAL_Reviewer_Core.exceptions;
+using MAL_Reviewer_Core.models;
 using MAL_Reviewer_UI.user_controls;
 
 namespace MAL_Reviewer_UI.forms.sub_forms
