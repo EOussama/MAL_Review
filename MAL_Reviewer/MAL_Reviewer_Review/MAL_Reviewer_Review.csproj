@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controllers\ReviewTemplates.cs" />
     <Compile Include="enumerations\EntryType.cs" />
+    <Compile Include="exceptions\MaximumReviewTemplatesException.cs" />
     <Compile Include="models\ReviewModel.cs" />
     <Compile Include="models\ReviewAspectModel.cs" />
     <Compile Include="models\ReviewMethodModel.cs" />

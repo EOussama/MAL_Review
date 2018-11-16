@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.contentPanel = new System.Windows.Forms.Panel();
             this.templatePreviewPanel = new System.Windows.Forms.Panel();
+            this.templatePreviewRichTextBox = new System.Windows.Forms.RichTextBox();
             this.editDateLabel = new System.Windows.Forms.Label();
             this.creationDateLabel = new System.Windows.Forms.Label();
             this.templateDefaultButton = new System.Windows.Forms.Button();
@@ -45,7 +46,8 @@
             this.linePanel = new System.Windows.Forms.Panel();
             this.titleLabel = new System.Windows.Forms.Label();
             this.reviewTemplateTooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.templatePreviewRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.TemplateCreateButton = new System.Windows.Forms.Button();
+            this.noPreviewLabel = new System.Windows.Forms.Label();
             this.aspectsTextBox = new MAL_Reviewer_UI.user_controls.TextboxControl();
             this.contentPanel.SuspendLayout();
             this.templatePreviewPanel.SuspendLayout();
@@ -63,7 +65,7 @@
             this.contentPanel.Controls.Add(this.templateListBox);
             this.contentPanel.Location = new System.Drawing.Point(12, 94);
             this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(635, 366);
+            this.contentPanel.Size = new System.Drawing.Size(512, 366);
             this.contentPanel.TabIndex = 8;
             // 
             // templatePreviewPanel
@@ -72,6 +74,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.templatePreviewPanel.BackColor = System.Drawing.SystemColors.ControlLight;
             this.templatePreviewPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.templatePreviewPanel.Controls.Add(this.noPreviewLabel);
             this.templatePreviewPanel.Controls.Add(this.templatePreviewRichTextBox);
             this.templatePreviewPanel.Controls.Add(this.editDateLabel);
             this.templatePreviewPanel.Controls.Add(this.creationDateLabel);
@@ -81,10 +84,23 @@
             this.templatePreviewPanel.Controls.Add(this.templateTLDRCheckBox);
             this.templatePreviewPanel.Controls.Add(this.templateIntroCheckBox);
             this.templatePreviewPanel.Controls.Add(this.templateAspectsPanel);
-            this.templatePreviewPanel.Location = new System.Drawing.Point(393, 32);
+            this.templatePreviewPanel.Location = new System.Drawing.Point(268, 32);
             this.templatePreviewPanel.Name = "templatePreviewPanel";
             this.templatePreviewPanel.Size = new System.Drawing.Size(239, 323);
             this.templatePreviewPanel.TabIndex = 2;
+            // 
+            // templatePreviewRichTextBox
+            // 
+            this.templatePreviewRichTextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.templatePreviewRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.templatePreviewRichTextBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.templatePreviewRichTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.templatePreviewRichTextBox.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.templatePreviewRichTextBox.Location = new System.Drawing.Point(0, 0);
+            this.templatePreviewRichTextBox.Name = "templatePreviewRichTextBox";
+            this.templatePreviewRichTextBox.Size = new System.Drawing.Size(237, 48);
+            this.templatePreviewRichTextBox.TabIndex = 3;
+            this.templatePreviewRichTextBox.Text = "Template Name";
             // 
             // editDateLabel
             // 
@@ -112,6 +128,7 @@
             // 
             this.templateDefaultButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.templateDefaultButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.templateDefaultButton.Enabled = false;
             this.templateDefaultButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.templateDefaultButton.Location = new System.Drawing.Point(3, 291);
             this.templateDefaultButton.Name = "templateDefaultButton";
@@ -125,6 +142,7 @@
             // 
             this.templateUpdateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.templateUpdateButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.templateUpdateButton.Enabled = false;
             this.templateUpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.templateUpdateButton.Location = new System.Drawing.Point(81, 291);
             this.templateUpdateButton.Name = "templateUpdateButton";
@@ -138,6 +156,7 @@
             // 
             this.templateDeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.templateDeleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.templateDeleteButton.Enabled = false;
             this.templateDeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.templateDeleteButton.Location = new System.Drawing.Point(159, 291);
             this.templateDeleteButton.Name = "templateDeleteButton";
@@ -145,6 +164,7 @@
             this.templateDeleteButton.TabIndex = 16;
             this.templateDeleteButton.Text = "Delete";
             this.templateDeleteButton.UseVisualStyleBackColor = true;
+            this.templateDeleteButton.Click += new System.EventHandler(this.TemplateDeleteButton_Click);
             // 
             // templateTLDRCheckBox
             // 
@@ -226,7 +246,7 @@
             this.linePanel.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.linePanel.Location = new System.Drawing.Point(12, 51);
             this.linePanel.Name = "linePanel";
-            this.linePanel.Size = new System.Drawing.Size(635, 5);
+            this.linePanel.Size = new System.Drawing.Size(512, 5);
             this.linePanel.TabIndex = 7;
             // 
             // titleLabel
@@ -239,18 +259,30 @@
             this.titleLabel.TabIndex = 6;
             this.titleLabel.Text = "Template settings";
             // 
-            // templatePreviewRichTextBox
+            // TemplateCreateButton
             // 
-            this.templatePreviewRichTextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.templatePreviewRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.templatePreviewRichTextBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.templatePreviewRichTextBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.templatePreviewRichTextBox.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.templatePreviewRichTextBox.Location = new System.Drawing.Point(0, 0);
-            this.templatePreviewRichTextBox.Name = "templatePreviewRichTextBox";
-            this.templatePreviewRichTextBox.Size = new System.Drawing.Size(237, 48);
-            this.templatePreviewRichTextBox.TabIndex = 3;
-            this.templatePreviewRichTextBox.Text = "Template Name";
+            this.TemplateCreateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TemplateCreateButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TemplateCreateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TemplateCreateButton.Location = new System.Drawing.Point(280, 96);
+            this.TemplateCreateButton.Name = "TemplateCreateButton";
+            this.TemplateCreateButton.Size = new System.Drawing.Size(239, 27);
+            this.TemplateCreateButton.TabIndex = 21;
+            this.TemplateCreateButton.Text = "Create a new review template";
+            this.TemplateCreateButton.UseVisualStyleBackColor = true;
+            this.TemplateCreateButton.Click += new System.EventHandler(this.TemplateCreateButton_Click);
+            // 
+            // noPreviewLabel
+            // 
+            this.noPreviewLabel.AutoSize = true;
+            this.noPreviewLabel.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noPreviewLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.noPreviewLabel.Location = new System.Drawing.Point(28, 51);
+            this.noPreviewLabel.Name = "noPreviewLabel";
+            this.noPreviewLabel.Size = new System.Drawing.Size(190, 16);
+            this.noPreviewLabel.TabIndex = 21;
+            this.noPreviewLabel.Text = "No review templates to preview.";
+            this.noPreviewLabel.Visible = false;
             // 
             // aspectsTextBox
             // 
@@ -276,8 +308,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(659, 473);
+            this.ClientSize = new System.Drawing.Size(536, 473);
+            this.Controls.Add(this.TemplateCreateButton);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.linePanel);
             this.Controls.Add(this.titleLabel);
@@ -316,5 +350,7 @@
         private System.Windows.Forms.Label creationDateLabel;
         private System.Windows.Forms.ToolTip reviewTemplateTooltip;
         private System.Windows.Forms.RichTextBox templatePreviewRichTextBox;
+        private System.Windows.Forms.Button TemplateCreateButton;
+        private System.Windows.Forms.Label noPreviewLabel;
     }
 }

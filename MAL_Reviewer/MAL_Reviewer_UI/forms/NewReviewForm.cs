@@ -7,8 +7,8 @@ using MAL_Reviewer_UI.user_controls;
 using MAL_Reviewer_UI.classes;
 using MAL_Reviewer_API;
 using MAL_Reviewer_API.models;
-using MAL_Reviewer_Review;
 using MAL_Reviewer_Review.models;
+using MAL_Reviewer_Review.controllers;
 
 namespace MAL_Reviewer_UI.forms
 {
@@ -107,7 +107,7 @@ namespace MAL_Reviewer_UI.forms
         /// </summary>
         private void LoadReviewTemplates()
         {
-            foreach (ReviewTemplateModel reviewTemplateModel in Review.ReviewTemplates)
+            foreach (ReviewTemplateModel reviewTemplateModel in ReviewTemplatesController.ReviewTemplates)
             {
                 ReviewTemplatePreviewCardControl control = new ReviewTemplatePreviewCardControl(reviewTemplateModel);
 
@@ -116,7 +116,7 @@ namespace MAL_Reviewer_UI.forms
             }
 
             // Update the template count on the group box title.
-            reviewTemplatesGroupBox.Text = $"Review templates [{ reviewTemplatesFlowPanel.Controls.Count }]";
+            reviewTemplatesGroupBox.Text = $"Review templates [{ reviewTemplatesFlowPanel.Controls.Count } / { ReviewTemplatesController.MaxReviewTemplates }]";
         }
 
         #endregion
