@@ -30,6 +30,7 @@
         {
             this.iconPictureBox = new System.Windows.Forms.PictureBox();
             this.inputTextBox = new System.Windows.Forms.TextBox();
+            this.placeholderLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,15 +61,36 @@
             this.inputTextBox.Tag = "";
             this.inputTextBox.TextChanged += new System.EventHandler(this.InputTextBox_TextChanged);
             // 
+            // placeholderLabel
+            // 
+            this.placeholderLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.placeholderLabel.AutoEllipsis = true;
+            this.placeholderLabel.BackColor = System.Drawing.Color.Transparent;
+            this.placeholderLabel.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.placeholderLabel.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.placeholderLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.placeholderLabel.Location = new System.Drawing.Point(5, 5);
+            this.placeholderLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.placeholderLabel.Name = "placeholderLabel";
+            this.placeholderLabel.Size = new System.Drawing.Size(194, 25);
+            this.placeholderLabel.TabIndex = 9;
+            this.placeholderLabel.Text = "Placeholder";
+            this.placeholderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.placeholderLabel.Click += new System.EventHandler(this.PlaceholderLabel_Click);
+            // 
             // TextboxControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.placeholderLabel);
             this.Controls.Add(this.iconPictureBox);
             this.Controls.Add(this.inputTextBox);
             this.Name = "TextboxControl";
             this.Size = new System.Drawing.Size(232, 36);
             this.Tag = "0";
+            this.Enter += new System.EventHandler(this.TextboxControl_Enter);
+            this.Leave += new System.EventHandler(this.TextboxControl_Leave);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -79,5 +101,6 @@
 
         private System.Windows.Forms.PictureBox iconPictureBox;
         private System.Windows.Forms.TextBox inputTextBox;
+        private System.Windows.Forms.Label placeholderLabel;
     }
 }

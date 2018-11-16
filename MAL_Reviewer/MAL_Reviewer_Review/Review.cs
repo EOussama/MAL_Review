@@ -21,15 +21,15 @@ namespace MAL_Reviewer_Review
         {
             ReviewTemplates = new List<ReviewTemplateModel>
             {
-                new ReviewTemplateModel("MAL review", "", true, false, DateTime.Now, new List<ReviewAspectModel>() {
+                new ReviewTemplateModel("MAL review", "", true, false, DateTime.Now, DateTime.Now, new List<ReviewAspectModel>() {
                         new ReviewAspectModel("Story", "", 0),
                         new ReviewAspectModel("Art", "", 0),
                         new ReviewAspectModel("Sound", "", 0),
                         new ReviewAspectModel("Character", "", 0),
                         new ReviewAspectModel("Enjoyment", "", 0)
                     }),
-                new ReviewTemplateModel("Lazy review", "", true, false, DateTime.Now, new List<ReviewAspectModel>()),
-                new ReviewTemplateModel("Super long review, really.", "", true, true, DateTime.Now, new List<ReviewAspectModel>() {
+                new ReviewTemplateModel("Lazy review", "", true, false, DateTime.Now, DateTime.Now, new List<ReviewAspectModel>()),
+                new ReviewTemplateModel("Super long review, really.", "", true, true, DateTime.Now, DateTime.Now new List<ReviewAspectModel>() {
                         new ReviewAspectModel("Story", "", 0),
                         new ReviewAspectModel("Art", "", 0),
                         new ReviewAspectModel("Sound", "", 0),
@@ -39,7 +39,11 @@ namespace MAL_Reviewer_Review
                         new ReviewAspectModel("Darkness", "", 0),
                         new ReviewAspectModel("Bordome", "", 0),
                         new ReviewAspectModel("Side notes", "", 0)
-                    })
+                    }),
+                new ReviewTemplateModel("Lazy review, but very long, even longer than the other one, it makes it look pathetic.", "", false, true, DateTime.Now, DateTime.Now, new List<ReviewAspectModel>() {
+                    new ReviewAspectModel("Sound", "", 0),
+                    new ReviewAspectModel("Art", "", 0)
+                }),
             };
         }
     }

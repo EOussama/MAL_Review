@@ -114,14 +114,19 @@
             // searchControl
             // 
             this.searchControl.AllowLoad = false;
+            this.searchControl.AutoSubmit = false;
             this.searchControl.BackColor = System.Drawing.SystemColors.ControlLight;
             this.searchControl.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.searchControl.Icon = global::MAL_Reviewer_UI.Properties.Resources.icon_user;
             this.searchControl.InnerText = "";
             this.searchControl.Location = new System.Drawing.Point(51, 186);
             this.searchControl.Name = "searchControl";
+            this.searchControl.Placeholder = "MAL username";
+            this.searchControl.PlaceholderColor = System.Drawing.SystemColors.ControlDark;
             this.searchControl.Size = new System.Drawing.Size(230, 36);
+            this.searchControl.SubmitMin = 3;
             this.searchControl.TabIndex = 18;
+            this.searchControl.Tag = "0";
             this.searchControl.ToggleIcon = true;
             // 
             // LoadUserForm

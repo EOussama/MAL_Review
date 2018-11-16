@@ -53,10 +53,12 @@ namespace MAL_Reviewer_UI.user_controls
                 if (value)
                 {
                     this.inputTextBox.Width = this.Width - (this.inputTextBox.Left * 2) - this.iconPictureBox.Width - (this.iconPictureBox.Left - this.inputTextBox.Right);
+                    this.placeholderLabel.Width = this.inputTextBox.Width;
                 }
                 else
                 {
                     this.inputTextBox.Width = this.Width - (this.inputTextBox.Left * 2);
+                    this.placeholderLabel.Width = this.inputTextBox.Width;
                 }
             }
         }
@@ -103,6 +105,24 @@ namespace MAL_Reviewer_UI.user_controls
         /// </summary>
         public bool AutoSubmit { get; set; } = false;
 
+        /// <summary>
+        /// Gets and sets the control's placeholder.
+        /// </summary>
+        public string Placeholder
+        {
+            get => this.placeholderLabel.Text;
+            set => this.placeholderLabel.Text = value;
+        }
+
+        /// <summary>
+        /// Gets and sets the control's placeholder's forecolor.
+        /// </summary>
+        public Color PlaceholderColor
+        {
+            get => this.placeholderLabel.ForeColor;
+            set => this.placeholderLabel.ForeColor = value;
+        }
+
         public TextboxControl()
         {
             InitializeComponent();
@@ -119,6 +139,8 @@ namespace MAL_Reviewer_UI.user_controls
                 Interval = searchInterval
             };
             this.inputDelay.Tick += InputDelay_Tick;
+
+            TextboxControl_Leave(this, EventArgs.Empty);
         }
 
         private void InputTextBox_TextChanged(object sender, System.EventArgs e)
@@ -176,5 +198,22 @@ namespace MAL_Reviewer_UI.user_controls
         /// Clear the textbox.
         /// </summary>
         public void Clear() => this.inputTextBox.Clear();
+
+        private void PlaceholderLabel_Click(object sender, EventArgs e)
+        {
+            this.placeholderLabel.Visible = false;
+            this.ActiveControl = this.inputTextBox;
+        }
+
+        private void TextboxControl_Enter(object sender, EventArgs e)
+        {
+            this.placeholderLabel.Visible = false;
+        }
+
+        private void TextboxControl_Leave(object sender, EventArgs e)
+        {
+            if (this.inputTextBox.Text.Length == 0)
+                this.placeholderLabel.Visible = true;
+        }
     }
 }

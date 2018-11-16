@@ -242,6 +242,8 @@
             this.reviewSearchControl.InnerText = "";
             this.reviewSearchControl.Location = new System.Drawing.Point(0, 0);
             this.reviewSearchControl.Name = "reviewSearchControl";
+            this.reviewSearchControl.Placeholder = "Review search...";
+            this.reviewSearchControl.PlaceholderColor = System.Drawing.SystemColors.ControlDarkDark;
             this.reviewSearchControl.Size = new System.Drawing.Size(230, 35);
             this.reviewSearchControl.SubmitMin = 3;
             this.reviewSearchControl.TabIndex = 7;

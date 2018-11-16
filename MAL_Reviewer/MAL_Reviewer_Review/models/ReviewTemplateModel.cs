@@ -16,14 +16,16 @@ namespace MAL_Reviewer_Review.models
         /// <param name="useIntro"></param>
         /// <param name="addTLDR"></param>
         /// <param name="creationDate"></param>
+        /// <param name="lastModified"></param>
         /// <param name="templateAspects"></param>
-        public ReviewTemplateModel(string templateName, string templateReviewIntro, bool useIntro, bool addTLDR, DateTime creationDate, List<ReviewAspectModel> templateAspects)
+        public ReviewTemplateModel(string templateName, string templateReviewIntro, bool useIntro, bool addTLDR, DateTime creationDate, DateTime lastModified, List<ReviewAspectModel> templateAspects)
         {
             TemplateName = templateName;
             TemplateReviewIntro = templateReviewIntro;
             UseIntro = useIntro;
             AddTLDR = addTLDR;
             CreationDate = creationDate;
+            LastModified = lastModified;
             TemplateAspects = templateAspects;
         }
 
@@ -51,6 +53,11 @@ namespace MAL_Reviewer_Review.models
         /// The date of when the review template was created.
         /// </summary>
         public DateTime CreationDate { get; set; }
+
+        /// <summary>
+        /// The date of when the review template was last modified.
+        /// </summary>
+        public DateTime LastModified { get; set; }
 
         /// <summary>
         /// The list of the aspects of the review template (ex; Art, Story, Sound...).

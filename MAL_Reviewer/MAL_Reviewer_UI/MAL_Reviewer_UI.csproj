@@ -94,6 +94,12 @@
     <Compile Include="user_controls\CardControl.Designer.cs">
       <DependentUpon>CardControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="user_controls\CigControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="user_controls\CigControl.Designer.cs">
+      <DependentUpon>CigControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="user_controls\EntryListControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="user_controls\CardControl.resx">
       <DependentUpon>CardControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_controls\CigControl.resx">
+      <DependentUpon>CigControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user_controls\EntryListControl.resx">
       <DependentUpon>EntryListControl.cs</DependentUpon>

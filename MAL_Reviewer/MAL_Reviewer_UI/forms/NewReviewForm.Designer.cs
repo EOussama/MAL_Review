@@ -302,6 +302,8 @@
             this.searchControl.InnerText = "";
             this.searchControl.Location = new System.Drawing.Point(12, 40);
             this.searchControl.Name = "searchControl";
+            this.searchControl.Placeholder = "Target\'s title...";
+            this.searchControl.PlaceholderColor = System.Drawing.SystemColors.ControlDark;
             this.searchControl.Size = new System.Drawing.Size(230, 35);
             this.searchControl.SubmitMin = 3;
             this.searchControl.TabIndex = 0;
