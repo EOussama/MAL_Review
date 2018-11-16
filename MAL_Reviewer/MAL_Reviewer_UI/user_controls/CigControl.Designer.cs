@@ -53,13 +53,14 @@
             this.closeLabel.BackColor = System.Drawing.Color.Transparent;
             this.closeLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closeLabel.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.closeLabel.Location = new System.Drawing.Point(33, 0);
             this.closeLabel.Name = "closeLabel";
             this.closeLabel.Size = new System.Drawing.Size(13, 13);
             this.closeLabel.TabIndex = 1;
             this.closeLabel.Text = "x";
             this.closeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.closeLabel.Click += new System.EventHandler(this.closeLabel_Click);
+            this.closeLabel.Click += new System.EventHandler(this.CloseLabel_Click);
             this.closeLabel.MouseEnter += new System.EventHandler(this.CloseLabel_MouseEnter);
             this.closeLabel.MouseLeave += new System.EventHandler(this.CloseLabel_MouseLeave);
             // 
@@ -72,9 +73,12 @@
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.closeLabel);
             this.Controls.Add(this.cigLabel);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "CigControl";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.Size = new System.Drawing.Size(46, 23);
+            this.MouseEnter += new System.EventHandler(this.CigControl_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.CigControl_MouseLeave);
             this.ResumeLayout(false);
             this.PerformLayout();
 

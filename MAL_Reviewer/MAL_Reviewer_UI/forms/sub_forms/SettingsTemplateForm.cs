@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Linq;
+using System.Windows.Forms;
 using MAL_Reviewer_Review;
 using MAL_Reviewer_Review.models;
 using MAL_Reviewer_UI.user_controls;
@@ -25,8 +27,8 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         {
             this.templateLabel.Text = $"Review templates [{ Review.ReviewTemplates.Count }]";
 
-            this.templateListBox.Items.Clear();
-            Review.ReviewTemplates.ForEach(revTemp => this.templateListBox.Items.Add(revTemp.TemplateName));
+            this.templateListBox.DataSource = Review.ReviewTemplates;
+            this.templateListBox.DisplayMember = "TemplateName";
 
             if (this.templateListBox.Items.Count > 0)
             {
@@ -54,14 +56,48 @@ namespace MAL_Reviewer_UI.forms.sub_forms
             }
         }
 
-        private void TemplateListBox_SelectedIndexChanged(object sender, System.EventArgs e)
+        private void TemplateListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             DisplayReviewTemplateInfo();
         }
 
-        private void TemplateDefaultButton_Click(object sender, System.EventArgs e)
+        private void TemplateDefaultButton_Click(object sender, EventArgs e)
         {
             DisplayReviewTemplateInfo();
+        }
+
+        private void TemplateUpdateButton_Click(object sender, EventArgs e)
+        {
+            string newName = this.templatePreviewRichTextBox.Text.Trim();
+
+            try
+            {
+                if (newName.Length == 0) throw new Exception("Input a valid name for the review template.");
+
+                ReviewTemplateModel reviewTemplateModel = Review.ReviewTemplates[this.templateListBox.SelectedIndex];
+
+                reviewTemplateModel.TemplateName = newName;
+
+                reviewTemplateModel.TemplateAspects.Clear();
+                templateAspectsFlowPanel.Controls.OfType<CigControl>().ToList().ForEach(aspect => reviewTemplateModel.TemplateAspects.Add(new ReviewAspectModel(aspect.Label, "", 0)));
+
+                reviewTemplateModel.UseIntro = templateIntroCheckBox.Checked;
+                reviewTemplateModel.AddTLDR = templateTLDRCheckBox.Checked;
+
+                reviewTemplateModel.LastModified = DateTime.Now;
+
+                Review.ReviewTemplates[this.templateListBox.SelectedIndex] = reviewTemplateModel;
+
+                MessageBox.Show($"The review template “{ reviewTemplateModel.TemplateName }” was successfully updated!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Update the tooltips
+                this.reviewTemplateTooltip.SetToolTip(this.creationDateLabel, reviewTemplateModel.CreationDate.ToLongTimeString());
+                this.reviewTemplateTooltip.SetToolTip(this.editDateLabel, reviewTemplateModel.LastModified.ToLongTimeString());
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Notice", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         /// <summary>
@@ -99,11 +135,10 @@ namespace MAL_Reviewer_UI.forms.sub_forms
             ReviewTemplateModel reviewTemplateModel = Review.ReviewTemplates[this.templateListBox.SelectedIndex];
 
             // Updating the title.
-            this.templatePreviewLabel.Text = reviewTemplateModel.TemplateName;
-            this.reviewTemplateTitleTooltip.SetToolTip(this.templatePreviewLabel, reviewTemplateModel.TemplateName);
+            this.templatePreviewRichTextBox.Text = reviewTemplateModel.TemplateName;
 
             // Updating the aspects.
-            templateAspectsFlowPanel.Controls.Clear();
+            this.templateAspectsFlowPanel.Controls.Clear();
             reviewTemplateModel.TemplateAspects.ForEach(aspect => SubmitAspect(aspect.AspectName));
 
             // Updating the checkboxes.
@@ -111,8 +146,14 @@ namespace MAL_Reviewer_UI.forms.sub_forms
             this.templateTLDRCheckBox.Checked = reviewTemplateModel.AddTLDR;
 
             // Updating the dates.
-            this.creationDateLabel.Text = $"Created on {reviewTemplateModel.CreationDate.ToShortDateString()}";
-            this.editDateLabel.Text = $"Last modified on {reviewTemplateModel.LastModified.ToShortDateString()}";
+            this.creationDateLabel.Text = $"Created on {reviewTemplateModel.CreationDate.ToLongDateString()}";
+            this.editDateLabel.Text = $"Last modified on {reviewTemplateModel.LastModified.ToLongDateString()}";
+            this.reviewTemplateTooltip.SetToolTip(this.creationDateLabel, reviewTemplateModel.CreationDate.ToLongTimeString());
+            this.reviewTemplateTooltip.SetToolTip(this.editDateLabel, reviewTemplateModel.LastModified.ToLongTimeString());
+
+            //Aligning the richtextbox content.
+            this.templatePreviewRichTextBox.SelectAll();
+            this.templatePreviewRichTextBox.SelectionAlignment = HorizontalAlignment.Center;
         }
     }
 }

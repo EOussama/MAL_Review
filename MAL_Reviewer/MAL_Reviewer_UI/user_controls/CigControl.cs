@@ -14,6 +14,12 @@ namespace MAL_Reviewer_UI.user_controls
         public CigControl()
         {
             InitializeComponent();
+
+            this.cigLabel.MouseEnter += CigControl_MouseEnter;
+            this.cigLabel.MouseLeave += CigControl_MouseLeave;
+
+            this.closeLabel.MouseEnter += CigControl_MouseEnter;
+            this.closeLabel.MouseLeave += CigControl_MouseLeave;
         }
 
         /// <summary>
@@ -43,9 +49,22 @@ namespace MAL_Reviewer_UI.user_controls
             this.closeLabel.Font = new Font(this.closeLabel.Font.FontFamily, this.closeLabel.Font.Size, FontStyle.Regular);
         }
 
-        private void closeLabel_Click(object sender, System.EventArgs e)
+        private void CloseLabel_Click(object sender, System.EventArgs e)
         {
+            // Destroying the label control.
             this.Dispose();
+        }
+
+        private void CigControl_MouseEnter(object sender, System.EventArgs e)
+        {
+            this.closeLabel.ForeColor = Color.Black;
+            this.BackColor = SystemColors.ControlLight;
+        }
+
+        private void CigControl_MouseLeave(object sender, System.EventArgs e)
+        {
+            this.closeLabel.ForeColor = SystemColors.ControlDark;
+            this.BackColor = SystemColors.Control;
         }
     }
 }
