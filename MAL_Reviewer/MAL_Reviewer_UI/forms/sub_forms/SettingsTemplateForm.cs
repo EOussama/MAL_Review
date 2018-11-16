@@ -56,11 +56,12 @@ namespace MAL_Reviewer_UI.forms.sub_forms
 
         private void TemplateListBox_SelectedIndexChanged(object sender, System.EventArgs e)
         {
-            // Fetching the selected review template.
-            ReviewTemplateModel reviewTemplateModel = Review.ReviewTemplates[this.templateListBox.SelectedIndex];
+            DisplayReviewTemplateInfo();
+        }
 
-            this.templatePreviewLabel.Text = reviewTemplateModel.TemplateName;
-            this.reviewTemplateTitleTooltip.SetToolTip(this.templatePreviewLabel, reviewTemplateModel.TemplateName);
+        private void TemplateDefaultButton_Click(object sender, System.EventArgs e)
+        {
+            DisplayReviewTemplateInfo();
         }
 
         /// <summary>
@@ -87,6 +88,31 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         {
             this.templateAspectsFlowPanel.Controls.Add(new CigControl(label));
             this.aspectsTextBox.Clear();
-        }        
+        }
+
+        /// <summary>
+        /// Updates the preview UI with the selected review template's information.
+        /// </summary>
+        private void DisplayReviewTemplateInfo()
+        {
+            // Fetching the selected review template.
+            ReviewTemplateModel reviewTemplateModel = Review.ReviewTemplates[this.templateListBox.SelectedIndex];
+
+            // Updating the title.
+            this.templatePreviewLabel.Text = reviewTemplateModel.TemplateName;
+            this.reviewTemplateTitleTooltip.SetToolTip(this.templatePreviewLabel, reviewTemplateModel.TemplateName);
+
+            // Updating the aspects.
+            templateAspectsFlowPanel.Controls.Clear();
+            reviewTemplateModel.TemplateAspects.ForEach(aspect => SubmitAspect(aspect.AspectName));
+
+            // Updating the checkboxes.
+            this.templateIntroCheckBox.Checked = reviewTemplateModel.UseIntro;
+            this.templateTLDRCheckBox.Checked = reviewTemplateModel.AddTLDR;
+
+            // Updating the dates.
+            this.creationDateLabel.Text = $"Created on {reviewTemplateModel.CreationDate.ToShortDateString()}";
+            this.editDateLabel.Text = $"Last modified on {reviewTemplateModel.LastModified.ToShortDateString()}";
+        }
     }
 }

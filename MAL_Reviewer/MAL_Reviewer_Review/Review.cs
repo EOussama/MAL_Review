@@ -29,7 +29,7 @@ namespace MAL_Reviewer_Review
                         new ReviewAspectModel("Enjoyment", "", 0)
                     }),
                 new ReviewTemplateModel("Lazy review", "", true, false, DateTime.Now, DateTime.Now, new List<ReviewAspectModel>()),
-                new ReviewTemplateModel("Super long review, really.", "", true, true, DateTime.Now, DateTime.Now new List<ReviewAspectModel>() {
+                new ReviewTemplateModel("Super long review, really.", "", true, true, DateTime.Now, DateTime.Now, new List<ReviewAspectModel>() {
                         new ReviewAspectModel("Story", "", 0),
                         new ReviewAspectModel("Art", "", 0),
                         new ReviewAspectModel("Sound", "", 0),

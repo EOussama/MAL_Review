@@ -39,13 +39,13 @@
             this.templateTLDRCheckBox = new System.Windows.Forms.CheckBox();
             this.templateIntroCheckBox = new System.Windows.Forms.CheckBox();
             this.templateAspectsPanel = new System.Windows.Forms.Panel();
+            this.aspectsTextBox = new MAL_Reviewer_UI.user_controls.TextboxControl();
             this.templateAspectsFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.templatePreviewLabel = new System.Windows.Forms.Label();
             this.templateLabel = new System.Windows.Forms.Label();
             this.templateListBox = new System.Windows.Forms.ListBox();
             this.linePanel = new System.Windows.Forms.Panel();
             this.titleLabel = new System.Windows.Forms.Label();
-            this.aspectsTextBox = new MAL_Reviewer_UI.user_controls.TextboxControl();
             this.reviewTemplateTitleTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.contentPanel.SuspendLayout();
             this.templatePreviewPanel.SuspendLayout();
@@ -118,6 +118,7 @@
             this.templateDefaultButton.TabIndex = 18;
             this.templateDefaultButton.Text = "Default";
             this.templateDefaultButton.UseVisualStyleBackColor = true;
+            this.templateDefaultButton.Click += new System.EventHandler(this.TemplateDefaultButton_Click);
             // 
             // templateUpdateButton
             // 
@@ -176,6 +177,26 @@
             this.templateAspectsPanel.Name = "templateAspectsPanel";
             this.templateAspectsPanel.Size = new System.Drawing.Size(205, 125);
             this.templateAspectsPanel.TabIndex = 4;
+            // 
+            // aspectsTextBox
+            // 
+            this.aspectsTextBox.AllowLoad = false;
+            this.aspectsTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.aspectsTextBox.AutoSubmit = false;
+            this.aspectsTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aspectsTextBox.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.aspectsTextBox.Icon = global::MAL_Reviewer_UI.Properties.Resources.icon_add;
+            this.aspectsTextBox.InnerText = "";
+            this.aspectsTextBox.Location = new System.Drawing.Point(3, -1);
+            this.aspectsTextBox.Name = "aspectsTextBox";
+            this.aspectsTextBox.Placeholder = "Aspect name...";
+            this.aspectsTextBox.PlaceholderColor = System.Drawing.SystemColors.ControlDark;
+            this.aspectsTextBox.Size = new System.Drawing.Size(201, 36);
+            this.aspectsTextBox.SubmitMin = 3;
+            this.aspectsTextBox.TabIndex = 3;
+            this.aspectsTextBox.Tag = "0";
+            this.aspectsTextBox.ToggleIcon = true;
             // 
             // templateAspectsFlowPanel
             // 
@@ -249,26 +270,6 @@
             this.titleLabel.Size = new System.Drawing.Size(175, 25);
             this.titleLabel.TabIndex = 6;
             this.titleLabel.Text = "Template settings";
-            // 
-            // aspectsTextBox
-            // 
-            this.aspectsTextBox.AllowLoad = false;
-            this.aspectsTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.aspectsTextBox.AutoSubmit = false;
-            this.aspectsTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.aspectsTextBox.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.aspectsTextBox.Icon = global::MAL_Reviewer_UI.Properties.Resources.icon_add;
-            this.aspectsTextBox.InnerText = "";
-            this.aspectsTextBox.Location = new System.Drawing.Point(3, -1);
-            this.aspectsTextBox.Name = "aspectsTextBox";
-            this.aspectsTextBox.Placeholder = "Aspect name...";
-            this.aspectsTextBox.PlaceholderColor = System.Drawing.SystemColors.ControlDark;
-            this.aspectsTextBox.Size = new System.Drawing.Size(201, 36);
-            this.aspectsTextBox.SubmitMin = 3;
-            this.aspectsTextBox.TabIndex = 3;
-            this.aspectsTextBox.Tag = "0";
-            this.aspectsTextBox.ToggleIcon = true;
             // 
             // reviewTemplateTitleTooltip
             // 
