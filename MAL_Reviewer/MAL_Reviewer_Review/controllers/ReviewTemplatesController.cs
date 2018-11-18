@@ -14,9 +14,9 @@ namespace MAL_Reviewer_Core.controllers
     public class ReviewTemplatesController : ISettings
     {
         /// <summary>
-        /// The default name of every review template.
+        /// The default name of all review templates.
         /// </summary>
-        private const string defaultReviewTemplateName = "New review template";
+        private const string DefaultReviewTemplateName = "New review template";
 
         /// <summary>
         /// The maximum review templates allowed to be created.
@@ -24,12 +24,12 @@ namespace MAL_Reviewer_Core.controllers
         public static readonly short MaxReviewTemplates = 10;
 
         /// <summary>
-        /// Contains all the template reviews in memory.
+        /// Contains all the template reviews loaded in the memory.
         /// </summary>
         public List<ReviewTemplateModel> ReviewTemplates { get; set; }
 
         /// <summary>
-        /// Constructor.
+        /// Parameterless constructor.
         /// </summary>
         public ReviewTemplatesController() { }
 
@@ -44,7 +44,7 @@ namespace MAL_Reviewer_Core.controllers
             {
                 return ReviewTemplates[index];
             }
-            catch (Exception)
+            catch (InvalidReviewTemplateException)
             {
                 throw;
             }
@@ -112,10 +112,10 @@ namespace MAL_Reviewer_Core.controllers
         public string GetDuplicateName()
         {
             // Getting the number of the review template that have the same default review template name as their title.
-            int nameDups = ReviewTemplates.Where(reviewTemp => reviewTemp.TemplateName.StartsWith(defaultReviewTemplateName)).Count();
+            int nameDups = ReviewTemplates.Where(reviewTemp => reviewTemp.TemplateName.StartsWith(DefaultReviewTemplateName)).Count();
 
             // Constructing a review template name, (ex: defaultReviewTemplateName, defaultReviewTemplateName 1, defaultReviewTemplateName 2...).
-            string reviewTemplateName = $"{ defaultReviewTemplateName }{ (nameDups > 0 ? (" " + nameDups.ToString()) : "") }";
+            string reviewTemplateName = $"{ DefaultReviewTemplateName }{ (nameDups > 0 ? (" " + nameDups.ToString()) : "") }";
 
             return reviewTemplateName;
         }
