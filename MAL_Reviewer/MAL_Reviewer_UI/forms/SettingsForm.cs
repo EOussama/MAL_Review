@@ -2,49 +2,55 @@
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using MAL_Reviewer_UI.classes;
+using MAL_Reviewer_UI.extensions;
 using MAL_Reviewer_UI.forms.sub_forms;
 
 namespace MAL_Reviewer_UI.forms
 {
     public partial class SettingsForm : Form
     {
+        #region Fields
+
         private Form
-            userSubForm,
-            themeSubForm,
-            templateSubForm,
-            searchSubForm,
-            infoSubForm;
+            UserSubForm,
+            ThemeSubForm,
+            ReviewTemplateSubForm,
+            SearchSubForm,
+            InfoSubForm;
+
+        #endregion
+
+        #region Constructors
 
         /// <summary>
-        /// Constructor.
+        /// Parameterless constructor.
         /// </summary>
         public SettingsForm()
         {
             InitializeComponent();
 
             // Instanciating the sub forms.
-            userSubForm = new Form()
+            UserSubForm = new SettingsUserForm()
             {
                 TopLevel = false,
                 Dock = DockStyle.Fill
             };
-            themeSubForm = new Form()
+            ThemeSubForm = new SettingsThemeForm()
             {
                 TopLevel = false,
                 Dock = DockStyle.Fill
             };
-            templateSubForm = new SettingsTemplateForm()
+            ReviewTemplateSubForm = new SettingsTemplateForm()
             {
                 TopLevel = false,
                 Dock = DockStyle.Fill
             };
-            searchSubForm = new Form()
+            SearchSubForm = new SettingsSearchForm()
             {
                 TopLevel = false,
                 Dock = DockStyle.Fill
             };
-            infoSubForm = new Form()
+            InfoSubForm = new SettingsInfoForm()
             {
                 TopLevel = false,
                 Dock = DockStyle.Fill
@@ -52,77 +58,53 @@ namespace MAL_Reviewer_UI.forms
 
             // Adding the sub forms to the content panel.
             contentPanel.Controls.AddRange(new Form[] {
-                userSubForm,
-                themeSubForm,
-                templateSubForm,
-                searchSubForm,
-                infoSubForm
+                UserSubForm,
+                ThemeSubForm,
+                ReviewTemplateSubForm,
+                SearchSubForm,
+                InfoSubForm
             });
         }
 
-        private void UserButton_Click(object sender, EventArgs e)
-        {
-            if (!userSubForm.Visible)
-            {
-                this.userSubForm.Show();
-                this.HideAllExcept(userSubForm);
-                ((Button)sender).Highlight(Color.LightGray, Color.Transparent, sidePanel.Controls.OfType<Button>().Where(btn => btn != (Button)sender).ToArray());
-            }
-        }
+        #endregion
 
-        private void ThemeButton_Click(object sender, EventArgs e)
-        {
-            if (!themeSubForm.Visible)
-            {
-                this.themeSubForm.Show();
-                this.HideAllExcept(themeSubForm);
-                ((Button)sender).Highlight(Color.LightGray, Color.Transparent, sidePanel.Controls.OfType<Button>().Where(btn => btn != (Button)sender).ToArray());
-            }
-        }
-
-        private void TemplateButton_Click(object sender, EventArgs e)
-        {
-            if (!templateSubForm.Visible)
-            {
-                this.templateSubForm.Show();
-                this.HideAllExcept(templateSubForm);
-                ((Button)sender).Highlight(Color.LightGray, Color.Transparent, sidePanel.Controls.OfType<Button>().Where(btn => btn != (Button)sender).ToArray());
-            }
-        }
-
-        private void SearchButton_Click(object sender, EventArgs e)
-        {
-            if (!searchSubForm.Visible)
-            {
-                this.searchSubForm.Show();
-                this.HideAllExcept(searchSubForm);
-                ((Button)sender).Highlight(Color.LightGray, Color.Transparent, sidePanel.Controls.OfType<Button>().Where(btn => btn != (Button)sender).ToArray());
-            }
-        }
-
-        private void InfoButton_Click(object sender, EventArgs e)
-        {
-            if (!infoSubForm.Visible)
-            {
-                this.infoSubForm.Show();
-                this.HideAllExcept(infoSubForm);
-                ((Button)sender).Highlight(Color.LightGray, Color.Transparent, sidePanel.Controls.OfType<Button>().Where(btn => btn != (Button)sender).ToArray());
-            }
-        }
+        #region Private methods
 
         /// <summary>
-        /// Hides all of the sub forms except for the passed one.
+        /// Opens the “User”'s settings sub form.
         /// </summary>
-        /// <param name="exceptionForm"></param>
-        private void HideAllExcept(Form exceptionForm)
-        {
-            foreach (Form form in contentPanel.Controls)
-            {
-                if (form != exceptionForm)
-                {
-                    form.Hide();
-                }
-            }
-        }
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UserButton_Click(object sender, EventArgs e) => UserSubForm.ToggleSubForm((Button)sender, contentPanel, sidePanel);
+
+        /// <summary>
+        /// Opens the “Theme”'s settings sub form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ThemeButton_Click(object sender, EventArgs e) => ThemeSubForm.ToggleSubForm((Button)sender, contentPanel, sidePanel);
+
+        /// <summary>
+        /// Opens the “Review Templates”'s settings sub form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TemplateButton_Click(object sender, EventArgs e) => ReviewTemplateSubForm.ToggleSubForm((Button)sender, contentPanel, sidePanel);
+
+        /// <summary>
+        /// Opens the “Search”'s settings sub form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SearchButton_Click(object sender, EventArgs e) => SearchSubForm.ToggleSubForm((Button)sender, contentPanel, sidePanel);
+
+        /// <summary>
+        /// Opens the “Info”'s settings sub form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void InfoButton_Click(object sender, EventArgs e) => InfoSubForm.ToggleSubForm((Button)sender, contentPanel, sidePanel);
+
+        #endregion
     }
 }

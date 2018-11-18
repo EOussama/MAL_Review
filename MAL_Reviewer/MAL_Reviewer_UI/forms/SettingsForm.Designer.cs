@@ -122,7 +122,7 @@
             this.templateButton.Name = "templateButton";
             this.templateButton.Size = new System.Drawing.Size(69, 67);
             this.templateButton.TabIndex = 6;
-            this.extraInfo.SetToolTip(this.templateButton, "Template settings");
+            this.extraInfo.SetToolTip(this.templateButton, "Review templates settings");
             this.templateButton.UseVisualStyleBackColor = false;
             this.templateButton.Click += new System.EventHandler(this.TemplateButton_Click);
             // 

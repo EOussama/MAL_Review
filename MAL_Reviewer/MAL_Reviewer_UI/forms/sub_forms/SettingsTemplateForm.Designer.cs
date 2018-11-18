@@ -42,6 +42,7 @@
             this.templateTLDRCheckBox = new System.Windows.Forms.CheckBox();
             this.templateIntroCheckBox = new System.Windows.Forms.CheckBox();
             this.templateAspectsPanel = new System.Windows.Forms.Panel();
+            this.aspectsTextBox = new MAL_Reviewer_UI.user_controls.TextboxControl();
             this.templateAspectsFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.templateLabel = new System.Windows.Forms.Label();
             this.templateListBox = new System.Windows.Forms.ListBox();
@@ -50,7 +51,6 @@
             this.reviewTemplateTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.reviewTemplateCreateButton = new System.Windows.Forms.Button();
             this.reviewTemplateSettingsResetButton = new System.Windows.Forms.Button();
-            this.aspectsTextBox = new MAL_Reviewer_UI.user_controls.TextboxControl();
             this.contentPanel.SuspendLayout();
             this.templatePreviewPanel.SuspendLayout();
             this.templateAspectsPanel.SuspendLayout();
@@ -228,6 +228,26 @@
             this.templateAspectsPanel.Size = new System.Drawing.Size(205, 125);
             this.templateAspectsPanel.TabIndex = 4;
             // 
+            // aspectsTextBox
+            // 
+            this.aspectsTextBox.AllowLoad = false;
+            this.aspectsTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.aspectsTextBox.AutoSubmit = false;
+            this.aspectsTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.aspectsTextBox.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.aspectsTextBox.Icon = global::MAL_Reviewer_UI.Properties.Resources.icon_add;
+            this.aspectsTextBox.InnerText = "";
+            this.aspectsTextBox.Location = new System.Drawing.Point(-1, -1);
+            this.aspectsTextBox.Name = "aspectsTextBox";
+            this.aspectsTextBox.Placeholder = "Aspect name...";
+            this.aspectsTextBox.PlaceholderColor = System.Drawing.SystemColors.ControlDark;
+            this.aspectsTextBox.Size = new System.Drawing.Size(205, 36);
+            this.aspectsTextBox.SubmitMin = 3;
+            this.aspectsTextBox.TabIndex = 3;
+            this.aspectsTextBox.Tag = "0";
+            this.aspectsTextBox.ToggleIcon = true;
+            // 
             // templateAspectsFlowPanel
             // 
             this.templateAspectsFlowPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -283,9 +303,9 @@
             this.titleLabel.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.Location = new System.Drawing.Point(12, 15);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(175, 25);
+            this.titleLabel.Size = new System.Drawing.Size(245, 25);
             this.titleLabel.TabIndex = 6;
-            this.titleLabel.Text = "Template settings";
+            this.titleLabel.Text = "Review template settings";
             // 
             // reviewTemplateCreateButton
             // 
@@ -316,26 +336,6 @@
             this.reviewTemplateSettingsResetButton.Text = "Reset settings";
             this.reviewTemplateSettingsResetButton.UseVisualStyleBackColor = false;
             this.reviewTemplateSettingsResetButton.Click += new System.EventHandler(this.ReviewTemplateSettingsResetButton_Click);
-            // 
-            // aspectsTextBox
-            // 
-            this.aspectsTextBox.AllowLoad = false;
-            this.aspectsTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.aspectsTextBox.AutoSubmit = false;
-            this.aspectsTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.aspectsTextBox.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.aspectsTextBox.Icon = global::MAL_Reviewer_UI.Properties.Resources.icon_add;
-            this.aspectsTextBox.InnerText = "";
-            this.aspectsTextBox.Location = new System.Drawing.Point(-1, -1);
-            this.aspectsTextBox.Name = "aspectsTextBox";
-            this.aspectsTextBox.Placeholder = "Aspect name...";
-            this.aspectsTextBox.PlaceholderColor = System.Drawing.SystemColors.ControlDark;
-            this.aspectsTextBox.Size = new System.Drawing.Size(205, 36);
-            this.aspectsTextBox.SubmitMin = 3;
-            this.aspectsTextBox.TabIndex = 3;
-            this.aspectsTextBox.Tag = "0";
-            this.aspectsTextBox.ToggleIcon = true;
             // 
             // SettingsTemplateForm
             // 

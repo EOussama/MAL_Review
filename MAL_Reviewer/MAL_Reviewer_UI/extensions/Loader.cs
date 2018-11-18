@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
 using System.Collections.Generic;
 
-namespace MAL_Reviewer_UI.classes
+namespace MAL_Reviewer_UI.extensions
 {
     /// <summary>
     /// Everything that has to do with controling loading animation.

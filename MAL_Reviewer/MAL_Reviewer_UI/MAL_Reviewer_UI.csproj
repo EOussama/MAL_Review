@@ -49,8 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="classes\ButtonHighlight.cs" />
-    <Compile Include="classes\Loader.cs" />
+    <Compile Include="extensions\ButtonHighlight.cs" />
+    <Compile Include="extensions\Loader.cs" />
+    <Compile Include="extensions\SubFormToggle.cs" />
     <Compile Include="forms\LoadUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,11 +70,35 @@
     <Compile Include="forms\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\sub_forms\SettingsInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\sub_forms\SettingsInfoForm.Designer.cs">
+      <DependentUpon>SettingsInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\sub_forms\SettingsSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\sub_forms\SettingsSearchForm.Designer.cs">
+      <DependentUpon>SettingsSearchForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\sub_forms\SettingsTemplateForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\sub_forms\SettingsTemplateForm.Designer.cs">
       <DependentUpon>SettingsTemplateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\sub_forms\SettingsThemeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\sub_forms\SettingsThemeForm.Designer.cs">
+      <DependentUpon>SettingsThemeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\sub_forms\SettingsUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\sub_forms\SettingsUserForm.Designer.cs">
+      <DependentUpon>SettingsUserForm.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\WelcomeForm.cs">
       <SubType>Form</SubType>
@@ -151,8 +176,20 @@
     <EmbeddedResource Include="forms\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\sub_forms\SettingsInfoForm.resx">
+      <DependentUpon>SettingsInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\sub_forms\SettingsSearchForm.resx">
+      <DependentUpon>SettingsSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\sub_forms\SettingsTemplateForm.resx">
       <DependentUpon>SettingsTemplateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\sub_forms\SettingsThemeForm.resx">
+      <DependentUpon>SettingsThemeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\sub_forms\SettingsUserForm.resx">
+      <DependentUpon>SettingsUserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\WelcomeForm.resx">
       <DependentUpon>WelcomeForm.cs</DependentUpon>

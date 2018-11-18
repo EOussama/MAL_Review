@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using MAL_Reviewer_UI.user_controls;
-using MAL_Reviewer_UI.classes;
+using MAL_Reviewer_UI.extensions;
 using MAL_Reviewer_API;
 using MAL_Reviewer_API.models;
 using MAL_Reviewer_Core;
