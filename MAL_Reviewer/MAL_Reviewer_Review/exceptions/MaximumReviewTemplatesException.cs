@@ -1,4 +1,5 @@
 ﻿using System;
+using MAL_Reviewer_Core.controllers;
 
 namespace MAL_Reviewer_Core.exceptions
 {
@@ -9,8 +10,19 @@ namespace MAL_Reviewer_Core.exceptions
     public class MaximumReviewTemplatesException : Exception
     {
         /// <summary>
-        /// Constructor.
+        /// Parameterless constructor.
         /// </summary>
-        public MaximumReviewTemplatesException() :base() { }
+        public MaximumReviewTemplatesException()
+        {
+        }
+
+        /// <summary>
+        /// The exception return message.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return $"The maximum ({ ReviewTemplatesController.MaxReviewTemplates }) review templates allowed has been reached!";
+        }
     }
 }

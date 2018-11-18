@@ -16,7 +16,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         private short lastIndex = -1;
 
         /// <summary>
-        /// Constructor.
+        /// Parameterless constructor.
         /// </summary>
         public SettingsTemplateForm()
         {
@@ -76,13 +76,13 @@ namespace MAL_Reviewer_UI.forms.sub_forms
 
         private void TemplateDeleteButton_Click(object sender, EventArgs e)
         {
-            string reviewTemplateName = String.Empty;
+            string reviewTemplateName = this.templateListBox.Text;
 
             if (DialogResult.Yes == MessageBox.Show($"Do you really want to delete the “{ reviewTemplateName }” review template?", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
             {
                 try
                 {
-                    reviewTemplateName = Core.Settings.ReviewTemplatesSettings.DeleteReviewTemplate((short)this.templateListBox.SelectedIndex);
+                    Core.Settings.ReviewTemplatesSettings.DeleteReviewTemplate((short)this.templateListBox.SelectedIndex);
                 }
                 catch (Exception ex)
                 {
@@ -91,7 +91,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
                 }
 
                 LoadReviewTemplates();
-                MessageBox.Show($"The review template { reviewTemplateName } was successfully removed!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"The review template { reviewTemplateName } was successfully removed!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
             }
         }
 
@@ -114,9 +114,9 @@ namespace MAL_Reviewer_UI.forms.sub_forms
 
                 MessageBox.Show("A new review template was successfully created!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (MaximumReviewTemplatesException)
+            catch (MaximumReviewTemplatesException ex)
             {
-                MessageBox.Show($"The maximum ({ ReviewTemplatesController.MaxReviewTemplates }) review templates allowed has been reached!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ex.ToString(), "Notice", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
