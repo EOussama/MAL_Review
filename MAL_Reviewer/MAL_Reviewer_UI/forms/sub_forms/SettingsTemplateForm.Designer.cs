@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.contentPanel = new System.Windows.Forms.Panel();
+            this.reviewTemplateClearButton = new System.Windows.Forms.Button();
             this.templatePreviewPanel = new System.Windows.Forms.Panel();
             this.noPreviewLabel = new System.Windows.Forms.Label();
             this.templatePreviewRichTextBox = new System.Windows.Forms.RichTextBox();
@@ -48,7 +49,7 @@
             this.titleLabel = new System.Windows.Forms.Label();
             this.reviewTemplateTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.reviewTemplateCreateButton = new System.Windows.Forms.Button();
-            this.reviewTemplateClearButton = new System.Windows.Forms.Button();
+            this.reviewTemplateSettingsResetButton = new System.Windows.Forms.Button();
             this.aspectsTextBox = new MAL_Reviewer_UI.user_controls.TextboxControl();
             this.contentPanel.SuspendLayout();
             this.templatePreviewPanel.SuspendLayout();
@@ -69,6 +70,19 @@
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Size = new System.Drawing.Size(512, 366);
             this.contentPanel.TabIndex = 8;
+            // 
+            // reviewTemplateClearButton
+            // 
+            this.reviewTemplateClearButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.reviewTemplateClearButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.reviewTemplateClearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reviewTemplateClearButton.Location = new System.Drawing.Point(268, 2);
+            this.reviewTemplateClearButton.Name = "reviewTemplateClearButton";
+            this.reviewTemplateClearButton.Size = new System.Drawing.Size(118, 27);
+            this.reviewTemplateClearButton.TabIndex = 22;
+            this.reviewTemplateClearButton.Text = "Clear all";
+            this.reviewTemplateClearButton.UseVisualStyleBackColor = true;
+            this.reviewTemplateClearButton.Click += new System.EventHandler(this.ReviewTemplateClearButton_Click);
             // 
             // templatePreviewPanel
             // 
@@ -150,7 +164,7 @@
             this.templateDefaultButton.TabIndex = 18;
             this.templateDefaultButton.Text = "Default";
             this.templateDefaultButton.UseVisualStyleBackColor = true;
-            this.templateDefaultButton.Click += new System.EventHandler(this.TemplateDefaultButton_Click);
+            this.templateDefaultButton.Click += new System.EventHandler(this.ReviewTemplateDefaultButton_Click);
             // 
             // templateUpdateButton
             // 
@@ -164,7 +178,7 @@
             this.templateUpdateButton.TabIndex = 17;
             this.templateUpdateButton.Text = "Update";
             this.templateUpdateButton.UseVisualStyleBackColor = true;
-            this.templateUpdateButton.Click += new System.EventHandler(this.TemplateUpdateButton_Click);
+            this.templateUpdateButton.Click += new System.EventHandler(this.ReviewTemplateUpdateButton_Click);
             // 
             // templateDeleteButton
             // 
@@ -178,7 +192,7 @@
             this.templateDeleteButton.TabIndex = 16;
             this.templateDeleteButton.Text = "Delete";
             this.templateDeleteButton.UseVisualStyleBackColor = true;
-            this.templateDeleteButton.Click += new System.EventHandler(this.TemplateDeleteButton_Click);
+            this.templateDeleteButton.Click += new System.EventHandler(this.ReviewTemplateDeleteButton_Click);
             // 
             // templateTLDRCheckBox
             // 
@@ -284,20 +298,24 @@
             this.reviewTemplateCreateButton.TabIndex = 21;
             this.reviewTemplateCreateButton.Text = "Create a new review template";
             this.reviewTemplateCreateButton.UseVisualStyleBackColor = true;
-            this.reviewTemplateCreateButton.Click += new System.EventHandler(this.TemplateCreateButton_Click);
+            this.reviewTemplateCreateButton.Click += new System.EventHandler(this.ReviewTemplateCreateButton_Click);
             // 
-            // reviewTemplateClearButton
+            // reviewTemplateSettingsResetButton
             // 
-            this.reviewTemplateClearButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.reviewTemplateClearButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.reviewTemplateClearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reviewTemplateClearButton.Location = new System.Drawing.Point(268, 2);
-            this.reviewTemplateClearButton.Name = "reviewTemplateClearButton";
-            this.reviewTemplateClearButton.Size = new System.Drawing.Size(118, 27);
-            this.reviewTemplateClearButton.TabIndex = 22;
-            this.reviewTemplateClearButton.Text = "Clear all";
-            this.reviewTemplateClearButton.UseVisualStyleBackColor = true;
-            this.reviewTemplateClearButton.Click += new System.EventHandler(this.ReviewTemplateClearButton_Click);
+            this.reviewTemplateSettingsResetButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.reviewTemplateSettingsResetButton.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.reviewTemplateSettingsResetButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.reviewTemplateSettingsResetButton.FlatAppearance.BorderSize = 0;
+            this.reviewTemplateSettingsResetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reviewTemplateSettingsResetButton.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reviewTemplateSettingsResetButton.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.reviewTemplateSettingsResetButton.Location = new System.Drawing.Point(432, 12);
+            this.reviewTemplateSettingsResetButton.Name = "reviewTemplateSettingsResetButton";
+            this.reviewTemplateSettingsResetButton.Size = new System.Drawing.Size(92, 33);
+            this.reviewTemplateSettingsResetButton.TabIndex = 23;
+            this.reviewTemplateSettingsResetButton.Text = "Reset settings";
+            this.reviewTemplateSettingsResetButton.UseVisualStyleBackColor = false;
+            this.reviewTemplateSettingsResetButton.Click += new System.EventHandler(this.ReviewTemplateSettingsResetButton_Click);
             // 
             // aspectsTextBox
             // 
@@ -326,6 +344,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(536, 473);
+            this.Controls.Add(this.reviewTemplateSettingsResetButton);
             this.Controls.Add(this.reviewTemplateCreateButton);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.linePanel);
@@ -368,5 +387,6 @@
         private System.Windows.Forms.Button reviewTemplateCreateButton;
         private System.Windows.Forms.Label noPreviewLabel;
         private System.Windows.Forms.Button reviewTemplateClearButton;
+        private System.Windows.Forms.Button reviewTemplateSettingsResetButton;
     }
 }

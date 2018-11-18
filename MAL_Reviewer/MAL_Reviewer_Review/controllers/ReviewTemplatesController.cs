@@ -27,7 +27,7 @@ namespace MAL_Reviewer_Core.controllers
         /// <summary>
         /// Contains all the template reviews loaded in the memory.
         /// </summary>
-        public List<ReviewTemplateModel> ReviewTemplates { get; set; }
+        public List<ReviewTemplateModel> ReviewTemplates { get; set; } = new List<ReviewTemplateModel>();
 
         /// <summary>
         /// Gets the number of review templates loaded into the memory.
@@ -55,7 +55,7 @@ namespace MAL_Reviewer_Core.controllers
         /// consideration the maximum allowed number.
         /// </summary>
         /// <returns></returns>
-        private bool IsAllowedToAddReviewTemplate() => ReviewTemplates.Count <= MaxReviewTemplates;
+        private bool IsAllowedToAddReviewTemplate() => ReviewTemplates?.Count <= MaxReviewTemplates;
 
         #endregion
 

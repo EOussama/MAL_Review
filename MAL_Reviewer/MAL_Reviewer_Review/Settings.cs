@@ -48,6 +48,36 @@ namespace MAL_Reviewer_Core
         #region Private methods
 
         /// <summary>
+        /// Creates the storage folder.
+        /// </summary>
+        private void CreateStorageFolder()
+        {
+            Directory.CreateDirectory(Path.Combine(Core.StoragePath, StorageFolder));
+        }
+
+        /// <summary>
+        /// Check if the folder where the data resides exists.
+        /// </summary>
+        /// <returns></returns>
+        public static bool DoesStorageFolderExist()
+        {
+            return Directory.Exists(Path.Combine(Core.StoragePath, StorageFolder));
+        }
+
+        /// <summary>
+        /// Check if the file where the data resides exists.
+        /// </summary>
+        /// <returns></returns>
+        public static bool DoesStorageFileExist()
+        {
+            return File.Exists(Path.Combine(Core.StoragePath, StorageFolder, StorageFile));
+        }
+
+        #endregion
+
+        #region Public methods
+
+        /// <summary>
         /// Initializing the settings.
         /// </summary>
         public void Init()
@@ -120,36 +150,6 @@ namespace MAL_Reviewer_Core
         {
             // Seeding review template settings.
             this.ReviewTemplatesSettings.SeedSettings();
-        }
-
-        #endregion
-
-        #region Public methods
-
-        /// <summary>
-        /// Creates the storage folder.
-        /// </summary>
-        private void CreateStorageFolder()
-        {
-            Directory.CreateDirectory(Path.Combine(Core.StoragePath, StorageFolder));
-        }
-
-        /// <summary>
-        /// Check if the folder where the data resides exists.
-        /// </summary>
-        /// <returns></returns>
-        public static bool DoesStorageFolderExist()
-        {
-            return Directory.Exists(Path.Combine(Core.StoragePath, StorageFolder));
-        }
-
-        /// <summary>
-        /// Check if the file where the data resides exists.
-        /// </summary>
-        /// <returns></returns>
-        public static bool DoesStorageFileExist()
-        {
-            return File.Exists(Path.Combine(Core.StoragePath, StorageFolder, StorageFile));
         }
 
         #endregion

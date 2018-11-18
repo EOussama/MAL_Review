@@ -13,12 +13,6 @@ namespace MAL_Reviewer_UI.forms.sub_forms
 {
     public partial class SettingsTemplateForm : Form
     {
-        #region Fields
-
-        private short LastIndex = -1;
-
-        #endregion
-
         #region Constructors
 
         /// <summary>
@@ -42,7 +36,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void TemplateDefaultButton_Click(object sender, EventArgs e)
+        private void ReviewTemplateDefaultButton_Click(object sender, EventArgs e)
         {
             DisplayReviewTemplateInfo();
         }
@@ -52,7 +46,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void TemplateUpdateButton_Click(object sender, EventArgs e)
+        private void ReviewTemplateUpdateButton_Click(object sender, EventArgs e)
         {
             string newName = this.templatePreviewRichTextBox.Text.Trim();
 
@@ -96,7 +90,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void TemplateDeleteButton_Click(object sender, EventArgs e)
+        private void ReviewTemplateDeleteButton_Click(object sender, EventArgs e)
         {
             // Getting the selecte review template's name and saving it in a temporary variable.
             string reviewTemplateName = this.templateListBox.Text;
@@ -122,7 +116,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void TemplateCreateButton_Click(object sender, EventArgs e)
+        private void ReviewTemplateCreateButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -134,10 +128,6 @@ namespace MAL_Reviewer_UI.forms.sub_forms
 
                 // Refreshing the UI.
                 LoadReviewTemplates();
-
-                // Setting the last selected index to the review that we've just created.
-                this.LastIndex = (short)(templateListBox.Items.Count - 1);
-                ResetLastSelectedItem();
 
                 MessageBox.Show("A new review template was successfully created!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -156,7 +146,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         {
             short reviewTemplatesCount = Core.Settings.ReviewTemplatesSettings.Count;
 
-            if (DialogResult.Yes == MessageBox.Show($"Do you really want to clear all { reviewTemplatesCount } review template(s)?", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            if (DialogResult.Yes == MessageBox.Show($"Do you really want to clear all { reviewTemplatesCount } review template(s)?\nOnce deleted they are permanently lost.", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
             {
                 try
                 {
@@ -172,6 +162,28 @@ namespace MAL_Reviewer_UI.forms.sub_forms
             }
         }
 
+        /// <summary>
+        /// Resets the review template settings.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ReviewTemplateSettingsResetButton_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show($"Are you sure you want to reset the template settings?\nAll existing templates with be deleted in the process.", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                // Clearing the review template settings.
+                Core.Settings.ReviewTemplatesSettings.Clear();
+
+                // Seeding the review template settings.
+                Core.Settings.ReviewTemplatesSettings.SeedSettings();
+
+                // Refreshing the UI.
+                LoadReviewTemplates();
+
+                MessageBox.Show("Review template settings were seccessfully reset.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
         #endregion
 
         #region UI control
@@ -183,12 +195,9 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         {
             this.templateLabel.Text = $"Review templates [{ Core.Settings.ReviewTemplatesSettings.ReviewTemplates.Count } / { ReviewTemplatesController.MaxReviewTemplates }]";
 
-            this.LastIndex = (short)this.templateListBox.SelectedIndex;
             this.templateListBox.DataSource = null;
             this.templateListBox.DataSource = Core.Settings.ReviewTemplatesSettings.ReviewTemplates;
             this.templateListBox.DisplayMember = "TemplateName";
-
-            ResetLastSelectedItem();
 
             // Toggle the review template management buttons.
             this.templateDeleteButton.Enabled = this.templateListBox.Items.Count > 0;
@@ -262,34 +271,6 @@ namespace MAL_Reviewer_UI.forms.sub_forms
 
                 // Centering the noPreview label.
                 this.noPreviewLabel.Location = new Point((this.templatePreviewPanel.Width / 2) - (this.noPreviewLabel.Width / 2), (this.templatePreviewPanel.Height / 2) - (this.noPreviewLabel.Height / 2));
-            }
-        }
-
-        /// <summary>
-        /// Selects the last selcted listbox item.
-        /// </summary>
-        private void ResetLastSelectedItem()
-        {
-            if (this.templateListBox.Items.Count > 0)
-            {
-                if (this.LastIndex >= this.templateListBox.Items.Count)
-                {
-                    this.templateListBox.SelectedIndex = this.LastIndex - 1;
-                }
-                else
-                {
-                    if (this.LastIndex < 0)
-                    {
-                        this.LastIndex = 0;
-                    }
-
-                    this.templateListBox.SelectedIndex = this.LastIndex;
-                }
-            }
-            else
-            {
-                this.LastIndex = -1;
-                this.templateListBox.SelectedIndex = this.LastIndex;
             }
         }
 
