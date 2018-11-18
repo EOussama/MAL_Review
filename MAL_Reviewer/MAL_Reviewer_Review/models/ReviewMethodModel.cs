@@ -13,19 +13,24 @@ namespace MAL_Reviewer_Core.models
         /// <summary>
         /// The scale of the review's rating (5, 10, 50...).
         /// </summary>
-        public byte ReviewScaling { get; set; }
+        public byte ReviewScaling { get; set; } = 10;
 
         /// <summary>
         /// Whether or not to use decimal numbers in the rating (ex; 8.63, 6.13...).
         /// </summary>
-        public bool UseDecimal { get; set; }
+        public bool UseDecimal { get; set; } = false;
 
         #endregion
 
         #region Constructors
 
         /// <summary>
-        /// Constructor.
+        /// Parameterless constructor.
+        /// </summary>
+        public ReviewMethodModel() { }
+
+        /// <summary>
+        /// Constructor with all parameters.
         /// </summary>
         /// <param name="reviewScale"></param>
         /// <param name="decimalUse"></param>

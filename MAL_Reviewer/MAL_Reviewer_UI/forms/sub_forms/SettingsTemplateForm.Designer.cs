@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.contentPanel = new System.Windows.Forms.Panel();
             this.templatePreviewPanel = new System.Windows.Forms.Panel();
+            this.noPreviewLabel = new System.Windows.Forms.Label();
             this.templatePreviewRichTextBox = new System.Windows.Forms.RichTextBox();
             this.editDateLabel = new System.Windows.Forms.Label();
             this.creationDateLabel = new System.Windows.Forms.Label();
@@ -46,8 +47,8 @@
             this.linePanel = new System.Windows.Forms.Panel();
             this.titleLabel = new System.Windows.Forms.Label();
             this.reviewTemplateTooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.TemplateCreateButton = new System.Windows.Forms.Button();
-            this.noPreviewLabel = new System.Windows.Forms.Label();
+            this.reviewTemplateCreateButton = new System.Windows.Forms.Button();
+            this.reviewTemplateClearButton = new System.Windows.Forms.Button();
             this.aspectsTextBox = new MAL_Reviewer_UI.user_controls.TextboxControl();
             this.contentPanel.SuspendLayout();
             this.templatePreviewPanel.SuspendLayout();
@@ -60,6 +61,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.contentPanel.AutoScroll = true;
+            this.contentPanel.Controls.Add(this.reviewTemplateClearButton);
             this.contentPanel.Controls.Add(this.templatePreviewPanel);
             this.contentPanel.Controls.Add(this.templateLabel);
             this.contentPanel.Controls.Add(this.templateListBox);
@@ -88,6 +90,18 @@
             this.templatePreviewPanel.Name = "templatePreviewPanel";
             this.templatePreviewPanel.Size = new System.Drawing.Size(239, 323);
             this.templatePreviewPanel.TabIndex = 2;
+            // 
+            // noPreviewLabel
+            // 
+            this.noPreviewLabel.AutoSize = true;
+            this.noPreviewLabel.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noPreviewLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.noPreviewLabel.Location = new System.Drawing.Point(28, 51);
+            this.noPreviewLabel.Name = "noPreviewLabel";
+            this.noPreviewLabel.Size = new System.Drawing.Size(190, 16);
+            this.noPreviewLabel.TabIndex = 21;
+            this.noPreviewLabel.Text = "No review templates to preview.";
+            this.noPreviewLabel.Visible = false;
             // 
             // templatePreviewRichTextBox
             // 
@@ -259,30 +273,31 @@
             this.titleLabel.TabIndex = 6;
             this.titleLabel.Text = "Template settings";
             // 
-            // TemplateCreateButton
+            // reviewTemplateCreateButton
             // 
-            this.TemplateCreateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TemplateCreateButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.TemplateCreateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TemplateCreateButton.Location = new System.Drawing.Point(280, 96);
-            this.TemplateCreateButton.Name = "TemplateCreateButton";
-            this.TemplateCreateButton.Size = new System.Drawing.Size(239, 27);
-            this.TemplateCreateButton.TabIndex = 21;
-            this.TemplateCreateButton.Text = "Create a new review template";
-            this.TemplateCreateButton.UseVisualStyleBackColor = true;
-            this.TemplateCreateButton.Click += new System.EventHandler(this.TemplateCreateButton_Click);
+            this.reviewTemplateCreateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.reviewTemplateCreateButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.reviewTemplateCreateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reviewTemplateCreateButton.Location = new System.Drawing.Point(401, 96);
+            this.reviewTemplateCreateButton.Name = "reviewTemplateCreateButton";
+            this.reviewTemplateCreateButton.Size = new System.Drawing.Size(118, 27);
+            this.reviewTemplateCreateButton.TabIndex = 21;
+            this.reviewTemplateCreateButton.Text = "Create a new review template";
+            this.reviewTemplateCreateButton.UseVisualStyleBackColor = true;
+            this.reviewTemplateCreateButton.Click += new System.EventHandler(this.TemplateCreateButton_Click);
             // 
-            // noPreviewLabel
+            // reviewTemplateClearButton
             // 
-            this.noPreviewLabel.AutoSize = true;
-            this.noPreviewLabel.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noPreviewLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.noPreviewLabel.Location = new System.Drawing.Point(28, 51);
-            this.noPreviewLabel.Name = "noPreviewLabel";
-            this.noPreviewLabel.Size = new System.Drawing.Size(190, 16);
-            this.noPreviewLabel.TabIndex = 21;
-            this.noPreviewLabel.Text = "No review templates to preview.";
-            this.noPreviewLabel.Visible = false;
+            this.reviewTemplateClearButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.reviewTemplateClearButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.reviewTemplateClearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reviewTemplateClearButton.Location = new System.Drawing.Point(268, 2);
+            this.reviewTemplateClearButton.Name = "reviewTemplateClearButton";
+            this.reviewTemplateClearButton.Size = new System.Drawing.Size(118, 27);
+            this.reviewTemplateClearButton.TabIndex = 22;
+            this.reviewTemplateClearButton.Text = "Clear all";
+            this.reviewTemplateClearButton.UseVisualStyleBackColor = true;
+            this.reviewTemplateClearButton.Click += new System.EventHandler(this.ReviewTemplateClearButton_Click);
             // 
             // aspectsTextBox
             // 
@@ -311,7 +326,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(536, 473);
-            this.Controls.Add(this.TemplateCreateButton);
+            this.Controls.Add(this.reviewTemplateCreateButton);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.linePanel);
             this.Controls.Add(this.titleLabel);
@@ -350,7 +365,8 @@
         private System.Windows.Forms.Label creationDateLabel;
         private System.Windows.Forms.ToolTip reviewTemplateTooltip;
         private System.Windows.Forms.RichTextBox templatePreviewRichTextBox;
-        private System.Windows.Forms.Button TemplateCreateButton;
+        private System.Windows.Forms.Button reviewTemplateCreateButton;
         private System.Windows.Forms.Label noPreviewLabel;
+        private System.Windows.Forms.Button reviewTemplateClearButton;
     }
 }

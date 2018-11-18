@@ -13,6 +13,8 @@ namespace MAL_Reviewer_Core
     /// </summary>
     public class Settings : ISettings
     {
+        #region Fields
+
         private const string
             // The settings storage folder's name.
             StorageFolder = "MAL_Reviewer",
@@ -20,23 +22,30 @@ namespace MAL_Reviewer_Core
             // The settings storage file's name.
             StorageFile = "settings.dat";
 
+        #endregion
+
+        #region Properties
+
         /// <summary>
         /// The review template's settings.
         /// </summary>
         public ReviewTemplatesController ReviewTemplatesSettings { get; set; }
 
-        /// <summary>
-        ///  The storage folder and file.
-        /// </summary>
-        
+        #endregion
+
+        #region Constructors
 
         /// <summary>
-        /// Constructor.
+        /// Parameterless constructor.
         /// </summary>
         public Settings()
         {
             this.ReviewTemplatesSettings = new ReviewTemplatesController();
         }
+
+        #endregion
+
+        #region Private methods
 
         /// <summary>
         /// Initializing the settings.
@@ -84,7 +93,7 @@ namespace MAL_Reviewer_Core
             Stream fileStream = new FileStream(Path.Combine(Core.StoragePath, StorageFolder, StorageFile), FileMode.Open, FileAccess.Read, FileShare.None);
 
             // Loading the data.
-            Settings loadedData = (Settings) binaryFormatter.Deserialize(fileStream);
+            Settings loadedData = (Settings)binaryFormatter.Deserialize(fileStream);
             this.ReviewTemplatesSettings = loadedData.ReviewTemplatesSettings;
 
             fileStream.Close();
@@ -113,6 +122,10 @@ namespace MAL_Reviewer_Core
             this.ReviewTemplatesSettings.SeedSettings();
         }
 
+        #endregion
+
+        #region Public methods
+
         /// <summary>
         /// Creates the storage folder.
         /// </summary>
@@ -138,5 +151,7 @@ namespace MAL_Reviewer_Core
         {
             return File.Exists(Path.Combine(Core.StoragePath, StorageFolder, StorageFile));
         }
+
+        #endregion
     }
 }

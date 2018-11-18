@@ -14,54 +14,54 @@ namespace MAL_Reviewer_Core.models
         /// <summary>
         /// The review's title.
         /// </summary>
-        public string TargetTitle { get; set; }
+        public string TargetTitle { get; set; } = "";
 
         /// <summary>
         /// The MAL ID of the Anime or Manga reviewed.
         /// </summary>
-        public int TargetId { get; set; }
+        public int TargetId { get; set; } = -1;
 
         /// <summary>
         /// The type of the review's target (ex; Anime or Manga).
         /// </summary>
-        public TargetType TargetType { get; set; }
+        public TargetType TargetType { get; set; } = TargetType.Anime;
 
         /// <summary>
         /// The review's rating.
         /// </summary>
-        public double ReviewRating { get; set; }
+        public double ReviewRating { get; set; } = 0;
 
         /// <summary>
         /// The review's intro.
         /// </summary>
-        public string TemplateReviewIntro { get; set; }
+        public string TemplateReviewIntro { get; set; } = "";
 
         /// <summary>
         /// The date of when the review was created.
         /// </summary>
-        public DateTime CreationDate { get; set; }
+        public DateTime CreationDate { get; set; } = DateTime.Now;
 
         /// <summary>
         /// The date of when the review was last modified.
         /// </summary>
-        public DateTime ModificationDate { get; set; }
+        public DateTime ModificationDate { get; set; } = DateTime.Now;
 
         /// <summary>
         /// The review's template.
         /// </summary>
-        public ReviewTemplateModel ReviewTemplate { get; set; }
+        public ReviewTemplateModel ReviewTemplate { get; set; } = new ReviewTemplateModel();
 
         /// <summary>
         /// The review method of the review template.
         /// </summary>
-        public ReviewMethodModel ReviewMethod { get; set; }
+        public ReviewMethodModel ReviewMethod { get; set; } = new ReviewMethodModel();
 
         #endregion
 
         #region Constructors
 
         /// <summary>
-        /// Constructor with parameters.
+        /// Constructor with all parameters.
         /// </summary>
         /// <param name="targetTitle"></param>
         /// <param name="targetId"></param>

@@ -13,7 +13,13 @@ namespace MAL_Reviewer_UI.forms.sub_forms
 {
     public partial class SettingsTemplateForm : Form
     {
-        private short lastIndex = -1;
+        #region Fields
+
+        private short LastIndex = -1;
+
+        #endregion
+
+        #region Constructors
 
         /// <summary>
         /// Parameterless constructor.
@@ -26,18 +32,26 @@ namespace MAL_Reviewer_UI.forms.sub_forms
             StyleAspectAdd();
         }
 
-        private void TemplateListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DisplayReviewTemplateInfo();
-        }
+        #endregion        
 
         #region CRUD management
 
+        /// <summary>
+        /// Handles the operation of setting a review template back to its default
+        /// configuration.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TemplateDefaultButton_Click(object sender, EventArgs e)
         {
             DisplayReviewTemplateInfo();
         }
 
+        /// <summary>
+        /// Updates a selected review template.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TemplateUpdateButton_Click(object sender, EventArgs e)
         {
             string newName = this.templatePreviewRichTextBox.Text.Trim();
@@ -46,20 +60,23 @@ namespace MAL_Reviewer_UI.forms.sub_forms
             {
                 if (newName.Length == 0) throw new Exception("Input a valid name for the review template.");
 
-                ReviewTemplateModel reviewTemplateModel = Core.Settings.ReviewTemplatesSettings.GetReviewTemplate((short)this.templateListBox.SelectedIndex);
-                string oldName = reviewTemplateModel.TemplateName;
+                // Getting the selected index of the listbox.
+                short selectedIndex = (short)this.templateListBox.SelectedIndex;
 
-                reviewTemplateModel.TemplateName = newName;
+                // Saving the review template's name that's about to be updated.
+                string oldName = templateListBox.Text;
 
-                reviewTemplateModel.TemplateAspects.Clear();
-                templateAspectsFlowPanel.Controls.OfType<CigControl>().ToList().ForEach(aspect => reviewTemplateModel.TemplateAspects.Add(new ReviewAspectModel(aspect.Label, "", 0)));
+                // Creating a new review template.
+                ReviewTemplateModel reviewTemplateModel = new ReviewTemplateModel()
+                {
+                    TemplateName = newName,
+                    TemplateAspects = GetReviewAspectsFromUI().ToList(),
+                    UseIntro = templateIntroCheckBox.Checked,
+                    UserTLDR = templateTLDRCheckBox.Checked,
+                    ModificationDate = DateTime.Now
+                };
 
-                reviewTemplateModel.UseIntro = templateIntroCheckBox.Checked;
-                reviewTemplateModel.UserTLDR = templateTLDRCheckBox.Checked;
-
-                reviewTemplateModel.ModificationDate = DateTime.Now;
-
-                Core.Settings.ReviewTemplatesSettings.UpdateReviewTemplate((short)this.templateListBox.SelectedIndex, reviewTemplateModel);
+                Core.Settings.ReviewTemplatesSettings.Update(selectedIndex, reviewTemplateModel);
                 LoadReviewTemplates();
 
                 MessageBox.Show($"The review template “{ oldName }” was successfully updated!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -68,26 +85,31 @@ namespace MAL_Reviewer_UI.forms.sub_forms
                 this.reviewTemplateTooltip.SetToolTip(this.creationDateLabel, reviewTemplateModel.CreationDate.ToLongTimeString());
                 this.reviewTemplateTooltip.SetToolTip(this.editDateLabel, reviewTemplateModel.ModificationDate.ToLongTimeString());
             }
-            catch(Exception ex)
+            catch(InvalidReviewTemplateException ex)
             {
-                MessageBox.Show(ex.Message, "Notice", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ex.ToString(), "Notice", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
+        /// <summary>
+        /// Deletes the selected review template.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TemplateDeleteButton_Click(object sender, EventArgs e)
         {
+            // Getting the selecte review template's name and saving it in a temporary variable.
             string reviewTemplateName = this.templateListBox.Text;
 
             if (DialogResult.Yes == MessageBox.Show($"Do you really want to delete the “{ reviewTemplateName }” review template?", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
             {
                 try
                 {
-                    Core.Settings.ReviewTemplatesSettings.DeleteReviewTemplate((short)this.templateListBox.SelectedIndex);
+                    Core.Settings.ReviewTemplatesSettings.Delete((short)this.templateListBox.SelectedIndex);
                 }
-                catch (Exception ex)
+                catch (InvalidReviewTemplateException ex)
                 {
-                    
-                    MessageBox.Show(ex.Message, "Notice", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show(ex.ToString(), "Notice", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
 
                 LoadReviewTemplates();
@@ -95,6 +117,11 @@ namespace MAL_Reviewer_UI.forms.sub_forms
             }
         }
 
+        /// <summary>
+        /// Creates a new review template.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TemplateCreateButton_Click(object sender, EventArgs e)
         {
             try
@@ -103,13 +130,13 @@ namespace MAL_Reviewer_UI.forms.sub_forms
                 string reviewTemplateName = Core.Settings.ReviewTemplatesSettings.GetDuplicateName();
 
                 // Creating a new empty review template.
-                Core.Settings.ReviewTemplatesSettings.AddReviewTemplate(new ReviewTemplateModel(reviewTemplateName, false, false, DateTime.Now, DateTime.Now, new List<ReviewAspectModel>()));
+                Core.Settings.ReviewTemplatesSettings.Add(new ReviewTemplateModel(reviewTemplateName, false, false, DateTime.Now, DateTime.Now, new List<ReviewAspectModel>()));
 
                 // Refreshing the UI.
                 LoadReviewTemplates();
 
                 // Setting the last selected index to the review that we've just created.
-                this.lastIndex = (short)(templateListBox.Items.Count - 1);
+                this.LastIndex = (short)(templateListBox.Items.Count - 1);
                 ResetLastSelectedItem();
 
                 MessageBox.Show("A new review template was successfully created!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -117,6 +144,31 @@ namespace MAL_Reviewer_UI.forms.sub_forms
             catch (MaximumReviewTemplatesException ex)
             {
                 MessageBox.Show(ex.ToString(), "Notice", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        /// <summary>
+        /// Clear all review templates.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ReviewTemplateClearButton_Click(object sender, EventArgs e)
+        {
+            short reviewTemplatesCount = Core.Settings.ReviewTemplatesSettings.Count;
+
+            if (DialogResult.Yes == MessageBox.Show($"Do you really want to clear all { reviewTemplatesCount } review template(s)?", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                try
+                {
+                    Core.Settings.ReviewTemplatesSettings.Clear();
+                }
+                catch (InvalidReviewTemplateException ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Notice", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+                LoadReviewTemplates();
+                MessageBox.Show($"All { reviewTemplatesCount } review template(s) were successfully deleted!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -131,7 +183,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         {
             this.templateLabel.Text = $"Review templates [{ Core.Settings.ReviewTemplatesSettings.ReviewTemplates.Count } / { ReviewTemplatesController.MaxReviewTemplates }]";
 
-            this.lastIndex = (short)this.templateListBox.SelectedIndex;
+            this.LastIndex = (short)this.templateListBox.SelectedIndex;
             this.templateListBox.DataSource = null;
             this.templateListBox.DataSource = Core.Settings.ReviewTemplatesSettings.ReviewTemplates;
             this.templateListBox.DisplayMember = "TemplateName";
@@ -142,6 +194,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
             this.templateDeleteButton.Enabled = this.templateListBox.Items.Count > 0;
             this.templateUpdateButton.Enabled = this.templateListBox.Items.Count > 0;
             this.templateDefaultButton.Enabled = this.templateListBox.Items.Count > 0;
+            this.reviewTemplateClearButton.Enabled = this.templateListBox.Items.Count > 0;
 
             DisplayEmptyUI();
         }
@@ -154,7 +207,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
             if (this.templateListBox.DataSource != null)
             {
                 // Fetching the selected review template.
-                ReviewTemplateModel reviewTemplateModel = Core.Settings.ReviewTemplatesSettings.GetReviewTemplate((short)this.templateListBox.SelectedIndex);
+                ReviewTemplateModel reviewTemplateModel = Core.Settings.ReviewTemplatesSettings.Get((short)this.templateListBox.SelectedIndex);
 
                 // Updating the title.
                 this.templatePreviewRichTextBox.Text = reviewTemplateModel.TemplateName;
@@ -219,30 +272,73 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         {
             if (this.templateListBox.Items.Count > 0)
             {
-                if (this.lastIndex >= this.templateListBox.Items.Count)
+                if (this.LastIndex >= this.templateListBox.Items.Count)
                 {
-                    this.templateListBox.SelectedIndex = this.lastIndex - 1;
+                    this.templateListBox.SelectedIndex = this.LastIndex - 1;
                 }
                 else
                 {
-                    if (this.lastIndex < 0)
+                    if (this.LastIndex < 0)
                     {
-                        this.lastIndex = 0;
+                        this.LastIndex = 0;
                     }
 
-                    this.templateListBox.SelectedIndex = this.lastIndex;
+                    this.templateListBox.SelectedIndex = this.LastIndex;
                 }
             }
             else
             {
-                this.lastIndex = -1;
-                this.templateListBox.SelectedIndex = this.lastIndex;
+                this.LastIndex = -1;
+                this.templateListBox.SelectedIndex = this.LastIndex;
             }
+        }
+
+        /// <summary>
+        /// Handles the listbox' items selection.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TemplateListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DisplayReviewTemplateInfo();
         }
 
         #endregion
 
         #region Aspect management
+
+        /// <summary>
+        /// Handles the keydown event on the aspects' textbox.
+        /// Used to detect the return key press so that the typed
+        /// aspect can be submit.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AspectsAdd_KeyDown(object sender, KeyEventArgs e)
+        {
+            string label = this.aspectsTextBox.InnerText.Trim();
+
+            if (e.KeyCode == Keys.Return && label.Length > 0)
+            {
+                SubmitAspect(label);
+            }
+        }
+
+        /// <summary>
+        /// Handles the mouse clicks on aspects' textbox add button.
+        /// Used to submit the typed value on the textbox as CigControl.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AspectsAdd_MouseClick(object sender, MouseEventArgs e)
+        {
+            string label = this.aspectsTextBox.InnerText.Trim();
+
+            if (e.Button == MouseButtons.Left && label.Length > 0)
+            {
+                SubmitAspect(label);
+            }
+        }
 
         /// <summary>
         /// Adds visual updates to the add button of the aspects
@@ -270,23 +366,15 @@ namespace MAL_Reviewer_UI.forms.sub_forms
             this.aspectsTextBox.Clear();
         }
 
-        private void AspectsAdd_KeyDown(object sender, KeyEventArgs e)
+        /// <summary>
+        /// Creates review aspects from the content of the UI.
+        /// </summary>
+        /// <returns></returns>
+        private IEnumerable<ReviewAspectModel> GetReviewAspectsFromUI()
         {
-            string label = this.aspectsTextBox.InnerText.Trim();
-
-            if (e.KeyCode == Keys.Return && label.Length > 0)
+            foreach (CigControl cigControl in templateAspectsFlowPanel.Controls)
             {
-                SubmitAspect(label);
-            }
-        }
-
-        private void AspectsAdd_MouseClick(object sender, MouseEventArgs e)
-        {
-            string label = this.aspectsTextBox.InnerText.Trim();
-
-            if (e.Button == MouseButtons.Left && label.Length > 0)
-            {
-                SubmitAspect(label);
+                yield return new ReviewAspectModel(cigControl.Label);
             }
         }
 

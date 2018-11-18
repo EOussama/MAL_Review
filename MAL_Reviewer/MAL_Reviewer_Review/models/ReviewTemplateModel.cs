@@ -60,7 +60,7 @@ namespace MAL_Reviewer_Core.models
         public ReviewTemplateModel() { }
 
         /// <summary>
-        /// Constructor with parameters.
+        /// Constructor with all parameters.
         /// </summary>
         /// <param name="templateName"></param>
         /// <param name="useIntro"></param>

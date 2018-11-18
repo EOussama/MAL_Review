@@ -66,7 +66,7 @@ namespace MAL_Reviewer_Core.controllers
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        public ReviewTemplateModel GetReviewTemplate(short index)
+        public ReviewTemplateModel Get(short index)
         {
             try
             {
@@ -86,7 +86,7 @@ namespace MAL_Reviewer_Core.controllers
         /// Adds a new review template to the collection.
         /// </summary>
         /// <param name="reviewTemplateModel"></param>
-        public void AddReviewTemplate(ReviewTemplateModel reviewTemplateModel)
+        public void Add(ReviewTemplateModel reviewTemplateModel)
         {
             if (IsAllowedToAddReviewTemplate())
             {
@@ -103,7 +103,7 @@ namespace MAL_Reviewer_Core.controllers
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        public string DeleteReviewTemplate(short index)
+        public string Delete(short index)
         {
             // Creating a variable for the name of the review template that's about to be deleted.
             string deletedReviewTemplateName = string.Empty;
@@ -130,11 +130,19 @@ namespace MAL_Reviewer_Core.controllers
         }
 
         /// <summary>
+        /// Deletes all review templates.
+        /// </summary>
+        public void Clear()
+        {
+            ReviewTemplates.Clear();
+        }
+
+        /// <summary>
         /// Updates a review template.
         /// </summary>
         /// <param name="index"></param>
         /// <param name="reviewTemplateModel"></param>
-        public void UpdateReviewTemplate(short index, ReviewTemplateModel reviewTemplateModel)
+        public void Update(short index, ReviewTemplateModel reviewTemplateModel)
         {
             try
             {
@@ -173,7 +181,7 @@ namespace MAL_Reviewer_Core.controllers
         public void SeedSettings()
         {
             // Adding the default “Classic MAL review”.
-            AddReviewTemplate(new ReviewTemplateModel("Classic MAL review", true, false, DateTime.Now, DateTime.Now, new List<ReviewAspectModel>() {
+            Add(new ReviewTemplateModel("Classic MAL review", true, false, DateTime.Now, DateTime.Now, new List<ReviewAspectModel>() {
                         new ReviewAspectModel("Story", "", 0),
                         new ReviewAspectModel("Art", "", 0),
                         new ReviewAspectModel("Sound", "", 0),
@@ -182,7 +190,7 @@ namespace MAL_Reviewer_Core.controllers
                     }));
 
             // Adding the default “Lazy MAL review”.
-            AddReviewTemplate(new ReviewTemplateModel("Lazy MAL review", false, true, DateTime.Now, DateTime.Now, new List<ReviewAspectModel>()));
+            Add(new ReviewTemplateModel("Lazy MAL review", false, true, DateTime.Now, DateTime.Now, new List<ReviewAspectModel>()));
         }
 
         #endregion
