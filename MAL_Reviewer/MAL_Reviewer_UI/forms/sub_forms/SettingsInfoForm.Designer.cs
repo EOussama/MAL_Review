@@ -47,12 +47,12 @@
             this.LicenseLabel = new System.Windows.Forms.Label();
             this.AuthorLabel = new System.Windows.Forms.Label();
             this.HeaderPanel = new System.Windows.Forms.Panel();
-            this.ApplicationDescriptionLabel = new System.Windows.Forms.Label();
             this.ApplicationTitleLabel = new System.Windows.Forms.Label();
             this.ApplicationVersionLabel = new System.Windows.Forms.Label();
             this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.linePanel = new System.Windows.Forms.Panel();
             this.titleLabel = new System.Windows.Forms.Label();
+            this.ApplicationDescriptionLabel = new System.Windows.Forms.Label();
             this.contentPanel.SuspendLayout();
             this.ExtendedContentPanel.SuspendLayout();
             this.FontAwesomeGroupBox.SuspendLayout();
@@ -116,7 +116,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(350, 30);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Every other icon used in this application is part of the huge Font Awesome pack";
+            this.label3.Text = "Every other icon used in this application is part of the huge Font Awesome pack.";
             // 
             // FreepikGroupBox
             // 
@@ -143,8 +143,8 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(350, 33);
             this.label2.TabIndex = 5;
-            this.label2.Text = "The logo of this application was created and is license by Freepik, the leading s" +
-    "earch engine of free vector designs.";
+            this.label2.Text = "The logo of this application was created and is licensed by Freepik, the leading " +
+    "search engine of free vector designs.";
             // 
             // JikanGroupBox
             // 
@@ -203,7 +203,7 @@
             this.ExtraInfoPanel.Controls.Add(this.AuthorLabel);
             this.ExtraInfoPanel.Location = new System.Drawing.Point(3, 137);
             this.ExtraInfoPanel.Name = "ExtraInfoPanel";
-            this.ExtraInfoPanel.Size = new System.Drawing.Size(136, 226);
+            this.ExtraInfoPanel.Size = new System.Drawing.Size(139, 226);
             this.ExtraInfoPanel.TabIndex = 4;
             // 
             // ApplicationRepoLinkLabel
@@ -322,22 +322,8 @@
             this.HeaderPanel.Controls.Add(this.ApplicationVersionLabel);
             this.HeaderPanel.Location = new System.Drawing.Point(147, 3);
             this.HeaderPanel.Name = "HeaderPanel";
-            this.HeaderPanel.Size = new System.Drawing.Size(362, 126);
+            this.HeaderPanel.Size = new System.Drawing.Size(362, 129);
             this.HeaderPanel.TabIndex = 3;
-            // 
-            // ApplicationDescriptionLabel
-            // 
-            this.ApplicationDescriptionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ApplicationDescriptionLabel.BackColor = System.Drawing.Color.Transparent;
-            this.ApplicationDescriptionLabel.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ApplicationDescriptionLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ApplicationDescriptionLabel.Location = new System.Drawing.Point(10, 43);
-            this.ApplicationDescriptionLabel.Name = "ApplicationDescriptionLabel";
-            this.ApplicationDescriptionLabel.Size = new System.Drawing.Size(342, 73);
-            this.ApplicationDescriptionLabel.TabIndex = 3;
-            this.ApplicationDescriptionLabel.Text = "Description";
             // 
             // ApplicationTitleLabel
             // 
@@ -367,7 +353,7 @@
             this.LogoPictureBox.Image = global::MAL_Reviewer_UI.Properties.Resources.logo;
             this.LogoPictureBox.Location = new System.Drawing.Point(3, 3);
             this.LogoPictureBox.Name = "LogoPictureBox";
-            this.LogoPictureBox.Size = new System.Drawing.Size(138, 126);
+            this.LogoPictureBox.Size = new System.Drawing.Size(139, 129);
             this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.LogoPictureBox.TabIndex = 0;
             this.LogoPictureBox.TabStop = false;
@@ -392,6 +378,20 @@
             this.titleLabel.Size = new System.Drawing.Size(48, 25);
             this.titleLabel.TabIndex = 24;
             this.titleLabel.Text = "Info";
+            // 
+            // ApplicationDescriptionLabel
+            // 
+            this.ApplicationDescriptionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ApplicationDescriptionLabel.BackColor = System.Drawing.Color.Transparent;
+            this.ApplicationDescriptionLabel.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ApplicationDescriptionLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ApplicationDescriptionLabel.Location = new System.Drawing.Point(10, 43);
+            this.ApplicationDescriptionLabel.Name = "ApplicationDescriptionLabel";
+            this.ApplicationDescriptionLabel.Size = new System.Drawing.Size(342, 83);
+            this.ApplicationDescriptionLabel.TabIndex = 3;
+            this.ApplicationDescriptionLabel.Text = "Description";
             // 
             // SettingsInfoForm
             // 
@@ -430,7 +430,6 @@
         private System.Windows.Forms.Label ApplicationTitleLabel;
         private System.Windows.Forms.Label ApplicationVersionLabel;
         private System.Windows.Forms.Panel HeaderPanel;
-        private System.Windows.Forms.Label ApplicationDescriptionLabel;
         private System.Windows.Forms.Panel ExtraInfoPanel;
         private System.Windows.Forms.Label AuthorLabel;
         private System.Windows.Forms.Label LicenseLabel;
@@ -448,5 +447,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox FreepikGroupBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label ApplicationDescriptionLabel;
     }
 }

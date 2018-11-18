@@ -9,11 +9,11 @@ MAL Reviewer is an unofficial productivity booster application that organizes an
 ## Credits
 Aside from myself, this project wouldn't have been possible if not for the effort of the following people.
 
-[Irfan](https://github.com/irfan-dahir)
-Big thanks to him and all of the contributors that made the [Jikan API](https://github.com/jikan-me) the reliable tool it is. Jikan is an unofficial API for MAL that handles various data fetching operations.
+- [Irfan](https://github.com/irfan-dahir)
+    - Big thanks to him and all of the contributors that made the [Jikan API](https://github.com/jikan-me) the reliable tool it is. Jikan is an unofficial API for MAL that handles various data fetching operations.
 
-[Freepik](https://www.freepik.com/)
-The logo of this application was created and is licensed by Freepik, the leading search engine of free vector designs.
+- [Freepik](https://www.freepik.com/)
+    - The logo of this application was created and is licensed by Freepik, the leading search engine of free vector designs.
 
-[Dave Gandy](https://twitter.com/davegandy?lang=en)
-Every other icon used in this application is part of the huge [FontAwesome pack](https://www.flaticon.com/packs/font-awesome).
+- [Dave Gandy](https://twitter.com/davegandy?lang=en)
+    - Every other icon used in this application is part of the huge [FontAwesome pack](https://www.flaticon.com/packs/font-awesome).

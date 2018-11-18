@@ -52,7 +52,7 @@ namespace MAL_Reviewer_UI.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(@"{0} is a productivity booster application that organizes and simplifies writing Anime/Manga reviews for MAL. For you out there who like to keep records of their reviews on a local drive, you can ditch having to manually save them somewhere and keep remembering what review is where.")]
+        [global::System.Configuration.DefaultSettingValueAttribute(@"{0} is an unofficial productivity booster application that organizes and simplifies writing Anime and Manga reviews for MyAnimeList. For you out there who like to keep records of their reviews on a local drive, you can finally ditch the lengthy manual process of managing your reviews in separate text files and take advantage of {0} and its wide range of tools.")]
         public string description {
             get {
                 return ((string)(this["description"]));
