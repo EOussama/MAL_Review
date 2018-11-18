@@ -103,5 +103,14 @@ namespace MAL_Reviewer_UI.Properties {
                 return ((string)(this["repo_link"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("oussama_gtacj@live.fr")]
+        public string author_email {
+            get {
+                return ((string)(this["author_email"]));
+            }
+        }
     }
 }

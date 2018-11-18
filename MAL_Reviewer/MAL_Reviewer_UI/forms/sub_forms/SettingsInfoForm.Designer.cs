@@ -234,6 +234,7 @@
             this.ApplicationContactLinkLabel.TabIndex = 10;
             this.ApplicationContactLinkLabel.TabStop = true;
             this.ApplicationContactLinkLabel.Text = "Contact";
+            this.ApplicationContactLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ApplicationContactLinkLabel_LinkClicked);
             // 
             // ApplicationBugReportLinkLabel
             // 

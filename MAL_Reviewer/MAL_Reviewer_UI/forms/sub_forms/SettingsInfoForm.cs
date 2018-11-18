@@ -42,6 +42,9 @@ namespace MAL_Reviewer_UI.forms.sub_forms
             // Assigning the bug report's link.
             ApplicationBugReportLinkLabel.Links.Add(new LinkLabel.Link() { LinkData = Properties.Settings.Default["bug_report_link"].ToString() });
 
+            // Assigning the contact email.
+            ApplicationContactLinkLabel.Links.Add(new LinkLabel.Link() { LinkData = $"mailto:{ Properties.Settings.Default["author_email"].ToString() }" });
+
             // Moving the version's label next to the title's.
             ApplicationVersionLabel.Left = ApplicationTitleLabel.Right;
 
@@ -92,6 +95,13 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void ApplicationBugReportLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => System.Diagnostics.Process.Start(e.Link.LinkData as string);
+
+        /// <summary>
+        /// Opens the default mail client.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ApplicationContactLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => System.Diagnostics.Process.Start(e.Link.LinkData as string);
 
         /// <summary>
         /// Redirects to the Jikan project.

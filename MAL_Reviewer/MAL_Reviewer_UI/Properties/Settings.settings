@@ -29,5 +29,8 @@
     <Setting Name="repo_link" Type="System.String" Scope="Application">
       <Value Profile="(Default)">https://github.com/EOussama/MAL_Reviewer</Value>
     </Setting>
+    <Setting Name="author_email" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">oussama_gtacj@live.fr</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
