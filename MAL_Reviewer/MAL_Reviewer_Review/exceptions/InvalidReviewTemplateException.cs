@@ -8,9 +8,18 @@ namespace MAL_Reviewer_Core.exceptions
     public class InvalidReviewTemplateException : Exception
     {
         /// <summary>
-        /// Parameterless constructor.
+        /// The review template's index that raised the exception.
         /// </summary>
-        public InvalidReviewTemplateException() { }
+        private readonly short ReviewTemplateIndex = -1;
+
+        /// <summary>
+        /// Constuctor with message.
+        /// </summary>
+        /// <param name="reviewTemplateIndex"></param>
+        public InvalidReviewTemplateException(short reviewTemplateIndex) : base()
+        {
+            this.ReviewTemplateIndex = reviewTemplateIndex;
+        }
 
         /// <summary>
         /// The message thrown when the exception is invoked.
@@ -18,7 +27,7 @@ namespace MAL_Reviewer_Core.exceptions
         /// <returns></returns>
         public override string ToString()
         {
-            return "Invalid review template";
+            return $"The review template with the index of { this.ReviewTemplateIndex } doesn't exist.";
         }
     }
 }

@@ -29,6 +29,14 @@ namespace MAL_Reviewer_Core.controllers
         public List<ReviewTemplateModel> ReviewTemplates { get; set; }
 
         /// <summary>
+        /// Gets the number of review templates loaded into the memory.
+        /// </summary>
+        public short Count
+        {
+            get => (short)this.ReviewTemplates.Count;
+        }
+
+        /// <summary>
         /// Parameterless constructor.
         /// </summary>
         public ReviewTemplatesController() { }
@@ -44,9 +52,13 @@ namespace MAL_Reviewer_Core.controllers
             {
                 return ReviewTemplates[index];
             }
-            catch (InvalidReviewTemplateException)
+            catch (ArgumentOutOfRangeException)
             {
-                throw;
+                throw new InvalidReviewTemplateException(index);
+            }
+            catch (IndexOutOfRangeException)
+            {
+                throw new InvalidReviewTemplateException(index);
             }
         }
 
@@ -56,7 +68,7 @@ namespace MAL_Reviewer_Core.controllers
         /// <param name="reviewTemplateModel"></param>
         public void AddReviewTemplate(ReviewTemplateModel reviewTemplateModel)
         {
-            if (ReviewTemplates.Count < MaxReviewTemplates)
+            if (ReviewTemplates.Count <= MaxReviewTemplates)
             {
                 ReviewTemplates.Add(reviewTemplateModel);
             }

@@ -1,5 +1,4 @@
 ﻿using System;
-using MAL_Reviewer_Core;
 
 namespace MAL_Reviewer_Sandbox
 {
@@ -10,8 +9,6 @@ namespace MAL_Reviewer_Sandbox
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Core.Settings.ReviewTemplatesSettings.ReviewTemplates[0].TemplateName);
-
             // Stoping the test.
             Console.ReadKey();
         }
