@@ -44,8 +44,8 @@ namespace MAL_Reviewer_UI.forms
             pChildPeople.AutoScroll = true;
 
             CreateCards();
-            CreateLists(EntryType.Anime);
-            CreateLists(EntryType.Manga);
+            CreateLists(TargetType.Anime);
+            CreateLists(TargetType.Manga);
         }
 
         #region User Data Load
@@ -315,7 +315,7 @@ namespace MAL_Reviewer_UI.forms
                                 ((CardControl)tlpAnimeMangaCards.Controls[0]).UpdateTooltip(user.Username);
                                 bMALAnimelist.Enabled = animePublic;
 
-                                RefreshLists(EntryType.Anime);
+                                RefreshLists(TargetType.Anime);
 
                                 ((EntryListControl)tlpAnimelistMain.Controls[0]).UpdateList(animeList.Where(a => a.Watching_status == 1).ToList());
                                 ((EntryListControl)tlpAnimelistMain.Controls[1]).UpdateList(animeList.Where(a => a.Watching_status == 2).ToList());
@@ -323,7 +323,7 @@ namespace MAL_Reviewer_UI.forms
                                 ((EntryListControl)tlpAnimelistMain.Controls[3]).UpdateList(animeList.Where(a => a.Watching_status == 4).ToList());
                                 ((EntryListControl)tlpAnimelistMain.Controls[4]).UpdateList(animeList.Where(a => a.Watching_status == 6).ToList());
 
-                                ResizeTable(EntryType.Anime);
+                                ResizeTable(TargetType.Anime);
                             });
                         }
                         else
@@ -332,7 +332,7 @@ namespace MAL_Reviewer_UI.forms
                             ((CardControl)tlpAnimeMangaCards.Controls[0]).UpdateTooltip(user.Username);
                             bMALAnimelist.Enabled = animePublic;
 
-                            RefreshLists(EntryType.Anime);
+                            RefreshLists(TargetType.Anime);
 
                             ((EntryListControl)tlpAnimelistMain.Controls[0]).UpdateList(animeList.Where(a => a.Watching_status == 1).ToList());
                             ((EntryListControl)tlpAnimelistMain.Controls[1]).UpdateList(animeList.Where(a => a.Watching_status == 2).ToList());
@@ -340,7 +340,7 @@ namespace MAL_Reviewer_UI.forms
                             ((EntryListControl)tlpAnimelistMain.Controls[3]).UpdateList(animeList.Where(a => a.Watching_status == 4).ToList());
                             ((EntryListControl)tlpAnimelistMain.Controls[4]).UpdateList(animeList.Where(a => a.Watching_status == 6).ToList());
 
-                            ResizeTable(EntryType.Anime);
+                            ResizeTable(TargetType.Anime);
                         }
                     });
                 }
@@ -354,12 +354,12 @@ namespace MAL_Reviewer_UI.forms
                             ((CardControl)tlpAnimeMangaCards.Controls[0]).UpdateTooltip(user.Username);
                             bMALAnimelist.Enabled = animePublic;
 
-                            RefreshLists(EntryType.Anime);
+                            RefreshLists(TargetType.Anime);
 
                             foreach (EntryListControl entryList in tlpAnimelistMain.Controls)
                                 entryList.ClearList();
 
-                            ResizeTable(EntryType.Anime);
+                            ResizeTable(TargetType.Anime);
                         });
                     }
                     else
@@ -368,12 +368,12 @@ namespace MAL_Reviewer_UI.forms
                         ((CardControl)tlpAnimeMangaCards.Controls[0]).UpdateTooltip(user.Username);
                         bMALAnimelist.Enabled = animePublic;
 
-                        RefreshLists(EntryType.Anime);
+                        RefreshLists(TargetType.Anime);
 
                         foreach (EntryListControl entryList in tlpAnimelistMain.Controls)
                             entryList.ClearList();
 
-                        ResizeTable(EntryType.Anime);
+                        ResizeTable(TargetType.Anime);
                     }
                 }
             }
@@ -424,7 +424,7 @@ namespace MAL_Reviewer_UI.forms
                                 ((CardControl)tlpAnimeMangaCards.Controls[1]).UpdateTooltip(user.Username);
                                 bMALMangalist.Enabled = mangaPublic;
 
-                                RefreshLists(EntryType.Manga);
+                                RefreshLists(TargetType.Manga);
 
                                 ((EntryListControl)tlpMangalistMain.Controls[0]).UpdateList(mangaList.Where(a => a.Reading_status == 1).ToList());
                                 ((EntryListControl)tlpMangalistMain.Controls[1]).UpdateList(mangaList.Where(a => a.Reading_status == 2).ToList());
@@ -432,7 +432,7 @@ namespace MAL_Reviewer_UI.forms
                                 ((EntryListControl)tlpMangalistMain.Controls[3]).UpdateList(mangaList.Where(a => a.Reading_status == 4).ToList());
                                 ((EntryListControl)tlpMangalistMain.Controls[4]).UpdateList(mangaList.Where(a => a.Reading_status == 6).ToList());
 
-                                ResizeTable(EntryType.Manga);
+                                ResizeTable(TargetType.Manga);
                             });
                         }
                         else
@@ -441,7 +441,7 @@ namespace MAL_Reviewer_UI.forms
                             ((CardControl)tlpAnimeMangaCards.Controls[1]).UpdateTooltip(user.Username);
                             bMALMangalist.Enabled = mangaPublic;
 
-                            RefreshLists(EntryType.Manga);
+                            RefreshLists(TargetType.Manga);
 
                             ((EntryListControl)tlpMangalistMain.Controls[0]).UpdateList(mangaList.Where(a => a.Reading_status == 1).ToList());
                             ((EntryListControl)tlpMangalistMain.Controls[1]).UpdateList(mangaList.Where(a => a.Reading_status == 2).ToList());
@@ -449,7 +449,7 @@ namespace MAL_Reviewer_UI.forms
                             ((EntryListControl)tlpMangalistMain.Controls[3]).UpdateList(mangaList.Where(a => a.Reading_status == 4).ToList());
                             ((EntryListControl)tlpMangalistMain.Controls[4]).UpdateList(mangaList.Where(a => a.Reading_status == 6).ToList());
 
-                            ResizeTable(EntryType.Manga);
+                            ResizeTable(TargetType.Manga);
                         }
                     });
                 }
@@ -463,12 +463,12 @@ namespace MAL_Reviewer_UI.forms
                             ((CardControl)tlpAnimeMangaCards.Controls[1]).UpdateTooltip(user.Username);
                             bMALMangalist.Enabled = mangaPublic;
 
-                            RefreshLists(EntryType.Manga);
+                            RefreshLists(TargetType.Manga);
 
                             foreach (EntryListControl entryList in tlpMangalistMain.Controls)
                                 entryList.ClearList();
 
-                            ResizeTable(EntryType.Manga);
+                            ResizeTable(TargetType.Manga);
                         });
                     }
                     else
@@ -477,12 +477,12 @@ namespace MAL_Reviewer_UI.forms
                         ((CardControl)tlpAnimeMangaCards.Controls[1]).UpdateTooltip(user.Username);
                         bMALMangalist.Enabled = mangaPublic;
 
-                        RefreshLists(EntryType.Manga);
+                        RefreshLists(TargetType.Manga);
 
                         foreach (EntryListControl entryList in tlpMangalistMain.Controls)
                             entryList.ClearList();
 
-                        ResizeTable(EntryType.Manga);
+                        ResizeTable(TargetType.Manga);
                     }
                 }
             }
@@ -512,26 +512,26 @@ namespace MAL_Reviewer_UI.forms
         /// <summary>
         /// Creates all the manga/anime lists.
         /// </summary>
-        private void CreateLists(EntryType type)
+        private void CreateLists(TargetType type)
         {
-            if (type == EntryType.Anime)
+            if (type == TargetType.Anime)
             {
                 tlpAnimelistMain.Controls.AddRange(new EntryListControl[] {
-                    new EntryListControl("Watching", EntryType.Anime) { Dock = DockStyle.Fill },
-                    new EntryListControl("Completed", EntryType.Anime) { Dock = DockStyle.Fill },
-                    new EntryListControl("On Hold", EntryType.Anime) { Dock = DockStyle.Fill },
-                    new EntryListControl("Dropped", EntryType.Anime) { Dock = DockStyle.Fill },
-                    new EntryListControl("Plan to Watch", EntryType.Anime) { Dock = DockStyle.Fill }
+                    new EntryListControl("Watching", TargetType.Anime) { Dock = DockStyle.Fill },
+                    new EntryListControl("Completed", TargetType.Anime) { Dock = DockStyle.Fill },
+                    new EntryListControl("On Hold", TargetType.Anime) { Dock = DockStyle.Fill },
+                    new EntryListControl("Dropped", TargetType.Anime) { Dock = DockStyle.Fill },
+                    new EntryListControl("Plan to Watch", TargetType.Anime) { Dock = DockStyle.Fill }
                 });
             }
             else
             {
                 tlpMangalistMain.Controls.AddRange(new EntryListControl[] {
-                new EntryListControl("Reading", EntryType.Manga) { Dock = DockStyle.Fill },
-                new EntryListControl("Completed", EntryType.Manga) { Dock = DockStyle.Fill },
-                new EntryListControl("On Hold", EntryType.Manga) { Dock = DockStyle.Fill },
-                new EntryListControl("Dropped", EntryType.Manga) { Dock = DockStyle.Fill },
-                new EntryListControl("Plan to Read", EntryType.Manga) { Dock = DockStyle.Fill }
+                new EntryListControl("Reading", TargetType.Manga) { Dock = DockStyle.Fill },
+                new EntryListControl("Completed", TargetType.Manga) { Dock = DockStyle.Fill },
+                new EntryListControl("On Hold", TargetType.Manga) { Dock = DockStyle.Fill },
+                new EntryListControl("Dropped", TargetType.Manga) { Dock = DockStyle.Fill },
+                new EntryListControl("Plan to Read", TargetType.Manga) { Dock = DockStyle.Fill }
                 });
             }
         }
@@ -539,9 +539,9 @@ namespace MAL_Reviewer_UI.forms
         /// <summary>
         /// Refreshes the lists' UI.
         /// </summary>
-        private void RefreshLists(EntryType type)
+        private void RefreshLists(TargetType type)
         {
-            if (type == EntryType.Anime)
+            if (type == TargetType.Anime)
             {
                 #region Animelist creation
 
@@ -590,9 +590,9 @@ namespace MAL_Reviewer_UI.forms
         /// <summary>
         /// Resizes the table to fit the content.
         /// </summary>
-        private void ResizeTable(EntryType type)
+        private void ResizeTable(TargetType type)
         {
-            if (type == EntryType.Anime)
+            if (type == TargetType.Anime)
             {
                 for (int i = 0; i < tlpAnimelistMain.RowCount; i++)
                 {

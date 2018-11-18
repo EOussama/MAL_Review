@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="controllers\ReviewTemplatesController.cs" />
     <Compile Include="Core.cs" />
-    <Compile Include="enumerations\EntryType.cs" />
+    <Compile Include="enumerations\TargetType.cs" />
     <Compile Include="exceptions\MaximumReviewTemplatesException.cs" />
     <Compile Include="interfaces\ISettings.cs" />
     <Compile Include="models\ReviewModel.cs" />

@@ -18,7 +18,7 @@ namespace MAL_Reviewer_UI.user_controls
         /// </summary>
         public int ListHeight { get => listHeight; }
 
-        public EntryListControl(string label, EntryType type)
+        public EntryListControl(string label, TargetType type)
         {
             InitializeComponent();
           
@@ -26,7 +26,7 @@ namespace MAL_Reviewer_UI.user_controls
             lType.Text = label;
             lCount.Text = "0";
 
-            if (type == EntryType.Manga)
+            if (type == TargetType.Manga)
             {
                 dgvList.Columns["cProgress"].HeaderText = "Chapters";
                 dgvList.Columns["cVolumes"].Visible = true;

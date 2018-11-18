@@ -20,7 +20,7 @@ namespace MAL_Reviewer_Core.models
         /// <param name="lastModified"></param>
         /// <param name="reviewTemplate"></param>
         /// <param name="reviewMethod"></param>
-        public ReviewModel(string targetTitle, int targetId, EntryType targetType, double reviewRating, DateTime creationDate, DateTime lastModified, ReviewTemplateModel reviewTemplate, ReviewMethodModel reviewMethod)
+        public ReviewModel(string targetTitle, int targetId, TargetType targetType, double reviewRating, DateTime creationDate, DateTime lastModified, ReviewTemplateModel reviewTemplate, ReviewMethodModel reviewMethod)
         {
             TargetTitle = targetTitle;
             TargetId = targetId;
@@ -45,7 +45,7 @@ namespace MAL_Reviewer_Core.models
         /// <summary>
         /// The type of the review's target (ex; Anime or Manga).
         /// </summary>
-        public EntryType TargetType { get; set; }
+        public TargetType TargetType { get; set; }
 
         /// <summary>
         /// The review's rating.
