@@ -8,18 +8,7 @@ namespace MAL_Reviewer_Core.models
     /// </summary>
     public class ReviewAspectModel
     {
-        /// <summary>
-        /// Constructor.
-        /// </summary>
-        /// <param name="aspectName"></param>
-        /// <param name="aspectReview"></param>
-        /// <param name="aspectRating"></param>
-        public ReviewAspectModel(string aspectName, string aspectReview, double aspectRating)
-        {
-            this.AspectName = aspectName;
-            this.AspectReview = aspectReview;
-            this.AspectRating = aspectRating;
-        }
+        #region Properties
 
         /// <summary>
         /// The review aspect's name (ex; Story, Art...).
@@ -35,5 +24,24 @@ namespace MAL_Reviewer_Core.models
         /// The review aspect's rating.
         /// </summary>
         public double AspectRating { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="aspectName"></param>
+        /// <param name="aspectReview"></param>
+        /// <param name="aspectRating"></param>
+        public ReviewAspectModel(string aspectName, string aspectReview, double aspectRating)
+        {
+            this.AspectName = aspectName;
+            this.AspectReview = aspectReview;
+            this.AspectRating = aspectRating;
+        }         
+
+        #endregion
     }
 }

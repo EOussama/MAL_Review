@@ -7,10 +7,16 @@ namespace MAL_Reviewer_Core.exceptions
     /// </summary>
     public class InvalidReviewTemplateException : Exception
     {
+        #region Fields
+
         /// <summary>
         /// The review template's index that raised the exception.
         /// </summary>
         private readonly short ReviewTemplateIndex = -1;
+
+        #endregion
+
+        #region Constructors
 
         /// <summary>
         /// Constuctor with message.
@@ -21,6 +27,10 @@ namespace MAL_Reviewer_Core.exceptions
             this.ReviewTemplateIndex = reviewTemplateIndex;
         }
 
+        #endregion
+
+        #region Public method
+
         /// <summary>
         /// The message thrown when the exception is invoked.
         /// </summary>
@@ -29,5 +39,7 @@ namespace MAL_Reviewer_Core.exceptions
         {
             return $"The review template with the index of { this.ReviewTemplateIndex } doesn't exist.";
         }
+
+        #endregion
     }
 }

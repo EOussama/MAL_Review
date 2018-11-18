@@ -218,12 +218,7 @@ namespace MAL_Reviewer_UI.forms
         private void SearchCard_CardMouseClickEvent(object sender, int targetId)
         {
             var x = (rbAnime.Checked ? int.Parse(rbAnime.Tag.ToString()) : int.Parse(rbManga.Tag.ToString()));
-            Console.WriteLine("---[Testing]---");
-            Console.WriteLine($"Last targetId {this.targetId}");
-            Console.WriteLine($"Current targetId {targetId}");
-            Console.WriteLine($"Last type {this.type}");
-            Console.WriteLine($"Current type {x}");
-            Console.WriteLine("---------------");
+
             // Checking if the targetId isn't equal to the current previewed Anime/Manga's mal_id.
             if (this.targetId == targetId && this.type == (rbAnime.Checked ? int.Parse(rbAnime.Tag.ToString()) : int.Parse(rbManga.Tag.ToString())) && pPreview.Visible)
                 return;

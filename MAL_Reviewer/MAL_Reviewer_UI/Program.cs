@@ -22,7 +22,7 @@ namespace MAL_Reviewer_UI
             Application.ApplicationExit += (s, e) =>
             {
                 // Saving global settings.
-                Core.Settings.SaveSettings();
+                Core.SaveSettings();
             };
 
             Application.Run(new forms.WelcomeForm());

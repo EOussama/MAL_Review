@@ -13,8 +13,12 @@ namespace MAL_Reviewer_Core
     /// </summary>
     public class Settings : ISettings
     {
-        /// The path where the storage folder is(should be) located.
-        private static readonly string STORAGE_PATH = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        private const string
+            // The settings storage folder's name.
+            StorageFolder = "MAL_Reviewer",
+
+            // The settings storage file's name.
+            StorageFile = "settings.dat";
 
         /// <summary>
         /// The review template's settings.
@@ -24,9 +28,7 @@ namespace MAL_Reviewer_Core
         /// <summary>
         ///  The storage folder and file.
         /// </summary>
-        private const string
-            STORAGE_FOLDER = "MAL_Reviewer",
-            STORAGE_FILE = "settings.dat";
+        
 
         /// <summary>
         /// Constructor.
@@ -79,7 +81,7 @@ namespace MAL_Reviewer_Core
         {
             // Loading the review template's settings.
             IFormatter binaryFormatter = new BinaryFormatter();
-            Stream fileStream = new FileStream(Path.Combine(STORAGE_PATH, STORAGE_FOLDER, STORAGE_FILE), FileMode.Open, FileAccess.Read, FileShare.None);
+            Stream fileStream = new FileStream(Path.Combine(Core.StoragePath, StorageFolder, StorageFile), FileMode.Open, FileAccess.Read, FileShare.None);
 
             // Loading the data.
             Settings loadedData = (Settings) binaryFormatter.Deserialize(fileStream);
@@ -95,7 +97,7 @@ namespace MAL_Reviewer_Core
         {
             // Saving the review template's settings.
             IFormatter binaryFormatter = new BinaryFormatter();
-            Stream fileStream = new FileStream(Path.Combine(STORAGE_PATH, STORAGE_FOLDER, STORAGE_FILE), FileMode.OpenOrCreate, FileAccess.Write, FileShare.None);
+            Stream fileStream = new FileStream(Path.Combine(Core.StoragePath, StorageFolder, StorageFile), FileMode.OpenOrCreate, FileAccess.Write, FileShare.None);
 
             binaryFormatter.Serialize(fileStream, this);
             fileStream.Close();
@@ -116,7 +118,7 @@ namespace MAL_Reviewer_Core
         /// </summary>
         private void CreateStorageFolder()
         {
-            Directory.CreateDirectory(Path.Combine(STORAGE_PATH, STORAGE_FOLDER));
+            Directory.CreateDirectory(Path.Combine(Core.StoragePath, StorageFolder));
         }
 
         /// <summary>
@@ -125,7 +127,7 @@ namespace MAL_Reviewer_Core
         /// <returns></returns>
         public static bool DoesStorageFolderExist()
         {
-            return Directory.Exists(Path.Combine(STORAGE_PATH, STORAGE_FOLDER));
+            return Directory.Exists(Path.Combine(Core.StoragePath, StorageFolder));
         }
 
         /// <summary>
@@ -134,7 +136,7 @@ namespace MAL_Reviewer_Core
         /// <returns></returns>
         public static bool DoesStorageFileExist()
         {
-            return File.Exists(Path.Combine(STORAGE_PATH, STORAGE_FOLDER, STORAGE_FILE));
+            return File.Exists(Path.Combine(Core.StoragePath, StorageFolder, StorageFile));
         }
     }
 }

@@ -13,12 +13,7 @@ namespace MAL_Reviewer_Core.controllers
     /// /// </summary>
     public class ReviewTemplatesController : ISettings
     {
-        #region Constants
-
-        /// <summary>
-        /// The default name of all review templates.
-        /// </summary>
-        private const string DefaultReviewTemplateName = "New review template";
+        #region Fields
 
         /// <summary>
         /// The maximum review templates allowed to be created.
@@ -44,7 +39,7 @@ namespace MAL_Reviewer_Core.controllers
 
         #endregion
 
-        #region Constructor
+        #region Constructors
 
         /// <summary>
         /// Parameterless constructor.
@@ -163,10 +158,10 @@ namespace MAL_Reviewer_Core.controllers
         public string GetDuplicateName()
         {
             // Getting the number of the review template that have the same default review template name as their title.
-            short reviewTemplateNameDupNumber = (short)ReviewTemplates.Where(reviewTemp => reviewTemp.TemplateName.StartsWith(DefaultReviewTemplateName)).Count();
+            short reviewTemplateNameDupNumber = (short)ReviewTemplates.Where(reviewTemp => reviewTemp.TemplateName.StartsWith(ReviewTemplateModel.DefaultReviewTemplateName)).Count();
 
             // Constructing a review template name, (ex: defaultReviewTemplateName, defaultReviewTemplateName 1, defaultReviewTemplateName 2...).
-            string reviewTemplateName = $"{ DefaultReviewTemplateName }{ (reviewTemplateNameDupNumber > 0 ? (" " + reviewTemplateNameDupNumber.ToString()) : "") }";
+            string reviewTemplateName = $"{ ReviewTemplateModel.DefaultReviewTemplateName }{ (reviewTemplateNameDupNumber > 0 ? (" " + reviewTemplateNameDupNumber.ToString()) : "") }";
 
             return reviewTemplateName;
         }
@@ -177,11 +172,8 @@ namespace MAL_Reviewer_Core.controllers
         /// </summary>
         public void SeedSettings()
         {
-            // Instanciating the review template's controller.
-            ReviewTemplates = new List<ReviewTemplateModel>();
-
             // Adding the default “Classic MAL review”.
-            AddReviewTemplate(new ReviewTemplateModel("Classic MAL review", "", true, false, DateTime.Now, DateTime.Now, new List<ReviewAspectModel>() {
+            AddReviewTemplate(new ReviewTemplateModel("Classic MAL review", true, false, DateTime.Now, DateTime.Now, new List<ReviewAspectModel>() {
                         new ReviewAspectModel("Story", "", 0),
                         new ReviewAspectModel("Art", "", 0),
                         new ReviewAspectModel("Sound", "", 0),
@@ -190,7 +182,7 @@ namespace MAL_Reviewer_Core.controllers
                     }));
 
             // Adding the default “Lazy MAL review”.
-            AddReviewTemplate(new ReviewTemplateModel("Lazy MAL review", "", false, true, DateTime.Now, DateTime.Now, new List<ReviewAspectModel>()));
+            AddReviewTemplate(new ReviewTemplateModel("Lazy MAL review", false, true, DateTime.Now, DateTime.Now, new List<ReviewAspectModel>()));
         }
 
         #endregion

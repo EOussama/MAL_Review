@@ -55,9 +55,9 @@ namespace MAL_Reviewer_UI.forms.sub_forms
                 templateAspectsFlowPanel.Controls.OfType<CigControl>().ToList().ForEach(aspect => reviewTemplateModel.TemplateAspects.Add(new ReviewAspectModel(aspect.Label, "", 0)));
 
                 reviewTemplateModel.UseIntro = templateIntroCheckBox.Checked;
-                reviewTemplateModel.AddTLDR = templateTLDRCheckBox.Checked;
+                reviewTemplateModel.UserTLDR = templateTLDRCheckBox.Checked;
 
-                reviewTemplateModel.LastModified = DateTime.Now;
+                reviewTemplateModel.ModificationDate = DateTime.Now;
 
                 Core.Settings.ReviewTemplatesSettings.UpdateReviewTemplate((short)this.templateListBox.SelectedIndex, reviewTemplateModel);
                 LoadReviewTemplates();
@@ -66,7 +66,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
 
                 // Update the tooltips
                 this.reviewTemplateTooltip.SetToolTip(this.creationDateLabel, reviewTemplateModel.CreationDate.ToLongTimeString());
-                this.reviewTemplateTooltip.SetToolTip(this.editDateLabel, reviewTemplateModel.LastModified.ToLongTimeString());
+                this.reviewTemplateTooltip.SetToolTip(this.editDateLabel, reviewTemplateModel.ModificationDate.ToLongTimeString());
             }
             catch(Exception ex)
             {
@@ -78,7 +78,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         {
             string reviewTemplateName = this.templateListBox.Text;
 
-            if (DialogResult.Yes == MessageBox.Show($"Do you really want to delete the “{ reviewTemplateName }” review template?", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            if (DialogResult.Yes == MessageBox.Show($"Do you really want to delete the “{ reviewTemplateName }” review template?", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
             {
                 try
                 {
@@ -91,7 +91,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
                 }
 
                 LoadReviewTemplates();
-                MessageBox.Show($"The review template { reviewTemplateName } was successfully removed!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+                MessageBox.Show($"The review template “{ reviewTemplateName }” was successfully removed!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -103,7 +103,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
                 string reviewTemplateName = Core.Settings.ReviewTemplatesSettings.GetDuplicateName();
 
                 // Creating a new empty review template.
-                Core.Settings.ReviewTemplatesSettings.AddReviewTemplate(new ReviewTemplateModel(reviewTemplateName, "", false, false, DateTime.Now, DateTime.Now, new List<ReviewAspectModel>()));
+                Core.Settings.ReviewTemplatesSettings.AddReviewTemplate(new ReviewTemplateModel(reviewTemplateName, false, false, DateTime.Now, DateTime.Now, new List<ReviewAspectModel>()));
 
                 // Refreshing the UI.
                 LoadReviewTemplates();
@@ -165,13 +165,13 @@ namespace MAL_Reviewer_UI.forms.sub_forms
 
                 // Updating the checkboxes.
                 this.templateIntroCheckBox.Checked = reviewTemplateModel.UseIntro;
-                this.templateTLDRCheckBox.Checked = reviewTemplateModel.AddTLDR;
+                this.templateTLDRCheckBox.Checked = reviewTemplateModel.UserTLDR;
 
                 // Updating the dates.
                 this.creationDateLabel.Text = $"Created on {reviewTemplateModel.CreationDate.ToLongDateString()}";
-                this.editDateLabel.Text = $"Last modified on {reviewTemplateModel.LastModified.ToLongDateString()}";
+                this.editDateLabel.Text = $"Last modified on {reviewTemplateModel.ModificationDate.ToLongDateString()}";
                 this.reviewTemplateTooltip.SetToolTip(this.creationDateLabel, reviewTemplateModel.CreationDate.ToLongTimeString());
-                this.reviewTemplateTooltip.SetToolTip(this.editDateLabel, reviewTemplateModel.LastModified.ToLongTimeString());
+                this.reviewTemplateTooltip.SetToolTip(this.editDateLabel, reviewTemplateModel.ModificationDate.ToLongTimeString());
 
                 //Aligning the richtextbox content.
                 this.templatePreviewRichTextBox.SelectAll();
