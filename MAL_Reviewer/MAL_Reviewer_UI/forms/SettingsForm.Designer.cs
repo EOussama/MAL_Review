@@ -63,8 +63,8 @@
             this.infoButton.BackColor = System.Drawing.Color.Transparent;
             this.infoButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.infoButton.FlatAppearance.BorderSize = 0;
-            this.infoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.infoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.infoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
+            this.infoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.infoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.infoButton.ImageIndex = 2;
             this.infoButton.ImageList = this.sizeControlImageList;
@@ -93,8 +93,8 @@
             this.searchButton.BackColor = System.Drawing.Color.Transparent;
             this.searchButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.searchButton.FlatAppearance.BorderSize = 0;
-            this.searchButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.searchButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.searchButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
+            this.searchButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchButton.ImageIndex = 1;
             this.searchButton.ImageList = this.sizeControlImageList;
@@ -113,8 +113,8 @@
             this.templateButton.BackColor = System.Drawing.Color.Transparent;
             this.templateButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.templateButton.FlatAppearance.BorderSize = 0;
-            this.templateButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.templateButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.templateButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
+            this.templateButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.templateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.templateButton.ImageIndex = 3;
             this.templateButton.ImageList = this.sizeControlImageList;
@@ -133,8 +133,8 @@
             this.themeButton.BackColor = System.Drawing.Color.Transparent;
             this.themeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.themeButton.FlatAppearance.BorderSize = 0;
-            this.themeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.themeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.themeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
+            this.themeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.themeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.themeButton.ImageIndex = 4;
             this.themeButton.ImageList = this.sizeControlImageList;
@@ -153,8 +153,8 @@
             this.userButton.BackColor = System.Drawing.Color.Transparent;
             this.userButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.userButton.FlatAppearance.BorderSize = 0;
-            this.userButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.userButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.userButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
+            this.userButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.userButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.userButton.ImageIndex = 0;
             this.userButton.ImageList = this.sizeControlImageList;

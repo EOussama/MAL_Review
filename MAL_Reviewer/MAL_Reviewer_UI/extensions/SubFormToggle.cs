@@ -26,7 +26,7 @@ namespace MAL_Reviewer_UI.extensions
                 formToToggle.HideAllExcept(panels[0].Controls.OfType<Form>().ToList());
 
                 // Highlighting the sender button.
-                sender.Highlight(Color.LightGray, Color.Transparent, panels[1].Controls.OfType<Button>().Where(btn => btn != sender).ToList());
+                sender.Highlight(Color.White, Color.Transparent, panels[1].Controls.OfType<Button>().Where(btn => btn != sender).ToList());
             }
         }
 
