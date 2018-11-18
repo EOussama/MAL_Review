@@ -12,6 +12,7 @@ namespace MAL_Reviewer_UI.forms
         #region Fields
 
         private Form
+            GeneralSubForm,
             UserSubForm,
             ThemeSubForm,
             ReviewTemplateSubForm,
@@ -30,6 +31,11 @@ namespace MAL_Reviewer_UI.forms
             InitializeComponent();
 
             // Instanciating the sub forms.
+            GeneralSubForm = new SettingsGeneralForm()
+            {
+                TopLevel = false,
+                Dock = DockStyle.Fill
+            };
             UserSubForm = new SettingsUserForm()
             {
                 TopLevel = false,
@@ -57,13 +63,16 @@ namespace MAL_Reviewer_UI.forms
             };
 
             // Adding the sub forms to the content panel.
-            contentPanel.Controls.AddRange(new Form[] {
+            ContentPanel.Controls.AddRange(new Form[] {
+                GeneralSubForm,
                 UserSubForm,
                 ThemeSubForm,
                 ReviewTemplateSubForm,
                 SearchSubForm,
                 InfoSubForm
             });
+
+            GeneralButton_Click(GeneralButton, EventArgs.Empty);
         }
 
         #endregion
@@ -71,39 +80,46 @@ namespace MAL_Reviewer_UI.forms
         #region Private methods
 
         /// <summary>
+        /// Opens the “General” settings sub form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GeneralButton_Click(object sender, EventArgs e) => GeneralSubForm.ToggleSubForm((Button)sender, ContentPanel, SidePanel);
+
+        /// <summary>
         /// Opens the “User”'s settings sub form.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void UserButton_Click(object sender, EventArgs e) => UserSubForm.ToggleSubForm((Button)sender, contentPanel, sidePanel);
+        private void UserButton_Click(object sender, EventArgs e) => UserSubForm.ToggleSubForm((Button)sender, ContentPanel, SidePanel);
 
         /// <summary>
         /// Opens the “Theme”'s settings sub form.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ThemeButton_Click(object sender, EventArgs e) => ThemeSubForm.ToggleSubForm((Button)sender, contentPanel, sidePanel);
+        private void ThemeButton_Click(object sender, EventArgs e) => ThemeSubForm.ToggleSubForm((Button)sender, ContentPanel, SidePanel);
 
         /// <summary>
         /// Opens the “Review Templates”'s settings sub form.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void TemplateButton_Click(object sender, EventArgs e) => ReviewTemplateSubForm.ToggleSubForm((Button)sender, contentPanel, sidePanel);
+        private void TemplateButton_Click(object sender, EventArgs e) => ReviewTemplateSubForm.ToggleSubForm((Button)sender, ContentPanel, SidePanel);
 
         /// <summary>
         /// Opens the “Search”'s settings sub form.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void SearchButton_Click(object sender, EventArgs e) => SearchSubForm.ToggleSubForm((Button)sender, contentPanel, sidePanel);
+        private void SearchButton_Click(object sender, EventArgs e) => SearchSubForm.ToggleSubForm((Button)sender, ContentPanel, SidePanel);
 
         /// <summary>
         /// Opens the “Info”'s settings sub form.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void InfoButton_Click(object sender, EventArgs e) => InfoSubForm.ToggleSubForm((Button)sender, contentPanel, sidePanel);
+        private void InfoButton_Click(object sender, EventArgs e) => InfoSubForm.ToggleSubForm((Button)sender, ContentPanel, SidePanel);
 
         #endregion
     }
