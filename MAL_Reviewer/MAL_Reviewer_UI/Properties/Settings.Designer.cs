@@ -12,7 +12,7 @@ namespace MAL_Reviewer_UI.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.8.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -34,7 +34,16 @@ namespace MAL_Reviewer_UI.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0.1.0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("MAL Reviewer")]
+        public string title {
+            get {
+                return ((string)(this["title"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.9.4")]
         public string version {
             get {
                 return ((string)(this["version"]));
@@ -43,10 +52,55 @@ namespace MAL_Reviewer_UI.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("MAL Reviewer")]
-        public string title {
+        [global::System.Configuration.DefaultSettingValueAttribute(@"{0} is a productivity booster application that organizes and simplifies writing Anime/Manga reviews for MAL. For you out there who like to keep records of their reviews on a local drive, you can ditch having to manually save them somewhere and keep remembering what review is where.")]
+        public string description {
             get {
-                return ((string)(this["title"]));
+                return ((string)(this["description"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("MIT license")]
+        public string license {
+            get {
+                return ((string)(this["license"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/EOussama/MAL_Reviewer/blob/master/LICENSE")]
+        public string license_link {
+            get {
+                return ((string)(this["license_link"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/EOussama")]
+        public string author_link {
+            get {
+                return ((string)(this["author_link"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/EOussama/MAL_Reviewer/issues/new")]
+        public string bug_report_link {
+            get {
+                return ((string)(this["bug_report_link"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/EOussama/MAL_Reviewer")]
+        public string repo_link {
+            get {
+                return ((string)(this["repo_link"]));
             }
         }
     }

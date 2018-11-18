@@ -5,11 +5,29 @@
     <Setting Name="author" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Eoussama</Value>
     </Setting>
-    <Setting Name="version" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">0.1.0</Value>
-    </Setting>
     <Setting Name="title" Type="System.String" Scope="Application">
       <Value Profile="(Default)">MAL Reviewer</Value>
+    </Setting>
+    <Setting Name="version" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">0.9.4</Value>
+    </Setting>
+    <Setting Name="description" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">{0} is a productivity booster application that organizes and simplifies writing Anime/Manga reviews for MAL. For you out there who like to keep records of their reviews on a local drive, you can ditch having to manually save them somewhere and keep remembering what review is where.</Value>
+    </Setting>
+    <Setting Name="license" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">MIT license</Value>
+    </Setting>
+    <Setting Name="license_link" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://github.com/EOussama/MAL_Reviewer/blob/master/LICENSE</Value>
+    </Setting>
+    <Setting Name="author_link" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://github.com/EOussama</Value>
+    </Setting>
+    <Setting Name="bug_report_link" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://github.com/EOussama/MAL_Reviewer/issues/new</Value>
+    </Setting>
+    <Setting Name="repo_link" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://github.com/EOussama/MAL_Reviewer</Value>
     </Setting>
   </Settings>
 </SettingsFile>
