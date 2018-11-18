@@ -322,7 +322,7 @@
             this.HeaderPanel.Controls.Add(this.ApplicationVersionLabel);
             this.HeaderPanel.Location = new System.Drawing.Point(147, 3);
             this.HeaderPanel.Name = "HeaderPanel";
-            this.HeaderPanel.Size = new System.Drawing.Size(362, 128);
+            this.HeaderPanel.Size = new System.Drawing.Size(362, 126);
             this.HeaderPanel.TabIndex = 3;
             // 
             // ApplicationDescriptionLabel
@@ -335,7 +335,7 @@
             this.ApplicationDescriptionLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ApplicationDescriptionLabel.Location = new System.Drawing.Point(10, 43);
             this.ApplicationDescriptionLabel.Name = "ApplicationDescriptionLabel";
-            this.ApplicationDescriptionLabel.Size = new System.Drawing.Size(342, 75);
+            this.ApplicationDescriptionLabel.Size = new System.Drawing.Size(342, 73);
             this.ApplicationDescriptionLabel.TabIndex = 3;
             this.ApplicationDescriptionLabel.Text = "Description";
             // 
@@ -367,7 +367,7 @@
             this.LogoPictureBox.Image = global::MAL_Reviewer_UI.Properties.Resources.logo;
             this.LogoPictureBox.Location = new System.Drawing.Point(3, 3);
             this.LogoPictureBox.Name = "LogoPictureBox";
-            this.LogoPictureBox.Size = new System.Drawing.Size(138, 128);
+            this.LogoPictureBox.Size = new System.Drawing.Size(138, 126);
             this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.LogoPictureBox.TabIndex = 0;
             this.LogoPictureBox.TabStop = false;

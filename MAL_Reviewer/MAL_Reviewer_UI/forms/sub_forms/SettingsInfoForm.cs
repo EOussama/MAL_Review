@@ -43,7 +43,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
             ApplicationBugReportLinkLabel.Links.Add(new LinkLabel.Link() { LinkData = Properties.Settings.Default["bug_report_link"].ToString() });
 
             // Assigning the contact email.
-            ApplicationContactLinkLabel.Links.Add(new LinkLabel.Link() { LinkData = $"mailto:{ Properties.Settings.Default["author_email"].ToString() }" });
+            ApplicationContactLinkLabel.Links.Add(new LinkLabel.Link() { LinkData = $"mailto:{ Properties.Settings.Default["author_email"].ToString() }?subject={ ApplicationTitleLabel.Text }%20message" });
 
             // Moving the version's label next to the title's.
             ApplicationVersionLabel.Left = ApplicationTitleLabel.Right;
