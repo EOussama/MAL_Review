@@ -13,6 +13,8 @@ namespace MAL_Reviewer_Core.controllers
     /// /// </summary>
     public class ReviewTemplatesController : ISettings
     {
+        #region Constants
+
         /// <summary>
         /// The default name of all review templates.
         /// </summary>
@@ -22,6 +24,10 @@ namespace MAL_Reviewer_Core.controllers
         /// The maximum review templates allowed to be created.
         /// </summary>
         public static readonly short MaxReviewTemplates = 10;
+
+        #endregion
+
+        #region Properties
 
         /// <summary>
         /// Contains all the template reviews loaded in the memory.
@@ -36,10 +42,29 @@ namespace MAL_Reviewer_Core.controllers
             get => (short)this.ReviewTemplates.Count;
         }
 
+        #endregion
+
+        #region Constructor
+
         /// <summary>
         /// Parameterless constructor.
         /// </summary>
         public ReviewTemplatesController() { }
+
+        #endregion
+
+        #region Private methods
+
+        /// <summary>
+        /// Whether or not there is still place for more review templates taking in
+        /// consideration the maximum allowed number.
+        /// </summary>
+        /// <returns></returns>
+        private bool IsAllowedToAddReviewTemplate() => ReviewTemplates.Count <= MaxReviewTemplates;
+
+        #endregion
+
+        #region Public methods
 
         /// <summary>
         /// Gets a review template by index.
@@ -68,7 +93,7 @@ namespace MAL_Reviewer_Core.controllers
         /// <param name="reviewTemplateModel"></param>
         public void AddReviewTemplate(ReviewTemplateModel reviewTemplateModel)
         {
-            if (ReviewTemplates.Count <= MaxReviewTemplates)
+            if (IsAllowedToAddReviewTemplate())
             {
                 ReviewTemplates.Add(reviewTemplateModel);
             }
@@ -85,19 +110,28 @@ namespace MAL_Reviewer_Core.controllers
         /// <returns></returns>
         public string DeleteReviewTemplate(short index)
         {
-            string revTempName = string.Empty;
+            // Creating a variable for the name of the review template that's about to be deleted.
+            string deletedReviewTemplateName = string.Empty;
 
             try
             {
-                revTempName = ReviewTemplates[index].TemplateName;
+                // Getting the name of the review template that's about to be deleted.
+                deletedReviewTemplateName = ReviewTemplates[index].TemplateName;
+
+                // Removing the review template from the collection.
                 ReviewTemplates.RemoveAt(index);
             }
-            catch (Exception)
+            catch (ArgumentOutOfRangeException)
             {
-                throw;
+                throw new InvalidReviewTemplateException(index);
+            }
+            catch (IndexOutOfRangeException)
+            {
+                throw new InvalidReviewTemplateException(index);
             }
 
-            return revTempName;
+            // Returning the name of the deleted review template.
+            return deletedReviewTemplateName;
         }
 
         /// <summary>
@@ -109,11 +143,16 @@ namespace MAL_Reviewer_Core.controllers
         {
             try
             {
+                // Replacing the review template of the passed index with an updated one.
                 ReviewTemplates[index] = reviewTemplateModel;
             }
-            catch (Exception)
+            catch (ArgumentOutOfRangeException)
             {
-                throw;
+                throw new InvalidReviewTemplateException(index);
+            }
+            catch (IndexOutOfRangeException)
+            {
+                throw new InvalidReviewTemplateException(index);
             }
         }
 
@@ -124,29 +163,12 @@ namespace MAL_Reviewer_Core.controllers
         public string GetDuplicateName()
         {
             // Getting the number of the review template that have the same default review template name as their title.
-            int nameDups = ReviewTemplates.Where(reviewTemp => reviewTemp.TemplateName.StartsWith(DefaultReviewTemplateName)).Count();
+            short reviewTemplateNameDupNumber = (short)ReviewTemplates.Where(reviewTemp => reviewTemp.TemplateName.StartsWith(DefaultReviewTemplateName)).Count();
 
             // Constructing a review template name, (ex: defaultReviewTemplateName, defaultReviewTemplateName 1, defaultReviewTemplateName 2...).
-            string reviewTemplateName = $"{ DefaultReviewTemplateName }{ (nameDups > 0 ? (" " + nameDups.ToString()) : "") }";
+            string reviewTemplateName = $"{ DefaultReviewTemplateName }{ (reviewTemplateNameDupNumber > 0 ? (" " + reviewTemplateNameDupNumber.ToString()) : "") }";
 
             return reviewTemplateName;
-        }
-
-
-        /// <summary>
-        /// Saves the review templates in the memory.
-        /// </summary>
-        public void SaveSettings()
-        {
-            
-        }
-
-        /// <summary>
-        /// Loads review templates to the memory.
-        /// </summary>
-        public void LoadSettings()
-        {
-            
         }
 
         /// <summary>
@@ -167,8 +189,10 @@ namespace MAL_Reviewer_Core.controllers
                         new ReviewAspectModel("Enjoyment", "", 0)
                     }));
 
-            // Adding the default “Mazy MAL review”.
+            // Adding the default “Lazy MAL review”.
             AddReviewTemplate(new ReviewTemplateModel("Lazy MAL review", "", false, true, DateTime.Now, DateTime.Now, new List<ReviewAspectModel>()));
         }
+
+        #endregion
     }
 }
