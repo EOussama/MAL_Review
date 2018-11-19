@@ -152,6 +152,15 @@ namespace MAL_Reviewer_Core
             this.ReviewTemplatesSettings.SeedSettings();
         }
 
+        /// <summary>
+        /// Resets the application's settings
+        /// </summary>
+        public void ResetSettings()
+        {
+            // Resetting the review template's settings.
+            this.ReviewTemplatesSettings.ResetSettings();
+        }
+
         #endregion
     }
 }

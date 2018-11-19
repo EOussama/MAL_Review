@@ -82,6 +82,7 @@
             this.GeneralSettingsResetButton.TabIndex = 27;
             this.GeneralSettingsResetButton.Text = "Reset all";
             this.GeneralSettingsResetButton.UseVisualStyleBackColor = false;
+            this.GeneralSettingsResetButton.Click += new System.EventHandler(this.GeneralSettingsResetButton_Click);
             // 
             // SettingsGeneralForm
             // 

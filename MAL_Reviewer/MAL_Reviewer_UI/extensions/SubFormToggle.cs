@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -15,6 +16,7 @@ namespace MAL_Reviewer_UI.extensions
         /// </summary>
         /// <param name="formToToggle"></param>
         /// <param name="sender"></param>
+        /// <param name="panels"></param>
         public static void ToggleSubForm(this Form formToToggle, Button sender, params Control[] panels)
         {
             if (!formToToggle.Visible)

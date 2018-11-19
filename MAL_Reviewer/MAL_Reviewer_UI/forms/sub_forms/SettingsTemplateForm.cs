@@ -7,11 +7,12 @@ using MAL_Reviewer_Core;
 using MAL_Reviewer_Core.controllers;
 using MAL_Reviewer_Core.exceptions;
 using MAL_Reviewer_Core.models;
+using MAL_Reviewer_UI.interfaces;
 using MAL_Reviewer_UI.user_controls;
 
 namespace MAL_Reviewer_UI.forms.sub_forms
 {
-    public partial class SettingsTemplateForm : Form
+    public partial class SettingsTemplateForm : Form, ISubForm
     {
         #region Constructors
 
@@ -22,12 +23,11 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         {
             InitializeComponent();
 
-            LoadReviewTemplates();
-            StyleAspectAdd();
+            this.VisibleChanged += SettingsTemplateForm_VisibleChanged;
         }
 
-        #endregion        
-
+        #endregion
+        
         #region CRUD management
 
         /// <summary>
@@ -171,14 +171,14 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         {
             if (DialogResult.Yes == MessageBox.Show($"Are you sure you want to reset the template settings?\nAll existing templates with be deleted in the process.", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
             {
-                // Clearing the review template settings.
-                Core.Settings.ReviewTemplatesSettings.Clear();
-
-                // Seeding the review template settings.
-                Core.Settings.ReviewTemplatesSettings.SeedSettings();
+                // Resetting the review template's settings.
+                Core.Settings.ReviewTemplatesSettings.ResetSettings();
 
                 // Refreshing the UI.
                 LoadReviewTemplates();
+
+                // Select the first review template.
+                templateListBox.SelectedIndex = (templateListBox.Items.Count > 0 ? 0 : -1);
 
                 MessageBox.Show("Review template settings were seccessfully reset.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -275,6 +275,18 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         }
 
         /// <summary>
+        /// Puts the first building blocks of a sub form.
+        /// </summary>
+        public void InitDisplay()
+        {
+            // Loading the review templates.
+            LoadReviewTemplates();
+
+            // Styling the aspect add button.
+            StyleAspectAdd();
+        }
+
+        /// <summary>
         /// Handles the listbox' items selection.
         /// </summary>
         /// <param name="sender"></param>
@@ -282,6 +294,19 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         private void TemplateListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             DisplayReviewTemplateInfo();
+        }
+
+        /// <summary>
+        /// Handles the sub form's visibility change.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SettingsTemplateForm_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible)
+            {
+                InitDisplay();
+            }
         }
 
         #endregion

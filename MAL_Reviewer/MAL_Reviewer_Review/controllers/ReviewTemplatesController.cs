@@ -193,6 +193,15 @@ namespace MAL_Reviewer_Core.controllers
             Add(new ReviewTemplateModel("Lazy MAL review", false, true, DateTime.Now, DateTime.Now, new List<ReviewAspectModel>()));
         }
 
+        /// <summary>
+        /// Resets the review template's settings.
+        /// </summary>
+        public void ResetSettings()
+        {
+            Clear();
+            SeedSettings();
+        }
+
         #endregion
     }
 }

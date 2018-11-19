@@ -10,5 +10,10 @@
         /// also when a global reset is needed.
         /// </summary>
        void SeedSettings();
+
+        /// <summary>
+        /// Resets the settings' configurations.
+        /// </summary>
+        void ResetSettings();
     }
 }
