@@ -49,19 +49,19 @@ namespace MAL_Reviewer_UI.forms.sub_forms
             ApplicationVersionLabel.Left = ApplicationTitleLabel.Right;
 
             // Wiring click events
-            AddClickEvent(JikanGroupBox, JikanGroupBox_Click);
-            AddClickEvent(FreepikGroupBox, FreepikGroupBox_Click);
-            AddClickEvent(FontAwesomeGroupBox, FontAwesomeGroupBox_Click);
+            AddClickEvent(JikanPanel, JikanPanel_Click);
+            AddClickEvent(FreepikPanel, FreepikPanel_Click);
+            AddClickEvent(FontAwesomePanel, FontAwesomePanel_Click);
 
             // Wiring mouse enter events
-            AddMouseEnterEvent(JikanGroupBox, JikanGroupBox_MouseEnter);
-            AddMouseEnterEvent(FreepikGroupBox, FreepikGroupBox_MouseEnter);
-            AddMouseEnterEvent(FontAwesomeGroupBox, FontAwesomeGroupBox_MouseEnter);
+            AddMouseEnterEvent(JikanPanel, JikanPanel_MouseEnter);
+            AddMouseEnterEvent(FreepikPanel, FreepikPanel_MouseEnter);
+            AddMouseEnterEvent(FontAwesomePanel, FontAwesomePanel_MouseEnter);
 
             // Wiring mouse leave events
-            AddMouseLeaveEvent(JikanGroupBox, JikanGroupBox_MouseLeave);
-            AddMouseLeaveEvent(FreepikGroupBox, FreepikGroupBox_MouseLeave);
-            AddMouseLeaveEvent(FontAwesomeGroupBox, FontAwesomeGroupBox_MouseLeave);
+            AddMouseLeaveEvent(JikanPanel, JikanPanel_MouseLeave);
+            AddMouseLeaveEvent(FreepikPanel, FreepikPanel_MouseLeave);
+            AddMouseLeaveEvent(FontAwesomePanel, FontAwesomePanel_MouseLeave);
         }
 
         #endregion
@@ -108,7 +108,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void JikanGroupBox_Click(object sender, MouseEventArgs e)
+        private void JikanPanel_Click(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -121,7 +121,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void FreepikGroupBox_Click(object sender, MouseEventArgs e)
+        private void FreepikPanel_Click(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -134,7 +134,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void FontAwesomeGroupBox_Click(object sender, MouseEventArgs e)
+        private void FontAwesomePanel_Click(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -147,42 +147,42 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void JikanGroupBox_MouseEnter(object sender, EventArgs e) => SetSectionColor(JikanGroupBox, SystemColors.Control);
+        private void JikanPanel_MouseEnter(object sender, EventArgs e) => SetSectionColor(JikanPanel, SystemColors.Control);
 
         /// <summary>
         /// Highlights the freepik groupbox.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void FontAwesomeGroupBox_MouseEnter(object sender, EventArgs e) => SetSectionColor(FontAwesomeGroupBox, SystemColors.Control);
+        private void FontAwesomePanel_MouseEnter(object sender, EventArgs e) => SetSectionColor(FontAwesomePanel, SystemColors.Control);
 
         /// <summary>
         /// Highlights the fontawesome groupbox.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void FreepikGroupBox_MouseEnter(object sender, EventArgs e) => SetSectionColor(FreepikGroupBox, SystemColors.Control);
+        private void FreepikPanel_MouseEnter(object sender, EventArgs e) => SetSectionColor(FreepikPanel, SystemColors.Control);
 
         /// <summary>
         /// Resets the jikan groupbox.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void JikanGroupBox_MouseLeave(object sender, EventArgs e) => SetSectionColor(JikanGroupBox, Color.Transparent);
+        private void JikanPanel_MouseLeave(object sender, EventArgs e) => SetSectionColor(JikanPanel, Color.Transparent);
 
         /// <summary>
         /// Resets the freepik groupbox.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void FontAwesomeGroupBox_MouseLeave(object sender, EventArgs e) => SetSectionColor(FontAwesomeGroupBox, Color.Transparent);
+        private void FontAwesomePanel_MouseLeave(object sender, EventArgs e) => SetSectionColor(FontAwesomePanel, Color.Transparent);
 
         /// <summary>
         /// Resets the fontawesome groupbox.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void FreepikGroupBox_MouseLeave(object sender, EventArgs e) => SetSectionColor(FreepikGroupBox, Color.Transparent);
+        private void FreepikPanel_MouseLeave(object sender, EventArgs e) => SetSectionColor(FreepikPanel, Color.Transparent);
 
         /// <summary>
         /// Adds a click event to an element and all its children.
@@ -206,7 +206,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         /// <param name="event"></param>
         private void AddMouseEnterEvent(Control parent, EventHandler @event)
         {
-            parent.Click += @event;
+            parent.MouseEnter += @event;
 
             foreach (Control control in parent.Controls)
             {
@@ -221,7 +221,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         /// <param name="event"></param>
         private void AddMouseLeaveEvent(Control parent, EventHandler @event)
         {
-            parent.Click += @event;
+            parent.MouseLeave += @event;
 
             foreach (Control control in parent.Controls)
             {
@@ -232,14 +232,13 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         /// <summary>
         /// Sets an element and all its children's backcolor.
         /// </summary>
-        /// <param name="groupBox"></param>
+        /// <param name="panel"></param>
         /// <param name="color"></param>
-        private void SetSectionColor(GroupBox groupBox, Color color)
+        private void SetSectionColor(Panel panel, Color color)
         {
-            groupBox.BackColor = color;
-            
+            panel.BackColor = color;
 
-            foreach (Control control in groupBox.Controls)
+            foreach (Control control in panel.Controls)
             {
                 control.BackColor = color;
             }

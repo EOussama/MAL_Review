@@ -30,12 +30,6 @@
         {
             this.contentPanel = new System.Windows.Forms.Panel();
             this.ExtendedContentPanel = new System.Windows.Forms.Panel();
-            this.FontAwesomeGroupBox = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.FreepikGroupBox = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.JikanGroupBox = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.ApplicationCreditsLabel = new System.Windows.Forms.Label();
             this.ExtraInfoPanel = new System.Windows.Forms.Panel();
             this.ApplicationRepoLinkLabel = new System.Windows.Forms.LinkLabel();
@@ -47,20 +41,29 @@
             this.LicenseLabel = new System.Windows.Forms.Label();
             this.AuthorLabel = new System.Windows.Forms.Label();
             this.HeaderPanel = new System.Windows.Forms.Panel();
+            this.ApplicationDescriptionLabel = new System.Windows.Forms.Label();
             this.ApplicationTitleLabel = new System.Windows.Forms.Label();
             this.ApplicationVersionLabel = new System.Windows.Forms.Label();
             this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.linePanel = new System.Windows.Forms.Panel();
             this.titleLabel = new System.Windows.Forms.Label();
-            this.ApplicationDescriptionLabel = new System.Windows.Forms.Label();
+            this.JikanPanel = new System.Windows.Forms.Panel();
+            this.JikanInfoLabel = new System.Windows.Forms.Label();
+            this.JikanLabel = new System.Windows.Forms.Label();
+            this.FreepikPanel = new System.Windows.Forms.Panel();
+            this.FreepikLabel = new System.Windows.Forms.Label();
+            this.FreepikInfoLabel = new System.Windows.Forms.Label();
+            this.FontAwesomePanel = new System.Windows.Forms.Panel();
+            this.FontAwesomeLabel = new System.Windows.Forms.Label();
+            this.FontAwesomeInfoLabel = new System.Windows.Forms.Label();
             this.contentPanel.SuspendLayout();
             this.ExtendedContentPanel.SuspendLayout();
-            this.FontAwesomeGroupBox.SuspendLayout();
-            this.FreepikGroupBox.SuspendLayout();
-            this.JikanGroupBox.SuspendLayout();
             this.ExtraInfoPanel.SuspendLayout();
             this.HeaderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
+            this.JikanPanel.SuspendLayout();
+            this.FreepikPanel.SuspendLayout();
+            this.FontAwesomePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // contentPanel
@@ -82,98 +85,14 @@
             // ExtendedContentPanel
             // 
             this.ExtendedContentPanel.BackColor = System.Drawing.Color.Gainsboro;
-            this.ExtendedContentPanel.Controls.Add(this.FontAwesomeGroupBox);
-            this.ExtendedContentPanel.Controls.Add(this.FreepikGroupBox);
-            this.ExtendedContentPanel.Controls.Add(this.JikanGroupBox);
+            this.ExtendedContentPanel.Controls.Add(this.FontAwesomePanel);
+            this.ExtendedContentPanel.Controls.Add(this.FreepikPanel);
+            this.ExtendedContentPanel.Controls.Add(this.JikanPanel);
             this.ExtendedContentPanel.Controls.Add(this.ApplicationCreditsLabel);
             this.ExtendedContentPanel.Location = new System.Drawing.Point(147, 137);
             this.ExtendedContentPanel.Name = "ExtendedContentPanel";
             this.ExtendedContentPanel.Size = new System.Drawing.Size(362, 226);
             this.ExtendedContentPanel.TabIndex = 4;
-            // 
-            // FontAwesomeGroupBox
-            // 
-            this.FontAwesomeGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FontAwesomeGroupBox.BackColor = System.Drawing.Color.Transparent;
-            this.FontAwesomeGroupBox.Controls.Add(this.label3);
-            this.FontAwesomeGroupBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FontAwesomeGroupBox.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FontAwesomeGroupBox.Location = new System.Drawing.Point(3, 167);
-            this.FontAwesomeGroupBox.Name = "FontAwesomeGroupBox";
-            this.FontAwesomeGroupBox.Size = new System.Drawing.Size(356, 52);
-            this.FontAwesomeGroupBox.TabIndex = 7;
-            this.FontAwesomeGroupBox.TabStop = false;
-            this.FontAwesomeGroupBox.Text = "Dave Gandy";
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(3, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(350, 30);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Every other icon used in this application is part of the huge Font Awesome pack.";
-            // 
-            // FreepikGroupBox
-            // 
-            this.FreepikGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FreepikGroupBox.BackColor = System.Drawing.Color.Transparent;
-            this.FreepikGroupBox.Controls.Add(this.label2);
-            this.FreepikGroupBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FreepikGroupBox.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FreepikGroupBox.Location = new System.Drawing.Point(3, 109);
-            this.FreepikGroupBox.Name = "FreepikGroupBox";
-            this.FreepikGroupBox.Size = new System.Drawing.Size(356, 55);
-            this.FreepikGroupBox.TabIndex = 6;
-            this.FreepikGroupBox.TabStop = false;
-            this.FreepikGroupBox.Text = "Freepik";
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(3, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(350, 33);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "The logo of this application was created and is licensed by Freepik, the leading " +
-    "search engine of free vector designs.";
-            // 
-            // JikanGroupBox
-            // 
-            this.JikanGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.JikanGroupBox.BackColor = System.Drawing.Color.Transparent;
-            this.JikanGroupBox.Controls.Add(this.label1);
-            this.JikanGroupBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.JikanGroupBox.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.JikanGroupBox.Location = new System.Drawing.Point(3, 43);
-            this.JikanGroupBox.Name = "JikanGroupBox";
-            this.JikanGroupBox.Size = new System.Drawing.Size(356, 63);
-            this.JikanGroupBox.TabIndex = 5;
-            this.JikanGroupBox.TabStop = false;
-            this.JikanGroupBox.Text = "Irfan";
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(3, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(350, 41);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Big thanks to him and all of the contributors that made the Jikan API the reliabl" +
-    "e tool it is. Jikan is an unofficial API for MAL that handles various data fetch" +
-    "ing operations.";
             // 
             // ApplicationCreditsLabel
             // 
@@ -325,6 +244,20 @@
             this.HeaderPanel.Size = new System.Drawing.Size(362, 129);
             this.HeaderPanel.TabIndex = 3;
             // 
+            // ApplicationDescriptionLabel
+            // 
+            this.ApplicationDescriptionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ApplicationDescriptionLabel.BackColor = System.Drawing.Color.Transparent;
+            this.ApplicationDescriptionLabel.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ApplicationDescriptionLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ApplicationDescriptionLabel.Location = new System.Drawing.Point(10, 43);
+            this.ApplicationDescriptionLabel.Name = "ApplicationDescriptionLabel";
+            this.ApplicationDescriptionLabel.Size = new System.Drawing.Size(342, 83);
+            this.ApplicationDescriptionLabel.TabIndex = 3;
+            this.ApplicationDescriptionLabel.Text = "Description";
+            // 
             // ApplicationTitleLabel
             // 
             this.ApplicationTitleLabel.AutoSize = true;
@@ -379,19 +312,104 @@
             this.titleLabel.TabIndex = 24;
             this.titleLabel.Text = "Info";
             // 
-            // ApplicationDescriptionLabel
+            // JikanPanel
             // 
-            this.ApplicationDescriptionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ApplicationDescriptionLabel.BackColor = System.Drawing.Color.Transparent;
-            this.ApplicationDescriptionLabel.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ApplicationDescriptionLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ApplicationDescriptionLabel.Location = new System.Drawing.Point(10, 43);
-            this.ApplicationDescriptionLabel.Name = "ApplicationDescriptionLabel";
-            this.ApplicationDescriptionLabel.Size = new System.Drawing.Size(342, 83);
-            this.ApplicationDescriptionLabel.TabIndex = 3;
-            this.ApplicationDescriptionLabel.Text = "Description";
+            this.JikanPanel.Controls.Add(this.JikanLabel);
+            this.JikanPanel.Controls.Add(this.JikanInfoLabel);
+            this.JikanPanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.JikanPanel.Location = new System.Drawing.Point(3, 41);
+            this.JikanPanel.Name = "JikanPanel";
+            this.JikanPanel.Size = new System.Drawing.Size(356, 64);
+            this.JikanPanel.TabIndex = 4;
+            // 
+            // JikanInfoLabel
+            // 
+            this.JikanInfoLabel.BackColor = System.Drawing.Color.Transparent;
+            this.JikanInfoLabel.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.JikanInfoLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.JikanInfoLabel.Location = new System.Drawing.Point(2, 19);
+            this.JikanInfoLabel.Name = "JikanInfoLabel";
+            this.JikanInfoLabel.Size = new System.Drawing.Size(350, 39);
+            this.JikanInfoLabel.TabIndex = 6;
+            this.JikanInfoLabel.Text = "Big thanks to him and all of the contributors that made the Jikan API the reliabl" +
+    "e tool it is. Jikan is an unofficial API for MAL that handles various data fetch" +
+    "ing operations.";
+            // 
+            // JikanLabel
+            // 
+            this.JikanLabel.AutoSize = true;
+            this.JikanLabel.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.JikanLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.JikanLabel.Location = new System.Drawing.Point(3, 3);
+            this.JikanLabel.Name = "JikanLabel";
+            this.JikanLabel.Size = new System.Drawing.Size(36, 16);
+            this.JikanLabel.TabIndex = 7;
+            this.JikanLabel.Text = "Irfan";
+            // 
+            // FreepikPanel
+            // 
+            this.FreepikPanel.Controls.Add(this.FreepikInfoLabel);
+            this.FreepikPanel.Controls.Add(this.FreepikLabel);
+            this.FreepikPanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FreepikPanel.Location = new System.Drawing.Point(3, 113);
+            this.FreepikPanel.Name = "FreepikPanel";
+            this.FreepikPanel.Size = new System.Drawing.Size(356, 51);
+            this.FreepikPanel.TabIndex = 8;
+            // 
+            // FreepikLabel
+            // 
+            this.FreepikLabel.AutoSize = true;
+            this.FreepikLabel.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FreepikLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FreepikLabel.Location = new System.Drawing.Point(3, 3);
+            this.FreepikLabel.Name = "FreepikLabel";
+            this.FreepikLabel.Size = new System.Drawing.Size(52, 16);
+            this.FreepikLabel.TabIndex = 7;
+            this.FreepikLabel.Text = "Freepik";
+            // 
+            // FreepikInfoLabel
+            // 
+            this.FreepikInfoLabel.BackColor = System.Drawing.Color.Transparent;
+            this.FreepikInfoLabel.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FreepikInfoLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FreepikInfoLabel.Location = new System.Drawing.Point(2, 19);
+            this.FreepikInfoLabel.Name = "FreepikInfoLabel";
+            this.FreepikInfoLabel.Size = new System.Drawing.Size(350, 26);
+            this.FreepikInfoLabel.TabIndex = 8;
+            this.FreepikInfoLabel.Text = "The logo of this application was created and is licensed by Freepik, the leading " +
+    "search engine of free vector designs.";
+            // 
+            // FontAwesomePanel
+            // 
+            this.FontAwesomePanel.Controls.Add(this.FontAwesomeInfoLabel);
+            this.FontAwesomePanel.Controls.Add(this.FontAwesomeLabel);
+            this.FontAwesomePanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FontAwesomePanel.Location = new System.Drawing.Point(3, 172);
+            this.FontAwesomePanel.Name = "FontAwesomePanel";
+            this.FontAwesomePanel.Size = new System.Drawing.Size(356, 51);
+            this.FontAwesomePanel.TabIndex = 9;
+            // 
+            // FontAwesomeLabel
+            // 
+            this.FontAwesomeLabel.AutoSize = true;
+            this.FontAwesomeLabel.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FontAwesomeLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FontAwesomeLabel.Location = new System.Drawing.Point(3, 3);
+            this.FontAwesomeLabel.Name = "FontAwesomeLabel";
+            this.FontAwesomeLabel.Size = new System.Drawing.Size(75, 16);
+            this.FontAwesomeLabel.TabIndex = 7;
+            this.FontAwesomeLabel.Text = "Dave Gandy";
+            // 
+            // FontAwesomeInfoLabel
+            // 
+            this.FontAwesomeInfoLabel.BackColor = System.Drawing.Color.Transparent;
+            this.FontAwesomeInfoLabel.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FontAwesomeInfoLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FontAwesomeInfoLabel.Location = new System.Drawing.Point(2, 20);
+            this.FontAwesomeInfoLabel.Name = "FontAwesomeInfoLabel";
+            this.FontAwesomeInfoLabel.Size = new System.Drawing.Size(350, 26);
+            this.FontAwesomeInfoLabel.TabIndex = 8;
+            this.FontAwesomeInfoLabel.Text = "Every other icon used in this application is part of the huge Font Awesome pack.";
             // 
             // SettingsInfoForm
             // 
@@ -409,14 +427,17 @@
             this.Text = "Info";
             this.contentPanel.ResumeLayout(false);
             this.ExtendedContentPanel.ResumeLayout(false);
-            this.FontAwesomeGroupBox.ResumeLayout(false);
-            this.FreepikGroupBox.ResumeLayout(false);
-            this.JikanGroupBox.ResumeLayout(false);
             this.ExtraInfoPanel.ResumeLayout(false);
             this.ExtraInfoPanel.PerformLayout();
             this.HeaderPanel.ResumeLayout(false);
             this.HeaderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
+            this.JikanPanel.ResumeLayout(false);
+            this.JikanPanel.PerformLayout();
+            this.FreepikPanel.ResumeLayout(false);
+            this.FreepikPanel.PerformLayout();
+            this.FontAwesomePanel.ResumeLayout(false);
+            this.FontAwesomePanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -441,12 +462,15 @@
         private System.Windows.Forms.LinkLabel ApplicationRepoLinkLabel;
         private System.Windows.Forms.Panel ExtendedContentPanel;
         private System.Windows.Forms.Label ApplicationCreditsLabel;
-        private System.Windows.Forms.GroupBox JikanGroupBox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox FontAwesomeGroupBox;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox FreepikGroupBox;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label ApplicationDescriptionLabel;
+        private System.Windows.Forms.Panel FontAwesomePanel;
+        private System.Windows.Forms.Label FontAwesomeInfoLabel;
+        private System.Windows.Forms.Label FontAwesomeLabel;
+        private System.Windows.Forms.Panel FreepikPanel;
+        private System.Windows.Forms.Label FreepikInfoLabel;
+        private System.Windows.Forms.Label FreepikLabel;
+        private System.Windows.Forms.Panel JikanPanel;
+        private System.Windows.Forms.Label JikanLabel;
+        private System.Windows.Forms.Label JikanInfoLabel;
     }
 }
