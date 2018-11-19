@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
 using MAL_Reviewer_API;
 
 namespace MAL_Reviewer_Core
@@ -8,16 +10,12 @@ namespace MAL_Reviewer_Core
     /// </summary>
     public static class Core
     {
-        #region Fields
+        #region Properties
 
         /// <summary>
-        ///  The path to the storage location.
+        /// The application's configurations.
         /// </summary>
-        public static readonly string StoragePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-
-        #endregion
-
-        #region Properties
+        public static Config Configurations { get; set; }
 
         /// <summary>
         /// The application's settings.
@@ -34,6 +32,7 @@ namespace MAL_Reviewer_Core
         public static void Init()
         {
             // Instanciation
+            Configurations = new Config();
             Settings = new Settings();
 
             // Initializing the settings.
@@ -48,6 +47,9 @@ namespace MAL_Reviewer_Core
         /// </summary>
         public static void SaveSettings()
         {
+            // Create the storage folder if it doesn't exist.
+            Configurations.PrepareStorageFolder();
+
             // Saving the settings.
             Settings.SaveSettings();
         }
@@ -57,8 +59,11 @@ namespace MAL_Reviewer_Core
         /// </summary>
         public static void LoadSettings()
         {
-            // Initializing the settings.
-            Settings.Init();
+            // Create the storage folder if it doesn't exist.
+            Configurations.PrepareStorageFolder();
+
+            // Loading the settings.
+            Settings.LoadSettings();
         }
 
         #endregion

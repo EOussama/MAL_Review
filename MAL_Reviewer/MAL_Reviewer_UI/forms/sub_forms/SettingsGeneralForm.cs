@@ -1,13 +1,11 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 using MAL_Reviewer_Core;
 using MAL_Reviewer_UI.interfaces;
 
 namespace MAL_Reviewer_UI.forms.sub_forms
 {
-    /// <summary>
-    /// The general settings sub form.
-    /// </summary>
     public partial class SettingsGeneralForm : Form, ISubForm
     {
         #region Constructors
@@ -20,6 +18,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
             InitializeComponent();
 
             this.VisibleChanged += SettingsGeneralForm_VisibleChanged;
+            this.StoragePathBrowserControl.BrowserOpenSubmitEventHander += StoragePathBrowserControl_BrowserOpenSubmitEventHander;
         }
 
         #endregion
@@ -40,6 +39,13 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         }
 
         /// <summary>
+        /// Handles the click button of the browser on open mode.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void StoragePathBrowserControl_BrowserOpenSubmitEventHander(object sender, EventArgs e) => System.Diagnostics.Process.Start(StoragePathBrowserControl.BrowserPath);
+
+        /// <summary>
         /// Handles the reset all button click.
         /// </summary>
         /// <param name="sender"></param>
@@ -51,6 +57,9 @@ namespace MAL_Reviewer_UI.forms.sub_forms
                 // Resetting the application's settings.
                 Core.Settings.ResetSettings();
 
+                // Update the displayed information.
+                InitDisplay();
+
                 MessageBox.Show("Application's settings have been successfully reset.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -60,7 +69,11 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         #region Public methods
 
         // Displays initial information on the sub form.
-        public void InitDisplay() { }
+        public void InitDisplay()
+        {
+            // Resetting the storage folder path control.
+            StoragePathBrowserControl.BrowserPath = Path.Combine(Core.Configurations.StoragePath, Core.Configurations.StorageFolder);
+        }
 
         #endregion
     }

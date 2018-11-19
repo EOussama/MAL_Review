@@ -15,12 +15,8 @@ namespace MAL_Reviewer_Core
     {
         #region Fields
 
-        private const string
-            // The settings storage folder's name.
-            StorageFolder = "MAL_Reviewer",
-
-            // The settings storage file's name.
-            StorageFile = "settings.dat";
+        // The settings storage file's name.
+        private const string StorageFile = "settings.dat";
 
         #endregion
 
@@ -45,88 +41,29 @@ namespace MAL_Reviewer_Core
 
         #endregion
 
-        #region Private methods
-
-        /// <summary>
-        /// Creates the storage folder.
-        /// </summary>
-        private void CreateStorageFolder()
-        {
-            Directory.CreateDirectory(Path.Combine(Core.StoragePath, StorageFolder));
-        }
-
-        /// <summary>
-        /// Check if the folder where the data resides exists.
-        /// </summary>
-        /// <returns></returns>
-        public static bool DoesStorageFolderExist()
-        {
-            return Directory.Exists(Path.Combine(Core.StoragePath, StorageFolder));
-        }
-
-        /// <summary>
-        /// Check if the file where the data resides exists.
-        /// </summary>
-        /// <returns></returns>
-        public static bool DoesStorageFileExist()
-        {
-            return File.Exists(Path.Combine(Core.StoragePath, StorageFolder, StorageFile));
-        }
-
-        #endregion
-
         #region Public methods
-
-        /// <summary>
-        /// Initializing the settings.
-        /// </summary>
-        public void Init()
-        {
-            // Check if the storage folder exists.
-            if (DoesStorageFolderExist())
-            {
-                // Check if storage file exists.
-                if (!DoesStorageFileExist())
-                {
-                    // Seeding default settings.
-                    this.SeedSettings();
-
-                    // Serializing the data.
-                    this.SaveSettings();
-                }
-                else
-                {
-                    // Loading the settings into the memory.
-                    this.LoadSettings();
-                }
-            }
-            else
-            {
-                // Creating the storage folder.
-                this.CreateStorageFolder();
-
-                // Seeding default settings.
-                this.SeedSettings();
-
-                // Serializing the data.
-                this.SaveSettings();
-            }
-        }
 
         /// <summary>
         /// Loads stored settings to the memory into the memory.
         /// </summary>
         public void LoadSettings()
         {
-            // Loading the review template's settings.
-            IFormatter binaryFormatter = new BinaryFormatter();
-            Stream fileStream = new FileStream(Path.Combine(Core.StoragePath, StorageFolder, StorageFile), FileMode.Open, FileAccess.Read, FileShare.None);
+            if (Core.Configurations.DoesStorageFileExist(StorageFile))
+            {
+                // Loading the review template's settings.
+                IFormatter binaryFormatter = new BinaryFormatter();
+                Stream fileStream = new FileStream(Path.Combine(Core.Configurations.StoragePath, Core.Configurations.StorageFolder, StorageFile), FileMode.Open, FileAccess.Read, FileShare.None);
 
-            // Loading the data.
-            Settings loadedData = (Settings)binaryFormatter.Deserialize(fileStream);
-            this.ReviewTemplatesSettings = loadedData.ReviewTemplatesSettings;
+                // Loading the data.
+                Settings loadedData = (Settings)binaryFormatter.Deserialize(fileStream);
+                ReviewTemplatesSettings = loadedData.ReviewTemplatesSettings;
 
-            fileStream.Close();
+                fileStream.Close();
+            }
+            else
+            {
+                SeedSettings();
+            }
         }
 
         /// <summary>
@@ -136,7 +73,7 @@ namespace MAL_Reviewer_Core
         {
             // Saving the review template's settings.
             IFormatter binaryFormatter = new BinaryFormatter();
-            Stream fileStream = new FileStream(Path.Combine(Core.StoragePath, StorageFolder, StorageFile), FileMode.OpenOrCreate, FileAccess.Write, FileShare.None);
+            Stream fileStream = new FileStream(Path.Combine(Core.Configurations.StoragePath, Core.Configurations.StorageFolder, StorageFile), FileMode.OpenOrCreate, FileAccess.Write, FileShare.None);
 
             binaryFormatter.Serialize(fileStream, this);
             fileStream.Close();

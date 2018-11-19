@@ -150,6 +150,12 @@
     <Compile Include="user_controls\LoaderControl.Designer.cs">
       <DependentUpon>LoaderControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="user_controls\PathBrowserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="user_controls\PathBrowserControl.Designer.cs">
+      <DependentUpon>PathBrowserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="user_controls\ReviewCardControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -223,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="user_controls\LoaderControl.resx">
       <DependentUpon>LoaderControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_controls\PathBrowserControl.resx">
+      <DependentUpon>PathBrowserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user_controls\ReviewCardControl.resx">
       <DependentUpon>ReviewCardControl.cs</DependentUpon>
