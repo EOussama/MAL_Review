@@ -133,6 +133,7 @@
             // editDateLabel
             // 
             this.editDateLabel.AutoSize = true;
+            this.editDateLabel.Cursor = System.Windows.Forms.Cursors.Help;
             this.editDateLabel.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editDateLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.editDateLabel.Location = new System.Drawing.Point(15, 263);
@@ -144,6 +145,7 @@
             // creationDateLabel
             // 
             this.creationDateLabel.AutoSize = true;
+            this.creationDateLabel.Cursor = System.Windows.Forms.Cursors.Help;
             this.creationDateLabel.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.creationDateLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.creationDateLabel.Location = new System.Drawing.Point(15, 241);

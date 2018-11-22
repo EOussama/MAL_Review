@@ -230,10 +230,10 @@ namespace MAL_Reviewer_UI.forms.sub_forms
                 this.templateTLDRCheckBox.Checked = reviewTemplateModel.UserTLDR;
 
                 // Updating the dates.
-                this.creationDateLabel.Text = $"Created on {reviewTemplateModel.CreationDate.ToLongDateString()}";
-                this.editDateLabel.Text = $"Last modified on {reviewTemplateModel.ModificationDate.ToLongDateString()}";
-                this.reviewTemplateTooltip.SetToolTip(this.creationDateLabel, reviewTemplateModel.CreationDate.ToLongTimeString());
-                this.reviewTemplateTooltip.SetToolTip(this.editDateLabel, reviewTemplateModel.ModificationDate.ToLongTimeString());
+                this.creationDateLabel.Text = $"Created on { reviewTemplateModel.CreationDate.ToShortDateString() }";
+                this.editDateLabel.Text = $"Last modified on { reviewTemplateModel.ModificationDate.ToShortDateString() }";
+                this.reviewTemplateTooltip.SetToolTip(this.creationDateLabel, $"{ reviewTemplateModel.CreationDate.ToLongDateString() } - { reviewTemplateModel.CreationDate.ToLongTimeString() }");
+                this.reviewTemplateTooltip.SetToolTip(this.editDateLabel, $"{ reviewTemplateModel.ModificationDate.ToLongDateString() } - { reviewTemplateModel.ModificationDate.ToLongTimeString() }");
 
                 //Aligning the richtextbox content.
                 this.templatePreviewRichTextBox.SelectAll();
