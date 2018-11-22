@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using MAL_Reviewer_Core.exceptions;
 using MAL_Reviewer_Core.interfaces;
-using MAL_Reviewer_Core.models;
+using MAL_Reviewer_Core.models.ReviewTemplateModels;
 
 namespace MAL_Reviewer_Core.controllers
 {

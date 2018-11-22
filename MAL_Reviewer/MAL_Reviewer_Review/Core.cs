@@ -1,7 +1,4 @@
-﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
-using MAL_Reviewer_API;
+﻿using MAL_Reviewer_API;
 
 namespace MAL_Reviewer_Core
 {

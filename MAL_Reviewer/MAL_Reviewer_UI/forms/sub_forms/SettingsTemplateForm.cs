@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using MAL_Reviewer_Core;
 using MAL_Reviewer_Core.controllers;
 using MAL_Reviewer_Core.exceptions;
-using MAL_Reviewer_Core.models;
+using MAL_Reviewer_Core.models.ReviewTemplateModels;
 using MAL_Reviewer_UI.interfaces;
 using MAL_Reviewer_UI.user_controls;
 

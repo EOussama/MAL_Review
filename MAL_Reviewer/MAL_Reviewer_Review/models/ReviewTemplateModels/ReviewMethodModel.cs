@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MAL_Reviewer_Core.models
+namespace MAL_Reviewer_Core.models.ReviewTemplateModels
 {
     [Serializable]
     /// <summary>
