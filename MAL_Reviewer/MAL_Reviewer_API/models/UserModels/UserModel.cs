@@ -80,12 +80,12 @@ namespace MAL_Reviewer_API.models.UserModels
         /// The user's Anime list.
         /// </summary>
         [JsonProperty(PropertyName = "animeList")]
-        public List<AnimelistEntryModel> AnimeList { get; set; }
+        public IEnumerable<AnimelistEntryModel> AnimeList { get; set; }
 
         /// <summary>
         /// The user's Manga list.
         /// </summary>
         [JsonProperty(PropertyName = "mangaList")]
-        public List<MangalistEntryModel> MangaList { get; set; }
+        public IEnumerable<MangalistEntryModel> MangaList { get; set; }
     }
 }

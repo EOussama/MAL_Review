@@ -1,6 +1,7 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.Linq;
+using System.Collections.Generic;
+using System.Windows.Forms;
 using System.Threading;
 using System.Threading.Tasks;
 using MAL_Reviewer_UI.user_controls;
@@ -141,12 +142,11 @@ namespace MAL_Reviewer_UI.forms
                 this.searchControl.Tag = this.type;
                 this.ready = false;
 
-                SearchModel searchModel = await MALHelper.Search(searchType, searchControl.InnerText.Trim(), cts.Token);
+                SearchResultsModel[] searchModel = await MALHelper.Search(searchType, searchControl.InnerText.Trim(), cts.Token);
 
-                if (searchModel != null && searchModel.Results != null)
+                if (searchModel != null && searchModel?.Length > 0)
                 {
-                    // Updating the ucTargetSearchCard usercontrolls in a separate thread.
-                    int resultCount = searchModel.Results.Length;
+                    int resultCount = searchModel.Length;
 
                     await Task.Run(() =>
                     {
@@ -154,10 +154,11 @@ namespace MAL_Reviewer_UI.forms
                         {
                             TargetSearchCardControl searchCard = (TargetSearchCardControl)pSearchCards.Controls[i];
 
-                            // Check if the current user control is withing the range of number of results, if yes, make it visible and update it.
+                            // Check if the current user control is withing the range of number of results,
+                            // if yes, make it visible and update it.
                             if (i < resultCount)
                             {
-                                SearchResultsModel resultsModel = searchModel.Results[i];
+                                SearchResultsModel resultsModel = searchModel[i];
 
                                 searchCard.Invoke((MethodInvoker)delegate
                                 {
@@ -203,7 +204,9 @@ namespace MAL_Reviewer_UI.forms
             catch (Exception ex)
             {
                 if (this.allow)
+                {
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             finally
             {

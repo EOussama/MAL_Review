@@ -87,14 +87,15 @@ namespace MAL_Reviewer_UI.forms
             try
             {
                 if (username.Length < 3) throw new Exception("Please input a valid username!");
+                
                 // Get the data of the user.
                 MALUserModel userModel = await MALHelper.GetUser(username, cts.Token);
 
                 if (userModel == null) throw new Exception($"No user under the username “{ username }” was found!");
                 else
                 {
-                    List<AnimelistEntryModel> animeList = await MALHelper.GetAnimeList(username, (int)userModel?.Anime_stats.Total_entries, cts.Token);
-                    List<MangalistEntryModel> mangaList = await MALHelper.GetMangaList(username, (int)userModel?.Manga_stats.Total_entries, cts.Token);
+                    IEnumerable<AnimelistEntryModel> animeList = await MALHelper.GetAnimeList(username, (int)userModel?.Anime_stats.Total_entries, cts.Token);
+                    IEnumerable<MangalistEntryModel> mangaList = await MALHelper.GetMangaList(username, (int)userModel?.Manga_stats.Total_entries, cts.Token);
 
                     if (this.allow)
                     {
@@ -110,7 +111,9 @@ namespace MAL_Reviewer_UI.forms
             catch (Exception ex)
             {
                 if (this.allow)
+                {
                     MessageBox.Show(ex.Message, "Notice", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             finally
             {
