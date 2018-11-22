@@ -31,11 +31,11 @@
             this.contentPanel = new System.Windows.Forms.Panel();
             this.DefaultUserLabel = new System.Windows.Forms.Label();
             this.DefaultUserPanel = new System.Windows.Forms.Panel();
-            this.DefaultUserTextboxControl = new MAL_Reviewer_UI.user_controls.TextboxControl();
             this.SetDefaultUserButton = new System.Windows.Forms.Button();
             this.linePanel = new System.Windows.Forms.Panel();
             this.titleLabel = new System.Windows.Forms.Label();
             this.UserSettingsResetButton = new System.Windows.Forms.Button();
+            this.DefaultUserTextboxControl = new MAL_Reviewer_UI.user_controls.TextboxControl();
             this.contentPanel.SuspendLayout();
             this.DefaultUserPanel.SuspendLayout();
             this.SuspendLayout();
@@ -77,24 +77,6 @@
             this.DefaultUserPanel.Name = "DefaultUserPanel";
             this.DefaultUserPanel.Size = new System.Drawing.Size(494, 42);
             this.DefaultUserPanel.TabIndex = 20;
-            // 
-            // DefaultUserTextboxControl
-            // 
-            this.DefaultUserTextboxControl.AllowLoad = false;
-            this.DefaultUserTextboxControl.AutoSubmit = false;
-            this.DefaultUserTextboxControl.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.DefaultUserTextboxControl.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.DefaultUserTextboxControl.Icon = global::MAL_Reviewer_UI.Properties.Resources.icon_user;
-            this.DefaultUserTextboxControl.InnerText = "";
-            this.DefaultUserTextboxControl.Location = new System.Drawing.Point(3, 3);
-            this.DefaultUserTextboxControl.Name = "DefaultUserTextboxControl";
-            this.DefaultUserTextboxControl.Placeholder = "Default MAL user...";
-            this.DefaultUserTextboxControl.PlaceholderColor = System.Drawing.SystemColors.ControlDark;
-            this.DefaultUserTextboxControl.Size = new System.Drawing.Size(375, 36);
-            this.DefaultUserTextboxControl.SubmitMin = 3;
-            this.DefaultUserTextboxControl.TabIndex = 23;
-            this.DefaultUserTextboxControl.Tag = "0";
-            this.DefaultUserTextboxControl.ToggleIcon = true;
             // 
             // SetDefaultUserButton
             // 
@@ -147,6 +129,24 @@
             this.UserSettingsResetButton.TabIndex = 28;
             this.UserSettingsResetButton.Text = "Reset settings";
             this.UserSettingsResetButton.UseVisualStyleBackColor = false;
+            // 
+            // DefaultUserTextboxControl
+            // 
+            this.DefaultUserTextboxControl.AllowLoad = false;
+            this.DefaultUserTextboxControl.AutoSubmit = false;
+            this.DefaultUserTextboxControl.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.DefaultUserTextboxControl.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.DefaultUserTextboxControl.Icon = global::MAL_Reviewer_UI.Properties.Resources.icon_user;
+            this.DefaultUserTextboxControl.InnerText = "";
+            this.DefaultUserTextboxControl.Location = new System.Drawing.Point(3, 3);
+            this.DefaultUserTextboxControl.Name = "DefaultUserTextboxControl";
+            this.DefaultUserTextboxControl.Placeholder = "Default MAL user...";
+            this.DefaultUserTextboxControl.PlaceholderColor = System.Drawing.SystemColors.ControlDark;
+            this.DefaultUserTextboxControl.Size = new System.Drawing.Size(375, 36);
+            this.DefaultUserTextboxControl.SubmitMin = 3;
+            this.DefaultUserTextboxControl.TabIndex = 23;
+            this.DefaultUserTextboxControl.Tag = "0";
+            this.DefaultUserTextboxControl.ToggleIcon = true;
             // 
             // SettingsUserForm
             // 
