@@ -23,7 +23,7 @@ namespace MAL_Reviewer_Core
         /// <summary>
         /// The currently connected MAL user.
         /// </summary>
-        public static UserModel User { get; set; }
+        public static UserModel User { get; set; } = null;
 
         #endregion
 
@@ -37,7 +37,7 @@ namespace MAL_Reviewer_Core
             // Instanciation
             Configurations = new Config();
             Settings = new Settings();
-            User = new UserModel();
+            User = null;
 
             // Initializing the settings.
             LoadSettings();

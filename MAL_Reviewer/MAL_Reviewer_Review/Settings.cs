@@ -62,6 +62,7 @@ namespace MAL_Reviewer_Core
 
                 // Loading the data.
                 Settings loadedData = (Settings)binaryFormatter.Deserialize(fileStream);
+                UserSettings = loadedData.UserSettings;
                 ReviewTemplatesSettings = loadedData.ReviewTemplatesSettings;
 
                 fileStream.Close();

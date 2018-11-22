@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MAL_Reviewer_UI.user_controls;
-using MAL_Reviewer_Core.enumerations;
 using MAL_Reviewer_API.models.ListEntryModels;
 using MAL_Reviewer_API.models.UserModels;
+using MAL_Reviewer_Core;
+using MAL_Reviewer_Core.enumerations;
 
 namespace MAL_Reviewer_UI.forms
 {
@@ -48,14 +49,37 @@ namespace MAL_Reviewer_UI.forms
 
         #region User Data Load
 
+        /// <summary>
+        /// Handles the click that opens the user's data loading form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BUser_Click(object sender, EventArgs e)
         {
-            LoadUserForm fLoadUser = new LoadUserForm();
+            if (Core.User == null)
+            {
+                LoadUserForm fLoadUser = new LoadUserForm();
 
-            fLoadUser.UserLoadedEvent += FLoadUser_UserLoadedEvent;
-            fLoadUser.ShowDialog();
+                fLoadUser.UserLoadedEvent += FLoadUser_UserLoadedEvent;
+                fLoadUser.ShowDialog();
+            }
+            else
+            {
+                if (DialogResult.Yes == MessageBox.Show("A MAL user is already loaded, are you sure you want to load another one?", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+                {
+                    LoadUserForm fLoadUser = new LoadUserForm();
+
+                    fLoadUser.UserLoadedEvent += FLoadUser_UserLoadedEvent;
+                    fLoadUser.ShowDialog();
+                }
+            }
         }
 
+        /// <summary>
+        /// Handles the event of when the user's data is loaded.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="user"></param>
         private async void FLoadUser_UserLoadedEvent(object sender, MALUserModel user)
         {
             this.loaded = 0;
@@ -73,6 +97,32 @@ namespace MAL_Reviewer_UI.forms
                         MangalistUpdateIU(user.MangaList, user)
                     });
             });
+        }
+
+        /// <summary>
+        /// Loads the default user.
+        /// </summary>
+        public void LoadDefaultUser()
+        {
+            string defaultUsername = Core.Settings.UserSettings.DefaultUser?.Username ?? "";
+
+            if (defaultUsername.Trim().Length > 0)
+            {
+                LoadUserForm loadUserForm = new LoadUserForm(defaultUsername);
+
+                loadUserForm.UserLoadedEvent += FLoadUser_UserLoadedEvent;
+                loadUserForm.ShowDialog();
+            }
+        }
+
+        /// <summary>
+        /// Triggers when the form is loaded.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void WelcomeForm_Load(object sender, EventArgs e)
+        {
+            LoadDefaultUser();
         }
 
         #endregion
@@ -803,8 +853,18 @@ namespace MAL_Reviewer_UI.forms
 
         #endregion
 
+        /// <summary>
+        /// Handles the click on the settings button, which opens the settings' panel.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BSettings_Click(object sender, EventArgs e) => (new SettingsForm()).ShowDialog();
 
+        /// <summary>
+        /// Handles the click on the new button, which opens a form for creating a new review.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BNew_Click(object sender, EventArgs e) => (new NewReviewForm()).ShowDialog();
     }
 }

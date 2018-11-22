@@ -1567,6 +1567,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MAL Reviewer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.WelcomeForm_Load);
             this.pSide.ResumeLayout(false);
             this.pUser.ResumeLayout(false);
             this.pReviewLookUp.ResumeLayout(false);

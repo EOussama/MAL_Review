@@ -1,5 +1,7 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using MAL_Reviewer_Core;
+using MAL_Reviewer_Core.models.UserModels;
 using MAL_Reviewer_UI.interfaces;
 
 namespace MAL_Reviewer_UI.forms.sub_forms
@@ -27,7 +29,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void SettingsUserForm_VisibleChanged(object sender, System.EventArgs e)
+        private void SettingsUserForm_VisibleChanged(object sender, EventArgs e)
         {
             if (this.Visible)
             {
@@ -35,12 +37,40 @@ namespace MAL_Reviewer_UI.forms.sub_forms
             }
         }
 
+        /// <summary>
+        /// Handles setting the default user.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SetDefaultUserButton_Click(object sender, EventArgs e)
+        {
+            string username = DefaultUserTextboxControl.InnerText.Trim();
+
+            try
+            {
+                if (username.Length < 3) throw new Exception("Input a valid username.");
+
+                Core.Settings.UserSettings.DefaultUser = new UserModel(username);
+
+                MessageBox.Show($"Default user set to { username }", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Notice", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
         #endregion
 
         #region Public methods
 
-        // Displays initial information on the sub form.
-        public void InitDisplay() { }
+        /// <summary>
+        /// Displays initial information on the sub form.
+        /// </summary>
+        public void InitDisplay()
+        {
+            DefaultUserTextboxControl.InnerText = Core.Settings.UserSettings.DefaultUser?.Username ?? "";
+        }
 
         #endregion
     }

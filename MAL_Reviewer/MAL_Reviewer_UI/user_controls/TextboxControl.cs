@@ -27,7 +27,11 @@ namespace MAL_Reviewer_UI.user_controls
         public string InnerText
         {
             get => this.inputTextBox.Text;
-            set => this.inputTextBox.Text = value;
+            set
+            {
+                this.inputTextBox.Text = value;
+                this.placeholderLabel.Visible = value.Trim().Length == 0;
+            }
         }
 
         /// <summary>
@@ -72,9 +76,13 @@ namespace MAL_Reviewer_UI.user_controls
             set
             {
                 this.BackColor = value;
-                this.inputTextBox.BackColor = value;
                 this.iconPictureBox.BackColor = value;
                 this.loaderControl.Color = value;
+
+                if (value != Color.Transparent)
+                {
+                    this.inputTextBox.BackColor = value;
+                }
             }
         }
 

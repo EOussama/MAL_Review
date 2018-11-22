@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.contentPanel = new System.Windows.Forms.Panel();
+            this.DefaultUserLabel = new System.Windows.Forms.Label();
+            this.DefaultUserPanel = new System.Windows.Forms.Panel();
+            this.DefaultUserTextboxControl = new MAL_Reviewer_UI.user_controls.TextboxControl();
+            this.SetDefaultUserButton = new System.Windows.Forms.Button();
             this.linePanel = new System.Windows.Forms.Panel();
             this.titleLabel = new System.Windows.Forms.Label();
             this.UserSettingsResetButton = new System.Windows.Forms.Button();
-            this.SetDefaultUserButton = new System.Windows.Forms.Button();
-            this.DefaultUserPanel = new System.Windows.Forms.Panel();
-            this.DefaultUserLabel = new System.Windows.Forms.Label();
-            this.DefaultUserTextboxControl = new MAL_Reviewer_UI.user_controls.TextboxControl();
             this.contentPanel.SuspendLayout();
             this.DefaultUserPanel.SuspendLayout();
             this.SuspendLayout();
@@ -53,6 +53,63 @@
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Size = new System.Drawing.Size(512, 366);
             this.contentPanel.TabIndex = 26;
+            // 
+            // DefaultUserLabel
+            // 
+            this.DefaultUserLabel.AutoSize = true;
+            this.DefaultUserLabel.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DefaultUserLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.DefaultUserLabel.Location = new System.Drawing.Point(4, 2);
+            this.DefaultUserLabel.Name = "DefaultUserLabel";
+            this.DefaultUserLabel.Size = new System.Drawing.Size(98, 19);
+            this.DefaultUserLabel.TabIndex = 22;
+            this.DefaultUserLabel.Text = "Default user";
+            // 
+            // DefaultUserPanel
+            // 
+            this.DefaultUserPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DefaultUserPanel.BackColor = System.Drawing.Color.Transparent;
+            this.DefaultUserPanel.Controls.Add(this.DefaultUserTextboxControl);
+            this.DefaultUserPanel.Controls.Add(this.SetDefaultUserButton);
+            this.DefaultUserPanel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.DefaultUserPanel.Location = new System.Drawing.Point(9, 26);
+            this.DefaultUserPanel.Name = "DefaultUserPanel";
+            this.DefaultUserPanel.Size = new System.Drawing.Size(494, 42);
+            this.DefaultUserPanel.TabIndex = 20;
+            // 
+            // DefaultUserTextboxControl
+            // 
+            this.DefaultUserTextboxControl.AllowLoad = false;
+            this.DefaultUserTextboxControl.AutoSubmit = false;
+            this.DefaultUserTextboxControl.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DefaultUserTextboxControl.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DefaultUserTextboxControl.Icon = global::MAL_Reviewer_UI.Properties.Resources.icon_user;
+            this.DefaultUserTextboxControl.InnerText = "";
+            this.DefaultUserTextboxControl.Location = new System.Drawing.Point(3, 3);
+            this.DefaultUserTextboxControl.Name = "DefaultUserTextboxControl";
+            this.DefaultUserTextboxControl.Placeholder = "Default MAL user...";
+            this.DefaultUserTextboxControl.PlaceholderColor = System.Drawing.SystemColors.ControlDark;
+            this.DefaultUserTextboxControl.Size = new System.Drawing.Size(375, 36);
+            this.DefaultUserTextboxControl.SubmitMin = 3;
+            this.DefaultUserTextboxControl.TabIndex = 23;
+            this.DefaultUserTextboxControl.Tag = "0";
+            this.DefaultUserTextboxControl.ToggleIcon = true;
+            // 
+            // SetDefaultUserButton
+            // 
+            this.SetDefaultUserButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.SetDefaultUserButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.SetDefaultUserButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SetDefaultUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SetDefaultUserButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.SetDefaultUserButton.Location = new System.Drawing.Point(384, 3);
+            this.SetDefaultUserButton.Name = "SetDefaultUserButton";
+            this.SetDefaultUserButton.Size = new System.Drawing.Size(110, 36);
+            this.SetDefaultUserButton.TabIndex = 19;
+            this.SetDefaultUserButton.Text = "Set default user";
+            this.SetDefaultUserButton.UseVisualStyleBackColor = false;
+            this.SetDefaultUserButton.Click += new System.EventHandler(this.SetDefaultUserButton_Click);
             // 
             // linePanel
             // 
@@ -90,62 +147,6 @@
             this.UserSettingsResetButton.TabIndex = 28;
             this.UserSettingsResetButton.Text = "Reset settings";
             this.UserSettingsResetButton.UseVisualStyleBackColor = false;
-            // 
-            // SetDefaultUserButton
-            // 
-            this.SetDefaultUserButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.SetDefaultUserButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.SetDefaultUserButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SetDefaultUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SetDefaultUserButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.SetDefaultUserButton.Location = new System.Drawing.Point(384, 3);
-            this.SetDefaultUserButton.Name = "SetDefaultUserButton";
-            this.SetDefaultUserButton.Size = new System.Drawing.Size(110, 36);
-            this.SetDefaultUserButton.TabIndex = 19;
-            this.SetDefaultUserButton.Text = "Set default user";
-            this.SetDefaultUserButton.UseVisualStyleBackColor = false;
-            // 
-            // DefaultUserPanel
-            // 
-            this.DefaultUserPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DefaultUserPanel.BackColor = System.Drawing.Color.Transparent;
-            this.DefaultUserPanel.Controls.Add(this.DefaultUserTextboxControl);
-            this.DefaultUserPanel.Controls.Add(this.SetDefaultUserButton);
-            this.DefaultUserPanel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.DefaultUserPanel.Location = new System.Drawing.Point(9, 26);
-            this.DefaultUserPanel.Name = "DefaultUserPanel";
-            this.DefaultUserPanel.Size = new System.Drawing.Size(494, 42);
-            this.DefaultUserPanel.TabIndex = 20;
-            // 
-            // DefaultUserLabel
-            // 
-            this.DefaultUserLabel.AutoSize = true;
-            this.DefaultUserLabel.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DefaultUserLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.DefaultUserLabel.Location = new System.Drawing.Point(4, 2);
-            this.DefaultUserLabel.Name = "DefaultUserLabel";
-            this.DefaultUserLabel.Size = new System.Drawing.Size(98, 19);
-            this.DefaultUserLabel.TabIndex = 22;
-            this.DefaultUserLabel.Text = "Default user";
-            // 
-            // DefaultUserTextboxControl
-            // 
-            this.DefaultUserTextboxControl.AllowLoad = false;
-            this.DefaultUserTextboxControl.AutoSubmit = false;
-            this.DefaultUserTextboxControl.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.DefaultUserTextboxControl.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.DefaultUserTextboxControl.Icon = global::MAL_Reviewer_UI.Properties.Resources.icon_user;
-            this.DefaultUserTextboxControl.InnerText = "";
-            this.DefaultUserTextboxControl.Location = new System.Drawing.Point(3, 3);
-            this.DefaultUserTextboxControl.Name = "DefaultUserTextboxControl";
-            this.DefaultUserTextboxControl.Placeholder = "Default MAL user...";
-            this.DefaultUserTextboxControl.PlaceholderColor = System.Drawing.SystemColors.ControlDark;
-            this.DefaultUserTextboxControl.Size = new System.Drawing.Size(375, 36);
-            this.DefaultUserTextboxControl.SubmitMin = 3;
-            this.DefaultUserTextboxControl.TabIndex = 23;
-            this.DefaultUserTextboxControl.Tag = "0";
-            this.DefaultUserTextboxControl.ToggleIcon = true;
             // 
             // SettingsUserForm
             // 

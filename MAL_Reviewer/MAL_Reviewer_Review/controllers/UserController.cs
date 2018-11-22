@@ -15,7 +15,7 @@ namespace MAL_Reviewer_Core.controllers
         /// <summary>
         /// The default MAL user.
         /// </summary>
-        private UserModel DefaultUser { get; set; }
+        public UserModel DefaultUser { get; set; } = null;
 
         #endregion
 

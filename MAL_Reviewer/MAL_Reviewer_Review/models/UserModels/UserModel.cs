@@ -76,5 +76,20 @@ namespace MAL_Reviewer_Core.models.UserModels
         //public List<MangalistEntryModel> MangaList { get; set; }
 
         #endregion
+
+        #region Constructors
+
+        /// <summary>
+        /// Parameterless constructor.
+        /// </summary>
+        public UserModel() { }
+
+        /// <summary>
+        /// Constructor with username.
+        /// </summary>
+        /// <param name="username"></param>
+        public UserModel(string username) => Username = username;
+
+        #endregion
     }
 }
