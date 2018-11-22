@@ -48,21 +48,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MALHelper.cs" />
-    <Compile Include="models\ListEntryModel\AnimelistEntryModel.cs" />
-    <Compile Include="models\ListEntryModel\AnimelistEntryResultsModel.cs" />
-    <Compile Include="models\ListEntryModel\ListEntryModel.cs" />
-    <Compile Include="models\ListEntryModel\MangalistEntryModel.cs" />
-    <Compile Include="models\ListEntryModel\MangalistEntryResultsModel.cs" />
-    <Compile Include="models\TargetModel\AnimeModel.cs" />
-    <Compile Include="models\UserModel\AnimeStatsModel.cs" />
-    <Compile Include="models\UserModel\FavoritesModel.cs" />
-    <Compile Include="models\TargetModel\MangaModel.cs" />
-    <Compile Include="models\UserModel\MangaStatsModel.cs" />
-    <Compile Include="models\SearchModel\SearchModel.cs" />
-    <Compile Include="models\SearchModel\SearchResultsModel.cs" />
-    <Compile Include="models\TargetModel\TargetModel.cs" />
-    <Compile Include="models\UserModel\TargetStatsModel.cs" />
-    <Compile Include="models\UserModel\UserModel.cs" />
+    <Compile Include="models\ListEntryModels\AnimelistEntryModel.cs" />
+    <Compile Include="models\ListEntryModels\AnimelistEntryResultsModel.cs" />
+    <Compile Include="models\ListEntryModels\ListEntryModel.cs" />
+    <Compile Include="models\ListEntryModels\MangalistEntryModel.cs" />
+    <Compile Include="models\ListEntryModels\MangalistEntryResultsModel.cs" />
+    <Compile Include="models\TargetModels\AnimeModel.cs" />
+    <Compile Include="models\UserModels\AnimeStatsModel.cs" />
+    <Compile Include="models\UserModels\FavoritesModel.cs" />
+    <Compile Include="models\TargetModels\MangaModel.cs" />
+    <Compile Include="models\UserModels\MangaStatsModel.cs" />
+    <Compile Include="models\SearchModels\SearchModel.cs" />
+    <Compile Include="models\SearchModels\SearchResultsModel.cs" />
+    <Compile Include="models\TargetModels\TargetModel.cs" />
+    <Compile Include="models\UserModels\TargetStatsModel.cs" />
+    <Compile Include="models\UserModels\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

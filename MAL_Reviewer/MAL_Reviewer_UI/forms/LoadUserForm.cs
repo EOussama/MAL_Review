@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Windows.Forms;
 using MAL_Reviewer_API;
-using MAL_Reviewer_API.models;
-using MAL_Reviewer_API.models.ListEntryModel;
+using MAL_Reviewer_API.models.ListEntryModels;
+using MAL_Reviewer_API.models.UserModels;
 
 namespace MAL_Reviewer_UI.forms
 {

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace MAL_Reviewer_API.models
+namespace MAL_Reviewer_API.models.TargetModels
 {
     /// <summary>
     /// The information regarding an individual Anime/Manga.

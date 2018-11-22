@@ -1,11 +1,11 @@
 ﻿using Newtonsoft.Json;
 
-namespace MAL_Reviewer_API.models
+namespace MAL_Reviewer_API.models.UserModels
 {
     /// <summary>
     /// The Anime stats of the user.
     /// </summary>
-    public class AnimeStatsModel : models.UserModel.TargetStatsModel
+    public class AnimeStatsModel : TargetStatsModel
     {
         /// <summary>
         /// The time spent watching Anime in days by the user.

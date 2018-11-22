@@ -4,8 +4,10 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
-using MAL_Reviewer_API.models;
-using MAL_Reviewer_API.models.ListEntryModel;
+using MAL_Reviewer_API.models.SearchModels;
+using MAL_Reviewer_API.models.ListEntryModels;
+using MAL_Reviewer_API.models.TargetModels;
+using MAL_Reviewer_API.models.UserModels;
 
 namespace MAL_Reviewer_API
 {
@@ -18,8 +20,11 @@ namespace MAL_Reviewer_API
         /// </summary>
         public static void Init()
         {
-            client = new HttpClient();
-            client.BaseAddress = new Uri("https://api.jikan.moe/v3/");
+            client = new HttpClient
+            {
+                BaseAddress = new Uri("https://api.jikan.moe/v3/")
+            };
+
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }

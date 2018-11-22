@@ -1,11 +1,11 @@
 ﻿using Newtonsoft.Json;
 
-namespace MAL_Reviewer_API.models
+namespace MAL_Reviewer_API.models.UserModels
 {
     /// <summary>
     /// The Manga stats of the user.
     /// </summary>
-    public class MangaStatsModel : UserModel.TargetStatsModel
+    public class MangaStatsModel : TargetStatsModel
     {
         /// <summary>
         /// The time spent reading Manga in days by the user.

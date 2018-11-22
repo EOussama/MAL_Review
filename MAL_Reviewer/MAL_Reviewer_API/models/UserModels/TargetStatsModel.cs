@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace MAL_Reviewer_API.models.UserModel
+namespace MAL_Reviewer_API.models.UserModels
 {
     /// <summary>
     /// The Anime/Manga stats of the user.

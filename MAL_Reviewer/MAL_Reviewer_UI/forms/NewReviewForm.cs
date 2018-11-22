@@ -5,11 +5,12 @@ using System.Threading;
 using System.Threading.Tasks;
 using MAL_Reviewer_UI.user_controls;
 using MAL_Reviewer_UI.extensions;
-using MAL_Reviewer_API;
-using MAL_Reviewer_API.models;
 using MAL_Reviewer_Core;
 using MAL_Reviewer_Core.models;
 using MAL_Reviewer_Core.controllers;
+using MAL_Reviewer_API;
+using MAL_Reviewer_API.models.SearchModels;
+using MAL_Reviewer_API.models.TargetModels;
 
 namespace MAL_Reviewer_UI.forms
 {

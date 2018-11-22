@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace MAL_Reviewer_API.models
+namespace MAL_Reviewer_API.models.UserModels
 {
     /// <summary>
     /// The user's favorite Anime/Manga/characters/people.

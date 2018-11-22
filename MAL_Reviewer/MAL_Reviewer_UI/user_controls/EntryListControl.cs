@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
-using MAL_Reviewer_API.models.ListEntryModel;
+using MAL_Reviewer_API.models.ListEntryModels;
 using MAL_Reviewer_Core.enumerations;
 
 namespace MAL_Reviewer_UI.user_controls

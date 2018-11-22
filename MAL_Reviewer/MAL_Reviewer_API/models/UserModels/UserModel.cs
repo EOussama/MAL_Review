@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using MAL_Reviewer_API.models.ListEntryModel;
+using MAL_Reviewer_API.models.ListEntryModels;
 
-namespace MAL_Reviewer_API.models
+namespace MAL_Reviewer_API.models.UserModels
 {
     /// <summary>
     /// The user's information on MAL.

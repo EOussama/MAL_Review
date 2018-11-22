@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace MAL_Reviewer_API.models.ListEntryModel
+namespace MAL_Reviewer_API.models.ListEntryModels
 {
     /// <summary>
     /// The individual Anime information (Part of the Anime list).

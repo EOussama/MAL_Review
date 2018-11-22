@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace MAL_Reviewer_API.models
+namespace MAL_Reviewer_API.models.SearchModels
 {
     /// <summary>
     /// The information regarding a search entry.
