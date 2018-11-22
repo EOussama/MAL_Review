@@ -1,4 +1,5 @@
 ﻿using MAL_Reviewer_API;
+using MAL_Reviewer_Core.models.UserModels;
 
 namespace MAL_Reviewer_Core
 {
@@ -19,6 +20,11 @@ namespace MAL_Reviewer_Core
         /// </summary>
         public static Settings Settings { get; set; }
 
+        /// <summary>
+        /// The currently connected MAL user.
+        /// </summary>
+        public static UserModel User { get; set; }
+
         #endregion
 
         #region Public methods
@@ -31,6 +37,7 @@ namespace MAL_Reviewer_Core
             // Instanciation
             Configurations = new Config();
             Settings = new Settings();
+            User = new UserModel();
 
             // Initializing the settings.
             LoadSettings();
@@ -61,6 +68,9 @@ namespace MAL_Reviewer_Core
 
             // Loading the settings.
             Settings.LoadSettings();
+
+            // Initializaing the user's settings.
+            Settings.UserSettings.Init();
         }
 
         #endregion

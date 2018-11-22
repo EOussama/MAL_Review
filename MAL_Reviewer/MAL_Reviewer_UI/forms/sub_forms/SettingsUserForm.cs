@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using MAL_Reviewer_Core;
 using MAL_Reviewer_UI.interfaces;
 
 namespace MAL_Reviewer_UI.forms.sub_forms

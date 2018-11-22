@@ -60,6 +60,7 @@ namespace MAL_Reviewer_UI.forms
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.ToString());
                 if (this.allow)
                     MessageBox.Show(ex.Message, "Notice", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }

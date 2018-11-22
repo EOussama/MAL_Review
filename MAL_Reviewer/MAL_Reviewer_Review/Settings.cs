@@ -23,6 +23,11 @@ namespace MAL_Reviewer_Core
         #region Properties
 
         /// <summary>
+        /// The user's settings.
+        /// </summary>
+        public UserController UserSettings { get; set; }
+
+        /// <summary>
         /// The review template's settings.
         /// </summary>
         public ReviewTemplatesController ReviewTemplatesSettings { get; set; }
@@ -36,6 +41,7 @@ namespace MAL_Reviewer_Core
         /// </summary>
         public Settings()
         {
+            this.UserSettings = new UserController();
             this.ReviewTemplatesSettings = new ReviewTemplatesController();
         }
 
@@ -85,6 +91,9 @@ namespace MAL_Reviewer_Core
         /// </summary>
         public void SeedSettings()
         {
+            // Seeding the user's settings.
+            this.UserSettings.SeedSettings();
+
             // Seeding review template settings.
             this.ReviewTemplatesSettings.SeedSettings();
         }
@@ -94,6 +103,9 @@ namespace MAL_Reviewer_Core
         /// </summary>
         public void ResetSettings()
         {
+            // Reseting the user's settings.
+            this.UserSettings.ResetSettings();
+
             // Resetting the review template's settings.
             this.ReviewTemplatesSettings.ResetSettings();
         }
