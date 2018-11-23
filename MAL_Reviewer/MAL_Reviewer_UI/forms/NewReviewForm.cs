@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Threading;
 using System.Threading.Tasks;
@@ -15,20 +14,49 @@ using MAL_Reviewer_API.models.TargetModels;
 
 namespace MAL_Reviewer_UI.forms
 {
+    /// <summary>
+    /// The form that debuts a review.
+    /// </summary>
     public partial class NewReviewForm : Form
     {
+        #region Fields
+
         private bool
+            // Whether or not the form is ready to accept input or not.
             ready = true,
+
+            // Whether or not the form is ready to be closed or not.
             allow = true,
+
+            // Whether or not the data has been fetched.
             dataFetched = false;
 
+        /// <summary>
+        /// The type of the search (Anime = 1, Manga = 2).
+        /// </summary>
         private byte type = 0;
-        private int targetId = 0;
-        private CancellationTokenSource cts;
-        private LoaderControl previewLoader;
 
         /// <summary>
-        /// Constructor.
+        /// The MAL id of the last previewed target.
+        /// </summary>
+        private int targetId = 0;
+
+        /// <summary>
+        /// The cancellation object.
+        /// </summary>
+        private CancellationTokenSource cts;
+
+        /// <summary>
+        /// The loader control.
+        /// </summary>
+        private LoaderControl previewLoader;
+
+        #endregion
+
+        #region Constructor
+
+        /// <summary>
+        /// Parameterless constructor.
         /// </summary>
         public NewReviewForm()
         {
@@ -42,21 +70,8 @@ namespace MAL_Reviewer_UI.forms
             pSearchCards.HorizontalScroll.Maximum = 0;
             pSearchCards.AutoScroll = true;
 
-            // Populating the pSearchCards panel with ucTargetSearchCard user controls.
-            foreach (int i in Enumerable.Range(1, 10))
-            {
-                TargetSearchCardControl searchCard = new TargetSearchCardControl();
-                int searchCardCount = pSearchCards.Controls.Count;
-
-                if (searchCardCount < 5)
-                    pSearchCards.Height = searchCard.Height * searchCardCount;
-
-                searchCard.CardMouseClickEvent += SearchCard_CardMouseClickEvent;
-                searchCard.Top = searchCard.Height * searchCardCount;
-                searchCard.Visible = false;
-                searchCard.Tag = false;
-                pSearchCards.Controls.Add(searchCard);
-            }
+            // Populating the search panel with search cards.
+            PopulateSearchCards();
 
             // Create loaders.
             previewLoader = new LoaderControl()
@@ -82,12 +97,24 @@ namespace MAL_Reviewer_UI.forms
             this.ActiveControl = this.searchControl.Controls["inputTextBox"];
             this.searchControl.Placeholder = $"{ target } title...";
             TargetNotFoundLabel.Text = $"Input the { target } title you want review on the text box above, meanwhile we will fetch any related data from MAL to help provide more information on the review target.";
-        }        
+        }
+
+        #endregion
 
         #region UI Updates
 
+        /// <summary>
+        /// Handles the enable toggle of the free scaling picker.
+        /// </summary>
+        /// <param name="sender"> The sender. </param>
+        /// <param name="e"> The event's arguments. </param>
         private void RbScaleOther_CheckedChanged(object sender, EventArgs e) => nupScaleOther.Enabled = rbScaleOther.Checked;
 
+        /// <summary>
+        /// Handles the check state change of the Anime radio button.
+        /// </summary>
+        /// <param name="sender"> The sender. </param>
+        /// <param name="e"> The event's arguments. </param>
         private void RbAnime_CheckedChanged(object sender, EventArgs e)
         {
             string target = (rbAnime.Checked ? rbAnime : rbManga).Text;
@@ -102,9 +129,13 @@ namespace MAL_Reviewer_UI.forms
             this.searchControl.Submit();
         }
 
+        /// <summary>
+        /// Unchecking all other review template cards.
+        /// </summary>
+        /// <param name="sender"> The sender. </param>
+        /// <param name="e"> The event's arguments. </param>
         private void ReviewTemplateCard_ControlCheckedEventHandler(object sender, EventArgs e)
         {
-            // Unchecking all other review template cards.
             reviewTemplatesFlowPanel.Controls
                                     .OfType<ReviewTemplatePreviewCardControl>()
                                     .Where(control => control != (ReviewTemplatePreviewCardControl)sender)
@@ -127,11 +158,37 @@ namespace MAL_Reviewer_UI.forms
             // Update the template count on the group box title.
             reviewTemplatesGroupBox.Text = $"Review templates [{ reviewTemplatesFlowPanel.Controls.Count } / { ReviewTemplatesController.MaxReviewTemplates }]";
         }
+        
+        /// <summary>
+        /// Populating the pSearchCards panel with ucTargetSearchCard user controls.
+        /// </summary>
+        private void PopulateSearchCards()
+        {
+            foreach (int i in Enumerable.Range(1, 10))
+            {
+                TargetSearchCardControl searchCard = new TargetSearchCardControl();
+                int searchCardCount = pSearchCards.Controls.Count;
+
+                if (searchCardCount < 5)
+                    pSearchCards.Height = searchCard.Height * searchCardCount;
+
+                searchCard.CardMouseClickEvent += SearchCard_CardMouseClickEvent;
+                searchCard.Top = searchCard.Height * searchCardCount;
+                searchCard.Visible = false;
+                searchCard.Tag = false;
+                pSearchCards.Controls.Add(searchCard);
+            }
+        }
 
         #endregion
 
         #region Target Search
 
+        /// <summary>
+        /// The submission of the search query.
+        /// </summary>
+        /// <param name="sender"> The sender. </param>
+        /// <param name="e"> The event's arguments. </param>
         private async void SearchControl_TextboxSubmitEvent(object sender, string e)
         {
             try
@@ -219,6 +276,11 @@ namespace MAL_Reviewer_UI.forms
             }
         }
 
+        /// <summary>
+        /// The click on a search entry that allows previewing a target.
+        /// </summary>
+        /// <param name="sender"> The sender. </param>
+        /// <param name="e"> The event's arguments. </param>
         private void SearchCard_CardMouseClickEvent(object sender, int targetId)
         {
             var x = (rbAnime.Checked ? int.Parse(rbAnime.Tag.ToString()) : int.Parse(rbManga.Tag.ToString()));
@@ -238,7 +300,7 @@ namespace MAL_Reviewer_UI.forms
         /// <summary>
         /// Toggles the loading animation for the search UI.
         /// </summary>
-        /// <param name="state"></param>
+        /// <param name="state"> The state of the loading; (ON = true, OFF = false). </param>
         private void ToggleSearchLoading(bool state)
         {
             searchControl.ToggleLoading(state);
@@ -266,6 +328,11 @@ namespace MAL_Reviewer_UI.forms
 
         #region Search panel icon toggler
 
+        /// <summary>
+        /// Handles closing the search panel when the input length is lower than 3 characters.
+        /// </summary>
+        /// <param name="sender"> The sender. </param>
+        /// <param name="e"> The event's arguments. </param>
         private void SearchControl_TextChanged(object sender, EventArgs e)
         {
             if (searchControl.InnerText.Trim().Length < 3)
@@ -274,6 +341,11 @@ namespace MAL_Reviewer_UI.forms
             }
         }
 
+        /// <summary>
+        /// Handles showing the search panel when the textbox is clicked.
+        /// </summary>
+        /// <param name="sender"> The sender. </param>
+        /// <param name="e"> The event's arguments. </param>
         private void SearchControl_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left && searchControl.Controls["inputTextBox"].Focused && searchControl.InnerText.Trim().Length > 2 && (bool)pSearchCards.Controls[0].Tag == true && pSearchCards.Visible == false)
@@ -282,6 +354,11 @@ namespace MAL_Reviewer_UI.forms
             }
         }
 
+        /// <summary>
+        /// Handles closing the search panel.
+        /// </summary>
+        /// <param name="sender"> The sender. </param>
+        /// <param name="e"> The event's arguments. </param>
         private void PbShow_MouseClick(object sender, MouseEventArgs e)
         {
             pSearchCards.Visible = false;
@@ -289,6 +366,11 @@ namespace MAL_Reviewer_UI.forms
             searchControl.Icon = (rbAnime.Checked ? Properties.Resources.icon_anime : Properties.Resources.icon_manga);
         }
 
+        /// <summary>
+        /// Handles changing the icon of the textbox depending on the mouse's state (On the icon).
+        /// </summary>
+        /// <param name="sender"> The sender. </param>
+        /// <param name="e"> The event's arguments. </param>
         private void PbShow_MouseEnter(object sender, EventArgs e)
         {
             if (searchControl.InnerText.Trim().Length > 2 && pSearchCards.Controls.Count > 0 && pSearchCards.Controls[0]?.Visible == true && pSearchCards.Visible == true)
@@ -302,6 +384,11 @@ namespace MAL_Reviewer_UI.forms
             }
         }
 
+        /// <summary>
+        /// Handles chaning the icon of the textbox depending on the mouse's state (Not on the icon).
+        /// </summary>
+        /// <param name="sender"> The sender. </param>
+        /// <param name="e"> The event's arguments. </param>
         private void PbShow_MouseLeave(object sender, EventArgs e) => searchControl.Icon = (rbAnime.Checked ? Properties.Resources.icon_anime : Properties.Resources.icon_manga); 
         
         #endregion
@@ -310,6 +397,10 @@ namespace MAL_Reviewer_UI.forms
 
         #region Preview section update
 
+        /// <summary>
+        /// Previewing the clicked Anime.
+        /// </summary>
+        /// <param name="animeId"> The MAL id of the Anime. </param>
         private async void PreviewAnime(int animeId)
         {
             try
@@ -353,7 +444,9 @@ namespace MAL_Reviewer_UI.forms
             catch (Exception ex)
             {
                 if (this.allow)
+                {
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             finally
             {
@@ -367,6 +460,10 @@ namespace MAL_Reviewer_UI.forms
             }
         }
 
+        /// <summary>
+        /// Previewing the clicked Manga.
+        /// </summary>
+        /// <param name="mangaId"> The MAL id of the Manga. </param>
         private async void PreviewManga(int mangaId)
         {
             try
@@ -408,7 +505,9 @@ namespace MAL_Reviewer_UI.forms
             catch (Exception ex)
             {
                 if (this.allow)
+                {
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             finally
             {
@@ -420,12 +519,22 @@ namespace MAL_Reviewer_UI.forms
             }
         }
 
+        /// <summary>
+        /// Redirects to the target's MAL page.
+        /// </summary>
+        /// <param name="sender"> The sender. </param>
+        /// <param name="e"> The event's arguments. </param>
         private void BMAL_Click(object sender, EventArgs e) => System.Diagnostics.Process.Start(((Button)sender).Tag.ToString());
 
         #endregion
 
         #region Form submition
 
+        /// <summary>
+        /// Opens the review's composition form.
+        /// </summary>
+        /// <param name="sender"> The sender. </param>
+        /// <param name="e"> The event's arguments. </param>
         private void ReviewButton_Click(object sender, EventArgs e)
         {
 
@@ -433,6 +542,11 @@ namespace MAL_Reviewer_UI.forms
 
         #endregion
 
+        /// <summary>
+        /// Handles the closing of the form.
+        /// </summary>
+        /// <param name="sender"> The sender. </param>
+        /// <param name="e"> The event's arguments. </param>
         private void NewReviewForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!this.ready)

@@ -38,6 +38,11 @@ namespace MAL_Reviewer_UI.forms
         private string username = string.Empty;
 
         /// <summary>
+        /// The option to set the loaded username as the default one.
+        /// </summary>
+        private bool setDefault = false;
+
+        /// <summary>
         /// The cancellation token.
         /// </summary>
         private CancellationTokenSource cts;
@@ -65,6 +70,15 @@ namespace MAL_Reviewer_UI.forms
         {
             this.auto = true;
             this.username = username;
+        }
+
+        /// <summary>
+        /// Constructor with default user.
+        /// </summary>
+        /// <param name="setDefault"> Whether or not to set the loaded user as the default one. </param>
+        public LoadUserForm(bool setDefault) : this()
+        {
+            this.setDefault = setDefault;
         }
 
         #endregion
@@ -99,6 +113,12 @@ namespace MAL_Reviewer_UI.forms
 
                     if (this.allow)
                     {
+                        if (this.setDefault)
+                        {
+                            // Setting the loaded user's name as the default one.
+                            Core.Settings.UserSettings.DefaultUser = username;
+                        }
+
                         this.ready = true;
                         this.Close();
 

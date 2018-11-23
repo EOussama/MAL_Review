@@ -34,13 +34,13 @@ namespace MAL_Reviewer_Core
         /// </summary>
         public static void Init()
         {
-            // Instanciation
+            // Instantiation
             Configurations = new Config();
             Settings = new Settings();
             User = null;
 
-            // Initializing the settings.
-            LoadSettings();
+            // Loading the data.
+            Load();
 
             // Initializing the MAL API helper.
             MALHelper.Init();
@@ -49,7 +49,7 @@ namespace MAL_Reviewer_Core
         /// <summary>
         /// Saves all of the application's data.
         /// </summary>
-        public static void SaveSettings()
+        public static void Save()
         {
             // Create the storage folder if it doesn't exist.
             Configurations.PrepareStorageFolder();
@@ -61,16 +61,13 @@ namespace MAL_Reviewer_Core
         /// <summary>
         /// Loads all of the application's data.
         /// </summary>
-        public static void LoadSettings()
+        public static void Load()
         {
             // Create the storage folder if it doesn't exist.
             Configurations.PrepareStorageFolder();
 
             // Loading the settings.
             Settings.LoadSettings();
-
-            // Initializaing the user's settings.
-            Settings.UserSettings.Init();
         }
 
         #endregion

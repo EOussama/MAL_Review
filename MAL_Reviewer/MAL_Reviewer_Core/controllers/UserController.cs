@@ -15,7 +15,7 @@ namespace MAL_Reviewer_Core.controllers
         /// <summary>
         /// The default MAL user.
         /// </summary>
-        public UserModel DefaultUser { get; set; } = null;
+        public string DefaultUser { get; set; } = string.Empty;
 
         #endregion
 
@@ -31,14 +31,6 @@ namespace MAL_Reviewer_Core.controllers
         #region Public methods       
 
         /// <summary>
-        /// Initializes the current user.
-        /// </summary>
-        public void Init()
-        {
-            Core.User = DefaultUser;
-        }
-
-        /// <summary>
         /// Resets the user's settings.
         /// </summary>
         public void ResetSettings()
@@ -51,7 +43,7 @@ namespace MAL_Reviewer_Core.controllers
         /// </summary>
         public void SeedSettings()
         {
-            DefaultUser = null;
+            DefaultUser = string.Empty;
         }
 
         #endregion

@@ -136,26 +136,31 @@ namespace MAL_Reviewer_UI.forms
         /// <param name="e"> The event's arguments. </param>
         private void WelcomeForm_Load(object sender, EventArgs e)
         {
-            // Loading the user's data.
-            LoadDefaultUser();
-        }
-
-        /// <summary>
-        /// Loads the default user.
-        /// </summary>
-        public void LoadDefaultUser()
-        {
             // Getting the default user's name.
-            string defaultUsername = Core.Settings.UserSettings.DefaultUser?.Username ?? "";
+            string defaultUsername = Core.Settings.UserSettings.DefaultUser;
 
             // Checking if the username is valid.
             // If yes, automatically loading their data.
-            if (defaultUsername.Trim().Length > 0)
+            if (defaultUsername != string.Empty)
             {
                 LoadUserForm loadUserForm = new LoadUserForm(defaultUsername);
 
                 loadUserForm.UserLoadedEvent += FLoadUser_UserLoadedEvent;
                 loadUserForm.ShowDialog();
+            }
+            // If not valid.
+            else
+            {
+                string message = "No default MAL username was found, would you like to input yours now?\n\nProviding your MAL username now will save you the trouble of loading it manually every time you open this application.\n\nThe default username can be changed any time in the user's settings.";
+
+                if (DialogResult.Yes == MessageBox.Show(message, $"Welcome to { lTitle.Text }", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
+                {
+                    // Passing true to set the inputted username as the default on.
+                    LoadUserForm loadUserForm = new LoadUserForm(true);
+
+                    loadUserForm.UserLoadedEvent += FLoadUser_UserLoadedEvent;
+                    loadUserForm.ShowDialog();
+                }
             }
         }
 

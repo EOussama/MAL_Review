@@ -49,9 +49,9 @@ namespace MAL_Reviewer_UI.forms.sub_forms
             try
             {
                 if (username.Length < 3) throw new Exception("Input a valid username.");
-                if (username == Core.Settings.UserSettings.DefaultUser?.Username) throw new Exception($"The default user is already “{ username }”.");
+                if (username == Core.Settings.UserSettings.DefaultUser) throw new Exception($"The default user is already “{ username }”.");
 
-                Core.Settings.UserSettings.DefaultUser = new UserModel(username);
+                Core.Settings.UserSettings.DefaultUser = username;
 
                 MessageBox.Show($"Default user set to “{ username }”.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -70,7 +70,7 @@ namespace MAL_Reviewer_UI.forms.sub_forms
         /// </summary>
         public void InitDisplay()
         {
-            DefaultUserTextboxControl.InnerText = Core.Settings.UserSettings.DefaultUser?.Username ?? "";
+            DefaultUserTextboxControl.InnerText = Core.Settings.UserSettings.DefaultUser;
         }
 
         #endregion

@@ -84,12 +84,6 @@ namespace MAL_Reviewer_Core.models.UserModels
         /// </summary>
         public UserModel() { }
 
-        /// <summary>
-        /// Constructor with username.
-        /// </summary>
-        /// <param name="username"></param>
-        public UserModel(string username) => Username = username;
-
         #endregion
     }
 }

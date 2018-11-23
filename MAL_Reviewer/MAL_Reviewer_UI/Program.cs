@@ -21,8 +21,8 @@ namespace MAL_Reviewer_UI
             // Application shutdown event
             Application.ApplicationExit += (s, e) =>
             {
-                // Saving global settings.
-                Core.SaveSettings();
+                // Saving data.
+                Core.Save();
             };
 
             Application.Run(new forms.WelcomeForm());
