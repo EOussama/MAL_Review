@@ -50,7 +50,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MAL_Reviewer_Review\MAL_Reviewer_Core.csproj">
+    <ProjectReference Include="..\MAL_Reviewer_Core\MAL_Reviewer_Core.csproj">
       <Project>{b2e0795b-0a84-442c-8c19-659e63b45cc0}</Project>
       <Name>MAL_Reviewer_Core</Name>
     </ProjectReference>
