@@ -7,6 +7,10 @@ namespace MAL_Reviewer_Sandbox
     /// </summary>
     class Program
     {
+        /// <summary>
+        /// The entry point of the sandbox.
+        /// </summary>
+        /// <param name="args"> The primitive arguments. </param>
         static void Main(string[] args)
         {
             // Stoping the test.

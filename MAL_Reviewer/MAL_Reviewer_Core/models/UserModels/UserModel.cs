@@ -13,32 +13,32 @@ namespace MAL_Reviewer_Core.models.UserModels
         /// <summary>
         /// The user's name.
         /// </summary>
-        public string Username { get; set; }
+        public string Username { get; set; } = "?";
 
         /// <summary>
         /// The user's MAL page's url.
         /// </summary>
-        public string Url { get; set; }
+        public string Url { get; set; } = "?";
 
         /// <summary>
         /// The user's image url.
         /// </summary>
-        public string Image_url { get; set; }
+        public string Image_url { get; set; } = "?";
 
         /// <summary>
         /// The user's gender.
         /// </summary>
-        public string Gender { get; set; }
+        public string Gender { get; set; } = "?";
 
         /// <summary>
         /// The user's location.
         /// </summary>
-        public string Location { get; set; }
+        public string Location { get; set; } = "?";
 
         /// <summary>
         /// The user's about.
         /// </summary>
-        public string About { get; set; }
+        public string About { get; set; } = "Such empty!";
 
         /// <summary>
         /// The user's birthdate.
